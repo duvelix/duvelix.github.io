@@ -108,16 +108,16 @@ author:
   avatar           : "images/profile.jpg" # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
   bio              : "Ph.D candidates in Computer Science"
   location         : "Seoul, Korea"
-  email            : jsryu@sogang.ac.kr
+  email            :
   links:
     - label: "Email"
       icon: "fas fa-fw fa-envelope-square"
       url: "mailto:jsryu@sogang.ac.kr"
     - label: "GitHub"
-      icon: "fas fa-fw fa-github"
+      icon: "fab fa-fw fa-github"
       url: "https://github.com/JoonsuRyu"
     - label: "Google Scholar"
-      icon: "fab fa-fw fa-google-scholar"
+      icon: "fas fa-fw fa-graduation-cap"
       url: "https://scholar.google.co.kr/citations?user=UmRh9NQAAAAJ"
     - label: "ORCID"
       icon: "fab fa-fw fa-orcid"
