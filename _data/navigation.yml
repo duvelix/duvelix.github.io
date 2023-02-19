@@ -5,13 +5,22 @@ main:
    - title: "CV"
      url: https://joonsuryu.github.io/
    - title: "Studies"
+     children:
+      - title: "Machine Learning"
+        url: https://joonsuryu.github.io/
+      - title: "Reinforcement Learning"
+        url: https://joonsuryu.github.io/
      url: https://joonsuryu.github.io/
    - title: "Interests"
-     url: https://joonsuryu.github.io/
+     children:
+      - title: "Unboxing"
+        url: https://joonsuryu.github.io/
+      - title: "Review"
+        url: https://joonsuryu.github.io/
    - title: "Travels"
      url: https://joonsuryu.github.io/
   
-  
+  # default menu
   # - title: "Quick-Start Guide"
   #   url: https://mmistakes.github.io/minimal-mistakes/docs/quick-start-guide/
   # - title: "About"
