@@ -243,7 +243,7 @@
         left: 0;
         bottom: 0;
         height: 4px;
-        background: $primary-color;
+        background: #244596;  /* $primary-color; */
         width: 100%;
         -webkit-transition: $global-transition;
         transition: $global-transition;
@@ -382,8 +382,8 @@
       }
 
       &:hover {
-        color: #244596;  /* default #fff */
-        border-color: #244596;  /* default &gray */
+        color: #fff;
+        border-color: &gray;
         background-color: mix(white, #000, 20%);
 
         &:before,
