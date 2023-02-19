@@ -1,7 +1,19 @@
 # main links
 main:
-  - title: "Quick-Start Guide"
-    url: https://mmistakes.github.io/minimal-mistakes/docs/quick-start-guide/
+   - title: "Home"
+     url: https://joonsuryu.github.io/
+   - title: "CV"
+     url: https://joonsuryu.github.io/
+   - title: "Studies"
+     url: https://joonsuryu.github.io/
+   - title: "Interests"
+     url: https://joonsuryu.github.io/
+   - title: "Travels"
+     url: https://joonsuryu.github.io/
+  
+  
+  # - title: "Quick-Start Guide"
+  #   url: https://mmistakes.github.io/minimal-mistakes/docs/quick-start-guide/
   # - title: "About"
   #   url: https://mmistakes.github.io/minimal-mistakes/about/
   # - title: "Sample Posts"
