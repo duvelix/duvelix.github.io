@@ -110,7 +110,7 @@ author:
   location         : "Seoul, Korea"
   email            :
   links:
-    - label: "Email"
+    - label: "E-mail"
       icon: "fas fa-fw fa-envelope-square"
       url: "mailto:jsryu@sogang.ac.kr"
     - label: "GitHub"
