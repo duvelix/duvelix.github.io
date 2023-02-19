@@ -383,7 +383,7 @@
 
       &:hover {
         color: #244596;  /* default #fff */
-        border-color: $gray;
+        border-color: #244596;  /* default &gray */
         background-color: mix(white, #000, 20%);
 
         &:before,
