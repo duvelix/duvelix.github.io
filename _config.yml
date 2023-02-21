@@ -106,7 +106,7 @@ analytics:
 author:
   name             : "Joonsu Ryu"
   avatar           : "images/profile.jpg" # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
-  bio              : "Ph.D candidate in Computer Science"
+  bio              : "PhD candidate in Computer Science"
   location         : "Seoul, Korea"
   email            :
   links:

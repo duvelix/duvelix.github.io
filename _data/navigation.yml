@@ -1,9 +1,9 @@
 # main links
 main:
    - title: "Home"
-     url: https://joonsuryu.github.io/
+     url: /
    - title: "CV"
-     url: https://joonsuryu.github.io/
+     url: /cv/
    - title: "Studies"
      url: https://joonsuryu.github.io/
    - title: "Interests"
