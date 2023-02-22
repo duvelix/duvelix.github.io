@@ -5,11 +5,11 @@ main:
    - title: "CV"
      url: /cv/
    - title: "Studies"
-     url: https://joonsuryu.github.io/
+     url: /studies/
    - title: "Interests"
-     url: https://joonsuryu.github.io/
+     url: /
    - title: "Travels"
-     url: https://joonsuryu.github.io/
+     url: /
   
   # default menu
   # - title: "Quick-Start Guide"

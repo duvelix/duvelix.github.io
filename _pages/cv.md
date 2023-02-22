@@ -34,7 +34,7 @@ classes: wide
 
 ## Teaching Experience
 ### Teaching Assistant
-#### **Sogang University** | 2015 - 2018
+#### <img src="\images\sogang.png" width = 50 height=50> **Sogang University** | 2015 - 2018
 - Assisted in grading assignments and exams, held office hours to help students with questions
 - Courses: C programming, Data Structures, Design and Analysis of Algorithms, Computer Networks, etc.
 
