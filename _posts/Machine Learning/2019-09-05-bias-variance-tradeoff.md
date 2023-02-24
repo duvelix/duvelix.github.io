@@ -23,7 +23,7 @@ tags:
 
 지금까지의 학습의 목적은 Out of Sample Error를 줄이는 것이었습니다. 이 말은 즉슨, Target Function $f$와 유사한 가설을 찾는 것입니다.
 
-가설을 좀 더 복잡하게 설정할수록(ex. 다항함수에서 차수를 늘림) $f$에 근사하도록 만들기 쉬워지지만, 가설을 간단하게 설정할수록(ex. 다항함수의 차수를 줄임) Out of Sample을 일반화하기 쉬워집니다. 물론, $f$ 자체를 가설로 설정할 수 있다면 더할 나위 없게 됩니다. (실제로는 불가능합니다)
+가설을 좀 더 복잡하게 설정할수록(ex. 다항함수에서 차수를 늘림) $f$에 근사하도록 만들기 쉬워지지만, 가설을 간단하게 설정할수록(ex. 다항함수의 차수를 줄임) Out of Sample을 일반화하기 쉬워집니다. 물론, $f$ 자체를 가설로 설정할 수 있다면 더할 나위 없게 됩니다. (실제로는 불가능하지만요)
 
 ![](/images/Machine Learning/8. Bias-Variance Tradeoff/ML 08-05.png){: .align-center}
 
@@ -39,7 +39,7 @@ Bias-Variance 분석은 이와 다르게 Out of Sample Error를 2가지로 나�
 
 $g^{(\mathcal{D})}$를 사용해 Squared Error를 구하려면, $g^{(\mathcal{D})}$와 Target Function $f$의 차이를 제곱함으로써 얻을 수 있습니다. 다만 $\mathcal{D}$는 전체 Dataset $\mathbf{x}$에서 임의로 뽑은 Dataset이므로 어떻게 뽑는지에 따라 달라지기 때문에 Squared Error의 평균값을 사용하게 됩니다.
 
-그 후 식을 간단하게 정리하기 위해 양변에 $\mathcal{D}$에 대한 평균을 취합니다. 우변의 경우 $(g^{(\mathcal{D})}(\mathbf{x})-f(\mathbf{x}))^2$이 항상 0보다 크기 때문에 $\mathbb{E}_{\mathcal{D}}$와 $\mathbb{E}_{\mathbf{x}}$의 순서를 바꿀 수 있습니다.
+그 후 식을 간단하게 정리하기 위해 양변에 $\mathcal{D}$에 대한 평균을 취합니다. 우변의 경우 $(g^{(\mathcal{D})}(\mathbf{x})-f(\mathbf{x}))^2$이 항상 0보다 크기 때문에 $\mathbb{E}\_{\mathcal{D}}$와 $\mathbb{E}\_{\mathbf{x}}$의 순서를 바꿀 수 있습니다.
 
 ![](/images/Machine Learning/8. Bias-Variance Tradeoff/ML 08-07.png){: .align-center}
 
@@ -51,7 +51,7 @@ $g^{(\mathcal{D})}$를 사용해 Squared Error를 구하려면, $g^{(\mathcal{D}
 
 ![](/images/Machine Learning/8. Bias-Variance Tradeoff/ML 08-08.png){: .align-center}
 
-정의는 잠시 제쳐 놓고, 구하려고 하던 $\mathbb{E}_{\mathcal{D}}[(g^{(\mathcal{D})}(\mathbf{x})-f(\mathbf{x}))^2]$를 전개해보도록 합시다. 오른쪽 항 $\mathbb{E}_{\mathcal{D}}$의 내부에 $\bar{g}$를 빼고 다시 더해줍니다. 똑같은 함수를 빼고 더했으니 원래의 식과 동일합니다. 그런 다음, 조금 번거롭지만 제곱식을 풀어준 다음 정리하도록 합시다.
+정의는 잠시 제쳐 놓고, 구하려고 하던 $\mathbb{E}\_{\mathcal{D}}[(g^{(\mathcal{D})}(\mathbf{x})-f(\mathbf{x}))^2]$를 전개해보도록 합시다. 오른쪽 항 $\mathbb{E}\_{\mathcal{D}}$의 내부에 $\bar{g}$를 빼고 다시 더해줍니다. 똑같은 함수를 빼고 더했으니 원래의 식과 동일합니다. 그런 다음, 조금 번거롭지만 제곱식을 풀어준 다음 정리하도록 합시다.
 
 $$\mathbb{E}_{\mathcal{D}}[(g^{(\mathcal{D})}(\mathbf{x})-\bar{g}(\mathbf{x})+\bar{g}(\mathbf{x})-f(\mathbf{x}))^2]$$
 
@@ -125,7 +125,7 @@ $\mathcal{H}_0$은 어차피 상수함수이기 때문에 두 점을 받았을 �
 
 ![](/images/Machine Learning/8. Bias-Variance Tradeoff/ML 08-19.png){: .align-center}
 
-데이터 집합 $\mathcal{D}$의 크기를 $N$이라 정의합니다. 이 때, Out of Sample Error의 평균은 $\mathbb{E}_{\mathcal{D}}[E_{out}(g^{\mathcal{D}})]$가 되고 In Sample Error의 평균은 $\mathbb{E}_{\mathcal{D}}[E_{in}(g^{\mathcal{D}})]$가 됩니다. 이 두 평균이 $N$에 따라 어떻게 변하는지를 알아보겠습니다.
+데이터 집합 $\mathcal{D}$의 크기를 $N$이라 정의합니다. 이 때, Out of Sample Error의 평균은 $\mathbb{E}\_{\mathcal{D}}[E\_{out}(g^{\mathcal{D}})]$가 되고 In Sample Error의 평균은 $\mathbb{E}\_{\mathcal{D}}[E\_{in}(g^{\mathcal{D}})]$가 됩니다. 이 두 평균이 $N$에 따라 어떻게 변하는지를 알아보겠습니다.
 
 ![](/images/Machine Learning/8. Bias-Variance Tradeoff/ML 08-20.png){: .align-center}
 

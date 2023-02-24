@@ -52,4 +52,28 @@ var store = [{
         "tags": ["machine learning"],
         "url": "/studies/bias-variance-tradeoff/",
         "teaser": null
+      },{
+        "title": "Linear Model II",
+        "excerpt":"9장은 3장에 이어서 선형 모델을 배우게 됩니다. 교재에서는 3장과 9장의 내용이 하나의 장으로 구성되어 있지만, 인터넷 강의에서는 이론적인 내용을 연속해서 다루기보다 중간에 구체적인 예시를 추가하기 위하여 두 장으로 나누었다고 합니다. 따라서 이번 장을 공부하기 전에 3장을 다시 한번 복습하시는 것을 추천합니다. Outline 3장에서 다루었던 것과 이번 장에서 다룰 것을 정리해봅시다....","categories": ["studies"],
+        "tags": ["machine learning"],
+        "url": "/studies/linear-models-2/",
+        "teaser": null
+      },{
+        "title": "Neural Networks",
+        "excerpt":"10장은 인공신경망(Neural Network)에 대해 배우게 됩니다. 현재 인공신경망 모델은 기계학습의 대세가 되어 많은 관심을 받고 있습니다. Outline 이번 장의 구성은 3개로 나뉘어 있습니다. 지난 장에서 배운 경사하강법(Gradient Descent)의 변형인 확률적 경사하강법(Stochastic Gradient Descent)를 배우고, 본격적인 인공신경망 모델에 대해서 배운 다음, 마지막으로 인공신경망 모델의 학습 알고리즘인 역전파(Backpropagation) 알고리즘을 배우게 됩니다. Stochastic...","categories": ["studies"],
+        "tags": ["machine learning"],
+        "url": "/studies/neural-networks/",
+        "teaser": null
+      },{
+        "title": "Overfitting",
+        "excerpt":"11장은 Overfitting에 대해 배우게 됩니다. 단어의 뜻만 봐도 이게 무엇을 의미하는지 대충 알 수 있습니다. 예를 들면 옷 가게에서 Fitting Room은 옷이 자기한테 잘 맞는지를 확인하는 곳입니다. Fit의 의미는 맞다이고 Over는 무언가 과다한 상태의 형용사이기 때문에, Overfit은 과다하게 맞다라고 해석이 가능합니다. 기계학습에서 Overfitting도 이와 비슷한 의미입니다. Outline 이번 장의 구성은...","categories": ["studies"],
+        "tags": ["machine learning"],
+        "url": "/studies/overfitting/",
+        "teaser": null
+      },{
+        "title": "Regularization",
+        "excerpt":"12장은 지난 시간에 배웠던 문제점인 Overfitting을 해결하는 방법 중 Regularization (정규화)에 대해 배우게 됩니다. Outline 이번 장에서는 먼저 직관적인 접근 방식으로 정규화가 무엇인지 알아보고, 그 후에 수학적인 방법으로 정규화가 정확하게 무엇인지 알아봅니다. 그 후 정규화에서 중요한 Weight Decay가 무엇인지 배운 다음, Regularizer를 선택하는 방법을 공부하게 됩니다. Regularization - informal 정규화에...","categories": ["studies"],
+        "tags": ["machine learning"],
+        "url": "/studies/regularization/",
+        "teaser": null
       }]

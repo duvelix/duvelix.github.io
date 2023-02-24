@@ -347,11 +347,11 @@
 
 <p>방금 정의한 $B(N, k)$ 함수를 구체적인 변수들로 표현하기 위해 위 슬라이드의 오른쪽 표를 참고하여 따라가보겠습니다. 오른쪽 표에서 $\mathbf{x}_1, \mathbf{x}_2, …, \mathbf{x}_N$은 각각 $N$개의 점을 의미합니다. 이 값은 분류된 결과를 의미하므로 +1이나 -1의 값을 가질 수 있습니다.</p>
 
-<p>가능한 Dichotomy 들의 조합 중에서, $\mathbf{x}<em>{1} ~ \mathbf{x}</em>{N-1}$ 까지의 값은 같고, $\mathbf{x}<em>{N}$의 값만 정 반대인 집합을 $S</em>{2}$라고 정의하고, 그렇지 않은 것들을 모아둔 집합을 $S_{1}$이라고 정의하겠습니다. 그럼 모든 Dichotomy 들의 조합들은 $S_{1}$이나 $S_{2}$ 둘 중 하나에 포함될 것이라는 것을 쉽게 알 수 있습니다.</p>
+<p>가능한 Dichotomy 들의 조합 중에서, $\mathbf{x}_1, …, \mathbf{x}_{N-1}$ 까지의 값은 같고, $\mathbf{x}_N$의 값만 정 반대인 집합을 $S_2$라고 정의하고, 그렇지 않은 것들을 모아둔 집합을 $S_1$이라고 정의하겠습니다. 그럼 모든 Dichotomy 들의 조합들은 $S_1$이나 $S_2$ 둘 중 하나에 포함될 것이라는 것을 쉽게 알 수 있습니다.</p>
 
-<p>그 중에서 $S_{2}$를 좀 더 세분화하기 위해, $\mathbf{x}<em>{N}$의 값이 +1인 것들의 집합을 $S^{+}</em>{2}$이라 하고, $\mathbf{x}<em>{N}$의 값이 -1인 것들의 집합을 $S^{-}</em>{2}$라고 하겠습니다. 당연히 $S^{+}<em>{2}$와 $S^{-}</em>{2}$의 갯수는 같을 수밖에 없습니다.</p>
+<p>그 중에서 $S_2$를 좀 더 세분화하기 위해, $\mathbf{x}_N$의 값이 +1인 것들의 집합을 $S^+_2$이라 하고, $\mathbf{x}_N$의 값이 -1인 것들의 집합을 $S^-_2$라고 하겠습니다. 당연히 $S^+_2$와 $S^-_2$의 갯수는 같을 수밖에 없습니다.</p>
 
-<p>$S_{1}$의 원소의 개수를 $\alpha$라고 하고, $S^{+}<em>{2}$, $S^{-}</em>{2}$의 원소의 개수를 각각 $\beta$라고 하면 $B(N, k)$의 값은 $\alpha + 2\beta$로 표현이 가능합니다.</p>
+<p>$S_{1}$의 원소의 개수를 $\alpha$라고 하고, $S^+_2$, $S^-_2$의 원소의 개수를 각각 $\beta$라고 하면 $B(N, k)$의 값은 $\alpha + 2\beta$로 표현이 가능합니다.</p>
 
 <p><img src="/images/Machine Learning/6. Theory of Generalization/ML 06-06.png" alt="" class="align-center" /></p>
 
@@ -365,7 +365,7 @@
 
 <p>만약에 $\beta$가 $k$개의 Break Point를 가진다고 가정한다면, Break Point의 정의에 의해서 $2^{k-1}$개의 Dichotomy를 표현 가능해야 합니다. 그러나 처음 가정으로 $B(N, k)$이 $k$개의 Break Point를 가지고 있기 때문에 그것의 일부분인 $\beta$는 $k$개의 Break Point를 가질 수 없습니다. (즉, $\mathbf{x}_{N}$을 추가했을 때 $2^{k}$개의 Dichotomy를 표현한다는 것에 모순입니다.)</p>
 
-<p>반대로 $\beta$가 $k-1$개의 Break Point를 가진다는 것을 보이는 것은 쉽습니다. $S^{+}+{2}$ $S^{-}<em>{2}$는 $\mathbf{x}</em>{N}$의 값을 제외하면 나머지 $\mathbf{x}<em>{1}, \mathbf{x}</em>{2}, … \mathbf{x}_{N}$ 들은 같은 값을 갖고 있기 때문입니다.</p>
+<p>반대로 $\beta$가 $k-1$개의 Break Point를 가진다는 것을 보이는 것은 쉽습니다. $S^+_2, S^-_2$는 $\mathbf{x}_N$의 값을 제외하면 나머지 $\mathbf{x}_1, \mathbf{x}_2, … \mathbf{x}_N$ 요소가 같은 값이기 때문입니다.</p>
 
 <p><img src="/images/Machine Learning/6. Theory of Generalization/ML 06-08.png" alt="" class="align-center" /></p>
 
@@ -592,22 +592,22 @@
       </footer>
     </div>
 
-    <script type="text/javascript" async
-	src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML">
-</script>
+     <script type="text/javascript" async
+   src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/MathJax.js?config=TeX-MML-AM_CHTML">
+ </script>
 
-<script type="text/x-mathjax-config">
-   MathJax.Hub.Config({
-     extensions: ["tex2jax.js"],
-     jax: ["input/TeX", "output/HTML-CSS"],
-     tex2jax: {
-       inlineMath: [ ['$','$'], ["\\(","\\)"] ],
-       displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
-       processEscapes: true
-     },
-     "HTML-CSS": { availableFonts: ["TeX"] }
-   });
-</script>
+ <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      extensions: ["tex2jax.js"],
+      jax: ["input/TeX", "output/HTML-CSS"],
+      tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+        displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+        processEscapes: true
+      },
+      "HTML-CSS": { availableFonts: ["TeX"] }
+    });
+ </script>
 
 
   <script src="/assets/js/main.min.js"></script>

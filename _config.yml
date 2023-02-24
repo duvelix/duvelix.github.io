@@ -284,3 +284,4 @@ defaults:
       comments: # true
       share: true
       related: false
+      mathjax: true #for latex
