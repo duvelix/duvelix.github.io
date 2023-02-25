@@ -76,4 +76,40 @@ var store = [{
         "tags": ["machine learning"],
         "url": "/studies/regularization/",
         "teaser": null
+      },{
+        "title": "Validation",
+        "excerpt":"13장에서는 Overfitting을 해결하는 방법 중 Validation (검증)이라는 방법을 배우게 됩니다. Outline 이번 장은 Validation Set (검증 집합), Model Selection (모델 선택), Cross Validation (교차 검증) 순서대로 배우게 됩니다. Validation이 무엇인지 알지 못하는 지금은 소제목을 봐도 이해가 쉽지 않으니 일단 넘어가도록 합시다. The validation set 기본적으로 Out of Sample Error는 In...","categories": ["studies"],
+        "tags": ["machine learning"],
+        "url": "/studies/validation/",
+        "teaser": null
+      },{
+        "title": "Support Vector Machines",
+        "excerpt":"14장은 새로운 기계학습의 방법인 Support Vector Machine을 배우게 됩니다. 지금처럼 Neural Network가 유명해지기 전까지는 가장 널리 쓰이던 방법이었습니다. Outline 이번 장은 Classification 문제에서 Margin을 최대화하는 것부터 시작해서, 그것을 찾는 해법, 그리고 Nonlinear Transform에 응용하는 방법까지를 다루게 됩니다. Maximizing the margin 먼저, 선형 분리가 가능한 데이터 집합이 있다고 가정해봅시다. 간단하게 표현하기...","categories": ["studies"],
+        "tags": ["machine learning"],
+        "url": "/studies/support-vector-machines/",
+        "teaser": null
+      },{
+        "title": "Kernel Methods",
+        "excerpt":"15장은 Kernel Method를 배우게 됩니다. 지난 시간에 배웠던 Support Vector Machine에서 이어지는 내용입니다. Outline 이번 장은 크게 두 주제로 나뉘어 있습니다. 비선형 변환을 처리하기 위한 Kernel Trick이 무엇인지를 먼저 배우고, SVM의 방법 중 하나인 Soft-margin SVM을 배우게 됩니다. 두 주제가 서로 연관이 되어있지는 않지만, 두 주제 모두 비선형 문제를 해결하기...","categories": ["studies"],
+        "tags": ["machine learning"],
+        "url": "/studies/kernel-methods/",
+        "teaser": null
+      },{
+        "title": "Radial Basis Functions",
+        "excerpt":"16장은 Radial Basis Function을 배우게 됩니다. 이것으로 데이터에 Label이 없는 Unsupervised Learning을 해결하는 방법을 배우게 됩니다. Outline 이번 장에서 다룰 내용은 총 4가지인데, 첫 번째 주제를 제외한 나머지는 짧게 다루기 때문에 분량은 다른 장들과 비슷합니다. 첫 번째로 Radial Basis Function 표준 모델을 배우고 Nearest Neighbors Algorithm과 비교합니다. 두 번째로는 Neural...","categories": ["studies"],
+        "tags": ["machine learning"],
+        "url": "/studies/radial-basis-functions/",
+        "teaser": null
+      },{
+        "title": "Three Learning Principles",
+        "excerpt":"17장은 기계학습에서 중요한 3가지 원칙에 대해 소개합니다. Outline 각각의 주제는 이번 장의 제목과 같이 3가지 원칙을 하나씩 나열하고 있습니다. Occam’s Razor는 Learning Model과 관련이 있는 주제이고 Sampling Bias는 데이터 수집(Collecting), Data Snooping은 데이터 처리(Handling)에 관련이 있는 주제입니다. Occam’s Razor Occam’s Razor를 설명하기 전에, 먼저 아인슈타인의 말을 인용하면서 시작합니다. “데이터에 대한...","categories": ["studies"],
+        "tags": ["machine learning"],
+        "url": "/studies/three-learning-principles/",
+        "teaser": null
+      },{
+        "title": "Epilogue",
+        "excerpt":"드디어 대망의 마지막 장입니다. 이번 장에서는 지금까지 배웠던 기계학습을 정리하고 강의에서 다루지 못했던 기계학습에 대해 간략하게 설명하고 마무리합니다. Outline 이번 장은 크게 4가지의 소주제로 이루어져 있습니다. 가장 먼저 지금까지 배운 기계학습을 간단하게 정리하고, 본 강의에서 다루지 못했던 기계학습 중 Baysian Learning과 Aggregation Methods를 간략하게 소개합니다. 마지막으로는 강의에 큰 도움을 줬던...","categories": ["studies"],
+        "tags": ["machine learning"],
+        "url": "/studies/epilogue/",
+        "teaser": null
       }]
