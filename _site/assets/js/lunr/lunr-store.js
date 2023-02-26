@@ -6,19 +6,19 @@ var store = [{
         "teaser": null
       },{
         "title": "The Learning Problem",
-        "excerpt":"첫 번째 장은 어떤 것이 Learning Problem인가에 대해 설명하는 강의입니다. 타이틀 슬라이드의 오른쪽 아래를 보시면 무언가 기하학적인 모양이 나와있는 그림이 있는데, 저번 글과 비교해 보시면 교재 표지에 똑같은 그림이 나와있다는 것을 알 수 있습니다. 이 그림은 추후 또 나올 그림이니 기억해 두시길 바랍니다. 나중에 이 그림이 다시 나왔을 때 또...","categories": ["studies"],
+        "excerpt":"1장은 어떤 것이 Learning Problem인가에 대해 설명하는 강의입니다. 타이틀 슬라이드의 오른쪽 아래를 보시면 무언가 기하학적인 모양이 나와있는 그림이 있는데, 저번 글과 비교해 보시면 교재 표지에 똑같은 그림이 나와있다는 것을 알 수 있습니다. 이 그림은 추후 또 나올 그림이니 기억해 두시길 바랍니다. 나중에 이 그림이 다시 나왔을 때 또 언급하겠습니다. Outline...","categories": ["studies"],
         "tags": ["machine learning"],
         "url": "/studies/the-learning-problem/",
         "teaser": null
       },{
         "title": "Is Learning Feasible?",
-        "excerpt":"두 번째 장은 지난 장의 마지막 이슈였던 “학습은 가능한 것인가?” 라는 의문을 해결하는 강의입니다. Outline 이번 장은 총 4부분으로 구성되어 있습니다. 먼저 확률론적으로 예제를 통해 접근하고, 이를 기계학습과 연결하는 과정을 거칩니다. 하지만 이 과정에서 몇 가지의 문제가 생기는데, 이 원인과 그 해결책은 무엇인지까지 다루게 됩니다. Probability to the rescue 가장...","categories": ["studies"],
+        "excerpt":"2장은 지난 장의 마지막 이슈였던 학습은 가능한 것인가? 라는 의문을 해결하는 강의입니다. Outline 이번 장은 총 4부분으로 구성되어 있습니다. 먼저 확률론적으로 예제를 통해 접근하고, 이를 기계학습과 연결하는 과정을 거칩니다. 하지만 이 과정에서 몇 가지의 문제가 생기는데, 이 원인과 그 해결책은 무엇인지까지 다루게 됩니다. Probability to the rescue 가장 먼저, 위...","categories": ["studies"],
         "tags": ["machine learning"],
         "url": "/studies/is-learning-feasible/",
         "teaser": null
       },{
         "title": "Linear Models I",
-        "excerpt":"세 번째 장에서는 새로운 이슈인 선형 모델(Linear Model)에 대해서 알아보는 시간입니다. Introduction에서도 언급했었지만, 본 교재와 강의자료의 순서가 다른 부분이 조금 있는데, 오늘 할 Linear Models 부분이 바로 그런 부분입니다. 교재에서는 Linear Models 파트가 한 장으로 묶여 있는데, 강의에서는 두 부분으로 나누어 앞부분을 3장에 넣고, 뒷부분을 9장에 배치하였습니다. 왜 이렇게 만들었는가...","categories": ["studies"],
+        "excerpt":"3장에서는 새로운 이슈인 Linear Model (선형 모델)에 대해서 알아보는 시간입니다. Introduction에서도 언급했었지만, 본 교재와 강의자료의 순서가 다른 부분이 조금 있는데, 오늘 할 Linear Model 부분이 바로 그런 부분입니다. 교재에서는 Linear Model 파트가 한 장으로 묶여 있는데, 강의에서는 두 부분으로 나누어 앞부분을 3장에 넣고, 뒷부분을 9장에 배치하였습니다. 왜 이렇게 만들었는가 궁금했는데,...","categories": ["studies"],
         "tags": ["machine learning"],
         "url": "/studies/linear-models-1/",
         "teaser": null
@@ -111,5 +111,23 @@ var store = [{
         "excerpt":"드디어 대망의 마지막 장입니다. 이번 장에서는 지금까지 배웠던 기계학습을 정리하고 강의에서 다루지 못했던 기계학습에 대해 간략하게 설명하고 마무리합니다. Outline 이번 장은 크게 4가지의 소주제로 이루어져 있습니다. 가장 먼저 지금까지 배운 기계학습을 간단하게 정리하고, 본 강의에서 다루지 못했던 기계학습 중 Baysian Learning과 Aggregation Methods를 간략하게 소개합니다. 마지막으로는 강의에 큰 도움을 줬던...","categories": ["studies"],
         "tags": ["machine learning"],
         "url": "/studies/epilogue/",
+        "teaser": null
+      },{
+        "title": "Prologue",
+        "excerpt":"안녕하세요, 2022년에는 새로운 주제로 글을 써볼까 합니다. 예전부터 제가 공부하고 있던 강화학습(Reinforcement Learning) 내용을 정리해보고 싶었는데, 이런 저런 일들로 여건이 되지 않아 미루고 있었습니다. 한동안 다른 문제로 골머리를 썩히다가 이번에 논문 때문에 강화학습을 다시 공부할 일이 생겨 겸사겸사 내용을 정리하고자 합니다. 강화학습 포스트에 참고할 교재는 대부분 학교에서 널리 사용하고 있는...","categories": ["studies"],
+        "tags": ["reinforcement learning"],
+        "url": "/studies/prologue/",
+        "teaser": null
+      },{
+        "title": "The Reinforcement Learning Problem",
+        "excerpt":"사람은 여러 환경과 상호 작용하며 많은 것을 학습합니다. 맛있는 음식을 먹으면 기분이 좋다는 것을 통해 먹는 것을 좋아하게 되며 날카로운 것에 찔리고 나서는 날카로운 것을 멀리하게 되는 것이 그 예입니다. 이렇게 원인과 결과를 학습하게 되고 행동으로부터 어떤 결과가 나오는 지 알게 되며 목표를 달성하기 위해 무엇을 해야하는지 알게 됩니다. 이러한...","categories": ["studies"],
+        "tags": ["reinforcement learning"],
+        "url": "/studies/the-reinforcement-learning-problem/",
+        "teaser": null
+      },{
+        "title": "Multi-armed Bandits",
+        "excerpt":"Part I: Tabular Solution Methods 이 책은 크게 두 부분으로 나뉘어져 있습니다. 첫 번째는 강화학습에서 State (상태)와 Action (행동)을 Table (표)에 정리하는 방법입니다. Table을 사용하는 Tabular Method는 대부분의 문제에서 Optimal Policy (최적의 정책)을 정확하게 찾을 수 있다는 것을 보장하지만 State의 집합과 Action의 집합이 Table을 사용할 수 있을만큼 충분히 작아야 한다는...","categories": ["studies"],
+        "tags": ["reinforcement learning"],
+        "url": "/studies/multi-armed-bandits/",
         "teaser": null
       }]

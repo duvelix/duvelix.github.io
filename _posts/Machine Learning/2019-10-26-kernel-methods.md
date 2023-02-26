@@ -39,7 +39,7 @@ tags:
 
 $$ \begin{align}
 K(\mathbf{x}, \mathbf{x}') &= \mathbf{z}^{\sf T} \mathbf{z}' \\&=(1, x_1, x_2, x_1^2, x_2^2, x_1 x_2) \cdot (1, {x'}_1, {x'}_2, {x'}_1^2, {x'}_2^2, {x'}_1 {x'}_2) \\&=1 + x_1 {x'}_1 + x_2 {x'}_2 + x_1^2 {x'}_1^2 + x_2^2 {x'}_2^2 + x_1 {x'}_1 x_2 {x'}_2
-\end{align}$$
+\end{align} $$
 
 ![](/images/Machine Learning/15. Kernel Methods/ML 15-06.png){: .align-center}
 

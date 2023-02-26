@@ -43,7 +43,7 @@ tags:
 
 ![](/images/Machine Learning/5. Training versus Testing/ML 05-06-02.png){: .align-center}
 
-자, 이렇게 In sample Error와 Out of sample Error를 각각 계산했으니, 이제 다른 Hypothesis를 한번 따져봅시다. 위 슬라이드(5번 슬라이드)에서 파란색 선을 살짝 비튼 초록색 선을 또다른 Hypothesis라 볼 수 있습니다.
+자, 이렇게 In Sample Error와 Out of Sample Error를 각각 계산했으니, 이제 다른 Hypothesis를 한번 따져봅시다. 위 슬라이드(5번 슬라이드)에서 파란색 선을 살짝 비튼 초록색 선을 또다른 Hypothesis라 볼 수 있습니다.
 
 이 두 Hypothesis의 차이는 그림에서의 노란색 면적임을 쉽게 알 수 있습니다. 그런데 전체적으로 보았을 때 이 면적이 매우 미미하므로, 이 두 Hypothesis는 상당히 유사함을 알 수 있습니다. 이와 비슷한 Case가 매우 많다는 것을 직관적으로 알 수 있으므로, 모든 Hypothesis에 대해 Hoeffding's Inequality를 Union Bound로 잡는 것은 상당히 불합리하다고 생각할 수 있습니다.
 
@@ -67,7 +67,7 @@ tags:
 
 먼저 $N=3$일 때를 확인해 봅시다. 첫 번째 그림처럼 Data Point가 놓여있을 경우, 각각의 Data를 어떤 방식으로 +1이나 -1로 정의해도 모두 선 하나로 구분할 수 있습니다. 따라서 $m_{\mathcal{H}}(3)=8$임을 알 수 있습니다.
 
-그런데 두 번째 그림과 같은 상황을 생각해서 의문을 가질 수도 있습니다. 두 번째 그림처럼 점 3개를 일렬로 놓으면 절때로 선 하나로 Data Point를 구분할 수가 없기 때문입니다. 하지만 Growth Function은 "최대"의 Dichotomies의 수만을 따지기 때문에, 설사 단 한 가지의 경우만 8개가 나올 수 있다고 해도 Growth Fucntion의 값은 8이 되는 겁니다.
+그런데 두 번째 그림과 같은 상황을 생각해서 의문을 가질 수도 있습니다. 두 번째 그림처럼 점 3개를 일렬로 놓으면 절때로 선 하나로 Data Point를 구분할 수가 없기 때문입니다. 하지만 Growth Function은 **최대**의 Dichotomies의 수만을 따지기 때문에, 설사 단 한 가지의 경우만 8개가 나올 수 있다고 해도 Growth Fucntion의 값은 8이 되는 겁니다.
 
 이번엔 $N=4$인 경우를 보시면, 이 경우에는 어떻게 점을 놓더라도 세 번째 그림처럼 선 하나로는 절대 점들을 구분할 수 없는 경우가 나옵니다. 따라서 이 경우에는 최대치인 16개가 될 수 없고, 저렇게 십자 모양으로 데이터가 분산된 경우(+1과 -1이 뒤바뀌는 경우도 있으니 실제로는 2가지 경우입니다)를 제외한 14개의 경우만 구분이 가능합니다. 따라서 $m_{\mathcal{H}}(4)=14$가 됩니다.
 
@@ -75,11 +75,11 @@ tags:
 
 ![](/images/Machine Learning/5. Training versus Testing/ML 05-11.png){: .align-center}
 
-Growth Function을 계산하는 방법은 알았지만, 이제 또 다른 문제가 생겼습니다. Growth Function이 "최대"의 Dichotomies의 수를 구해야 하는거면 일일이 해봐야만 알 수 있는 건데, 그러면 $N$이 커질 때는 어떻게 이걸 일일이 구해야 할지 막막합니다. 안타깝게도 일반적인 케이스는 진짜 일일이 해보지 않고는 모릅니다만, 많이 보이는 몇 가지 예제는 간단한 공식으로 계산할 수 있습니다. 다음 슬라이드에서 몇 가지 예제를 통해 Growth Function을 구해보겠습니다.
+Growth Function을 계산하는 방법은 알았지만, 이제 또 다른 문제가 생겼습니다. Growth Function이 **최대**의 Dichotomies의 수를 구해야 하는거면 일일이 해봐야만 알 수 있는 건데, 그러면 $N$이 커질 때는 어떻게 이걸 일일이 구해야 할지 막막합니다. 안타깝게도 일반적인 케이스는 진짜 일일이 해보지 않고는 모릅니다만, 많이 보이는 몇 가지 예제는 간단한 공식으로 계산할 수 있습니다. 다음 슬라이드에서 몇 가지 예제를 통해 Growth Function을 구해보겠습니다.
 
 ![](/images/Machine Learning/5. Training versus Testing/ML 05-12.png){: .align-center}
 
-첫 번째 예제는 Positive Ray입니다. 이것은 데이터가 모두 일직선 위에 놓여있고, 점 $a$를 기준으로 왼쪽은 모두 -1로, 오른쪽은 모두 +1로 분류되는 경우입니다.
+첫 번째 예제는 <span style="color:red">Positive Ray</span>입니다. 이것은 데이터가 모두 일직선 위에 놓여있고, 점 $a$를 기준으로 왼쪽은 모두 -1로, 오른쪽은 모두 +1로 분류되는 경우입니다.
 
 이 상황에서는 나올 수 있는 경우의 수를 따져봅시다. 간단히 이를 계산하려면 점 $a$가 놓일 수 있는 위치가 몇 개나 있을지 세어보는 겁니다. 하나하나 따져보면 $x_1$ 왼쪽에 있는 경우 (1개) + 연속된 두 점 $x_i$, $x_j$ 사이에 있는 경우 ($N-1$개) + $x_N$ 오른쪽에 있는 경우 (1개) 이므로 다 합치면 $N+1$개가 됨을 알 수 있습니다.
 
@@ -87,15 +87,15 @@ Growth Function을 계산하는 방법은 알았지만, 이제 또 다른 문제
 
 ![](/images/Machine Learning/5. Training versus Testing/ML 05-13.png){: .align-center}
 
-두 번째 예제는 Positive Interval입니다. 이 예제는 방금 전 예제처럼 데이터들이 일직선 위에 놓여있는 상황인데, +1이 되는 조건이 임의의 구간으로 설정되어 있습니다.
+두 번째 예제는 <span style="color:red">Positive Interval</span>입니다. 이 예제는 방금 전 예제처럼 데이터들이 일직선 위에 놓여있는 상황인데, +1이 되는 조건이 임의의 구간으로 설정되어 있습니다.
 
-이 상황에서 나올 수 있는 경우의 수를 계산하려면, 이전 예제에서 점 $a$를 두 개 잡아 그 사이를 +1로 설정하면 됩니다. 따라서 총 $N+1$개의 구간에서 두 점을 잡고, 그 순서는 중요하지 않으니 조합(Combination)으로 계산하면 됩니다. 즉, $N+1 \choose 2$가 됩니다.
+이 상황에서 나올 수 있는 경우의 수를 계산하려면, 이전 예제에서 점 $a$를 두 개 잡아 그 사이를 +1로 설정하면 됩니다. 따라서 총 $N+1$개의 구간에서 두 점을 잡고, 그 순서는 중요하지 않으니 Combination (조합)으로 계산하면 됩니다. 즉, $N+1 \choose 2$가 됩니다.
 
 마지막으로 놓치지 말아야 하는 경우에 수가 있습니다. 똑같은 구간에서 두 점을 잡게 되면 실질적으로 +1이 되는 점이 한 개도 없으므로, 이것도 경우에 수에 추가해야 합니다. 따라서 Positive Interval에서 Growth Function의 값은 $N+1 \choose 2$ + 1이 됩니다.
 
 ![](/images/Machine Learning/5. Training versus Testing/ML 05-14.png){: .align-center}
 
-마지막 예제는 Convex Set입니다. Convex Set은 임의의 집합에서 두 점을 잡았을 때, 그 두 점을 잇는 선분도 그 집합 내의 영역안에 있는 집합을 말합니다.
+마지막 예제는 <span style="color:red">Convex Set</span>입니다. Convex Set은 임의의 집합에서 두 점을 잡았을 때, 그 두 점을 잇는 선분도 그 집합 내의 영역안에 있는 집합을 말합니다.
 
 이 예제에서는 오른쪽 그림과 같이 원 위에 임의의 Data Point를 잡은 상황입니다. 이러한 Convex Set에서는 각각의 점이 +1이든 -1이든 상관없이 오른쪽 그림처럼 임의의 다각형을 만들 수 있습니다. 따라서 이때는 모든 경우를 표현 가능하므로, Convex Set에서의 Growth Function의 값은 최댓값인 $2^N$개가 되는 것입니다.
 
@@ -117,7 +117,7 @@ Growth Function을 계산하는 방법은 알았지만, 이제 또 다른 문제
 
 ![](/images/Machine Learning/5. Training versus Testing/ML 05-18.png){: .align-center}
 
-만약에 $\mathcal{H}$에서 $k$개의 데이터를 골고루 흩뿌릴 수 없을 때 이 $k$를 $\mathcal{H}$에서의 <span style="color:red">Break Point</span>라고 합니다. 정의가 직관적으로 이해되지 않기 때문에 조금 더 쉽게 설명해 드리겠습니다. "데이터를 골고루 흩뿌릴 수 없다" 라는 말은 데이터를 어떻게 배치해도 최대의 Dichotomies를 만들 수 없는 상황을 말합니다. 즉, $m_{\mathcal{H}}(N)<2^k$ 를 만족하는 k를 말합니다. 예를 들어 아까 보았던 2D Perceptron의 경우, $N=3$ 일 때 $m_{\mathcal{H}}(3)=8$이었지만 $N=4$일 때 $m_{\mathcal{H}}(4)=14<16$ 이었으므로 $k=4$가 됩니다.
+만약에 $\mathcal{H}$에서 $k$개의 데이터를 골고루 흩뿌릴 수 없을 때 이 $k$를 $\mathcal{H}$에서의 <span style="color:red">Break Point</span>라고 합니다. 정의가 직관적으로 이해되지 않기 때문에 조금 더 쉽게 설명해 드리겠습니다. **데이터를 골고루 흩뿌릴 수 없다**라는 말은 데이터를 어떻게 배치해도 최대의 Dichotomies를 만들 수 없는 상황을 말합니다. 즉, $m_{\mathcal{H}}(N)<2^k$ 를 만족하는 k를 말합니다. 예를 들어 아까 보았던 2D Perceptron의 경우, $N=3$ 일 때 $m_{\mathcal{H}}(3)=8$이었지만 $N=4$일 때 $m_{\mathcal{H}}(4)=14<16$ 이었으므로 $k=4$가 됩니다.
 
 이 Break Point의 개념이 상당히 중요한데, Break Point $k$ 이후로는 절때 최대의 Dichotomies를 만들 수 없기 때문입니다. (즉, 2D Perceptron을 예로 든다면 4 이상인 모든 $N$에 대하여 $m_{\mathcal{H}}(N)<2^N$이 성립한다는 뜻입니다.)
 
@@ -137,7 +137,7 @@ Positive Ray의 경우에는 $m_{\mathcal{H}}(N)=N+1<2^N$을 만족하는 최소
 
 마지막으로 간단한 퍼즐을 하나 풀어봅시다.
 
-사실 이 슬라이드에는 문제를 내기도 전에 정답이 이미 화면에 나와있는데, 원래 문제는 "Break Point $k=2$일 때, $N=3$인 경우 가능한 모든 경우의 수를 구하라" 입니다. 이를 해결하기 위해 차근차근 한번 생각해봅시다. 경우의 수를 하나하나 따져보면 계산할 수 있습니다.
+사실 이 슬라이드에는 문제를 내기도 전에 정답이 이미 화면에 나와있는데, 원래 문제는 **Break Point $k=2$일 때, $N=3$인 경우 가능한 모든 경우의 수를 구하라** 입니다. 이를 해결하기 위해 차근차근 한번 생각해봅시다. 경우의 수를 하나하나 따져보면 계산할 수 있습니다.
 
 Break Point가 $k=2$ 이므로, $m_{\mathcal{H}}(1)=2$ 임을 알 수 있습니다. 가장 먼저 모든 점이 -1로 분류되는 상황으로 시작해 봅시다.
 

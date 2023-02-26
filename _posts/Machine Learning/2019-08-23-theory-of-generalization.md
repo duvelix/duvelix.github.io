@@ -77,17 +77,17 @@ $$B(N, k) \leq B(N-1, k) + B(N-1, k-1)$$
 
 이번엔 $B(1, k)$를 계산해야 하는데, 점이 딱 1개만 있으면 어차피 나눌 수 있는 경우의 수는 +1 또는 -1 밖에 없으니까 Break Point가 아무리 커봤자 $B(1, k)=2$라는 것을 쉽게 알 수 있습니다. (단, $k=1$일 때 제외)
 
-이렇게 첫 번째 행/열만 채우게 되면 나머지는 이전 슬라이드에서 보였던 부등식을 통해 채울 수 있습니다. 이 표의 값들을 보실 때 주의하실 점은, $B(N, k)$의 정확한 값이 아니라 **상한(Upper Bound)**이라는 겁니다. 애초에 유도한 재귀식 자체가 부등식이기 때문이죠.
+이렇게 첫 번째 행/열만 채우게 되면 나머지는 이전 슬라이드에서 보였던 부등식을 통해 채울 수 있습니다. 이 표의 값들을 보실 때 주의하실 점은, $B(N, k)$의 정확한 값이 아니라 **Upper Bound (상한)**이라는 겁니다. 애초에 유도한 재귀식 자체가 부등식이기 때문이죠.
 
 즉 표의 값을 읽을 때, 예를 들면 표에서 붉은 글씨를 확인해 보시면 $B(3, 2)$이 4라고 나와있습니다. 이 말은 $B(3, 2)$가 정확하게 4라는 뜻이 아니라 아무리 커봤자 최대가 4라는 뜻입니다. 물론 4보다 작을 수도 있습니다. (이건 직접 하나하나 계산해보기 전까지는 모릅니다.)
 
-그럼 실제로 $B(3, 2)$의 값이 뭔지 궁금합니다. 운이 좋게 이것은 저희가 이미 계산해본 적 있습니다. 5장의 맨 마지막 슬라이드에서 간단한 Puzzle을 풀었었는데, 이때가 $N=3, k=2$의 예제였습니다. 계산했을 때 값이 4가 나왔었는데, 우연히도 $B(3, 2)$의 상한과 같은 값임을 알 수 있습니다. 하지만 이것은 우연일 뿐, 항상 이렇게 같은 값이 나오지는 않음에 유의하셔야 합니다.
+그럼 실제로 $B(3, 2)$의 값이 뭔지 궁금합니다. 운이 좋게 이것은 저희가 이미 계산해본 적 있습니다. 5장의 맨 마지막 슬라이드에서 간단한 Puzzle을 풀었었는데, 이때가 $N=3, k=2$의 예제였습니다. 계산했을 때 값이 4가 나왔었는데, 우연히도 $B(3, 2)$의 Upper Bound와 같은 값임을 알 수 있습니다. 하지만 이것은 우연일 뿐, 항상 이렇게 같은 값이 나오지는 않음에 유의하셔야 합니다.
 
 ![](/images/Machine Learning/6. Theory of Generalization/ML 06-10.png){: .align-center}
 
 하지만 이렇게 Recursive하게 계산하는 것은 계산 속도도 오래 걸리고 귀찮기 때문에, 이를 한 번에 표현할 수 있는 일반항을 찾아야 합니다. 위 슬라이드에 나온 것처럼, $B(n, k)$에 대한 일반항을 조합(Combination)들의 합으로 제시하고 이를 증명합니다.
 
-증명 방법은 흔히 사용하는 **수학적 귀납법(Induction)**으로 증명합니다. 먼저 맨 처음 항이 True임을 보여야 하는데, 이건 그냥 $N=1$과 $k=1$을 각각 넣게 되면 참임을 알 수 있습니다.
+증명 방법은 흔히 사용하는 <span style="color:red">Induction (귀납법)</span>으로 증명합니다. 먼저 맨 처음 항이 True임을 보여야 하는데, 이건 그냥 $N=1$과 $k=1$을 각각 넣게 되면 참임을 알 수 있습니다.
 
 ![](/images/Machine Learning/6. Theory of Generalization/ML 06-11.png){: .align-center}
 
@@ -97,7 +97,7 @@ $$B(N, k) \leq B(N-1, k) + B(N-1, k-1)$$
 
 ![](/images/Machine Learning/6. Theory of Generalization/ML 06-12.png){: .align-center}
 
-최종적인 결론입니다. 이전 슬라이드까지의 과정을 통해서 결국 $m_{\mathcal{H}}$가 조합들로 이루어진 합보다 작다는 것이 증명되었고, 이 조합은 아무리 커봤자 $N^{k-1}$의 항을 가진 다항함수이므로 결과적으로 그토록 원하던 "<span style="color:red">Growth Function이 다항함수(Polynomial)이다</span>" 라는 결론이 나온 것입니다.
+최종적인 결론입니다. 이전 슬라이드까지의 과정을 통해서 결국 $m_{\mathcal{H}}$가 조합들로 이루어진 합보다 작다는 것이 증명되었고, 이 조합은 아무리 커봤자 $N^{k-1}$의 항을 가진 다항함수이므로 결과적으로 그토록 원하던 <span style="color:red">Growth Function이 다항함수(Polynomial)이다</span> 라는 결론이 나온 것입니다.
 
 지금까지 Hoeffding's Inequality가 무한대에 가까운 $M$으로 고통받았던 것을 생각해보면 Growth Function을 통해 다항함수 꼴로 줄인 것은 매우 큰 의미가 있습니다.
 
@@ -105,17 +105,17 @@ $$B(N, k) \leq B(N-1, k) + B(N-1, k-1)$$
 
 왜 그것이 큰 의미가 있는지 이 슬라이드를 통해 설명할 수 있습니다. 이전 장에서 Growth Function을 설명할 때 사용한 3가지 예제가 기억나실 겁니다. (Positive Ray, Positive Interval, Convex Set)
 
-이 중에서 Positive Ray와 Positive Interval은 지난 장에서 직접 계산했기 때문에, 방금 유도한 Growth Function의 상한과 비교해 보겠습니다. 운이 좋게 Positive Ray와 Positive Interval은 상한과 똑같이 나왔습니다만, 아까도 말씀드렸듯이 항상 똑같은 게 아니라는 걸 꼭 기억하셔야 합니다.
+이 중에서 Positive Ray와 Positive Interval은 지난 장에서 직접 계산했기 때문에, 방금 유도한 Growth Function의 Upper Bound와 비교해 보겠습니다. 운이 좋게 Positive Ray와 Positive Interval은 Upper Bound와 똑같이 나왔습니다만, 아까도 말씀드렸듯이 항상 똑같은 게 아니라는 걸 꼭 기억하셔야 합니다.
 
-그런데 2D Perceptron은 이전에 Break Point가 4인 것은 보였지만, Growth Function을 직접 구할 수는 없었습니다. 하지만 방금 유도한 Growth Function 상한을 이용하면 2D Perceptron도 공식에서 나온 다항함수보다 작다는 것을 보일 수 있습니다.
+그런데 2D Perceptron은 이전에 Break Point가 4인 것은 보였지만, Growth Function을 직접 구할 수는 없었습니다. 하지만 방금 유도한 Growth Function의 Upper Bound를 이용하면 2D Perceptron도 공식에서 나온 다항함수보다 작다는 것을 보일 수 있습니다.
 
-결국 이런 방식을 통해 그 어떠한 케이스에서도 Break Point만 찾으면 Growth Function이 다항함수 꼴로 상한이 정해진 다는 것을 알 수 있습니다.
+결국 이런 방식을 통해 그 어떠한 케이스에서도 Break Point만 찾으면 Growth Function이 다항함수 꼴로 Upper Bound가 정해진 다는 것을 알 수 있습니다.
 
 ## Proof that $m_{\mathcal{H}}$ can replace $M$
 
 ![](/images/Machine Learning/6. Theory of Generalization/ML 06-14.png){: .align-center}
 
-그럼 지금까지 $m_{\mathcal{H}}$가 다항함수로 이루어진 식의 상한으로 이루어진 것이 증명되었으니, 이제 정말 중요한 Hoeffding's Inequality에 있던 $M$ 대신에 $m_{\mathcal{H}}$를 대입하기 위한 증명이 필요합니다.
+그럼 지금까지 $m_{\mathcal{H}}$가 다항함수로 이루어진 식의 Upper Bound로 이루어진 것이 증명되었으니, 이제 정말 중요한 Hoeffding's Inequality에 있던 $M$ 대신에 $m_{\mathcal{H}}$를 대입하기 위한 증명이 필요합니다.
 
 ![](/images/Machine Learning/6. Theory of Generalization/ML 06-15.png){: .align-center}
 
@@ -123,7 +123,7 @@ $$B(N, k) \leq B(N-1, k) + B(N-1, k-1)$$
 
 ![](/images/Machine Learning/6. Theory of Generalization/ML 06-16.png){: .align-center}
 
-어쨌든 이 $M$ 대신에 $m_{\mathcal{H}}$를 넣어 (변형된) 식을 증명해야겠지만, 강의에서는 이 증명이 너무 복잡하기 때문에 부록에 따로 빼놓았다고 합니다. 제가 확인해보니 6페이지 정도 분량이라 저도 안 읽었습니다. 굳이 그것까지 읽지 않아도 될 거 같았거든요.
+어쨌든 이 $M$ 대신에 $m_{\mathcal{H}}$를 넣어 변형된 식을 증명해야겠지만, 강의에서는 이 증명이 너무 복잡하기 때문에 부록에 따로 빼놓았다고 합니다. 제가 확인해보니 6페이지 정도 분량이라 저도 안 읽었습니다. 굳이 그것까지 읽지 않아도 될 거 같았거든요.
 
 강의에서는 간단하게 증명의 핵심 정도만 언급하고 넘어갑니다. 증명의 핵심은 크게 3가지인데, (1) $m_{\mathcal{H}}$를 어떻게 대입할 것인가, (2) $E_{out}$은 어떻게 되는가, (3) 그리고 이를 합치는 과정입니다.
 
