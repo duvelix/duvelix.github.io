@@ -126,8 +126,14 @@ var store = [{
         "teaser": null
       },{
         "title": "Multi-armed Bandits",
-        "excerpt":"Part I: Tabular Solution Methods 이 책은 크게 두 부분으로 나뉘어져 있습니다. 첫 번째는 강화학습에서 State (상태)와 Action (행동)을 Table (표)에 정리하는 방법입니다. Table을 사용하는 Tabular Method는 대부분의 문제에서 Optimal Policy (최적의 정책)을 정확하게 찾을 수 있다는 것을 보장하지만 State의 집합과 Action의 집합이 Table을 사용할 수 있을만큼 충분히 작아야 한다는...","categories": ["studies"],
+        "excerpt":"Part I: Tabular Solution Methods 이 책은 크게 두 부분으로 나뉘어져 있습니다. 첫 번째는 강화학습에서 State와 Action을 Table에 정리하는 방법입니다. Table을 사용하는 Tabular Method는 대부분의 문제에서 Optimal Policy를 정확하게 찾을 수 있다는 것을 보장하지만 State의 집합과 Action의 집합이 Table을 사용할 수 있을만큼 충분히 작아야 한다는 단점이 있습니다. 두 번째는 Table을...","categories": ["studies"],
         "tags": ["reinforcement learning"],
         "url": "/studies/multi-armed-bandits/",
+        "teaser": null
+      },{
+        "title": "Finite Markov Decision Processes",
+        "excerpt":"이번 장에서는 이 책에서 해결하고자 하는 목표인 Finite Markov Decision Processes (Finite MDP)에 대해 소개합니다. $k$-armed bandit 문제에서는 즉각적인 Reward에 대한 피드백만 고려하였으나, MDP는 즉각적인 Reward와 더불어 이어지는 State와 미래에 받을 Reward 등을 모두 포함한 의사 결정이 필요합니다. 수식으로 표현하면 bandit 문제에서는 각각의 Action $a$에 대하여 $q_* (a)$를 추정하였으나, MDP에서는...","categories": ["studies"],
+        "tags": ["reinforcement learning"],
+        "url": "/studies/finite-markov-decision-processes/",
         "teaser": null
       }]
