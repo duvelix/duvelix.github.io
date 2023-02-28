@@ -1,5 +1,6 @@
 ---
 title: "Finite Markov Decision Processes"
+classes: wide
 toc: true
 toc_label: "Table of Contents"
 toc_sticky: true
