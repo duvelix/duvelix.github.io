@@ -97,6 +97,18 @@
 <lastmod>2022-02-22T00:00:00+09:00</lastmod>
 </url>
 <url>
+<loc>http://localhost:4000/studies/monte-carlo-methods/</loc>
+<lastmod>2022-03-11T00:00:00+09:00</lastmod>
+</url>
+<url>
+<loc>http://localhost:4000/studies/temporal-difference-learning/</loc>
+<lastmod>2022-03-30T00:00:00+09:00</lastmod>
+</url>
+<url>
+<loc>http://localhost:4000/studies/n-step-bootstrapping/</loc>
+<lastmod>2022-04-06T00:00:00+09:00</lastmod>
+</url>
+<url>
 <loc>http://localhost:4000/cv/</loc>
 </url>
 <url>
@@ -116,5 +128,8 @@
 </url>
 <url>
 <loc>http://localhost:4000/page5/</loc>
+</url>
+<url>
+<loc>http://localhost:4000/page6/</loc>
 </url>
 </urlset>

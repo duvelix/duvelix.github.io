@@ -10,7 +10,6 @@ tags:
   - reinforcement learning
 ---
 
-
 <span style="color:red">Dynamic Programming</span>은 Markov Decision Process (MDP)와 같이 완벽한 Environment Model이 주어졌을 때 Optimal Policy을 계산할 수 있는 알고리즘입니다. Dynamic Programming은 학부 알고리즘 수업에서도 다루는 중요한 알고리즘이지만, 완벽한 Model이 주어져야 한다는 가정과 막대한 계산 비용으로 인해 강화학습에 직접적으로 적용하기는 힘든 단점이 있습니다. 다만 Dynamic Programming으로 강화학습 문제를 해결하는 과정은 다른 강화학습 해결 방법을 이해하는데 큰 도움이 되기 때문에 반드시 짚고 넘어가야 합니다.
 
 Dynamic Programming을 시작하기 전에, 일단 주어진 Environment가 Finite MDP라고 가정합시다. 지난 장에서 배운 것처럼 Finite MDP는 State, Action, Reward이 유한하고 모든 State $s$와 Action $a$에 대해 Transition Probability $p ( s', r \mid s, a )$가 제공된 Environment를 말합니다.

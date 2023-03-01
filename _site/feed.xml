@@ -1,4 +1,828 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.3">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-02-28T14:32:16+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">KEEPMIND</title><subtitle>A place I record so that I don&apos;t forget.</subtitle><author><name>Joonsu Ryu</name></author><entry><title type="html">Dynamic Programming</title><link href="http://localhost:4000/studies/dynamic-programming/" rel="alternate" type="text/html" title="Dynamic Programming" /><published>2022-02-22T00:00:00+09:00</published><updated>2022-02-22T00:00:00+09:00</updated><id>http://localhost:4000/studies/dynamic-programming</id><content type="html" xml:base="http://localhost:4000/studies/dynamic-programming/">&lt;p&gt;&lt;span style=&quot;color:red&quot;&gt;Dynamic Programming&lt;/span&gt;은 Markov Decision Process (MDP)와 같이 완벽한 Environment Model이 주어졌을 때 Optimal Policy을 계산할 수 있는 알고리즘입니다. Dynamic Programming은 학부 알고리즘 수업에서도 다루는 중요한 알고리즘이지만, 완벽한 Model이 주어져야 한다는 가정과 막대한 계산 비용으로 인해 강화학습에 직접적으로 적용하기는 힘든 단점이 있습니다. 다만 Dynamic Programming으로 강화학습 문제를 해결하는 과정은 다른 강화학습 해결 방법을 이해하는데 큰 도움이 되기 때문에 반드시 짚고 넘어가야 합니다.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.3">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-03-01T17:48:36+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">KEEPMIND</title><subtitle>A place I record so that I don&apos;t forget.</subtitle><author><name>Joonsu Ryu</name></author><entry><title type="html">n-step Bootstrapping</title><link href="http://localhost:4000/studies/n-step-bootstrapping/" rel="alternate" type="text/html" title="n-step Bootstrapping" /><published>2022-04-06T00:00:00+09:00</published><updated>2022-04-06T00:00:00+09:00</updated><id>http://localhost:4000/studies/n-step-bootstrapping</id><content type="html" xml:base="http://localhost:4000/studies/n-step-bootstrapping/">&lt;p&gt;이번 장에서는 5장에서 배운 몬테 카를로 방법과 6장에서 배운 시간차 방법을 융합하여 만든 새로운 방법을 소개합니다. 몬테 카를로 방법은 항상 에피소드가 끝난 후에야 학습이 가능했고, 시간차 방법은 1단계만 행동하면 학습이 가능했습니다. 그렇다면 그 사이의 단계인 $n$번째 단계까지 행동한 다음 학습을 하게 되면 조금 더 일반화된 학습이 가능하지 않을까라는 아이디어가 떠오르게 됩니다.&lt;/p&gt;
+
+&lt;p&gt;이렇게 $n$개의 시간 단계 동안 행동한 후 학습에 반영하는 것을 $n$-step Bootstrapping이라고 합니다. 시간차 방법은 경험이 즉각적으로 학습에 반영되지만, 때때로 조금 더 장기적인 관점에서 바라봐야할 문제가 있습니다. 이런 관점에서 $n$-step Bootstrapping은 12장에서 배울 Eligibility Traces의 기반이 됩니다.&lt;/p&gt;
+
+&lt;p&gt;이번 장 역시 이전 장들과 마찬가지로, 먼저 추정 방법을 알아본 다음에 제어 문제를 다루는 순서로 진행됩니다. 즉, 먼저 $n$-step Bootstrapping으로 $v_{\pi}$를 추정한 후, 최적의 정책을 찾기 위한 제어 방법을 논의할 예정입니다.&lt;/p&gt;
+
+&lt;h2 id=&quot;n-step-td-prediction&quot;&gt;$n$-step TD Prediction&lt;/h2&gt;
+
+&lt;p&gt;$\pi$를 사용하여 생성된 샘플 에피소드에서 $v_{\pi}$를 추정할 때, 몬테 카를로 방법은 에피소드가 끝날 때까지 해당 상태부터 관찰된 전체 보수의 합인 Return을 기반으로 업데이트하고, 1-step TD 방법은 1개의 보수만 관찰한 후 업데이트합니다. 이번에는 이 두 극단적인 방법의 중간점으로 $n$개의 보수를 관찰한 후 업데이트를 수행하는 $n$-step TD 방법에 대해 알아보겠습니다. 1-step TD, $n$-step TD, 그리고 몬테 카를로 방법의 차이는 아래의 백업 다이어그램을 보시면 쉽게 이해할 수 있습니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/Reinforcement Learning/7. n-step bootstrapping/RL 07-01.png&quot; alt=&quot;&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;$n$-step 업데이트를 1-step TD와 마찬가지로 시간차 학습(TD)이라고 부르는 이유는, 1-step TD처럼 이후의 추정이 어떻게 달라지는지에 따라 이전의 추정이 변하기 때문입니다. 다만 그 추정이 1-step 후가 아니라 $n$-step 후일 뿐입니다.&lt;/p&gt;
+
+&lt;p&gt;이들간의 차이를 수식으로 비교해봅시다. 먼저 몬테 카를로 방법에서 Return $G_t$를 계산하는 식은 다음과 같았습니다.&lt;/p&gt;
+
+\[G_t \doteq R_{t+1} + \gamma R_{t+2} + \gamma^2 R_{t+3} + \cdots + \gamma^{T-t-1} R_T\]
+
+&lt;p&gt;위 식에서 $T$는 에피소드의 마지막 시간 단계입니다. 몬테 카를로 방법에서는 Return을 각 시간 단계마다 받는 보수에 discount를 곱한 값의 합으로 계산합니다.&lt;/p&gt;
+
+\[G_{t:t+1} \doteq R_{t+1} + \gamma V_t (S_{t+1})\]
+
+&lt;p&gt;반면에 1-step 방법에서는 첫 번째 보수와, 다음 상태의 추정 가치에 discount를 곱한 값의 합으로 계산됩니다. $V_t$는 시간 단계 $t$에서 추정한 $v_{\pi}$를 의미하며, $G_{t:t+1}$는 시간 단계 $t$부터 $t+1$까지 얻은 수익을 의미합니다. 이 개념을 확장하면 2-step 방법의 Return은 다음과 같음을 알 수 있습니다.&lt;/p&gt;
+
+\[G_{t:t+2} \doteq R_{t+1} + \gamma R_{t+2} + \gamma^2 V_{t+1} (S_{t+2})\]
+
+&lt;p&gt;위와 같은 방법으로 $n$-step 방법의 Return을 만들면 다음과 같습니다.&lt;/p&gt;
+
+\[G_{t:t+n} \doteq R_{t+1} + \gamma R_{t+2} + \cdots + \gamma^{n-1} R_{t+n} + \gamma^n V_{t+n-1} (S_{t+n}) \tag{7.1}\]
+
+&lt;p&gt;위 식에서 $n \ge 1$이고 $0 \le t &amp;lt; T - n$이라는 조건이 있습니다. 만약 $t + n \ge T$라면 $n$-step이 끝나기 전에 에피소드가 끝난다는 이야기이므로 $T$ 이후의 항은 모두 0으로 처리하면 됩니다.&lt;/p&gt;
+
+&lt;p&gt;1-step 방법에서 시간 단계 $t+1$에 도달해야 $t$에서의 가치 함수를 업데이트 할 수 있던 것처럼, $n$-step 방법 또한 시간 단계 $t+n$에 도달해야만 $t$에서의 가치 함수를 업데이트 할 수 있습니다. 그렇기 때문에 $n$-step 방법에서 가장 처음 학습을 하는 시간 단계는 $t+n$이 됩니다. 이 점을 반영하여 $V$의 업데이트 규칙을 정의하면 다음과 같습니다.&lt;/p&gt;
+
+\[V_{t+n} (S_t) \doteq V_{t+n-1} (S_t) + \alpha \left[ G_{t:t+n} - V_{t+n-1} (S_t) \right], \quad 0 \le t &amp;lt; T \tag{7.2}\]
+
+&lt;p&gt;이 때, $S_t$ 이외의 상태에서는 가치 함수가 변하지 않습니다. 즉, 모든 $s \ne S_t$에 대해서 $V_{t+n} (s) = V_{t+n-1} (s)$입니다. 이것을 $n$-step TD라고 부릅니다. $n$-step TD의 모든 에피소드에서는 처음 $n-1$ 시간 단계까지는 아무것도 변하지 않는데, 이를 보완하기 위해 각 에피소드가 끝난 후 다음 에피소드가 시작되기 전에 동일한 수의 추가적인 업데이트가 이루어집니다. 완전한 의사 코드를 보시면 이것이 어떤 의미인지 이해가 되실 겁니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/Reinforcement Learning/7. n-step bootstrapping/RL 07-02.png&quot; alt=&quot;&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;$n$-step Return은 가치 함수 $V_{t+n-1}$를 사용하여 $R_{t+n}$ 이후에 누락된 보상을 보완합니다. $n$-step Return의 장점은 최악의 상황에서 $V_{t+n-1}$보다 $v_{\pi}$ 추정값이 더 낫다는 것입니다. 다시말해, $n$-step Return에서 가장 큰 오차는 $V_{t+n-1}$의 가장 큰 오차보다 $\gamma^n$ 배 만큼 작거나 같습니다. 이것을 수식으로 표현하면 다음과 같습니다.&lt;/p&gt;
+
+\[\max_s \left| \mathbb{E}_{\pi} \left[ G_{t:t+n} | S_t = s \right] - v_{\pi} (s) \right| \le \gamma^n \max_s \left| V_{t+n-1} (s) - v_{\pi} (s) \right| \tag{7.3}\]
+
+&lt;p&gt;식 (7.3)은 모든 $n \ge 1$에 대해 성립합니다. 이것을 Error Reduction Property of n-step Returns라고 합니다. 이 수식 덕분에 모든 $n$-step TD 방법이 적절한 조건 하에 올바른 추정값으로 수렴한다는 것이 보장됩니다.&lt;/p&gt;
+
+&lt;h2 id=&quot;n-step-sarsa&quot;&gt;$n$-step Sarsa&lt;/h2&gt;
+
+&lt;p&gt;이번에는 $n$-step 방법과 Sarsa 방법을 결합하여 제어하는 것을 배우도록 하겠습니다. 새로 배우는 Sarsa와 구분하기 위해, 이전 장에서 배운 Sarsa를 1-step Sarsa, 또는 Sarsa(0)으로 표기하고, 이번 장에서 배우는 새로운 방법은 $n$-step Sarsa로 부르겠습니다. $n$-step Sarsa의 기본 개념은 아래의 백업 다이어그램과 같습니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/Reinforcement Learning/7. n-step bootstrapping/RL 07-03.png&quot; alt=&quot;&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;이를 기반으로 $n$-step Return을 재정의하면 다음과 같습니다.&lt;/p&gt;
+
+\[G_{t:t+n} \doteq R_{t+1} + \gamma R_{t+2} + \cdots + \gamma^{n-1} R_{t+n} \gamma^n Q_{t+n-1} (S_{t+n}, S_{t+n}), \quad n \ge 1, 0 \le t &amp;lt; T-n \tag{7.4}\]
+
+&lt;p&gt;물론 이전 섹션에서 배운 대로 $t + n \ge T$라면 $G_{t:t+n} \doteq G_t$입니다. 식 (7.4)를 알고리즘에 맞게 수정하면 다음과 같습니다.&lt;/p&gt;
+
+\[Q_{t+n} (S_t, A_t) \doteq Q_{t+n-1} (S_t, A_t) + \alpha \left[ G_{t:t+n} - Q_{t+n-1} (S_t, A_t) \right] \quad 0 \le t &amp;lt; T \tag{7.5}\]
+
+&lt;p&gt;$n$-step Return처럼 식 (7.5)도 모든 $s \ne S_t$, $a \ne A_t$에 대해 $Q_{t+n} (s, a) = Q_{t+n-1}$입니다. 즉, 학습하고 있는 상태와 행동 쌍을 제외하고는 $Q$ 값이 변하지 않습니다. 그렇기 때문에 $n$-step Sarsa라고 부르는 것입니다. 완전한 알고리즘은 다음과 같습니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/Reinforcement Learning/7. n-step bootstrapping/RL 07-04.png&quot; alt=&quot;&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;$n$-step Sarsa의 장점은 1-step Sarsa보다 학습 속도가 빠르다는 점입니다. 아래 그림은 Grid World에서의 예시를 보여주고 있습니다. 첫 번째 그림과 같은 에피소드에 대해, 1-step Sarsa는 가운데 그림처럼 마지막 상태-행동 쌍에 대해서만 $Q$ 값의 업데이트가 일어납니다. 하지만 세 번째 그림을 보시면 10-step Sarsa는 에피소드 뒤 10개의 상태-행동 쌍이 모두 업데이트가 되는 장점이 있습니다. 즉, 하나의 에피소드에서 더 많은 것을 학습할 수 있다는 장점이 있습니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/Reinforcement Learning/7. n-step bootstrapping/RL 07-05.png&quot; alt=&quot;&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Expected Sarsa를 $n$-step 버전으로 만드는 방법도 동일합니다. 이에 대한 백업 다이어그램은 $n$-step Sarsa의 백업 다이어그램 맨 오른쪽에 나타나 있습니다. 주의할 점은 시간 단계 $t$부터 $t+n$까지 모두 평균값을 사용하는 것이 아니라, 마지막 단계에서만 평균값을 사용합니다. $n$-step Expected Sarsa의 Return 식은 다음과 같습니다.&lt;/p&gt;
+
+\[G_{t:t+n} \doteq R_{t+1} + \cdots + \gamma^{n-1} R_{t+n} + \gamma^n \bar{V}_{t+n-1} (S_{t+n}) \quad t+n &amp;lt; T \tag{7.7}\]
+
+&lt;p&gt;마찬가지로 $t + n \ge T$인 경우에는 $G_{t:t+n} \doteq G_t$입니다. 또한 $\bar{V}_t (s)$는 상태 $s$의 Expected Approximate Value이고, 다음과 같이 정의됩니다.&lt;/p&gt;
+
+\[\bar{V}_t (s) \doteq \sum_a \pi (a|s) Q_t (s, a) \quad \text{for all } s \in \mathcal{S} \tag{7.8}\]
+
+&lt;p&gt;식 (7.8)은 지금 뿐만이 아니라 다른 장에서도 사용되기 때문에 기억해두시는 것이 좋습니다. 또한 식 (7.8)에서 만약 상태 $s$가 마지막 상태라면 $\bar{V}_t (s) $는 0으로 정의됩니다.&lt;/p&gt;
+
+&lt;h2 id=&quot;n-step-off-policy-learning&quot;&gt;$n$-step Off-policy Learning&lt;/h2&gt;
+
+&lt;p&gt;이번에는 Off-policy 학습의 $n$-step 버전을 배워보겠습니다. $n$-step 방법에서는 Return이 $n$ 단계에 걸쳐 생성됩니다. Off-policy에서 중요한 점은 Target Policy $\pi$와 Behavior Policy $b$가 구분되는 것인데, 이 때 두 Policy 간의 차이를 보정하기 위해 Importance Sampling을 사용하였습니다. 그렇다면 $n$-step 버전에서 두 Policy 간의 가중치를 어떻게 처리하는지 다음 식을 통해 살펴보겠습니다.&lt;/p&gt;
+
+\[V_{t+n} (S_t) \doteq V_{t+n-1} (S_t) + \alpha \rho_{t:t+n-1} \left[ G_{t:t+n} - V_{t+n-1} (S_t) \right] \quad 0 \le t &amp;lt; T \tag{7.9}\]
+
+&lt;p&gt;식 (7.9)에서 $\rho_{t:t+n-1}$가 바로 Importance Sampling Ratio입니다. 5장에서 배운대로 Importance Sampling Ratio는 다음과 같이 계산합니다.&lt;/p&gt;
+
+\[\rho_{t:h} \doteq \prod_{k=t}^{\min (h,T-1)} \frac{\pi (A_k | S_k)}{b (A_k | S_k)} \tag{7.10}\]
+
+&lt;p&gt;만약 정책 $\pi$에 의해 선택되지 않는 행동의 경우(즉, $\pi (A_k \mid S_k) = 0$)에는 $n$-step Return에 가중치를 0으로 주고 완전히 무시해야 합니다. 반대로 정책 $\pi$가 정책 $b$보다 더 높은 확률로 선택되는 행동의 경우에는 가중치가 증가합니다. 만약 두 정책 $\pi$와 $b$가 동일한 경우 Importance Sampling Ratio는 정확히 1이 됩니다. 따라서 식 (7.9)와 같은 업데이트 식이 유도된 것입니다.&lt;/p&gt;
+
+&lt;p&gt;이와 같은 방법으로, $n$-step Sarsa 또한 다음과 같이 Off-policy 방법으로 대체할 수 있습니다.&lt;/p&gt;
+
+\[Q_{t+n} (S_t, A_t) \doteq Q_{t+n-1} (S_t, A_t) + \alpha \rho_{t+1:t+n} \left[ G_{t:t+n} - Q_{t+n-1} (S_t, A_t) \right] \tag{7.11}\]
+
+&lt;p&gt;여기서 Importance Sampling Ratio는 식 (7.9)의 $n$-step TD 보다 한 단계 늦게 시작하고 끝납니다. 왜냐면 Sarsa는 Q-learning과 달리 다음 행동을 선택한 후에 학습을 하기 때문입니다. 전체 알고리즘은 다음과 같습니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/Reinforcement Learning/7. n-step bootstrapping/RL 07-06.png&quot; alt=&quot;&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;$n$-step Expected Sarsa의 Off-policy 버전은 Importance Sampling Ratio만 약간 변형시키면 됩니다. $\rho_{t+1:t+n-1}$ 대신 $\rho_{t+1:t+n}$로 바꾼 다음 나머지는 동일합니다. (물론 Return 식은 식 (7.7)을 사용합니다)&lt;/p&gt;
+
+&lt;h2 id=&quot;per-decision-methods-with-control-variates&quot;&gt;Per-decision Methods with Control Variates&lt;/h2&gt;
+
+&lt;p&gt;이전 섹션에서 제시한 $n$-step Off-policy 방법은 간단하고 개념적으로 명확하지만, 그렇게 효율적인 방법은 아닙니다. 보다 정교하게 접근하는 방법은 섹션 5.9에서 잠깐 소개한 Per-decision Importance Sampling을 사용해야 합니다. 이 접근 방식은 식 (7.1)과 같은 $n$-step Return을 다음과 같이 재귀적으로 표현함으로써 시작합니다.&lt;/p&gt;
+
+\[G_{t:h} = R_{t+1} + \gamma G_{t+1:h} \quad t&amp;lt;h&amp;lt;T \tag{7.12}\]
+
+&lt;p&gt;이 때, $G_{h:h} \doteq V_{h-1}(S_h)$입니다. Importance Sampling Ratio를 고려할 때, 만약 정책 $\pi$에서 시간 $t$에 방문하지 않는 행동에 대해서 $\rho_t$는 0입니다. 이렇게 계산하면 $n$-step Return 또한 0이되고, Target Policy에 대해 분산이 높아지는 문제가 있습니다. 그렇기 때문에 여기서는 이보다 정교한 새로운 방법을 제안하며, Off-policy의 $n$-step Return을 다음과 같이 재정의합니다.&lt;/p&gt;
+
+\[G_{t:h} \doteq \rho_t (R_{t+1} + \gamma G_{t+1:h}) + (1 - \rho_t) V_{h-1} (S_t) \quad t&amp;lt;h&amp;lt;T \tag{7.13}\]
+
+&lt;p&gt;식 (7.12)와 동일하게 $G_{h:h} \doteq V_{h-1}(S_h)$입니다. 식 (7.13)은 기존과 다르게 $\rho_t$가 0이라고 할지라도 Return이 0이 되지 않는 대신 기존 추정치인 $V_{h-1} (S_t)$와 동일해집니다. Importance Sampling Ratio가 0이라는 뜻은 샘플을 무시하라는 뜻이므로 추정치를 변경하지 않게 바꾼 것입니다. 이 때, 식 (7.13)에서 오른쪽 두 번째 항을 제어 변수(Control Variate)라고 합니다. Importance Sampling Ratio의 기대값이 1이라면 추정값과 상관이 없으므로 제어 변수의 기대값은 0이 됩니다. 또한 식 (7.13)과 같은 Off-policy의 $n$-step Return 정의는 식 (7.1)과 같은 On-policy Return 정의를 엄격하게 일반화했다고 볼 수 있습니다. 실제로 식 (7.13)에서 $\rho_t$를 항상 1이라고 가정하면 식 (7.1)과 동일합니다. 식 (7.13)의 업데이트 규칙은 식 (7.2)를 그대로 사용하면 됩니다.&lt;/p&gt;
+
+&lt;p&gt;행동-가치 버전에서는 첫 번째 행동이 Importance Sampling에서 영향을 끼치지 않기 때문에 $n$-step Return의 Off-policy 정의는 약간 다릅니다. 식 (7.7)과 같이 Expectation Form으로도, 식 (7.12)와 같은 Recursive Form으로도 표현할 수 있기 때문에 두 가지 표현 방법을 모두 보여드리도록 하겠습니다. 다음 식은 제어 변수를 포함하였습니다.&lt;/p&gt;
+
+\[\begin{align}
+G_{t:h} &amp;amp;\doteq R_{t+1} + \gamma \left( \rho_{t+1} G_{t+1:h} + \bar{V}_{h-1} (S_{t+1}) - \rho_{t+1} Q_{h-1} (S_{t+1}, A_{t+1}) \right) \\ \\
+&amp;amp;= R_{t+1} + \gamma \rho_{t+1} \left( G_{t+1:h} - Q_{h-1} (S_{t+1}, A_{t+1}) \right) + \gamma \bar{V}_{h-1} (S_{t+1}), t &amp;lt; h \le T \tag{7.14}
+\end{align}\]
+
+&lt;p&gt;재귀형 표현에서 $h &amp;lt; T$인 경우 $G_{h:h} \doteq Q_{h-1} (S_h, A_h)$로, $h \ge T$라면 $G_{T-1:h} \doteq R_T$로 끝납니다. 식 (7.5)와 결합하여 추정 알고리즘을 만들면 Expected Sarsa와 유사한 형태가 나옵니다.&lt;/p&gt;
+
+&lt;p&gt;지금까지 사용한 Importance Sampling은 Off-policy 학습을 가능하게 하지만 높은 분산을 유발하기 때문에 step-size parameter를 작게 설정해야 합니다. 다만 이로 인해 학습 속도는 느려질 수밖에 없습니다. 즉, Off-policy 방법은 On-policy 방법보다 학습 속도가 느립니다. 물론 이를 개선하기 위한 여러 연구가 진행되고 있습니다. 이번 섹션에서 다룬 제어 변수가 그 예 중 하나이며, 이 외에도 Autostep (Mahmood, Sutton, Degris and Pilarski, 2012), Tian (Karampatziakis and Langford, 2010), Mahmood(2017; Mahmood and Sutton, 2015) 등이 방법이 제안되었습니다. 다음 섹션에서는 또 다른 방법인 Importance Sampling을 사용하지 않는 Off-policy 학습 방법에 대해 다루어 보겠습니다.&lt;/p&gt;
+
+&lt;h2 id=&quot;off-policy-learning-without-importance-sampling--the-n-step-tree-backup-algorithm&quot;&gt;Off-policy Learning Without Importance Sampling : The n-step Tree Backup Algorithm&lt;/h2&gt;
+
+&lt;p&gt;6장에서 1-step  Q-learning과 Expected Sarsa를 배울 때 Importance Sampling을 사용하지 않는 방법에 대해 배웠습니다. 이를 $n$-step으로 확장한 방법으로 Tree-backup Algorithm이 있습니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/Reinforcement Learning/7. n-step bootstrapping/RL 07-07.png&quot; alt=&quot;&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Tree-backup 알고리즘의 기본 아이디어는 위의 백업 다이어그램과 같습니다. 다이어그램의 각 단계에는 3가지 샘플 상태와 보수, 그리고 2개의 샘플 행동이 있습니다. 이것은 초기 상태, 행동 쌍인 $(S_t, A_t)$이후에 발생하는 이벤트를 나타냅니다. 각 상태에서 가운데 행동을 제외한 나머지 행동은 선택되지 않은 행동입니다. 선택되지 않은 행동은 샘플 데이터가 없기 때문에 부트스트랩하고 Target Policy의 추정값을 업데이트하는데 사용합니다. 이것이 백업 다이어그램처럼 나무 모양과 비슷하기 때문에 Tree-backup이라고 불립니다.&lt;/p&gt;
+
+&lt;p&gt;Tree-backup의 업데이트는 Tree의 Leaf Node의 추정된 행동의 가치로부터 시작합니다. 각 Leaf Node는 Target Policy $\pi$로부터 선택될 확률에 비례하는 가중치를 기반으로 Target에 기여합니다. 따라서 첫 번째 Level의 행동은 $\pi (a \mid S_{t+1})$의 가중치로 기여하지만, 실제로 취한 행동 $A_{t+1}$은 전혀 기여하지 않습니다. $\pi (A_{t+1} \mid S_{t+1})$은 두 번째 Level의 행동 가치에 가중치를 부여하는데 사용됩니다. 즉, 선택되지 않은 두 번째 Level 행동의 가중치는 $\pi (A_{t+1} \mid S_{t+1}) \pi (a’ \mid S_{t+2})$가 됩니다. 마찬가지로 세 번째 Level 행동의 가중치는 $\pi (A_{t+1} \mid S_{t+1}) \pi (a’ \mid S_{t+2}) \pi (a’’ \mid S_{t+3})$이 됩니다. 쉽게 말해, 백업 다이어그램에서 각 Leaf Node가 의미하는 것은 Root 상태로부터 주어진 정책 $\pi$ 하에 해당 행동이 선택될 확률을 의미합니다.&lt;/p&gt;
+
+&lt;p&gt;3-step Tree-backup 업데이트는 각 상태별로 가능한 모든 행동을 고려하는 과정과, 주어진 정책에 따라 행동을 수행하는 과정이 포함되기 때문에 6개의 단계로 나눌 수 있습니다. 이것을 일반적인 $n$-step Tree-backup 알고리즘으로 만들어보겠습니다. 먼저, 1-step의 return은 다음과 같이 Expected Sarsa와 같은 모양으로 표현할 수 있습니다.&lt;/p&gt;
+
+\[G_{t:t+1} \doteq R_{t+1} + \gamma \sum_a \pi(a | S_{t+1}) Q_t (S_{t+1}, a), \quad t &amp;lt; T-1 \tag{7.15}\]
+
+&lt;p&gt;같은 방식으로 2-step Tree-backup의 Return은 다음과 같습니다.&lt;/p&gt;
+
+\[\begin{align}
+G_{t:t+2} &amp;amp; \doteq R_{t+1} + \gamma \sum_{a \ne A_{t+1}} \pi (a | S_{t+1}) Q_{t+1} (S_{t+1}, a) \\ \\
+&amp;amp;+ \gamma \pi (A_{t+1} | S_{t+1}) \left( R_{t+2} + \gamma \sum_a \pi (a | S_{t+2}) Q_{t+1} (S_{t+2}, a) \right) \\ \\
+&amp;amp;= R_{t+1} + \gamma \sum_{a \ne A_{t+1}} \pi (a | S_{t+1}) Q_{t+1}(S_{t+1}, a) + \gamma \pi (A_{t+1} | S_{t+1}) G_{t+1:t+2}, \quad t &amp;lt; T-2
+\end{align}\]
+
+&lt;p&gt;이를 반복하여 일반적인 $n$-step Tree-backup Return을 재귀적으로 표현하면 다음과 같습니다.&lt;/p&gt;
+
+\[G_{t:t+n} \doteq R_{t+1} + \gamma \sum_{a \ne A_{t+1}} \pi (a | S_{t+1}) Q_{t+n-1} (S_{t+1}, a) + \gamma \pi (A_{t+1} | S_{t+1}) G_{t+1:t+n}   \tag{7.16}\]
+
+&lt;p&gt;단, $t &amp;lt; T - 1, n \ge 2$ 입니다. 만약 $n = 1$인 경우 식 (7.15)와 같으며, 예외적으로 $G_{T-1:t+n} \doteq R_T$입니다. 이것은 $n$-step Sarsa에서 다음과 같이 업데이트됩니다.&lt;/p&gt;
+
+\[Q_{t+n} (S_t, A_t) \doteq Q_{t+n-1} (S_t, A_t) + \alpha \left[ G_{t:t+n} - Q_{t+n-1} (S_t, A_t) \right], \quad - \ge t &amp;lt; T\]
+
+&lt;p&gt;물론 학습에 사용되지 않는 모든 상태 $s \ne S_t$, 모든 행동 $a \ne A_t$에 대해서는 Q 값이 변하지 않습니다. (즉, $Q_{t+n} (s, a) = Q_{t+n-1} (s, a)$) 전체 알고리즘은 다음과 같습니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/Reinforcement Learning/7. n-step bootstrapping/RL 07-08.png&quot; alt=&quot;&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;a-unifying-algorithm-n-step-qsigma&quot;&gt;A Unifying Algorithm: $n$-step $Q(\sigma)$&lt;/h2&gt;
+
+&lt;p&gt;지금까지 우리는 $n$-step Sarsa, $n$-step Tree-backup, 그리고 $n$-step Expected Sarsa에 대해 공부했습니다. 이 셋의 가장 큰 차이는 샘플로 인한 Importance Sampling의 여부입니다. $n$-step Sarsa는 매 단계마다 Importance Sampling Ratio를 보정해주어야 하고, $n$-step Expected Sarsa 또한 마지막을 제외한 모든 단계에서 Importance Sampling Ratio 보정이 필요합니다. $n$-step Tree-backup 알고리즘은 Importance Sampling이 필요없는 것이 특징입니다. 이번 섹션에서는 이 3개의 알고리즘을 통합하는 방법을 알아보겠습니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/Reinforcement Learning/7. n-step bootstrapping/RL 07-09.png&quot; alt=&quot;&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;기본적인 아이디어는 위의 그림에서 네 번째 백업 다이어그램과 같습니다. 매 단계 Sarsa 처럼 처리할 것인지, 아니면 Tree-backup 처럼 처리할 것인지의 여부를 따로 정하는 것입니다. Expected Sarsa 처럼 처리하기 위해서는 마지막 단계를 Tree-backup 처럼 처리하면 됩니다.&lt;/p&gt;
+
+&lt;p&gt;단계 별로 어떻게 처리할 것인지는 $\sigma$의 값에 따라 달라집니다. $t$ 단계에서의 $\sigma$ 값을 $\sigma_t \in [0, 1]$라고 표기합니다. 만약  $\sigma = 1$인 경우 Sarsa와 동일해지고(=Full Sampling), $\sigma = 0$인 경우 Tree-backup과 동일해집니다(=Pure Expectation). 이 새로운 알고리즘을 $n$-step $Q(\sigma)$라고 합니다.&lt;/p&gt;
+
+&lt;p&gt;이제 $n$-step $Q(\sigma)$를 수식으로 표현해보겠습니다. 식 (7.16)의 Tree-backup $n$-step Return을 horizon $h = t + n$과 식 (7.8)의 $\bar{V}$로 표현합니다.&lt;/p&gt;
+
+\[\begin{align}
+G_{t:h} &amp;amp;= R_{t+1} + \gamma \sum_{a \ne A_{t+1}} \pi (a | S_{t+1}) Q_{h-1} (S_{t+1}, a) + \gamma \pi (A_{t+1} | S_{t+1}) G_{t+1:h} \\ \\
+&amp;amp;= R_{t+1} + \gamma \bar{V}_{h-1} (S_{t+1}) - \gamma \pi (A_{t+1} | S_{t+1}) Q_{h-1}(S_{t+1}, A_{t+1}) + \gamma \pi (A_{t+1} | S_{t+1}) G_{t+1:h} \\ \\
+&amp;amp;= R_{t+1} + \gamma \pi (A_{t+1} | S_{t+1}) \left( G_{t+1:h} - Q_{h-1} (S_{t+1}, A_{t+1}) \right) + \gamma \bar{V}_{h-1} (S_{t+1})
+\end{align}\]
+
+&lt;p&gt;그 이후로는 Importance Sampling Ratio $\rho_{t+1}$을 $\pi (A_{t+1} \mid S_{t+1})$로 대체한 것을 제외하고는 식 (7.14)와 같이 제어 변수가 있는 $n$-step Sarsa와 동일합니다. $Q(\sigma)$는 다음과 같이 표현할 수도 있습니다.&lt;/p&gt;
+
+\[\begin{align}
+G_{t:h} &amp;amp; \doteq R_{t+1} + \gamma \left( \sigma_{t+1} \rho_{t+1} + (1 - \sigma_{t+1}) \pi (A_{t+1} | S_{t+1}) \right) \\ \\
+&amp;amp;\times \left( G_{t+1:h} - Q_{h-1} (S_{t+1}, A_{t+1}) \right) + \gamma \bar{V}_{h-1} (S_{t+1}) \tag{7.17}
+\end{align}\]
+
+&lt;p&gt;이 때 $t &amp;lt; h \le T$ 입니다. 재귀형 표현에서 $h &amp;lt; T$인 경우 $G_{h:h} \doteq Q_{h-1} (S_h, A_h)$가 되고, $h = T$인 경우 $G_{T-1:T} \doteq R_T$가 됩니다. 그 후 식 (7.11) 대신 Importance Sampling Ratio가 없는 식 (7.5)를 사용하여 $n$-step Sarsa 업데이트를 사용합니다. Importance Sampling Ratio 자체가 $n$-step Return에 포함되기 때문입니다. $Q(\sigma)$의 완전한 알고리즘은 다음과 같습니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/Reinforcement Learning/7. n-step bootstrapping/RL 07-10.png&quot; alt=&quot;&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;summary&quot;&gt;Summary&lt;/h2&gt;
+
+&lt;p&gt;이번 장에서는 1-step TD 방법과 몬테 카를로 방법의 중간으로 볼 수 있는 $n$-step TD 방법에 대해 배웠습니다. 이렇게 극단적인 두 방법을 적절히 조절하여 중간 정도의 방법을 사용하는 것은 때때로 좋은 성능을 보입니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/Reinforcement Learning/7. n-step bootstrapping/RL 07-09.png&quot; alt=&quot;&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;섹션 7.6에서 사용했던 그림을 다시 가져와보면 이번 장에서 배운 내용이 요약되어 있습니다. $n$-step Sarsa나 Expected Sarsa는 기본적으로 Return을 계산할 때 Importance Sampling Ratio를 반드시 고려해야하며, 그 방법을 회피하기 위해 $n$-step Tree-backup 방법을 고안하였습니다. 마지막으로는 이것들을 일반화할 수 있는 $n$-step $Q(\sigma)$ 방법을 제안하였습니다.&lt;/p&gt;
+
+&lt;p&gt;이러한 $n$-step 방법의 단점은 지난 장에서 배운 1-step 방법보다 각 시간 단계당 더 많은 계산이 필요할 뿐만 아니라 더 많은 메모리가 필요하다는 것입니다. 추후 12장에서 이 단점을 최소한으로 줄여 $n$-step TD를 구현하지만, 아무리 줄여도 항상 1-step 방법보다는 계산량과 필요 메모리량이 많다는 한계가 있습니다. 다만 이러한 단점을 감안하더라도 $n$-step 방법이 가지는 장점이(대표적으로 빠른 학습) 있기 때문에 고려할 가치는 있습니다.&lt;/p&gt;
+
+&lt;p&gt;$n$-step 방법은 추후 배울 Eligibility Traces 방법보다 복잡하지만 개념적으로 명확하다는 장점이 있습니다. 이 장에서는 $n$-step TD에서 Off-policy 학습에 대해 2가지 방법으로 접근하였습니다. 첫 번째 방법은 기존에 배운 Importance Sampling을 이용하는 방법이었습니다. 이것은 개념적으로 간단하지만 분산이 크다는 단점이 있습니다. 따라서 만약 Target Policy와 Behavior Policy가 매우 큰 차이가 나는 경우라면 이 방법은 적합하지 않습니다. 두 번째 방법으로 Tree-backup 방법을 제안하였습니다. 이것은 Stochastic Target Policy를 갖는 Q-learning을 $n$-step으로 확장한 개념입니다. Importance Sampling을 포함하지 않지만, Target Policy와 Behavior Policy의 차이가 클 경우 $n$이 크더라도 Bootstrapping이 간단하다는 장점이 있습니다.&lt;/p&gt;
+
+&lt;p&gt;7장에 대한 내용은 여기서 마치겠습니다. 읽어주셔서 감사합니다!&lt;/p&gt;</content><author><name>Joonsu Ryu</name></author><category term="studies" /><category term="reinforcement learning" /><summary type="html">이번 장에서는 5장에서 배운 몬테 카를로 방법과 6장에서 배운 시간차 방법을 융합하여 만든 새로운 방법을 소개합니다. 몬테 카를로 방법은 항상 에피소드가 끝난 후에야 학습이 가능했고, 시간차 방법은 1단계만 행동하면 학습이 가능했습니다. 그렇다면 그 사이의 단계인 $n$번째 단계까지 행동한 다음 학습을 하게 되면 조금 더 일반화된 학습이 가능하지 않을까라는 아이디어가 떠오르게 됩니다.</summary></entry><entry><title type="html">Temporal-Difference Learning</title><link href="http://localhost:4000/studies/temporal-difference-learning/" rel="alternate" type="text/html" title="Temporal-Difference Learning" /><published>2022-03-30T00:00:00+09:00</published><updated>2022-03-30T00:00:00+09:00</updated><id>http://localhost:4000/studies/temporal-difference-learning</id><content type="html" xml:base="http://localhost:4000/studies/temporal-difference-learning/">&lt;p&gt;이번 장은 강화학습의 핵심 아이디어인 시간차 학습(Temporal-Difference Learning ; TD Learning)을 다루게 됩니다. 시간차 학습은 환경에 대한 정확한 모델 없이 경험을 통해 학습한다는 몬테 카를로 아이디어와 최종 결과를 기다리지 않고(Bootstrapping) 학습된 다른 추정치를 기반으로 추정치를 업데이트한다는 동적 프로그래밍 아이디어를 결합하여 만들어졌습니다. 이번 장의 시작은 이전 장들과 같이 주어진 정책 $\pi$에 대한 가치 함수 $v_{\pi}$를 추정하는 문제로부터 시작하며, 최적의 정책을 찾는 제어 문제에서도 이전과 같이 GPI를 변형하여 접근합니다. 이전 장들과의 주요 차이점은 예측 문제에 대한 접근 방식입니다.&lt;/p&gt;
+
+&lt;p&gt;이번 장 이후로 나오는 대부분의 주제는 동적 프로그래밍, 몬테 카를로, 시간차 학습과 관련이 있으며, 특히 7장에서는 시간차 학습과 몬테 카를로 방법의 중간 개념임 n-step 알고리즘을 소개하고, 12장에서는 이 들을 매끄럽게 통합할 수 있는 TD($\lambda$) 알고리즘을 소개합니다.&lt;/p&gt;
+
+&lt;h2 id=&quot;td-prediction&quot;&gt;TD Prediction&lt;/h2&gt;
+
+&lt;p&gt;시간차 학습과 몬테 카를로 방법은 모두 경험을 사용하여 가치 함수를 추정합니다. 몬테 카를로 방법은 상태를 방문 후, Return의 값을 알 수 있을 때까지 기다린 다음 그 값을 토대로 $V(S_t)$를 추정합니다. 간단한 Every-visit 몬테 카를로 방법의 $V(S_t)$ 갱신 식은 이전 장에서 배운 대로 다음과 같습니다.&lt;/p&gt;
+
+\[V(S_t) \gets V(S_t) + \alpha \left[ G_t - V(S_t) \right] \tag{6.1}\]
+
+&lt;p&gt;이전에 배운 대로 Return $G_t$는 시간 $t$ 이후에 얻는 실제 보수이고, $\alpha$는 step-size parameter 입니다. 만약 $\alpha$가 상수라면 식 (6.1)을 constant-$\alpha$ 몬테 카를로라고 부릅니다.&lt;/p&gt;
+
+&lt;p&gt;몬테 카를로 방법에서는 $G_t$를 얻기 위해 에피소드가 끝날 때까지 기다려야 하지만, 시간차 방법에서는 다음 시간 단계까지만 기다리면 된다는 차이가 있습니다. 시간 $t+1$에서 얻은 즉각적인 보상 $R_{t+1}$과 추정된 가치 함수 $V(S_{t+1})$을 사용하여 $V(S_t)$를 업데이트 할 수 있습니다. 가장 간단한 시간차 방법의 업데이트 방법은 다음과 같습니다.&lt;/p&gt;
+
+\[V(S_t) \gets V(S_t) + \alpha \left[ R_{t+1} + \gamma V(S_{t+1}) - V(S_t) \right] \tag{6.2}\]
+
+&lt;p&gt;식 (6.2)와 같은 업데이트 방법을 $TD(0)$, 또는 1-step TD 라고 부릅니다. 이렇게 부르는 이유는 추후 12장에서 다룰 $TD(\lambda)$와 7장에서 다룰 n-step TD의 특수한 형태이기 때문입니다. 아래는 $TD(0)$ 업데이트를 사용한 가치 함수 추정 방법의 완전한 알고리즘입니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/Reinforcement Learning/6. Temporal-Difference Learning/RL 06-01.png&quot; alt=&quot;&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;TD(0) 알고리즘은 부분적으로 기존 추정값을 기반으로 업데이트 하기 때문에 DP와 같은 Bootstrapping 방법이라고 부를 수 있습니다. 또한 3장에서 다루었던 가치 함수의 추정 식을 다시 가져와보면,&lt;/p&gt;
+
+\[\begin{align}
+v_{\pi} &amp;amp; \doteq \mathbb{E}_{pi} \left[ G_t | S_t = s \right] \tag{6.3} \\ \\
+&amp;amp;= \mathbb{E}_{pi} \left[ R_{t+1} + \gamma G_{t+1} | S_t = s \right] \tag{from (3.9)} \\ \\
+&amp;amp;= \mathbb{E}_{pi} \left[ R_{t+1} + \gamma v_{\pi} (S_{t+1}) | S_t = s \right] \tag{6.4}
+\end{align}\]
+
+&lt;p&gt;식 (6.3)은 몬테 카를로 방법이 목표로 하는 추정값이고, 식 (6.4)는 DP 방법이 목표로 하는 추정값입니다. 두 식이 추정값인 이유는 몬테 카를로 방법에서는 실제 기대 보수가 아닌 샘플링된 보수가 사용되기 때문이고, DP 방법에서는 $v_{\pi}(S_{t+1})$가 알려져 있지 않아 $V(S_{t+1})$를 대신 사용하기 때문입니다. TD 방법의 목표는 샘플링된 보수를 사용하며 역시 $V(S_{t+1})$를 사용하기 때문에 추정값이 됩니다. 즉, TD 방법은 몬테 카를로 방법과 DP 방법을 결합한 것으로 볼 수 있습니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/Reinforcement Learning/6. Temporal-Difference Learning/RL 06-02.png&quot; alt=&quot;&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;위의 그림은 TD(0)에 대한 백업 다이어그램입니다. 맨 위의 흰 점은 상태 노드를 의미하며, 이에 대한 추정값은 바로 다음 상태만 사용하기 때문에 백업 다이어그램이 간단하게 표현됩니다. 시간차 학습과 몬테 카를로 방법은 Sample Update라고 부르는데, 그 이유는 현재 상태에서 이어지는 행동과 보수를 사용하여(=후속 샘플) 원래의 상태(또는 상태-행동 쌍)을 업데이트하기 때문입니다.&lt;/p&gt;
+
+&lt;p&gt;마지막으로 TD(0)에서 0이 의미하는 것은 $S_t$의 추정값과 $R_{t+1} + \gamma V(S_{t+1})$의 추정값 사이의 차이입니다. 이것을 TD-error라고 하는데, 추후 배울 강화학습에서 다양한 형태로 만나보실 수 있습니다.&lt;/p&gt;
+
+\[\delta_t \doteq R_{t+1} + \gamma V(S_{t+1}) - V(S_t) \tag{6.5}\]
+
+&lt;p&gt;각 시간 단계의 TD-error는 그 당시에 추정했던 값의 오차입니다. TD-error는 다음 상태와 다음 보수에 따라 달라지기 때문에 실제로는 다음 단계 전까지 사용할 수 없습니다. 즉, $\delta_t$는 $V(S_t)$에서 발생하는 오차이지만, $t+1$ 시간이 되어야 알 수 있습니다. 만약 $V$가 에피소드가 끝나기 전까지 변경되지 않는다면 몬테 카를로의 오차 또한 TD-error의 합으로 표현할 수 있습니다. (다행히 몬테 카를로 방법에서는 에피소드가 끝나기 전까지 $V$가 변하지 않습니다)&lt;/p&gt;
+
+\[\begin{align}
+G_t - V(S_t) &amp;amp;= R_{t+1} + \gamma G_{t+1} - V(S_t) + \gamma V(S_{t+1}) - \gamma V(S_{t+1}) \tag{from (3.9)} \\ \\
+&amp;amp;= \delta_t + \gamma (G_{t+1} - V(S_{t+1})) \\ \\
+&amp;amp;= \delta_t + \gamma \delta_{t+1} + \gamma^2 (G_{t+2} - V(S_{t+2})) \\ \\
+&amp;amp;= \delta_t + \gamma \delta_{t+1} + \gamma^2 \delta_{t+2} + \cdots + \gamma^{T-t-1} \delta_{T-1} + \gamma^{T-t} (G_T - V(S_T)) \\ \\
+&amp;amp;= \delta_t + \gamma \delta_{t+1} + \gamma^2 \delta_{t+2} + \cdots + \gamma^{T-t-1} \delta_{T-1} + \gamma^{T-t} (0 - 0) \\ \\
+&amp;amp;= \sum_{k=t}^{T-1} \gamma^{k-t} \delta_k \tag{6.6}
+\end{align}\]
+
+&lt;p&gt;만약 $V$가 에피소드 도중에 업데이트 되는 경우 위의 과정은 정확하지 않지만, Step-size가 작으면 대략적으로 근접할 수는 있습니다. 이 과정은 시간차 학습에서의 이론과 알고리즘에서 중요한 역할을 합니다.&lt;/p&gt;
+
+&lt;h2 id=&quot;advantage-of-td-prediction-methods&quot;&gt;Advantage of TD Prediction Methods&lt;/h2&gt;
+
+&lt;p&gt;이번 섹션에서는 시간차 방법이 몬테 카를로 방법이나 DP 방법에 비해 어떤 이점이 있는지 알아보도록 하겠습니다. 가장 먼저 생각할 수 있는 시간차 방법의 장점은 DP 방법과 달리 환경 모델이 필요하지 않다는 점입니다. 물론 이것은 몬테 카를로 방법도 가지고 있는 장점이긴 합니다.&lt;/p&gt;
+
+&lt;p&gt;그렇다면 몬테 카를로 방법에 비해 시간차 방법이 가지는 장점은 점진적인 방식으로 구현이 가능하다는 것입니다. 몬테 카를로 방법의 가장 치명적인 단점은 에피소드가 끝날 때까지 기다려야 한다는 것입니다. 에피소드의 길이가 길다면 그만큼 학습하기 위해 대기해야하는 시간 또한 길어지게 됩니다. 지난 장에서 에피소드를 일부 무시하거나 줄이는 방법을 잠깐 소개하였으나, 이는 실험적인 방법이기 때문에 문제가 해결된다고 볼 수는 없습니다.&lt;/p&gt;
+
+&lt;p&gt;다만 시간차 방법에서 하나의 샘플만을 가지고 학습하는 것이 과연 올바른 값으로 수렴함을 보장하는지를 따져봐야 합니다. 다행히도 고정된 정책 $\pi$에 대해  step-size parameter $\alpha$가 충분히 작고, 조건 (2.7)을 만족한다면 TD(0)은 확률 1로 $v_{\pi}$에 수렴합니다. 일반적인 상황에 대해서는 9.4에서 다룰 예정입니다.&lt;/p&gt;
+
+&lt;p&gt;시간차 방법과 몬테 카를로 방법이 모두 수렴하는 것이 보장된다면, 다음으로 논의할 것은 어떤 것이 더 빨리 수렴하는가입니다. 안타깝게도 어떤 방법이 더 빠르게 수렴하는지는 수학적으로 증명되지 않았지만, 일반적으로는 시간차 방법이 몬테 카를로 방법보다 빠르게 수렴한다고 합니다.&lt;/p&gt;
+
+&lt;p&gt;몬테 카를로 방법과 시간차 방법의 장단점을 요약하면 다음과 같습니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Monte Carlo has &lt;span style=&quot;color:red&quot;&gt;high variance&lt;/span&gt;, &lt;span style=&quot;color:red&quot;&gt;zero bias&lt;/span&gt;&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Good convergence properties (even with function approximation)&lt;/li&gt;
+  &lt;li&gt;Not very sensitive to initial value&lt;/li&gt;
+  &lt;li&gt;Very simple to understand and use&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;Temporal-Difference has &lt;span style=&quot;color:red&quot;&gt;low variance&lt;/span&gt;, &lt;span style=&quot;color:red&quot;&gt;some bias&lt;/span&gt;&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Usually more efficient than Monte Carlo&lt;/li&gt;
+  &lt;li&gt;TD(0) converges to $v_{\pi}(s)$ (but not always with function approximation)&lt;/li&gt;
+  &lt;li&gt;More sensitive to initial value&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;optimality-of-td0&quot;&gt;Optimality of TD(0)&lt;/h2&gt;
+
+&lt;p&gt;만약 10개의 에피소드, 또는 100개의 시간 단계와 같이 제한된 숫자의 경험만 사용할 수 있다고 가정해봅시다. 이 경우 점진적인 학습 방법의 접근 방식은 수렴될 때까지 경험을 반복적으로 학습하는 것입니다. 문제는 가치 함수 $V$가 에피소드 당 단 한번만 변경된다는 것입니다. (TD(0) 알고리즘 참고) 이렇게 전체 데이터를 사용하여 학습하고 수렴하도록 만드는 방법을 배치 업데이트(Batch Updating)라고 합니다.&lt;/p&gt;
+
+&lt;p&gt;배치 업데이트에서 TD(0)는 step-size parameter $\alpha$가 충분히 작다는 조건 하에 답에 수렴합니다. constant-$\alpha$ 몬테 카를로 방법도 동일한 조건에서는 수렴하지만, 다른 답으로 수렴합니다. 이것은 설명으로만 이해하기 어렵기 때문에, 교재에 나와있는 예제를 통해 보충하도록 하겠습니다.&lt;/p&gt;
+
+&lt;p&gt;Example 6.4 You are the Predictor&lt;/p&gt;
+
+&lt;p&gt;알 수 없는 MDP 문제에 대해 다음 8개의 에피소드가 관찰되었다고 가정해보겠습니다.&lt;/p&gt;
+
+&lt;p&gt;A, 0, B, 0
+B, 1
+B, 1
+B, 1
+B, 1
+B, 1
+B, 1
+B, 0&lt;/p&gt;
+
+&lt;p&gt;첫 번째 에피소드는 상태 A에서 시작하여 0의 보수를 받고 상태 B로 이동한 다음, 0의 보수를 받고 종료된 것을 의미합니다. 나머지 에피소드 중 6개는 상태 B에서 시작하여 1의 보수를 받고 종료되고, 마지막 에피소드는 상태 B에서 시작하여 0의 보수를 받고 종료됩니다.&lt;/p&gt;
+
+&lt;p&gt;위의 8개의 에피소드를 기반으로 가치 함수 $V(A)$, $V(B)$를 추정해봅시다. 먼저 상태 B를 보면 8개의 에피소드 중 2개의 에피소드가 0의 보수를 받고, 6개의 에피소드가 1의 보수를 받으므로 $V(B) = 3/4$라고 쉽게 추정할 수 있습니다.&lt;/p&gt;
+
+&lt;p&gt;문제는 $V(A)$입니다. 주어진 에피소드에서 상태 A가 언급된 것은 첫 번째 에피소드 하나인데, 이것만으로 유추하자면 상태 A는 100% 확률로 0의 보수를 받고 상태 B로 이동하는 것처럼 보입니다. 이것을 그림으로 표현하면 다음과 같습니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/Reinforcement Learning/6. Temporal-Difference Learning/RL 06-03.png&quot; alt=&quot;&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;즉, 상태 A의 가치는 $V(B)$와 동일하게 $V(A) = 3/4$라고 말할 수 있습니다. 이 결과는 Batch TD(0)로 계산해도 동일한 결과가 나옵니다.&lt;/p&gt;
+
+&lt;p&gt;또 다른 추정 방법은 8개의 에피소드 중 상태 A는 단 한번 등장했고, 그 때의 보수는 0이었으므로 $V(A) = 0$으로 추정하는 것입니다. 이 결과는 Batch MC와 동일한 결과입니다. 이렇게 추정하면 실제로 데이터에 대해서는 RMS Error가 0이 됩니다. (0으로 추정했는데 표본이 0이므로) 하지만 생각해봤을 때, $V(A) = 0$으로 추정하는 것 보다 $V(A) = 3/4$로 추정하는 것이 더 합리적으로 보입니다. 이를 토대로 결론을 내려보면, 몬테 카를로 방법은 현재 주어진 데이터에서 더 우수한 성능을 보일 수 있지만, 미래에 얻게 될 데이터까지 고려한다면 TD(0)가 더 우수한 성능을 보일 것이라고 기대할 수 있습니다. ■&lt;/p&gt;
+
+&lt;p&gt;Example 6.4를 보시면 Batch TD(0)와 Batch MC 방법으로 찾은 추정치가 어떻게 다른지 알 수 있습니다. Batch MC 방법은 항상 Training Data에서 Root Mean Square (RMS) Error를 최소화하는 추정치를 찾지만, Batch TD(0)는 항상 Maximum-likelihood 모델에 맞는 추정치를 찾습니다. Batch TD(0)와 같이 추정하는 것을 Certainty-equivalence estimate 라고 합니다.&lt;/p&gt;
+
+&lt;p&gt;Certainty-equivalence estimate은 확실히 최적의 솔루션처럼 보이지만, 일반적인 상황에서는 위의 Example 6.4와 같이 직접 가치 함수를 계산하는 것이 현실적으로 어렵다는 문제점이 있습니다. $n$을 상태의 수라고 하면(즉, $n = \lvert \mathcal{S} \rvert$), Maximum-likelihood 모델을 추정하는데 $n^2$의 메모리가 필요하고, 가치 함수를 계산하는 데 $n^3$ 만큼의 시간 단계가 필요합니다. 이러한 측면에서 보면 TD(0)는 Example 6.4와 같이 직접 계산하지 않고도 훨씬 적은 메모리와 시간을 소모하여 이와 동일한 답으로 수렴하기 때문에 우수한 방법임을 알 수 있습니다.&lt;/p&gt;
+
+&lt;h2 id=&quot;sarsa--on-policy-td-control&quot;&gt;Sarsa : On-policy TD Control&lt;/h2&gt;
+
+&lt;p&gt;이제는 제어 문제에 대해 TD를 사용해 보겠습니다. 이전 장들과 마찬가지로 제어는 Generalized Policy Iteration (GPI)를 기반으로 하며, Evaluation과 Improvement에 TD를 사용합니다. 몬테 카를로 방법과 마찬가지로 Exploration과 Exploitation 사이의 Trade-off가 있으며 그 때와 동일하게 On-policy와 Off-policy라는 두 가지 방법으로 나누어 접근합니다. 이번 섹션에서는 먼저 On-policy를 사용한 TD 제어 방법을 다룹니다.&lt;/p&gt;
+
+&lt;p&gt;첫 번째 단계로는 상태-가치 함수가 아닌 행동-가치 함수를 배우는 것입니다. 즉, 모든 상태 $s$와 행동 $a$에 대하여, 정책 $\pi$를 기반으로 $q_{\pi} (s, a)$를 추정합니다. 각각의 에피소드는 다음과 같이 상태와 상태-행동이 반복적으로 이어져 있습니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/Reinforcement Learning/6. Temporal-Difference Learning/RL 06-04.png&quot; alt=&quot;&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;지금까지는 계속 상태에 대한 가치 함수만을 고려했으나, 이번 섹션부터는 상태-동작 쌍에 대한 가치를 측정하기 때문에 $V(S)$가 아니라 $Q(S, A)$를 사용합니다. 이 부분을 제외하고는 식 자체가 크게 다르지 않고, 수렴 역시 동일하게 보장됩니다. TD(0)에서의 Q 값을 업데이트 하는 규칙은 다음과 같습니다.&lt;/p&gt;
+
+\[Q(S_t, A_t) \gets Q(S_t, A_t) + \alpha \left[ R_{t+1} + \gamma Q(S_{t+1}, A_{t+1}) - Q(S_t, A_t) \right] \tag{6.7}\]
+
+&lt;p&gt;이 업데이트는 마지막 상태 아닌 모든 상태 $S_t$마다 수행됩니다. 만약 $S_{t+1}$이 마지막 상태라면 $Q(S_{t+1}, A_{t+1})$는 0으로 정의됩니다. 이 업데이트를 사용하기 위해서 필요한 요소는 $S_t, A_t, R_{t+1}, S_{t+1}, A_{t+1}$ 5가지입니다. 그렇기 때문에 이 업데이트를 사용한 TD 제어를 Sarsa라고 부릅니다. Sarsa의 백업 다이어그램은 아래와 같습니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/Reinforcement Learning/6. Temporal-Difference Learning/RL 06-05.png&quot; alt=&quot;&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Sarsa 알고리즘은 이전에 배운 On-policy 방법과 마찬가지로 정책 $\pi$에 대해 $q_{\pi}$를 추정하고, $q_{\pi}$에 대해 greedy하게 $\pi$를 변경하는 과정을 반복합니다. 전체 Sarsa 알고리즘의 형태는 다음과 같습니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/Reinforcement Learning/6. Temporal-Difference Learning/RL 06-06.png&quot; alt=&quot;&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Sarsa 알고리즘의 수렴성은 Q에 대한 정책에 대한 조건이 어떤 지에 따라 다릅니다. $\epsilon$-greedy을 사용하나 $\epsilon$-soft 정책을 사용하는지에 상관 없이, step-size에 대한 조건인 식 (2.7)을 만족하고, 모든 상태-행동 쌍이 무한한 횟수로 방문되는 하에 확률 1로 최적의 정책 및 행동-가치 함수로 수렴합니다.&lt;/p&gt;
+
+&lt;h2 id=&quot;q-learning--off-policy-td-control&quot;&gt;Q-learning : Off-policy TD Control&lt;/h2&gt;
+
+&lt;p&gt;Off-policy TD 제어 학습 알고리즘은 Q-learning이라는 이름으로 불립니다. Q-learning은 강화학습 중에서도 가장 유명한 학습 방법이며, 1989년에 Chris Watkins 교수님이 처음 제안한 방법입니다. Q-learning의 업데이트 규칙은 다음과 같습니다.&lt;/p&gt;
+
+\[Q(S_t, A_t) \gets Q(S_t, A_t) + \alpha \left[ R_{t+1} + \gamma \max_a Q(S_{t+1}, a) - Q(S_t, A_t) \right] \tag{6.8}\]
+
+&lt;p&gt;식 (6.8)은 Sarsa의 업데이트 규칙인 식 (6.7)과 대부분 유사합니다. 딱 한부분만 다른데, 다음 상태와 행동을 사용했던 Sarsa와 달리 Q-learning은 다음 상태에서 가능한 행동 중 Q값이 가장 큰 행동을 현재의 Q 값에 반영한다는 것입니다. Off-policy는 실제 행동하는 정책과 학습하는 정책이 구분되기 때문이라고 이해하시면 되겠습니다. Q-learning의 전체 알고리즘은 다음과 같습니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/Reinforcement Learning/6. Temporal-Difference Learning/RL 06-07.png&quot; alt=&quot;&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Example 6.6 Cliff Walking&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/Reinforcement Learning/6. Temporal-Difference Learning/RL 06-08.png&quot; alt=&quot;&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Sarsa와 Q-learning의 차이를 한 눈에 알 수 있는 예제로 Cliff Walking이라는 문제가 있습니다. 아래와 같은 Gridworld 환경이 있습니다. 에피소드는 S라는 위치에서 시작하고, G에 도달하는 것이 목표입니다. 모든 상태에서의 보수는 -1로, Cliff 상태들의 보수는 -100로 정의되어 있습니다. 만약 학습 행위자가 Cliff 상태나 G 상태에 도달하면 에피소드가 종료됩니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/Reinforcement Learning/6. Temporal-Difference Learning/RL 06-09.png&quot; alt=&quot;&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;위의 그래프는 $\epsilon = 0.1$으로 설정한 $\epsilon$-greedy 정책을 사용했을 때 Sarsa와 Q-learning의 성능을 비교한 그림입니다.  Q-learning은 Cliff의 가장자리를 따라 이동하는 정책으로 수렴하지만, 때때로 $\epsilon$-greedy로 인해 Cliff 상태에 진입하는 경우가 발생합니다. 반면에 Sarsa는 Cliff에 최대한 접근하지 않도록 안전한 경로로 학습하기 때문에, Cliff에 떨어지는 경우는 발생하지 않지만 최적의 경로보다 우회한 경로로 수렴하게 됩니다. ■&lt;/p&gt;
+
+&lt;h2 id=&quot;expected-sarsa&quot;&gt;Expected Sarsa&lt;/h2&gt;
+
+&lt;p&gt;이번 섹션부터는 Sarsa와 Q-learning으로부터 파생된 방법을 하나씩 다룰 예정입니다. 먼저 Sarsa를 변형한 Expected Sarsa 방법이 있습니다. Expected Sarsa는 이름과 같이 (다음 상태 Q 값의) 평균을 사용한 방법입니다. Expected Sarsa의 업데이트 식은 다음과 같습니다.&lt;/p&gt;
+
+\[\begin{align}
+Q(S_t, A_t) &amp;amp; \gets Q(S_t, A_t) + \alpha \left[ R_{t+1} + \gamma \mathbb{E}_{\pi} \left[ Q ( S_{t+1}, A_{t+1} ) | S_{t+1} \right] - Q(S_t, A_t) \right] \\ \\
+&amp;amp;= Q(S_t, A_t) + \alpha \left[ R_{t+1} + \gamma \sum_a \pi (a | S_{t+1}) Q(S_{t+1}, a) - Q(S_t, A_t) \right] \tag{6.9}
+\end{align}\]
+
+&lt;p&gt;교재에서는 다음 상태 $S_{t+1}$이 주어졌을 때, Sarsa의 Expectation대로 이동하기 때문에 Expected Sarsa라는 이름이 붙었다고 하는데, 저는 이 말의 정확한 의미를 잘 이해하지 못하겠습니다. 일단 제 생각은 다음 상태의 평균 Q 값을 사용하기 때문에 Expected Sarsa라는 이름이 붙었다고 이해해도 괜찮을 것 같습니다.&lt;/p&gt;
+
+&lt;p&gt;Expected Sarsa는 Sarsa보다 계산이 더 복잡하지만, Sarsa에서 $A_{t+1}$을 무작위로 선택하기 때문에 발생하는 분산이 없어진다는 장점이 있습니다. 이로 인해 동일한 학습량을 놓고 비교했을 때, Expected Sarsa는 Sarsa보다 약간 더 나은 성능을 보입니다. 아래의 그래프는 Cliff Walking 예제에서 Sarsa, Q-learning, Expected Sarsa 간의 성능을 비교한 그림입니다. Interim Performance에서 Expected Sarsa는 다른 두 방법보다 더 우수한 성능을 보일 뿐만 아니라, Asymptotic Performance에서 성능이 하락하는 Sarsa에 비해 성능 저하 없이 우수한 성능을 유지하는 모습을 보여줍니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/Reinforcement Learning/6. Temporal-Difference Learning/RL 06-10.png&quot; alt=&quot;&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Cliff Walking 예제에서는 Expected Sarsa가 On-policy로 구현되었지만, Q-learning처럼 Behavior Policy와 Target Policy를 분리하여 Off-policy로 구현할 수도 있습니다. 이 경우 Expected Sarsa는 Q-learning과 거의 동일해지며, 추가적인 계산량만 감당할 수 있다면 대부분의 시간차 학습 알고리즘보다 더 우수한 성능을 보인다는 장점이 있습니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/Reinforcement Learning/6. Temporal-Difference Learning/RL 06-11.png&quot; alt=&quot;&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Q-learning와 Expected Sarsa의 백업 다이어그램을 비교하면 위와 같습니다. 두 방법 모두 다음 상태의 모든 행동을 고려하는 것은 같으나, Q-learning은 다음 상태에서 가능한 행동 중 가장 Q 값이 높은 행동만을 찾아 학습에 반영하는 반면에, Expected Sarsa는 다음 상태에서 가능한 행동을 모두 고려하여 Q 값의 평균을 계산한 다음 학습에 반영한다는 차이점이 있습니다.&lt;/p&gt;
+
+&lt;h2 id=&quot;maximization-bias-and-double-learning&quot;&gt;Maximization Bias and Double Learning&lt;/h2&gt;
+
+&lt;p&gt;지금까지 배운 제어 알고리즘들은 Target Policy를 최적화하는데 중점을 두었습니다. 이러한 알고리즘에서 Policy의 최적화는 추정한 값들의 최대값은 최대값의 추정값으로 사용되며, 이로 인해 상당한 편향(Bias)를 초래할 수 있습니다. 예를 들어, 실제 $q(s, a)$ 값은 모두 0이라고 가정한 상황에서, 추정값 $Q(s,a)$가 불확실하므로 0보다 클 수도 있고 0보다 작을 수도 있습니다. 이 경우 실제 $q(s, a)$ 값의 최대값은 0이지만, 추정값 $Q(s,a)$의 최대값은 양수입니다. 즉, 양의 방향으로 편향되었다고 볼 수 있습니다. 이것을 최대화 편향(Maximization Bias)라고 합니다. 구체적인 예시를 통해 이것이 어떻게 발생하는지 살펴보도록 하겠습니다.&lt;/p&gt;
+
+&lt;p&gt;Example 6.7 Maximization Bias Example&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/Reinforcement Learning/6. Temporal-Difference Learning/RL 06-12.png&quot; alt=&quot;&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;위의 그림은 최대화 편향이 TD 제어 알고리즘에서 어떻게 문제를 발생시키는지 알 수 있는 간단한 예제입니다. 예제의 MDP에서는 항상 A 상태에서 에피소드가 시작됩니다. 왼쪽 끝, 또는 오른쪽 끝 상태에 도달하면 에피소드가 종료됩니다. A에서 오른쪽으로 갈 때는 0의 보수를 받지만, B에서 왼쪽으로 갈 때는 정규분포 $N(-0.1, 1)$에 따른 보수를 받습니다. 왼쪽으로 갈 때의 평균 보수는 -0.1이기 때문에, 보수가 0으로 고정된 오른쪽에 비해서 좋지 않은 방향임을 쉽게 알 수 있습니다. 문제는 왼쪽의 보수가 정규분포를 따르기 때문에, 양수의 보수를 받을 확률이 있다는 것입니다. 그렇기 때문에 학습량이 적은 초기에는 왼쪽으로 가는 것을 더 좋은 행동으로 학습하게 되고, 그것이 위의 그래프에 나타나 있습니다. (Q-learning이 초기에 왼쪽을 선택학 확률이 매우 높음) ■&lt;/p&gt;
+
+&lt;p&gt;최대화 편향을 피하는 방법으로는 대표적으로 Double Q-learning이 있습니다. 학습 행위자(Agent)를 2개로 나누어 각각 따로 학습하는 것입니다. 즉, Q 값을 2개로 분리하여 각각 $Q_1(a)$와 $Q_2(a)$로 나누는 것입니다. 두 개의 Q 값은 모두 $q(a)$의 추정치가 됩니다. 재밌는 것은 각각의 학습 행위자가 행동을 선택할 때 상대의 추정값을 사용한다는 것입니다. 즉, $Q_2(A^{*}) = Q_2(\underset{a}{\operatorname{argmax}} Q_1(a))$가 되는 것입니다. 이렇게 추정값을 계산하게 되면 $\mathbb{E} \left[ Q_2 (A^{*}) \right] = q(A^{*})$라는 의미가 되어 편향되지 않습니다. 마찬가지로 $Q_1$의 최적의 행동 선택 방식은 $Q_1(A^*) = Q_1(\underset{a}{\operatorname{argmax}} Q_2(a))$이 됩니다. 주의할 점은, 두 개의 추정을 따로 학습하지만, 각각의 행동마다 $Q_1$ 또는 $Q_2$ 중 하나의 추정치만 업데이트한다는 것입니다. 따라서 Double Q-learning은 공간 복잡도를 2배로 늘리지만, 시간 복잡도를 늘리지는 않습니다. 즉, 새로운 행동 샘플이 들어오면, 50% 확률로 $Q_1$을 학습하고, 50% 확률로 $Q_2$를 학습하는 것입니다. Double Q-learning의 업데이트 규칙은 다음과 같습니다.&lt;/p&gt;
+
+\[Q_1(S_t, A_t) \gets Q_1(S_t, A_t) + \alpha \left[ R_{t+1} + \gamma Q_2 (S_{t+1}, \underset{a}{\operatorname{argmax}} Q_1(S_{t+1}, a)) - Q_1(S_t, A_t) \right] \tag{6.10}\]
+
+&lt;p&gt;식 (6.10)에서 $Q_2$를 학습할 때는 $Q_1$과 $Q_2$의 위치를 서로 바꾸면 됩니다. Double Q-learning에 대한 완전한 알고리즘은 아래와 같습니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/Reinforcement Learning/6. Temporal-Difference Learning/RL 06-13.png&quot; alt=&quot;&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Double Q-learning과 Q-learning에 대한 성능 비교는 예제 6.7의 그래프를 확인해보시면 됩니다. 기존 Q-learning과 비교했을 때, 우연히 발생한 양의 보수 쪽으로 편향되지 않는 것을 볼 수 있습니다. 여기서는 Double Q-learning만 소개했으나, Sarsa와 Expected Sarsa의 버전도 있습니다.&lt;/p&gt;
+
+&lt;h2 id=&quot;games-afterstates-and-other-special-cases&quot;&gt;Games, Afterstates, and Other Special Cases&lt;/h2&gt;
+
+&lt;p&gt;1장에서 잠깐 다루었던 Tic-Tac-Toe 예제를 다시 떠올려봅시다. 그 당시에도 시간차 학습에 대해 잠깐 소개했었는데, 다시 그 부분을 확인해보시면 Tic-Tac-Toe에서는 학습 행위자가 이동한 후 보드의 상태를 평가했었습니다. 이렇게 행동을 먼저 한 후 상태의 가치를 확인하는 것을 Afterstates라고 하고, 이 때의 가치 함수를 Afterstate Value Function이라고 합니다. Afterstates는 환경에 대한 초기 지식이 있지만, 전체 지식은 없고 일부분에 대한 지식만 있을 때 유용합니다. 예를 들어, 체스 같은 게임에서는 말을 움직였을 때 어떤 효과가 일어나는지는 바로 알 수 있지만, 상대방이 어떻게 행동할지는 모릅니다. Afterstates는 이런 종류의 지식을 활용하여 보다 효율적인 학습을 하는 방법이라고 이해하시면 되겠습니다.&lt;/p&gt;
+
+&lt;p&gt;Afterstate가 더 효율적인 것을 보이기 위해 다시 Tic-Tac-Toe 예제를 사용해보겠습니다. 기존의 행동-가치 함수는 현재 O/X가 체크된 상태를 토대로 가치를 추정합니다. 하지만 다음 그림을 보시면 현재 상태가 될 수 있는 이전 상태는 한 가지가 아닐 수 있습니다. 그러나 두 상태는 모두 같은 후속 상태를 만들기 때문에 동일하게 평가해야 합니다. 기존의 행동-가치 함수는 두 상태를 개별적으로 평가하지만, Afterstate 가치 함수는 두 상태를 동등하게 평가하는 차이점이 있습니다. 즉, 아래 그림에서 왼쪽에서 발생하는 모든 학습은, 오른쪽 상태에도 즉시 적용됩니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/Reinforcement Learning/6. Temporal-Difference Learning/RL 06-14.png&quot; alt=&quot;&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Afterstate는 게임에서만 사용되는 것이 아닙니다. 예를 들어, 대기열(Queuing) 문제에서는 대기열에 있는 작업을 서버에 할당하는지/거부할 것인지 등을 계속 판단해야 하는데, 동일한 작업에 대해서 동일하게 판단해야하기 때문에 Afterstates를 적용할 수 있습니다. 이 외에도 Afterstates를 사용하는 여러 문제가 있지만, 여기서 모두 소개하기에는 불가능합니다. Afterstates는 동일한 방식으로 상호 작용하는 상태 및 정책에 대해서는 동일하게 추정해야하는 문제에 적용하는 것이라고 이해하시면 되겠습니다.&lt;/p&gt;
+
+&lt;h2 id=&quot;summary&quot;&gt;Summary&lt;/h2&gt;
+
+&lt;p&gt;이번 장에서는 새로운 학습 방법인 시간차 학습(Temporal Difference Learning)을 소개하였습니다. 이전 장들과 마찬가지로 예측 문제와 제어 문제로 나누어 소개하였으며, 시간차 학습 또한 Generalized Policy Iteration 아이디어에서 기반하였습니다.&lt;/p&gt;
+
+&lt;p&gt;시간차 학습의 제어 방법 또한 On-policy와 Off-policy 방법으로 나뉘며, On-policy 시간차 학습은 Sarsa, Off-policy 시간차 학습은 Q-learning이라는 대표적인 방법을 소개하였습니다. 그 외에 Expected Sarsa나 Double Q-learning등의 변형 버전도 소개하였습니다. 이번 장에서 소개하지 않은 방법 중에서 대표적으로 Actor-Critic 방법이 있는데, 이는 추후 13장에서 자세히 다룰 예정입니다.&lt;/p&gt;
+
+&lt;p&gt;시간차 학습은 지금까지 배운 강화학습 방법 중에 가장 널리 사용되는 방법입니다. 동적 프로그래밍이나 몬테 카를로 방법 등과 비교해서 단순할 뿐만 아니라 계산량 또한 적기 때문입니다. 이 뒤에 이어지는 내용들은 대부분 시간차 학습을 심도 있게 확장하여 더 강력하게 만든 알고리즘을 소개할 예정입니다. 특히 Part II 부터는 시간차 학습과 기존의 전통적인 기계학습을 융합한 방법들을 소개합니다.&lt;/p&gt;
+
+&lt;p&gt;6장에 대한 내용은 여기서 마치겠습니다. 읽어주셔서 감사합니다!&lt;/p&gt;</content><author><name>Joonsu Ryu</name></author><category term="studies" /><category term="reinforcement learning" /><summary type="html">이번 장은 강화학습의 핵심 아이디어인 시간차 학습(Temporal-Difference Learning ; TD Learning)을 다루게 됩니다. 시간차 학습은 환경에 대한 정확한 모델 없이 경험을 통해 학습한다는 몬테 카를로 아이디어와 최종 결과를 기다리지 않고(Bootstrapping) 학습된 다른 추정치를 기반으로 추정치를 업데이트한다는 동적 프로그래밍 아이디어를 결합하여 만들어졌습니다. 이번 장의 시작은 이전 장들과 같이 주어진 정책 $\pi$에 대한 가치 함수 $v_{\pi}$를 추정하는 문제로부터 시작하며, 최적의 정책을 찾는 제어 문제에서도 이전과 같이 GPI를 변형하여 접근합니다. 이전 장들과의 주요 차이점은 예측 문제에 대한 접근 방식입니다.</summary></entry><entry><title type="html">Monte Carlo Methods</title><link href="http://localhost:4000/studies/monte-carlo-methods/" rel="alternate" type="text/html" title="Monte Carlo Methods" /><published>2022-03-11T00:00:00+09:00</published><updated>2022-03-11T00:00:00+09:00</updated><id>http://localhost:4000/studies/monte-carlo-methods</id><content type="html" xml:base="http://localhost:4000/studies/monte-carlo-methods/">&lt;p&gt;이번 장에서는 지난 장과 마찬가지로 가치 함수를 추정하고 최적의 정책을 찾기 위한 방법을 다루지만, 지난 장과는 달리 MDP에 대한 완전한 정보를 알고 있다고 가정하지 않습니다. Monte Carlo (몬테 카를로) 방법은 환경과의 상호 작용을 통해 얻은 경험을 기반으로 최적의 정책을 찾는 방법입니다. 이 때 환경과의 상호 작용은 실제로 이루어지는 경험 뿐만이 아니라 시뮬레이션 경험이라도 상관 없습니다.&lt;/p&gt;
+
+&lt;p&gt;3장에서 MDP를 끝이 존재하는 Episodic Task와 끝이 없는 Continuing Task로 분류하였는데, 이번 장에서는 일단 Episodic Task 상황만 가정하도록 하겠습니다. 몬테 카를로 방법 또한 지난 장에서 배운 Generalized Policy Iteration (GPI)의 아이디어를 기반으로 하지만, 그 때와 달리 MDP에서 직접 가치 함수를 계산하지 않고 Sample로부터 가치 함수를 계산합니다. 물론 여전히 그 때처럼 최적의 가치 함수에 수렴하기 위해 상호작용하는 것은 같습니다.&lt;/p&gt;
+
+&lt;h2 id=&quot;monte-carlo-prediction&quot;&gt;Monte Carlo Prediction&lt;/h2&gt;
+
+&lt;p&gt;가장 먼저 정책이 주어졌을 때 상태-가치 함수(State-value Function)을 학습하기 위해 몬테 카를로 방법을 고려해보겠습니다. 상태의 가치는 해당 상태에서 시작했을 때 얻을 수 있는 기대 수익이므로, 경험으로 이를 추정하기 위해서는 해당 상태를 여러 번 방문한 후 얻은 수익의 평균을 구하면 됩니다. 당연히 많이 방문할수록 평균값이 정확한 상태의 가치에 가까워집니다. 이것이 바로 몬테 카를로 방법의 기본 아이디어입니다.&lt;/p&gt;
+
+&lt;p&gt;몬테 카를로 방법에는 두 가지 방법이 있습니다. 만약 정책이 $\pi$로 주어지고 이 정책을 따랐을 때 어떤 에피소드에서 상태 $s$를 방문(Visit)했다고 가정해봅시다. 그런데 한 에피소드에서 상태 $s$를 꼭 한번만 방문한다는 보장은 없습니다. 한 에피소드에서 상태 $s$를 여러 번 방문했을 때 $v_{\pi}(s)$를 어떻게 구해야 할까요?&lt;/p&gt;
+
+&lt;p&gt;몬테 카를로 방법에는 First-visit MC 방법과 Every-visit MC 방법이 있습니다. 두 방법 모두 상태 $s$를 방문한 후, 얻은 보수의 평균을 추정하는 것은 같습니다. 하지만 First-visit MC 방법은 가장 처음에 방문한 것만 계산에 사용하고, Every-visit MC 방법은 방문한 모든 것을 계산에 사용한다는 차이가 있습니다. 두 방법 모두 상태 $s$를 무한히 방문했을 때 $v_{\pi}(s)$에 수렴한다는 것은 같습니다.&lt;/p&gt;
+
+&lt;p&gt;이번 장에서는 First-visit MC 방법만을 위주로 살펴볼 예정이며, Every-visit MC 방법은 9장과 12장에서 다시 다룰 예정입니다.&lt;/p&gt;
+
+&lt;p&gt;First-visit MC 방법의 알고리즘은 다음과 같습니다. 이 알고리즘을 Every-visit MC 방법으로 수정하려면 Unless ~ 로 시작하는 조건문을 삭제하면 됩니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/Reinforcement Learning/5. Monte Carlo Methods/RL 05-01.png&quot; alt=&quot;&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Example 5.1 Blackjack&lt;/p&gt;
+
+&lt;p&gt;원래 지금까지 교재의 예제는 다루지 않고 넘어갔으나, 이 예제는 몬테 카를로 방법을 이해하는데 적합한 예제이기 때문에 특별하게 짚고 넘어가도록 하겠습니다.&lt;/p&gt;
+
+&lt;p&gt;블랙잭은 카지노에서 자주 보이는 카드 게임 중 하나로써, 딜러와 플레이어가 승부하는 게임입니다. 플레이어가 가지고 있는 카드의 합이 딜러가 가지고 있는 카드의 합보다 높거나 플레이어 카드의 합이 21일 경우 무조건 승리하지만, 21을 초과할 경우에는 무조건 패배합니다. 이 때, 특수한 카드인 Jack (J), Queen (Q), King (K)는 10으로 취급합니다. Ace (A)는 플레이어의 선택에 따라 1로 취급할 수도 있고 11로 취급할 수도 있습니다.&lt;/p&gt;
+
+&lt;p&gt;게임은 플레이어와 딜러가 각각 무작위한 2장의 카드를 받고 시작합니다. 이 때 플레이어의 카드는 모두 오픈하지만, 딜러는 1개만 오픈하고 1개는 뒤집어 놓습니다.&lt;/p&gt;
+
+&lt;p&gt;플레이어가 선택할 수 있는 행동은 “Hit”과 “Stand”입니다. Hit을 선택하면 무작위 카드를 한 장 더 받을 수 있고, Stand를 선택하면 카드를 더 받지 않습니다. 만약 Hit을 선택했을 때, 새로 받은 카드를 포함하여 합이 21을 초과할 경우 플레이어는 즉시 패배합니다. 이것을 “Bust”라고 합니다.&lt;/p&gt;
+
+&lt;p&gt;플레이어가 Stand를 선택하고 카드의 합이 21을 넘지 않는다면, 딜러가 게임을 시작합니다. 이 때 딜러는 자신의 의지대로 플레이할 수 없고, 카드의 합이 17보다 작으면 무조건 Hit을 해야하고, 그렇지 않으면 무조건 Stand를 해야합니다. 딜러가 Bust가 된다면 플레이어의 승리입니다.&lt;/p&gt;
+
+&lt;p&gt;만약 플레이어와 딜러 두 명 모두 Bust가 아니라면, 그 때 카드의 합을 비교하여 높은 쪽이 승리합니다.&lt;/p&gt;
+
+&lt;p&gt;Solution)&lt;/p&gt;
+
+&lt;p&gt;먼저 블랙잭 게임의 상태와 행동, 그리고 보수를 정의해봅시다.&lt;/p&gt;
+
+&lt;p&gt;상태
+초기에 플레이어가 받은 카드 2장의 합 : 최소 12 - 최대 21
+딜러가 가지고 있는 카드 중 공개된 1장의 숫자 : 최소 1 (Ace) - 최대 10
+내가 Ace를 가지고 있는지에 대한 여부 : 예 or 아니오&lt;/p&gt;
+
+&lt;p&gt;따라서 상태의 총 갯수는 10 * 10 * 2 = 200개입니다.&lt;/p&gt;
+
+&lt;p&gt;상태는 (플레이어 카드의 합, 딜러의 카드, Ace 보유 여부) 로 표기합니다.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;행동&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;플레이어의 행동만 고려하면 되므로 Hit 또는 Stand로 2개입니다.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;보수&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;플레이어가 게임에서 승리하면 +1, 패배하면, -1, 무승부일시 0으로 정의합니다.&lt;/p&gt;
+
+&lt;p&gt;다음으로 정책을 세팅해보겠습니다. 교재에서는 현재 플레이어가 가지고 있는 카드의 합이 20, 21이면 Stand를 하고, 그 이외는 Hit을 선택하도록 정책을 정의하였습니다. 이것을 가지고 Python을 사용하여 구현하면 다음과 같습니다.&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-python&quot; data-lang=&quot;python&quot;&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;gym&lt;/span&gt;
+&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;pandas&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;pd&lt;/span&gt;
+&lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;collections&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;defaultdict&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;env&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;gym&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;make&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&apos;Blackjack-v1&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;num_timesteps&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;100&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;policy&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;state&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;state&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;19&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;generate_episode&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;policy&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;episode&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[]&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;state&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;env&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;reset&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;t&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;range&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;num_timesteps&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;action&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;policy&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;state&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;next_state&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;reward&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;done&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;info&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;env&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;step&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;action&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;episode&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;append&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;((&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;state&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;action&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;reward&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;done&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+            &lt;span class=&quot;k&quot;&gt;break&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;state&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;next_state&lt;/span&gt;
+
+    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;episode&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;total_return&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;defaultdict&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;float&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;N&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;defaultdict&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;num_iterations&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;500000&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;range&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;num_iterations&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;episode&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;generate_episode&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;policy&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;states&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;actions&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;rewards&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;zip&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;episode&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;t&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;state&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;enumerate&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;states&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;state&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;not&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;states&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;t&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]:&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;R&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;sum&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;rewards&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;t&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:]))&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;total_return&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;state&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;total_return&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;state&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;R&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;N&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;state&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;N&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;state&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;total_return&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;pd&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;DataFrame&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;total_return&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;items&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(),&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;columns&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&apos;state&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&apos;total_return&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;N&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;pd&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;DataFrame&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;N&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;items&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(),&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;columns&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&apos;state&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&apos;N&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;df&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;pd&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;merge&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;total_return&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;N&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;on&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&apos;state&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;df&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&apos;value&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;df&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&apos;total_return&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;/&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;df&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&apos;N&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;df&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;head&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;위의 소스는 First-visit MC로 블랙잭 게임에서 각 상태의 가치를 추정한 프로그램입니다. (프로그램을 실행하기 위해서는 gym과 pandas 라이브러리를 설치하셔야 합니다) 만약 이 프로그램을 Every-visit MC로 바꾸고 싶다면, 32번째 Line의 if 문을 삭제하시면 됩니다.&lt;/p&gt;
+
+&lt;p&gt;프로그램을 실행하게 되면 많이 방문한 State 순으로 10개를 보여주고, 얻은 총 Return과 방문 횟수, 그리고 추정한 상태의 가치를 출력합니다. 이 프로그램은 단순히 상태의 가치만 추정하는 것이기 때문에 정책을 변경하지는 않습니다. 이러한 방법으로 1만개와 50만개의 에피소드를 경험한 후, 상태의 가치를 도식화하면 아래와 같습니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/Reinforcement Learning/5. Monte Carlo Methods/RL 05-02.png&quot; alt=&quot;&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;결과를 보면 상태의 가치가 높은 경우는 카드의 합이 20과 21일 경우밖에 없습니다. 어떻게 보면 당연한게, 저희가 설정한 정책은 20과 21에서만 Stand를 하기 때문입니다. 블랙잭에 대해서 잘 아는 것은 아니지만 18이나 19에서 Hit을 한다면 Bust할 확률이 높기 때문에 승률이 낮을 수밖에 없겠죠. ■&lt;/p&gt;
+
+&lt;p&gt;예제로 보여드린 블랙잭 게임은 환경에 대해 완전한 지식을 가지고 있습니다. 하지만 지난 장에서 배운 DP 방법으로 블랙잭 게임의 가치 함수를 계산하는 것은 쉽지 않습니다. 가장 어려운 점은 전이 확률을 계산하는 것입니다. 예를 들어, 현재 플레이어가 가지고 있는 카드의 합이 14이고 플레이어가 Stand를 선택했다고 가정했을 때, 플레이어가 이길 확률을 계산하면 얼마일까요? 이것부터가 쉽지 않은데 모든 상태에 대해 이것을 계산해야 한다고 생각하면 막막할 따름입니다. 그렇기 때문에 환경에 대한 지식을 알고있는지 여부에 상관없이 몬테 카를로 방법은 DP 방법보다 간단할 수 있습니다.&lt;/p&gt;
+
+&lt;p&gt;몬테 카를로 방법에서 중요한 점은 각 상태에 대한 추정값이 독립적이라는 것입니다. 이것은 어떤 상태에 대한 추정값이 다른 상태에 대한 추정값에 영향을 끼치지 않는다는 뜻이므로, Bootstrap하지 않는다고 해석할 수 있습니다.&lt;/p&gt;
+
+&lt;p&gt;또한 몬테 카를로 방법은 에피소드에 기반하기 때문에, 특정(단일) 상태의 가치를 추정할 때의 계산 비용은 상태의 수가 매우 많더라도 간단하게 계산할 수도 있습니다. 지난 장에서 DP 방법을 사용할 때는 상태의 가치를 추정하기 위해서 모든 상태를 고려한 것을 생각해보면 확실히 낫다고 볼 수 있습니다.&lt;/p&gt;
+
+&lt;h2 id=&quot;monte-carlo-estimation-of-action-values&quot;&gt;Monte Carlo Estimation of Action Values&lt;/h2&gt;
+
+&lt;p&gt;모델을 사용할 수 없는 경우, 즉 환경에 대한 완전한 정보가 없는 경우에는 상태-가치(State-Value)를 사용하는 것 보다 행동-가치(Action-Value)를 사용하는 것이 더 좋습니다. 가치를 기반으로 정책을 만들 때는 각 행동에 대한 가치를 명시적으로 추정해야하기 때문입니다. 따라서 몬테 카를로 방법의 주요 목표 중 하나는 $q_{*}$를 추정하는 것입니다. 그 목표를 이루기 위해서는 먼저 행동-가치에 대한 정책 평가 방법을 고려해야 합니다.&lt;/p&gt;
+
+&lt;p&gt;행동-가치에 대한 정책 평가 방법은 상태 $s$에서 시작하여 행동 $a$를 선택한 후, 정책 $\pi$를 따를 때의 기대 보수인 $q_{\pi} (s, a)$를 추정하는 것입니다. 추정 방법은 직전에 보여드린 상태-가치를 추정하는 방법과 거의 유사합니다.&lt;/p&gt;
+
+&lt;p&gt;행동-가치에 대한 정책 평가를 할 때 유일한 문제는 많은 상태-행동 쌍이 방문되지 않을 수 있다는 것입니다. 특히 $\pi$가 결정론적 정책인 경우, 각 상태에 대해서는 하나의 행동만 선택하기 때문에 정책이 선택하는 행동 외에는 모두 방문하지 않기 때문입니다. 2장에서 언급했듯이 정책에 대한 평가가 제대로 작동하기 위해서는 지속적인 탐색이 보장되어야 합니다.&lt;/p&gt;
+
+&lt;p&gt;이 문제를 해결하기 위해서는 모든 상태-행동 쌍이 선택될 확률을 0보다 크게 만드는 것입니다. 아무리 작은 확률이라도 무한한 샘플을 얻게 되면 모든 상태-행동 쌍을 많이 방문하게 되므로 제대로 정책 평가를 할 수 있습니다. 이것을 탐색 시작의 가정 (Assumption of exploring starts)이라고 부릅니다.&lt;/p&gt;
+
+&lt;p&gt;탐색 시작의 가정은 때때로 유용하지만, 환경과 실제 상호 작용을 하며 직접 학습할 때는 일반적으로 신뢰할 수 없습니다. 모든 상태-행동 쌍을 방문할 수 있게 만들기 위해서는 차라리 확률론적 정책을 고려하는 것이 낫습니다. 이번 장 뒷부분에서는 그렇게 접근하는 2가지 방법에 대해 설명하겠지만, 일단 지금은 탐색 시작의 가정을 유지하면서 몬테 카를로 제어 방법을 소개하도록 하겠습니다.&lt;/p&gt;
+
+&lt;h2 id=&quot;monte-carlo-control&quot;&gt;Monte Carlo Control&lt;/h2&gt;
+
+&lt;p&gt;몬테 카를로 추정의 기본 아이디어는 지난 장에서 배웠던 Generalized Policy Iteration (GPI)과 동일합니다. 교재에서는 몬테 카를로 방법이 DP와 달리 환경에 대한 지식 없이도 샘플 에피소드 만으로 최적의 정책과 가치 함수를 찾는 데 사용할 수 있다는 것을 보여주지만, 굳이 이 부분까지 설명할 필요는 없을 것 같아서 생략하도록 하겠습니다.&lt;/p&gt;
+
+&lt;p&gt;몬테 카를로 방법으로 수렴한다는 보장을 얻기 위해서 저희는 2가지 가정을 했습니다. 하나는 탐색 시작의 가정이고, 다른 하나는 무한한 수의 에피소드가 있다는 가정입니다. 하지만 두 가정 모두 현실적이지 않기 때문에 몬테 카를로 알고리즘을 만들기 위해서는 이 두 가정을 모두 제거할 필요가 있습니다. 첫 번째 가정은 나중에 고려하도록 하고, 우선 무한한 수의 에피소드에 대해서만 생각해보도록 하겠습니다.&lt;/p&gt;
+
+&lt;p&gt;첫 번째로 생각할 수 있는 해결 방법은 각각의 Policy Evaluation이 $q_{\pi_k}$를 근사화한다는 아이디어를 유지하는 것입니다. 즉, 어느 정도 근사치까지 정확한 수렴을 보장한다는 의미이지만, 문제의 크기가 조금만 커져도 실제와 가깝게 근사화하기 위해서는 너무 많은 에피소드가 필요하다는 문제가 있습니다.&lt;/p&gt;
+
+&lt;p&gt;두 번째로 생각할 수 있는 해결 방법은 Policy Improvement를 하기 전에 Policy Evaluation을 끝내지 않는 것입니다. Policy Evaluation은 매 단계마다 가치 함수를 $q_{\pi_k}$에 가까워지게 하는 시도를 하지만, 어차피 후반 몇몇 단계를 제외하고는 실제로 그렇게 가깝지 않습니다. 지난 장에서 GPI를 처음 소개할 때 잠깐 소개했었는데, 극단적으로는 Policy Evaluation을 한 번만 수행하는 것도 가능하다고 했었습니다.&lt;/p&gt;
+
+&lt;p&gt;몬테 카를로에서의 Policy Iteration은 각 에피소드별로 Evaluation과 Improvement를 번갈아 수행합니다. 각 에피소드에서 발생한 보수는 Policy Evaluation에 사용되며, 에피소드에서 방문한 모든 상태에서 정책이 Improve 됩니다. 이것을 Monte Carlo with Exploring Starts라고 하며 의사 코드는 다음과 같습니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/Reinforcement Learning/5. Monte Carlo Methods/RL 05-03.png&quot; alt=&quot;&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Monte Carlo with Exploring Starts는 초기 정책에 상관없이 모든 상태-행동 쌍에 대한 평균적인 보수를 얻을 수 있습니다. 이전에 Monte Carlo Prediction에서는 정책에 대한 평가만 했다면, Monte Carlo with Exploring Starts는 정책을 업데이트하는 기능이 추가되며, 최적의 정책으로 수렴할 것이라고 생각됩니다. “생각됩니다” 라고 쓰는 이유는 아직 공식적으로 증명되지는 않았기 때문입니다.&lt;/p&gt;
+
+&lt;p&gt;Example 5.3 Solving Blackjack&lt;/p&gt;
+
+&lt;p&gt;Example 5.1에서 다루었던 Blackjack 게임을 다시 언급해보겠습니다. Example 5.1에서는 정책에 대한 가치만을 계산했지만, Monte Carlo with Exploring Starts을 적용하게 되면 최적의 정책을 구할 수 있습니다. 이를 도식화하면 아래 그림과 같습니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/Reinforcement Learning/5. Monte Carlo Methods/RL 05-04.png&quot; alt=&quot;&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;monte-carlo-control-without-exploring-starts&quot;&gt;Monte Carlo Control without Exploring Starts&lt;/h2&gt;
+
+&lt;p&gt;이번에는 탐색 시작의 가정을 제거해보도록 하겠습니다. 탐색 시작의 가정 없이 모든 행동이 선택될 수 있게 하는 유일한 방법은 행위자로 하여금 계속 선택하게 설계하는 것입니다. 이를 보장하는 방법이 2가지 있는데, 하나는 On-policy 방법이고 다른 하나는 Off-policy 방법이라고 합니다. On-policy 방법은 행위자가 실제로 행동한 정책을 평가하거나 개선하는 방법이고, Off-policy 방법은 실제로 행동한 정책과 다른 정책을 평가하거나 개선하는 방법입니다. 직전에 다룬 Monte Carlo with Exploring Starts는 On-policy 방법의 한 종류라고 볼 수 있습니다. 먼저 On-policy에 대해 알아본 다음, Off-policy 방법은 다음 섹션에서 다루도록 하겠습니다.&lt;/p&gt;
+
+&lt;p&gt;On-policy 방법은 모든 상태 $s \in \mathcal{S}$와 모든 행동 $a \in \mathcal{A} (s)$에 대해 $\pi (a \mid s) &amp;gt; 0$으로 시작하지만, 점차적으로 최적의 결정론적 정책에 가까워집니다. 이것을 유도하는 방법은 여러 개가 있지만, 우선 가장 많이 쓰이는 $\epsilon$-greedy 정책을 먼저 소개하도록 하겠습니다. $\epsilon$-greedy 정책은 일반적으로 가치가 가장 높은 행동을 선택하지만, 낮은 확률로 무작위 행동을 선택하는 방법입니다. 조금 더 구체적으로 설명하자면 $\epsilon &amp;gt; 0$의 확률로 무작위 행동을 선택하고 $1 - \epsilon$의 확률로 가치가 가장 높은 행동을 선택하는 것입니다.&lt;/p&gt;
+
+&lt;p&gt;$\epsilon$-greedy 정책에서 $\epsilon$의 값은 고정된 값이 아닙니다. 가치가 제대로 추정되지 않은 초기에는 $\epsilon$을 크게 만들어서 여러 행동을 선택하게 유도하고, 어느 정도 추정이 끝난 다음에는 $\epsilon$를 작게 만들어 최선의 선택을 하도록 유도하는 것입니다.&lt;/p&gt;
+
+&lt;p&gt;On-policy Monte Carlo Control에서도  현재 정책에 대한 행동-가치 함수를 추정하기 위해 First-visit MC 방법을 사용합니다. Monte Carlo with Exploring Starts와 달리 탐색 시작의 가정을 하지 않고, 대신 $\epsilon$-greedy 정책을 사용합니다. $\epsilon$-greedy와 같은 정책을 $\epsilon$-soft라고도 부릅니다. On-policy Monte Carlo Control의 의사 코드는 다음과 같습니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/Reinforcement Learning/5. Monte Carlo Methods/RL 05-05.png&quot; alt=&quot;&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;$\epsilon$-greedy 정책으로부터 $q_{\pi}$를 개선하는 것은 Policy Improvement Theorem에 의해 보장됩니다. 이에 대한 유도는 다음과 같습니다.&lt;/p&gt;
+
+\[\begin{align}
+q_{\pi} (s, \pi&apos; (s)) &amp;amp;= \sum_a \pi&apos; (a | s) q_{\pi} (s, a) = \frac{\epsilon}{|\mathcal{A}(s)|} \sum_a q_{\pi} (s, a) + (1 - \epsilon) \max_a q_{\pi} (s, a) \tag{5.2} \\ \\
+&amp;amp;\ge \frac{\epsilon}{|\mathcal{A}(s)|} \sum_a q_{\pi} (s, a) + (1 - \epsilon) \sum_a \frac{\pi (a | s) - \frac{\epsilon}{|\mathcal{A}(s)|}}{1-\epsilon} \\ \\
+&amp;amp;= \frac{\epsilon}{|\mathcal{A}(s)|} \sum_a q_{\pi} (s, a) - \frac{\epsilon}{|\mathcal{A}(s)|} \sum_a q_{\pi} (s, a) + \sum_a \pi (a | s) q_{\pi} (s, a) = v_{\pi} (s)
+\end{align}\]
+
+&lt;p&gt;위의 전개식은 Policy Improvement Theorem에 의해 $\pi^{\prime} \ge \pi$임을 보여주고 있습니다. 두 번째로 증명해야할 부분은 두 정책 $\pi^{\prime}$와 $\pi$가 최적의  $\epsilon$-soft 정책일 때, 다른 $\epsilon$-soft 정책들보다 좋거나 같아야 한다는 것입니다.&lt;/p&gt;
+
+&lt;p&gt;이것을 증명하기 위해 먼저 정책이 $\epsilon$-soft 로 이동되어야 한다는 조건을 제외하고 원래 환경과 동일한 새 환경을 가정해보겠습니다. 새 환경에서는 원래 환경과 동일한 상태와 행동 집합이 설정되어 있습니다. 새 환경에서는 상태 $s$에서 행동 $a$를 선택했을 때 $1 - \epsilon$ 확률로 원래 환경과 동일하게 동작하며, $\epsilon$ 확률로 무작위 행동을 선택한 다음 새로운 행동으로 이전 환경처럼 동작합니다. 이런 새로운 환경에서 할 수 있는 최선의 정책은 원래 환경에서 할 수 있는 최선의 정책과 동일합니다. $\tilde{v}_{*}$와 $\tilde{q}_{*}$를 새 환경에서 최적의 가치 함수라고 정의하면, 정책 $\pi$는 $v_{\pi} = \tilde{v}_{*}$인 경우에만 $\epsilon$-soft 정책 중 최선의 정책입니다. 먼저 전이 확률이 변경되었을 때 $\tilde{v}_{*}$는 벨만 최적화 방정식(식 3.19)에 대한 고유한 솔루션임을 다음을 통해 알 수 있습니다.&lt;/p&gt;
+
+\[\begin{align}
+\tilde{v}_* &amp;amp;= \max_a \sum_{s&apos;, r} \left[ (1 - \epsilon) p (s&apos;, r | s, a) + \sum_{a&apos;} \frac{\epsilon}{|\mathcal{A}(s)|} p (s&apos;, r | s, a&apos;) \right] \left[ r + \gamma \tilde{v}_* (s&apos;) \right] \\ \\
+&amp;amp;= (1 - \epsilon) \max_a \sum_{s&apos;, r} p(s&apos;, r | s, a) \left[ r + \gamma \tilde{v}_*(s&apos;) \right] + \frac{\epsilon}{|\mathcal{A(s)}|} \sum_a \sum_{s&apos;, r} p (s&apos;, r |s, a) \left[ r + \gamma \tilde{v}_*(s&apos;) \right]
+\end{align}\]
+
+&lt;p&gt;다음으로 $\epsilon$-soft 정책 $\pi$가 더 이상 개선되지 않고, $v_{\pi} = \tilde{v}_*$가 성립하면 식 (5.2)에 의하여 다음이 성립합니다.&lt;/p&gt;
+
+\[\begin{align}
+v_{\pi} (s) &amp;amp;= (1 - \epsilon) \max_a q_{\pi} (s, a) + \frac{\epsilon}{|\mathcal{A}(s)|} \sum_a q_{\pi} (s, a) \\ \\
+&amp;amp;= (1 - \epsilon) \max_a \sum_{s&apos;, r} p (s&apos;, r | s, a) \left[ r + \gamma v_{\pi} (s&apos;) \right] + \frac{\epsilon}{|\mathcal{A}(s)|} \sum_a \sum_{s&apos;, r} p (s&apos;, r |s, a) \left[ r + \gamma v_{\pi} (s&apos;) \right]
+\end{align}\]
+
+&lt;p&gt;그러나 이 방정식은 $\tilde{v}_{*}$를 $v_{\pi}$로 대입한 것을 제외하고는 앞의 방정식과 동일합니다. 여기서 $\tilde{v}_{*}$는 유일한 솔루션이므로 $v_{\pi} = \tilde{v}_{*}$일 수밖에 없습니다.&lt;/p&gt;
+
+&lt;p&gt;결과적으로 $\epsilon$-soft 정책에서 Policy Iteration은 정상적으로 작동한다는 것을 알 수 있습니다. 또한 이제는 탐색 시작의 가정 없이 $\epsilon$-soft 정책에 대한 개선만으로 최적의 정책을 찾을 수 있다는 것을 보장할 수 있습니다.&lt;/p&gt;
+
+&lt;h2 id=&quot;off-policy-prediction-via-importance-sampling&quot;&gt;Off-policy Prediction via Importance Sampling&lt;/h2&gt;
+
+&lt;p&gt;이전 섹션에서 배운 On-policy 방법의 가장 큰 단점은 정책을 평가하기 위해서 실제로 경험해봐야 한다는 것입니다. 이 말은 최적의 행동을 찾기 위해 그렇지 않은 행동을 해야한다는 의미입니다. 이것을 해결하는 방법은 학습하는 정책(Target Policy)과 실제로 행동하는 정책(Behavior Policy)을 분리하는 것입니다. 이렇게 두 정책을 분리하여 학습하는 방법을 Off-policy 방법이라고 합니다. 이렇게 이름을 붙이는 이유는 학습하는 정책에 off 된다는 의미이기 때문이라고 합니다.&lt;/p&gt;
+
+&lt;p&gt;Off-policy 방법은 On-policy 방법에 비해 일반적으로 많이 사용합니다. 특히 인간 전문가로부터 생성되는 데이터나, 비학습적인 컨트롤러로부터 생성되는 데이터를 학습하는데 우수한 성능을 가지고 있습니다. 그러나 Off-policy 방법은 On-policy 방법에 비해 추가적인 개념이 필요하기 때문에 더 복잡하고, 학습 데이터가 다르게 주어지기 때문에 분산이 더 크며, 수렴 속도 또한 더 느리다는 단점이 있습니다. 그렇기 때문에 On-policy 방법과 Off-policy 방법은 서로 우열을 가리기 어려우며, 두 방법 모두 상황에 따라 잘 사용되고 있습니다.&lt;/p&gt;
+
+&lt;p&gt;이번 섹션에서 다룰 Off-policy 방법에서 학습하는 정책(Target Policy)은 $\pi$, 실제 행동하는 정책(Behavior Policy)은 $b$로 표기하며, 두 정책 모두 고정되어 주어진 것으로 가정하겠습니다.&lt;/p&gt;
+
+&lt;p&gt;정책 $b$로부터 생성된 에피소드를 사용하여 정책 $\pi$를 추정하기 위해서는 $\pi$에서 수행한 모든 행동이 적어도 가끔은 $b$에서도 수행되어야 합니다. 즉, 여기에는 $\pi (a \mid s) &amp;gt; 0$일 경우 반드시 $b(a \mid s) &amp;gt; 0$라는 것을 의미합니다. (이것을 Assumption of Coverage라고 합니다) 또한 정책 $\pi$는 결정론적(Deterministic)일 수 있으나, 정책 $b$는 확률론적(Stochastic)이어야 합니다.&lt;/p&gt;
+
+&lt;p&gt;Off-policy 방법에서 또 한가지 중요한 것은 바로 Importance Sampling입니다. 처음 강화학습을 공부했을 때 Importance Sampling에 대한 개념이 난해해서 이해하기 힘들었는데, 좋은 포스팅을 발견하여 여기에 잠깐 소개하도록 하겠습니다. (원본 포스트 링크)&lt;/p&gt;
+
+&lt;p&gt;Example) 어느 섬에 키다리족과 난장이족이 있습니다. 문제를 쉽게 하기 위해 이 섬의 사람은 키가 160cm 아니면 180cm 둘 중 하나라고 가정하도록 하겠습니다. 오랜 시간에 걸쳐 키다리족과 난장이족의 인구 분포를 조사한 결과, 다음과 같은 키의 분포가 나왔습니다. 이 때, 확률변수 X를 키다리족, 확률변수 Y를 난장이족이라고 정의하도록 하겠습니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/Reinforcement Learning/5. Monte Carlo Methods/RL 05-06.png&quot; alt=&quot;&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;그리고 이번에는 두 부족의 평균 키를 구하려고 합니다. 먼저 키다리족의 사람 중 무작위로 10명의 표본을 뽑았더니, 다음과 같은 키의 분포가 나왔습니다.&lt;/p&gt;
+
+&lt;p&gt;160 160 160 160 180 180 180 180 180 180&lt;/p&gt;
+
+&lt;p&gt;이 분포를 토대로 표본집단의 평균을 구하는 것은 간단합니다. 표본집단의 평균은 모집단의 평균과 유사하니 완벽하게 일치하지는 않겠지만 모집단의 평균을 대략적으로 유추할 수 있습니다.&lt;/p&gt;
+
+&lt;p&gt;이번에는 난장이족의 평균 키를 구하려고 합니다. 난장이족도 마찬가지로 무작위 표본을 뽑아 평균을 구하면 간단하지만, 모종의 문제로 난장이족의 표본을 구할 수 없다고 가정해봅시다. 대신 우리는 키다리족의 표본을 구했었고, 난장이족과 키다리족의 키의 분포를 알고 있습니다.&lt;/p&gt;
+
+&lt;p&gt;이 키다리족의 표본을 토대로 난장이족의 키의 표본을 생성해봅시다. 먼저, 키가 160cm인 사람의 비율은 난장이족이 키다리족보다 2배가 많습니다. 그렇기 때문에 키가 160cm인 사람의 비율을 2배로 늘립니다.&lt;/p&gt;
+
+&lt;p&gt;160 160 160 160 160 160 160 160 180 180 180 180 180 180&lt;/p&gt;
+
+&lt;p&gt;다음으로 키가 180cm인 사람의 비율을 보면 키다리족이 난장이족보다 2배가 많습니다. 그래서 키가 180cm인 사람의 비율을 절반으로 줄입니다.&lt;/p&gt;
+
+&lt;p&gt;160 160 160 160 160 160 160 160 180 180 180&lt;/p&gt;
+
+&lt;p&gt;이렇게 구한 표본을 토대로 평균을 구한다면, 이것은 난장이족의 평균 키라고 말할 수 있습니다. 이것이 바로 Importance Sampling의 한 예입니다. ■&lt;/p&gt;
+
+&lt;p&gt;이번에는 강화학습에서의 Importance Sampling이 무엇인지 알아보겠습니다. 위의 예제에서 키다리족의 표본으로 난장이족의 데이터를 추정했듯이, Off-policy에서도 Behavior Policy $b$로부터 생성되는 데이터를 토대로 Target Policy $\pi$를 추정해야 합니다. 예제에서는 키다리족과 난장이족의 키의 분포가 미리 주어졌으나, 여기에서는 문제마다 다르기 때문에 직접 계산해야합니다. 이렇게 두 데이터 사이의 비율을 Importance Sampling Ratio라고 합니다. 이것을 수식으로 표현하기 위해, 먼저 상태 $S_t$에서 시작하여 상태-행동 궤적(Trajactory)을 얻을 확률을 구하도록 하겠습니다.&lt;/p&gt;
+
+\[\begin{align}
+&amp;amp;Pr \left\{ A_t, S_{t+1}, A_{t+1}, ... , S_T | S_t, A_{t:T-1} ~ \pi \right\} \\ \\
+&amp;amp;= \pi (A_t | S_t ) p (S_{t+1} | S_t, A_t) \pi (A_{t+1} | S_{t+1}) \cdots p (S_T | S_{T-1}, A_{T-1}) \\ \\
+&amp;amp;= \prod_{k=t}^{T-1} \pi (A_k | S_k) p ( S_{k+1} | S_k, A_k)
+\end{align}\]
+
+&lt;p&gt;위 식에서 $p$는 식 (3.4)에서 정의한 상태 전이 확률입니다. 위 식을 토대로 Target Policy와 Behavior Policy 간의 Importance Sampling Ratio를 구하면 다음과 같습니다.&lt;/p&gt;
+
+\[\rho_{t:T-1} \doteq \frac{\prod_{k=t}^{T-1} \pi (A_k | S_k) p ( S_{k+1} | S_k, A_k)}{\prod_{k=t}^{T-1} b (A_k | S_k) p ( S_{k+1} | S_k, A_k)} = \prod_{k=t}^{T-1} \frac{\pi (A_k | S_k)}{b (A_k | S_k)} \tag{5.3}\]
+
+&lt;p&gt;$p$는 MDP에서 주어지지 않는 한 구하기 가장 어려운 데이터지만, 운이 좋게도 분자와 분모 모두 있기 때문에 약분이 가능합니다. 즉, 두 정책 $\pi$와 $b$의 Importance Sampling Ratio는 두 정책이 각 상태에서 특정 행동을 선택할 확률이 얼마인지만 알면 구할 수 있습니다. 즉, Importance Sampling Ratio는 MDP에 독립적입니다.&lt;/p&gt;
+
+&lt;p&gt;Target Policy에서의 기대 보수를 추정할 때 주의할 점은, Behavior Policy로 인한 Return인 $G_t$만 주어졌다는 것입니다. 이것으로는 $\mathbb{E} \left[ G_t \mid S_t = s \right] = v_b (s)$을 구할 수 있기 때문에 $v_{\pi}$를 얻을 수 없습니다. 그렇기 때문에 Importance Sampling이 필요한 것입니다. Importance Sampling Ratio $\rho_{t:T-1}$를 추가하면 원하는 $v_{\pi}$를 얻을 수 있습니다.&lt;/p&gt;
+
+\[\mathbb{E} \left[ \rho_{t:T-1} G_t | S_t = s \right] = v_{\pi} (s) \tag{5.4}\]
+
+&lt;p&gt;이로써 Behavior Policy $b$로 생성된 에피소드를 토대로 $v_{\pi} (s)$를 추정하는 몬테 카를로 알고리즘을 만들 준비가 되었습니다. 하나 추가할 점은 앞으로 각 에피소드에서의 시간 단계는 이어지게 표현하겠습니다. 예를 들어, 첫 번째 에피소드가 $t = 100$에서 종료되었다면, 다음 에피소드는 $t = 101$에서 시작하는 방식입니다. 이를 통해 특정 에피소드의 특정 단계를 참조하기 위해 시간 단계를 사용할 수 있고, $\mathcal{T}(s)$라는 표기로 상태 $s$를 방문하는 모든 시간 단계 집합을 정의할 수 있습니다. 이 표기가 유용한 이유는 Every-visit MC 알고리즘을 사용할 때 표현이 간단해지기 때문입니다. 또한 $T(s)$라는 표기를 통해 시간 단계 $t$ 이후 처음으로 에피소드가 종료되는 시점을 나타나게 하겠습니다. 이렇게 되면 $G_t$가 시간 단계 $t$ 이후에서 $T(s)$까지의 Return을 의미하게 됩니다. 또한 $\{ G_t \}_{t \in \mathcal{T}(s)}$는 상태 $s$에 대한 Return을 의미하고, $\{ \rho_{t:T(t)-1} \}_{t \in \mathcal{T}(s)}$는 Importance Sampling Ratio를 의미합니다. 여러 표기가 갑자기 나와서 헷갈리실 수 있는데, 어쨌든 중요한 것은 이게 다 $v_{\pi} (s)$를 간단하게 표현하기 위함입니다. 방금 새로 정의한 표기를 사용하여 $V(s)$를 표현하면 다음과 같습니다.&lt;/p&gt;
+
+\[V(s) \doteq \frac{\sum_{t \in \mathcal{T}(s)} \rho_{t:T(t)-1} G_t}{|\mathcal{T}(s)|} \tag{5.5}\]
+
+&lt;p&gt;식 (5.5)와 같이 Importance Sampling을 단순한 평균으로 계산하는 것을 Ordinary Importance Sampling이라고 합니다. 단순한 평균 대신 가중 평균(Weighted Average)을 사용할 수도 있는데, 이 때는 Weighted Importance Sampling이라고 하며, $V(s)$는 다음과 같이 정의됩니다.&lt;/p&gt;
+
+\[V(s) \doteq \frac{\sum_{t \in \mathcal{T}(s)} \rho_{t:T(t)-1} G_t}{\sum_{t \in \mathcal{T}(s)} \rho_{t:T(t)-1}} \tag{5.6}\]
+
+&lt;p&gt;식 (5.6)에서 만약 분모가 0인 경우에는 $V(s)$를 그냥 0으로 정의합니다.&lt;/p&gt;
+
+&lt;p&gt;이 두 가지 Importance Sampling를 비교하기 위해 상태 $s$에서 단 하나의 Return을 관찰한 후 First-visit MC 방법을 사용한다고 가정해보겠습니다. Weighted Importance Sampling에서는 (시그마 기호가 없어지기 때문에) $\rho_{t:T(t)-1}$가 약분되므로 $V(s)$가 Return $G_t$와 동일해집니다. 단 하나의 Return만 관찰되었기 때문에 이것이 합리적으로 보일 수 있지만, 이것은 $v_b (s)$의 기대값이기 때문에 통계적으로 편향되었다고 볼 수 있습니다. 반대로 Ordinary Importance Sampling에서는 단 하나의 Return이더라도 $v_{\pi} (s)$의 기대값이기 때문에 편향되지는 않지만, 값 자체는 극단적일 수 있습니다. 예를 들어 Importance Sampling Ratio가 10이라면 관찰된 궤적이 Behavior Policy보다 Target Policy에서 10배 더 가치가 있다고 판단되고, 해당 에피소드 궤적이 Policy를 훌륭하게 대표한다고 가정해도 실제로 관측되는 보수와는 크게 차이나는 문제가 있습니다.&lt;/p&gt;
+
+&lt;p&gt;따라서 First-visit MC에서 두 가지 Importance Sampling에 대한 차이는 편향(Bias)과 분산(Variance)의 차이라고 볼 수 있습니다. Ordinary Importance Sampling은 편향되지 않지만 분산이 무한하게 커질 수 있으며, Weighted Importance Sampling은 극단적인 경우에도 분산이 1이지만(위의 예제) 편향적이라는 문제가 있습니다. 두 방법 모두 장단점이 있지만, 일반적으로는 제한된(Bounded) Return 환경에서 분산이 0으로 수렴하는 Weighted Importance Sampling을 더 선호하는 편입니다.&lt;/p&gt;
+
+&lt;p&gt;Every-visit MC 방법에서는 Ordinary Importance Sampling과 Weighted Importance Sampling 모두 편향되지만 Sample의 수가 증가할수록 편향이 0에 가까워집니다. 그렇기 때문에 Off-policy에서는 Every-visit MC 방법이 선호됩니다. Weighted Importance Sampling을 사용한 Off-policy Every-visit MC 알고리즘은 다음과 같습니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/Reinforcement Learning/5. Monte Carlo Methods/RL 05-07.png&quot; alt=&quot;&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;incremental-implementation&quot;&gt;Incremental Implementation&lt;/h2&gt;
+
+&lt;p&gt;이번 섹션의 이름은 2.4와 동일합니다. 그 때와 마찬가지로 On-policy 몬테 카를로 방법을 점화적으로 표현하는 방법에 대해 알아보겠습니다. Off-policy 몬테 카를로 방법은 Importance Sampling을 어떻게 구현하는지에 따라 달라집니다. Ordinary Importance Sampling에서의 Return은 식 (5.3)처럼 $\rho_{t:T(t)-1}$의 비율로 조정되고 식 (5.5)처럼 평균화됩니다. 이렇게하면 섹션 2.4에서 사용했던 방법을 그대로 사용할 수 있지만, Weighted Importance Sampling일 때 사용하기 위해서는 약간 다른 알고리즘이 필요합니다.&lt;/p&gt;
+
+&lt;p&gt;Return의 수열 $G_1, G_2, \ldots, G_{n-1}$이 있다고 가정해봅시다. 이 Return들은 모두 동일한 상태에서 시작하고 각각 해당하는 무작위 가중치 $W_i$를 가집니다. 그렇다면 이것의 가치 함수를 다음과 같이 추정할 수 있습니다.&lt;/p&gt;
+
+\[V_n \doteq \frac{\sum_{k=1}^{n-1} W_k G_k}{\sum_{k=1}^{n-1} W_k}, \quad n \ge 2 \tag{5.7}\]
+
+&lt;p&gt;식 (5.7)을 그대로 사용하면 Return $G_n$을 얻을 때마다 $V_n$을 다시 계산해야하는 불편함이 있습니다. 가중 평균(Weighted Expectation)을 구하기 위해선 섹션 2.4에서 다루었던 점화식을 약간 변경하여, 누적 합계(Cumulative Sum) $C_n$를 추가합니다. 먼저 $V_n$의 점화식은 다음과 같습니다.&lt;/p&gt;
+
+\[V_{n+1} \doteq V_n + \frac{W_n}{C_n} \left[ G_n - V_n \right] , \quad n \ge 1, \tag{5.8}\]
+
+&lt;p&gt;그리고 $C_n$의 점화식은 다음과 같습니다.&lt;/p&gt;
+
+\[C_{n+1} \doteq C_n + W_{n+1}\]
+
+&lt;p&gt;이 때, $C_0 \doteq 0$으로 정의합니다. 이것을 반영한 Off-policy 몬테 카를로 추정 알고리즘은 다음과 같습니다. 아래 알고리즘은 Weighted Importance Sampling으로 구현되었습니다. 만약 On-policy 방법으로 바꾸고 싶다면, Target Policy와 Behavior Policy가 같다는 뜻이므로 ($\pi = b$) $W = 1$로 설정하면 됩니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/Reinforcement Learning/5. Monte Carlo Methods/RL 05-08.png&quot; alt=&quot;&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;off-policy-monte-carlo-control&quot;&gt;Off-policy Monte Carlo Control&lt;/h2&gt;
+
+&lt;p&gt;이제 Off-policy 몬테 카를로 추정을 완성했으니, 제어 방법을 제시할 준비가 되었습니다. On-policy 방법에서는 제어를 위해 정책의 가치를 추정하면서 정책을 사용했으나, Off-policy 방법은 두 기능이 분리된다는 차이점이 있습니다. 그렇기 때문에 Behavior Policy는 행동을 선택하는데만 사용하고, Target Policy는 정책을 평가 및 개선하는데 이 둘이 전혀 연관이 없을 수 있습니다. 이렇게 구분하게 되면 각 행동의 가치에 상관 없이 모든 행동을 계속 샘플링할 수 있다는 장점이 있습니다.&lt;/p&gt;
+
+&lt;p&gt;Off-policy 몬테 카를로 제어 방법은 앞에 두 섹션에서 제안한 기법 중 하나를 사용합니다. 이 때, Behavior Policy는 모든 상태의 모든 행동에 대해서 선택할 확률이 0보다 커야합니다. (=Soft)&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/Reinforcement Learning/5. Monte Carlo Methods/RL 05-09.png&quot; alt=&quot;&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;위의 의사 코드는 $\pi_{*}$와 $q_{*}$를 추정하기 위해 GPI와 Weighted Importance Sampling을 기반으로 하는 Off-policy 몬테 카를로 제어 알고리즘입니다. Target Policy $\pi \approx \pi_{*}$는 $q_{\pi}$의 추정치인 Q에 대해 greedy한 정책이고, Behavior Policy $b$는 $\epsilon$-soft로 선택함으로써 $\pi$의 수렴을 최적의 정책으로 보장하였습니다. 따라서 정책 $\pi$는 정책 $b$에 따라 행동을 선택하더라도 최적으로 수렴하는 것이 보장됩니다.&lt;/p&gt;
+
+&lt;p&gt;이 제어 방법의 문제는 에피소드의 나머지 행동이 greedy일 때 에피소드의 마지막 부분에서만 학습이 된다는 것입니다. 만약 대부분의 행동이 greedy가 아니라면 학습 속도는 그만큼 느릴 수밖에 없습니다. 특히 에피소드의 길이가 길수록 이 문제는 더욱 심각해집니다. 이것을 해결하기 위한 방법은 다음 장에서 주요하게 다룰 예정입니다. (Temporal-Difference Learning) 지금은 $\gamma$가 1보다 작은 특수한 경우에, 이것을 해결하는 간단한 방법을 다음 두 챕터에 걸쳐 알아보겠습니다.&lt;/p&gt;
+
+&lt;h2 id=&quot;discounting-aware-importance-sampling&quot;&gt;Discounting-aware Importance Sampling&lt;/h2&gt;
+
+&lt;p&gt;지금까지 논의했던 Off-policy 방법은 Discount와 같은 Return의 구조를 고려하기 보단, Importance Sampling Ratio를 계산하는 것에 중점을 두었습니다. 이제는 이것을 토대로 Off-policy 추정에서의 분산을 줄이기 위한 아이디어를 논의해 보겠습니다.&lt;/p&gt;
+
+&lt;p&gt;예를 들어, 에피소드의 길이가 100단계이고 $\gamma = 0$인 상황이라고 가정하겠습니다. 그렇다면 $t=0$에서의 Return은 $G_0 = R_1$이지만, Importance Sampling Ratio는 $\frac{\pi (A_0 \mid S_0)}{b (A_0 \mid S_0)} \frac{\pi (A_1 \mid S_1)}{b (A_1 \mid S_1)} \cdots \frac{\pi (A_99 \mid S_99)}{b (A_99 \mid S_99)}$ 와 같이 100 항의 곱셉으로 이루어져 있습니다. Ordinary Importance Sampling에서의 Return은 실제로 첫 번째 항인 $\frac{\pi (A_0 \mid S_0)}{b (A_0 \mid S_0)}$외에는 독립적이지만, 대신 분산이 엄청나게 커질 수 있습니다. 지금부터 이 분산을 피하기 위한 아이디어를 논의하겠습니다.&lt;/p&gt;
+
+&lt;p&gt;아이디어의 핵심은 Discounting을 에피소드가 종료될 확률이나 부분적으로 종료될 확률로 결정하게 생각하는 것입니다. 임의의 $\gamma \in \left[ 0, 1 \right)$에 대해, 에피소드는 $t=1$에서 $1 - \gamma$ 확률로 부분 종료될 수 있습니다. 이 때의 Return은 $R_1$이 됩니다. 마찬가지로 $t=2$에서 에피소드가 부분 종료될 확률은 $(1 - \gamma) \gamma$이며, 이 때의 Return은 $R_1 + R_2$가 되는 방식입니다. 이런 방식으로 얻은 Return을 Flat Partial Return이라고 합니다. 임의의 시간 $t$부터 $h$까지의 Flat Partial Return은 다음과 같이 정의됩니다.&lt;/p&gt;
+
+\[\bar{G}_{t:h} \doteq R_{t+1} + \doteq R_{t+2} + \cdots + R_{h}, \quad 0 \le t &amp;lt; h \le T\]
+
+&lt;p&gt;Flat Partial Return에서 “Flat”은 Discounting이 없다는 것을 의미하고, “Partial”은 Return이 에피소드가 종료되기 전에 Horizon $h$에서 중지된다는 것을 의미합니다. 기존의 전체 Return $G_t$는 다음과 같이 Flat Partial Return의 합계로 표현할 수 있습니다.&lt;/p&gt;
+
+\[\begin{align}
+G_t &amp;amp; \doteq R_{t+1} + \gamma R_{t+2} + \gamma^2 R_{t+3} + \cdots \gamma^{T-t-1} R_T \\ \\
+&amp;amp;= (1 - \gamma) R_{t+1} + (1 - \gamma) \gamma (R_{t+1} + R_{t+2}) + (1 - \gamma) \gamma^2 (R_{t+1} + R_{t+2} + R_{t+3}) \\ \\
+&amp;amp; \cdots + (1 - \gamma) \gamma^{T-t-2} (R_{t+1} + R_{t+2} + \cdots +  R_{T-1}) + \gamma^{T-t-1} (R_{t+1} + R_{t+2} + \cdots +  R_{T}) \\ \\
+&amp;amp;= (1 - \gamma) \sum_{h=t+1}^{T-1} \gamma^{h-t-1} \bar{G}_{t:h} + \gamma^{T-t-1} \bar{G}_{t:T}
+\end{align}\]
+
+&lt;p&gt;Flat Partial Return을 제대로 사용하기 위해서는 Importance Sampling Ratio 또한 적절하게 조절해야 합니다. Return $\bar{G}_{t:h}$는 $h$까지의 보수만 포함하기 때문에 $h-1$까지의 Ratio를 구하면 됩니다. 식 (5.5)와 유사하게, Ordinary Importance Sampling은 다음과 같이 정의할 수 있습니다.&lt;/p&gt;
+
+\[V(s) \doteq \frac{\sum_{t \in \mathcal{T}(s)} \left( (1 - \gamma) \sum_{h=t+1}^{T(t)-1} \gamma^{h-t-1} \rho_{t:h-1} \bar{G}_{t:h} + \gamma^{T(t)-t-1} \rho_{t:T(t)-1} \bar{G}_{t:T(t)} \right)}{|\mathcal{T}(s)|} \tag{5.9}\]
+
+&lt;p&gt;Weighted Importance Sampling의 경우에는 식 (5.6)과 유사하게 다음처럼 정의할 수 있습니다.&lt;/p&gt;
+
+\[V(s) \doteq \frac{\sum_{t \in \mathcal{T}(s)} \left( (1 - \gamma) \sum_{h=t+1}^{T(t)-1} \gamma^{h-t-1} \rho_{t:h-1} \bar{G}_{t:h} + \gamma^{T(t)-t-1} \rho_{t:T(t)-1} \bar{G}_{t:T(t)} \right)}{\sum_{t \in \mathcal{T}(s)} \left( (1 - \gamma) \sum_{h=t+1}^{T(t)-1} \gamma^{h-t-1} \rho_{t:h-1} + \gamma^{T(t)-t-1} \rho_{t:T(t)-1} \right)} \tag{5.10}\]
+
+&lt;p&gt;이렇게 $V(s)$를 추정하는 것을 Discounting-aware Importance Sampling Estimator라고 부릅니다. 가장 큰 특징은 이 추정 방법은 Discount Factor를 고려하지만 $\gamma = 1$인 경우는 효과가 없다는 것입니다. (섹션 5.5의 Off-policy 추정과 동일함)&lt;/p&gt;
+
+&lt;h2 id=&quot;per-decision-importance-sampling&quot;&gt;Per-decision Importance Sampling&lt;/h2&gt;
+
+&lt;p&gt;Off-policy Importance Sampling에서 Discounting이 없는 경우(즉, $\gamma = 1$)에도 분산을 줄일 수 있는 또 다른 방법이 있습니다. Off-Policy를 나타낸 식 (5.5)와 (5.6)에서 분자에 있는 합계의 각 항은, 각각이 보수에 대한 합계(Return)로 표현될 수 있습니다.&lt;/p&gt;
+
+\[\begin{align}
+\rho_{t:T-1} G_t &amp;amp;= \rho_{t:T-1} \left( R_{t+1} + \gamma R_{t+2} + \cdots + \gamma^{T-t-1} R_T \right) \\ \\
+&amp;amp;= \rho_{t:T-1} R_{t+1} + \gamma \rho_{t:T-1} R_{t+2} + \cdots + \gamma^{T-t-1} \rho_{t:T-1} R_T \tag{5.11}
+\end{align}\]
+
+&lt;p&gt;위의 식 (5.11)을 보시면 각각의 항은 Return과 Importance Sampling Ratio의 곱으로 이루어져 있습니다. 즉, 이것은 Importance Sampling Ratio 비율을 가중치로 사용한 Weighted Average라고 볼 수도 있습니다. 이것을 더 간단한 방법으로 표현하기 위해서는, 식 (5.3)을 이용할 수 있습니다. 예를 들어, 식 (5.3)을 사용하면 첫 번째 항을 다음과 같이 표현할 수 있습니다.&lt;/p&gt;
+
+\[\rho_{t:T-1} R_{t+1} = \frac{\pi (A_t | S_t)}{b (A_t | S_t)} \frac{\pi (A_{t+1} | S_{t+1})}{b (A_{t+1} | S_{t+1})} \frac{\pi (A_{t+2} | S_{t+2})}{b (A_{t+2} | S_{t+2})} \cdots \frac{\pi (A_{T-1} | S_{T-1})}{b (A_{T-1} | S_{T-1})} R_{t+1} \tag{5.12}\]
+
+&lt;p&gt;식 (5.12)는 매우 길지만, 사실 이렇게 많은 항의 곱셈 중에서 첫 번째 항과 마지막 항(=$R_{t+1}$)만 유효합니다. 왜냐하면 나머지는 어차피 모두 Return을 얻은 후에 발생한 이벤트이기 때문입니다. 나머지 항에 대한 기대값은 다음과 같이 정리할 수 있습니다.&lt;/p&gt;
+
+\[\mathbb{E} \left[ \frac{\pi (A_k | S_k}{b (A_k | S_k} \right] \doteq \sum_a b (a|S_k) \frac{\pi (a|S_k)}{b (a|S_k)} = \sum_a \pi (a|S_k) = 1 \tag{5.13}\]
+
+&lt;p&gt;이런 식으로 몇 가지 단계를 더 거치면 왜 첫 번째 항과 마지막 항 이외에는 유효하지 않은지 알 수 있습니다.&lt;/p&gt;
+
+\[\mathbb{E} \left[ \rho_{t:T-1} R_{t+1} \right] = \mathbb{E} \left[ \rho_{t:t} R_{t+1} \right] \tag{5.14}\]
+
+&lt;p&gt;식 (5.11)의 $k$번째 항에 대해 이 과정을 반복하면 다음을 얻습니다.&lt;/p&gt;
+
+\[\mathbb{E} \left[ \rho_{t:T-1} R_{t+k} \right] = \mathbb{E} \left[ \rho_{t:t+k-1} R_{t+k} \right]\]
+
+&lt;p&gt;따라서 식 (5.11)의 기대값은 다음과 같이 간단하게 표현 가능합니다.&lt;/p&gt;
+
+\[\mathbb{E} \left[ \rho_{t:T-1} G_t \right] = \mathbb{E} \left[ \tilde{G}_k \right],\]
+
+\[\text{where  } \tilde{G}_t = \rho_{t:t} R_{t+1} + \gamma \rho_{t:t+1} R_{t+2} + \gamma^2 \rho_{t:t+2} R_{t+3} + \cdots + \gamma^{T-t-1} \rho_{t:T-1} R_T\]
+
+&lt;p&gt;위와 같은 식을 Per-decision Importance Sampling이라고 부릅니다. 이렇게 $\bar{G}_t$를 사용하면 식 (5.5)와 같이 편향이 없어지는 $V(s)$의 추정이 나오는데, 식은 다음과 같습니다. (First-visit 이라고 가정)&lt;/p&gt;
+
+\[V(s) \doteq \frac{\sum_{t \in \mathcal{T}(s)} \bar{G}_t }{|\mathcal{T}(s)|} \tag{5.15}\]
+
+&lt;p&gt;식 (5.15)는 Ordinary Importance Sampling으로부터 유도된 Per-decision Importance Sampling입니다. 이와 비슷한 방법으로 Weighted Importance Sampling으로부터 Per-decision Importance Sampling을 유도할 수 있을 것 같지만, 대부분의 경우 일관성이 없기 때문에 (무한 개의 데이터가 주어졌을 때, 올바른 값으로 수렴하지 않음) 존재가 명확하지 않습니다.&lt;/p&gt;
+
+&lt;h2 id=&quot;summary&quot;&gt;Summary&lt;/h2&gt;
+
+&lt;p&gt;이번 장에서 다룬 몬테 카를로 방법은 에피소드라는 경험을 통해 가치 함수와 최적의 정책을 학습합니다. 이것은 DP 방법보다 우수한 장점으로는 ① 환경에 대한 모델이 없어도 환경과의 상호 작용을 통해 최적의 행동을 학습할 수 있고, ② 시뮬레이션이나 샘플 모델과 함께 사용할 수 있으며, ③ 상태의 작은 부분 집합에 집중하는 것이 쉽고 효율적이라는 것입니다. (8장 참고)&lt;/p&gt;
+
+&lt;p&gt;이번 장에서 다루지는 않았지만, 추후 소개할 4번째 장점으로는 Markov Property를 위반했을 때 문제가 작다는 것입니다. 이것은 후속 상태의 추정한 가치를 기반으로 현재의 가치를 추정하지 않기 때문입니다. (=Bootstrapping하지 않기 때문입니다)&lt;/p&gt;
+
+&lt;p&gt;몬테 카를로 제어 방법은 4장에서 소개했던 Generalized Policy Iteration (GPI)를 기반으로 설계하였습니다. GPI는 Policy Evaluation과 Policy Improvement의 상호 작용 과정을 포함합니다. 몬테 카를로 방법은 모델을 사용하는 대신 해당 상태에서 시작했을 때 얻을 수 있는 수익을 평균화함으로써 대안적인 Policy Evaluation 방법을 제공합니다. 또한 환경의 Transition Probability를 필요로 하지 않고 정책을 개선할 수 있기 때문에 행동-가치 함수(Action-value Function)를 추정하는데 유리합니다.&lt;/p&gt;
+
+&lt;p&gt;몬테 카를로 제어에서는 충분한 탐색을 할 수 있도록 유지하는 것이 중요한 이슈입니다. 왜냐하면 현재 시점에서 가장 좋아보이는 행동이 궁극적으로 최선의 행동이 아닐 수 있기 때문입니다. 이것을 해결하기 위해 처음으로 생각할 수 있는 방법은 에피소드가 무작위 상태-행동에서 시작한다고 가정하는 것입니다. 하지만 이러한 탐색 시작의 가정(Exploring Starts)은 실제 상황에서 적용하기 어렵습니다. 따라서 이에 대한 대안으로 에피소드를 탐색하며 최선의 정책을 찾는 On-policy 방법과, 탐색하는 정책과 실제 행동하는 정책을 구분하여 최선의 정책을 찾는 Off-policy 방법이 있습니다.&lt;/p&gt;
+
+&lt;p&gt;Off-policy 방법은 Behavior Policy에 의해 생성된 데이터로부터 Target Policy의 가치 함수를 학습합니다. 이 학습 방법은 다른 표본(Behavior Policy)으로부터 생성된 데이터를 학습(Target Policy)에 사용하므로 Importance Sampling을 사용하여 Return에 가중치를 두는 방식으로 값을 보정합니다. 이 때 사용하는 방법은 두 가지가 있는데, Ordinary Importance Sampling은 단순한 평균을 사용하지만, Weighted Importance Sampling은 가중 평균을 사용한다는 차이가 있습니다. Ordinary Importance Sampling은 추정값이 편향되지 않는다는 장점이 있지만, 분산이 크고 심지어 무한할 수도 있는 단점이 있는 반면, Weighted Importance Sampling은 추정값이 편향될지언정 항상 유한한 분산을 가진다는 장점이 있습니다. Off-policy 방법은 개념적으로 단순하지만, 예측과 제어 모두 불안정하며 발전 가능성이 있기 때문에 지속적으로 연구되고 있습니다.&lt;/p&gt;
+
+&lt;p&gt;5장에 대한 내용은 여기서 마치겠습니다. 읽어주셔서 감사합니다!&lt;/p&gt;</content><author><name>Joonsu Ryu</name></author><category term="studies" /><category term="reinforcement learning" /><summary type="html">이번 장에서는 지난 장과 마찬가지로 가치 함수를 추정하고 최적의 정책을 찾기 위한 방법을 다루지만, 지난 장과는 달리 MDP에 대한 완전한 정보를 알고 있다고 가정하지 않습니다. Monte Carlo (몬테 카를로) 방법은 환경과의 상호 작용을 통해 얻은 경험을 기반으로 최적의 정책을 찾는 방법입니다. 이 때 환경과의 상호 작용은 실제로 이루어지는 경험 뿐만이 아니라 시뮬레이션 경험이라도 상관 없습니다.</summary></entry><entry><title type="html">Dynamic Programming</title><link href="http://localhost:4000/studies/dynamic-programming/" rel="alternate" type="text/html" title="Dynamic Programming" /><published>2022-02-22T00:00:00+09:00</published><updated>2022-02-22T00:00:00+09:00</updated><id>http://localhost:4000/studies/dynamic-programming</id><content type="html" xml:base="http://localhost:4000/studies/dynamic-programming/">&lt;p&gt;&lt;span style=&quot;color:red&quot;&gt;Dynamic Programming&lt;/span&gt;은 Markov Decision Process (MDP)와 같이 완벽한 Environment Model이 주어졌을 때 Optimal Policy을 계산할 수 있는 알고리즘입니다. Dynamic Programming은 학부 알고리즘 수업에서도 다루는 중요한 알고리즘이지만, 완벽한 Model이 주어져야 한다는 가정과 막대한 계산 비용으로 인해 강화학습에 직접적으로 적용하기는 힘든 단점이 있습니다. 다만 Dynamic Programming으로 강화학습 문제를 해결하는 과정은 다른 강화학습 해결 방법을 이해하는데 큰 도움이 되기 때문에 반드시 짚고 넘어가야 합니다.&lt;/p&gt;
 
 &lt;p&gt;Dynamic Programming을 시작하기 전에, 일단 주어진 Environment가 Finite MDP라고 가정합시다. 지난 장에서 배운 것처럼 Finite MDP는 State, Action, Reward이 유한하고 모든 State $s$와 Action $a$에 대해 Transition Probability $p ( s’, r \mid s, a )$가 제공된 Environment를 말합니다.&lt;/p&gt;
 
@@ -1125,439 +1949,5 @@ Q_{n+1} &amp;amp;= Q_n + \alpha \bigg[ R_n - Q_n \bigg] \\ \\
 &lt;p&gt;먼저, 현재 거래되는 모든 주식 회사를 대상으로 합니다. 만약에 50년 전에 당신이라면, 어떤 주식을 구매할 것인지 스스로 판단하고, 50년 후 (즉, 현재) 얼마가 되어있을지를 계산하는 겁니다.&lt;/p&gt;
 
 &lt;p&gt;이 간단한 작업에도 Sampling Bias가 생겼습니다. 현재 거래되는 주식은 50년 전에 분명히 있었지만, 50년 전에 있던 주식회사 중 망한 회사는 선택에서 배제되었기 때문입니다. 문제는 이 과정은 (50년 전을 기준으로) 미래의 데이터를 보고 결정한 것이기 때문에 Sampling Bias 보다는 Data Snooping과 혼동이 생긴다는 것입니다. 여기에서는 두 가지 성질을 모두 가지고 있으므로, Snooping으로 인한 Sampling Bias라고 결론지었습니다.&lt;/p&gt;
-
-&lt;p&gt;이번 장은 여기까지입니다. 읽어주셔서 감사합니다.&lt;/p&gt;</content><author><name>Joonsu Ryu</name></author><category term="studies" /><category term="machine learning" /><summary type="html"></summary></entry><entry><title type="html">Radial Basis Functions</title><link href="http://localhost:4000/studies/radial-basis-functions/" rel="alternate" type="text/html" title="Radial Basis Functions" /><published>2019-11-02T00:00:00+09:00</published><updated>2019-11-02T00:00:00+09:00</updated><id>http://localhost:4000/studies/radial-basis-functions</id><content type="html" xml:base="http://localhost:4000/studies/radial-basis-functions/">&lt;p&gt;&lt;img src=&quot;/images/Machine Learning/16. Radial Basis Functions/ML 16-02.png&quot; alt=&quot;&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;16장은 Radial Basis Function을 배우게 됩니다. 이것으로 데이터에 Label이 없는 Unsupervised Learning을 해결하는 방법을 배우게 됩니다.&lt;/p&gt;
-
-&lt;h2 id=&quot;outline&quot;&gt;Outline&lt;/h2&gt;
-
-&lt;p&gt;&lt;img src=&quot;/images/Machine Learning/16. Radial Basis Functions/ML 16-03.png&quot; alt=&quot;&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;이번 장에서 다룰 내용은 총 4가지인데, 첫 번째 주제를 제외한 나머지는 짧게 다루기 때문에 분량은 다른 장들과 비슷합니다. 첫 번째로 Radial Basis Function 표준 모델을 배우고 Nearest Neighbors Algorithm과 비교합니다. 두 번째로는 Neural Network와 간단하게 비교, 세 번째로 RBF와 Kernel Method와의 비교, 그리고 마지막으로 Regularization과의 비교를 다룰 것입니다. 여기서의 비교는 서로의 연관성과 차이점을 찾는 것입니다.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/images/Machine Learning/16. Radial Basis Functions/ML 16-04.png&quot; alt=&quot;&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;span style=&quot;color:red&quot;&gt;Radial Basis Function&lt;/span&gt;의 기본 아이디어는 데이터 집합의 모든 점이 가설에 영향을 준다는 것입니다. 그런데 잠깐 생각해보면 데이터 집합을 통해 가설을 만들기 때문에 데이터 집합이 가설에 영향을 주는 것은 당연한 것이 아니냐고 생각할 수 있습니다. 하지만 RBF는 ‘거리’라는 특별한 방법으로 영향을 받습니다. 다시 말해, 데이터 집합의 한 점이 근처에 있는 다른 점에 영향을 미친다는 것입니다.&lt;/p&gt;
-
-&lt;p&gt;이해를 돕기 위해, 슬라이드 오른쪽에 나와있는 산 모양의 그림을 봅시다. 산 꼭대기에 데이터 집합 중 한 점 $\mathbf{x}_n$이 있다고 가정해보면, 이 그림은 $\mathbf{x}_n$이 이웃에 대한 영향력이 크다는 것을 나타내고 있습니다. RBF는 거리에 비례하기 때문에, 이 그림은 모든 방향에 대해 대칭적인 구조라는 것을 알 수 있습니다.&lt;/p&gt;
-
-&lt;p&gt;RBF의 기본 형태는 복잡해보이지만, 구조를 이해한다면 생각보다 간단한 개념임을 알 수 있습니다. 먼저 데이터 집합 중 임의의 데이터 점 하나를 $\mathbf{x}$로 정합니다. 가설은 이 점을 기반해서 도출되기 때문에, $h(\mathbf{x})$라고 부릅니다.&lt;/p&gt;
-
-&lt;p&gt;그다음 다른 모든 데이터가 이 $\mathbf{x}$와 얼마나 떨어져 있는지를 계산합니다. 여기서는 Gaussian Function을 사용합니다. 이것이 $\text{exp}( \cdot )$ 부분입니다. 그런 후 데이터 집합의 각 점 $\mathbf{x}_n$이 얼마나 중요한지를 나타내는 가중치 $w_n$이 붙습니다. 나중에 다시 나오겠지만, 이 가중치 $w_n$은 $y_n$과 관련이 있습니다.&lt;/p&gt;
-
-&lt;p&gt;이 과정을 $N$개의 모든 데이터에 수행해주면 RBF 표준 모델 $h(\mathbf{x})$을 만들 수 있습니다. 이것이 Radial Basis Function이라고 부르는 이유는 $\lVert \mathbf{x} - \mathbf{x}_n \rVert$이 Radial Function이고, $\text{exp}( \cdot )$이 Basis Function이기 때문입니다.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/images/Machine Learning/16. Radial Basis Functions/ML 16-05.png&quot; alt=&quot;&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;모델을 알았으니, 이제 RBF의 학습 알고리즘이 무엇인지 알아봅시다. RBF의 기본 형태를 보시면 데이터 집합은 이미 주어졌으니 가중치 $w$만 구하면 됩니다. 그런데 기본 형태를 보시면 가중치의 개수는 $N$개이고, 데이터를 하나하나 대입해서 나오는 식 또한 $N$개입니다. 고등학교 수학에서 미지수의 개수와 식의 개수가 같으면 정확히 1개의 해답이 나오는 것을 배웠습니다. 그렇기 때문에 모든 가중치 $w$를 구하게 되면 In Sample Error가 정확히 0이 됩니다.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/images/Machine Learning/16. Radial Basis Functions/ML 16-06.png&quot; alt=&quot;&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;이전 슬라이드에서 보았듯이 학습 알고리즘은 매우 간단합니다. 결과적으로 이 문제는 $N$개의 방정식이 주어지고 $N$개의 미지수를 구하는 산수 문제이기 때문입니다. 다만 미지수의 개수가와 방정식의 수가 주어진 데이터의 수와 같기 때문에 그것이 매우 귀찮은 일일 뿐입니다.&lt;/p&gt;
-
-&lt;p&gt;그렇기 때문에 여기서는 행렬을 사용해서 미지수를 한번에 계산합니다. 선형대수학에서 방정식의 미지수를 구할 때 역행렬을 사용해 계산하는 방법을 배웠으므로 그 방법을 사용하면 간단하게 모든 가중치를 구할 수 있습니다. 이것을 &lt;span style=&quot;color:red&quot;&gt;Exact Interpolation (정확한 보간)&lt;/span&gt;이라고 부릅니다.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/images/Machine Learning/16. Radial Basis Functions/ML 16-07.png&quot; alt=&quot;&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;이제 RBF에서 $\gamma$의 값이 어떻게 영향을 주는지 알아봅시다. 먼저 $\gamma$의 값이 작다고 가정해봅시다. Gaussian Distribution (정규분포)의 그래프를 생각해보시면 비교적 분포가 고른 완만한 모양이 될 것입니다. 반대로 $\gamma$의 값이 크다면 평균에 대부분이 몰려있는 모양이 됩니다. RBF에서는 이러한 Gaussian Function의 합으로 이루어져 있기 때문에 $\gamma$의 값에 따라 어떤 모양이 될지 대략적으로 상상할 수 있습니다.&lt;/p&gt;
-
-&lt;p&gt;예를 들어, 데이터 집합이 단 3개의 점으로 이루어져 있다고 가정해봅시다. $\gamma$의 값이 큰 경우에는 각각의 데이터 점에 몰려있는 Gaussian Function의 합이기 때문에 데이터 점에서 조금만 거리가 멀어져도 그 영향력이 확 줄어버리게 됩니다. 결과적으로 오른쪽 그림처럼 뾰족뾰족한 모양이 됩니다.&lt;/p&gt;
-
-&lt;p&gt;이번에는 $\gamma$의 값이 작다고 가정해봅시다. 이 경우에는 각각의 데이터 점이 거리가 떨어져도 그 영향력이 완만하게 줄어들기 때문에 3개의 Gaussian Function이 합쳐져 왼쪽 그림과 같이 하나의 산봉우리와 같은 모양이 됩니다.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/images/Machine Learning/16. Radial Basis Functions/ML 16-08.png&quot; alt=&quot;&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;지금까지 다루었던 RBF 모델은 Regression을 위한 모델이었습니다. 3장에서도 배웠듯이 Regression을 사용해 Classification을 할 수도 있습니다. 이번에는 RBF를 사용해 Classification을 하는 방법을 알아보겠습니다.&lt;/p&gt;
-
-&lt;p&gt;방법 자체는 매우 간단합니다. 그저 기존의 식에 $\text{sign}$만 넣어서 Output이 $+1/-1$로만 나오게 만드는 것입니다. 다만 이번에는 Error Measure도 $(s-y)^2$로 달라지기 때문에 더 이상 In Sample Error가 0으로 고정되지 않습니다.&lt;/p&gt;
-
-&lt;h2 id=&quot;rbf-and-nearest-neighbors&quot;&gt;RBF and nearest neighbors&lt;/h2&gt;
-
-&lt;p&gt;&lt;img src=&quot;/images/Machine Learning/16. Radial Basis Functions/ML 16-09.png&quot; alt=&quot;&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;이번에는 RBF 모델과 비슷한 아이디어로 시작된 모델인 Nearest-neighbor method와 어떤 관계가 있는지 살펴봅시다. Nearest-neighbor method는 기존에 분류가 완료된 Training Set을 기반으로 새로운 입력이 들어왔을 때 가장 가까운 데이터와 동일하게 분류하는 간단한 분류 방법입니다. 왼쪽의 그림을 보시면 Training Set의 거리를 기반으로 정확히 중간 지점을 선으로 표현하였습니다. 새로운 데이터가 들어오면 어느 영역에 있는지를 알게 되면 즉각적으로 분류할 수 있습니다.&lt;/p&gt;
-
-&lt;p&gt;RBF 모델 또한 이와 비슷한 개념이기 때문에 RBF를 사용해서 Nearest-neighbor method를 구현할 수 있습니다. RBF로 Nearest-neighbor method를 표현한다면 오른쪽 그림과 같이 실린더 모양이 됩니다. 이것이 의미하는 것은 간단한데, 일정 거리까지는 최대의 영향력을 발휘하지만, 그 범위를 벗어나면 0의 영향력을 가지게 됩니다.&lt;/p&gt;
-
-&lt;p&gt;모양과 의미를 확인해보면 모델 자체가 굉장히 불안정한 것을 알 수 있습니다. 특히 경계선에 위치한 데이터들은 약간의 차이로 +1과 -1이 갈리게 됩니다. 이 문제를 보완하기 위해 보통은 K-Nearest-neighbor method를 사용하는데, 이것은 가장 가까운 K개의 데이터를 찾은 다음 +1이나 -1이 더 많은 쪽으로 분류하는 방법입니다. 이렇게 경계선에서 불안정성이 발생할 때 이를 보완하는 작업을 &lt;span style=&quot;color:red&quot;&gt;Smoothing&lt;/span&gt;이라고 합니다.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/images/Machine Learning/16. Radial Basis Functions/ML 16-10.png&quot; alt=&quot;&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;그렇다면 K-Nearest-neighbor method를 RBF로는 어떻게 구현하는지 알아봅시다. 기존 RBF 모델은 모든 데이터가 가설에 영향을 끼쳤기 때문에 $N$개의 데이터를 모두 사용해서 가설을 만들었고, 그렇기에 $N$개의 가중치 $w$가 있었습니다.&lt;/p&gt;
-
-&lt;p&gt;이제는 주어진 데이터와 가장 가까운 $K$개의 Center만 영향을 끼치게 만들어야 합니다. 그들을 각각 $\mu_1, …, \mu_K$라고 정의합니다. $\mu$는 데이터 집합의 일부일 수도 있지만, 그렇지 않고 사용자가 직접 선정한 특별한 지점일 수도 있습니다.&lt;/p&gt;
-
-&lt;p&gt;$\mu$를 사용해서 RBF를 수정하는 것은 간단합니다. 기존의 RBF에서 $\Sigma$에 있던 $N$을 $K$로 바꿔주고 Basis Function $\text{exp}( \cdot )$에 있던 $\mathbf{x}_n$을 $\mu_k$로 바꿔주면 됩니다.&lt;/p&gt;
-
-&lt;p&gt;하지만 여기에는 두 가지 문제가 있습니다. 첫째로, Center $\mu_k$를 어떻게 선택해야 할까요? 둘째로 그 때 $w_k$는 어떻게 선택해야 할까요?&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/images/Machine Learning/16. Radial Basis Functions/ML 16-11.png&quot; alt=&quot;&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;먼저 Center $\mu_k$를 정하는 방법을 알아봅시다. 하나 떠오르는 방법은 전체 데이터 $\mathbf{x}_1, … \mathbf{x}_N$를 $K$개의 클러스터로 나누어 각 클러스터의 Center에서 각각의 데이터와 평균 제곱 오차를 최소화하게 만드는 것입니다.&lt;/p&gt;
-
-&lt;p&gt;이 방법의 장점은 이것이 Unsupervised Learning이라 $y_n$에 관계없이 구할 수 있다는 것입니다. 하지만 이 방법이 &lt;strong&gt;NP-Hard&lt;/strong&gt;라는 단점이 있습니다. 쉽게 말해 시간복잡도가 다항함수로 표현될 수 없다는 것입니다.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/images/Machine Learning/16. Radial Basis Functions/ML 16-12.png&quot; alt=&quot;&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;이 NP-Hard 문제를 푸는 Iterative Algorithm으로는 &lt;span style=&quot;color:red&quot;&gt;Lloyd’s Algorithm&lt;/span&gt;이 있습니다. 아이디어는 간단합니다. 먼저 무작위로 클러스터를 정한 다음 그 클러스터를 기반으로 Center $\mu_k$를 계산합니다. 그 후에는 그 Center들을 기준으로 클러스터를 다시 만듭니다. 이 과정을 반복하면 결국에 Center들은 특정한 점들로 수렴하게 됩니다. 한 가지 문제는 이것이 &lt;strong&gt;Global Minimum&lt;/strong&gt;이 아니라 &lt;strong&gt;Local Minimum&lt;/strong&gt;으로 수렴하게 된다는 것입니다.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/images/Machine Learning/16. Radial Basis Functions/ML 16-13.png&quot; alt=&quot;&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;Lloyd’s Algorithm을 간단하게 표현하면 다음과 같습니다.&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;데이터 점들을 얻습니다.&lt;/li&gt;
-  &lt;li&gt;지금은 $y$를 배제하고 $\mathbf{w}$만 갖고 수행합니다.&lt;/li&gt;
-  &lt;li&gt;무작위로 Center를 정합니다. 몇 개의 Center를 정하는 것도 문제이지만, 여기서는 Support Vector와 비교하기 위해 Support Vector와 똑같은 수인 9개로 정했습니다.&lt;/li&gt;
-  &lt;li&gt;주어진 Center를 기반으로 클러스터링을 하고, 그 클러스터링에서 새로운 Center를 찾습니다. 이 과정을 반복합니다.&lt;/li&gt;
-  &lt;li&gt;더 이상 Center가 이동하지 않는다면 바로 그 점이 최종 $\mu$ 입니다.&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;이 방법을 통해 데이터들을 분류한다면 위 슬라이드의 오른쪽 그림과 같습니다. 예제에서 좋지 않은 분류가 하나 나왔는데, 바로 가장 왼쪽 아래에 있는 Center입니다. 이 Center를 포함한 클러스터는 $+1$과 $-1$을 모두 갖고 있기 때문에 RBF가 제 역할을 하지 못하지만, 강의에서는 이 정도는 Unsupervised Learning을 사용할 때 감수해야 한다고 합니다.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/images/Machine Learning/16. Radial Basis Functions/ML 16-14.png&quot; alt=&quot;&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;14장에서 배운 Support Vector도 데이터 집합을 대표하는 점이었고, RBF의 Center도 데이터를 대표하는 점입니다. 이 둘을 한번 비교해봅시다. 이 둘은 똑같이 데이터를 대표하는 점이지만 구하는 방법부터 하는 역할까지 모두 다릅니다. 차이점을 간단하게 정리하면 아래와 같습니다.&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;Support Vector는 Supervised Learning으로 구하지만, RBF Center는 Unsupervised Learning으로 구한다.&lt;/li&gt;
-  &lt;li&gt;Support Vector는 무조건 데이터 집합의 점 중 하나이지만, RBF는 그럴 수도 있고, 아닐 수도 있다.&lt;/li&gt;
-  &lt;li&gt;Support Vector는 Separating Surface (분리 평면)을 표현하지만, RBF Center는 데이터 입력을 표현한다.&lt;/li&gt;
-  &lt;li&gt;각각의 Support Vector는 $+1/-1$로 구분되지만 RBF Center는 Label이 없다. ($=y_n$을 사용하지 않는다)&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;&lt;img src=&quot;/images/Machine Learning/16. Radial Basis Functions/ML 16-15.png&quot; alt=&quot;&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;이제 RBF의 Center $\mu$를 모두 구했으니, 남은 것은 가중치 $w$를 구하는 것만 남았습니다.&lt;/p&gt;
-
-&lt;p&gt;그런데, 아까와는 다른 문제가 생겼습니다. 처음 모든 데이터 집합을 사용했을 때는 방정식이 $N$개, 미지수가 $N$개로 동일했기 때문에 In Sample Error를 정확하게 0으로 만드는 가중치 $w$를 찾았지만, 이제는 방정식이 똑같이 $N$개인 상황에서 미지수가 $K$개로 줄어든 상황이 되었습니다.&lt;/p&gt;
-
-&lt;p&gt;고등학교 때 배운 기억을 되살려보면, 방정식의 개수가 미지수의 개수보다 많을 때는 풀지 못한다고 배웠습니다. 그렇기 때문에 여기서는 식을 약간 변형시킵니다. 아까는 데이터 $(\mathbf{x}_n, y_n)$를 대입시켰을 때 정확하게 일치했기 때문에 $=$로 표현했지만, 이제는 약간의 In Sample Error를 감수해야 하므로 $\approx$로 표현합니다.&lt;/p&gt;
-
-&lt;p&gt;이렇게 하고 나면 나머지는 이전과 똑같이 행렬로 표현할 수 있습니다. 다만 이제는 $\Phi$가 정사각행렬이 아니기 때문에 역행렬이 존재하지 않습니다. 그렇기 때문에 $w$를 구하려면 3장에서 배운 &lt;strong&gt;의사역행렬(Pseudo-Inverse)&lt;/strong&gt;를 사용해야 합니다.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/images/Machine Learning/16. Radial Basis Functions/ML 16-16.png&quot; alt=&quot;&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;이제는 RBF를 Graphic Network로 표현해 보겠습니다. 이 그림은 Basis Function $\text{exp}(-\gamma \lVert \mathbf{x} - \mu_k \rVert^2)$을 $\phi$로 표현한 그림입니다.&lt;/p&gt;
-
-&lt;p&gt;아래쪽부터 본다면 데이터 점 $\mathbf{x}$가 각각의 Center $\mu_1, …, \mu_K$와의 거리를 계산하는 것부터 시작합니다. 그리고 나서 각각의 거리를 제곱한 후, $-\gamma$를 곱해 Exponential $e$의 지수에 넣습니다. 최종적으로 이것들을 전부 더해주고 나면 $h(\mathbf{x})$가 도출됩니다. (이 더하는 과정에서 Bias Term $b$ 혹은 $w_0$가 더해질 수도 있습니다.)&lt;/p&gt;
-
-&lt;p&gt;그런데 이 구조는 어디서 많이 본 것 같은 구조입니다. 이 RBF Network를 가로로 눕혀서 본다면 Neural Network와 비슷한 모양이 됨을 유추할 수 있습니다.&lt;/p&gt;
-
-&lt;h2 id=&quot;rbf-and-neural-networks&quot;&gt;RBF and neural networks&lt;/h2&gt;
-
-&lt;p&gt;&lt;img src=&quot;/images/Machine Learning/16. Radial Basis Functions/ML 16-17.png&quot; alt=&quot;&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;그렇다면 RBF Network와 Neural Network를 서로 비교해봅시다. 비교를 쉽게 하기 위해, 오른쪽의 Neural Network는 고의적으로 RBF Network와 유사한 구조로 디자인하였습니다.&lt;/p&gt;
-
-&lt;p&gt;역시 비교를 위해서는 아래쪽 부분부터 살펴봅시다. RBF Network의 $\lVert \mathbf{x} - \mu \rVert$ 부분은 데이터와 Center의 거리가 멀다면 $\phi$를 지날 때 0에 수렴할 것입니다. 즉, Network Output의 기여도가 0에 수렴할 것입니다. 반면 Neural Network에서는 $\mathbf{w} \mathbf{x}$의 값이 크든 작든 Sigmoid 함수를 통과할 것이고, Sigmoid 그래프의 특성상, 이 값은 언제나 Network Output에 일정 부분 기여를 한다는 것을 알 수 있습니다.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/images/Machine Learning/16. Radial Basis Functions/ML 16-18.png&quot; alt=&quot;&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;이제 선택할 마지막 변수는 Gauss Function에서의 $\gamma$ 입니다. 슬라이드 6에서 보았듯이 $\gamma$의 크기에 따른 변화가 적지 않기 때문에 적절한 $\gamma$를 찾는 것은 매우 중요합니다. $\gamma$를 구할 때는 일반적으로 Gradient Descent를 사용해서 In Sample Error가 가장 낮게끔 선택합니다.&lt;/p&gt;
-
-&lt;p&gt;여기에 또 문제가 있습니다. 왜냐하면 Pseudo Inverse로 $w$를 구할 때는 $\gamma$ 값을 알고 있다는 가정 하에 계산하기 때문입니다. 따라서 반복적인 방법으로 $\gamma$를 계산합니다. 여기에 사용하는 알고리즘은 &lt;span style=&quot;color:red&quot;&gt;Expectation Maximazation (EM) Algorithm&lt;/span&gt; 이라고 부릅니다.&lt;/p&gt;
-
-&lt;p&gt;이 알고리즘의 아이디어는 Lloyd’s Algorithm과 유사합니다. 먼저 $\gamma$를 임의의 값으로 고정한 후, 가중치 $w_1, … ,w_K$를 계산합니다. 그 다음에는 반대로 가중치 $w_1, … ,w_K$를 고정한 후 In Sample Error를 최소화하는 $\gamma$를 계산합니다. 여기서는 $\gamma$를 단 1개의 매개변수로 가정했지만, 각 Center 별로 $\gamma$의 값을 다르게 하는 경우도 동일하게 처리할 수 있습니다.&lt;/p&gt;
-
-&lt;h2 id=&quot;rbf-and-kernel-methods&quot;&gt;RBF and kernel methods&lt;/h2&gt;
-
-&lt;p&gt;&lt;img src=&quot;/images/Machine Learning/16. Radial Basis Functions/ML 16-19.png&quot; alt=&quot;&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;이제 RBF와 Kernel Method, 그리고 Regularization과의 연관성을 빠르게 짚고 마치겠습니다.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/images/Machine Learning/16. Radial Basis Functions/ML 16-20.png&quot; alt=&quot;&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;15장에서 Kernel Method를 배울 때 잠깐 RBF Kernel을 언급했었습니다. 이번에는 SVM Kernel과 RBF를 사용한 Classification이 어떻게 다른지를 살펴보겠습니다. (RBF 식에서 $\text{sign}$과 $b$가 파란색 글씨로 나온 이유는 없어도 되는 부분이기 때문입니다.)&lt;/p&gt;
-
-&lt;p&gt;결과만 놓고 보았을 때 오른쪽 그림을 보시면 SVM이 RBF보다 더 잘 Classification 한 것을 볼 수 있습니다. 하지만 이것만 놓고 보았을 때 SVM이 RBF보다 우수하다고 판단할 수는 없습니다. 왜냐하면 이 문제에서의 Support Vector는 9개가 나오는데, RBF가 동등한 조건에서 경쟁하기 위해 $K$를 9로 놓았기 때문입니다. 이전 문제에서도 보았듯이, Center를 9개로 정하는 것이 이 문제에서 최선의 방법이 아니기 때문에 RBF 입장에서는 조금 불공평한 경쟁이라고 볼 수 있습니다.&lt;/p&gt;
-
-&lt;h2 id=&quot;rbf-and-regularization&quot;&gt;RBF and regularization&lt;/h2&gt;
-
-&lt;p&gt;&lt;img src=&quot;/images/Machine Learning/16. Radial Basis Functions/ML 16-21.png&quot; alt=&quot;&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;마지막으로 RBF와 Regularization의 연관성을 정리하겠습니다. Regularization을 통해 RBF를 유도할 수 있습니다. 간단한 예시를 만들기 위해, 데이터는 1차원 입력이라고 가정하겠습니다. 이 데이터로 가설 $h$를 만들고, Squared Error를 계산하면 $(h(x_n) - y_n)^2$ 이 됩니다. 이것을 모든 데이터에 대해 수행해 준 다음 더하게 되면 In Sample Error가 나오는데, 이 자체만 Minimize 하게 되면 Overfitting이 발생하여 $\lambda$를 포함한 추가 항을 더한 다음 Minimize 하는 방법이 Regularization이었습니다.&lt;/p&gt;
-
-&lt;p&gt;여기서는 $\lambda$ 항에 가설 $h$를 입력 $x$에 대해 $k$번 미분한 것의 크기(제곱)를 $-\infty$부터 $\infty$까지 적분해준 값에 상수 $a_k$를 곱해 $k=0$부터 $k=\infty$까지 더한 항을 곱해주었습니다. 왜 이런 식을 해야 하는지는 강의에서도 너무 복잡한 과정이라서 생략하였는데, 이런 Regularization을 수행하면 그 결과가 바로 RBF와 정확하게 일치한다고 설명하였습니다.&lt;/p&gt;
-
-&lt;p&gt;이것은 &lt;span style=&quot;color:red&quot;&gt;Smoothest Interpolation (가장 매끄러운 보간)&lt;/span&gt;이라고 하며 RBF에 대한 또 다른 해석이라고 합니다.&lt;/p&gt;
-
-&lt;p&gt;이번 장은 여기까지입니다. 읽어주셔서 감사합니다.&lt;/p&gt;</content><author><name>Joonsu Ryu</name></author><category term="studies" /><category term="machine learning" /><summary type="html"></summary></entry><entry><title type="html">Kernel Methods</title><link href="http://localhost:4000/studies/kernel-methods/" rel="alternate" type="text/html" title="Kernel Methods" /><published>2019-10-26T00:00:00+09:00</published><updated>2019-10-26T00:00:00+09:00</updated><id>http://localhost:4000/studies/kernel-methods</id><content type="html" xml:base="http://localhost:4000/studies/kernel-methods/">&lt;p&gt;&lt;img src=&quot;/images/Machine Learning/15. Kernel Methods/ML 15-02.png&quot; alt=&quot;&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;15장은 Kernel Method를 배우게 됩니다. 지난 시간에 배웠던 Support Vector Machine에서 이어지는 내용입니다.&lt;/p&gt;
-
-&lt;h2 id=&quot;outline&quot;&gt;Outline&lt;/h2&gt;
-
-&lt;p&gt;&lt;img src=&quot;/images/Machine Learning/15. Kernel Methods/ML 15-03.png&quot; alt=&quot;&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;이번 장은 크게 두 주제로 나뉘어 있습니다. 비선형 변환을 처리하기 위한 Kernel Trick이 무엇인지를 먼저 배우고, SVM의 방법 중 하나인 Soft-margin SVM을 배우게 됩니다. 두 주제가 서로 연관이 되어있지는 않지만, 두 주제 모두 비선형 문제를 해결하기 위한 시도라고 생각하시면 됩니다.&lt;/p&gt;
-
-&lt;h2 id=&quot;the-kernel-trick&quot;&gt;The Kernel trick&lt;/h2&gt;
-
-&lt;p&gt;&lt;img src=&quot;/images/Machine Learning/15. Kernel Methods/ML 15-04.png&quot; alt=&quot;&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;지금까지 비선형 문제를 풀기 위해서는 비선형 문제를 선형 문제로 변환시키기 위해 $\mathcal{Z}$ 공간으로 데이터를 Transform 시키는 방법을 사용하였습니다. 그러나 일반적으로 적당한 Transform Function $\Phi$를 찾는 것은 쉽지 않기 때문에 Transform을 시키지 않은 채로 비선형 문제를 해결하는 방법이 필요합니다. Kernel의 아이디어는 바로 거기서부터 시작합니다.&lt;/p&gt;
-
-&lt;p&gt;먼저 지금까지 $\mathcal{Z}$ 공간에서 어떤 일을 했었는지를 떠올려봅시다. 지난 시간에 배웠던 라그랑지안 $\mathcal{L}$ 식에서 맨 뒷부분을 보시면, 보라색으로 표시된 $\mathbf{z}^{\sf T}_{n}$과 $\mathbf{z}_m$의 내적 부분이 바로 유일하게 $\mathcal{Z}$ 공간이 사용되는 부분입니다. 라그랑지안에서의 Constraints 부분은 $\mathcal{Z}$ 공간과 관련이 없습니다.&lt;/p&gt;
-
-&lt;p&gt;라그랑지안을 풀고 찾은 가설 $g$에도 $\mathbf{z}$가 쓰입니다. 그런데 $g$에서의 Weight인 $\mathbf{z}$가 쓰이므로, 결과적으로 가설 $g$에는 $\mathbf{z}$ 자체보다는 $\mathbf{z}_n$과 $\mathbf{z}$의 내적만이 필요합니다. $b$ 또한 식을 살펴보면 $\mathbf{z}_n$과 $\mathbf{z}_m$의 내적만 알고 있다면 구할 수 있습니다.&lt;/p&gt;
-
-&lt;p&gt;이로써 알 수 있는 것은 라그랑지안을 통해 $\mathcal{Z}$ 공간에서 가설 $g$를 구하기 위해서는 $\mathbf{z}$를 직접 구할 필요 없이 $\mathbf{z}$ 간의 내적만 알 수 있으면 된다는 것입니다. 만약에 $\mathcal{Z}$ 공간까지 가지 않더라도 $\mathbf{z}$ 간의 내적을 구할 수 있다면, 굳이 힘들게 데이터들을 $\mathcal{Z}$ 공간으로 Transform 시키는 수고를 하지 않아도 될 것입니다.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/images/Machine Learning/15. Kernel Methods/ML 15-05.png&quot; alt=&quot;&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;주어진 데이터는 $\mathcal{X}$ 공간에 있는 임의의 두 점 $\mathbf{x}$와 $\mathbf{x}’$이라고 가정합시다. 이 두 점을 $\mathcal{Z}$ 공간으로 Transform 시킨 점을 $\mathbf{z}$와 $\mathbf{z}’$이라고 하면, 우리가 원하는 것은 주어진 데이터만으로 $\mathbf{z}$와 $\mathbf{z}’$의 내적을 구하는 것입니다. 이 내적을 $K(\mathbf{x}, \mathbf{x}’)$으로 표현하고, &lt;span style=&quot;color:red&quot;&gt;Kernel&lt;/span&gt;이라고 부릅니다.&lt;/p&gt;
-
-&lt;p&gt;이해를 돕기 위해 주어진 데이터가 $\mathbf{x} = (x_1, x_2)$라고 가정해 보겠습니다. 만약 Transform Function $\Phi$이 2차 다항식으로 주어진다면 Transform을 한 결과는 $\mathbf{z} = (1, x_1, x_2, x_1^2, x_2^2, x_1 x_2)$가 됩니다. $K(\mathbf{x}, \mathbf{x}’)$를 계산하는 과정은 아래와 같습니다.&lt;/p&gt;
-
-\[\begin{align}
-K(\mathbf{x}, \mathbf{x}&apos;) &amp;amp;= \mathbf{z}^{\sf T} \mathbf{z}&apos; \\&amp;amp;=(1, x_1, x_2, x_1^2, x_2^2, x_1 x_2) \cdot (1, {x&apos;}_1, {x&apos;}_2, {x&apos;}_1^2, {x&apos;}_2^2, {x&apos;}_1 {x&apos;}_2) \\&amp;amp;=1 + x_1 {x&apos;}_1 + x_2 {x&apos;}_2 + x_1^2 {x&apos;}_1^2 + x_2^2 {x&apos;}_2^2 + x_1 {x&apos;}_1 x_2 {x&apos;}_2
-\end{align}\]
-
-&lt;p&gt;&lt;img src=&quot;/images/Machine Learning/15. Kernel Methods/ML 15-06.png&quot; alt=&quot;&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;그렇다면 두 점 $\mathbf{x}$와 $\mathbf{x}’$을 Transform을 하지 않고 $K(\mathbf{x}, \mathbf{x}’)$를 구하는 방법을 알아보겠습니다.&lt;/p&gt;
-
-&lt;p&gt;이번에는 Kernel Function을 $K(\mathbf{x}, \mathbf{x}’) = (1 + \mathbf{x}^{\sf T} \mathbf{x}’)^2$로 가정해봅시다. 이 식을 전개하면 $1 + x_1^2 {x’}_1^2 + x_2^2 {x’}_2^2 + 2 x_1 {x’}_1 + 2 x_2 {x’}_2 + 2 x_1 {x’}_1 x_2 {x’}_2$가 되는데, 잘 살펴보면 두 벡터 $(1, x_1^2, x_2^2, \sqrt{2} x_1, \sqrt{2} x_2, \sqrt{2} x_1 x_2)$와 $(1, {x’}_1^2, {x’}_2^2, \sqrt{2} {x’}_1, \sqrt{2} {x’}_2, \sqrt{2} {x’}_1 {x’}_2)$의 내적을 수행한 결과라는 것을 알 수 있습니다.&lt;/p&gt;
-
-&lt;p&gt;이렇게 $(1 + \mathbf{x}^{\sf T} \mathbf{x}’)$의 제곱의 형태인 Kernel을 &lt;span style=&quot;color:red&quot;&gt;Polynomial Kernel (다항식 커널)&lt;/span&gt;이라고 부릅니다.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/images/Machine Learning/15. Kernel Methods/ML 15-07.png&quot; alt=&quot;&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;일반적인 상황을 고려하기 위해 $d$차원의 주어진 데이터를 $Q$차 다항식으로 Transform을 하게 된다면, 이와 동등한 Kernel은 $K(\mathbf{x}, \mathbf{x}’) = (1 + \mathbf{x}^{\sf T} \mathbf{x}’)^Q$로 표현할 수 있습니다.&lt;/p&gt;
-
-&lt;p&gt;그런데 문제는 만약 $d$와 $Q$가 커지게 되면 $K(\mathbf{x}, \mathbf{x}’)$를 구하기가 너무 어렵다는 것입니다. 슬라이드에 나온대로 $d=10$, $Q=100$인 상황만 가정하더라도 10차 다항식을 100제곱 하는 결과를 구해야 하는데, 계산량이 너무 많아 전개하는 것이 거의 불가능합니다.&lt;/p&gt;
-
-&lt;p&gt;그렇기 때문에 Polynomial Kernel에서는 $\mathbf{x}^{\sf T} \mathbf{x}’$를 전개하지 않고 $a \mathbf{x}^{\sf T} \mathbf{x}’ + b$ 의 형태로 만들어 이항정리를 사용해 $\mathbf{x}^{\sf T} \mathbf{x}’$의 계수만을 구하게 됩니다.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/images/Machine Learning/15. Kernel Methods/ML 15-08.png&quot; alt=&quot;&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;Kernel이 두 점 $\mathbf{x}$와 $\mathbf{x}’$의 내적으로 정의된 문제는 해결되었으나, 그 외에 상황을 고려할 필요가 있습니다. 이번 예제에 나온 Kernel은 $\mathbf{x}$와 $\mathbf{x}’$의 내적으로 표현되지 않고 &lt;strong&gt;Euclidean Norm&lt;/strong&gt;으로 표현되고 있습니다. 이런 식의 Kernel이 $\mathcal{Z}$ 공간에 존재하는 지를 보여야 합니다.&lt;/p&gt;
-
-&lt;p&gt;결론부터 말하면 이 Kernel은 무한차원의 $\mathcal{Z}$ 공간에 존재합니다. 간단한 예를 들면 주어진 점 $\mathbf{x}$를 1차원이라 가정합니다. 그렇다면 $\mathbf{x}$와 $\mathbf{x}’$는 모두 스칼라로 표현이 되므로 $x$와 $x’$으로 대체합니다. 그리고 $\gamma$를 간단하게 1로 놓습니다.&lt;/p&gt;
-
-&lt;p&gt;그런 후에 이 식을 &lt;strong&gt;Taylor Series (테일러 급수)&lt;/strong&gt;로 표현한다면 좀 더 복잡한 식이 되긴 합니다. 하지만 보기 쉽게 $x$와 $x’$를 갖고 있는 것을 각각 분리한다면 두 무한 차원의 벡터의 내적으로 이루어진 식임을 알 수 있습니다.&lt;/p&gt;
-
-&lt;p&gt;참고로 이런 Kernel을 &lt;span style=&quot;color:red&quot;&gt;Radial Basis Function Kernel&lt;/span&gt;이라고 합니다. 다음 장에서 이를 더 자세하게 다룰 예정입니다.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/images/Machine Learning/15. Kernel Methods/ML 15-09.png&quot; alt=&quot;&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;이제 Kernel을 실제 비선형 문제에서 적용하는 방법을 살펴봅시다. 주어진 $\mathcal{X}$ 공간의 데이터들을 무한 차원인 $\mathcal{Z}$ 공간에 Transform 할 필요 없이, 이전 슬라이드에서 배운 Kernel만을 사용할 것입니다. Kernel을 Quadratic Programming에 입력하면 알아서 Support Vector가 구해지기 때문에 직접적인 계산은 필요가 없습니다.&lt;/p&gt;
-
-&lt;p&gt;그림이 작아서 잘 보이진 않지만, 파란색의 점과 빨간색의 점이 양쪽의 Support Vector입니다. 그리고 그 Support Vector를 따라 그린 검은색 곡선이 학습 결과가 됩니다. Support Vector인데 왜 Margin이 크지 않는지 궁금해하실 수도 있는데, 이 검은색 곡선은 $\mathcal{Z}$ 공간에서 Margin이 최대인 직선으로 그린 것이기 때문에 지금 보는 $\mathcal{X}$ 공간과는 관련이 없습니다.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/images/Machine Learning/15. Kernel Methods/ML 15-10.png&quot; alt=&quot;&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;Support Vector Machine을 계산할 때, 위와 비슷한 Quadratic Programming 문제를 풀었던 것을 기억하실 겁니다. 그 당시에는 $\mathcal{X}$ 공간의 문제를 풀었기 때문에 저 자리에 $\mathbf{x}$와 $\mathbf{x}’$의 내적이 들어가 있었습니다. 비선형 문제를 풀기 위해서는 저 자리에 $\mathbf{z}$와 $\mathbf{z}’$의 내적이 있어야 하지만, 그것이 싫어 $K(\mathbf{x}, \mathbf{x}’)$로 대체한 것이 지금까지 한 내용입니다.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/images/Machine Learning/15. Kernel Methods/ML 15-11.png&quot; alt=&quot;&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;이제 Kernel에서 Final Hypothesis를 어떻게 구하는지를 알아봅시다.&lt;/p&gt;
-
-&lt;p&gt;이전에도 보았듯이, Hypothesis를 $\mathcal{Z}$ 공간에서 구했기 때문에 $g$는 $\mathbf{z}$가 포함된 식으로 표현이 가능했습니다. 하지만 지금까지 우리는 $\mathbf{z}$를 배제해왔으니, 이것 대신 Kernel $K( - , - )$로 표현할 수 있도록 식을 바꾸어봅시다.&lt;/p&gt;
-
-&lt;p&gt;이번 장의 앞부분에서 했던 것처럼 $\mathbf{w}$를 풀어서 전개하면 $\mathbf{z}$ 간의 내적으로 표현할 수 있게 되고, 그 부분을 $K(\mathbf{x}_n, \mathbf{x})$로 대체할 수 있습니다. 시그마가 포함된 앞부분은 더이상 정리할 수 없지만, $b$는 또다시 Kernel로 표현할 수 있습니다.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/images/Machine Learning/15. Kernel Methods/ML 15-12.png&quot; alt=&quot;&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;지금까지 배운 Kernel의 유일한 문제, 스스로 만든 임의의 Kernel이 유효한지를 알 수 없다는 것입니다. 다시 말해, 우리가 제시한 Kernel이 어떤 $\mathcal{Z}$ 공간에서 나온 Kernel임을 보여야 한다는 것입니다.&lt;/p&gt;
-
-&lt;p&gt;크게 3가지 접근방법이 있는데, 첫 번째는 Polynomial Kernel과 같이 개념적인 방법으로 접근하여 Kernel을 만드는 방법입니다. 두 번째는 다음 슬라이드에서 설명할 Kernel의 수학적인 특성을 이용하는 것입니다. 세 번째는 저자분이 선호하는 방법이라고 하는데 그냥 신경 쓰지 않는 방법이라고 합니다.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/images/Machine Learning/15. Kernel Methods/ML 15-13.png&quot; alt=&quot;&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;이전 슬라이드에서 말한 Kernel의 수학적인 특성을 이용해 Kernel을 디자인해봅시다. 임의의 Kernel이 유효하기 위한 필요충분조건은 첫째로 Symmetric 해야 한다는 조건이 있습니다. 이것은 $\mathbf{x}$와 $\mathbf{x}’$의 위치를 서로 바꿔도 원래의 식과 동일해야 한다는 것입니다.&lt;/p&gt;
-
-&lt;p&gt;두번째는 모든 데이터 점을 사용해 만든 Kernel Matrix가 &lt;span style=&quot;color:red&quot;&gt;Positive Semi-Definite&lt;/span&gt;여야 합니다. Matrix가 Positive Semi-Definite라는 것은 해당 Matrix의 모든 Eigenvalue가 음수가 아니라는 것인데, 일반적으로는 영벡터가 아닌 $x$에 대해 $x^{\sf T} M x \ge 0$이라면 Matrix $M$이 Positive Semi-Definite라고 부릅니다.&lt;/p&gt;
-
-&lt;p&gt;이 수학적 특성을 &lt;span style=&quot;color:red&quot;&gt;Mercer’s Condition&lt;/span&gt;이라고 부르는데, 보시다시피 두 번째 조건은 데이터의 많은 경우 계산이 어렵기 때문에 실제로 이를 보이는 것은 쉽지 않습니다.&lt;/p&gt;
-
-&lt;h2 id=&quot;soft-margin-svm&quot;&gt;Soft-margin SVM&lt;/h2&gt;
-
-&lt;p&gt;&lt;img src=&quot;/images/Machine Learning/15. Kernel Methods/ML 15-14.png&quot; alt=&quot;&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;Kernel에 대한 이야기는 끝났고, 다음으로는 Soft-margin SVM에 대해 알아봅시다.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/images/Machine Learning/15. Kernel Methods/ML 15-15.png&quot; alt=&quot;&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;이전과 마찬가지로 비선형 문제를 다룰 것이지만, 비선형 문제도 두 가지 종류로 나눌 수 있습니다. 하나는 왼쪽 그림처럼 몇 개의 데이터만 무시한다면 선형으로 나눌 수 있는 경우고, 다른 하나는 오른쪽 그림처럼 아예 선형 분류를 시도조차 할 수 없는 경우입니다.&lt;/p&gt;
-
-&lt;p&gt;오른쪽 그림과 같은 경우는 Kernel로 처리하면 되지만, 왼쪽 그림과 같은 경우는 Kernel보다 더 나은 방법이 있을 것 같습니다. 이제 배울 &lt;span style=&quot;color:red&quot;&gt;Soft-Margin SVM&lt;/span&gt;으로 이런 경우를 처리할 것입니다.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/images/Machine Learning/15. Kernel Methods/ML 15-16.png&quot; alt=&quot;&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;Support Vector Machine의 Error Measure를 다시 한번 살펴보겠습니다. 현재 문제가 되는 것은 Support Vector 사이에 있는 Margin 영역에 &lt;strong&gt;Violation (침범)&lt;/strong&gt;하는 데이터입니다. 이 Violation 데이터 때문에 Support Vector를 구하는 식인 $y_n (\mathbf{w}^{\sf T} \mathbf{x}_n + b) \ge 1$가 성립하지 않습니다.&lt;/p&gt;
-
-&lt;p&gt;이 문제를 해결하기 위해 Violation 데이터를 정량화할 필요가 있고, 원래의 최적화 식을 변형해야 합니다. 오른쪽 항에 0보다 큰 $\xi_n$를 빼주는데, $\xi_n$의 총 합이 Violation이 일어나는 총 합이 됩니다.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/images/Machine Learning/15. Kernel Methods/ML 15-17.png&quot; alt=&quot;&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;Support Vector를 구하는 식을 바꾸었으니 원래의 최적화 식 또한 변경할 필요가 있습니다. 원래의 최적화 식에 $\xi_n$의 총 합과 그 가중치를 나타내는 상수 $C$를 곱한 값을 빼주어야 합니다. Augment Error의 개념과 비슷하다고 생각하시면 됩니다. 최적화 식의 조건은 이전 슬라이드에서 변경했던 식이 그대로 들어왔습니다.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/images/Machine Learning/15. Kernel Methods/ML 15-18.png&quot; alt=&quot;&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;최적화 식이 바뀌었으니, 그것을 계산하는 라그랑지안 또한 바뀔 것임을 쉽게 알 수 있습니다. 라그랑지안에서는 최적화 식과 조건을 하나의 식으로 만들어주므로 대부분의 항은 크게 문제 될 것이 없습니다. 마지막 항을 보시면 $\beta_n \xi_n$의 합을 빼는 항이 추가된 것이 보이는데, 이것은 $\xi_n$이 0보다 크다는 조건을 라그랑지안으로 표현한 것입니다.&lt;/p&gt;
-
-&lt;p&gt;라그랑지안에서 변수 $\xi_n$가 추가되었으니 라그랑지안을 $\xi_n$에 대해 편미분한 식을 구해야 합니다. 라그랑지안이 복잡해 보이지만, 자세히 보시면 라그랑지안이 $\xi_n$에 대해 죄다 1차식으로만 이루어졌다는 것을 알 수 있습니다. 따라서 남는 계수는 $C$와 $\alpha_n$, 그리고 $\beta_n$ 뿐입니다. 식은 간단하지만 의외로 이 편미분의 결과가 의미하는 바는 큰데, $\alpha_n$이 $C$보다 절때 클 수 없다는 것입니다. 만약에 $\alpha_n$가 $C$ 보다 크다면 편미분 식을 만족하는 $\beta_n$값이 없어지기 때문입니다. 게다가 이제 $\beta_n$을 $\alpha_n$과 $C$로 표현할 수 있으니, 추가된 새로운 변수인 $\beta_n$을 소거할 수 있습니다.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/images/Machine Learning/15. Kernel Methods/ML 15-19.png&quot; alt=&quot;&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;최종적으로 라그랑지안을 살펴보면 당연히 $\beta_n$는 이제 없어지고, $\alpha_n$이 $C$보다 크지 않다는 조건이 추가되었습니다.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/images/Machine Learning/15. Kernel Methods/ML 15-20.png&quot; alt=&quot;&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;이제 Support Vector의 종류를 살펴보도록 하겠습니다. 이제 이전과 달리 모든 Support Vector가 Magin을 나타내는 것이 아닙니다. 변경된 Support Vector를 구하는 식에서 $\xi_n$가 0인 경우에는 이전과 마찬가지로 Margin의 경계선에 위치하는 Support Vector가 나오지만, 그렇지 않은 경우에는 Support Vector가 전혀 엉뚱한 위치에 있을 수 있기 때문입니다.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/images/Machine Learning/15. Kernel Methods/ML 15-21.png&quot; alt=&quot;&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;마지막으로 두 가지 기술적 관점을 살펴보겠습니다. 원래의 Support Vector Machine은 데이터가 선형으로 분리가 가능한 경우를 가정해서 Hard Margin을 계산하는 것이었습니다. 그러나 데이터가 선형 분리가 되지 않을 때는 다른 방법을 찾아야 하는데, 쉬운 방법으로는 방금과 같이 Soft Margin을 구하는 것입니다. 이때 변수가 $\alpha$ 하나에서 $\beta$가 추가되었기 때문에 Dual Problem으로 바뀌게 됩니다.&lt;/p&gt;
-
-&lt;p&gt;두 번째로는 $\mathcal{Z}$ 공간에서의 문제입니다. 기존에 Threshold를 의미하는 $w_0$이 있었다는 것을 기억하실 겁니다. 그런데 SVM에서는 이에 대한 언급이 없고, 이와 비슷한 기능을 하는 $b$가 있었습니다. 같은 역할을 하는 서로 다른 변수가 있기 때문에 개념이 꼬일 수 있지만, 결과적으로 이 둘이 전부 0으로 수렴하기 때문에 실제 계산에서는 신경 쓸 필요가 없습니다.&lt;/p&gt;
-
-&lt;p&gt;이번 장은 여기까지입니다. 읽어주셔서 감사합니다.&lt;/p&gt;</content><author><name>Joonsu Ryu</name></author><category term="studies" /><category term="machine learning" /><summary type="html"></summary></entry><entry><title type="html">Support Vector Machines</title><link href="http://localhost:4000/studies/support-vector-machines/" rel="alternate" type="text/html" title="Support Vector Machines" /><published>2019-10-19T00:00:00+09:00</published><updated>2019-10-19T00:00:00+09:00</updated><id>http://localhost:4000/studies/support-vector-machines</id><content type="html" xml:base="http://localhost:4000/studies/support-vector-machines/">&lt;p&gt;&lt;img src=&quot;/images/Machine Learning/14. Support Vector Machines/ML 14-02.png&quot; alt=&quot;&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;14장은 새로운 기계학습의 방법인 Support Vector Machine을 배우게 됩니다. 지금처럼 Neural Network가 유명해지기 전까지는 가장 널리 쓰이던 방법이었습니다.&lt;/p&gt;
-
-&lt;h2 id=&quot;outline&quot;&gt;Outline&lt;/h2&gt;
-
-&lt;p&gt;&lt;img src=&quot;/images/Machine Learning/14. Support Vector Machines/ML 14-03.png&quot; alt=&quot;&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;이번 장은 Classification 문제에서 Margin을 최대화하는 것부터 시작해서, 그것을 찾는 해법, 그리고 Nonlinear Transform에 응용하는 방법까지를 다루게 됩니다.&lt;/p&gt;
-
-&lt;h2 id=&quot;maximizing-the-margin&quot;&gt;Maximizing the margin&lt;/h2&gt;
-
-&lt;p&gt;&lt;img src=&quot;/images/Machine Learning/14. Support Vector Machines/ML 14-04.png&quot; alt=&quot;&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;먼저, 선형 분리가 가능한 데이터 집합이 있다고 가정해봅시다. 간단하게 표현하기 위해, 상단의 그림처럼 4개의 데이터만 존재하고, 빨간색과 파란색으로 분류하는 문제를 예로 들어보겠습니다. 이 문제를 해결하기 위해 두 데이터 종류를 분리하는 선을 그어야 하는데, 빨간색과 파란색을 분리하기만 하면 되므로 해답은 무수히 많습니다. 슬라이드에는 그 중 3가지의 해답을 보여주고 있습니다.&lt;/p&gt;
-
-&lt;p&gt;위의 그림에 나온 분리선을 위 아래로 평행이동시킨다고 가정해봅시다. 어느 방향으로 움직이든 처음으로 데이터를 만나는 곳까지를 Margin으로 정의합니다. Margin의 의미는 데이터 분리에 오류가 발생하기 전까지 움직일 수 있는 영역을 의미합니다. 이를 3개의 그림에서 노란색 영역으로 표시한 것을 알 수 있습니다.&lt;/p&gt;
-
-&lt;p&gt;세 그림에서 분리선은 모두 주어진 데이터를 올바르게 나누고 있습니다. 하지만 만약에 이 중 하나를 고르라고 하면 많은 분들이 3번째 그림을 고를 것입니다. 왜냐하면 3번째 그림의 Margin이 가장 크다는 것을 알기 때문입니다. 여기서 두 가지 의문이 생깁니다.&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;왜 Margin이 클 수록 좋은가?&lt;/li&gt;
-  &lt;li&gt;Margin을 크게 만들기 위해서 $\mathbf{w}$를 어떻게 설정해야 하는가?&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;첫 번째 의문에 대한 답은 Margin이 크다면 데이터에 Noise가 있는 경우 Error를 일으킬 확률이 줄어들기 때문입니다. 첫 번째와 같이 나누게 되면, 빨간 점의 노이즈로 인해 분리선을 넘는 데이터가 발생할 확률이 상당히 높게 발생할 수 있습니다. 그에 반해 세 번째 그림의 분리선은, 데이터와 멀리 떨어져 있기 때문에 그럴 위험이 상대적으로 적음을 쉽게 알 수 있습니다.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/images/Machine Learning/14. Support Vector Machines/ML 14-05.png&quot; alt=&quot;&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;잠시 5장에서 배운 Growth Function을 떠올려봅시다. 만약에 데이터가 3개이고, 선으로 데이터를 나누는 예제가 있다고 가정합니다. 이 예제에서는 3개의 점으로 가능한 모든 경우인 $2^3=8$개의 경우의 수가 나왔습니다. 이 말은 Growth Function이 크다는 것이고, Growth Function이 크다는 것은 일반화가 쉽지 않다는 말과 같습니다.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/images/Machine Learning/14. Support Vector Machines/ML 14-06.png&quot; alt=&quot;&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;일반화 문제를 해결하기 위해서, 먼저 똑같은 예제에서 8개의 경우를 각각 Margin이 가장 큰 방법으로 나누어보겠습니다. 데이터가 무작위로 분포해있기 때문에, 그림을 보시면 아시겠지만 나누었을 때 Margin이 큰 경우도 있고, 작은 경우도 있습니다. 만약에 우리가 Margin이 &lt;strong&gt;Fat&lt;/strong&gt;한 경우만 허용한다면, 위의 3번째 그림과 같은 경우는 사용할 수 없으므로, 경우의 수가 줄어들게 됩니다. 즉, &lt;strong&gt;Fat Margin은 Dichotomy의 수를 줄인다&lt;/strong&gt;라는 것을 의미합니다.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/images/Machine Learning/14. Support Vector Machines/ML 14-07.png&quot; alt=&quot;&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;그렇다면 이제는 선형 분류에서, 두 종류의 데이터를 나누는 작업에 Margin이 커야 한다는 조건이 추가된 것입니다. 그렇게 만들기 위해 $\mathbf{w}$를 어떻게 찾아야하는지를 알아보겠습니다.&lt;/p&gt;
-
-&lt;p&gt;Margin은 단순하게 나누는 평면에서 데이터 점까지의 거리입니다. 그 거리를 계산하기 위해, 먼저 데이터를 나누는 평면 $\mathbf{w}^{\sf T} \mathbf{x} = 0$ 과 가장 가까운 점 $\mathbf{x}_n$를 가정합니다. 데이터를 나누는 것을 &lt;strong&gt;선&lt;/strong&gt;이 아니라 &lt;strong&gt;평면&lt;/strong&gt;이라고 지칭하는 이유는 2차원이 아닌 일반적인 차원을 기준으로 계산해야하기 때문입니다.&lt;/p&gt;
-
-&lt;p&gt;그렇다면 이제는 평면과 점 사이의 거리를 계산해야 합니다. 그 전에 먼저 알아야 할 것은 첫째로 $\mathbf{w}$를 정규화하는 것입니다.&lt;/p&gt;
-
-&lt;p&gt;둘째로 $w_0$를 식에서 따로 분리하는 것입니다. 기존의 선형 분류에서 $w_0$는 Threshold를 위해 만든 가중치였습니다. 그렇기 때문에 $w_0$의 역할은 $w_1 ~ w_d$까지의 역할과 완전히 다른 역할을 하므로 $\mathbf{w}$에서 따로 분리하는 것이 추후 계산에서 좀 더 편합니다. 이제 $\mathbf{w}$는 $w_1 ~ w_d$으로만 이루어진 벡터라고 가정하고, $w_0$는 $b$로 바꾸어서 더해줄 것입니다. 즉, 이제 평면의 방정식은 $\mathbf{w}^{\sf T} \mathbf{w} + b = 0$으로 바뀐 것입니다.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/images/Machine Learning/14. Support Vector Machines/ML 14-08.png&quot; alt=&quot;&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;이제 점 $\mathbf{x}_n$과 평면 $\mathbf{w}^{\sf T} \mathbf{x} + b = 0$ 사이의 거리를 구하는 문제를 해결해야 합니다. $w_0$이 $b$로 바뀌고 $\mathbf{w}$ 밖으로 나왔기 때문에, 1로 정규화시킨 식 또한 약간 바뀐 것을 알 수 있습니다.&lt;/p&gt;
-
-&lt;p&gt;이해를 돕기 위해 위 슬라이드의 오른쪽 그림을 참고하면서 계산해봅시다. 고등학교 때 배운 평면의 방정식을 떠올려보면, $\mathbf{w}$는 평면의 법선벡터이기 때문에 평면과 직교하게 됩니다. 이를 보이려면 평면의 임의의 점 $\mathbf{x}^{\prime}$과 $\mathbf{x}^{\prime\prime}$을 잡습니다. 두 점은 평면 위의 점이기 때문에, 평면의 방정식에 대입해도 식이 변하지 않습니다. 식 $\mathbf{w}^{\sf T} \mathbf{x}^{\prime} + b = 0$에서 식 $\mathbf{w}^{\sf T} \mathbf{x}^{\prime} + b = 0$를 뺀다면 $\mathbf{w}^{\sf T} (\mathbf{x}^{\prime} - \mathbf{x}^{\prime\prime})$ 이 됩니다. $\mathbf{w}$와 $(\mathbf{x}^{\prime} - \mathbf{x}^{\prime\prime})$ 두 벡터의 내적이 0이 나오므로, 두 벡터는 직교하는 것이고 $\mathbf{x}^{\prime}$과 $\mathbf{x}^{\prime\prime}$는 평면 위의 임의의 점이므로, 평면과 $\mathbf{w}$는 직교한다고 볼 수 있습니다.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/images/Machine Learning/14. Support Vector Machines/ML 14-09.png&quot; alt=&quot;&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;이제 평면 밖의 점 $\mathbf{x}_n$과 평면 사이의 거리를 계산해봅시다. 평면위에 임의의 점 $\mathbf{x}$를 잡고, 벡터 $\mathbf{x}_n - \mathbf{x}$를 $\mathbf{w}$에 사영(Projection)합니다. 이 길이를 구하기 위해, 먼저 $\mathbf{w}$의 단위벡터를 $\hat{\mathbf{w}}$로 정의합니다. 그렇다면 구하려는 거리는 $\hat{\mathbf{w}}^{\sf T} (\mathbf{x}_n - \mathbf{x})$ 벡터의 크기가 됩니다.&lt;/p&gt;
-
-&lt;p&gt;이 식에서 단위벡터를 풀고 정리하면, $b$를 한번 더해주고 빼주는 테크닉을 통해 평면의 방정식과 비슷한 형태로 정리할 수 있습니다. 여기서 $\mathbf{w}^{\sf T} \mathbf{x} + b$는 평면의 방정식 정의로 인해 0이고, $\mathbf{w}^{\sf T} \mathbf{x}_n + b$는 1로 정규화를 시켰었기 때문에, 결국 구하려는 거리를 표현한 식은 $\frac{1}{\lVert \mathbf{w} \rVert}$만 남게 됩니다.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/images/Machine Learning/14. Support Vector Machines/ML 14-10.png&quot; alt=&quot;&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;결국 최적화해야하는 문제는 $\frac{1}{\lVert \mathbf{w} \rVert}$를 최대화하는 것입니다. Margin을 최대화하기 위해서는 분리 평면과 데이터 점 사이의 거리를 멀게 만들어야 하기 때문입니다. 여기에 조건으로, 분리 평면과 가장 가까운 점에서 $\mathbf{w}$를 $1$로 정규화하는 것을 추가해야 합니다.&lt;/p&gt;
-
-&lt;p&gt;그러나 조건에 Minimize가 들어있으면 최적화 문제를 풀기 어렵기 때문에, 문제를 조금 변형시킬 필요가 있습니다. $\lvert \mathbf{w}^{\sf T} \mathbf{x}_n + b\rvert$는 $y_n (\mathbf{w}^{\sf T} \mathbf{x}_n + b)$로 대체할 수 있습니다. 왜냐하면, 이 문제에서는 선형 분리가 가능한 데이터 집합을 가정했기 때문에, 모든 데이터가 올바르게 분류되는 상황만을 따지기 때문입니다. 만약에 데이터가 $+1$로 분류된다면 $y_n = 1, -1$로 분류된다면 $y_n = -1$이 되므로 절대값과 동일한 기능을 가짐을 알 수 있습니다.&lt;/p&gt;
-
-&lt;p&gt;또한 목적 함수도 분모에 Euclide Norm이 불편하기 때문에 식을 Maximize로 수정해주고, $\mathbf{w}$에 대한 2차식으로 바꾸어줍니다. (이 부분은 아직 이해가 덜 되어 추후 그 이유를 추가하겠습니다)&lt;/p&gt;
-
-&lt;p&gt;최종적으로 바꾼 식을 보시면 조건 부분이 $1$과 같은 것이 아니라 $1$ 이상으로 바뀌었습니다. 만약에 모든 조건식이 $1$보다 크다면, 단순히 $\mathbf{w}$와 $b$를 조절함으로써 제일 $1$에 가까운 식을 $1$로 맞춰줄 수 있기 때문입니다.&lt;/p&gt;
-
-&lt;h2 id=&quot;the-solution&quot;&gt;The solution&lt;/h2&gt;
-
-&lt;p&gt;&lt;img src=&quot;/images/Machine Learning/14. Support Vector Machines/ML 14-11.png&quot; alt=&quot;&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;이제 이전 슬라이드에서 유도한 최적화 식을 해결하는 방법을 알아보겠습니다.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/images/Machine Learning/14. Support Vector Machines/ML 14-12.png&quot; alt=&quot;&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;최적화 문제에서 많이 사용되는 라그랑주를 사용하고자 합니다. 그런데 조건에 부등식이 들어가 있습니다. 이렇게 조건에 부등식이 들어간 라그랑지안을 &lt;span style=&quot;color:red&quot;&gt;KKT (Karush Kuhn Tucker)&lt;/span&gt; 라고 합니다. KKT는 대학원 수업에서 다루는 Convex Optimization에 나오는 내용인데, 이 강의에서 구체적으로 KKT를 풀지는 않으니 일단 이런 것이 있다고만 생각하고 넘어가도록 합시다.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/images/Machine Learning/14. Support Vector Machines/ML 14-13.png&quot; alt=&quot;&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;이 문제를 쉽게 풀기 위해 이전에 정규화에서 배웠던 방법을 생각해봅시다. 왜냐하면 이 때도 조건에 부등식이 들어간 목적 함수를 최소화하는 문제를 풀었기 때문입니다. 단지 차이는 목적 함수가 $E_{in}$이 $\mathbf{w}^{\sf T} \mathbf{w}$으로 바뀌고, 조건이 $\mathbf{w}^{\sf T} \mathbf{w}$에서 $E_{in}$으로 바뀌었을 뿐입니다. 갑자기 SVM의 조건에 $E_{in}$을 언급하는 이유는, 모든 데이터가 올바르게 분류된다고 가정했기 때문에 $E_{in}$이 0이여만 하기 때문입니다.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/images/Machine Learning/14. Support Vector Machines/ML 14-14.png&quot; alt=&quot;&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;라그랑주 승수법(Lagrange Multiplier)에 의해, 조건으로 붙은 $y_n(\mathbf{w}^{\sf T} + b) - 1$은 목적 함수로 들어갑니다. 이 라그랑지안을 $\mathbf{w}$와 $b$에 대해 풀어야 합니다.&lt;/p&gt;
-
-&lt;p&gt;그 후 주어진 라그랑지안을 최소화하는 해법을 찾기 위해, $\mathbf{w}$에 대해 기울기(Gradient)가 0이 되는 지점을 구해야 합니다. 다행히도 라그랑지안의 첫번째 항은 $\mathbf{w}$에 대한 2차식, 두번째 항은 $\mathbf{w}$에 대한 1차식이기 때문에 기울기는 간단하게 구할 수 있습니다.&lt;/p&gt;
-
-&lt;p&gt;마찬가지로 라그랑지안을 $b$로 편미분을 하게 되면 첫번째 항은 $b$가 포함되지 않았으므로 0, 두번째 항은 $b$에 대한 1차식이므로 역시 간단하게 구할 수 있습니다. 이 편미분 식 역시 0이 되는 지점을 찾아야 합니다.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/images/Machine Learning/14. Support Vector Machines/ML 14-15.png&quot; alt=&quot;&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;이전에 구한 식들을 정리해보겠습니다. 정리 자체는 매우 간단합니다. 기존의 라그랑지안 식에서, 이전에 구한 $\mathbf{w}$와 $\sum_{n=1}^{N} \alpha_n y_n$만 대입하면 라그랑지안 식에서 $\mathbf{w}$와 $b$는 모두 사라지게 되고, 라그랑지안 식은 $\alpha$에 관한 식으로 변하게 됩니다.&lt;/p&gt;
-
-&lt;p&gt;(추후에 자세한 정리 과정을 여기에 적겠습니다)&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/images/Machine Learning/14. Support Vector Machines/ML 14-16.png&quot; alt=&quot;&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;결국 최종적으로 풀어야 하는 식은 Quadratic Programming 문제가 됩니다. 여기서 직접 QP 문제를 풀 필요는 없습니다. 왜냐하면 MATLAB, Python 등의 라이브러리에서 QP를 풀어주는 기능이 이미 존재하기 때문입니다. 지금까지 유도한 QP 문제만 넣어주면 알아서 답이 나오기 때문에, 여기에서는 QP 문제 해결 방법은 생략하도록 하겠습니다.&lt;/p&gt;
-
-&lt;p&gt;다만 주어진 문제는 Maximize를 해야 하는데, QP 문제는 일반적으로 Minimize를 시키게 되어있습니다. 따라서 식의 부호를 반대로 하고 Maximize를 Minimize하는 문제로 바꾸겠습니다.&lt;/p&gt;
-
-&lt;p&gt;그리고 앞의 식에서 $\alpha$와 $\mathbf{x}$, $y$를 구분해주기 위해 식을 변형시켜 $\alpha$를 앞으로 따로 빼고 나머지는 Matrix로 표현했습니다.&lt;/p&gt;
-
-&lt;p&gt;식 자체가 매우 복잡해보이지만, 단지 프로그램에 넣기 편하게 만들기 위해 식을 풀어쓴 것입니다. 간단하게는 아래처럼 표현할 수 있습니다.&lt;/p&gt;
-
-\[\min \frac{1}{2} \alpha^{\sf T} \mathbf{Q} \alpha - \mathbf{1}^{\sf T} \alpha\]
-
-\[\text{subject to }\mathbf{y}^{\sf T} \alpha = 0; \alpha \ge 0\]
-
-&lt;p&gt;QP 문제를 제시하는 것까지는 성공적이었으나, QP 문제를 컴퓨터가 풀어준다고 해도 여전히 문제점이 있습니다. 특히, Quadratic Coefficients로 표현된 Matrix는 $N \times N$ 크기이기 때문에 데이터가 많이 주어질수록 푸는데 시간이 오래 걸린다는 문제가 있습니다. 그렇기에 현재 이런 문제를 쉽게 풀기 위한 경험적인 방법이 연구되고 있습니다.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/images/Machine Learning/14. Support Vector Machines/ML 14-17.png&quot; alt=&quot;&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;계산상의 문제는 별개의 문제이기 때문에 여기서는 일단 성공적으로 $\alpha$를 구했다고 가정해봅시다. 그 다음에는 당연히 $\mathbf{w}$를 구해야하는데, 이것은 굉장히 쉽습니다. $\mathbf{x}$와 $y$는 주어진 데이터이기 때문에 당연히 알고있는 것이고, 여기에 방금 구한 $\alpha$만 대입한다면 자연스레 $\mathbf{w}$가 계산되기 때문입니다.&lt;/p&gt;
-
-&lt;p&gt;둘째로 볼 것은 KKT 조건에서 Slack이라고 불렸던 식입니다. 이 식이 0이 되므로 $\alpha$ 또는 $(y_n ( \mathbf{w}^{\sf T} \mathbf{x}_n + b) - 1 )$이 0이 되어야 합니다. 이것은 이전에 정규화에서 배웠던 것과 비슷하게 볼 수 있습니다. $\alpha$가 0이라는 것은 라그랑지안이 0이 되었다는 뜻이므로 데이터 점이 아예 Margin 바깥에 있음을 의미합니다. 즉, 이것은 신경을 쓸 필요가 없습니다.&lt;/p&gt;
-
-&lt;p&gt;중요한 점은 $(y_n ( \mathbf{w}^{\sf T} \mathbf{x}_n + b) - 1 )$이 0이 되는 지점입니다. 이 말은 데이터 점이 정확하게 Margin의 경계선에 있다는 것을 의미하기 때문입니다. 이 때의 점 $\mathbf{x}_n$은 Margin의 범위를 &lt;strong&gt;도와&lt;/strong&gt;주기 때문에 Support Vector라고 부릅니다.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/images/Machine Learning/14. Support Vector Machines/ML 14-18.png&quot; alt=&quot;&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;Support Vector를 직관적으로 이해하려면, 위 슬라이드의 오른쪽 그림을 참고하시면 됩니다. 보라색 선은 데이터 집합을 구분하는 분리 평면이 되고, 노란색 영역은 Margin이 됩니다. 노란색 영역의 경계선을 보시면 경계에 걸쳐있는 점이 표시되어 있는데, 이 점들이 바로 Support Vector입니다. 이전 슬라이드에서 $(y_n ( \mathbf{w}^{\sf T} \mathbf{x}_n + b) - 1 )$이 0이 되는 점이었습니다. 그리고 바로 이전 슬라이드에서 $\alpha$가 0이 되는 점들이 Margin 밖에 있는 데이터입니다.&lt;/p&gt;
-
-&lt;p&gt;지금까지 $\alpha$와 $\mathbf{w}$만 구했지, $b$를 아직 구하지 않았습니다. $b$를 구하는 방법도 간단한데, Support Vector가 아닌 데이터에서는 $\alpha$가 0이 되므로 $b$를 구하는데 쓸 수 없습니다. 그렇기에 Support Vector를 먼저 구한 다음, 아무 Support Vector 데이터를 가져오면 $y_n ( \mathbf{w}^{\sf T} \mathbf{x}_n + b) = 1$이란 간단한 식이 나오므로, $\mathbf{w}$만 대입하면 $b$를 구할 수 있습니다.&lt;/p&gt;
-
-&lt;h2 id=&quot;nonlinear-transforms&quot;&gt;Nonlinear transforms&lt;/h2&gt;
-
-&lt;p&gt;&lt;img src=&quot;/images/Machine Learning/14. Support Vector Machines/ML 14-19.png&quot; alt=&quot;&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;지금까지는 선형 분리가 가능한 경우를 가정했지만, 이제 Support Vector를 Nonlinear Transform에 응용해보도록 하겠습니다.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/images/Machine Learning/14. Support Vector Machines/ML 14-20.png&quot; alt=&quot;&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;일반적이 Nonlinear Transform은 기존의 데이터 $\mathbf{x}$를 Transform Function을 통해 $\mathbf{z}$으로 바꾸어줬습니다. $\mathbf{x}$는 선형 분리가 불가능한 데이터이지만, Transform을 통해 선형 분리가 가능한 $\mathbf{z}$로 바꾼 것입니다.&lt;/p&gt;
-
-&lt;p&gt;데이터를 Transform 해도 라그랑지안은 그렇게 크게 바뀌지 않다는 걸 눈치채셨을 겁니다. $\alpha$를 푸는 QP 문제는 어차피 데이터의 “수”에만 영향을 받기 때문입니다. 즉, 데이터를 Transform 하는 것은 Support Vector를 구하는 것을 어렵게 만들지 않습니다.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/images/Machine Learning/14. Support Vector Machines/ML 14-21.png&quot; alt=&quot;&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;$\mathcal{Z}$ 공간에서 $\alpha$와 Support Vector를 구한 다음 데이터 집합을 다시 $\mathcal{X}$ 공간으로 Transform하게 되면 위 그림과 같은 분리 평면이 나오게 됩니다. $\mathcal{Z}$ 공간에서는 분리 평면이 직선과 같은 형태지만, $\mathcal{X}$ 공간에서는 이렇게 곡선 형태로 나오게 됩니다. Support Vector는 그림상에 특별하게 표시가 되어있습니다.&lt;/p&gt;
-
-&lt;p&gt;분리 평면을 언뜻 보면 Overfitting을 일으킬 것처럼 생겼습니다. 하지만 이 문제에서는 Support Vector가 4개로 나오는데, 이 말은 $\mathcal{Z}$ 공간에서 $\mathbf{w}$는 4개의 Parameter만 있다는 뜻입니다. 그렇기에 Support Vector는 일반화에 매우 적합한 특징을 갖고 있다고 볼 수 있습니다.&lt;/p&gt;
-
-&lt;p&gt;Support Vector에서의 일반화를 명확하게 정리하면, 평균적인 Out of Sample Error는 Support Vector의 수의 평균을 $N-1$로 나눈 것보다 작습니다.&lt;/p&gt;
 
 &lt;p&gt;이번 장은 여기까지입니다. 읽어주셔서 감사합니다.&lt;/p&gt;</content><author><name>Joonsu Ryu</name></author><category term="studies" /><category term="machine learning" /><summary type="html"></summary></entry></feed>

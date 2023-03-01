@@ -10,7 +10,6 @@ tags:
   - reinforcement learning
 ---
 
-
 이번 장에서는 이 책에서 해결하고자 하는 목표인 <span style="color:red">Finite Markov Decision Processes (Finite MDP)</span>에 대해 소개합니다. $k$-armed bandit 문제에서는 즉각적인 Reward에 대한 피드백만 고려하였으나, MDP는 즉각적인 Reward와 더불어 이어지는 State와 미래에 받을 Reward 등을 모두 포함한 의사 결정이 필요합니다. 수식으로 표현하면 bandit 문제에서는 각각의 Action $a$에 대하여 $q_* (a)$를 추정하였으나, MDP에서는 각각의 State $s$와 Action $a$를 모두 포함한 $q_* (s, a)$를 추정하거나, State $s$에 대한 Value $v_* (s)$를 추정합니다.
 
 MDP는 강화학습 문제를 이론적으로 접근하기 위해 수학적으로 표현된 형태입니다. MDP에서 핵심적으로 다루게 될 요소는 Return, Value Function, Bellman Equation입니다. 그리고 여기서는 Finite MDP에만 한정하여 접근할 예정입니다.

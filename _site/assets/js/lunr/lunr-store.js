@@ -142,4 +142,22 @@ var store = [{
         "tags": ["reinforcement learning"],
         "url": "/studies/dynamic-programming/",
         "teaser": null
+      },{
+        "title": "Monte Carlo Methods",
+        "excerpt":"이번 장에서는 지난 장과 마찬가지로 가치 함수를 추정하고 최적의 정책을 찾기 위한 방법을 다루지만, 지난 장과는 달리 MDP에 대한 완전한 정보를 알고 있다고 가정하지 않습니다. Monte Carlo (몬테 카를로) 방법은 환경과의 상호 작용을 통해 얻은 경험을 기반으로 최적의 정책을 찾는 방법입니다. 이 때 환경과의 상호 작용은 실제로 이루어지는 경험 뿐만이...","categories": ["studies"],
+        "tags": ["reinforcement learning"],
+        "url": "/studies/monte-carlo-methods/",
+        "teaser": null
+      },{
+        "title": "Temporal-Difference Learning",
+        "excerpt":"이번 장은 강화학습의 핵심 아이디어인 시간차 학습(Temporal-Difference Learning ; TD Learning)을 다루게 됩니다. 시간차 학습은 환경에 대한 정확한 모델 없이 경험을 통해 학습한다는 몬테 카를로 아이디어와 최종 결과를 기다리지 않고(Bootstrapping) 학습된 다른 추정치를 기반으로 추정치를 업데이트한다는 동적 프로그래밍 아이디어를 결합하여 만들어졌습니다. 이번 장의 시작은 이전 장들과 같이 주어진 정책 $\\pi$에...","categories": ["studies"],
+        "tags": ["reinforcement learning"],
+        "url": "/studies/temporal-difference-learning/",
+        "teaser": null
+      },{
+        "title": "n-step Bootstrapping",
+        "excerpt":"이번 장에서는 5장에서 배운 몬테 카를로 방법과 6장에서 배운 시간차 방법을 융합하여 만든 새로운 방법을 소개합니다. 몬테 카를로 방법은 항상 에피소드가 끝난 후에야 학습이 가능했고, 시간차 방법은 1단계만 행동하면 학습이 가능했습니다. 그렇다면 그 사이의 단계인 $n$번째 단계까지 행동한 다음 학습을 하게 되면 조금 더 일반화된 학습이 가능하지 않을까라는 아이디어가 떠오르게...","categories": ["studies"],
+        "tags": ["reinforcement learning"],
+        "url": "/studies/n-step-bootstrapping/",
+        "teaser": null
       }]
