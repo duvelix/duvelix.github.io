@@ -144,7 +144,7 @@ var store = [{
         "teaser": null
       },{
         "title": "Monte Carlo Methods",
-        "excerpt":"이번 장에서는 지난 장과 마찬가지로 가치 함수를 추정하고 최적의 정책을 찾기 위한 방법을 다루지만, 지난 장과는 달리 MDP에 대한 완전한 정보를 알고 있다고 가정하지 않습니다. Monte Carlo (몬테 카를로) 방법은 환경과의 상호 작용을 통해 얻은 경험을 기반으로 최적의 정책을 찾는 방법입니다. 이 때 환경과의 상호 작용은 실제로 이루어지는 경험 뿐만이...","categories": ["studies"],
+        "excerpt":"이번 장에서는 지난 장과 마찬가지로 Value Function을 추정하고 Optimal Policy를 찾기 위한 방법을 다루지만, 지난 장과는 달리 MDP에 대한 완전한 정보를 알고 있다고 가정하지 않습니다. Monte Carlo Method는 Environment와의 상호 작용을 통해 얻은 경험을 기반으로 Optimal Policy를 찾는 방법입니다. 이 때 Environment와의 상호작용은 실제로 이루어지는 경험 뿐만이 아니라 시뮬레이션된 경험이라도...","categories": ["studies"],
         "tags": ["reinforcement learning"],
         "url": "/studies/monte-carlo-methods/",
         "teaser": null
