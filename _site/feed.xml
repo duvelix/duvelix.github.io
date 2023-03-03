@@ -1,52 +1,52 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.3">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-03-02T15:49:31+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">KEEPMIND</title><subtitle>A place I record so that I don&apos;t forget.</subtitle><author><name>Joonsu Ryu</name></author><entry><title type="html">n-step Bootstrapping</title><link href="http://localhost:4000/studies/n-step-bootstrapping/" rel="alternate" type="text/html" title="n-step Bootstrapping" /><published>2022-04-06T00:00:00+09:00</published><updated>2022-04-06T00:00:00+09:00</updated><id>http://localhost:4000/studies/n-step-bootstrapping</id><content type="html" xml:base="http://localhost:4000/studies/n-step-bootstrapping/">&lt;p&gt;이번 장에서는 5장에서 배운 몬테 카를로 방법과 6장에서 배운 시간차 방법을 융합하여 만든 새로운 방법을 소개합니다. 몬테 카를로 방법은 항상 에피소드가 끝난 후에야 학습이 가능했고, 시간차 방법은 1단계만 행동하면 학습이 가능했습니다. 그렇다면 그 사이의 단계인 $n$번째 단계까지 행동한 다음 학습을 하게 되면 조금 더 일반화된 학습이 가능하지 않을까라는 아이디어가 떠오르게 됩니다.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.3">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-03-03T14:39:54+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">KEEPMIND</title><subtitle>A place I record so that I don&apos;t forget.</subtitle><author><name>Joonsu Ryu</name></author><entry><title type="html">$n$-step Bootstrapping</title><link href="http://localhost:4000/studies/n-step-bootstrapping/" rel="alternate" type="text/html" title="$n$-step Bootstrapping" /><published>2022-04-06T00:00:00+09:00</published><updated>2022-04-06T00:00:00+09:00</updated><id>http://localhost:4000/studies/n-step-bootstrapping</id><content type="html" xml:base="http://localhost:4000/studies/n-step-bootstrapping/">&lt;p&gt;이번 장에서는 5장에서 배운 Monte Carlo Method과 6장에서 배운 Temporal Difference (TD)를 융합하여 만든 새로운 방법을 소개합니다. Monte Carlo Method는 항상 Episode가 끝난 후에야 학습이 가능했고, TD는 1단계만 관찰하면 학습이 가능했습니다. 그렇다면 그 사이의 단계인 $n$번째 단계까지 관찰한 다음 학습을 하게 되면 조금 더 일반화된 학습이 가능하지 않을까하는 아이디어가 떠오르게 됩니다.&lt;/p&gt;
 
-&lt;p&gt;이렇게 $n$개의 시간 단계 동안 행동한 후 학습에 반영하는 것을 $n$-step Bootstrapping이라고 합니다. 시간차 방법은 경험이 즉각적으로 학습에 반영되지만, 때때로 조금 더 장기적인 관점에서 바라봐야할 문제가 있습니다. 이런 관점에서 $n$-step Bootstrapping은 12장에서 배울 Eligibility Traces의 기반이 됩니다.&lt;/p&gt;
+&lt;p&gt;이렇게 $n$개의 시간 단계 동안 관찰한 후 학습에 반영하는 것을 &lt;span style=&quot;color:red&quot;&gt;$n$-step Bootstrapping&lt;/span&gt;이라고 합니다. TD은 경험이 즉각적으로 학습에 반영되지만, 때때로 조금 더 장기적인 관점에서 바라봐야하는 문제가 있습니다. 이런 관점에서 $n$-step Bootstrapping은 12장에서 배울 Eligibility Traces의 기반이 됩니다.&lt;/p&gt;
 
-&lt;p&gt;이번 장 역시 이전 장들과 마찬가지로, 먼저 추정 방법을 알아본 다음에 제어 문제를 다루는 순서로 진행됩니다. 즉, 먼저 $n$-step Bootstrapping으로 $v_{\pi}$를 추정한 후, 최적의 정책을 찾기 위한 제어 방법을 논의할 예정입니다.&lt;/p&gt;
+&lt;p&gt;이번 장 역시 이전 장들과 마찬가지로, 먼저 Prediction을 알아본 다음에 Control을 다루는 순서로 진행됩니다. 즉, 먼저 $n$-step Bootstrapping으로 $v_{\pi}$를 추정한 후, Optimal Policy를 찾기 위한 Control 방법을 논의할 예정입니다.&lt;/p&gt;
 
 &lt;h2 id=&quot;n-step-td-prediction&quot;&gt;$n$-step TD Prediction&lt;/h2&gt;
 
-&lt;p&gt;$\pi$를 사용하여 생성된 샘플 에피소드에서 $v_{\pi}$를 추정할 때, 몬테 카를로 방법은 에피소드가 끝날 때까지 해당 상태부터 관찰된 전체 보수의 합인 Return을 기반으로 업데이트하고, 1-step TD 방법은 1개의 보수만 관찰한 후 업데이트합니다. 이번에는 이 두 극단적인 방법의 중간점으로 $n$개의 보수를 관찰한 후 업데이트를 수행하는 $n$-step TD 방법에 대해 알아보겠습니다. 1-step TD, $n$-step TD, 그리고 몬테 카를로 방법의 차이는 아래의 백업 다이어그램을 보시면 쉽게 이해할 수 있습니다.&lt;/p&gt;
+&lt;p&gt;Policy $\pi$를 사용하여 생성된 Sample Episode에서 $v_{\pi}$를 추정할 때, Monte Carlo Method는 Episode가 끝날 때까지 해당 State부터 관찰된 전체 Reward의 합인 Return을 기반으로 업데이트하고, 1-step TD는 1개의 Reward만 관찰한 후 업데이트합니다. 이번에는 이 두 극단적인 방법의 중간점으로 $n$개의 Reward를 관찰한 후 업데이트를 수행하는 $n$-step TD에 대해 알아보겠습니다. 1-step TD, $n$-step TD, 그리고 Monte Carlo Method의 차이는 아래의 Backup Diagram을 보시면 쉽게 이해할 수 있습니다.&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;/images/Reinforcement Learning/7. n-step bootstrapping/RL 07-01.png&quot; alt=&quot;&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;$n$-step 업데이트를 1-step TD와 마찬가지로 시간차 학습(TD)이라고 부르는 이유는, 1-step TD처럼 이후의 추정이 어떻게 달라지는지에 따라 이전의 추정이 변하기 때문입니다. 다만 그 추정이 1-step 후가 아니라 $n$-step 후일 뿐입니다.&lt;/p&gt;
+&lt;p&gt;$n$-step 업데이트를 1-step TD와 마찬가지로 TD라고 부르는 이유는, 1-step TD처럼 이후의 추정이 어떻게 달라지는지에 따라 이전의 추정이 변하기 때문입니다. 다만 그 추정이 1-step 후가 아니라 $n$-step 후일 뿐입니다.&lt;/p&gt;
 
-&lt;p&gt;이들간의 차이를 수식으로 비교해봅시다. 먼저 몬테 카를로 방법에서 Return $G_t$를 계산하는 식은 다음과 같았습니다.&lt;/p&gt;
+&lt;p&gt;이들간의 차이를 수식으로 비교해봅시다. 먼저 Monte Carlo Method에서 Return $G_t$를 계산하는 식은 다음과 같았습니다.&lt;/p&gt;
 
 \[G_t \doteq R_{t+1} + \gamma R_{t+2} + \gamma^2 R_{t+3} + \cdots + \gamma^{T-t-1} R_T\]
 
-&lt;p&gt;위 식에서 $T$는 에피소드의 마지막 시간 단계입니다. 몬테 카를로 방법에서는 Return을 각 시간 단계마다 받는 보수에 discount를 곱한 값의 합으로 계산합니다.&lt;/p&gt;
+&lt;p&gt;위 식에서 $T$는 Episode의 마지막 시간 단계입니다. Monte Carlo Method에서는 Return을 각 시간 단계마다 받는 Reward에 Discount $\gamma$를 곱한 값의 합으로 계산합니다.&lt;/p&gt;
 
 \[G_{t:t+1} \doteq R_{t+1} + \gamma V_t (S_{t+1})\]
 
-&lt;p&gt;반면에 1-step 방법에서는 첫 번째 보수와, 다음 상태의 추정 가치에 discount를 곱한 값의 합으로 계산됩니다. $V_t$는 시간 단계 $t$에서 추정한 $v_{\pi}$를 의미하며, $G_{t:t+1}$는 시간 단계 $t$부터 $t+1$까지 얻은 수익을 의미합니다. 이 개념을 확장하면 2-step 방법의 Return은 다음과 같음을 알 수 있습니다.&lt;/p&gt;
+&lt;p&gt;반면에 1-step TD에서는 첫 번째 Reward와, 다음 State의 추정 Value에 Discount를 곱한 값의 합으로 계산됩니다. $V_t$는 시간 단계 $t$에서 추정한 $v_{\pi}$를 의미하며, $G_{t:t+1}$는 시간 단계 $t$부터 $t+1$까지 얻은 수익을 의미합니다. 이 개념을 확장하면 2-step의 Return은 다음과 같음을 알 수 있습니다.&lt;/p&gt;
 
 \[G_{t:t+2} \doteq R_{t+1} + \gamma R_{t+2} + \gamma^2 V_{t+1} (S_{t+2})\]
 
-&lt;p&gt;위와 같은 방법으로 $n$-step 방법의 Return을 만들면 다음과 같습니다.&lt;/p&gt;
+&lt;p&gt;위와 같은 방법으로 $n$-step의 Return을 만들면 다음과 같습니다.&lt;/p&gt;
 
 \[G_{t:t+n} \doteq R_{t+1} + \gamma R_{t+2} + \cdots + \gamma^{n-1} R_{t+n} + \gamma^n V_{t+n-1} (S_{t+n}) \tag{7.1}\]
 
-&lt;p&gt;위 식에서 $n \ge 1$이고 $0 \le t &amp;lt; T - n$이라는 조건이 있습니다. 만약 $t + n \ge T$라면 $n$-step이 끝나기 전에 에피소드가 끝난다는 이야기이므로 $T$ 이후의 항은 모두 0으로 처리하면 됩니다.&lt;/p&gt;
+&lt;p&gt;위 식에서 $n \ge 1$이고 $0 \le t &amp;lt; T - n$이라는 조건이 있습니다. 만약 $t + n \ge T$라면 $n$-step이 끝나기 전에 Episode가 끝난다는 이야기이므로 $T$ 이후의 항은 모두 0으로 처리하면 됩니다.&lt;/p&gt;
 
-&lt;p&gt;1-step 방법에서 시간 단계 $t+1$에 도달해야 $t$에서의 가치 함수를 업데이트 할 수 있던 것처럼, $n$-step 방법 또한 시간 단계 $t+n$에 도달해야만 $t$에서의 가치 함수를 업데이트 할 수 있습니다. 그렇기 때문에 $n$-step 방법에서 가장 처음 학습을 하는 시간 단계는 $t+n$이 됩니다. 이 점을 반영하여 $V$의 업데이트 규칙을 정의하면 다음과 같습니다.&lt;/p&gt;
+&lt;p&gt;1-step에서 시간 단계 $t+1$에 도달해야 $t$에서의 Value Function을 업데이트 할 수 있던 것처럼, $n$-step 또한 시간 단계 $t+n$에 도달해야만 $t$에서의 Value Function을 업데이트 할 수 있습니다. 그렇기 때문에 $n$-step에서 가장 처음 학습을 하는 시간 단계는 $t+n$이 됩니다. 이 점을 반영하여 $V$의 업데이트 식을 정의하면 다음과 같습니다.&lt;/p&gt;
 
 \[V_{t+n} (S_t) \doteq V_{t+n-1} (S_t) + \alpha \left[ G_{t:t+n} - V_{t+n-1} (S_t) \right], \quad 0 \le t &amp;lt; T \tag{7.2}\]
 
-&lt;p&gt;이 때, $S_t$ 이외의 상태에서는 가치 함수가 변하지 않습니다. 즉, 모든 $s \ne S_t$에 대해서 $V_{t+n} (s) = V_{t+n-1} (s)$입니다. 이것을 $n$-step TD라고 부릅니다. $n$-step TD의 모든 에피소드에서는 처음 $n-1$ 시간 단계까지는 아무것도 변하지 않는데, 이를 보완하기 위해 각 에피소드가 끝난 후 다음 에피소드가 시작되기 전에 동일한 수의 추가적인 업데이트가 이루어집니다. 완전한 의사 코드를 보시면 이것이 어떤 의미인지 이해가 되실 겁니다.&lt;/p&gt;
+&lt;p&gt;이 때, $S_t$ 이외의 State에서는 Value Function이 변하지 않습니다. 즉, 모든 $s \ne S_t$에 대해서 $V_{t+n} (s) = V_{t+n-1} (s)$입니다. 이것을 $n$-step TD라고 부릅니다. $n$-step TD의 모든 Episode에서는 처음 $n-1$ 시간 단계까지는 아무것도 변하지 않는데, 이를 보완하기 위해 각 Episode가 끝난 후 다음 Episode가 시작되기 전에 동일한 수의 추가적인 업데이트가 이루어집니다. 완전한 Pseudocode를 보시면 이것이 어떤 의미인지 이해가 되실 겁니다.&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;/images/Reinforcement Learning/7. n-step bootstrapping/RL 07-02.png&quot; alt=&quot;&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;$n$-step Return은 가치 함수 $V_{t+n-1}$를 사용하여 $R_{t+n}$ 이후에 누락된 보상을 보완합니다. $n$-step Return의 장점은 최악의 상황에서 $V_{t+n-1}$보다 $v_{\pi}$ 추정값이 더 낫다는 것입니다. 다시말해, $n$-step Return에서 가장 큰 오차는 $V_{t+n-1}$의 가장 큰 오차보다 $\gamma^n$ 배 만큼 작거나 같습니다. 이것을 수식으로 표현하면 다음과 같습니다.&lt;/p&gt;
+&lt;p&gt;$n$-step Return은 Value Function $V_{t+n-1}$를 사용하여 $R_{t+n}$ 이후에 누락된 Reward를 보완합니다. $n$-step Return의 장점은 최악의 상황에서 $V_{t+n-1}$보다 $v_{\pi}$ 추정값이 더 낫다는 것입니다. 다시말해, $n$-step Return에서 가장 큰 오차는 $V_{t+n-1}$의 가장 큰 오차보다 $\gamma^n$ 배 만큼 작거나 같습니다. 이것을 수식으로 표현하면 다음과 같습니다.&lt;/p&gt;
 
 \[\max_s \left| \mathbb{E}_{\pi} \left[ G_{t:t+n} | S_t = s \right] - v_{\pi} (s) \right| \le \gamma^n \max_s \left| V_{t+n-1} (s) - v_{\pi} (s) \right| \tag{7.3}\]
 
-&lt;p&gt;식 (7.3)은 모든 $n \ge 1$에 대해 성립합니다. 이것을 Error Reduction Property of n-step Returns라고 합니다. 이 수식 덕분에 모든 $n$-step TD 방법이 적절한 조건 하에 올바른 추정값으로 수렴한다는 것이 보장됩니다.&lt;/p&gt;
+&lt;p&gt;식 (7.3)은 모든 $n \ge 1$에 대해 성립합니다. 이것을 &lt;span style=&quot;color:red&quot;&gt;Error Reduction Property of $n$-step Returns&lt;/span&gt;라고 합니다. 이 수식 덕분에 모든 $n$-step TD 방법이 적절한 조건 하에 올바른 추정값으로 수렴한다는 것이 보장됩니다.&lt;/p&gt;
 
 &lt;h2 id=&quot;n-step-sarsa&quot;&gt;$n$-step Sarsa&lt;/h2&gt;
 
-&lt;p&gt;이번에는 $n$-step 방법과 Sarsa 방법을 결합하여 제어하는 것을 배우도록 하겠습니다. 새로 배우는 Sarsa와 구분하기 위해, 이전 장에서 배운 Sarsa를 1-step Sarsa, 또는 Sarsa(0)으로 표기하고, 이번 장에서 배우는 새로운 방법은 $n$-step Sarsa로 부르겠습니다. $n$-step Sarsa의 기본 개념은 아래의 백업 다이어그램과 같습니다.&lt;/p&gt;
+&lt;p&gt;이번에는 $n$-step과 Sarsa를 결합한 Control을 배우도록 하겠습니다. 새로 배우는 Sarsa와 구분하기 위해, 이전 장에서 배운 Sarsa를 1-step Sarsa, 또는 Sarsa(0)으로 표기하고, 이번 장에서 배우는 새로운 방법은 &lt;span style=&quot;color:red&quot;&gt;$n$-step Sarsa&lt;/span&gt;로 부르겠습니다. $n$-step Sarsa의 기본 개념은 아래의 Backup Diagram과 같습니다.&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;/images/Reinforcement Learning/7. n-step bootstrapping/RL 07-03.png&quot; alt=&quot;&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
 
@@ -54,45 +54,45 @@
 
 \[G_{t:t+n} \doteq R_{t+1} + \gamma R_{t+2} + \cdots + \gamma^{n-1} R_{t+n} \gamma^n Q_{t+n-1} (S_{t+n}, S_{t+n}), \quad n \ge 1, 0 \le t &amp;lt; T-n \tag{7.4}\]
 
-&lt;p&gt;물론 이전 섹션에서 배운 대로 $t + n \ge T$라면 $G_{t:t+n} \doteq G_t$입니다. 식 (7.4)를 알고리즘에 맞게 수정하면 다음과 같습니다.&lt;/p&gt;
+&lt;p&gt;물론 이전 Section에서 배운 대로 $t + n \ge T$라면 $G_{t:t+n} \doteq G_t$입니다. 식 (7.4)를 알고리즘에 맞게 수정하면 다음과 같습니다.&lt;/p&gt;
 
 \[Q_{t+n} (S_t, A_t) \doteq Q_{t+n-1} (S_t, A_t) + \alpha \left[ G_{t:t+n} - Q_{t+n-1} (S_t, A_t) \right] \quad 0 \le t &amp;lt; T \tag{7.5}\]
 
-&lt;p&gt;$n$-step Return처럼 식 (7.5)도 모든 $s \ne S_t$, $a \ne A_t$에 대해 $Q_{t+n} (s, a) = Q_{t+n-1}$입니다. 즉, 학습하고 있는 상태와 행동 쌍을 제외하고는 $Q$ 값이 변하지 않습니다. 그렇기 때문에 $n$-step Sarsa라고 부르는 것입니다. 완전한 알고리즘은 다음과 같습니다.&lt;/p&gt;
+&lt;p&gt;$n$-step Return처럼 식 (7.5)도 모든 $s \ne S_t$, $a \ne A_t$에 대해 $Q_{t+n} (s, a) = Q_{t+n-1}$입니다. 즉, 학습하고 있는 State-Action 쌍을 제외하고는 $Q$ 값이 변하지 않습니다. 그렇기 때문에 $n$-step Sarsa라고 부르는 것입니다. $n$-step Sarsa의 완전한 Pseudocode은 다음과 같습니다.&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;/images/Reinforcement Learning/7. n-step bootstrapping/RL 07-04.png&quot; alt=&quot;&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;$n$-step Sarsa의 장점은 1-step Sarsa보다 학습 속도가 빠르다는 점입니다. 아래 그림은 Grid World에서의 예시를 보여주고 있습니다. 첫 번째 그림과 같은 에피소드에 대해, 1-step Sarsa는 가운데 그림처럼 마지막 상태-행동 쌍에 대해서만 $Q$ 값의 업데이트가 일어납니다. 하지만 세 번째 그림을 보시면 10-step Sarsa는 에피소드 뒤 10개의 상태-행동 쌍이 모두 업데이트가 되는 장점이 있습니다. 즉, 하나의 에피소드에서 더 많은 것을 학습할 수 있다는 장점이 있습니다.&lt;/p&gt;
+&lt;p&gt;$n$-step Sarsa의 장점은 1-step Sarsa보다 학습 속도가 빠르다는 점입니다. 아래 그림은 Grid World에서의 예시를 보여주고 있습니다. 첫 번째 그림과 같은 Episode에 대해, 1-step Sarsa는 가운데 그림처럼 마지막 State-Action 쌍에 대해서만 $Q$ 값의 업데이트가 일어납니다. 하지만 세 번째 그림을 보시면 10-step Sarsa는 Episode 뒤 10개의 State-Action 쌍이 모두 업데이트가 되는 장점이 있습니다. 즉, 하나의 Episode에서 더 많은 것을 학습할 수 있다는 장점이 있습니다.&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;/images/Reinforcement Learning/7. n-step bootstrapping/RL 07-05.png&quot; alt=&quot;&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;Expected Sarsa를 $n$-step 버전으로 만드는 방법도 동일합니다. 이에 대한 백업 다이어그램은 $n$-step Sarsa의 백업 다이어그램 맨 오른쪽에 나타나 있습니다. 주의할 점은 시간 단계 $t$부터 $t+n$까지 모두 평균값을 사용하는 것이 아니라, 마지막 단계에서만 평균값을 사용합니다. $n$-step Expected Sarsa의 Return 식은 다음과 같습니다.&lt;/p&gt;
+&lt;p&gt;$n$-step과 Expected Sarsa를 결합하는 방법도 동일합니다. 이에 대한 Backup Diagram은 $n$-step Sarsa의 Backup Diagram 맨 오른쪽에 나타나 있습니다. 주의할 점은 시간 단계 $t$부터 $t+n$까지 모두 평균값을 사용하는 것이 아니라, 마지막 단계에서만 평균값을 사용합니다. &lt;span style=&quot;color:red&quot;&gt;$n$-step Expected Sarsa&lt;/span&gt;의 Return 식은 다음과 같습니다.&lt;/p&gt;
 
 \[G_{t:t+n} \doteq R_{t+1} + \cdots + \gamma^{n-1} R_{t+n} + \gamma^n \bar{V}_{t+n-1} (S_{t+n}) \quad t+n &amp;lt; T \tag{7.7}\]
 
-&lt;p&gt;마찬가지로 $t + n \ge T$인 경우에는 $G_{t:t+n} \doteq G_t$입니다. 또한 $\bar{V}_t (s)$는 상태 $s$의 Expected Approximate Value이고, 다음과 같이 정의됩니다.&lt;/p&gt;
+&lt;p&gt;마찬가지로 $t + n \ge T$인 경우에는 $G_{t:t+n} \doteq G_t$입니다. 또한 $\bar{V}_t (s)$는 State $s$의 &lt;strong&gt;Expected Approximate Value&lt;/strong&gt;이고, 다음과 같이 정의됩니다.&lt;/p&gt;
 
 \[\bar{V}_t (s) \doteq \sum_a \pi (a|s) Q_t (s, a) \quad \text{for all } s \in \mathcal{S} \tag{7.8}\]
 
-&lt;p&gt;식 (7.8)은 지금 뿐만이 아니라 다른 장에서도 사용되기 때문에 기억해두시는 것이 좋습니다. 또한 식 (7.8)에서 만약 상태 $s$가 마지막 상태라면 $\bar{V}_t (s) $는 0으로 정의됩니다.&lt;/p&gt;
+&lt;p&gt;식 (7.8)은 지금 뿐만이 아니라 다른 장에서도 사용되기 때문에 기억해두시는 것이 좋습니다. 또한 식 (7.8)에서 만약 State $s$가 마지막 State라면 $\bar{V}_t (s) $는 0으로 정의됩니다.&lt;/p&gt;
 
 &lt;h2 id=&quot;n-step-off-policy-learning&quot;&gt;$n$-step Off-policy Learning&lt;/h2&gt;
 
-&lt;p&gt;이번에는 Off-policy 학습의 $n$-step 버전을 배워보겠습니다. $n$-step 방법에서는 Return이 $n$ 단계에 걸쳐 생성됩니다. Off-policy에서 중요한 점은 Target Policy $\pi$와 Behavior Policy $b$가 구분되는 것인데, 이 때 두 Policy 간의 차이를 보정하기 위해 Importance Sampling을 사용하였습니다. 그렇다면 $n$-step 버전에서 두 Policy 간의 가중치를 어떻게 처리하는지 다음 식을 통해 살펴보겠습니다.&lt;/p&gt;
+&lt;p&gt;이번에는 Off-policy 학습의 $n$-step 버전을 배워보겠습니다. $n$-step 방법에서는 Return이 $n$ 단계에 걸쳐 생성됩니다. Off-policy에서 중요한 점은 Target Policy $\pi$와 Behavior Policy $b$가 구분되는 것인데, 이 때 두 Policy 간의 차이를 보정하기 위해 &lt;strong&gt;Importance Sampling&lt;/strong&gt;을 사용하였습니다. 그렇다면 $n$-step 버전에서 두 Policy 간의 Weight를 어떻게 처리하는지 다음 식을 통해 살펴보겠습니다.&lt;/p&gt;
 
-\[V_{t+n} (S_t) \doteq V_{t+n-1} (S_t) + \alpha \rho_{t:t+n-1} \left[ G_{t:t+n} - V_{t+n-1} (S_t) \right] \quad 0 \le t &amp;lt; T \tag{7.9}\]
+\[V_{t+n} (S_t) \doteq V_{t+n-1} (S_t) + \alpha \rho_{t:t+n-1} \bigg[ G_{t:t+n} - V_{t+n-1} (S_t) \bigg] \quad 0 \le t &amp;lt; T \tag{7.9}\]
 
 &lt;p&gt;식 (7.9)에서 $\rho_{t:t+n-1}$가 바로 Importance Sampling Ratio입니다. 5장에서 배운대로 Importance Sampling Ratio는 다음과 같이 계산합니다.&lt;/p&gt;
 
 \[\rho_{t:h} \doteq \prod_{k=t}^{\min (h,T-1)} \frac{\pi (A_k | S_k)}{b (A_k | S_k)} \tag{7.10}\]
 
-&lt;p&gt;만약 정책 $\pi$에 의해 선택되지 않는 행동의 경우(즉, $\pi (A_k \mid S_k) = 0$)에는 $n$-step Return에 가중치를 0으로 주고 완전히 무시해야 합니다. 반대로 정책 $\pi$가 정책 $b$보다 더 높은 확률로 선택되는 행동의 경우에는 가중치가 증가합니다. 만약 두 정책 $\pi$와 $b$가 동일한 경우 Importance Sampling Ratio는 정확히 1이 됩니다. 따라서 식 (7.9)와 같은 업데이트 식이 유도된 것입니다.&lt;/p&gt;
+&lt;p&gt;만약 Policy $\pi$에 의해 선택되지 않는 Action의 경우(즉, $\pi (A_k \mid S_k) = 0$)에는 $n$-step Return에 Weight를 0으로 주고 완전히 무시해야 합니다. 반대로 Policy $\pi$가 Policy $b$보다 더 높은 확률로 선택되는 Action의 경우에는 Weight가 증가합니다. 만약 두 Policy $\pi$와 $b$가 동일한 경우 Importance Sampling Ratio는 정확히 1이 됩니다. 따라서 식 (7.9)와 같은 업데이트 식이 유도된 것입니다.&lt;/p&gt;
 
 &lt;p&gt;이와 같은 방법으로, $n$-step Sarsa 또한 다음과 같이 Off-policy 방법으로 대체할 수 있습니다.&lt;/p&gt;
 
 \[Q_{t+n} (S_t, A_t) \doteq Q_{t+n-1} (S_t, A_t) + \alpha \rho_{t+1:t+n} \left[ G_{t:t+n} - Q_{t+n-1} (S_t, A_t) \right] \tag{7.11}\]
 
-&lt;p&gt;여기서 Importance Sampling Ratio는 식 (7.9)의 $n$-step TD 보다 한 단계 늦게 시작하고 끝납니다. 왜냐면 Sarsa는 Q-learning과 달리 다음 행동을 선택한 후에 학습을 하기 때문입니다. 전체 알고리즘은 다음과 같습니다.&lt;/p&gt;
+&lt;p&gt;여기서 Importance Sampling Ratio는 식 (7.9)의 $n$-step TD 보다 한 단계 늦게 시작하고 끝납니다. 왜냐면 Sarsa는 Q-learning과 달리 다음 Action을 선택한 후에 학습을 하기 때문입니다. 전체 Pseudocode는 다음과 같습니다.&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;/images/Reinforcement Learning/7. n-step bootstrapping/RL 07-06.png&quot; alt=&quot;&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
 
@@ -100,26 +100,26 @@
 
 &lt;h2 id=&quot;per-decision-methods-with-control-variates&quot;&gt;Per-decision Methods with Control Variates&lt;/h2&gt;
 
-&lt;p&gt;이전 섹션에서 제시한 $n$-step Off-policy 방법은 간단하고 개념적으로 명확하지만, 그렇게 효율적인 방법은 아닙니다. 보다 정교하게 접근하는 방법은 섹션 5.9에서 잠깐 소개한 Per-decision Importance Sampling을 사용해야 합니다. 이 접근 방식은 식 (7.1)과 같은 $n$-step Return을 다음과 같이 재귀적으로 표현함으로써 시작합니다.&lt;/p&gt;
+&lt;p&gt;이전 Section에서 제시한 $n$-step Off-policy 방법은 간단하고 개념적으로 명확하지만, 그렇게 효율적인 방법은 아닙니다. 보다 정교하게 접근하는 방법은 Section 5.9에서 잠깐 소개한 Per-decision Importance Sampling을 사용해야 합니다. 이 접근 방식은 식 (7.1)과 같은 $n$-step Return을 다음과 같은 Recursive Form으로부터 시작합니다.&lt;/p&gt;
 
 \[G_{t:h} = R_{t+1} + \gamma G_{t+1:h} \quad t&amp;lt;h&amp;lt;T \tag{7.12}\]
 
-&lt;p&gt;이 때, $G_{h:h} \doteq V_{h-1}(S_h)$입니다. Importance Sampling Ratio를 고려할 때, 만약 정책 $\pi$에서 시간 $t$에 방문하지 않는 행동에 대해서 $\rho_t$는 0입니다. 이렇게 계산하면 $n$-step Return 또한 0이되고, Target Policy에 대해 분산이 높아지는 문제가 있습니다. 그렇기 때문에 여기서는 이보다 정교한 새로운 방법을 제안하며, Off-policy의 $n$-step Return을 다음과 같이 재정의합니다.&lt;/p&gt;
+&lt;p&gt;이 때, $G_{h:h} \doteq V_{h-1}(S_h)$입니다. Importance Sampling Ratio를 고려할 때, 만약 Policy $\pi$에서 시간 $t$에 방문하지 않는 Action에 대해서 $\rho_t$는 0입니다. 이렇게 계산하면 $n$-step Return 또한 0이되고, Target Policy에 대해 Variance가 높아지는 문제가 있습니다. 그렇기 때문에 여기서는 이보다 정교한 새로운 방법을 제안하며, Off-policy의 $n$-step Return을 다음과 같이 재정의합니다.&lt;/p&gt;
 
 \[G_{t:h} \doteq \rho_t (R_{t+1} + \gamma G_{t+1:h}) + (1 - \rho_t) V_{h-1} (S_t) \quad t&amp;lt;h&amp;lt;T \tag{7.13}\]
 
-&lt;p&gt;식 (7.12)와 동일하게 $G_{h:h} \doteq V_{h-1}(S_h)$입니다. 식 (7.13)은 기존과 다르게 $\rho_t$가 0이라고 할지라도 Return이 0이 되지 않는 대신 기존 추정치인 $V_{h-1} (S_t)$와 동일해집니다. Importance Sampling Ratio가 0이라는 뜻은 샘플을 무시하라는 뜻이므로 추정치를 변경하지 않게 바꾼 것입니다. 이 때, 식 (7.13)에서 오른쪽 두 번째 항을 제어 변수(Control Variate)라고 합니다. Importance Sampling Ratio의 기대값이 1이라면 추정값과 상관이 없으므로 제어 변수의 기대값은 0이 됩니다. 또한 식 (7.13)과 같은 Off-policy의 $n$-step Return 정의는 식 (7.1)과 같은 On-policy Return 정의를 엄격하게 일반화했다고 볼 수 있습니다. 실제로 식 (7.13)에서 $\rho_t$를 항상 1이라고 가정하면 식 (7.1)과 동일합니다. 식 (7.13)의 업데이트 규칙은 식 (7.2)를 그대로 사용하면 됩니다.&lt;/p&gt;
+&lt;p&gt;식 (7.12)와 동일하게 $G_{h:h} \doteq V_{h-1}(S_h)$입니다. 식 (7.13)은 기존과 다르게 $\rho_t$가 0이라고 할지라도 Return이 0이 되지 않는 대신 기존 추정치인 $V_{h-1} (S_t)$와 동일해집니다. Importance Sampling Ratio가 0이라는 뜻은 Sample을 무시하라는 뜻이므로 추정치를 변경하지 않게 바꾼 것입니다. 이 때, 식 (7.13)에서 오른쪽 두 번째 항을 &lt;span style=&quot;color:red&quot;&gt;Control Variate&lt;/span&gt;라고 합니다. Importance Sampling Ratio의 기대값이 1이라면 추정값과 상관이 없으므로 Control Variate의 기대값은 0이 됩니다. 또한 식 (7.13)과 같은 Off-policy의 $n$-step Return 정의는 식 (7.1)과 같은 On-policy Return 정의를 엄격하게 일반화했다고 볼 수 있습니다. 실제로 식 (7.13)에서 $\rho_t$를 항상 1이라고 가정하면 식 (7.1)과 동일합니다. 식 (7.13)의 업데이트 식은 식 (7.2)를 그대로 사용하면 됩니다.&lt;/p&gt;
 
-&lt;p&gt;행동-가치 버전에서는 첫 번째 행동이 Importance Sampling에서 영향을 끼치지 않기 때문에 $n$-step Return의 Off-policy 정의는 약간 다릅니다. 식 (7.7)과 같이 Expectation Form으로도, 식 (7.12)와 같은 Recursive Form으로도 표현할 수 있기 때문에 두 가지 표현 방법을 모두 보여드리도록 하겠습니다. 다음 식은 제어 변수를 포함하였습니다.&lt;/p&gt;
+&lt;p&gt;Action-Value 버전에서는 첫 번째 Action이 Importance Sampling에서 영향을 끼치지 않기 때문에 $n$-step Return의 Off-policy 정의는 약간 다릅니다. 식 (7.7)과 같이 Expectation Form으로도, 식 (7.12)와 같은 Recursive Form으로도 표현할 수 있기 때문에 두 가지 표현 방법을 모두 보여드리도록 하겠습니다. 다음 식은 Control Variate를 포함하였습니다.&lt;/p&gt;
 
 \[\begin{align}
 G_{t:h} &amp;amp;\doteq R_{t+1} + \gamma \left( \rho_{t+1} G_{t+1:h} + \bar{V}_{h-1} (S_{t+1}) - \rho_{t+1} Q_{h-1} (S_{t+1}, A_{t+1}) \right) \\ \\
 &amp;amp;= R_{t+1} + \gamma \rho_{t+1} \left( G_{t+1:h} - Q_{h-1} (S_{t+1}, A_{t+1}) \right) + \gamma \bar{V}_{h-1} (S_{t+1}), t &amp;lt; h \le T \tag{7.14}
 \end{align}\]
 
-&lt;p&gt;재귀형 표현에서 $h &amp;lt; T$인 경우 $G_{h:h} \doteq Q_{h-1} (S_h, A_h)$로, $h \ge T$라면 $G_{T-1:h} \doteq R_T$로 끝납니다. 식 (7.5)와 결합하여 추정 알고리즘을 만들면 Expected Sarsa와 유사한 형태가 나옵니다.&lt;/p&gt;
+&lt;p&gt;Recursive Form에서 $h &amp;lt; T$인 경우 $G_{h:h} \doteq Q_{h-1} (S_h, A_h)$로, $h \ge T$라면 $G_{T-1:h} \doteq R_T$로 끝납니다. 식 (7.5)와 결합하여 추정 알고리즘을 만들면 Expected Sarsa와 유사한 형태가 나옵니다.&lt;/p&gt;
 
-&lt;p&gt;지금까지 사용한 Importance Sampling은 Off-policy 학습을 가능하게 하지만 높은 분산을 유발하기 때문에 step-size parameter를 작게 설정해야 합니다. 다만 이로 인해 학습 속도는 느려질 수밖에 없습니다. 즉, Off-policy 방법은 On-policy 방법보다 학습 속도가 느립니다. 물론 이를 개선하기 위한 여러 연구가 진행되고 있습니다. 이번 섹션에서 다룬 제어 변수가 그 예 중 하나이며, 이 외에도 Autostep (Mahmood, Sutton, Degris and Pilarski, 2012), Tian (Karampatziakis and Langford, 2010), Mahmood(2017; Mahmood and Sutton, 2015) 등이 방법이 제안되었습니다. 다음 섹션에서는 또 다른 방법인 Importance Sampling을 사용하지 않는 Off-policy 학습 방법에 대해 다루어 보겠습니다.&lt;/p&gt;
+&lt;p&gt;지금까지 사용한 Importance Sampling은 Off-policy 학습을 가능하게 하지만 높은 Variance를 유발하기 때문에 Step-size parameter를 작게 설정해야 합니다. 다만 이로 인해 학습 속도는 느려질 수밖에 없습니다. 즉, Off-policy 방법은 On-policy 방법보다 학습 속도가 느립니다. 물론 이를 개선하기 위한 여러 연구가 진행되고 있습니다. 이번 Section에서 다룬 Control Variate가 그 예 중 하나이며, 이 외에도 &lt;strong&gt;Autostep&lt;/strong&gt; (Mahmood, Sutton, Degris and Pilarski, 2012), &lt;strong&gt;Tian&lt;/strong&gt; (Karampatziakis and Langford, 2010), &lt;strong&gt;Mahmood&lt;/strong&gt;(2017; Mahmood and Sutton, 2015) 등이 방법이 제안되었습니다. 다음 Section에서는 또 다른 방법인 Importance Sampling을 사용하지 않는 Off-policy 학습 방법에 대해 다루어 보겠습니다.&lt;/p&gt;
 
 &lt;h2 id=&quot;off-policy-learning-without-importance-sampling--the-n-step-tree-backup-algorithm&quot;&gt;Off-policy Learning Without Importance Sampling : The n-step Tree Backup Algorithm&lt;/h2&gt;
 
@@ -127,11 +127,11 @@ G_{t:h} &amp;amp;\doteq R_{t+1} + \gamma \left( \rho_{t+1} G_{t+1:h} + \bar{V}_{
 
 &lt;p&gt;&lt;img src=&quot;/images/Reinforcement Learning/7. n-step bootstrapping/RL 07-07.png&quot; alt=&quot;&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;Tree-backup 알고리즘의 기본 아이디어는 위의 백업 다이어그램과 같습니다. 다이어그램의 각 단계에는 3가지 샘플 상태와 보수, 그리고 2개의 샘플 행동이 있습니다. 이것은 초기 상태, 행동 쌍인 $(S_t, A_t)$이후에 발생하는 이벤트를 나타냅니다. 각 상태에서 가운데 행동을 제외한 나머지 행동은 선택되지 않은 행동입니다. 선택되지 않은 행동은 샘플 데이터가 없기 때문에 부트스트랩하고 Target Policy의 추정값을 업데이트하는데 사용합니다. 이것이 백업 다이어그램처럼 나무 모양과 비슷하기 때문에 Tree-backup이라고 불립니다.&lt;/p&gt;
+&lt;p&gt;Tree-backup Algorithm의 기본 아이디어는 위의 Backup Diagram과 같습니다. Diagram의 각 단계에는 3가지 Sample State와 Reward, 그리고 2개의 Sample Action이 있습니다. 이것은 초기 State, Action 쌍인 $(S_t, A_t)$ 이후에 발생하는 이벤트를 나타냅니다. 각 State에서 가운데 Action을 제외한 나머지 Action은 선택되지 않은 Action입니다. 선택되지 않은 Action은 Sample 데이터가 없기 때문에 Bootstrap하고 Target Policy의 추정값을 업데이트하는데 사용합니다. 이것이 Backup Diagram처럼 나무 모양과 비슷하기 때문에 &lt;span style=&quot;color:red&quot;&gt;Tree-backup&lt;/span&gt;이라고 불립니다.&lt;/p&gt;
 
-&lt;p&gt;Tree-backup의 업데이트는 Tree의 Leaf Node의 추정된 행동의 가치로부터 시작합니다. 각 Leaf Node는 Target Policy $\pi$로부터 선택될 확률에 비례하는 가중치를 기반으로 Target에 기여합니다. 따라서 첫 번째 Level의 행동은 $\pi (a \mid S_{t+1})$의 가중치로 기여하지만, 실제로 취한 행동 $A_{t+1}$은 전혀 기여하지 않습니다. $\pi (A_{t+1} \mid S_{t+1})$은 두 번째 Level의 행동 가치에 가중치를 부여하는데 사용됩니다. 즉, 선택되지 않은 두 번째 Level 행동의 가중치는 $\pi (A_{t+1} \mid S_{t+1}) \pi (a’ \mid S_{t+2})$가 됩니다. 마찬가지로 세 번째 Level 행동의 가중치는 $\pi (A_{t+1} \mid S_{t+1}) \pi (a’ \mid S_{t+2}) \pi (a’’ \mid S_{t+3})$이 됩니다. 쉽게 말해, 백업 다이어그램에서 각 Leaf Node가 의미하는 것은 Root 상태로부터 주어진 정책 $\pi$ 하에 해당 행동이 선택될 확률을 의미합니다.&lt;/p&gt;
+&lt;p&gt;Tree-backup의 업데이트는 Tree의 Leaf Node로부터 추정된 Action-Value로부터 시작합니다. 각 Leaf Node는 Target Policy $\pi$로부터 선택될 확률에 비례하는 Weight를 기반으로 Target에 기여합니다. 따라서 첫 번째 Level의 Action은 $\pi (a \mid S_{t+1})$의 Weight로 기여하지만, 실제로 취한 Action $A_{t+1}$은 전혀 기여하지 않습니다. $\pi (A_{t+1} \mid S_{t+1})$은 두 번째 Level의 Action Value에 Weight를 부여하는데 사용됩니다. 즉, 선택되지 않은 두 번째 Level Action의 Weight는 $\pi (A_{t+1} \mid S_{t+1}) \pi (a’ \mid S_{t+2})$가 됩니다. 마찬가지로 세 번째 Level Action의 Weight는 $\pi (A_{t+1} \mid S_{t+1}) \pi (a’ \mid S_{t+2}) \pi (a’’ \mid S_{t+3})$이 됩니다. 쉽게 말해, Backup Diagram에서 각 Leaf Node가 의미하는 것은 Root State로부터 주어진 Policy $\pi$ 하에 해당 Action이 선택될 확률을 의미합니다.&lt;/p&gt;
 
-&lt;p&gt;3-step Tree-backup 업데이트는 각 상태별로 가능한 모든 행동을 고려하는 과정과, 주어진 정책에 따라 행동을 수행하는 과정이 포함되기 때문에 6개의 단계로 나눌 수 있습니다. 이것을 일반적인 $n$-step Tree-backup 알고리즘으로 만들어보겠습니다. 먼저, 1-step의 return은 다음과 같이 Expected Sarsa와 같은 모양으로 표현할 수 있습니다.&lt;/p&gt;
+&lt;p&gt;3-step Tree-backup 업데이트는 각 State별로 가능한 모든 Action을 고려하는 과정과, 주어진 Policy에 따라 Action을 수행하는 과정이 포함되기 때문에 6개의 단계로 나눌 수 있습니다. 이것을 일반적인 $n$-step Tree-backup Algorithm으로 만들어보겠습니다. 먼저, 1-step의 Return은 다음과 같이 Expected Sarsa와 같은 모양으로 표현할 수 있습니다.&lt;/p&gt;
 
 \[G_{t:t+1} \doteq R_{t+1} + \gamma \sum_a \pi(a | S_{t+1}) Q_t (S_{t+1}, a), \quad t &amp;lt; T-1 \tag{7.15}\]
 
@@ -143,7 +143,7 @@ G_{t:t+2} &amp;amp; \doteq R_{t+1} + \gamma \sum_{a \ne A_{t+1}} \pi (a | S_{t+1
 &amp;amp;= R_{t+1} + \gamma \sum_{a \ne A_{t+1}} \pi (a | S_{t+1}) Q_{t+1}(S_{t+1}, a) + \gamma \pi (A_{t+1} | S_{t+1}) G_{t+1:t+2}, \quad t &amp;lt; T-2
 \end{align}\]
 
-&lt;p&gt;이를 반복하여 일반적인 $n$-step Tree-backup Return을 재귀적으로 표현하면 다음과 같습니다.&lt;/p&gt;
+&lt;p&gt;이를 반복하여 일반적인 $n$-step Tree-backup Return의 Recursive Form은 다음과 같습니다.&lt;/p&gt;
 
 \[G_{t:t+n} \doteq R_{t+1} + \gamma \sum_{a \ne A_{t+1}} \pi (a | S_{t+1}) Q_{t+n-1} (S_{t+1}, a) + \gamma \pi (A_{t+1} | S_{t+1}) G_{t+1:t+n}   \tag{7.16}\]
 
@@ -151,19 +151,19 @@ G_{t:t+2} &amp;amp; \doteq R_{t+1} + \gamma \sum_{a \ne A_{t+1}} \pi (a | S_{t+1
 
 \[Q_{t+n} (S_t, A_t) \doteq Q_{t+n-1} (S_t, A_t) + \alpha \left[ G_{t:t+n} - Q_{t+n-1} (S_t, A_t) \right], \quad - \ge t &amp;lt; T\]
 
-&lt;p&gt;물론 학습에 사용되지 않는 모든 상태 $s \ne S_t$, 모든 행동 $a \ne A_t$에 대해서는 Q 값이 변하지 않습니다. (즉, $Q_{t+n} (s, a) = Q_{t+n-1} (s, a)$) 전체 알고리즘은 다음과 같습니다.&lt;/p&gt;
+&lt;p&gt;물론 학습에 사용되지 않는 모든 State $s \ne S_t$, 모든 Action $a \ne A_t$에 대해서는 Q 값이 변하지 않습니다. (즉, $Q_{t+n} (s, a) = Q_{t+n-1} (s, a)$) 전체 Pseudocode는 다음과 같습니다.&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;/images/Reinforcement Learning/7. n-step bootstrapping/RL 07-08.png&quot; alt=&quot;&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;a-unifying-algorithm-n-step-qsigma&quot;&gt;A Unifying Algorithm: $n$-step $Q(\sigma)$&lt;/h2&gt;
 
-&lt;p&gt;지금까지 우리는 $n$-step Sarsa, $n$-step Tree-backup, 그리고 $n$-step Expected Sarsa에 대해 공부했습니다. 이 셋의 가장 큰 차이는 샘플로 인한 Importance Sampling의 여부입니다. $n$-step Sarsa는 매 단계마다 Importance Sampling Ratio를 보정해주어야 하고, $n$-step Expected Sarsa 또한 마지막을 제외한 모든 단계에서 Importance Sampling Ratio 보정이 필요합니다. $n$-step Tree-backup 알고리즘은 Importance Sampling이 필요없는 것이 특징입니다. 이번 섹션에서는 이 3개의 알고리즘을 통합하는 방법을 알아보겠습니다.&lt;/p&gt;
+&lt;p&gt;지금까지 우리는 $n$-step Sarsa, $n$-step Tree-backup, 그리고 $n$-step Expected Sarsa에 대해 공부했습니다. 이 셋의 가장 큰 차이는 Sample로 인한 Importance Sampling의 여부입니다. $n$-step Sarsa는 매 단계마다 Importance Sampling Ratio를 보정해주어야 하고, $n$-step Expected Sarsa 또한 마지막을 제외한 모든 단계에서 Importance Sampling Ratio 보정이 필요합니다. $n$-step Tree-backup 알고리즘은 Importance Sampling이 필요없는 것이 특징입니다. 이번 Section에서는 이 3개의 알고리즘을 통합하는 방법을 알아보겠습니다.&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;/images/Reinforcement Learning/7. n-step bootstrapping/RL 07-09.png&quot; alt=&quot;&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;기본적인 아이디어는 위의 그림에서 네 번째 백업 다이어그램과 같습니다. 매 단계 Sarsa 처럼 처리할 것인지, 아니면 Tree-backup 처럼 처리할 것인지의 여부를 따로 정하는 것입니다. Expected Sarsa 처럼 처리하기 위해서는 마지막 단계를 Tree-backup 처럼 처리하면 됩니다.&lt;/p&gt;
+&lt;p&gt;기본적인 아이디어는 위의 그림에서 네 번째 Backup Diagram과 같습니다. 매 단계 Sarsa 처럼 처리할 것인지, 아니면 Tree-backup 처럼 처리할 것인지의 여부를 따로 정하는 것입니다. Expected Sarsa 처럼 처리하기 위해서는 마지막 단계를 Tree-backup 처럼 처리하면 됩니다.&lt;/p&gt;
 
-&lt;p&gt;단계 별로 어떻게 처리할 것인지는 $\sigma$의 값에 따라 달라집니다. $t$ 단계에서의 $\sigma$ 값을 $\sigma_t \in [0, 1]$라고 표기합니다. 만약  $\sigma = 1$인 경우 Sarsa와 동일해지고(=Full Sampling), $\sigma = 0$인 경우 Tree-backup과 동일해집니다(=Pure Expectation). 이 새로운 알고리즘을 $n$-step $Q(\sigma)$라고 합니다.&lt;/p&gt;
+&lt;p&gt;단계 별로 어떻게 처리할 것인지는 $\sigma$의 값에 따라 달라집니다. $t$ 단계에서의 $\sigma$ 값을 $\sigma_t \in [0, 1]$라고 표기합니다. 만약  $\sigma = 1$인 경우 Sarsa와 동일해지고(=Full Sampling), $\sigma = 0$인 경우 Tree-backup과 동일해집니다(=Pure Expectation). 이 새로운 알고리즘을 &lt;span style=&quot;color:red&quot;&gt;$n$-step $Q(\sigma)$&lt;/span&gt;라고 합니다.&lt;/p&gt;
 
 &lt;p&gt;이제 $n$-step $Q(\sigma)$를 수식으로 표현해보겠습니다. 식 (7.16)의 Tree-backup $n$-step Return을 horizon $h = t + n$과 식 (7.8)의 $\bar{V}$로 표현합니다.&lt;/p&gt;
 
@@ -173,50 +173,50 @@ G_{t:h} &amp;amp;= R_{t+1} + \gamma \sum_{a \ne A_{t+1}} \pi (a | S_{t+1}) Q_{h-
 &amp;amp;= R_{t+1} + \gamma \pi (A_{t+1} | S_{t+1}) \left( G_{t+1:h} - Q_{h-1} (S_{t+1}, A_{t+1}) \right) + \gamma \bar{V}_{h-1} (S_{t+1})
 \end{align}\]
 
-&lt;p&gt;그 이후로는 Importance Sampling Ratio $\rho_{t+1}$을 $\pi (A_{t+1} \mid S_{t+1})$로 대체한 것을 제외하고는 식 (7.14)와 같이 제어 변수가 있는 $n$-step Sarsa와 동일합니다. $Q(\sigma)$는 다음과 같이 표현할 수도 있습니다.&lt;/p&gt;
+&lt;p&gt;그 이후로는 Importance Sampling Ratio $\rho_{t+1}$을 $\pi (A_{t+1} \mid S_{t+1})$로 대체한 것을 제외하고는 식 (7.14)와 같이 Control Variate가 있는 $n$-step Sarsa와 동일합니다. $Q(\sigma)$는 다음과 같이 표현할 수도 있습니다.&lt;/p&gt;
 
 \[\begin{align}
 G_{t:h} &amp;amp; \doteq R_{t+1} + \gamma \left( \sigma_{t+1} \rho_{t+1} + (1 - \sigma_{t+1}) \pi (A_{t+1} | S_{t+1}) \right) \\ \\
 &amp;amp;\times \left( G_{t+1:h} - Q_{h-1} (S_{t+1}, A_{t+1}) \right) + \gamma \bar{V}_{h-1} (S_{t+1}) \tag{7.17}
 \end{align}\]
 
-&lt;p&gt;이 때 $t &amp;lt; h \le T$ 입니다. 재귀형 표현에서 $h &amp;lt; T$인 경우 $G_{h:h} \doteq Q_{h-1} (S_h, A_h)$가 되고, $h = T$인 경우 $G_{T-1:T} \doteq R_T$가 됩니다. 그 후 식 (7.11) 대신 Importance Sampling Ratio가 없는 식 (7.5)를 사용하여 $n$-step Sarsa 업데이트를 사용합니다. Importance Sampling Ratio 자체가 $n$-step Return에 포함되기 때문입니다. $Q(\sigma)$의 완전한 알고리즘은 다음과 같습니다.&lt;/p&gt;
+&lt;p&gt;이 때 $t &amp;lt; h \le T$ 입니다. Recursive Form에서 $h &amp;lt; T$인 경우 $G_{h:h} \doteq Q_{h-1} (S_h, A_h)$가 되고, $h = T$인 경우 $G_{T-1:T} \doteq R_T$가 됩니다. 그 후 식 (7.11) 대신 Importance Sampling Ratio가 없는 식 (7.5)를 사용하여 $n$-step Sarsa 업데이트를 사용합니다. Importance Sampling Ratio 자체가 $n$-step Return에 포함되기 때문입니다. $Q(\sigma)$의 완전한 Pseudocode는 다음과 같습니다.&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;/images/Reinforcement Learning/7. n-step bootstrapping/RL 07-10.png&quot; alt=&quot;&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;summary&quot;&gt;Summary&lt;/h2&gt;
 
-&lt;p&gt;이번 장에서는 1-step TD 방법과 몬테 카를로 방법의 중간으로 볼 수 있는 $n$-step TD 방법에 대해 배웠습니다. 이렇게 극단적인 두 방법을 적절히 조절하여 중간 정도의 방법을 사용하는 것은 때때로 좋은 성능을 보입니다.&lt;/p&gt;
+&lt;p&gt;이번 장에서는 1-step TD와 Monte Carlo Method의 중간으로 볼 수 있는 &lt;strong&gt;$n$-step TD&lt;/strong&gt;에 대해 배웠습니다. 이렇게 극단적인 두 방법을 적절히 조절하여 중간 정도의 방법을 사용하는 것은 때때로 좋은 성능을 보입니다.&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;/images/Reinforcement Learning/7. n-step bootstrapping/RL 07-09.png&quot; alt=&quot;&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;섹션 7.6에서 사용했던 그림을 다시 가져와보면 이번 장에서 배운 내용이 요약되어 있습니다. $n$-step Sarsa나 Expected Sarsa는 기본적으로 Return을 계산할 때 Importance Sampling Ratio를 반드시 고려해야하며, 그 방법을 회피하기 위해 $n$-step Tree-backup 방법을 고안하였습니다. 마지막으로는 이것들을 일반화할 수 있는 $n$-step $Q(\sigma)$ 방법을 제안하였습니다.&lt;/p&gt;
+&lt;p&gt;Section 7.6에서 사용했던 그림을 다시 가져와보면 이번 장에서 배운 내용이 요약되어 있습니다. &lt;strong&gt;$n$-step Sarsa&lt;/strong&gt;나 &lt;strong&gt;Expected Sarsa&lt;/strong&gt;는 기본적으로 Return을 계산할 때 Importance Sampling Ratio를 반드시 고려해야하며, 그 방법을 회피하기 위해 &lt;strong&gt;$n$-step Tree-backup&lt;/strong&gt;을 고안하였습니다. 마지막으로는 이것들을 일반화할 수 있는 &lt;strong&gt;$n$-step $Q(\sigma)$&lt;/strong&gt;를 제안하였습니다.&lt;/p&gt;
 
-&lt;p&gt;이러한 $n$-step 방법의 단점은 지난 장에서 배운 1-step 방법보다 각 시간 단계당 더 많은 계산이 필요할 뿐만 아니라 더 많은 메모리가 필요하다는 것입니다. 추후 12장에서 이 단점을 최소한으로 줄여 $n$-step TD를 구현하지만, 아무리 줄여도 항상 1-step 방법보다는 계산량과 필요 메모리량이 많다는 한계가 있습니다. 다만 이러한 단점을 감안하더라도 $n$-step 방법이 가지는 장점이(대표적으로 빠른 학습) 있기 때문에 고려할 가치는 있습니다.&lt;/p&gt;
+&lt;p&gt;이러한 $n$-step 방법의 단점은 지난 장에서 배운 1-step 방법보다 각 시간 단계당 더 많은 계산이 필요할 뿐만 아니라 더 많은 메모리가 필요하다는 것입니다. 12장에서는 이 단점을 최소한으로 줄여 $n$-step TD를 구현하지만, 아무리 줄여도 항상 1-step보다는 계산량과 필요 메모리량이 많다는 한계가 있습니다. 하지만 이러한 단점을 감안하더라도 $n$-step 방법이 가지는 장점이(대표적으로 빠른 학습) 있기 때문에 고려할만한 가치는 있습니다.&lt;/p&gt;
 
-&lt;p&gt;$n$-step 방법은 추후 배울 Eligibility Traces 방법보다 복잡하지만 개념적으로 명확하다는 장점이 있습니다. 이 장에서는 $n$-step TD에서 Off-policy 학습에 대해 2가지 방법으로 접근하였습니다. 첫 번째 방법은 기존에 배운 Importance Sampling을 이용하는 방법이었습니다. 이것은 개념적으로 간단하지만 분산이 크다는 단점이 있습니다. 따라서 만약 Target Policy와 Behavior Policy가 매우 큰 차이가 나는 경우라면 이 방법은 적합하지 않습니다. 두 번째 방법으로 Tree-backup 방법을 제안하였습니다. 이것은 Stochastic Target Policy를 갖는 Q-learning을 $n$-step으로 확장한 개념입니다. Importance Sampling을 포함하지 않지만, Target Policy와 Behavior Policy의 차이가 클 경우 $n$이 크더라도 Bootstrapping이 간단하다는 장점이 있습니다.&lt;/p&gt;
+&lt;p&gt;Off-policy $n$-step은 추후 배울 Eligibility Traces보다 복잡하지만 개념적으로 명확하다는 장점이 있습니다. 이 장에서는 Off-policy $n$-step TD에 대해 2가지 방법으로 접근하였습니다. 첫 번째 방법은 기존에 배운 &lt;strong&gt;Importance Sampling&lt;/strong&gt;을 이용하는 방법이었습니다. 이것은 개념적으로 간단하지만 Variance가 크다는 단점이 있습니다. 따라서 만약 Target Policy와 Behavior Policy가 매우 큰 차이가 나는 경우라면 이 방법은 적합하지 않습니다. 두 번째 방법으로 &lt;strong&gt;Tree-backup&lt;/strong&gt; 방법을 제안하였습니다. 이것은 Stochastic Target Policy를 갖는 Q-learning을 $n$-step으로 확장한 개념입니다. Importance Sampling을 포함하지 않지만, Target Policy와 Behavior Policy의 차이가 클 경우 $n$이 크더라도 Bootstrapping이 간단하다는 장점이 있습니다.&lt;/p&gt;
 
-&lt;p&gt;7장에 대한 내용은 여기서 마치겠습니다. 읽어주셔서 감사합니다!&lt;/p&gt;</content><author><name>Joonsu Ryu</name></author><category term="studies" /><category term="reinforcement learning" /><summary type="html">이번 장에서는 5장에서 배운 몬테 카를로 방법과 6장에서 배운 시간차 방법을 융합하여 만든 새로운 방법을 소개합니다. 몬테 카를로 방법은 항상 에피소드가 끝난 후에야 학습이 가능했고, 시간차 방법은 1단계만 행동하면 학습이 가능했습니다. 그렇다면 그 사이의 단계인 $n$번째 단계까지 행동한 다음 학습을 하게 되면 조금 더 일반화된 학습이 가능하지 않을까라는 아이디어가 떠오르게 됩니다.</summary></entry><entry><title type="html">Temporal-Difference Learning</title><link href="http://localhost:4000/studies/temporal-difference-learning/" rel="alternate" type="text/html" title="Temporal-Difference Learning" /><published>2022-03-30T00:00:00+09:00</published><updated>2022-03-30T00:00:00+09:00</updated><id>http://localhost:4000/studies/temporal-difference-learning</id><content type="html" xml:base="http://localhost:4000/studies/temporal-difference-learning/">&lt;p&gt;이번 장은 강화학습의 핵심 아이디어인 시간차 학습(Temporal-Difference Learning ; TD Learning)을 다루게 됩니다. 시간차 학습은 환경에 대한 정확한 모델 없이 경험을 통해 학습한다는 몬테 카를로 아이디어와 최종 결과를 기다리지 않고(Bootstrapping) 학습된 다른 추정치를 기반으로 추정치를 업데이트한다는 동적 프로그래밍 아이디어를 결합하여 만들어졌습니다. 이번 장의 시작은 이전 장들과 같이 주어진 정책 $\pi$에 대한 가치 함수 $v_{\pi}$를 추정하는 문제로부터 시작하며, 최적의 정책을 찾는 제어 문제에서도 이전과 같이 GPI를 변형하여 접근합니다. 이전 장들과의 주요 차이점은 예측 문제에 대한 접근 방식입니다.&lt;/p&gt;
+&lt;p&gt;7장에 대한 내용은 여기서 마치겠습니다. 읽어주셔서 감사합니다!&lt;/p&gt;</content><author><name>Joonsu Ryu</name></author><category term="studies" /><category term="reinforcement learning" /><summary type="html">이번 장에서는 5장에서 배운 Monte Carlo Method과 6장에서 배운 Temporal Difference (TD)를 융합하여 만든 새로운 방법을 소개합니다. Monte Carlo Method는 항상 Episode가 끝난 후에야 학습이 가능했고, TD는 1단계만 관찰하면 학습이 가능했습니다. 그렇다면 그 사이의 단계인 $n$번째 단계까지 관찰한 다음 학습을 하게 되면 조금 더 일반화된 학습이 가능하지 않을까하는 아이디어가 떠오르게 됩니다.</summary></entry><entry><title type="html">Temporal-Difference Learning</title><link href="http://localhost:4000/studies/temporal-difference-learning/" rel="alternate" type="text/html" title="Temporal-Difference Learning" /><published>2022-03-30T00:00:00+09:00</published><updated>2022-03-30T00:00:00+09:00</updated><id>http://localhost:4000/studies/temporal-difference-learning</id><content type="html" xml:base="http://localhost:4000/studies/temporal-difference-learning/">&lt;p&gt;이번 장은 강화학습의 핵심 아이디어인 &lt;span style=&quot;color:red&quot;&gt;Temporal-Difference (TD) Learning&lt;/span&gt;을 다루게 됩니다. TD Learning은 Environment에 대한 정확한 Model 없이 경험을 통해 학습한다는 Monte Carlo의 아이디어와 Bootstrap 하지 않고 학습된 다른 추정치를 기반으로 추정치를 업데이트한다는 Dynamic Programming 아이디어를 결합하여 만들어졌습니다. 이번 장의 시작은 이전 장들과 같이 주어진 Policy $\pi$에 대한 Value Function $v_{\pi}$를 추정하는 문제로부터 시작하며, Optimal Policy을 찾는 Control 문제에서도 이전과 같이 GPI를 변형하여 접근합니다. 이전 장들과의 주요 차이점은 Prediction 문제에 대한 접근 방식입니다.&lt;/p&gt;
 
-&lt;p&gt;이번 장 이후로 나오는 대부분의 주제는 동적 프로그래밍, 몬테 카를로, 시간차 학습과 관련이 있으며, 특히 7장에서는 시간차 학습과 몬테 카를로 방법의 중간 개념임 n-step 알고리즘을 소개하고, 12장에서는 이 들을 매끄럽게 통합할 수 있는 TD($\lambda$) 알고리즘을 소개합니다.&lt;/p&gt;
+&lt;p&gt;이번 장 이후로 나오는 대부분의 주제는 Dynamic Programming, Monte Carlo, TD Learning과 관련이 있으며, 특히 7장에서는 TD Learning과 Monte Carlo 방법의 중간 개념임 $n$-step Bootstrapping을 소개하고, 12장에서는 이것들을 매끄럽게 통합할 수 있는 TD($\lambda$)를 소개합니다.&lt;/p&gt;
 
 &lt;h2 id=&quot;td-prediction&quot;&gt;TD Prediction&lt;/h2&gt;
 
-&lt;p&gt;시간차 학습과 몬테 카를로 방법은 모두 경험을 사용하여 가치 함수를 추정합니다. 몬테 카를로 방법은 상태를 방문 후, Return의 값을 알 수 있을 때까지 기다린 다음 그 값을 토대로 $V(S_t)$를 추정합니다. 간단한 Every-visit 몬테 카를로 방법의 $V(S_t)$ 갱신 식은 이전 장에서 배운 대로 다음과 같습니다.&lt;/p&gt;
+&lt;p&gt;TD Learning과 Monte Carlo Method는 모두 경험을 사용하여 Value Function을 추정합니다. Monte Carlo 방법은 State를 방문 후, Return의 값을 알 수 있을 때까지 기다린 다음 그 값을 토대로 $V(S_t)$를 추정합니다. 간단한 Every-visit Monte Carlo Method의 $V(S_t)$ 업데이트 식은 이전 장에서 배운 대로 다음과 같습니다.&lt;/p&gt;
 
 \[V(S_t) \gets V(S_t) + \alpha \left[ G_t - V(S_t) \right] \tag{6.1}\]
 
-&lt;p&gt;이전에 배운 대로 Return $G_t$는 시간 $t$ 이후에 얻는 실제 보수이고, $\alpha$는 step-size parameter 입니다. 만약 $\alpha$가 상수라면 식 (6.1)을 constant-$\alpha$ 몬테 카를로라고 부릅니다.&lt;/p&gt;
+&lt;p&gt;이전에 배운 대로 Return $G_t$는 시간 $t$ 이후에 얻는 기대 Reward이고, $\alpha$는 Step-size parameter 입니다. 만약 $\alpha$가 상수라면 식 (6.1)을 &lt;span style=&quot;color:red&quot;&gt;Constant-$\alpha$ Monte Carlo&lt;/span&gt;라고 부릅니다.&lt;/p&gt;
 
-&lt;p&gt;몬테 카를로 방법에서는 $G_t$를 얻기 위해 에피소드가 끝날 때까지 기다려야 하지만, 시간차 방법에서는 다음 시간 단계까지만 기다리면 된다는 차이가 있습니다. 시간 $t+1$에서 얻은 즉각적인 보상 $R_{t+1}$과 추정된 가치 함수 $V(S_{t+1})$을 사용하여 $V(S_t)$를 업데이트 할 수 있습니다. 가장 간단한 시간차 방법의 업데이트 방법은 다음과 같습니다.&lt;/p&gt;
+&lt;p&gt;Monte Carlo Method에서는 $G_t$를 얻기 위해 Episode가 끝날 때까지 기다려야 하지만, TD Learning에서는 다음 시간 단계까지만 기다리면 된다는 차이가 있습니다. 시간 $t+1$에서 얻은 Reward $R_{t+1}$과 추정된 Value Function $V(S_{t+1})$을 사용하여 $V(S_t)$를 업데이트 할 수 있습니다. 가장 간단한 TD의 업데이트 식은 다음과 같습니다.&lt;/p&gt;
 
 \[V(S_t) \gets V(S_t) + \alpha \left[ R_{t+1} + \gamma V(S_{t+1}) - V(S_t) \right] \tag{6.2}\]
 
-&lt;p&gt;식 (6.2)와 같은 업데이트 방법을 $TD(0)$, 또는 1-step TD 라고 부릅니다. 이렇게 부르는 이유는 추후 12장에서 다룰 $TD(\lambda)$와 7장에서 다룰 n-step TD의 특수한 형태이기 때문입니다. 아래는 $TD(0)$ 업데이트를 사용한 가치 함수 추정 방법의 완전한 알고리즘입니다.&lt;/p&gt;
+&lt;p&gt;식 (6.2)와 같은 업데이트 식을 $TD(0)$, 또는 1-step TD 라고 부릅니다. 이렇게 부르는 이유는 추후 12장에서 다룰 $TD(\lambda)$와 7장에서 다룰 $n$-step TD의 특수한 형태이기 때문입니다. 아래는 $TD(0)$ 업데이트를 사용한 Value Function 추정 방법의 완전한 Pseudocode입니다.&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;/images/Reinforcement Learning/6. Temporal-Difference Learning/RL 06-01.png&quot; alt=&quot;&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;TD(0) 알고리즘은 부분적으로 기존 추정값을 기반으로 업데이트 하기 때문에 DP와 같은 Bootstrapping 방법이라고 부를 수 있습니다. 또한 3장에서 다루었던 가치 함수의 추정 식을 다시 가져와보면,&lt;/p&gt;
+&lt;p&gt;TD(0) 알고리즘은 부분적으로 기존 추정값을 기반으로 업데이트 하기 때문에 DP와 같은 Bootstrapping 방법이라고 부를 수 있습니다. 또한 3장에서 다루었던 Value Function의 추정 식을 다시 가져와보면,&lt;/p&gt;
 
 \[\begin{align}
 v_{\pi} &amp;amp; \doteq \mathbb{E}_{pi} \left[ G_t | S_t = s \right] \tag{6.3} \\ \\
@@ -224,17 +224,17 @@ v_{\pi} &amp;amp; \doteq \mathbb{E}_{pi} \left[ G_t | S_t = s \right] \tag{6.3} 
 &amp;amp;= \mathbb{E}_{pi} \left[ R_{t+1} + \gamma v_{\pi} (S_{t+1}) | S_t = s \right] \tag{6.4}
 \end{align}\]
 
-&lt;p&gt;식 (6.3)은 몬테 카를로 방법이 목표로 하는 추정값이고, 식 (6.4)는 DP 방법이 목표로 하는 추정값입니다. 두 식이 추정값인 이유는 몬테 카를로 방법에서는 실제 기대 보수가 아닌 샘플링된 보수가 사용되기 때문이고, DP 방법에서는 $v_{\pi}(S_{t+1})$가 알려져 있지 않아 $V(S_{t+1})$를 대신 사용하기 때문입니다. TD 방법의 목표는 샘플링된 보수를 사용하며 역시 $V(S_{t+1})$를 사용하기 때문에 추정값이 됩니다. 즉, TD 방법은 몬테 카를로 방법과 DP 방법을 결합한 것으로 볼 수 있습니다.&lt;/p&gt;
+&lt;p&gt;식 (6.3)은 Monte Carlo Method가 Target으로 하는 추정값이고, 식 (6.4)는 DP가 Target으로 하는 추정값입니다. 두 식이 추정값인 이유는 Monte Carlo Method에서는 실제 Expected Return이 아닌 Sample Return이 사용되기 때문이고, DP에서는 $v_{\pi}(S_{t+1})$가 알려져 있지 않아 $V(S_{t+1})$를 대신 사용하기 때문입니다. TD의 Target은 Sample Return을 사용하며 역시 $V(S_{t+1})$를 사용하기 때문에 추정값이 됩니다. 즉, TD는 Monte Carlo Method와 DP를 결합한 것으로 볼 수 있습니다.&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;/images/Reinforcement Learning/6. Temporal-Difference Learning/RL 06-02.png&quot; alt=&quot;&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;위의 그림은 TD(0)에 대한 백업 다이어그램입니다. 맨 위의 흰 점은 상태 노드를 의미하며, 이에 대한 추정값은 바로 다음 상태만 사용하기 때문에 백업 다이어그램이 간단하게 표현됩니다. 시간차 학습과 몬테 카를로 방법은 Sample Update라고 부르는데, 그 이유는 현재 상태에서 이어지는 행동과 보수를 사용하여(=후속 샘플) 원래의 상태(또는 상태-행동 쌍)을 업데이트하기 때문입니다.&lt;/p&gt;
+&lt;p&gt;위의 그림은 TD(0)에 대한 Backup Diagram입니다. 맨 위의 흰 점은 State 노드를 의미하며, 이에 대한 추정값은 바로 다음 State만 사용하기 때문에 Backup Diagram이 간단하게 표현됩니다. TD와 Monte Carlo 방법은 Sample Update라고 부르는데, 그 이유는 현재 State에서 이어지는 Action과 Reward를 사용하여 원래의 State(또는 State-Action 쌍)를 업데이트하기 때문입니다.&lt;/p&gt;
 
 &lt;p&gt;마지막으로 TD(0)에서 0이 의미하는 것은 $S_t$의 추정값과 $R_{t+1} + \gamma V(S_{t+1})$의 추정값 사이의 차이입니다. 이것을 TD-error라고 하는데, 추후 배울 강화학습에서 다양한 형태로 만나보실 수 있습니다.&lt;/p&gt;
 
 \[\delta_t \doteq R_{t+1} + \gamma V(S_{t+1}) - V(S_t) \tag{6.5}\]
 
-&lt;p&gt;각 시간 단계의 TD-error는 그 당시에 추정했던 값의 오차입니다. TD-error는 다음 상태와 다음 보수에 따라 달라지기 때문에 실제로는 다음 단계 전까지 사용할 수 없습니다. 즉, $\delta_t$는 $V(S_t)$에서 발생하는 오차이지만, $t+1$ 시간이 되어야 알 수 있습니다. 만약 $V$가 에피소드가 끝나기 전까지 변경되지 않는다면 몬테 카를로의 오차 또한 TD-error의 합으로 표현할 수 있습니다. (다행히 몬테 카를로 방법에서는 에피소드가 끝나기 전까지 $V$가 변하지 않습니다)&lt;/p&gt;
+&lt;p&gt;각 시간 단계의 TD-error는 그 당시에 추정했던 값의 오차입니다. TD-error는 다음 State와 다음 Reward에 따라 달라지기 때문에 실제로는 다음 단계 전까지 사용할 수 없습니다. 즉, $\delta_t$는 $V(S_t)$에서 발생하는 오차이지만, $t+1$ 시간이 되어야 알 수 있습니다. 만약 $V$가 Episode가 끝나기 전까지 변경되지 않는다면 Monte Carlo의 오차 또한 TD-error의 합으로 표현할 수 있습니다. (다행히 Monte Carlo Method에서는 Episode가 끝나기 전까지 $V$가 변하지 않습니다)&lt;/p&gt;
 
 \[\begin{align}
 G_t - V(S_t) &amp;amp;= R_{t+1} + \gamma G_{t+1} - V(S_t) + \gamma V(S_{t+1}) - \gamma V(S_{t+1}) \tag{from (3.9)} \\ \\
@@ -245,19 +245,19 @@ G_t - V(S_t) &amp;amp;= R_{t+1} + \gamma G_{t+1} - V(S_t) + \gamma V(S_{t+1}) - 
 &amp;amp;= \sum_{k=t}^{T-1} \gamma^{k-t} \delta_k \tag{6.6}
 \end{align}\]
 
-&lt;p&gt;만약 $V$가 에피소드 도중에 업데이트 되는 경우 위의 과정은 정확하지 않지만, Step-size가 작으면 대략적으로 근접할 수는 있습니다. 이 과정은 시간차 학습에서의 이론과 알고리즘에서 중요한 역할을 합니다.&lt;/p&gt;
+&lt;p&gt;만약 $V$가 Episode 도중에 업데이트 되는 경우 위의 과정은 정확하지 않지만, Step-size가 작으면 대략적으로 근접할 수는 있습니다. 이 과정은 TD에서의 이론과 알고리즘에서 중요한 역할을 합니다.&lt;/p&gt;
 
 &lt;h2 id=&quot;advantage-of-td-prediction-methods&quot;&gt;Advantage of TD Prediction Methods&lt;/h2&gt;
 
-&lt;p&gt;이번 섹션에서는 시간차 방법이 몬테 카를로 방법이나 DP 방법에 비해 어떤 이점이 있는지 알아보도록 하겠습니다. 가장 먼저 생각할 수 있는 시간차 방법의 장점은 DP 방법과 달리 환경 모델이 필요하지 않다는 점입니다. 물론 이것은 몬테 카를로 방법도 가지고 있는 장점이긴 합니다.&lt;/p&gt;
+&lt;p&gt;이번 Section에서는 TD가 Monte Carlo Method나 DP에 비해 어떤 이점이 있는지 알아보도록 하겠습니다. 가장 먼저 생각할 수 있는 TD의 장점은 DP와 달리 Environment의 Model이 필요하지 않다는 점입니다. 물론 이것은 Monte Carlo Method도 가지고 있는 장점이긴 합니다.&lt;/p&gt;
 
-&lt;p&gt;그렇다면 몬테 카를로 방법에 비해 시간차 방법이 가지는 장점은 점진적인 방식으로 구현이 가능하다는 것입니다. 몬테 카를로 방법의 가장 치명적인 단점은 에피소드가 끝날 때까지 기다려야 한다는 것입니다. 에피소드의 길이가 길다면 그만큼 학습하기 위해 대기해야하는 시간 또한 길어지게 됩니다. 지난 장에서 에피소드를 일부 무시하거나 줄이는 방법을 잠깐 소개하였으나, 이는 실험적인 방법이기 때문에 문제가 해결된다고 볼 수는 없습니다.&lt;/p&gt;
+&lt;p&gt;그렇다면 Monte Carlo Method에 비해 TD가 가지는 장점은 Incremental로 구현이 가능하다는 것입니다. Monte Carlo Method의 가장 치명적인 단점은 Episode가 끝날 때까지 기다려야 한다는 것입니다. Episode의 길이가 길다면 그만큼 학습하기 위해 대기해야하는 시간 또한 길어지게 됩니다. 지난 장에서 Episode를 일부 무시하거나 줄이는 방법들을 잠깐 소개하였으나, 이것들은 실험적인 방법이기 때문에 문제가 해결된다고 볼 수는 없습니다.&lt;/p&gt;
 
-&lt;p&gt;다만 시간차 방법에서 하나의 샘플만을 가지고 학습하는 것이 과연 올바른 값으로 수렴함을 보장하는지를 따져봐야 합니다. 다행히도 고정된 정책 $\pi$에 대해  step-size parameter $\alpha$가 충분히 작고, 조건 (2.7)을 만족한다면 TD(0)은 확률 1로 $v_{\pi}$에 수렴합니다. 일반적인 상황에 대해서는 9.4에서 다룰 예정입니다.&lt;/p&gt;
+&lt;p&gt;다만 TD에서 하나의 Sample만을 가지고 학습하는 것이 과연 올바른 값으로 수렴함을 보장하는지를 따져봐야 합니다. 다행히도 고정된 Policy $\pi$에 대해  Step-size parameter $\alpha$가 충분히 작고, 조건 (2.7)을 만족한다면 TD(0)은 확률 1로 $v_{\pi}$에 수렴합니다. 일반적인 상황에 대해서는 9.4에서 다룰 예정입니다.&lt;/p&gt;
 
-&lt;p&gt;시간차 방법과 몬테 카를로 방법이 모두 수렴하는 것이 보장된다면, 다음으로 논의할 것은 어떤 것이 더 빨리 수렴하는가입니다. 안타깝게도 어떤 방법이 더 빠르게 수렴하는지는 수학적으로 증명되지 않았지만, 일반적으로는 시간차 방법이 몬테 카를로 방법보다 빠르게 수렴한다고 합니다.&lt;/p&gt;
+&lt;p&gt;TD와 Monte Carlo Method가 모두 수렴하는 것이 보장된다면, 다음으로 논의할 것은 어떤 것이 더 빨리 수렴하는가입니다. 안타깝게도 어떤 방법이 더 빠르게 수렴하는지는 수학적으로 증명되지 않았지만, 일반적으로는 TD가 Monte Carlo Method보다 빠르게 수렴한다고 합니다.&lt;/p&gt;
 
-&lt;p&gt;몬테 카를로 방법과 시간차 방법의 장단점을 요약하면 다음과 같습니다.&lt;/p&gt;
+&lt;p&gt;Monte Carlo Method와 TD의 장단점을 요약하면 다음과 같습니다.&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;Monte Carlo has &lt;span style=&quot;color:red&quot;&gt;high variance&lt;/span&gt;, &lt;span style=&quot;color:red&quot;&gt;zero bias&lt;/span&gt;&lt;/strong&gt;&lt;/p&gt;
 
@@ -277,141 +277,149 @@ G_t - V(S_t) &amp;amp;= R_{t+1} + \gamma G_{t+1} - V(S_t) + \gamma V(S_{t+1}) - 
 
 &lt;h2 id=&quot;optimality-of-td0&quot;&gt;Optimality of TD(0)&lt;/h2&gt;
 
-&lt;p&gt;만약 10개의 에피소드, 또는 100개의 시간 단계와 같이 제한된 숫자의 경험만 사용할 수 있다고 가정해봅시다. 이 경우 점진적인 학습 방법의 접근 방식은 수렴될 때까지 경험을 반복적으로 학습하는 것입니다. 문제는 가치 함수 $V$가 에피소드 당 단 한번만 변경된다는 것입니다. (TD(0) 알고리즘 참고) 이렇게 전체 데이터를 사용하여 학습하고 수렴하도록 만드는 방법을 배치 업데이트(Batch Updating)라고 합니다.&lt;/p&gt;
+&lt;p&gt;만약 10개의 Episode, 또는 100개의 시간 단계와 같이 제한된 숫자의 경험만 사용할 수 있다고 가정해봅시다. 이 경우 Incremental 학습 방법의 접근 방식은 수렴될 때까지 경험을 반복적으로 학습하는 것입니다. 문제는 Value Function $V$가 Episode 당 단 한번만 변경된다는 것입니다. (TD(0) 알고리즘 참고) 이렇게 전체 데이터를 사용하여 학습하고 수렴하도록 만드는 방법을 &lt;span style=&quot;color:red&quot;&gt;Batch Updating&lt;/span&gt;이라고 합니다.&lt;/p&gt;
 
-&lt;p&gt;배치 업데이트에서 TD(0)는 step-size parameter $\alpha$가 충분히 작다는 조건 하에 답에 수렴합니다. constant-$\alpha$ 몬테 카를로 방법도 동일한 조건에서는 수렴하지만, 다른 답으로 수렴합니다. 이것은 설명으로만 이해하기 어렵기 때문에, 교재에 나와있는 예제를 통해 보충하도록 하겠습니다.&lt;/p&gt;
+&lt;p&gt;배치 업데이트에서 TD(0)는 Step-size parameter $\alpha$가 충분히 작다는 조건 하에 답에 수렴합니다. Constant-$\alpha$ Monte Carlo Method도 동일한 조건에서는 수렴하지만, 다른 답으로 수렴합니다. 이것은 설명으로만 이해하기 어렵기 때문에, 교재에 나와있는 예제를 통해 보충하도록 하겠습니다.&lt;/p&gt;
 
-&lt;p&gt;Example 6.4 You are the Predictor&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Example 6.4) You are the Predictor&lt;/strong&gt;&lt;/p&gt;
 
-&lt;p&gt;알 수 없는 MDP 문제에 대해 다음 8개의 에피소드가 관찰되었다고 가정해보겠습니다.&lt;/p&gt;
+&lt;p&gt;알 수 없는 MDP 문제에 대해 다음 8개의 Episode가 관찰되었다고 가정해보겠습니다.&lt;/p&gt;
 
-&lt;p&gt;A, 0, B, 0
-B, 1
-B, 1
-B, 1
-B, 1
-B, 1
-B, 1
-B, 0&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;A, 0, B, 0&lt;/li&gt;
+  &lt;li&gt;B, 1&lt;/li&gt;
+  &lt;li&gt;B, 1&lt;/li&gt;
+  &lt;li&gt;B, 1&lt;/li&gt;
+  &lt;li&gt;B, 1&lt;/li&gt;
+  &lt;li&gt;B, 1&lt;/li&gt;
+  &lt;li&gt;B, 1&lt;/li&gt;
+  &lt;li&gt;B, 0&lt;/li&gt;
+&lt;/ul&gt;
 
-&lt;p&gt;첫 번째 에피소드는 상태 A에서 시작하여 0의 보수를 받고 상태 B로 이동한 다음, 0의 보수를 받고 종료된 것을 의미합니다. 나머지 에피소드 중 6개는 상태 B에서 시작하여 1의 보수를 받고 종료되고, 마지막 에피소드는 상태 B에서 시작하여 0의 보수를 받고 종료됩니다.&lt;/p&gt;
+&lt;p&gt;첫 번째 Episode는 State A에서 시작하여 0의 Reward를 받고 State B로 이동한 다음, 0의 Reward를 받고 종료된 것을 의미합니다. 나머지 Episode 중 6개는 State B에서 시작하여 1의 Reward를 받고 종료되고, 마지막 Episode는 State B에서 시작하여 0의 Reward를 받고 종료됩니다.&lt;/p&gt;
 
-&lt;p&gt;위의 8개의 에피소드를 기반으로 가치 함수 $V(A)$, $V(B)$를 추정해봅시다. 먼저 상태 B를 보면 8개의 에피소드 중 2개의 에피소드가 0의 보수를 받고, 6개의 에피소드가 1의 보수를 받으므로 $V(B) = 3/4$라고 쉽게 추정할 수 있습니다.&lt;/p&gt;
+&lt;p&gt;위의 8개의 Episode를 기반으로 Value $V(A)$, $V(B)$를 추정해봅시다. 먼저 State B를 보면 8개의 Episode 중 2개의 Episode가 0의 Reward를 받고, 6개의 Episode가 1의 Reward를 받으므로 $V(B) = 0.75$라고 쉽게 추정할 수 있습니다.&lt;/p&gt;
 
-&lt;p&gt;문제는 $V(A)$입니다. 주어진 에피소드에서 상태 A가 언급된 것은 첫 번째 에피소드 하나인데, 이것만으로 유추하자면 상태 A는 100% 확률로 0의 보수를 받고 상태 B로 이동하는 것처럼 보입니다. 이것을 그림으로 표현하면 다음과 같습니다.&lt;/p&gt;
+&lt;p&gt;문제는 $V(A)$입니다. 주어진 Episode에서 State A가 언급된 것은 첫 번째 Episode 하나인데, 이것만으로 유추하자면 State A는 100% 확률로 0의 Reward를 받고 State B로 이동하는 것처럼 보입니다. 이것을 그림으로 표현하면 다음과 같습니다.&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;/images/Reinforcement Learning/6. Temporal-Difference Learning/RL 06-03.png&quot; alt=&quot;&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;즉, 상태 A의 가치는 $V(B)$와 동일하게 $V(A) = 3/4$라고 말할 수 있습니다. 이 결과는 Batch TD(0)로 계산해도 동일한 결과가 나옵니다.&lt;/p&gt;
+&lt;p&gt;즉, State A의 Value는 $V(B)$와 동일하게 $V(A) = 0.75$라고 말할 수 있습니다. 이 결과는 Batch TD(0)로 계산해도 동일한 결과가 나옵니다.&lt;/p&gt;
 
-&lt;p&gt;또 다른 추정 방법은 8개의 에피소드 중 상태 A는 단 한번 등장했고, 그 때의 보수는 0이었으므로 $V(A) = 0$으로 추정하는 것입니다. 이 결과는 Batch MC와 동일한 결과입니다. 이렇게 추정하면 실제로 데이터에 대해서는 RMS Error가 0이 됩니다. (0으로 추정했는데 표본이 0이므로) 하지만 생각해봤을 때, $V(A) = 0$으로 추정하는 것 보다 $V(A) = 3/4$로 추정하는 것이 더 합리적으로 보입니다. 이를 토대로 결론을 내려보면, 몬테 카를로 방법은 현재 주어진 데이터에서 더 우수한 성능을 보일 수 있지만, 미래에 얻게 될 데이터까지 고려한다면 TD(0)가 더 우수한 성능을 보일 것이라고 기대할 수 있습니다. ■&lt;/p&gt;
+&lt;p&gt;또 다른 추정 방법은 8개의 Episode 중 State A는 단 한번 등장했고, 그 때의 Reward는 0이었으므로 $V(A) = 0$으로 추정하는 것입니다. 이 결과는 Batch MC와 동일한 결과입니다. 이렇게 추정하면 실제로 데이터에 대해서는 RMS Error가 0이 됩니다. (0으로 추정했는데 표본이 0이므로) 하지만 생각해봤을 때, $V(A) = 0$으로 추정하는 것 보다 $V(A) = 0.75$로 추정하는 것이 더 합리적으로 보입니다. 이를 토대로 결론을 내려보면, Monte Carlo 방법은 현재 주어진 데이터에서 더 우수한 성능을 보일 수 있지만, 미래에 얻게 될 데이터까지 고려한다면 TD(0)가 더 우수한 성능을 보일 것이라고 기대할 수 있습니다.&lt;/p&gt;
 
-&lt;p&gt;Example 6.4를 보시면 Batch TD(0)와 Batch MC 방법으로 찾은 추정치가 어떻게 다른지 알 수 있습니다. Batch MC 방법은 항상 Training Data에서 Root Mean Square (RMS) Error를 최소화하는 추정치를 찾지만, Batch TD(0)는 항상 Maximum-likelihood 모델에 맞는 추정치를 찾습니다. Batch TD(0)와 같이 추정하는 것을 Certainty-equivalence estimate 라고 합니다.&lt;/p&gt;
+&lt;p style=&quot;text-align:right&quot;&gt;□&lt;/p&gt;
 
-&lt;p&gt;Certainty-equivalence estimate은 확실히 최적의 솔루션처럼 보이지만, 일반적인 상황에서는 위의 Example 6.4와 같이 직접 가치 함수를 계산하는 것이 현실적으로 어렵다는 문제점이 있습니다. $n$을 상태의 수라고 하면(즉, $n = \lvert \mathcal{S} \rvert$), Maximum-likelihood 모델을 추정하는데 $n^2$의 메모리가 필요하고, 가치 함수를 계산하는 데 $n^3$ 만큼의 시간 단계가 필요합니다. 이러한 측면에서 보면 TD(0)는 Example 6.4와 같이 직접 계산하지 않고도 훨씬 적은 메모리와 시간을 소모하여 이와 동일한 답으로 수렴하기 때문에 우수한 방법임을 알 수 있습니다.&lt;/p&gt;
+&lt;p&gt;Example 6.4를 보시면 Batch TD(0)와 Batch MC로 찾은 추정치가 어떻게 다른지 알 수 있습니다. Batch MC는 항상 Training Data에서 Root Mean Square (RMS) Error를 최소화하는 추정치를 찾지만, Batch TD(0)는 항상 Maximum-likelihood Model에 맞는 추정치를 찾습니다. Batch TD(0)와 같이 추정하는 것을 &lt;span style=&quot;color:red&quot;&gt;Certainty-equivalence Estimate&lt;/span&gt; 라고 합니다.&lt;/p&gt;
+
+&lt;p&gt;Certainty-equivalence Estimate은 확실히 최적의 해법처럼 보이지만, 일반적인 상황에서는 위의 Example 6.4와 같이 직접 Value Function를 계산하는 것이 현실적으로 어렵다는 문제점이 있습니다. $n$을 State의 수라고 하면(즉, $n = \lvert \mathcal{S} \rvert$), Maximum-likelihood Model을 추정하는데 $n^2$의 메모리가 필요하고, Value Function를 계산하는 데 $n^3$ 만큼의 시간 단계가 필요합니다. 이러한 측면에서 보면 TD(0)는 Example 6.4와 같이 직접 계산하지 않고도 훨씬 적은 메모리와 시간을 소모하여 이와 동일한 답으로 수렴하기 때문에 우수한 방법임을 알 수 있습니다.&lt;/p&gt;
 
 &lt;h2 id=&quot;sarsa--on-policy-td-control&quot;&gt;Sarsa : On-policy TD Control&lt;/h2&gt;
 
-&lt;p&gt;이제는 제어 문제에 대해 TD를 사용해 보겠습니다. 이전 장들과 마찬가지로 제어는 Generalized Policy Iteration (GPI)를 기반으로 하며, Evaluation과 Improvement에 TD를 사용합니다. 몬테 카를로 방법과 마찬가지로 Exploration과 Exploitation 사이의 Trade-off가 있으며 그 때와 동일하게 On-policy와 Off-policy라는 두 가지 방법으로 나누어 접근합니다. 이번 섹션에서는 먼저 On-policy를 사용한 TD 제어 방법을 다룹니다.&lt;/p&gt;
+&lt;p&gt;이제는 TD를 사용한 Control 방법에 대해 알아보겠습니다. 이전 장들과 마찬가지로 Control은 Generalized Policy Iteration (GPI)를 기반으로 하며, Evaluation과 Improvement에 TD를 사용합니다. Monte Carlo Method와 마찬가지로 Exploration과 Exploitation 사이의 Trade-off가 있으며 그 때와 동일하게 On-policy와 Off-policy라는 두 가지 방법으로 나누어 접근합니다. 이번 Section에서는 먼저 On-policy를 사용한 TD Control 방법을 다룹니다.&lt;/p&gt;
 
-&lt;p&gt;첫 번째 단계로는 상태-가치 함수가 아닌 행동-가치 함수를 배우는 것입니다. 즉, 모든 상태 $s$와 행동 $a$에 대하여, 정책 $\pi$를 기반으로 $q_{\pi} (s, a)$를 추정합니다. 각각의 에피소드는 다음과 같이 상태와 상태-행동이 반복적으로 이어져 있습니다.&lt;/p&gt;
+&lt;p&gt;첫 번째 단계로는 State-Value Function가 아닌 Action-Value Function를 배우는 것입니다. 즉, 모든 State $s$와 Action $a$에 대하여, Policy $\pi$를 기반으로 $q_{\pi} (s, a)$를 추정합니다. 각각의 Episode는 다음과 같이 State와 State-Action이 반복적으로 이어져 있습니다.&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;/images/Reinforcement Learning/6. Temporal-Difference Learning/RL 06-04.png&quot; alt=&quot;&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;지금까지는 계속 상태에 대한 가치 함수만을 고려했으나, 이번 섹션부터는 상태-동작 쌍에 대한 가치를 측정하기 때문에 $V(S)$가 아니라 $Q(S, A)$를 사용합니다. 이 부분을 제외하고는 식 자체가 크게 다르지 않고, 수렴 역시 동일하게 보장됩니다. TD(0)에서의 Q 값을 업데이트 하는 규칙은 다음과 같습니다.&lt;/p&gt;
+&lt;p&gt;지금까지는 계속 State에 대한 Value Function만을 고려했으나, 이번 Section부터는 State-Action 쌍에 대한 Value를 측정하기 때문에 $V(S)$가 아니라 $Q(S, A)$를 사용합니다. 이 부분을 제외하고는 식 자체가 크게 다르지 않고, 수렴 역시 동일하게 보장됩니다. TD(0)에서의 Q 값을 업데이트 하는 식은 다음과 같습니다.&lt;/p&gt;
 
 \[Q(S_t, A_t) \gets Q(S_t, A_t) + \alpha \left[ R_{t+1} + \gamma Q(S_{t+1}, A_{t+1}) - Q(S_t, A_t) \right] \tag{6.7}\]
 
-&lt;p&gt;이 업데이트는 마지막 상태 아닌 모든 상태 $S_t$마다 수행됩니다. 만약 $S_{t+1}$이 마지막 상태라면 $Q(S_{t+1}, A_{t+1})$는 0으로 정의됩니다. 이 업데이트를 사용하기 위해서 필요한 요소는 $S_t, A_t, R_{t+1}, S_{t+1}, A_{t+1}$ 5가지입니다. 그렇기 때문에 이 업데이트를 사용한 TD 제어를 Sarsa라고 부릅니다. Sarsa의 백업 다이어그램은 아래와 같습니다.&lt;/p&gt;
+&lt;p&gt;이 업데이트는 마지막 State가 아닌 모든 State $S_t$마다 수행됩니다. 만약 $S_{t+1}$이 마지막 State라면 $Q(S_{t+1}, A_{t+1})$는 0으로 정의됩니다. 이 업데이트를 사용하기 위해서 필요한 요소는 $S_t, A_t, R_{t+1}, S_{t+1}, A_{t+1}$ 5가지입니다. 그렇기 때문에 이 업데이트를 사용한 TD 제어를 &lt;span style=&quot;color:red&quot;&gt;Sarsa&lt;/span&gt;라고 부릅니다. Sarsa의 Backup Diagram은 아래와 같습니다.&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;/images/Reinforcement Learning/6. Temporal-Difference Learning/RL 06-05.png&quot; alt=&quot;&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;Sarsa 알고리즘은 이전에 배운 On-policy 방법과 마찬가지로 정책 $\pi$에 대해 $q_{\pi}$를 추정하고, $q_{\pi}$에 대해 greedy하게 $\pi$를 변경하는 과정을 반복합니다. 전체 Sarsa 알고리즘의 형태는 다음과 같습니다.&lt;/p&gt;
+&lt;p&gt;Sarsa는 이전에 배운 On-policy 방법과 마찬가지로 Policy $\pi$에 대해 $q_{\pi}$를 추정하고, $q_{\pi}$에 대해 greedy하게 $\pi$를 변경하는 과정을 반복합니다. 전체 Sarsa 알고리즘의 Pseudocode는 다음과 같습니다.&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;/images/Reinforcement Learning/6. Temporal-Difference Learning/RL 06-06.png&quot; alt=&quot;&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;Sarsa 알고리즘의 수렴성은 Q에 대한 정책에 대한 조건이 어떤 지에 따라 다릅니다. $\epsilon$-greedy을 사용하나 $\epsilon$-soft 정책을 사용하는지에 상관 없이, step-size에 대한 조건인 식 (2.7)을 만족하고, 모든 상태-행동 쌍이 무한한 횟수로 방문되는 하에 확률 1로 최적의 정책 및 행동-가치 함수로 수렴합니다.&lt;/p&gt;
+&lt;p&gt;Sarsa의 수렴성은 Q에 대한 Policy의 조건이 어떤 지에 따라 다릅니다. $\epsilon$-greedy을 사용하는 것과 상관 없이, Step-size에 대한 조건인 식 (2.7)을 만족하고, 모든 State-Action 쌍이 무한한 횟수로 방문되는 조건 하에 확률 1로 Optimal Policy 및 Action-Value Function으로 수렴합니다.&lt;/p&gt;
 
 &lt;h2 id=&quot;q-learning--off-policy-td-control&quot;&gt;Q-learning : Off-policy TD Control&lt;/h2&gt;
 
-&lt;p&gt;Off-policy TD 제어 학습 알고리즘은 Q-learning이라는 이름으로 불립니다. Q-learning은 강화학습 중에서도 가장 유명한 학습 방법이며, 1989년에 Chris Watkins 교수님이 처음 제안한 방법입니다. Q-learning의 업데이트 규칙은 다음과 같습니다.&lt;/p&gt;
+&lt;p&gt;Off-policy TD Control 학습 알고리즘은 &lt;span style=&quot;color:red&quot;&gt;Q-learning&lt;/span&gt;이라는 이름으로 불립니다. Q-learning은 강화학습 중에서도 가장 유명한 학습 방법이며, 1989년에 Chris Watkins 교수님이 처음 제안한 방법입니다. Q-learning의 업데이트 식은 다음과 같습니다.&lt;/p&gt;
 
 \[Q(S_t, A_t) \gets Q(S_t, A_t) + \alpha \left[ R_{t+1} + \gamma \max_a Q(S_{t+1}, a) - Q(S_t, A_t) \right] \tag{6.8}\]
 
-&lt;p&gt;식 (6.8)은 Sarsa의 업데이트 규칙인 식 (6.7)과 대부분 유사합니다. 딱 한부분만 다른데, 다음 상태와 행동을 사용했던 Sarsa와 달리 Q-learning은 다음 상태에서 가능한 행동 중 Q값이 가장 큰 행동을 현재의 Q 값에 반영한다는 것입니다. Off-policy는 실제 행동하는 정책과 학습하는 정책이 구분되기 때문이라고 이해하시면 되겠습니다. Q-learning의 전체 알고리즘은 다음과 같습니다.&lt;/p&gt;
+&lt;p&gt;식 (6.8)은 Sarsa의 업데이트 규칙인 식 (6.7)과 대부분 유사합니다. 딱 한부분만 다른데, 다음 State와 Action을 사용했던 Sarsa와 달리 Q-learning은 다음 State에서 가능한 Action 중 Q값이 가장 큰 Action을 현재의 Q 값에 반영한다는 것입니다. Off-policy는 Behavior Policy와 Target Policy가 구분되기 때문이라고 이해하시면 되겠습니다. Q-learning의 전체 Pseudocode는 다음과 같습니다.&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;/images/Reinforcement Learning/6. Temporal-Difference Learning/RL 06-07.png&quot; alt=&quot;&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;Example 6.6 Cliff Walking&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Example 6.6) Cliff Walking&lt;/strong&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;/images/Reinforcement Learning/6. Temporal-Difference Learning/RL 06-08.png&quot; alt=&quot;&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;Sarsa와 Q-learning의 차이를 한 눈에 알 수 있는 예제로 Cliff Walking이라는 문제가 있습니다. 아래와 같은 Gridworld 환경이 있습니다. 에피소드는 S라는 위치에서 시작하고, G에 도달하는 것이 목표입니다. 모든 상태에서의 보수는 -1로, Cliff 상태들의 보수는 -100로 정의되어 있습니다. 만약 학습 행위자가 Cliff 상태나 G 상태에 도달하면 에피소드가 종료됩니다.&lt;/p&gt;
+&lt;p&gt;Sarsa와 Q-learning의 차이를 한 눈에 알 수 있는 예제로 Cliff Walking이라는 문제가 있습니다. 위와 같이 Gridworld로 구성된 Environment에서 Episode는 S라는 위치에서 시작하고, G에 도달하는 것이 목표입니다. Cliff State의 Reward는 -100로, 나머지 모든 State에서의 Reward는 -1로 정의되어 있습니다. 만약 Agent가 Cliff나 G에 도달하면 Episode가 종료됩니다.&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;/images/Reinforcement Learning/6. Temporal-Difference Learning/RL 06-09.png&quot; alt=&quot;&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;위의 그래프는 $\epsilon = 0.1$으로 설정한 $\epsilon$-greedy 정책을 사용했을 때 Sarsa와 Q-learning의 성능을 비교한 그림입니다.  Q-learning은 Cliff의 가장자리를 따라 이동하는 정책으로 수렴하지만, 때때로 $\epsilon$-greedy로 인해 Cliff 상태에 진입하는 경우가 발생합니다. 반면에 Sarsa는 Cliff에 최대한 접근하지 않도록 안전한 경로로 학습하기 때문에, Cliff에 떨어지는 경우는 발생하지 않지만 최적의 경로보다 우회한 경로로 수렴하게 됩니다. ■&lt;/p&gt;
+&lt;p&gt;위의 그래프는 $\epsilon = 0.1$으로 설정한 $\epsilon$-greedy Policy를 사용했을 때 Sarsa와 Q-learning의 성능을 비교한 그림입니다.  Q-learning은 Cliff의 가장자리를 따라 이동하는 Policy로 수렴하지만, 때때로 $\epsilon$-greedy로 인해 Cliff State에 진입하는 경우가 발생합니다. 반면에 Sarsa는 Cliff에 최대한 접근하지 않도록 안전한 경로로 학습하기 때문에, Cliff에 떨어지는 경우는 발생하지 않지만 최적의 경로보다 우회한 경로로 수렴하게 됩니다.&lt;/p&gt;
+
+&lt;p style=&quot;text-align:right&quot;&gt;□&lt;/p&gt;
 
 &lt;h2 id=&quot;expected-sarsa&quot;&gt;Expected Sarsa&lt;/h2&gt;
 
-&lt;p&gt;이번 섹션부터는 Sarsa와 Q-learning으로부터 파생된 방법을 하나씩 다룰 예정입니다. 먼저 Sarsa를 변형한 Expected Sarsa 방법이 있습니다. Expected Sarsa는 이름과 같이 (다음 상태 Q 값의) 평균을 사용한 방법입니다. Expected Sarsa의 업데이트 식은 다음과 같습니다.&lt;/p&gt;
+&lt;p&gt;이번 Section부터는 Sarsa와 Q-learning으로부터 파생된 방법을 하나씩 다룰 예정입니다. 먼저 Sarsa를 변형한 Expected Sarsa 방법이 있습니다. Expected Sarsa는 이름과 같이 (다음 State Q 값의) 평균을 사용한 방법입니다. Expected Sarsa의 업데이트 식은 다음과 같습니다.&lt;/p&gt;
 
 \[\begin{align}
 Q(S_t, A_t) &amp;amp; \gets Q(S_t, A_t) + \alpha \left[ R_{t+1} + \gamma \mathbb{E}_{\pi} \left[ Q ( S_{t+1}, A_{t+1} ) | S_{t+1} \right] - Q(S_t, A_t) \right] \\ \\
 &amp;amp;= Q(S_t, A_t) + \alpha \left[ R_{t+1} + \gamma \sum_a \pi (a | S_{t+1}) Q(S_{t+1}, a) - Q(S_t, A_t) \right] \tag{6.9}
 \end{align}\]
 
-&lt;p&gt;교재에서는 다음 상태 $S_{t+1}$이 주어졌을 때, Sarsa의 Expectation대로 이동하기 때문에 Expected Sarsa라는 이름이 붙었다고 하는데, 저는 이 말의 정확한 의미를 잘 이해하지 못하겠습니다. 일단 제 생각은 다음 상태의 평균 Q 값을 사용하기 때문에 Expected Sarsa라는 이름이 붙었다고 이해해도 괜찮을 것 같습니다.&lt;/p&gt;
+&lt;p&gt;교재에서는 다음 State $S_{t+1}$이 주어졌을 때, Sarsa의 Expectation대로 이동하기 때문에 Expected Sarsa라는 이름이 붙었다고 합니다. 어차피 비슷한 의미이니 다음 State의 평균 Q 값을 사용하기 때문에 Expected Sarsa라는 이름이 붙었다고 이해해도 괜찮을 것 같습니다.&lt;/p&gt;
 
-&lt;p&gt;Expected Sarsa는 Sarsa보다 계산이 더 복잡하지만, Sarsa에서 $A_{t+1}$을 무작위로 선택하기 때문에 발생하는 분산이 없어진다는 장점이 있습니다. 이로 인해 동일한 학습량을 놓고 비교했을 때, Expected Sarsa는 Sarsa보다 약간 더 나은 성능을 보입니다. 아래의 그래프는 Cliff Walking 예제에서 Sarsa, Q-learning, Expected Sarsa 간의 성능을 비교한 그림입니다. Interim Performance에서 Expected Sarsa는 다른 두 방법보다 더 우수한 성능을 보일 뿐만 아니라, Asymptotic Performance에서 성능이 하락하는 Sarsa에 비해 성능 저하 없이 우수한 성능을 유지하는 모습을 보여줍니다.&lt;/p&gt;
+&lt;p&gt;Expected Sarsa는 Sarsa보다 계산이 더 복잡하지만, Sarsa에서 $A_{t+1}$을 무작위로 선택하기 때문에 발생하는 Variance가 없어진다는 장점이 있습니다. 이로 인해 동일한 학습량을 놓고 비교했을 때, Expected Sarsa는 Sarsa보다 약간 더 나은 성능을 보입니다. 아래의 그래프는 Cliff Walking 예제에서 Sarsa, Q-learning, Expected Sarsa 간의 성능을 비교한 그림입니다. Interim Performance에서 Expected Sarsa는 다른 두 방법보다 더 우수한 성능을 보일 뿐만 아니라, Asymptotic Performance에서 성능이 하락하는 Sarsa에 비해 성능 저하 없이 우수한 성능을 유지하는 모습을 보여줍니다.&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;/images/Reinforcement Learning/6. Temporal-Difference Learning/RL 06-10.png&quot; alt=&quot;&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;Cliff Walking 예제에서는 Expected Sarsa가 On-policy로 구현되었지만, Q-learning처럼 Behavior Policy와 Target Policy를 분리하여 Off-policy로 구현할 수도 있습니다. 이 경우 Expected Sarsa는 Q-learning과 거의 동일해지며, 추가적인 계산량만 감당할 수 있다면 대부분의 시간차 학습 알고리즘보다 더 우수한 성능을 보인다는 장점이 있습니다.&lt;/p&gt;
+&lt;p&gt;Cliff Walking 예제에서는 Expected Sarsa가 On-policy로 구현되었지만, Q-learning처럼 Behavior Policy와 Target Policy를 분리하여 Off-policy로 구현할 수도 있습니다. 이 경우 Expected Sarsa는 Q-learning과 거의 동일해지며, 추가적인 계산량만 감당할 수 있다면 대부분의 TD 알고리즘보다 더 우수한 성능을 보인다는 장점이 있습니다.&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;/images/Reinforcement Learning/6. Temporal-Difference Learning/RL 06-11.png&quot; alt=&quot;&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;Q-learning와 Expected Sarsa의 백업 다이어그램을 비교하면 위와 같습니다. 두 방법 모두 다음 상태의 모든 행동을 고려하는 것은 같으나, Q-learning은 다음 상태에서 가능한 행동 중 가장 Q 값이 높은 행동만을 찾아 학습에 반영하는 반면에, Expected Sarsa는 다음 상태에서 가능한 행동을 모두 고려하여 Q 값의 평균을 계산한 다음 학습에 반영한다는 차이점이 있습니다.&lt;/p&gt;
+&lt;p&gt;Q-learning와 Expected Sarsa의 Backup Diagram을 비교하면 위와 같습니다. 두 방법 모두 다음 State의 모든 Action을 고려하는 것은 같으나, Q-learning은 다음 State에서 가능한 Action 중 가장 Q 값이 높은 Action만을 찾아 학습에 반영하는 반면에, Expected Sarsa는 다음 State에서 가능한 Action을 모두 고려하여 Q 값의 평균을 계산한 다음 학습에 반영한다는 차이점이 있습니다.&lt;/p&gt;
 
 &lt;h2 id=&quot;maximization-bias-and-double-learning&quot;&gt;Maximization Bias and Double Learning&lt;/h2&gt;
 
-&lt;p&gt;지금까지 배운 제어 알고리즘들은 Target Policy를 최적화하는데 중점을 두었습니다. 이러한 알고리즘에서 Policy의 최적화는 추정한 값들의 최대값은 최대값의 추정값으로 사용되며, 이로 인해 상당한 편향(Bias)를 초래할 수 있습니다. 예를 들어, 실제 $q(s, a)$ 값은 모두 0이라고 가정한 상황에서, 추정값 $Q(s,a)$가 불확실하므로 0보다 클 수도 있고 0보다 작을 수도 있습니다. 이 경우 실제 $q(s, a)$ 값의 최대값은 0이지만, 추정값 $Q(s,a)$의 최대값은 양수입니다. 즉, 양의 방향으로 편향되었다고 볼 수 있습니다. 이것을 최대화 편향(Maximization Bias)라고 합니다. 구체적인 예시를 통해 이것이 어떻게 발생하는지 살펴보도록 하겠습니다.&lt;/p&gt;
+&lt;p&gt;지금까지 배운 Control 방법들은 Target Policy를 최적화하는데 중점을 두었습니다. 만약 추정한 값보다 최대값이 큰 경우, 이 값은 최대값의 추정값으로 사용될 수 있으며, 이로 인해 상당한 Bias를 초래할 수 있습니다. 예를 들어, 실제 $q(s, a)$ 값은 모두 0이라고 가정한 상황에서, 추정값 $Q(s,a)$가 불확실하므로 0보다 클 수도 있고 0보다 작을 수도 있습니다. 이 경우 실제 $q(s, a)$ 값의 최대값은 0이지만, 추정값 $Q(s,a)$의 최대값은 양수입니다. 즉, 양의 방향으로 Bias되었다고 볼 수 있습니다. 이것을 &lt;span style=&quot;color:red&quot;&gt;Maximization Bias&lt;/span&gt;라고 합니다. 구체적인 예시를 통해 이것이 어떻게 발생하는지 살펴보도록 하겠습니다.&lt;/p&gt;
 
-&lt;p&gt;Example 6.7 Maximization Bias Example&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Example 6.7) Maximization Bias Example&lt;/strong&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;/images/Reinforcement Learning/6. Temporal-Difference Learning/RL 06-12.png&quot; alt=&quot;&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;위의 그림은 최대화 편향이 TD 제어 알고리즘에서 어떻게 문제를 발생시키는지 알 수 있는 간단한 예제입니다. 예제의 MDP에서는 항상 A 상태에서 에피소드가 시작됩니다. 왼쪽 끝, 또는 오른쪽 끝 상태에 도달하면 에피소드가 종료됩니다. A에서 오른쪽으로 갈 때는 0의 보수를 받지만, B에서 왼쪽으로 갈 때는 정규분포 $N(-0.1, 1)$에 따른 보수를 받습니다. 왼쪽으로 갈 때의 평균 보수는 -0.1이기 때문에, 보수가 0으로 고정된 오른쪽에 비해서 좋지 않은 방향임을 쉽게 알 수 있습니다. 문제는 왼쪽의 보수가 정규분포를 따르기 때문에, 양수의 보수를 받을 확률이 있다는 것입니다. 그렇기 때문에 학습량이 적은 초기에는 왼쪽으로 가는 것을 더 좋은 행동으로 학습하게 되고, 그것이 위의 그래프에 나타나 있습니다. (Q-learning이 초기에 왼쪽을 선택학 확률이 매우 높음) ■&lt;/p&gt;
+&lt;p&gt;위의 그림은 Maximization Bias가 TD Control에서 어떻게 문제를 발생시키는지 알 수 있는 간단한 예제입니다. 예제의 MDP는 항상 State A에서 Episode가 시작됩니다. 왼쪽 끝, 또는 오른쪽 끝 State에 도달하면 Episode가 종료됩니다. State A에서 오른쪽으로 갈 때는 0의 Reward를 받지만, B에서 왼쪽으로 갈 때는 정규분포 $N(-0.1, 1)$에 따른 Reward를 받습니다. 왼쪽으로 갈 때의 평균 Reward는 -0.1이기 때문에, Reward가 0으로 고정된 오른쪽에 비해서 좋지 않은 방향임을 쉽게 알 수 있습니다. 문제는 왼쪽의 Reward가 정규분포를 따르기 때문에, 0보다 큰 Reward를 받을 확률이 있다는 것입니다. 그렇기 때문에 학습량이 적은 초기에는 왼쪽으로 가는 것을 더 좋은 Action으로 학습하게 되고, 그것이 위의 그래프에 나타나 있습니다. (Q-learning이 초기에 왼쪽을 선택학 확률이 매우 높음)&lt;/p&gt;
 
-&lt;p&gt;최대화 편향을 피하는 방법으로는 대표적으로 Double Q-learning이 있습니다. 학습 행위자(Agent)를 2개로 나누어 각각 따로 학습하는 것입니다. 즉, Q 값을 2개로 분리하여 각각 $Q_1(a)$와 $Q_2(a)$로 나누는 것입니다. 두 개의 Q 값은 모두 $q(a)$의 추정치가 됩니다. 재밌는 것은 각각의 학습 행위자가 행동을 선택할 때 상대의 추정값을 사용한다는 것입니다. 즉, $Q_2(A^{*}) = Q_2(\underset{a}{\operatorname{argmax}} Q_1(a))$가 되는 것입니다. 이렇게 추정값을 계산하게 되면 $\mathbb{E} \left[ Q_2 (A^{*}) \right] = q(A^{*})$라는 의미가 되어 편향되지 않습니다. 마찬가지로 $Q_1$의 최적의 행동 선택 방식은 $Q_1(A^*) = Q_1(\underset{a}{\operatorname{argmax}} Q_2(a))$이 됩니다. 주의할 점은, 두 개의 추정을 따로 학습하지만, 각각의 행동마다 $Q_1$ 또는 $Q_2$ 중 하나의 추정치만 업데이트한다는 것입니다. 따라서 Double Q-learning은 공간 복잡도를 2배로 늘리지만, 시간 복잡도를 늘리지는 않습니다. 즉, 새로운 행동 샘플이 들어오면, 50% 확률로 $Q_1$을 학습하고, 50% 확률로 $Q_2$를 학습하는 것입니다. Double Q-learning의 업데이트 규칙은 다음과 같습니다.&lt;/p&gt;
+&lt;p style=&quot;text-align:right&quot;&gt;□&lt;/p&gt;
+
+&lt;p&gt;Maximization Bias를 피하기 위한 대표적인 방법으로 &lt;span style=&quot;color:red&quot;&gt;Double Q-learning&lt;/span&gt;이 있습니다. Agent를 2개로 나누어 각각 따로 학습하는 것입니다. 즉, Q 값을 2개로 분리하여 각각 $Q_1(a)$와 $Q_2(a)$로 나누는 것입니다. 두 개의 Q 값은 모두 $q(a)$의 추정치가 됩니다. 재밌는 것은 각각의 Agent가 Action을 선택할 때 상대의 추정값을 사용한다는 것입니다. 즉, $Q_2(A^{*}) = Q_2(\underset{a}{\operatorname{argmax}} Q_1(a))$가 되는 것입니다. 이렇게 추정값을 계산하게 되면 $\mathbb{E} \left[ Q_2 (A^{*}) \right] = q(A^{*})$라는 의미가 되어 Bias되지 않습니다. 마찬가지로 $Q_1$의 최적의 Action 선택 방식은 $Q_1(A^*) = Q_1(\underset{a}{\operatorname{argmax}} Q_2(a))$이 됩니다. 주의할 점은, 두 개의 추정을 따로 학습하지만, 각각의 Action마다 $Q_1$ 또는 $Q_2$ 중 하나의 추정치만 업데이트한다는 것입니다. 따라서 Double Q-learning은 공간 복잡도를 2배로 늘리지만, 시간 복잡도를 늘리지는 않습니다. 즉, 새로운 Action 샘플이 들어오면, 50% 확률로 $Q_1$을 학습하고, 50% 확률로 $Q_2$를 학습하는 것입니다. Double Q-learning의 업데이트 식은 다음과 같습니다.&lt;/p&gt;
 
 \[Q_1(S_t, A_t) \gets Q_1(S_t, A_t) + \alpha \left[ R_{t+1} + \gamma Q_2 (S_{t+1}, \underset{a}{\operatorname{argmax}} Q_1(S_{t+1}, a)) - Q_1(S_t, A_t) \right] \tag{6.10}\]
 
-&lt;p&gt;식 (6.10)에서 $Q_2$를 학습할 때는 $Q_1$과 $Q_2$의 위치를 서로 바꾸면 됩니다. Double Q-learning에 대한 완전한 알고리즘은 아래와 같습니다.&lt;/p&gt;
+&lt;p&gt;식 (6.10)에서 $Q_2$를 학습할 때는 $Q_1$과 $Q_2$의 위치를 서로 바꾸면 됩니다. Double Q-learning에 대한 완전한 Pseudocode는 아래와 같습니다.&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;/images/Reinforcement Learning/6. Temporal-Difference Learning/RL 06-13.png&quot; alt=&quot;&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;Double Q-learning과 Q-learning에 대한 성능 비교는 예제 6.7의 그래프를 확인해보시면 됩니다. 기존 Q-learning과 비교했을 때, 우연히 발생한 양의 보수 쪽으로 편향되지 않는 것을 볼 수 있습니다. 여기서는 Double Q-learning만 소개했으나, Sarsa와 Expected Sarsa의 버전도 있습니다.&lt;/p&gt;
+&lt;p&gt;Double Q-learning과 Q-learning에 대한 성능 비교는 예제 6.7의 그래프를 확인해보시면 됩니다. 기존 Q-learning과 비교했을 때, 우연히 발생한 양의 Reward 쪽으로 Bias되지 않는 것을 볼 수 있습니다. 여기서는 Double Q-learning만 소개했으나, Sarsa와 Expected Sarsa를 응용해서 구현할 수도 있습니다.&lt;/p&gt;
 
 &lt;h2 id=&quot;games-afterstates-and-other-special-cases&quot;&gt;Games, Afterstates, and Other Special Cases&lt;/h2&gt;
 
-&lt;p&gt;1장에서 잠깐 다루었던 Tic-Tac-Toe 예제를 다시 떠올려봅시다. 그 당시에도 시간차 학습에 대해 잠깐 소개했었는데, 다시 그 부분을 확인해보시면 Tic-Tac-Toe에서는 학습 행위자가 이동한 후 보드의 상태를 평가했었습니다. 이렇게 행동을 먼저 한 후 상태의 가치를 확인하는 것을 Afterstates라고 하고, 이 때의 가치 함수를 Afterstate Value Function이라고 합니다. Afterstates는 환경에 대한 초기 지식이 있지만, 전체 지식은 없고 일부분에 대한 지식만 있을 때 유용합니다. 예를 들어, 체스 같은 게임에서는 말을 움직였을 때 어떤 효과가 일어나는지는 바로 알 수 있지만, 상대방이 어떻게 행동할지는 모릅니다. Afterstates는 이런 종류의 지식을 활용하여 보다 효율적인 학습을 하는 방법이라고 이해하시면 되겠습니다.&lt;/p&gt;
+&lt;p&gt;1장에서 잠깐 다루었던 Tic-Tac-Toe 예제를 다시 떠올려봅시다. 그 당시에도 TD에 대해 잠깐 소개했었는데, 다시 그 부분을 확인해보시면 Tic-Tac-Toe에서는 Agent가 이동한 후 보드의 State를 평가했었습니다. 이렇게 Action을 먼저 한 후 State의 Value를 확인하는 것을 &lt;span style=&quot;color:red&quot;&gt;Afterstates&lt;/span&gt;라고 하고, 이 때의 Value Function를 &lt;span style=&quot;color:red&quot;&gt;Afterstate Value Function&lt;/span&gt;이라고 합니다. Afterstates는 Environment에 대한 초기 지식이 있지만, 전체 지식은 없고 일부분에 대한 지식만 있을 때 유용합니다. 예를 들어, 체스 같은 게임에서는 말을 움직였을 때 어떤 효과가 일어나는지는 바로 알 수 있지만, 상대방이 어떻게 행동할지는 모릅니다. Afterstates는 이런 종류의 지식을 활용하여 보다 효율적인 학습을 하는 방법이라고 이해하시면 되겠습니다.&lt;/p&gt;
 
-&lt;p&gt;Afterstate가 더 효율적인 것을 보이기 위해 다시 Tic-Tac-Toe 예제를 사용해보겠습니다. 기존의 행동-가치 함수는 현재 O/X가 체크된 상태를 토대로 가치를 추정합니다. 하지만 다음 그림을 보시면 현재 상태가 될 수 있는 이전 상태는 한 가지가 아닐 수 있습니다. 그러나 두 상태는 모두 같은 후속 상태를 만들기 때문에 동일하게 평가해야 합니다. 기존의 행동-가치 함수는 두 상태를 개별적으로 평가하지만, Afterstate 가치 함수는 두 상태를 동등하게 평가하는 차이점이 있습니다. 즉, 아래 그림에서 왼쪽에서 발생하는 모든 학습은, 오른쪽 상태에도 즉시 적용됩니다.&lt;/p&gt;
+&lt;p&gt;Afterstate가 더 효율적인 것을 보이기 위해 다시 Tic-Tac-Toe 예제를 사용해보겠습니다. 기존의 Action-Value Function는 현재 O/X가 체크된 State를 토대로 Value를 추정합니다. 하지만 다음 그림을 보시면 현재 State가 될 수 있는 이전 State는 한 가지가 아닐 수 있습니다. 그러나 두 State는 모두 같은 후속 State를 만들기 때문에 동일하게 평가해야 합니다. 기존의 Action-Value Function는 두 State를 개별적으로 평가하지만, Afterstate Value Function는 두 State를 동등하게 평가하는 차이점이 있습니다. 즉, 아래 그림에서 왼쪽에서 발생하는 모든 학습은, 오른쪽 State에도 즉시 적용됩니다.&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;/images/Reinforcement Learning/6. Temporal-Difference Learning/RL 06-14.png&quot; alt=&quot;&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;Afterstate는 게임에서만 사용되는 것이 아닙니다. 예를 들어, 대기열(Queuing) 문제에서는 대기열에 있는 작업을 서버에 할당하는지/거부할 것인지 등을 계속 판단해야 하는데, 동일한 작업에 대해서 동일하게 판단해야하기 때문에 Afterstates를 적용할 수 있습니다. 이 외에도 Afterstates를 사용하는 여러 문제가 있지만, 여기서 모두 소개하기에는 불가능합니다. Afterstates는 동일한 방식으로 상호 작용하는 상태 및 정책에 대해서는 동일하게 추정해야하는 문제에 적용하는 것이라고 이해하시면 되겠습니다.&lt;/p&gt;
+&lt;p&gt;Afterstate는 게임에서만 사용되는 것이 아닙니다. 예를 들어, Queuing 문제에서는 Queue에 있는 작업을 서버에 할당하는지/거부할 것인지 등을 계속 판단해야 하는데, 동일한 작업에 대해서 동일하게 판단해야하므로 Afterstates를 적용할 수 있습니다. 이 외에도 Afterstates를 사용하는 여러 문제가 있지만, 여기서 모두 소개하기에는 불가능합니다. Afterstates는 동일한 방식으로 상호 작용하는 State 및 Policy에 대해서는 동일하게 추정해야하는 문제에 적용하는 것이라고 이해하시면 되겠습니다.&lt;/p&gt;
 
 &lt;h2 id=&quot;summary&quot;&gt;Summary&lt;/h2&gt;
 
-&lt;p&gt;이번 장에서는 새로운 학습 방법인 시간차 학습(Temporal Difference Learning)을 소개하였습니다. 이전 장들과 마찬가지로 예측 문제와 제어 문제로 나누어 소개하였으며, 시간차 학습 또한 Generalized Policy Iteration 아이디어에서 기반하였습니다.&lt;/p&gt;
+&lt;p&gt;이번 장에서는 새로운 학습 방법인 &lt;strong&gt;Temporal Difference (TD)&lt;/strong&gt;를 소개하였습니다. 이전 장들과 마찬가지로 예측 문제와 제어 문제로 나누어 소개하였으며, TD 또한 &lt;strong&gt;Generalized Policy Iteration&lt;/strong&gt; 아이디어에서 기반하였습니다.&lt;/p&gt;
 
-&lt;p&gt;시간차 학습의 제어 방법 또한 On-policy와 Off-policy 방법으로 나뉘며, On-policy 시간차 학습은 Sarsa, Off-policy 시간차 학습은 Q-learning이라는 대표적인 방법을 소개하였습니다. 그 외에 Expected Sarsa나 Double Q-learning등의 변형 버전도 소개하였습니다. 이번 장에서 소개하지 않은 방법 중에서 대표적으로 Actor-Critic 방법이 있는데, 이는 추후 13장에서 자세히 다룰 예정입니다.&lt;/p&gt;
+&lt;p&gt;TD의 Control 방법 또한 On-policy와 Off-policy 방법으로 나뉘며, On-policy TD는 &lt;strong&gt;Sarsa&lt;/strong&gt;, Off-policy TD는 &lt;strong&gt;Q-learning&lt;/strong&gt;이라는 대표적인 방법을 소개하였습니다. 그 외에 &lt;strong&gt;Expected Sarsa&lt;/strong&gt;나 &lt;strong&gt;Double Q-learning&lt;/strong&gt;등의 변형 버전도 소개하였습니다. 이번 장에서 소개하지 않은 방법으로 &lt;strong&gt;Actor-Critic&lt;/strong&gt;이 있는데, 이는 13장에서 자세히 다룰 예정입니다.&lt;/p&gt;
 
-&lt;p&gt;시간차 학습은 지금까지 배운 강화학습 방법 중에 가장 널리 사용되는 방법입니다. 동적 프로그래밍이나 몬테 카를로 방법 등과 비교해서 단순할 뿐만 아니라 계산량 또한 적기 때문입니다. 이 뒤에 이어지는 내용들은 대부분 시간차 학습을 심도 있게 확장하여 더 강력하게 만든 알고리즘을 소개할 예정입니다. 특히 Part II 부터는 시간차 학습과 기존의 전통적인 기계학습을 융합한 방법들을 소개합니다.&lt;/p&gt;
+&lt;p&gt;TD는 지금까지 배운 강화학습 방법 중에 가장 널리 사용되는 방법입니다. Dynamic Programming이나 Monte Carlo Method 등과 비교해서 단순할 뿐만 아니라 계산량 또한 적기 때문입니다. 이 뒤에 이어지는 내용들은 대부분 TD를 심도 있게 확장하여 더 강력하게 만든 알고리즘을 소개할 예정입니다. 특히 Part II 부터는 TD와 기존의 전통적인 기계학습 방법들을 융합한 새로운 학습 방법들을 소개합니다.&lt;/p&gt;
 
-&lt;p&gt;6장에 대한 내용은 여기서 마치겠습니다. 읽어주셔서 감사합니다!&lt;/p&gt;</content><author><name>Joonsu Ryu</name></author><category term="studies" /><category term="reinforcement learning" /><summary type="html">이번 장은 강화학습의 핵심 아이디어인 시간차 학습(Temporal-Difference Learning ; TD Learning)을 다루게 됩니다. 시간차 학습은 환경에 대한 정확한 모델 없이 경험을 통해 학습한다는 몬테 카를로 아이디어와 최종 결과를 기다리지 않고(Bootstrapping) 학습된 다른 추정치를 기반으로 추정치를 업데이트한다는 동적 프로그래밍 아이디어를 결합하여 만들어졌습니다. 이번 장의 시작은 이전 장들과 같이 주어진 정책 $\pi$에 대한 가치 함수 $v_{\pi}$를 추정하는 문제로부터 시작하며, 최적의 정책을 찾는 제어 문제에서도 이전과 같이 GPI를 변형하여 접근합니다. 이전 장들과의 주요 차이점은 예측 문제에 대한 접근 방식입니다.</summary></entry><entry><title type="html">Monte Carlo Methods</title><link href="http://localhost:4000/studies/monte-carlo-methods/" rel="alternate" type="text/html" title="Monte Carlo Methods" /><published>2022-03-11T00:00:00+09:00</published><updated>2022-03-11T00:00:00+09:00</updated><id>http://localhost:4000/studies/monte-carlo-methods</id><content type="html" xml:base="http://localhost:4000/studies/monte-carlo-methods/">&lt;p&gt;이번 장에서는 지난 장과 마찬가지로 Value Function을 추정하고 Optimal Policy를 찾기 위한 방법을 다루지만, 지난 장과는 달리 MDP에 대한 완전한 정보를 알고 있다고 가정하지 않습니다. &lt;span style=&quot;color:red&quot;&gt;Monte Carlo Method&lt;/span&gt;는 Environment와의 상호 작용을 통해 얻은 경험을 기반으로 Optimal Policy를 찾는 방법입니다. 이 때 Environment와의 상호작용은 실제로 이루어지는 경험 뿐만이 아니라 시뮬레이션된 경험이라도 상관 없습니다.&lt;/p&gt;
+&lt;p&gt;6장에 대한 내용은 여기서 마치겠습니다. 읽어주셔서 감사합니다!&lt;/p&gt;</content><author><name>Joonsu Ryu</name></author><category term="studies" /><category term="reinforcement learning" /><summary type="html">이번 장은 강화학습의 핵심 아이디어인 Temporal-Difference (TD) Learning을 다루게 됩니다. TD Learning은 Environment에 대한 정확한 Model 없이 경험을 통해 학습한다는 Monte Carlo의 아이디어와 Bootstrap 하지 않고 학습된 다른 추정치를 기반으로 추정치를 업데이트한다는 Dynamic Programming 아이디어를 결합하여 만들어졌습니다. 이번 장의 시작은 이전 장들과 같이 주어진 Policy $\pi$에 대한 Value Function $v_{\pi}$를 추정하는 문제로부터 시작하며, Optimal Policy을 찾는 Control 문제에서도 이전과 같이 GPI를 변형하여 접근합니다. 이전 장들과의 주요 차이점은 Prediction 문제에 대한 접근 방식입니다.</summary></entry><entry><title type="html">Monte Carlo Methods</title><link href="http://localhost:4000/studies/monte-carlo-methods/" rel="alternate" type="text/html" title="Monte Carlo Methods" /><published>2022-03-11T00:00:00+09:00</published><updated>2022-03-11T00:00:00+09:00</updated><id>http://localhost:4000/studies/monte-carlo-methods</id><content type="html" xml:base="http://localhost:4000/studies/monte-carlo-methods/">&lt;p&gt;이번 장에서는 지난 장과 마찬가지로 Value Function을 추정하고 Optimal Policy를 찾기 위한 방법을 다루지만, 지난 장과는 달리 MDP에 대한 완전한 정보를 알고 있다고 가정하지 않습니다. &lt;span style=&quot;color:red&quot;&gt;Monte Carlo Method&lt;/span&gt;는 Environment와의 상호 작용을 통해 얻은 경험을 기반으로 Optimal Policy를 찾는 방법입니다. 이 때 Environment와의 상호작용은 실제로 이루어지는 경험 뿐만이 아니라 시뮬레이션된 경험이라도 상관 없습니다.&lt;/p&gt;
 
 &lt;p&gt;3장에서 MDP를 끝이 존재하는 Episodic Task와 끝이 없는 Continuing Task로 분류하였는데, 이번 장에서는 일단 Episodic Task 상황만 가정하도록 하겠습니다. Monte Carlo Method 또한 지난 장에서 배운 Generalized Policy Iteration (GPI)의 아이디어를 기반으로 하지만, 그 때와 달리 MDP에서 직접 Value Function을 계산하지 않고 Sample로부터 Value Function을 계산합니다. 물론 여전히 그 때처럼 Optimal Value Function에 수렴하기 위해 상호작용하는 것은 같습니다.&lt;/p&gt;
 

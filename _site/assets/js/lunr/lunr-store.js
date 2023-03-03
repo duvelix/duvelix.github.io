@@ -150,13 +150,13 @@ var store = [{
         "teaser": null
       },{
         "title": "Temporal-Difference Learning",
-        "excerpt":"이번 장은 강화학습의 핵심 아이디어인 시간차 학습(Temporal-Difference Learning ; TD Learning)을 다루게 됩니다. 시간차 학습은 환경에 대한 정확한 모델 없이 경험을 통해 학습한다는 몬테 카를로 아이디어와 최종 결과를 기다리지 않고(Bootstrapping) 학습된 다른 추정치를 기반으로 추정치를 업데이트한다는 동적 프로그래밍 아이디어를 결합하여 만들어졌습니다. 이번 장의 시작은 이전 장들과 같이 주어진 정책 $\\pi$에...","categories": ["studies"],
+        "excerpt":"이번 장은 강화학습의 핵심 아이디어인 Temporal-Difference (TD) Learning을 다루게 됩니다. TD Learning은 Environment에 대한 정확한 Model 없이 경험을 통해 학습한다는 Monte Carlo의 아이디어와 Bootstrap 하지 않고 학습된 다른 추정치를 기반으로 추정치를 업데이트한다는 Dynamic Programming 아이디어를 결합하여 만들어졌습니다. 이번 장의 시작은 이전 장들과 같이 주어진 Policy $\\pi$에 대한 Value Function $v_{\\pi}$를...","categories": ["studies"],
         "tags": ["reinforcement learning"],
         "url": "/studies/temporal-difference-learning/",
         "teaser": null
       },{
-        "title": "n-step Bootstrapping",
-        "excerpt":"이번 장에서는 5장에서 배운 몬테 카를로 방법과 6장에서 배운 시간차 방법을 융합하여 만든 새로운 방법을 소개합니다. 몬테 카를로 방법은 항상 에피소드가 끝난 후에야 학습이 가능했고, 시간차 방법은 1단계만 행동하면 학습이 가능했습니다. 그렇다면 그 사이의 단계인 $n$번째 단계까지 행동한 다음 학습을 하게 되면 조금 더 일반화된 학습이 가능하지 않을까라는 아이디어가 떠오르게...","categories": ["studies"],
+        "title": "$n$-step Bootstrapping",
+        "excerpt":"이번 장에서는 5장에서 배운 Monte Carlo Method과 6장에서 배운 Temporal Difference (TD)를 융합하여 만든 새로운 방법을 소개합니다. Monte Carlo Method는 항상 Episode가 끝난 후에야 학습이 가능했고, TD는 1단계만 관찰하면 학습이 가능했습니다. 그렇다면 그 사이의 단계인 $n$번째 단계까지 관찰한 다음 학습을 하게 되면 조금 더 일반화된 학습이 가능하지 않을까하는 아이디어가 떠오르게...","categories": ["studies"],
         "tags": ["reinforcement learning"],
         "url": "/studies/n-step-bootstrapping/",
         "teaser": null
