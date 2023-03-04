@@ -160,4 +160,22 @@ var store = [{
         "tags": ["reinforcement learning"],
         "url": "/studies/n-step-bootstrapping/",
         "teaser": null
+      },{
+        "title": "Planning and Learning with Tabular Methods",
+        "excerpt":"지금까지 배운 강화학습 방법에서 동적 프로그래밍, 휴리스틱 검색과 같이 모델이 필요한 방법을 Model-based, 몬테 카를로 방법, 시간차 학습과 같이 모델 없이 사용할 수 있는 방법을 Model-free라고 부릅니다. Model-based 방법은 Planning을 사용하지만 Model-free 방법은 Learning을 사용하는 차이점이 있습니다. 그러나 두 방법은 가치 함수를 계산하는 과정에서 유사점이 있습니다. 두 방법 모두 미래에...","categories": ["studies"],
+        "tags": ["reinforcement learning"],
+        "url": "/studies/planning-and-learning-with-tabular-methods/",
+        "teaser": null
+      },{
+        "title": "On-policy Prediction with Approximation",
+        "excerpt":"Part II : Approximate Solution Methods 2부에서는 1부에서 사용한 Tabular 방법을 확장하여 매우 큰 상태 공간을 가진 문제에 적용합니다. 예를 들어, 카메라 이미지의 가능한 수는 우주의 원자 수보다 훨씬 많습니다. 이렇게 방대한 상태 공간을 가진 문제의 경우에는 시간과 데이터가 부족하기 때문에 지금까지 배운 최적의 정책이나 최적의 가치 함수를 찾을 수...","categories": ["studies"],
+        "tags": ["reinforcement learning"],
+        "url": "/studies/on-policy-prediction-with-approximation/",
+        "teaser": null
+      },{
+        "title": "On-policy Control with Approximation",
+        "excerpt":"지난 장에서 근사를 이용한 가치 함수 추정에 대해 알아보았습니다. 이번 장에서는 매개변수를 사용하여 행동-가치 함수 $\\hat{q}(s, a, \\mathbf{w}) \\approx q_* (s, a)$를 근사하는 제어 문제를 다루겠습니다. (가중치 벡터 $\\mathbf{w} \\in \\mathbb{E}^d$는 유한 차원 벡터입니다) 이번 장에서는 먼저 On-policy에만 집중하고, Off-policy의 문제는 다음 장에서 다룰 예정입니다. 가장 먼저 지난 장에서 다룬...","categories": ["studies"],
+        "tags": ["reinforcement learning"],
+        "url": "/studies/on-policy-control-with-approximation/",
+        "teaser": null
       }]
