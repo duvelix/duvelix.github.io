@@ -121,6 +121,18 @@
 <lastmod>2022-05-20T00:00:00+09:00</lastmod>
 </url>
 <url>
+<loc>http://localhost:4000/studies/off-policy-methods-with-approximation/</loc>
+<lastmod>2022-06-03T00:00:00+09:00</lastmod>
+</url>
+<url>
+<loc>http://localhost:4000/studies/eligibility-traces/</loc>
+<lastmod>2022-09-22T00:00:00+09:00</lastmod>
+</url>
+<url>
+<loc>http://localhost:4000/studies/policy-gradient-methods/</loc>
+<lastmod>2022-10-04T00:00:00+09:00</lastmod>
+</url>
+<url>
 <loc>http://localhost:4000/cv/</loc>
 </url>
 <url>
@@ -143,5 +155,8 @@
 </url>
 <url>
 <loc>http://localhost:4000/page6/</loc>
+</url>
+<url>
+<loc>http://localhost:4000/page7/</loc>
 </url>
 </urlset>

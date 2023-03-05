@@ -178,4 +178,22 @@ var store = [{
         "tags": ["reinforcement learning"],
         "url": "/studies/on-policy-control-with-approximation/",
         "teaser": null
+      },{
+        "title": "Off-policy Methods with Approximation",
+        "excerpt":"이 책은 5장 이후로 Generalized Policy Iteration (GPI)에서 내재된 Exploitation과 Exploration 사이의 Trade-off를 처리하는 방법으로 On-policy와 Off-policy 방법을 사용했습니다. 9장과 10장에서는 On-policy의 경우를 함수 근사로 처리했으며, 이번 장에서는 Off-policy에서의 함수 근사를 다룰 예정입니다. Off-policy 방법을 함수 근사로 확장하는 것은 On-policy의 경우에서와 다른 점도 많고 어려운 점도 많습니다. 6장과 7장에서 소개한...","categories": ["studies"],
+        "tags": ["reinforcement learning"],
+        "url": "/studies/off-policy-methods-with-approximation/",
+        "teaser": null
+      },{
+        "title": "Eligibility Traces",
+        "excerpt":"이번 장에서 새로 배우는 Eligibility traces은 강화학습의 기본 메커니즘 중 하나입니다. 예를 들어, TD($\\lambda$)에서 $\\lambda$는 Eligibility traces를 사용한다는 것을 의미합니다. Q-learning과 Sarsa를 포함한 대부분의 TD 방법은 Eligibility traces와 결합하여 보다 효율적으로 학습할 수 있습니다. Eligibility traces는 TD와 Monte Carlo 방법을 통합하여 일반화하는 방법입니다. TD 방법을 Eligibility traces를 사용하여 일반화하면 $\\lambda...","categories": ["studies"],
+        "tags": ["reinforcement learning"],
+        "url": "/studies/eligibility-traces/",
+        "teaser": null
+      },{
+        "title": "Policy Gradient Methods",
+        "excerpt":"이번 장은 드디어 마지막 챕터입니다. 이번 장에서는 지금까지 이 교재에서 다룬 방법인 행동-가치 방법과 다르게, 정책 자체를 매개변수화하는 방법을 알아보겠습니다. 행동-가치 방법은 지금까지 추정된 행동 가치를 기반으로 행동을 선택했기 때문에 행동 가치를 추정하는 것이 중요했습니다. 하지만 이번 장에서 배울 새로운 방법은 행동을 선택하는 데 가치 함수를 사용하지 않습니다. 이번 장에서...","categories": ["studies"],
+        "tags": ["reinforcement learning"],
+        "url": "/studies/policy-gradient-methods/",
+        "teaser": null
       }]
