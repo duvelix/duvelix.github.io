@@ -174,7 +174,7 @@ var store = [{
         "teaser": null
       },{
         "title": "On-policy Control with Approximation",
-        "excerpt":"지난 장에서 근사를 이용한 가치 함수 추정에 대해 알아보았습니다. 이번 장에서는 매개변수를 사용하여 행동-가치 함수 $\\hat{q}(s, a, \\mathbf{w}) \\approx q_* (s, a)$를 근사하는 제어 문제를 다루겠습니다. (가중치 벡터 $\\mathbf{w} \\in \\mathbb{E}^d$는 유한 차원 벡터입니다) 이번 장에서는 먼저 On-policy에만 집중하고, Off-policy의 문제는 다음 장에서 다룰 예정입니다. 가장 먼저 지난 장에서 다룬...","categories": ["studies"],
+        "excerpt":"지난 장에서 근사를 이용한 Value Function Approximation에 대해 알아보았습니다. 이번 장에서는 매개변수를 사용하여 Action-Value Function $\\hat{q}(s, a, \\mathbf{w}) \\approx q_* (s, a)$를 근사하는 Control 문제를 다루겠습니다. (Weight Vector $\\mathbf{w} \\in \\mathbb{E}^d$는 유한 차원 Vector입니다) 이번 장에서는 먼저 On-policy에만 집중하고, Off-policy의 문제는 다음 장에서 다룰 예정입니다. 가장 먼저 지난 장에서 다룬...","categories": ["studies"],
         "tags": ["reinforcement learning"],
         "url": "/studies/on-policy-control-with-approximation/",
         "teaser": null
