@@ -180,7 +180,7 @@ var store = [{
         "teaser": null
       },{
         "title": "Off-policy Methods with Approximation",
-        "excerpt":"이 책은 5장 이후로 Generalized Policy Iteration (GPI)에서 내재된 Exploitation과 Exploration 사이의 Trade-off를 처리하는 방법으로 On-policy와 Off-policy 방법을 사용했습니다. 9장과 10장에서는 On-policy의 경우를 함수 근사로 처리했으며, 이번 장에서는 Off-policy에서의 함수 근사를 다룰 예정입니다. Off-policy 방법을 함수 근사로 확장하는 것은 On-policy의 경우에서와 다른 점도 많고 어려운 점도 많습니다. 6장과 7장에서 소개한...","categories": ["studies"],
+        "excerpt":"이 책은 5장 이후로 Generalized Policy Iteration (GPI)에서 내재된 Exploitation과 Exploration 사이의 Trade-off를 처리하는 방법으로 On-policy와 Off-policy를 사용했습니다. 9장과 10장에서는 On-policy의 경우를 Function Approximation로 처리했으며, 이번 장에서는 Off-policy에서의 Function Approximation을 다룰 예정입니다. Off-policy 방법을 Function Approximation로 확장하는 것은 On-policy의 경우에서와 다른 점도 많고 어려운 점도 많습니다. 6장과 7장에서 소개한 Tabular...","categories": ["studies"],
         "tags": ["reinforcement learning"],
         "url": "/studies/off-policy-methods-with-approximation/",
         "teaser": null
