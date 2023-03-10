@@ -185,8 +185,8 @@ var store = [{
         "url": "/studies/off-policy-methods-with-approximation/",
         "teaser": null
       },{
-        "title": "Eligibility Traces",
-        "excerpt":"이번 장에서 새로 배우는 Eligibility traces은 강화학습의 기본 메커니즘 중 하나입니다. 예를 들어, TD($\\lambda$)에서 $\\lambda$는 Eligibility traces를 사용한다는 것을 의미합니다. Q-learning과 Sarsa를 포함한 대부분의 TD 방법은 Eligibility traces와 결합하여 보다 효율적으로 학습할 수 있습니다. Eligibility traces는 TD와 Monte Carlo 방법을 통합하여 일반화하는 방법입니다. TD 방법을 Eligibility traces를 사용하여 일반화하면 $\\lambda...","categories": ["studies"],
+        "title": "Eligibility Trace",
+        "excerpt":"이번 장에서 새로 배우는 Eligibility Trace는 강화학습의 기본 메커니즘 중 하나입니다. 예를 들어, TD($\\lambda$)에서 $\\lambda$는 Eligibility Trace를 사용한다는 것을 의미합니다. Q-learning과 Sarsa를 포함한 대부분의 TD 방법은 Eligibility Trace와 결합하여 보다 효율적으로 학습할 수 있습니다. Eligibility Trace는 TD와 Monte Carlo Method를 통합하여 일반화하는 방법입니다. TD 방법을 Eligibility Trace를 사용하여 일반화하면 $\\lambda...","categories": ["studies"],
         "tags": ["reinforcement learning"],
         "url": "/studies/eligibility-traces/",
         "teaser": null
