@@ -113,6 +113,42 @@ var store = [{
         "url": "/studies/epilogue/",
         "teaser": null
       },{
+        "title": "Introduction",
+        "excerpt":"안녕하세요, 오늘은 새로운 카테고리를 하나 시작해볼까 합니다. 바로 Java 언어인데요, 저는 학부 시절 자바 수업을 듣기도 했고 대학원에서도 이 과목 조교를 2번이나 했으나 연구실에서 주로 쓰는 언어가 아니다보니 까먹은 내용이 너무 많아 복습할 겸 정리하고자 합니다. Java 언어는 많은 대학교에서 저학년에 가르치는 언어입니다. 최근에는 Python의 등장으로 선택 과목 정도로 비중이...","categories": ["studies"],
+        "tags": ["java"],
+        "url": "/java/introduction/",
+        "teaser": null
+      },{
+        "title": "JDK 설치하기",
+        "excerpt":"Java 언어를 사용하기 위해서는 가장 먼저 JDK (Java Development Kit)를 설치해야 합니다. 쉽게 말하자면 컴퓨터에서 Java 언어를 컴파일하기 위한 도구입니다. Java 언어는 썬 마이크로시스템즈가 개발했지만, 현재는 오라클에서 인수했기 때문에 Java 관련 도구들은 오라클 공식 홈페이지에서 받아야 합니다. Oracle JDK 설치하기 먼저 Oracle 홈페이지의 Download 페이지로 접속합니다. 아래의 Developer Downloads 항목을 보시면...","categories": ["studies"],
+        "tags": ["java"],
+        "url": "/java/install-jdk/",
+        "teaser": null
+      },{
+        "title": "IDE 설치하기",
+        "excerpt":"지난 시간에 Java 언어를 사용하기 위해서 JDK를 설치하였습니다. Java 언어를 코딩할 때 메모장이나 EditPlus 같은 간단한 문서 편집 프로그램을 사용해도 되지만, 지원하는 기능이 많지 않다보니 그렇게 추천하는 환경은 아닙니다. 다른 언어도 마찬가지이지만, 가급적이면 코딩을 할 때는 IDE에서 하시는게 좋습니다. IDE는 Integrated Development Environment (통합 개발 환경)이라는 뜻입니다. IDE는 프로그램마다 조금씩...","categories": ["studies"],
+        "tags": ["java"],
+        "url": "/java/install-ide/",
+        "teaser": null
+      },{
+        "title": "Java Programming Basics (1)",
+        "excerpt":"A “Hello, World!” Program Java는 객체 지향 프로그래밍(Object Oriented Programming) 언어입니다. 이것은 Java의 모든 것들은 객체(Object)로 이루어져 있다는 뜻입니다. 객체라는 것은 클래스(Class)의 인스턴스(Instance)를 의미합니다. 이해를 돕기 위해, Java IDE를 설치할 때 테스트했던 HelloWorld 프로그램을 예로 들어보겠습니다. 1 2 3 4 5 6 public class Main { public static void main(String[]...","categories": ["studies"],
+        "tags": ["java"],
+        "url": "/java/java-programming-basics-1/",
+        "teaser": null
+      },{
+        "title": "Java Programming Basics (2)",
+        "excerpt":"String 문자열(String)은 문자(Character)를 나열한 자료형입니다. 정확히는 자료형이라기보단 String이라는 클래스로 존재합니다. 문자열 변수를 선언하게 되면, String 클래스의 객체로 선언되는 것과 동일하다는 의미입니다. String 클래스는 자바의 기본 라이브러리에 존재하는 클래스이기 때문에 미리 구현되어 있는 여러 가지 기능이 존재합니다. 대표적으로, +를 사용해 문자열을 연결할 수 있습니다. 1 2 3 4 5 6 7...","categories": ["studies"],
+        "tags": ["java"],
+        "url": "/java/java-programming-basics-2/",
+        "teaser": null
+      },{
+        "title": "Classes, Variables, and Methods",
+        "excerpt":"Java: An Object-Oriented Language 3장에서도 언급했듯이 Java에서는 대부분이 객체로 이루어져 있습니다. 객체를 처음 설명드릴 때 클래스의 인스턴스가 객체라고 말씀드렸는데, 어떻게 보면 클래스 또안 객체의 타입이라고 볼 수 있습니다. 그렇다면 가장 먼저 클래스가 무엇인지 다음 예제를 보며 설명하도록 하겠습니다. 1 2 3 4 5 6 7 8 9 10 11 12...","categories": ["studies"],
+        "tags": ["java"],
+        "url": "/java/classes-variables-and-methods/",
+        "teaser": null
+      },{
         "title": "Prologue",
         "excerpt":"안녕하세요, 2022년에는 새로운 주제로 글을 써볼까 합니다. 예전부터 제가 공부하고 있던 강화학습(Reinforcement Learning) 내용을 정리해보고 싶었는데, 이런 저런 일들로 여건이 되지 않아 미루고 있었습니다. 한동안 다른 문제로 골머리를 썩히다가 이번에 논문 때문에 강화학습을 다시 공부할 일이 생겨 겸사겸사 내용을 정리하고자 합니다. 강화학습 포스트에 참고할 교재는 대부분 학교에서 널리 사용하고 있는...","categories": ["studies"],
         "tags": ["reinforcement learning"],

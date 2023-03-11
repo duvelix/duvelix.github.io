@@ -1,0 +1,575 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.24.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>JDK 설치하기 - KEEPMIND</title>
+<meta name="description" content="Java 언어를 사용하기 위해서는 가장 먼저 JDK (Java Development Kit)를 설치해야 합니다. 쉽게 말하자면 컴퓨터에서 Java 언어를 컴파일하기 위한 도구입니다. Java 언어는 썬 마이크로시스템즈가 개발했지만, 현재는 오라클에서 인수했기 때문에 Java 관련 도구들은 오라클 공식 홈페이지에서 받아야 합니다.">
+
+
+  <meta name="author" content="Joonsu Ryu">
+  
+  <meta property="article:author" content="Joonsu Ryu">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="KEEPMIND">
+<meta property="og:title" content="JDK 설치하기">
+<meta property="og:url" content="http://localhost:4000/java/install-jdk/">
+
+
+  <meta property="og:description" content="Java 언어를 사용하기 위해서는 가장 먼저 JDK (Java Development Kit)를 설치해야 합니다. 쉽게 말하자면 컴퓨터에서 Java 언어를 컴파일하기 위한 도구입니다. Java 언어는 썬 마이크로시스템즈가 개발했지만, 현재는 오라클에서 인수했기 때문에 Java 관련 도구들은 오라클 공식 홈페이지에서 받아야 합니다.">
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2019-12-07T00:00:00+09:00">
+
+
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="http://localhost:4000/java/install-jdk/">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "KEEPMIND",
+      "url": "http://localhost:4000/"
+    
+  }
+</script>
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="KEEPMIND Feed">
+
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css"></noscript>
+
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+<link rel="icon" type="image/png" sizes="16x16" href="/images/favicon.png">
+
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body class="layout--single wide">
+    <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+		<a class="site-title" href="http://localhost:4000/"><img src="/images/logo.png">
+        <!-- <a class="site-title" href="/">
+          KEEPMIND
+           -->
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="/">Home</a>
+            </li><li class="masthead__menu-item">
+              <a href="/cv/">CV</a>
+            </li><li class="masthead__menu-item">
+              <a href="/studies/">Studies</a>
+            </li><li class="masthead__menu-item">
+              <a href="/">Interests</a>
+            </li><li class="masthead__menu-item">
+              <a href="/">Travels</a>
+            </li></ul>
+        
+        <button class="search__toggle" type="button">
+          <span class="visually-hidden">Toggle search</span>
+          <i class="fas fa-search"></i>
+        </button>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person" class="h-card">
+
+  
+    <div class="author__avatar">
+      <!-- <a href="http://localhost:4000/"> -->
+        <img src="/images/profile.jpg" alt="Joonsu Ryu" itemprop="image" class="u-photo">
+      <!-- </a> -->
+    </div>
+  
+
+  <div class="author__content">
+    <h3 class="author__name p-name" itemprop="name">
+      <a class="u-url" rel="me" href="http://localhost:4000/" itemprop="url">Joonsu Ryu</a>
+    </h3>
+    
+      <div class="author__bio p-note" itemprop="description">
+        <p>Researcher</p>
+
+      </div>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">Follow</button>
+    <ul class="author__urls social-icons">
+      
+        <li itemprop="homeLocation" itemscope itemtype="https://schema.org/Place">
+          <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> <span itemprop="name" class="p-locality">Seoul, Korea</span>
+        </li>
+      
+
+      
+        
+          
+            <li><a href="mailto:jsryu@sogang.ac.kr" rel="nofollow noopener noreferrer me"><i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i><span class="label">E-mail</span></a></li>
+          
+        
+          
+            <li><a href="https://github.com/JoonsuRyu" rel="nofollow noopener noreferrer me" itemprop="sameAs"><i class="fab fa-fw fa-github" aria-hidden="true"></i><span class="label">GitHub</span></a></li>
+          
+        
+          
+            <li><a href="https://scholar.google.co.kr/citations?user=UmRh9NQAAAAJ" rel="nofollow noopener noreferrer me" itemprop="sameAs"><i class="fas fa-fw fa-graduation-cap" aria-hidden="true"></i><span class="label">Google Scholar</span></a></li>
+          
+        
+          
+            <li><a href="https://orcid.org/0000-0002-8848-1456" rel="nofollow noopener noreferrer me" itemprop="sameAs"><i class="fab fa-fw fa-orcid" aria-hidden="true"></i><span class="label">ORCID</span></a></li>
+          
+        
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer me">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+
+  
+  </div>
+
+
+
+  <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="JDK 설치하기">
+    <meta itemprop="description" content="Java 언어를 사용하기 위해서는 가장 먼저 JDK (Java Development Kit)를 설치해야 합니다. 쉽게 말하자면 컴퓨터에서 Java 언어를 컴파일하기 위한 도구입니다. Java 언어는 썬 마이크로시스템즈가 개발했지만, 현재는 오라클에서 인수했기 때문에 Java 관련 도구들은 오라클 공식 홈페이지에서 받아야 합니다.">
+    <meta itemprop="datePublished" content="2019-12-07T00:00:00+09:00">
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title p-name" itemprop="headline">
+            <a href="http://localhost:4000/java/install-jdk/" class="u-url" itemprop="url">JDK 설치하기
+</a>
+          </h1>
+          
+
+
+        </header>
+      
+
+      <section class="page__content e-content" itemprop="text">
+        
+          <aside class="sidebar__right sticky">
+            <nav class="toc">
+              <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> Table of Contents</h4></header>
+              <ul class="toc__menu"><li><a href="#oracle-jdk-설치하기">Oracle JDK 설치하기</a></li><li><a href="#java-환경-변수-설정하기">Java 환경 변수 설정하기</a></li><li><a href="#설치-확인">설치 확인</a></li></ul>
+
+            </nav>
+          </aside>
+        
+        <p>Java 언어를 사용하기 위해서는 가장 먼저 JDK (Java Development Kit)를 설치해야 합니다. 쉽게 말하자면 컴퓨터에서 Java 언어를 컴파일하기 위한 도구입니다. Java 언어는 썬 마이크로시스템즈가 개발했지만, 현재는 오라클에서 인수했기 때문에 Java 관련 도구들은 오라클 공식 홈페이지에서 받아야 합니다.</p>
+
+<h2 id="oracle-jdk-설치하기">Oracle JDK 설치하기</h2>
+
+<p><img src="/images/Java/1. Install JDK/Java 01-01.png" alt="" class="align-center" /></p>
+
+<p>먼저 Oracle 홈페이지의 Download 페이지로 접속합니다. 아래의 Developer Downloads 항목을 보시면 여러 카테고리가 나와있는데, 이 중 Java를 클릭합니다.</p>
+
+<p><img src="/images/Java/1. Install JDK/Java 01-02.png" alt="" class="align-center" /></p>
+
+<p>바로 Java와 관련된 도구들을 다운받을 수 있는 화면으로 스크롤이 쭉 내려갑니다. 이 중 Java (JDK) for Developers를 클릭합니다.</p>
+
+<p><img src="/images/Java/1. Install JDK/Java 01-03.png" alt="" class="align-center" /></p>
+
+<p>페이지가 넘어가면서 위와 같은 화면이 보입니다. Oracle JDK 아래에 있는 DOWNLOAD 버튼을 클릭합니다.</p>
+
+<p><img src="/images/Java/1. Install JDK/Java 01-04.png" alt="" class="align-center" /></p>
+
+<p>JDK를 사용하기 위해서는 라이센스에 동의해야 합니다. 주된 내용은 상업적인 사용을 할 때는 돈을 내야 한다는 것인데, 학생이라면 신경쓰지 않으셔도 됩니다. Accept License Agreement를 클릭합니다.</p>
+
+<p><img src="/images/Java/1. Install JDK/Java 01-05.png" alt="" class="align-center" /></p>
+
+<p>약관에 동의했으니 JDK를 다운받을 수 있습니다. OS에 따라 여러가지 버전이 존재하는데, 저는 윈도우에서 사용하고 있기 때문에 Windows에 있는 첫번째 항목을 클릭하였습니다. 보시는 시점에 따라 버전이 다를 수도 있기 때문에 13.0.1은 크게 신경 안쓰셔도 됩니다.</p>
+
+<p><img src="/images/Java/1. Install JDK/Java 01-06.png" alt="" class="align-center" /></p>
+
+<p>클릭하시게 되면 설치 파일 하나를 다운 받게 되고, 아무데나 저장한 다음 바로 실행합시다. 위와 같은 JDK 설치 마법사가 실행되면 Next 버튼을 클릭합니다.</p>
+
+<p><img src="/images/Java/1. Install JDK/Java 01-07.png" alt="" class="align-center" /></p>
+
+<p>JDK 설치 경로를 정하는 화면이 나오는데, 딱히 변경하실 필요는 없습니다. Next 버튼을 클릭합니다.</p>
+
+<p><img src="/images/Java/1. Install JDK/Java 01-08.png" alt="" class="align-center" /></p>
+
+<p>위와 같은 화면이 나오고 잠시 기다리시면 설치가 완료됩니다.</p>
+
+<p><img src="/images/Java/1. Install JDK/Java 01-09.png" alt="" class="align-center" /></p>
+
+<p>Close를 클릭하시면 JDK 설치가 완료됩니다. 하지만 Java 언어를 사용하기 위해서는 추가로 설정해야할 부분이 있습니다.</p>
+
+<h2 id="java-환경-변수-설정하기">Java 환경 변수 설정하기</h2>
+
+<p><img src="/images/Java/1. Install JDK/Java 01-10.png" alt="" class="align-center" /></p>
+
+<p>Java 환경변수를 설정하기 위해서 먼저 탐색기를 여시고, 왼쪽에 보이는 내 PC 항목을 오른쪽 클릭합니다.</p>
+
+<p><img src="/images/Java/1. Install JDK/Java 01-11.png" alt="" class="align-center" /></p>
+
+<p>오른쪽 클릭을 하시게 되면 위와 같은 메뉴가 펼쳐지는데, 이 중 속성을 클릭합니다.</p>
+
+<p><img src="/images/Java/1. Install JDK/Java 01-12.png" alt="" class="align-center" /></p>
+
+<p>위와 같이 시스템 창이 나옵니다. 왼쪽의 고급 시스템 설정을 클릭합니다.</p>
+
+<p><img src="/images/Java/1. Install JDK/Java 01-13.png" alt="" class="align-center" /></p>
+
+<p>시스템 속성 창이 나오는데, 아래에 있는 환경 변수 버튼을 클릭합니다.</p>
+
+<p><img src="/images/Java/1. Install JDK/Java 01-14.png" alt="" class="align-center" /></p>
+
+<p>환경 변수 창으로 가시면 사용자 변수와 시스템 변수를 볼 수 있습니다. 저희는 이 중 시스템 변수를 건드려야 합니다. 시스템 변수 항목의 새로 만들기 버튼을 클릭합니다.</p>
+
+<p><img src="/images/Java/1. Install JDK/Java 01-15.png" alt="" class="align-center" /></p>
+
+<p>위와 같이 새 시스템 변수를 만들 수 있는 창이 나오는데, 변수 이름에는 JAVA_HOME 이라고 입력하시고, 변수 값에는 JDK의 설치 경로를 입력합니다. 만약에 JDK를 설치했을 때 경로를 건드리지 않으셨다면, 저와 동일하게 작성하시면 됩니다. 작성을 다 하셨으면 확인 버튼을 클릭합니다.</p>
+
+<p><img src="/images/Java/1. Install JDK/Java 01-16.png" alt="" class="align-center" /></p>
+
+<p>같은 방법으로 시스템 변수 하나를 더 추가합니다. 이번에는 변수 이름에 CLASSPATH 라고 적으시고 변수 값에는 %JAVA_HOME%lib 이라고 작성하신 다음, 확인 버튼을 클릭합니다.</p>
+
+<p><img src="/images/Java/1. Install JDK/Java 01-17.png" alt="" class="align-center" /></p>
+
+<p>다음으로는 시스템 변수의 항목 중 Path를 수정해야 합니다. 스크롤을 아래로 내리시다 보면 Path 항목이 보이는데, 이것을 선택하고 편집 버튼을 클릭합니다.</p>
+
+<p><img src="/images/Java/1. Install JDK/Java 01-18.png" alt="" class="align-center" /></p>
+
+<p>환경 변수 편집 화면 창이 나오면, 오른쪽 맨 위에 있는 새로 만들기 버튼을 클릭합니다.</p>
+
+<p><img src="/images/Java/1. Install JDK/Java 01-19.png" alt="" class="align-center" /></p>
+
+<p>새로 만들기 버튼을 클릭하면 자동으로 스크롤이 맨 아래로 내려가고, 뭔가를 입력할 수 있는 칸이 나옵니다. 이곳에 %JAVA_HOME%\bin 을 입력한 후, 확인 버튼을 클릭합니다.</p>
+
+<p><img src="/images/Java/1. Install JDK/Java 01-20.png" alt="" class="align-center" /></p>
+
+<p>이제 설정이 모두 끝났으니 확인 버튼을 클릭합니다.</p>
+
+<p><img src="/images/Java/1. Install JDK/Java 01-21.png" alt="" class="align-center" /></p>
+
+<p>또 다시 확인 버튼을 클릭합니다.</p>
+
+<h2 id="설치-확인">설치 확인</h2>
+
+<p><img src="/images/Java/1. Install JDK/Java 01-22.png" alt="" class="align-center" /></p>
+
+<p>이제 Java가 정상적으로 설치되고 환경변수가 올바르게 설정되었는지 확인해보겠습니다. 작업 표시줄의 시작 버튼 왼쪽에는 검색할 수 있는 부분이 있는데, 이곳에 cmd 또는 명령 프롬프트라고 입력하시면 윈도우의 기본 앱인 명령 프롬프트를 찾을 수 있습니다. 이것을 클릭해서 실행합니다.</p>
+
+<p><img src="/images/Java/1. Install JDK/Java 01-23.png" alt="" class="align-center" /></p>
+
+<p>명령 프롬프트 창이 나오면 javac을 입력하고 엔터를 클릭합니다.</p>
+
+<p><img src="/images/Java/1. Install JDK/Java 01-24.png" alt="" class="align-center" /></p>
+
+<p>위와 같은 화면이 나온다면 정상적으로 설치가 완료된 것입니다. 혹시라도 이와 다른 화면이 나온다면 설치에 실패한 것이니, 다시 처음부터 차근차근 살펴보시고 어느 부분에서 틀렸는지를 확인해보시기 바랍니다.</p>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> Tags: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/tags/#java" class="page__taxonomy-item p-category" rel="tag">java</a>
+    
+    </span>
+  </p>
+
+
+
+
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> Categories: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/categories/#studies" class="page__taxonomy-item p-category" rel="tag">studies</a>
+    
+    </span>
+  </p>
+
+
+        
+
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time class="dt-published" datetime="2019-12-07T00:00:00+09:00">December 7, 2019</time></p>
+
+      </footer>
+
+      <section class="page__share">
+  
+    <h4 class="page__share-title">Share on</h4>
+  
+
+  <a href="https://twitter.com/intent/tweet?text=JDK+%EC%84%A4%EC%B9%98%ED%95%98%EA%B8%B0%20http%3A%2F%2Flocalhost%3A4000%2Fjava%2Finstall-jdk%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Fjava%2Finstall-jdk%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2Fjava%2Finstall-jdk%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+
+      
+  <nav class="pagination">
+    
+      <a href="/java/introduction/" class="pagination--pager" title="Introduction
+">Previous</a>
+    
+    
+      <a href="/java/install-ide/" class="pagination--pager" title="IDE 설치하기
+">Next</a>
+    
+  </nav>
+
+    </div>
+
+    
+  </article>
+
+  
+  
+</div>
+
+    </div>
+
+    
+      <div class="search-content">
+        <div class="search-content__inner-wrap"><form class="search-content__form" onkeydown="return event.key != 'Enter';" role="search">
+    <label class="sr-only" for="search">
+      Enter your search term...
+    </label>
+    <input type="search" id="search" class="search-input" tabindex="-1" placeholder="Enter your search term..." />
+  </form>
+  <div id="results" class="results"></div></div>
+
+      </div>
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>Follow:</strong></li>
+    
+
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+
+    
+      <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2023 KEEPMIND All rights reserved. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    <script type="text/javascript" async
+   src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      extensions: ["tex2jax.js"],
+      jax: ["input/TeX", "output/HTML-CSS"],
+      tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+        displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+        processEscapes: true
+      },
+      "HTML-CSS": { availableFonts: ["TeX"] }
+    });
+</script>
+
+
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+<script src="/assets/js/lunr/lunr.min.js"></script>
+<script src="/assets/js/lunr/lunr-store.js"></script>
+<script src="/assets/js/lunr/lunr-en.js"></script>
+
+
+
+
+
+
+
+  </body>
+</html>

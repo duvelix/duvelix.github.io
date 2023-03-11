@@ -1,0 +1,1218 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.24.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>Java Programming Basics (2) - KEEPMIND</title>
+<meta name="description" content="String">
+
+
+  <meta name="author" content="Joonsu Ryu">
+  
+  <meta property="article:author" content="Joonsu Ryu">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="KEEPMIND">
+<meta property="og:title" content="Java Programming Basics (2)">
+<meta property="og:url" content="http://localhost:4000/java/java-programming-basics-2/">
+
+
+  <meta property="og:description" content="String">
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2020-05-23T00:00:00+09:00">
+
+
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="http://localhost:4000/java/java-programming-basics-2/">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "KEEPMIND",
+      "url": "http://localhost:4000/"
+    
+  }
+</script>
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="KEEPMIND Feed">
+
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css"></noscript>
+
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+<link rel="icon" type="image/png" sizes="16x16" href="/images/favicon.png">
+
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body class="layout--single wide">
+    <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+		<a class="site-title" href="http://localhost:4000/"><img src="/images/logo.png">
+        <!-- <a class="site-title" href="/">
+          KEEPMIND
+           -->
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="/">Home</a>
+            </li><li class="masthead__menu-item">
+              <a href="/cv/">CV</a>
+            </li><li class="masthead__menu-item">
+              <a href="/studies/">Studies</a>
+            </li><li class="masthead__menu-item">
+              <a href="/">Interests</a>
+            </li><li class="masthead__menu-item">
+              <a href="/">Travels</a>
+            </li></ul>
+        
+        <button class="search__toggle" type="button">
+          <span class="visually-hidden">Toggle search</span>
+          <i class="fas fa-search"></i>
+        </button>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person" class="h-card">
+
+  
+    <div class="author__avatar">
+      <!-- <a href="http://localhost:4000/"> -->
+        <img src="/images/profile.jpg" alt="Joonsu Ryu" itemprop="image" class="u-photo">
+      <!-- </a> -->
+    </div>
+  
+
+  <div class="author__content">
+    <h3 class="author__name p-name" itemprop="name">
+      <a class="u-url" rel="me" href="http://localhost:4000/" itemprop="url">Joonsu Ryu</a>
+    </h3>
+    
+      <div class="author__bio p-note" itemprop="description">
+        <p>Researcher</p>
+
+      </div>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">Follow</button>
+    <ul class="author__urls social-icons">
+      
+        <li itemprop="homeLocation" itemscope itemtype="https://schema.org/Place">
+          <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> <span itemprop="name" class="p-locality">Seoul, Korea</span>
+        </li>
+      
+
+      
+        
+          
+            <li><a href="mailto:jsryu@sogang.ac.kr" rel="nofollow noopener noreferrer me"><i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i><span class="label">E-mail</span></a></li>
+          
+        
+          
+            <li><a href="https://github.com/JoonsuRyu" rel="nofollow noopener noreferrer me" itemprop="sameAs"><i class="fab fa-fw fa-github" aria-hidden="true"></i><span class="label">GitHub</span></a></li>
+          
+        
+          
+            <li><a href="https://scholar.google.co.kr/citations?user=UmRh9NQAAAAJ" rel="nofollow noopener noreferrer me" itemprop="sameAs"><i class="fas fa-fw fa-graduation-cap" aria-hidden="true"></i><span class="label">Google Scholar</span></a></li>
+          
+        
+          
+            <li><a href="https://orcid.org/0000-0002-8848-1456" rel="nofollow noopener noreferrer me" itemprop="sameAs"><i class="fab fa-fw fa-orcid" aria-hidden="true"></i><span class="label">ORCID</span></a></li>
+          
+        
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer me">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+
+  
+  </div>
+
+
+
+  <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="Java Programming Basics (2)">
+    <meta itemprop="description" content="String">
+    <meta itemprop="datePublished" content="2020-05-23T00:00:00+09:00">
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title p-name" itemprop="headline">
+            <a href="http://localhost:4000/java/java-programming-basics-2/" class="u-url" itemprop="url">Java Programming Basics (2)
+</a>
+          </h1>
+          
+
+
+        </header>
+      
+
+      <section class="page__content e-content" itemprop="text">
+        
+          <aside class="sidebar__right sticky">
+            <nav class="toc">
+              <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> Table of Contents</h4></header>
+              <ul class="toc__menu"><li><a href="#string">String</a><ul><li><a href="#join-method">Join Method</a></li><li><a href="#substring-method">Substring Method</a></li><li><a href="#split-method">Split Method</a></li><li><a href="#equals-method">Equals Method</a></li><li><a href="#tostring--parseint-method">ToString / ParseInt Method</a></li><li><a href="#other-methods">Other Methods</a></li></ul></li><li><a href="#inputs-and-outputs">Inputs and Outputs</a><ul><li><a href="#inputs">Inputs</a></li><li><a href="#outputs">Outputs</a></li></ul></li><li><a href="#control-flow">Control Flow</a><ul><li><a href="#if-block">If block</a></li><li><a href="#for-loop">For loop</a></li><li><a href="#while-loop">While loop</a></li><li><a href="#do-while-loop">Do-while loop</a></li><li><a href="#switch-block">Switch block</a></li><li><a href="#break--continue">Break / Continue</a></li></ul></li><li><a href="#arrays">Arrays</a></li></ul>
+
+            </nav>
+          </aside>
+        
+        <h2 id="string">String</h2>
+
+<p>문자열(String)은 문자(Character)를 나열한 자료형입니다. 정확히는 자료형이라기보단 String이라는 클래스로 존재합니다. 문자열 변수를 선언하게 되면, String 클래스의 객체로 선언되는 것과 동일하다는 의미입니다.</p>
+
+<p>String 클래스는 자바의 기본 라이브러리에 존재하는 클래스이기 때문에 미리 구현되어 있는 여러 가지 기능이 존재합니다. 대표적으로, +를 사용해 문자열을 연결할 수 있습니다.</p>
+
+<figure class="highlight"><pre><code class="language-java" data-lang="java"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+</pre></td><td class="code"><pre><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Main</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="nc">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">){</span>
+        <span class="nc">String</span> <span class="n">s</span> <span class="o">=</span> <span class="s">"Ja"</span><span class="o">;</span>
+        <span class="n">s</span> <span class="o">=</span> <span class="n">s</span> <span class="o">+</span> <span class="s">"va"</span><span class="o">;</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">s</span><span class="o">);</span>
+        <span class="n">s</span> <span class="o">=</span> <span class="s">"square of 2 : "</span> <span class="o">+</span> <span class="mi">2</span><span class="o">*</span><span class="mi">2</span><span class="o">;</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">s</span><span class="o">);</span>
+        <span class="n">s</span> <span class="o">=</span> <span class="s">"Unicode of A : "</span> <span class="o">+</span> <span class="o">(</span><span class="kt">int</span><span class="o">)</span><span class="sc">'A'</span><span class="o">;</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">s</span><span class="o">);</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</pre></td></tr></tbody></table></code></pre></figure>
+
+<p>재미있는 점은, 만약 String이 아닌 다른 자료형과 + 연산을 수행하게 되면, 연산을 수행하는 자료형이 자동으로 String으로 형변환이 일어납니다. 예를 들어, 위와 같이 String 자료형 “square of 2 : “와 정수 자료형 4를 더하면, 4가 문자열 자료형으로 변환되어 s에는 “square of 2 : 4”라는 문자열이 대입되게 됩니다.</p>
+
+<p>String은 “클래스”이기 때문에 미리 정의된 메소드 또한 존재합니다. 메소드의 종류가 많기 때문에 자주 사용하는 것 위주로 소개해드리도록 하겠습니다.</p>
+
+<h3 id="join-method">Join Method</h3>
+
+<p>join 메소드는 String에서 + 연산과 비슷한 역할을 합니다. 사용하는 방법은 다음과 같습니다.</p>
+
+<p>String.join(구분 문자열, 연결할 문자열 list 또는 array);</p>
+
+<p>이 메소드는 연결하고자 하는 문자열 사이사이에 구문 문자열을 삽입하여 하나의 문자열로 만들어줍니다. 예를 들어, 다음과 같이 사용할 수 있습니다.</p>
+
+<figure class="highlight"><pre><code class="language-java" data-lang="java"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+</pre></td><td class="code"><pre><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Main</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="nc">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">){</span>
+        <span class="nc">String</span> <span class="n">names</span> <span class="o">=</span> <span class="nc">String</span><span class="o">.</span><span class="na">join</span><span class="o">(</span><span class="s">", "</span><span class="o">,</span> <span class="s">"Peter"</span><span class="o">,</span> <span class="s">"Paul"</span><span class="o">,</span> <span class="s">"Mary"</span><span class="o">);</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">names</span><span class="o">);</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</pre></td></tr></tbody></table></code></pre></figure>
+
+<h3 id="substring-method">Substring Method</h3>
+
+<p>substring 메소드는 String 중 일부 구간만을 반환하는 메소드입니다. C언어에서의 substr 함수와 비슷한 역할을 한다고 생각하시면 됩니다. 사용하는 방법은 다음과 같습니다.</p>
+
+<p>(문자열 객체).substring(복사할 문자열의 시작 번호, 복사할 문자열의 끝 번호)</p>
+
+<p>단, 끝 번호는 적지 않아도 무관합니다. 끝 번호를 적지 않는다면 시작 번호부터 문자열 끝까지 복사합니다. 사용 예는 아래 프로그램을 참고하시기 바랍니다.</p>
+
+<figure class="highlight"><pre><code class="language-java" data-lang="java"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+</pre></td><td class="code"><pre><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Main</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="nc">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">){</span>
+        <span class="nc">String</span> <span class="n">greeting</span> <span class="o">=</span> <span class="s">"Hello, World!"</span><span class="o">;</span>
+        <span class="nc">String</span> <span class="n">location</span> <span class="o">=</span> <span class="n">greeting</span><span class="o">.</span><span class="na">substring</span><span class="o">(</span><span class="mi">7</span><span class="o">,</span> <span class="mi">12</span><span class="o">);</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">location</span><span class="o">);</span>
+        <span class="nc">String</span> <span class="n">endless</span> <span class="o">=</span> <span class="n">greeting</span><span class="o">.</span><span class="na">substring</span><span class="o">(</span><span class="mi">3</span><span class="o">);</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">endless</span><span class="o">);</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</pre></td></tr></tbody></table></code></pre></figure>
+
+<p>substring 메소드를 사용할 때 문자열의 index를 가져오는 것 때문에 배열처럼 index로 문자열에 접근할 수 있을 것 같이 보이지만, C언어와는 다르게 컴파일 에러가 나므로 주의하셔야 합니다. 예를 들어, 아래 프로그램 dtStrIndex는 컴파일 에러를 일으킵니다.</p>
+
+<figure class="highlight"><pre><code class="language-java" data-lang="java"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+</pre></td><td class="code"><pre><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Main</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="nc">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">){</span> 
+        <span class="nc">String</span> <span class="n">greeting</span> <span class="o">=</span> <span class="s">"Hello, World!"</span><span class="o">;</span> 
+        <span class="kt">char</span> <span class="n">ch</span> <span class="o">=</span> <span class="n">greeting</span><span class="o">[</span><span class="mi">3</span><span class="o">];</span> <span class="c1">// Compile Error </span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">ch</span><span class="o">);</span> 
+    <span class="o">}</span> 
+<span class="o">}</span>
+</pre></td></tr></tbody></table></code></pre></figure>
+
+<h3 id="split-method">Split Method</h3>
+
+<p>split 메소드는 join 메소드의 반대 버전이라고 생각하시면 됩니다. 주어진 문자열에서 해당 구분자를 찾아 String Array로 반환합니다. 사용 방법은 다음과 같습니다.</p>
+
+<p>(구분할 문자열).split(구분 문자열);</p>
+
+<p>사용 예는 아래 프로그램을 참고하시면 됩니다. 주의하실 점은, split 메소드의 결과는 String Array로 반환되기 때문에, 이를 받아줄 String 객체도 Array로 선언하셔야 합니다.</p>
+
+<figure class="highlight"><pre><code class="language-java" data-lang="java"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+</pre></td><td class="code"><pre><span class="kn">import</span> <span class="nn">java.util.Arrays</span><span class="o">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Main</span><span class="o">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="nc">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">){</span>
+        <span class="nc">String</span> <span class="n">names</span> <span class="o">=</span> <span class="s">"Peter, Paul, Mary"</span><span class="o">;</span>
+        <span class="nc">String</span><span class="o">[]</span> <span class="n">result</span> <span class="o">=</span> <span class="n">names</span><span class="o">.</span><span class="na">split</span><span class="o">(</span><span class="s">", "</span><span class="o">);</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="nc">Arrays</span><span class="o">.</span><span class="na">toString</span><span class="o">(</span><span class="n">result</span><span class="o">));</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</pre></td></tr></tbody></table></code></pre></figure>
+
+<p>result가 String Array 객체이기 때문에, 출력할 때는 위와 같이 java.util.Arrays 라이브러리에 있는 toString 메소드를 사용해주어야 합니다.</p>
+
+<h3 id="equals-method">Equals Method</h3>
+
+<p>equals 메소드는 두 문자열이 서로 같은지, 다른지를 알려주는 기능을 갖고 있습니다. 만약 두 문자열이 같으면 true, 그렇지 않으면 false를 반환합니다. 사용 방법은 다음과 같습니다.</p>
+
+<p>(문자열 객체).equals(문자열);</p>
+
+<p>주의하실 점은, 두 문자열이 같을 조건은 공백 하나 없이 똑같아야 한다는 점입니다. 무슨 말이냐 하면, 다음 예제 프로그램을 참고하시기 바랍니다.</p>
+
+<figure class="highlight"><pre><code class="language-java" data-lang="java"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+</pre></td><td class="code"><pre><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Main</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="nc">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">){</span>
+        <span class="nc">String</span> <span class="n">name</span> <span class="o">=</span> <span class="s">"Mario"</span><span class="o">;</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">name</span><span class="o">.</span><span class="na">equals</span><span class="o">(</span><span class="s">"Mario"</span><span class="o">));</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">name</span><span class="o">.</span><span class="na">equals</span><span class="o">(</span><span class="s">"Luigi"</span><span class="o">));</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">name</span><span class="o">.</span><span class="na">equals</span><span class="o">(</span><span class="s">"Mario "</span><span class="o">));</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</pre></td></tr></tbody></table></code></pre></figure>
+
+<p>위의 dtStrEquals 프로그램을 보시면, 두 번째 출력은 Luigi로 다르기 때문에 false가 나오는 것은 당연합니다. 그런데 세 번째 출력은 앞 부분이 똑같이 Mario이고 뒤에 공백 하나만 있을 뿐인데도 false가 나옵니다. equals 메소드는 이렇게 미세한 차이만 있어도 완전히 다른 문자열로 인식함을 유의하시기 바랍니다.</p>
+
+<h3 id="tostring--parseint-method">ToString / ParseInt Method</h3>
+
+<p>사실 이 두 메소드는 String 클래스의 메소드가 아닙니다. 다만 String 클래스의 다른 메소드와 함께 사용할 일이 많다보니 같이 소개하고자 합니다.</p>
+
+<p>toString 메소드는 정수형 객체나 실수형 객체를 문자열 객체로 변환해주는 역할을 하고, parseInt 메소드는 그 반대의 역할을 수행하는 메소드입니다. 사용 방법은 프로그램으로 바로 보여드리도록 하겠습니다.</p>
+
+<figure class="highlight"><pre><code class="language-java" data-lang="java"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+</pre></td><td class="code"><pre><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Main</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="nc">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">){</span>
+        <span class="kt">int</span> <span class="n">age</span> <span class="o">=</span> <span class="mi">30</span><span class="o">;</span>
+        <span class="kt">double</span> <span class="n">pi</span> <span class="o">=</span> <span class="mf">3.14</span><span class="o">;</span>
+        <span class="nc">String</span> <span class="n">str</span><span class="o">;</span>
+
+        <span class="cm">/* String &lt;-&gt; Int */</span>
+        <span class="n">str</span> <span class="o">=</span> <span class="nc">Integer</span><span class="o">.</span><span class="na">toString</span><span class="o">(</span><span class="n">age</span><span class="o">);</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">str</span><span class="o">);</span>
+        <span class="n">age</span> <span class="o">=</span> <span class="nc">Integer</span><span class="o">.</span><span class="na">parseInt</span><span class="o">(</span><span class="n">str</span><span class="o">);</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">age</span><span class="o">);</span>
+
+        <span class="cm">/* String &lt;-&gt; Double */</span>
+        <span class="n">str</span> <span class="o">=</span> <span class="nc">Double</span><span class="o">.</span><span class="na">toString</span><span class="o">(</span><span class="n">pi</span><span class="o">);</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">str</span><span class="o">);</span>
+        <span class="n">pi</span> <span class="o">=</span> <span class="nc">Double</span><span class="o">.</span><span class="na">parseDouble</span><span class="o">(</span><span class="n">str</span><span class="o">);</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">pi</span><span class="o">);</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</pre></td></tr></tbody></table></code></pre></figure>
+
+<p>위와 같이 문자열 객체에서 정수형 객체 뿐만이 아니라 실수형 객체로도 자유롭게 변환이 가능한 것을 확인할 수 있습니다.</p>
+
+<h3 id="other-methods">Other Methods</h3>
+
+<p>지금까지 소개한 메소드 이외에도 String 관련 메소드는 매우 많습니다. 여기서 이걸 모두 소개해드릴 순 없으니, 대략 이런 것들이 있다 정도로만 보시면 될 것 같습니다.</p>
+
+<ul>
+  <li>boolean startsWith(String str)</li>
+  <li>boolean endsWith(String str)</li>
+  <li>boolean contains(CharSequence str)</li>
+  <li>int indexOf(String str)</li>
+  <li>int lastIndexOf(String str)</li>
+  <li>int indexOf(String str, int fromIndex)</li>
+  <li>int lastIndexOf(String str, int fromIndex)</li>
+  <li>String replace(CharSequence oldString, CharSequence newString)</li>
+  <li>String toUpperCase()</li>
+  <li>String toLowerCase()</li>
+  <li>String trim()</li>
+</ul>
+
+<h2 id="inputs-and-outputs">Inputs and Outputs</h2>
+
+<h3 id="inputs">Inputs</h3>
+
+<p>Java에서 표준 입력을 받을 때는 Scanner 클래스를 사용합니다. Scanner 클래스를 사용하기 위해서는 java.util.Scanner 라이브러리를 호출해야 합니다. 사용 방법은 지난 포스트에서 소개했던 Random 클래스와 비슷하게 Scanner 객체를 먼저 선언해주어야 합니다.</p>
+
+<p>입력을 받는 방법은 크게 4가지입니다. 하나하나 소개해드리면,</p>
+
+<ul>
+  <li>nextLine() : 한 줄을 입력받음 (= Enter키를 칠 때까지의 입력)</li>
+  <li>next() : 한 단어를 입력받음 (= 여러 단어를 써도 띄어쓰기가 나오면 그 이후로 끊김)</li>
+  <li>nextInt() : 정수형 숫자를 입력받음</li>
+  <li>nextDouble() : 실수형 숫자를 입력받음</li>
+</ul>
+
+<p>보통 nextLine()을 가장 많이 사용합니다. 어차피 숫자로 바꾸는 거야 위에서 소개한 parseInt 메소드 같은 것을 사용하면 되니까요. 사용 방법은 아래와 같습니다.</p>
+
+<figure class="highlight"><pre><code class="language-java" data-lang="java"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+</pre></td><td class="code"><pre><span class="kn">import</span> <span class="nn">java.util.Scanner</span><span class="o">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Main</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="nc">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">){</span>
+        <span class="nc">Scanner</span> <span class="n">in</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Scanner</span><span class="o">(</span><span class="nc">System</span><span class="o">.</span><span class="na">in</span><span class="o">);</span>
+
+        <span class="cm">/* 한 줄 입력 */</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"당신의 이름은?"</span><span class="o">);</span>
+        <span class="nc">String</span> <span class="n">name</span> <span class="o">=</span> <span class="n">in</span><span class="o">.</span><span class="na">nextLine</span><span class="o">();</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"입력 : "</span> <span class="o">+</span> <span class="n">name</span><span class="o">);</span>
+
+        <span class="cm">/* 정수 입력 */</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"정수를 입력해 보세요."</span><span class="o">);</span>
+        <span class="kt">int</span> <span class="n">integer</span> <span class="o">=</span> <span class="n">in</span><span class="o">.</span><span class="na">nextInt</span><span class="o">();</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"입력 : "</span> <span class="o">+</span> <span class="n">integer</span><span class="o">);</span>
+
+        <span class="cm">/* 실수 입력 */</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"실수를 입력해 보세요."</span><span class="o">);</span>
+        <span class="kt">double</span> <span class="n">real</span> <span class="o">=</span> <span class="n">in</span><span class="o">.</span><span class="na">nextDouble</span><span class="o">();</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"입력 : "</span> <span class="o">+</span> <span class="n">real</span><span class="o">);</span>
+
+        <span class="cm">/* 한 단어 입력 */</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"단어를 입력해 보세요."</span><span class="o">);</span>
+        <span class="nc">String</span> <span class="n">word</span> <span class="o">=</span> <span class="n">in</span><span class="o">.</span><span class="na">next</span><span class="o">();</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"입력 : "</span> <span class="o">+</span> <span class="n">word</span><span class="o">);</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</pre></td></tr></tbody></table></code></pre></figure>
+
+<p>Scanner 객체를 선언할 때, 괄호 안에 들어있는 System.in은 표준 입력을 받는다는 뜻입니다.</p>
+
+<p>주의하실 점은, 여러 입력을 받을 때 next()를 중간에 넣으시면 공백 뒤 짤린 부분이 다음 입력으로 들어갈 수 있습니다. 예를 들어, Input 프로그램에서 한 단어 입력 부분을 맨 위로 올리고 똑같이 Hello World!를 입력해보시면 런타임 에러가 발생합니다. 그래서 저는 next()를 선호하지 않고, 단어를 자를 필요가 있을 때는 Split 메소드를 더 선호합니다.</p>
+
+<h3 id="outputs">Outputs</h3>
+
+<p>Java에서 표준 출력 방식도 3가지나 존재합니다. 다만 입력에서의 종류만큼 큰 차이는 없습니다. 다음은 출력 방법의 간단한 설명입니다.</p>
+
+<ul>
+  <li>System.out.print : 숫자 또는 문자열들을 출력함.</li>
+  <li>System.out.println : print와 기본적인 것은 동일하나, 출력 후 다음 줄로 넘어감.</li>
+  <li>System.out.printf : C언어에서의 printf처럼 형식화된 출력 방법.</li>
+</ul>
+
+<p>형식화된 출력(Formatted Output)은 아래와 같이 사용할 수 있습니다.</p>
+
+<p>System.out.printf(“Hello, %s. Next year, you will be %d.\n”, name, age);</p>
+
+<p>위의 코드는 Hello 같은 문자열은 그대로 출력하고, %s에 name, %d에 age 변수를 대입하여 출력한다는 의미입니다. % 다음에 들어오는 문자에 따라, 이곳에 어떤 객체가 들어올 지 결정됩니다. 이것도 종류가 많기 때문에, 아래에 정리해 놓겠습니다.</p>
+
+<ul>
+  <li>%d : 정수</li>
+  <li>%f : 실수</li>
+  <li>%c : 문자</li>
+  <li>%s : 문자열</li>
+  <li>%b : 불리언</li>
+  <li>%x : 16진수 숫자</li>
+</ul>
+
+<p>이 중, 실수를 출력할 때는 여러가지 옵션을 줄 수 있습니다. 이것 또한 종류가 많기 때문에… 간단하게 정리해 보겠습니다.</p>
+
+<ul>
+  <li>+ : 양수/음수에 따라 부호를 표시</li>
+  <li>- : 숫자를 왼쪽으로 정렬</li>
+  <li>0X : 숫자의 자리수가 X보다 낮다면, 그 차이만큼 0을 채웁니다.</li>
+  <li>( : 음수를 표현할 때 - 기호 대신 괄호를 사용</li>
+  <li>\, : 금액을 표시할 때처럼 세 자리수 마다 쉼표로 구분</li>
+</ul>
+
+<p>출력에는 이렇게 다양한 방법과 옵션이 있지만, 쓰다 보면 어느정도 몸에 익어서 굳이 외우려고 노력할 필요는 없습니다. 사실 %b나 ( 같은 기호는 저도 이 글을 쓰면서 처음 봤습니다. 그리고 자바에서는 printf를 쓸 일이 그렇게 많지 않으니 어려워 보이더라도 걱정하지 않으셔도 됩니다.</p>
+
+<p>사용 방법을 대략적으로 보여드리기 위해, 아래와 같은 예제를 하나 만들어봤습니다. 예제에 대한 설명은 굳이 달 필요가 없을 것 같아 생략하겠습니다.</p>
+
+<figure class="highlight"><pre><code class="language-java" data-lang="java"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+</pre></td><td class="code"><pre><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Main</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="nc">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">){</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">printf</span><span class="o">(</span><span class="s">"%05d\n"</span><span class="o">,</span> <span class="mi">10</span><span class="o">);</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">printf</span><span class="o">(</span><span class="s">"%(d\n"</span><span class="o">,</span> <span class="o">-</span><span class="mi">125</span><span class="o">);</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">printf</span><span class="o">(</span><span class="s">"%-3.4f\n"</span><span class="o">,</span> <span class="mf">12.34</span><span class="o">);</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">printf</span><span class="o">(</span><span class="s">"%,+.2f"</span><span class="o">,</span> <span class="mf">100000.0</span><span class="o">/</span><span class="mf">3.0</span><span class="o">);</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</pre></td></tr></tbody></table></code></pre></figure>
+
+<h2 id="control-flow">Control Flow</h2>
+
+<p>제어문(Control Flow)은 사실 어떤 언어인가에 상관 없이 대부분 비슷한 구조를 가지고 있습니다. 다만 Java 강의는 프로그래밍 언어를 처음 배우는 분들을 기준으로 잡고 있기 때문에, 하나하나 차근차근 소개하도록 하겠습니다.</p>
+
+<h3 id="if-block">If block</h3>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>if (조건) {
+    조건을 만족했을 때 수행할 코드
+}
+else {
+    조건을 만족하지 못했을 때 수행할 코드
+}
+</code></pre></div></div>
+
+<p>If 문은 조건문으로도 불립니다. if 뒤에 나오는 조건을 만족했을 때와 만족하지 못했을 때의 수행 코드가 달라지는 구조입니다. 단, 위의 구조를 꼭 그대로 맞출 필요는 없습니다. else 문은 생략이 가능하고, 또 else 다음에 바로 if 문을 붙여 if - else if - else 와 같이 연결할 수도 있습니다. 다음은 난수와 조건문을 사용한 간단한 예제 프로그램입니다.</p>
+
+<figure class="highlight"><pre><code class="language-java" data-lang="java"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+</pre></td><td class="code"><pre><span class="kn">import</span> <span class="nn">java.util.Random</span><span class="o">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Main</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="nc">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+        <span class="nc">Random</span> <span class="n">number</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Random</span><span class="o">();</span>
+        <span class="kt">int</span> <span class="n">n</span> <span class="o">=</span> <span class="n">number</span><span class="o">.</span><span class="na">nextInt</span><span class="o">(</span><span class="mi">201</span><span class="o">)</span> <span class="o">-</span> <span class="mi">100</span><span class="o">;</span>  <span class="cm">/* -100 ~ 100 Random Number */</span>
+
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"Random Number : "</span> <span class="o">+</span> <span class="n">n</span><span class="o">);</span>
+
+        <span class="k">if</span> <span class="o">(</span><span class="n">n</span> <span class="o">==</span> <span class="mi">0</span><span class="o">)</span>
+            <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"Exactly the middle number!"</span><span class="o">);</span>
+
+        <span class="k">if</span> <span class="o">(</span><span class="n">n</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="o">)</span>
+            <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"Positive."</span><span class="o">);</span>
+        <span class="k">else</span> <span class="nf">if</span> <span class="o">(</span><span class="n">n</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="o">)</span>
+            <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"Negative."</span><span class="o">);</span>
+        <span class="k">else</span>
+            <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"It is neither positive nor negative."</span><span class="o">);</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</pre></td></tr></tbody></table></code></pre></figure>
+
+<h3 id="for-loop">For loop</h3>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>for (카운터 초기화; 반복 조건; 카운터 증감){
+    반복시킬 코드
+}
+</code></pre></div></div>
+
+<p>for 문은 반복문 중 하나입니다. 반복문에서는 얼마나 반복시킬지 결정하는 것이 가장 중요하기 때문에 for 문 다음에 나오는 괄호에서는 모두 반복에 대해서만 설정하고 있습니다. 반복문에서는 보통 정수형 변수를 카운터로 사용하여 한번 코드를 수행할 때마다 카운터를 증가시키고, 카운터의 값이 특정 조건을 만족한다면 또 수행하는 구조를 갖고 있습니다. 반복문의 사용 예시는 아래와 같습니다.</p>
+
+<figure class="highlight"><pre><code class="language-java" data-lang="java"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+</pre></td><td class="code"><pre><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Main</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="nc">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+        <span class="kt">int</span> <span class="n">i</span><span class="o">,</span> <span class="n">sum</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>
+
+        <span class="k">for</span> <span class="o">(</span><span class="n">i</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="mi">10</span> <span class="o">;</span> <span class="n">i</span><span class="o">++)</span> <span class="o">{</span>
+            <span class="k">if</span> <span class="o">(</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">10</span><span class="o">)</span>
+                <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">print</span><span class="o">(</span><span class="n">i</span><span class="o">);</span>
+            <span class="k">else</span>
+                <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">print</span><span class="o">(</span><span class="n">i</span> <span class="o">+</span> <span class="s">" + "</span><span class="o">);</span>
+            <span class="n">sum</span> <span class="o">+=</span> <span class="n">i</span><span class="o">;</span>
+        <span class="o">}</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">" = "</span> <span class="o">+</span> <span class="n">sum</span><span class="o">);</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</pre></td></tr></tbody></table></code></pre></figure>
+
+<p>반복문은 조건 부분을 생략하거나 반복 조건이 항상 참인 코드를 넣어 무한 루프를 돌게 만들 수 있습니다. 무한 루프는 프로그램이 계속 돌아야하거나, 알고리즘 상 끝나는 시점이 확실하지 않은 프로그램(ex. 라스베가스 알고리즘)에 사용합니다. 무한 루프는 아래와 같은 방법으로 사용할 수 있습니다.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>for(;;) {
+    반복시킬 코드
+}
+</code></pre></div></div>
+
+<h3 id="while-loop">While loop</h3>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>while (조건) {
+    반복시킬 코드
+}
+</code></pre></div></div>
+
+<p>while 문은 for 문과 같은 반복문의 하나입니다. 사용법만 조금 다를 뿐, 하는 역할은 같기 때문에 선호하는 방법을 사용하시면 됩니다. 저는 보통 카운터의 초기화나 증감을 복잡하게 설정할 때 while 문을 사용합니다. 다음은 for 문에서의 예제를 while 문으로 바꾼 프로그램입니다.</p>
+
+<figure class="highlight"><pre><code class="language-java" data-lang="java"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+</pre></td><td class="code"><pre><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Main</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="nc">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+        <span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="o">,</span> <span class="n">sum</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>
+
+        <span class="k">while</span> <span class="o">(</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="mi">10</span> <span class="o">)</span> <span class="o">{</span>
+            <span class="k">if</span> <span class="o">(</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">10</span><span class="o">)</span>
+                <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">print</span><span class="o">(</span><span class="n">i</span><span class="o">);</span>
+            <span class="k">else</span>
+                <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">print</span><span class="o">(</span><span class="n">i</span> <span class="o">+</span> <span class="s">" + "</span><span class="o">);</span>
+            <span class="n">sum</span> <span class="o">+=</span> <span class="n">i</span><span class="o">;</span>
+            <span class="n">i</span><span class="o">++;</span>
+        <span class="o">}</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">" = "</span> <span class="o">+</span> <span class="n">sum</span><span class="o">);</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</pre></td></tr></tbody></table></code></pre></figure>
+
+<p>while문에서의 무한 루프는 조건 부분에 true만 적어주시면 됩니다. C언어와는 다르게 while(1)은 컴파일 에러가 나므로 주의하시기 바랍니다.</p>
+
+<h3 id="do-while-loop">Do-while loop</h3>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>do {
+    반복시킬 코드
+}
+while (조건);
+</code></pre></div></div>
+
+<p>do-while 문은 while 문과 비슷하지만, 딱 하나의 차이가 있습니다. while 문은 만약 조건 부분이 처음부터 만족하지 않다면 아예 실행하지 않고 넘어가지만, do-while 문은 그런 경우에 최소 한번은 반드시 실행하고 넘어갑니다. 예를 들어, 다음은 for 문과 while 문에서 사용했던 프로그램을 약간 변형한 프로그램입니다.</p>
+
+<figure class="highlight"><pre><code class="language-java" data-lang="java"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+</pre></td><td class="code"><pre><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Main</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="nc">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+        <span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">11</span><span class="o">,</span> <span class="n">sum</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>
+
+        <span class="k">do</span> <span class="o">{</span>
+            <span class="k">if</span> <span class="o">(</span><span class="n">i</span> <span class="o">&gt;</span> <span class="mi">10</span><span class="o">)</span>
+                <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>
+            <span class="k">else</span> <span class="nf">if</span> <span class="o">(</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">10</span><span class="o">)</span>
+                <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">print</span><span class="o">(</span><span class="n">i</span><span class="o">);</span>
+            <span class="k">else</span>
+                <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">print</span><span class="o">(</span><span class="n">i</span> <span class="o">+</span> <span class="s">" + "</span><span class="o">);</span>
+            <span class="n">sum</span> <span class="o">+=</span> <span class="n">i</span><span class="o">;</span>
+            <span class="n">i</span><span class="o">++;</span>
+        <span class="o">}</span>
+        <span class="k">while</span> <span class="o">(</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="mi">10</span> <span class="o">);</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">" = "</span> <span class="o">+</span> <span class="n">sum</span><span class="o">);</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</pre></td></tr></tbody></table></code></pre></figure>
+
+<p>위의 프로그램은 이전과 달리 카운터 i가 11로 초기화되어 있습니다. while 부분의 조건이 i가 10 이하이므로 조건을 만족하지 않는다는 것을 바로 알 수 있습니다. 일반적인 while 문이라면 반복 부분이 아예 실행되지 않지만, do-while 문에서는 do 부분이 한번은 반드시 실행되므로, if 문의 조건에 걸려 i가 0으로 초기화됩니다. 그 이후로는 i가 10 이하라는 조건에 만족되기 때문에 반복문이 정상적으로 실행되는 것입니다.</p>
+
+<p>do-while 문에서도 조건을 true로 두면 무한 루프를 사용할 수 있지만, 일반적으로 무한 루프는 for 문이나 while 문을 사용하지 굳이 do-while 문을 사용하진 않습니다.</p>
+
+<h3 id="switch-block">Switch block</h3>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>switch (조건) {
+    case 1 : 조건이 1일 때 수행할 코드, break;
+    case 2 : 조건이 2일 때 수행할 코드, break;
+    ...
+    default : 만족하는 case가 하나도 없을 때 수행할 코드
+}
+</code></pre></div></div>
+
+<p>if 문은 유용하지만, 조건을 세분화할 때는 프로그램이 너무 길어질 우려가 있습니다. 예를 들어, 주사위 게임에서 어떤 숫자가 나오느냐에 따라 다른 결과를 구현하고 싶은데, if 문을 사용한다면 if - else if - else if - … - else 와 같이 조건문을 반복해서 사용해야 합니다. 이렇게 구현한다고 해서 틀린 것은 아니지만, switch 문을 사용하면 더 깔끔하게 구현할 수 있습니다.</p>
+
+<p>각각의 case 뒤에는 조건이 어떤 값인지에 따라 다른 결과를 줄 수 있지만, 반드시 각 case의 끝에는 break; 문을 삽입해주어야 합니다. 만약 case 1 끝에 break;를 삽입하지 않는다면, case 1을 수행한 다음, case 2의 코드가 연속으로 실행되기 때문입니다. 예를 들어, 다음 프로그램은 break;를 사용했을 때와 사용하지 않았을 때 어떤 차이가 나는지 보여주고 있습니다.</p>
+
+<figure class="highlight"><pre><code class="language-java" data-lang="java"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+</pre></td><td class="code"><pre><span class="kn">import</span> <span class="nn">java.util.Random</span><span class="o">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Main</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="nc">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+        <span class="nc">Random</span> <span class="n">number</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Random</span><span class="o">();</span>
+        <span class="kt">int</span> <span class="n">n</span> <span class="o">=</span> <span class="n">number</span><span class="o">.</span><span class="na">nextInt</span><span class="o">(</span><span class="mi">6</span><span class="o">)</span> <span class="o">+</span> <span class="mi">1</span><span class="o">;</span>  <span class="cm">/* 1 ~ 6 Random Number */</span>
+
+        <span class="k">switch</span> <span class="o">(</span><span class="n">n</span><span class="o">){</span>
+            <span class="k">case</span> <span class="mi">1</span> <span class="o">:</span> <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"Number 1"</span><span class="o">);</span>
+            <span class="k">case</span> <span class="mi">2</span> <span class="o">:</span> <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"Number 2"</span><span class="o">);</span> <span class="k">break</span><span class="o">;</span>
+            <span class="k">case</span> <span class="mi">3</span> <span class="o">:</span> <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"Number 3"</span><span class="o">);</span> <span class="k">break</span><span class="o">;</span>
+            <span class="k">case</span> <span class="mi">4</span> <span class="o">:</span> <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"Number 4"</span><span class="o">);</span> <span class="k">break</span><span class="o">;</span>
+            <span class="k">case</span> <span class="mi">5</span> <span class="o">:</span> <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"Number 5"</span><span class="o">);</span> <span class="k">break</span><span class="o">;</span>
+            <span class="k">case</span> <span class="mi">6</span> <span class="o">:</span> <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"Number 6"</span><span class="o">);</span> <span class="k">break</span><span class="o">;</span>
+            <span class="k">default</span><span class="o">:</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</pre></td></tr></tbody></table></code></pre></figure>
+
+<p>Switch 프로그램에서는 case 1에만 break;를 삽입하지 않았습니다. 그 결과 case 1에서는 case 2의 출력까지 같이 나오는 것을 알 수 있습니다.</p>
+
+<h3 id="break--continue">Break / Continue</h3>
+
+<p>break와 continue는 특별한 상황에서 제어문에 변화를 줄 때 사용합니다. break는 switch 문에서 보셨다시피, 제어문을 빠져나가는 역할을 합니다. continue는 반복문에서만 사용하는데, 반복문을 수행하다 continue를 만나면 그 아래의 코드는 다 무시하고 다음 반복으로 넘어가는 기능을 합니다. break와 continue를 사용하면 다음과 같은 프로그램을 구현할 수 있습니다.</p>
+
+<figure class="highlight"><pre><code class="language-java" data-lang="java"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+</pre></td><td class="code"><pre><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Main</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="nc">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+        <span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="o">;</span>
+
+        <span class="k">while</span><span class="o">(</span><span class="n">i</span> <span class="o">&lt;=</span> <span class="mi">10</span><span class="o">){</span>
+
+            <span class="k">if</span> <span class="o">(</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">4</span> <span class="o">){</span>
+                <span class="n">i</span><span class="o">++;</span>
+                <span class="k">continue</span><span class="o">;</span>
+            <span class="o">}</span> <span class="k">else</span> <span class="k">if</span> <span class="o">(</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">8</span> <span class="o">){</span>
+                <span class="k">break</span><span class="o">;</span>
+            <span class="o">}</span>
+            <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"The value of i is "</span> <span class="o">+</span> <span class="n">i</span><span class="o">);</span>
+            <span class="n">i</span><span class="o">++;</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</pre></td></tr></tbody></table></code></pre></figure>
+
+<p>BreakContinue 프로그램은 원래 1부터 10까지 출력하는 프로그램입니다. 여기에 조건문을 사용해 i가 4일 때는 패스하고, i가 8이 되면 빠져나오게끔 만들었습니다. break와 continue는 이렇게 특정 조건을 만족하면 다른 결과를 얻고 싶을 때 주로 사용합니다.</p>
+
+<h2 id="arrays">Arrays</h2>
+
+<p>Java에서 배열(Array)은 객체를 만드는 것과 같습니다. 배열을 선언하는 방법 또한 다양합니다. 예를 들어, 크기가 5인 int형 배열을 선언할 때, 다음과 같은 방법이 모두 통용됩니다.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>int [] a = new int[5];
+int a[] = new int[5];
+int a[] = {1, 3, 5, 7, 9};
+</code></pre></div></div>
+
+<p>이 중 3번째 방법은 선언과 동시에 값 대입까지 수행합니다. 만약 첫 번째나 두 번째 같이 초기값을 설정하지 않는 경우, C언어에서는 쓰레기 값이 들어가지만 Java에서는 자료형에 따라 자동으로 초기값이 설정됩니다. int, double과 같은 숫자형 변수에는 0, boolean은 false, char는 ASCII 코드 0, String 같은 문자열 변수는 NULL이 됩니다.</p>
+
+<p>만약 실수로 배열의 범위 밖에 있는 index를 접근한 경우, 컴파일은 정상적으로 가능하나 런타임 에러가 발생합니다. 이런 경우를 방지하기 위해, 배열의 index를 접근할 때는 상수를 사용하는 것보다 length라는 속성(Attribute)을 사용하는 것이 편리합니다. 속성은 메소드와 다르게, 뒤에 ()가 붙지 않습니다.</p>
+
+<figure class="highlight"><pre><code class="language-java" data-lang="java"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+</pre></td><td class="code"><pre><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Main</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="nc">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+        <span class="kt">int</span> <span class="n">a</span><span class="o">[]</span> <span class="o">=</span> <span class="o">{</span><span class="mi">1</span><span class="o">,</span> <span class="mi">3</span><span class="o">,</span> <span class="mi">5</span><span class="o">,</span> <span class="mi">7</span><span class="o">,</span> <span class="mi">9</span><span class="o">};</span>
+        <span class="kt">int</span> <span class="n">b</span><span class="o">[]</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">int</span><span class="o">[</span><span class="n">a</span><span class="o">.</span><span class="na">length</span><span class="o">];</span>
+        <span class="kt">int</span> <span class="n">i</span><span class="o">;</span>
+
+        <span class="n">b</span> <span class="o">=</span> <span class="n">a</span><span class="o">;</span>
+        <span class="k">for</span> <span class="o">(</span><span class="n">i</span> <span class="o">=</span> <span class="mi">0</span> <span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">a</span><span class="o">.</span><span class="na">length</span> <span class="o">;</span> <span class="n">i</span><span class="o">++)</span>
+            <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">a</span><span class="o">[</span><span class="n">i</span><span class="o">]</span> <span class="o">+</span> <span class="s">" "</span> <span class="o">+</span> <span class="n">b</span><span class="o">[</span><span class="n">i</span><span class="o">]);</span>
+
+        <span class="n">b</span><span class="o">[</span><span class="mi">2</span><span class="o">]</span> <span class="o">=</span> <span class="mi">10</span><span class="o">;</span>
+
+        <span class="k">for</span> <span class="o">(</span><span class="n">i</span> <span class="o">=</span> <span class="mi">0</span> <span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">a</span><span class="o">.</span><span class="na">length</span> <span class="o">;</span> <span class="n">i</span><span class="o">++)</span>
+            <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">a</span><span class="o">[</span><span class="n">i</span><span class="o">]</span> <span class="o">+</span> <span class="s">" "</span> <span class="o">+</span> <span class="n">b</span><span class="o">[</span><span class="n">i</span><span class="o">]);</span>
+
+    <span class="o">}</span>
+<span class="o">}</span>
+</pre></td></tr></tbody></table></code></pre></figure>
+
+<p>ArrayLength 프로그램은 배열 b를 선언할 때 그 크기를 a.length로 설정했고, b = a라는 표현을 사용했습니다. 주의하실 점은 b = a는 배열의 복사가 아니라 주소의 복사입니다. 무슨말이냐 하면, b의 원소를 수정했을 때 a의 원소도 같이 변경된다는 뜻입니다. a와 b의 주소가 같기 때문입니다.</p>
+
+<p>만약 배열을 복사할 때, 값만 복사하고 싶거나 특정한 범위의 원소만 복사하고 싶을 때는 arraycopy라는 메소드를 사용하시면 됩니다. 사용 방법은 아래와 같습니다.</p>
+
+<p>System.arraycopy(복사할 배열, 복사할 배열의 시작 index, 복사 받을 배열, 복사 받을 배열의 시작 index, 복사할 원소의 수);</p>
+
+<p>다음은 arraycopy 메소드를 사용하여 배열 a 중 a[1] ~ a[3]의 값을 배열 b의 b[2] ~ b[4]에 복사하는 프로그램입니다.</p>
+
+<figure class="highlight"><pre><code class="language-java" data-lang="java"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+</pre></td><td class="code"><pre><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Main</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="nc">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+        <span class="kt">int</span> <span class="n">a</span><span class="o">[]</span> <span class="o">=</span> <span class="o">{</span><span class="mi">11</span><span class="o">,</span> <span class="mi">13</span><span class="o">,</span> <span class="mi">15</span><span class="o">,</span> <span class="mi">17</span><span class="o">,</span> <span class="mi">19</span><span class="o">,</span> <span class="mi">21</span><span class="o">,</span> <span class="mi">23</span><span class="o">};</span>
+        <span class="kt">int</span> <span class="n">b</span><span class="o">[]</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">int</span><span class="o">[</span><span class="n">a</span><span class="o">.</span><span class="na">length</span><span class="o">];</span>
+        <span class="kt">int</span> <span class="n">i</span><span class="o">;</span>
+
+        <span class="nc">System</span><span class="o">.</span><span class="na">arraycopy</span><span class="o">(</span><span class="n">a</span><span class="o">,</span> <span class="mi">1</span><span class="o">,</span> <span class="n">b</span><span class="o">,</span> <span class="mi">2</span><span class="o">,</span> <span class="mi">3</span><span class="o">);</span>
+
+        <span class="k">for</span> <span class="o">(</span><span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">a</span><span class="o">.</span><span class="na">length</span><span class="o">;</span> <span class="n">i</span><span class="o">++)</span> <span class="o">{</span>
+            <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">a</span><span class="o">[</span><span class="n">i</span><span class="o">]</span> <span class="o">+</span> <span class="s">" "</span> <span class="o">+</span> <span class="n">b</span><span class="o">[</span><span class="n">i</span><span class="o">]);</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</pre></td></tr></tbody></table></code></pre></figure>
+
+<p>Java에서는 1차원 배열 뿐만 아니라 다차원 배열을 선언할 수도 있습니다. 예를 들어, 2차원 배열을 사용하고 싶을 때는 아래와 같이 선언할 수 있습니다. 사용 방법은 1차원 배열과 크게 다르지 않으니 설명은 생략하도록 하겠습니다.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>int a[][] = new int[3][4];
+int [][] a = new int[3][4];
+int a[][] = {{10, 11, 12}, {20, 21, 22}, {30, 31, 32}, {40, 41, 42}};
+</code></pre></div></div>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> Tags: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/tags/#java" class="page__taxonomy-item p-category" rel="tag">java</a>
+    
+    </span>
+  </p>
+
+
+
+
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> Categories: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/categories/#studies" class="page__taxonomy-item p-category" rel="tag">studies</a>
+    
+    </span>
+  </p>
+
+
+        
+
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time class="dt-published" datetime="2020-05-23T00:00:00+09:00">May 23, 2020</time></p>
+
+      </footer>
+
+      <section class="page__share">
+  
+    <h4 class="page__share-title">Share on</h4>
+  
+
+  <a href="https://twitter.com/intent/tweet?text=Java+Programming+Basics+%282%29%20http%3A%2F%2Flocalhost%3A4000%2Fjava%2Fjava-programming-basics-2%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Fjava%2Fjava-programming-basics-2%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2Fjava%2Fjava-programming-basics-2%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+
+      
+  <nav class="pagination">
+    
+      <a href="/java/java-programming-basics-1/" class="pagination--pager" title="Java Programming Basics (1)
+">Previous</a>
+    
+    
+      <a href="/java/classes-variables-and-methods/" class="pagination--pager" title="Classes, Variables, and Methods
+">Next</a>
+    
+  </nav>
+
+    </div>
+
+    
+  </article>
+
+  
+  
+</div>
+
+    </div>
+
+    
+      <div class="search-content">
+        <div class="search-content__inner-wrap"><form class="search-content__form" onkeydown="return event.key != 'Enter';" role="search">
+    <label class="sr-only" for="search">
+      Enter your search term...
+    </label>
+    <input type="search" id="search" class="search-input" tabindex="-1" placeholder="Enter your search term..." />
+  </form>
+  <div id="results" class="results"></div></div>
+
+      </div>
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>Follow:</strong></li>
+    
+
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+
+    
+      <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2023 KEEPMIND All rights reserved. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    <script type="text/javascript" async
+   src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      extensions: ["tex2jax.js"],
+      jax: ["input/TeX", "output/HTML-CSS"],
+      tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+        displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+        processEscapes: true
+      },
+      "HTML-CSS": { availableFonts: ["TeX"] }
+    });
+</script>
+
+
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+<script src="/assets/js/lunr/lunr.min.js"></script>
+<script src="/assets/js/lunr/lunr-store.js"></script>
+<script src="/assets/js/lunr/lunr-en.js"></script>
+
+
+
+
+
+
+
+  </body>
+</html>
