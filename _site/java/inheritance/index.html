@@ -1,0 +1,1408 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.24.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>Inheritance - KEEPMIND</title>
+<meta name="description" content="Four Principles of Objected Oriented Programming">
+
+
+  <meta name="author" content="Joonsu Ryu">
+  
+  <meta property="article:author" content="Joonsu Ryu">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="KEEPMIND">
+<meta property="og:title" content="Inheritance">
+<meta property="og:url" content="http://localhost:4000/java/inheritance/">
+
+
+  <meta property="og:description" content="Four Principles of Objected Oriented Programming">
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2020-07-05T00:00:00+09:00">
+
+
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="http://localhost:4000/java/inheritance/">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "KEEPMIND",
+      "url": "http://localhost:4000/"
+    
+  }
+</script>
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="KEEPMIND Feed">
+
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css"></noscript>
+
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+<link rel="icon" type="image/png" sizes="16x16" href="/images/favicon.png">
+
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body class="layout--single wide">
+    <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+		<a class="site-title" href="http://localhost:4000/"><img src="/images/logo.png">
+        <!-- <a class="site-title" href="/">
+          KEEPMIND
+           -->
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="/">Home</a>
+            </li><li class="masthead__menu-item">
+              <a href="/cv/">CV</a>
+            </li><li class="masthead__menu-item">
+              <a href="/studies/">Studies</a>
+            </li><li class="masthead__menu-item">
+              <a href="/">Interests</a>
+            </li><li class="masthead__menu-item">
+              <a href="/">Travels</a>
+            </li></ul>
+        
+        <button class="search__toggle" type="button">
+          <span class="visually-hidden">Toggle search</span>
+          <i class="fas fa-search"></i>
+        </button>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person" class="h-card">
+
+  
+    <div class="author__avatar">
+      <!-- <a href="http://localhost:4000/"> -->
+        <img src="/images/profile.jpg" alt="Joonsu Ryu" itemprop="image" class="u-photo">
+      <!-- </a> -->
+    </div>
+  
+
+  <div class="author__content">
+    <h3 class="author__name p-name" itemprop="name">
+      <a class="u-url" rel="me" href="http://localhost:4000/" itemprop="url">Joonsu Ryu</a>
+    </h3>
+    
+      <div class="author__bio p-note" itemprop="description">
+        <p>Researcher</p>
+
+      </div>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">Follow</button>
+    <ul class="author__urls social-icons">
+      
+        <li itemprop="homeLocation" itemscope itemtype="https://schema.org/Place">
+          <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> <span itemprop="name" class="p-locality">Seoul, Korea</span>
+        </li>
+      
+
+      
+        
+          
+            <li><a href="mailto:jsryu@sogang.ac.kr" rel="nofollow noopener noreferrer me"><i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i><span class="label">E-mail</span></a></li>
+          
+        
+          
+            <li><a href="https://github.com/JoonsuRyu" rel="nofollow noopener noreferrer me" itemprop="sameAs"><i class="fab fa-fw fa-github" aria-hidden="true"></i><span class="label">GitHub</span></a></li>
+          
+        
+          
+            <li><a href="https://scholar.google.co.kr/citations?user=UmRh9NQAAAAJ" rel="nofollow noopener noreferrer me" itemprop="sameAs"><i class="fas fa-fw fa-graduation-cap" aria-hidden="true"></i><span class="label">Google Scholar</span></a></li>
+          
+        
+          
+            <li><a href="https://orcid.org/0000-0002-8848-1456" rel="nofollow noopener noreferrer me" itemprop="sameAs"><i class="fab fa-fw fa-orcid" aria-hidden="true"></i><span class="label">ORCID</span></a></li>
+          
+        
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer me">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+
+  
+  </div>
+
+
+
+  <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="Inheritance">
+    <meta itemprop="description" content="Four Principles of Objected Oriented Programming">
+    <meta itemprop="datePublished" content="2020-07-05T00:00:00+09:00">
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title p-name" itemprop="headline">
+            <a href="http://localhost:4000/java/inheritance/" class="u-url" itemprop="url">Inheritance
+</a>
+          </h1>
+          
+
+
+        </header>
+      
+
+      <section class="page__content e-content" itemprop="text">
+        
+          <aside class="sidebar__right sticky">
+            <nav class="toc">
+              <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> Table of Contents</h4></header>
+              <ul class="toc__menu"><li><a href="#four-principles-of-objected-oriented-programming">Four Principles of Objected Oriented Programming</a></li><li><a href="#extending-a-class">Extending a Class</a></li><li><a href="#method-overriding">Method Overriding</a><ul><li><a href="#override">@Override</a></li></ul></li><li><a href="#creating-a-subclass">Creating a Subclass</a></li><li><a href="#dynamic-method-lookup">Dynamic Method Lookup</a></li><li><a href="#final-method">Final Method</a></li><li><a href="#final-class">Final Class</a></li><li><a href="#abstract-method-and-abstract-class">Abstract Method and Abstract Class</a></li><li><a href="#superclass-and-interface">Superclass and Interface</a></li><li><a href="#class-object--superclass-of-all-classes">class Object : Superclass of all classes</a></li></ul>
+
+            </nav>
+          </aside>
+        
+        <h2 id="four-principles-of-objected-oriented-programming">Four Principles of Objected Oriented Programming</h2>
+
+<p>지난 시간에 객체 지향 프로그래밍에서의 4가지 요소인 캡슐화, 추상화, 상속, 다형성을 소개하고, 그 중 하나인 추상화에 대해 자세히 알아보았습니다. Java 언어에서 추상화는 인터페이스를 통해 구현되어, 인터페이스의 사용법과 그 응용법을 다뤘습니다.</p>
+
+<p>오늘은 4가지 요소 중 하나인 상속에 대해 배우게 됩니다. 상속은 이전 챕터에서 설명드린바와 같이 두 객체간의 관계를 정의하는 것입니다. 그렇기 때문에 객체 A와 객체 B의 관계를 영어로는 A is a B 또는 A has a B 같이 표현할 수 있는데, 이런 이유로 상속은 “is-a” 또는 “has-a” 관계라고 불리기도 합니다.</p>
+
+<p>Java에서 상속은 이미 구현되어 있는 클래스의 인스턴스 변수와 메소드를 새로운 클래스에 이어받아 구현하는 것을 말합니다.</p>
+
+<h2 id="extending-a-class">Extending a Class</h2>
+
+<p>Java에서 상속을 사용하는 방법은 클래스 정의 뒤에 extends (상속받을 클래스 이름)을 붙이면 됩니다. 예를 들어, class B extends A라고 정의하게 되면 클래스 B는 클래스 A를 상속받아 만들어지는 클래스라는 뜻입니다. 구체적인 사용 방법을 보여드리기 위해 아래와 같이 간단한 예제 프로그램을 만들어 봤습니다.</p>
+
+<figure class="highlight"><pre><code class="language-java" data-lang="java"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+</pre></td><td class="code"><pre><span class="kd">class</span> <span class="nc">Employee</span> <span class="o">{</span>
+    <span class="kd">private</span> <span class="nc">String</span> <span class="n">name</span><span class="o">;</span>
+    <span class="kd">private</span> <span class="kt">int</span> <span class="n">salary</span><span class="o">;</span>
+    <span class="kd">public</span> <span class="nf">Employee</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">name</span> <span class="o">=</span> <span class="s">"NoName"</span><span class="o">;</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">salary</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>
+    <span class="o">}</span>
+    <span class="kd">public</span> <span class="nc">String</span> <span class="nf">getName</span><span class="o">()</span> <span class="o">{</span> <span class="k">return</span> <span class="k">this</span><span class="o">.</span><span class="na">name</span><span class="o">;</span> <span class="o">}</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">setName</span><span class="o">(</span><span class="nc">String</span> <span class="n">name</span><span class="o">)</span> <span class="o">{</span> <span class="k">this</span><span class="o">.</span><span class="na">name</span> <span class="o">=</span> <span class="n">name</span><span class="o">;</span> <span class="o">}</span>
+    <span class="kd">public</span> <span class="kt">int</span> <span class="nf">getSalary</span><span class="o">()</span> <span class="o">{</span> <span class="k">return</span> <span class="k">this</span><span class="o">.</span><span class="na">salary</span><span class="o">;</span> <span class="o">}</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">setSalary</span><span class="o">(</span><span class="kt">int</span> <span class="n">salary</span><span class="o">)</span> <span class="o">{</span> <span class="k">this</span><span class="o">.</span><span class="na">salary</span> <span class="o">=</span> <span class="n">salary</span><span class="o">;</span> <span class="o">}</span>
+<span class="o">}</span>
+
+<span class="kd">class</span> <span class="nc">Manager</span> <span class="kd">extends</span> <span class="nc">Employee</span> <span class="o">{</span>
+    <span class="kd">private</span> <span class="kt">int</span> <span class="n">bonus</span><span class="o">;</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">setBonus</span><span class="o">(</span><span class="kt">int</span> <span class="n">bonus</span><span class="o">)</span> <span class="o">{</span> <span class="k">this</span><span class="o">.</span><span class="na">bonus</span> <span class="o">=</span> <span class="n">bonus</span><span class="o">;</span> <span class="o">}</span>
+<span class="o">}</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Main</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="nc">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+        <span class="nc">Manager</span> <span class="n">m</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Manager</span><span class="o">();</span>
+        <span class="n">m</span><span class="o">.</span><span class="na">setName</span><span class="o">(</span><span class="s">"Duvelix"</span><span class="o">);</span>
+        <span class="n">m</span><span class="o">.</span><span class="na">setSalary</span><span class="o">(</span><span class="mi">5000</span><span class="o">);</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">m</span><span class="o">.</span><span class="na">getName</span><span class="o">()</span> <span class="o">+</span> <span class="s">" "</span> <span class="o">+</span> <span class="n">m</span><span class="o">.</span><span class="na">getSalary</span><span class="o">());</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</pre></td></tr></tbody></table></code></pre></figure>
+
+<p>Inheritance 프로그램은 Employee 클래스를 상속받아 새로운 클래스인 Manager 클래스를 정의하고 있습니다. main 메소드를 보시면 Manager 클래스에서 정의하지 않은 setName과 setSalary 메소드를 호출하는데, 이는 Manager 클래스가 Employee의 모든 인스턴스 변수와 메소드를 상속받았기 때문입니다. 이렇게 상속은 기존에 정의한 클래스를 확장시켜 새로운 클래스를 정의하는 방식으로 사용됩니다.</p>
+
+<p>Employee 클래스와 같이 상속을 해준 클래스는 슈퍼 클래스(Superclass)라고 부르고, Manager 클래스와 같이 상속을 받은 클래스는 서브 클래스(Subclass)라고 부릅니다.</p>
+
+<h2 id="method-overriding">Method Overriding</h2>
+
+<p>방금 Java에서 상속을 사용하는 방법을 배웠는데, 이렇게 상속을 사용할 때 슈퍼 클래스의 메소드를 서브 클래스에서 수정하고 싶은 상황이 생길 수 있습니다. 이런 경우에는 서브 클래스에서 슈퍼 클래스에서 정의한 메소드를 재정의할 수 있는데, 이를 메소드 오버라이딩(Method Overriding)이라고 합니다.</p>
+
+<p>메소드 오버라이딩을 할 때는 반드시 메소드의 이름과 매개변수가 동일해야 합니다. 그렇기 때문에 서브 클래스에서 오버라이딩을 할 때, 슈퍼 클래스의 해당 메소드를 호출하고 싶다면 super라는 접두사를 붙여야합니다. 이름이 동일하기 때문에 메소드 이름만 보고서는 어떤 메소드인지 구분되지 않기 때문입니다. 아래 예제를 통해 오버라이딩을 구체적으로 알아보겠습니다.</p>
+
+<figure class="highlight"><pre><code class="language-java" data-lang="java"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+</pre></td><td class="code"><pre><span class="kd">class</span> <span class="nc">Employee</span> <span class="o">{</span>
+    <span class="kd">private</span> <span class="nc">String</span> <span class="n">name</span><span class="o">;</span>
+    <span class="kd">private</span> <span class="kt">int</span> <span class="n">salary</span><span class="o">;</span>
+    <span class="kd">public</span> <span class="nf">Employee</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">name</span> <span class="o">=</span> <span class="s">"NoName"</span><span class="o">;</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">salary</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>
+    <span class="o">}</span>
+    <span class="kd">public</span> <span class="nc">String</span> <span class="nf">getName</span><span class="o">()</span> <span class="o">{</span> <span class="k">return</span> <span class="k">this</span><span class="o">.</span><span class="na">name</span><span class="o">;</span> <span class="o">}</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">setName</span><span class="o">(</span><span class="nc">String</span> <span class="n">name</span><span class="o">)</span> <span class="o">{</span> <span class="k">this</span><span class="o">.</span><span class="na">name</span> <span class="o">=</span> <span class="n">name</span><span class="o">;</span> <span class="o">}</span>
+    <span class="kd">public</span> <span class="kt">int</span> <span class="nf">getSalary</span><span class="o">()</span> <span class="o">{</span> <span class="k">return</span> <span class="k">this</span><span class="o">.</span><span class="na">salary</span><span class="o">;</span> <span class="o">}</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">setSalary</span><span class="o">(</span><span class="kt">int</span> <span class="n">salary</span><span class="o">)</span> <span class="o">{</span> <span class="k">this</span><span class="o">.</span><span class="na">salary</span> <span class="o">=</span> <span class="n">salary</span><span class="o">;</span> <span class="o">}</span>
+<span class="o">}</span>
+
+<span class="kd">class</span> <span class="nc">Manager</span> <span class="kd">extends</span> <span class="nc">Employee</span> <span class="o">{</span>
+    <span class="kd">private</span> <span class="kt">int</span> <span class="n">bonus</span><span class="o">;</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">setBonus</span><span class="o">(</span><span class="kt">int</span> <span class="n">bonus</span><span class="o">)</span> <span class="o">{</span> <span class="k">this</span><span class="o">.</span><span class="na">bonus</span> <span class="o">=</span> <span class="n">bonus</span><span class="o">;</span> <span class="o">}</span>
+    <span class="kd">public</span> <span class="kt">int</span> <span class="nf">getSalary</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="kd">super</span><span class="o">.</span><span class="na">getSalary</span><span class="o">()</span> <span class="o">+</span> <span class="n">bonus</span><span class="o">;</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Main</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="nc">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+        <span class="nc">Manager</span> <span class="n">m</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Manager</span><span class="o">();</span>
+        <span class="n">m</span><span class="o">.</span><span class="na">setName</span><span class="o">(</span><span class="s">"Duvelix"</span><span class="o">);</span>
+        <span class="n">m</span><span class="o">.</span><span class="na">setSalary</span><span class="o">(</span><span class="mi">5000</span><span class="o">);</span>
+        <span class="n">m</span><span class="o">.</span><span class="na">setBonus</span><span class="o">(</span><span class="mi">1000</span><span class="o">);</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">m</span><span class="o">.</span><span class="na">getName</span><span class="o">()</span> <span class="o">+</span> <span class="s">" "</span> <span class="o">+</span> <span class="n">m</span><span class="o">.</span><span class="na">getSalary</span><span class="o">());</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</pre></td></tr></tbody></table></code></pre></figure>
+
+<p>이전과 마찬가지로 Manager 클래스는 Employee 클래스로부터 상속받아 만든 클래스입니다. 다른 점은 Employee 클래스에서 정의했던 getSalary 메소드를 Manager 클래스에서 재정의했다는 것입니다. 이 때 Manager 클래스의 getSalary 메소드에서는 Employee 클래스의 getSalary 메소드를 호출하는데, 이를 구분하기 위해 앞에 super라는 접두사를 붙인 것을 확인할 수 있습니다. 즉, 이를 해석하면 Manager 클래스의 getSalary 메소드는 Employee 클래스의 getSalary 메소드를 호출하여 이것과 bonus의 값을 더한 후 반환하게 됩니다.</p>
+
+<p>이 과정을 보고 “그냥 인스턴스 변수 salary를 호출해서 사용하면 되는 것 아닌가?”라는 의문이 생길 수도 있습니다. 하지만 이는 불가능한 것이, salary는 접근지정자 private로 정의되었기 때문입니다. private로 정의된 인스턴스 변수는 정의한 클래스에서만 접근할 수 있습니다. 만약 인스턴스 변수 salary를 서브 클래스에서도 호출이 가능하도록 정의하고 싶다면, public이나 protected로 정의해야 합니다. 접근지정자에 대해서는 아래의 포스트에서 더 자세히 다루고 있습니다.</p>
+
+<ul>
+  <li>[Java] 5. Classes, Variables, and Methods</li>
+</ul>
+
+<h3 id="override">@Override</h3>
+
+<p>메소드 오버라이딩을 할 때 가끔 메소드의 매개변수를 변경한다던가 하는 실수를 할 때가 있습니다. 이런 경우에는 당연히 오버라이딩이 되지 않는데, 문제는 이것이 문법상 오류가 아니기 때문에 실수를 하더라도 눈치채기가 어렵습니다. 컴파일러 입장에서는 그저 이름만 같을 뿐 완전히 다른 메소드로 인식하기 때문입니다. 따라서 프로그래머의 의도대로 오버라이딩이 제대로 이루어졌는지 확인하는 방법이 있는데, 오버라이딩이 된 메소드 위에 @Override라는 명령어를 삽입하는 것입니다. 만약 이 명령어를 사용하고 오버라이딩이 일어나지 않는다면, 컴파일러가 오류로 인식하기 때문에 가급적이면 오버라이딩을 사용할때는 꼭 붙여주시는 것이 좋습니다.</p>
+
+<p>아래의 프로그램은 @Override 명령어를 사용하여 오버라이딩이 일어나지 않는 상황에서 컴파일 에러가 일어나도록 만든 예제입니다. 아래 프로그램에서 @Override 명령어만 삭제한다면 컴파일 에러가 발생하지 않는 것을 확인할 수 있습니다.</p>
+
+<figure class="highlight"><pre><code class="language-java" data-lang="java"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+</pre></td><td class="code"><pre><span class="kd">class</span> <span class="nc">Employee</span> <span class="o">{</span>
+    <span class="kd">private</span> <span class="nc">String</span> <span class="n">name</span><span class="o">;</span>
+    <span class="kd">protected</span> <span class="nc">Employee</span> <span class="n">supervisor</span><span class="o">;</span>
+    <span class="kd">public</span> <span class="nf">Employee</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">name</span> <span class="o">=</span> <span class="s">"NoName"</span><span class="o">;</span>
+    <span class="o">}</span>
+    <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">worksFor</span><span class="o">(</span><span class="nc">Employee</span> <span class="n">supervisor</span><span class="o">)</span> <span class="o">{</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"Employee.worksFor"</span><span class="o">);</span>
+        <span class="k">return</span> <span class="o">(</span><span class="k">this</span><span class="o">.</span><span class="na">supervisor</span> <span class="o">==</span> <span class="n">supervisor</span><span class="o">);</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+<span class="kd">class</span> <span class="nc">Manager</span> <span class="kd">extends</span> <span class="nc">Employee</span> <span class="o">{</span>
+    <span class="nd">@Override</span> <span class="c1">// Compile Error</span>
+    <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">worksFor</span><span class="o">(</span><span class="nc">Manager</span> <span class="n">supervisor</span><span class="o">)</span> <span class="o">{</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"Manager.worksFor"</span><span class="o">);</span>
+        <span class="k">return</span> <span class="o">(</span><span class="k">this</span><span class="o">.</span><span class="na">supervisor</span> <span class="o">==</span> <span class="n">supervisor</span><span class="o">);</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Main</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="nc">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+        <span class="kt">boolean</span> <span class="n">rv</span><span class="o">;</span>
+        <span class="nc">Manager</span> <span class="n">m</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Manager</span><span class="o">();</span>
+        <span class="nc">Manager</span> <span class="n">n</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Manager</span><span class="o">();</span>
+        <span class="nc">Employee</span> <span class="n">e</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Employee</span><span class="o">();</span>
+        <span class="n">rv</span> <span class="o">=</span> <span class="n">m</span><span class="o">.</span><span class="na">worksFor</span><span class="o">(</span><span class="n">n</span><span class="o">);</span>
+        <span class="n">rv</span> <span class="o">=</span> <span class="n">m</span><span class="o">.</span><span class="na">worksFor</span><span class="o">(</span><span class="n">e</span><span class="o">);</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</pre></td></tr></tbody></table></code></pre></figure>
+
+<p>주의할 점은, 메소드 오버라이딩을 할 때 반환 자료형(Return Type)은 변경할 수 있습니다. 위의 프로그램을 조금 수정해서 반환 자료형만 다르게 만들어주면, 컴파일 에러 없이 정상적으로 작동하는 것을 알 수 있습니다.</p>
+
+<figure class="highlight"><pre><code class="language-java" data-lang="java"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+</pre></td><td class="code"><pre><span class="kd">class</span> <span class="nc">Employee</span> <span class="o">{</span>
+    <span class="kd">private</span> <span class="nc">String</span> <span class="n">name</span><span class="o">;</span>
+    <span class="kd">protected</span> <span class="nc">Employee</span> <span class="n">supervisor</span><span class="o">;</span>
+    <span class="kd">public</span> <span class="nf">Employee</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">name</span> <span class="o">=</span> <span class="s">"NoName"</span><span class="o">;</span>
+    <span class="o">}</span>
+    <span class="kd">public</span> <span class="nc">Employee</span> <span class="nf">getSupervisor</span><span class="o">()</span> <span class="o">{</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"Employee"</span><span class="o">);</span>
+        <span class="k">return</span> <span class="n">supervisor</span><span class="o">;</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+<span class="kd">class</span> <span class="nc">Manager</span> <span class="kd">extends</span> <span class="nc">Employee</span> <span class="o">{</span>
+    <span class="nd">@Override</span>  <span class="c1">// OK</span>
+    <span class="kd">public</span> <span class="nc">Manager</span> <span class="nf">getSupervisor</span><span class="o">()</span> <span class="o">{</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"Manager"</span><span class="o">);</span>
+        <span class="k">return</span> <span class="o">(</span><span class="nc">Manager</span><span class="o">)</span><span class="n">supervisor</span><span class="o">;</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Main</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="nc">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+        <span class="nc">Manager</span> <span class="n">m</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Manager</span><span class="o">();</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">m</span><span class="o">.</span><span class="na">getSupervisor</span><span class="o">());</span>
+        <span class="nc">Employee</span> <span class="n">e</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Employee</span><span class="o">();</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">e</span><span class="o">.</span><span class="na">getSupervisor</span><span class="o">());</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</pre></td></tr></tbody></table></code></pre></figure>
+
+<p>또 한가지 주의할 점으로는 슈퍼 클래스의 메소드를 오버라이딩 할 때, 서브 클래스에서 재정의한 메소드의 접근 지정자는 슈퍼 클래스에서 정의한 메소드보다 더 접근성이 높아야 합니다. 무슨 말인가 하면, 먼저 아래 예제 프로그램을 먼저 보여드리겠습니다.</p>
+
+<figure class="highlight"><pre><code class="language-java" data-lang="java"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+</pre></td><td class="code"><pre><span class="kd">class</span> <span class="nc">Employee</span> <span class="o">{</span>
+    <span class="kd">private</span> <span class="nc">String</span> <span class="n">name</span><span class="o">;</span>
+    <span class="kd">protected</span> <span class="nc">Employee</span> <span class="n">supervisor</span><span class="o">;</span>
+    <span class="kd">public</span> <span class="nf">Employee</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">name</span> <span class="o">=</span> <span class="s">"NoName"</span><span class="o">;</span>
+    <span class="o">}</span>
+    <span class="kd">public</span> <span class="nc">Employee</span> <span class="nf">getSupervisor</span><span class="o">()</span> <span class="o">{</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"Employee"</span><span class="o">);</span>
+        <span class="k">return</span> <span class="n">supervisor</span><span class="o">;</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+<span class="kd">class</span> <span class="nc">Manager</span> <span class="kd">extends</span> <span class="nc">Employee</span> <span class="o">{</span>
+    <span class="nd">@Override</span>
+    <span class="kd">protected</span> <span class="nc">Manager</span> <span class="nf">getSupervisor</span><span class="o">()</span> <span class="o">{</span> <span class="c1">// Compile Error</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"Manager"</span><span class="o">);</span>
+        <span class="k">return</span> <span class="o">(</span><span class="nc">Manager</span><span class="o">)</span><span class="n">supervisor</span><span class="o">;</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Main</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="nc">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+        <span class="nc">Manager</span> <span class="n">m</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Manager</span><span class="o">();</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">m</span><span class="o">.</span><span class="na">getSupervisor</span><span class="o">());</span>
+        <span class="nc">Employee</span> <span class="n">e</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Employee</span><span class="o">();</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">e</span><span class="o">.</span><span class="na">getSupervisor</span><span class="o">());</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</pre></td></tr></tbody></table></code></pre></figure>
+
+<p>OverrideAccessibility 프로그램에서는 Employee 클래스에서는 getSupervisor 메소드를 public으로 선언하고, 상속받은 Manager 클래스에서는 getSupervisor 메소드를 protected로 선언하였습니다. 접근지정자 protected는 public에 비해 접근할 수 있는 위치가 더 적으므로, 컴파일 에러가 발생하게 됩니다. 접근지정자의 범위 순서는 private &lt; (없음) &lt; protected &lt; public 입니다.</p>
+
+<h2 id="creating-a-subclass">Creating a Subclass</h2>
+
+<p>클래스에 대한 객체를 생성할 때, 해당 클래스의 생성자가 같이 실행된다는 것을 이미 배웠습니다. 그런데 상속 받은 클래스에 대한 객체를 생성한다면, 해당 클래스의 생성자 뿐만 아니라 상속을 해준 클래스의 생성자도 같이 실행됩니다. 이는 아래와 같은 간단한 프로그램으로 확인할 수 있습니다.</p>
+
+<figure class="highlight"><pre><code class="language-java" data-lang="java"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+</pre></td><td class="code"><pre><span class="kd">class</span> <span class="nc">SuperClass</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="nf">SuperClass</span><span class="o">()</span> <span class="o">{</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"SuperClass Constructor"</span><span class="o">);</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+
+<span class="kd">class</span> <span class="nc">SubClass</span> <span class="kd">extends</span> <span class="nc">SuperClass</span><span class="o">{</span>
+    <span class="kd">public</span> <span class="nf">SubClass</span><span class="o">()</span> <span class="o">{</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"SubClass Constructor"</span><span class="o">);</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Main</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="nc">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+        <span class="nc">SubClass</span> <span class="n">obj</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">SubClass</span><span class="o">();</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</pre></td></tr></tbody></table></code></pre></figure>
+
+<p>InheritanceConstructor 프로그램의 main 메소드에서 SubClass 클래스의 객체 obj를 생성하는데, 이 과정에서 SuperClass의 생성자가 먼저 실행되고, 그 다음에 SubClass의 생성자가 실행되는 것을 확인할 수 있습니다.</p>
+
+<p>만약 이 과정을 명시적으로 표현하고 싶다면 super()명령어를 사용하시면 됩니다. 다음 예제에서는 서브 클래스의 생성자에서 슈퍼 클래스의 생성자를 명시적으로 호출한 예시입니다.</p>
+
+<figure class="highlight"><pre><code class="language-java" data-lang="java"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+</pre></td><td class="code"><pre><span class="kd">class</span> <span class="nc">SuperClass</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="nf">SuperClass</span><span class="o">()</span> <span class="o">{</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"SuperClass Constructor"</span><span class="o">);</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+
+<span class="kd">class</span> <span class="nc">SubClass</span> <span class="kd">extends</span> <span class="nc">SuperClass</span><span class="o">{</span>
+    <span class="kd">public</span> <span class="nf">SubClass</span><span class="o">()</span> <span class="o">{</span>
+        <span class="kd">super</span><span class="o">();</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"SubClass Constructor"</span><span class="o">);</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Main</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="nc">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+        <span class="nc">SubClass</span> <span class="n">obj</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">SubClass</span><span class="o">();</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</pre></td></tr></tbody></table></code></pre></figure>
+
+<p>주의하실 점으로 슈퍼 클래스의 생성자를 명시적으로 호출 할 때는, 반드시 서브 클래스 생성자의 첫 줄에만 작성해야 한다는 것입니다. 그렇지 않은 경우에는 컴파일 에러가 발생합니다.</p>
+
+<p>만약 생성자에 매개변수가 있을 경우, 매개변수 또한 기입해주어야 합니다. 하지만 매개변수가 있는 생성자만 있고, 일반적인 생성자가 없을 경우에는 반드시 명시적으로 super()를 사용하여 호출해주어야 합니다. 아래 프로그램은 super() 부분을 주석으로 처리했기 때문에 컴파일 에러가 발생합니다.</p>
+
+<figure class="highlight"><pre><code class="language-java" data-lang="java"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+</pre></td><td class="code"><pre><span class="kd">class</span> <span class="nc">SuperClass</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="nf">SuperClass</span><span class="o">(</span><span class="kt">int</span> <span class="n">a</span><span class="o">,</span> <span class="kt">int</span> <span class="n">b</span><span class="o">)</span> <span class="o">{</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"SuperClass Constructor"</span><span class="o">);</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+
+<span class="kd">class</span> <span class="nc">SubClass</span> <span class="kd">extends</span> <span class="nc">SuperClass</span><span class="o">{</span>
+    <span class="kd">public</span> <span class="nf">SubClass</span><span class="o">()</span> <span class="o">{</span>
+        <span class="c1">//super(10, 20);  // Must NEED</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"SubClass Constructor"</span><span class="o">);</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Main</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="nc">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+        <span class="nc">SubClass</span> <span class="n">obj</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">SubClass</span><span class="o">();</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</pre></td></tr></tbody></table></code></pre></figure>
+
+<h2 id="dynamic-method-lookup">Dynamic Method Lookup</h2>
+
+<p>인터페이스와 비슷하게, 슈퍼 클래스형으로 선언된 객체에 서브 클래스형 객체를 대입할 수 있습니다. 만약 이 상태에서 서브 클래스에서 메소드 오버라이딩이 된 메소드를 호출하게 되면, 슈퍼 클래스에서 정의한 메소드가 호출될까요, 아니면 서브 클래스에서 재정의한 메소드가 호출될까요? 정답은 아래 예제를 통해 확인해보도록 하겠습니다.</p>
+
+<figure class="highlight"><pre><code class="language-java" data-lang="java"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+</pre></td><td class="code"><pre><span class="kd">class</span> <span class="nc">SuperClass</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">fun1</span><span class="o">()</span> <span class="o">{</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"SuperClass fun1"</span><span class="o">);</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+
+<span class="kd">class</span> <span class="nc">SubClass</span> <span class="kd">extends</span> <span class="nc">SuperClass</span><span class="o">{</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">fun1</span><span class="o">()</span> <span class="o">{</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"SubClass fun1"</span><span class="o">);</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Main</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="nc">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+        <span class="nc">SubClass</span> <span class="n">obj</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">SubClass</span><span class="o">();</span>
+        <span class="nc">SuperClass</span> <span class="n">obj2</span> <span class="o">=</span> <span class="n">obj</span><span class="o">;</span>
+        <span class="n">obj2</span><span class="o">.</span><span class="na">fun1</span><span class="o">();</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</pre></td></tr></tbody></table></code></pre></figure>
+
+<p>실행 결과를 보면 슈퍼 클래스형으로 선언된 객체라도 서브 클래스형 객체를 대입하면 서브 클래스의 메소드가 호출됨을 알 수 있습니다. 이것을 동적 메소드 탐색(Dynamic Method Lookup)이라 부릅니다.</p>
+
+<p>동적 메소드 탐색을 잘못 사용하여도 JVM에서는 런타임 때 수행하기 때문에, 일반적으로 컴파일 에러는 거의 발생하지 않습니다. 하지만 아래와 같이 서브 클래스에서만 정의된 메소드를 슈퍼 클래스로 정의된 객체에 사용할 때는 컴파일 에러가 발생하게 됩니다.</p>
+
+<figure class="highlight"><pre><code class="language-java" data-lang="java"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+</pre></td><td class="code"><pre><span class="kd">class</span> <span class="nc">SuperClass</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">fun1</span><span class="o">()</span> <span class="o">{</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"SuperClass fun1"</span><span class="o">);</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+
+<span class="kd">class</span> <span class="nc">SubClass</span> <span class="kd">extends</span> <span class="nc">SuperClass</span><span class="o">{</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">fun1</span><span class="o">()</span> <span class="o">{</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"SubClass fun1"</span><span class="o">);</span>
+    <span class="o">}</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">fun2</span><span class="o">()</span> <span class="o">{</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"SubClass fun2"</span><span class="o">);</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Main</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="nc">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+        <span class="nc">SubClass</span> <span class="n">obj</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">SubClass</span><span class="o">();</span>
+        <span class="nc">SuperClass</span> <span class="n">obj2</span> <span class="o">=</span> <span class="n">obj</span><span class="o">;</span>
+        <span class="n">obj2</span><span class="o">.</span><span class="na">fun2</span><span class="o">();</span>    <span class="c1">// Compile Error</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</pre></td></tr></tbody></table></code></pre></figure>
+
+<p>만약 이 컴파일 에러를 없애고 싶다면 instanceof 명령어와 간접적인 메소드 호출을 사용하시면 됩니다. LookupError.java 프로그램을 이렇게 수정한다면 아래와 같습니다.</p>
+
+<figure class="highlight"><pre><code class="language-java" data-lang="java"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+</pre></td><td class="code"><pre><span class="kd">class</span> <span class="nc">SuperClass</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">fun1</span><span class="o">()</span> <span class="o">{</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"SuperClass fun1"</span><span class="o">);</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+
+<span class="kd">class</span> <span class="nc">SubClass</span> <span class="kd">extends</span> <span class="nc">SuperClass</span><span class="o">{</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">fun1</span><span class="o">()</span> <span class="o">{</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"SubClass fun1"</span><span class="o">);</span>
+    <span class="o">}</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">fun2</span><span class="o">()</span> <span class="o">{</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"SubClass fun2"</span><span class="o">);</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Main</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="nc">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+        <span class="nc">SubClass</span> <span class="n">obj</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">SubClass</span><span class="o">();</span>
+        <span class="nc">SuperClass</span> <span class="n">obj2</span> <span class="o">=</span> <span class="n">obj</span><span class="o">;</span>
+        <span class="k">if</span><span class="o">(</span><span class="n">obj2</span> <span class="k">instanceof</span> <span class="nc">SubClass</span><span class="o">)</span> <span class="o">{</span>
+            <span class="nc">SubClass</span> <span class="n">obj3</span> <span class="o">=</span> <span class="o">(</span><span class="nc">SubClass</span><span class="o">)</span> <span class="n">obj2</span><span class="o">;</span>
+            <span class="n">obj3</span><span class="o">.</span><span class="na">fun2</span><span class="o">();</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</pre></td></tr></tbody></table></code></pre></figure>
+
+<h2 id="final-method">Final Method</h2>
+
+<p>인스턴스 변수에 final 접두사를 붙이면 해당 인스턴스 변수는 프로그램 내에서 수정이 불가능하다고 배웠습니다. 이와 마찬가지로 메소드에도 final 접두사를 붙일 수 있는데, 기능 역시 비슷합니다. final 접두사를 붙이게 되면 해당 메소드는 오버라이딩이 불가능하게 됩니다.</p>
+
+<p>final 접두사가 붙은 메소드를 오버라이딩 하려고 시도하면 아래처럼 컴파일 에러가 발생합니다.</p>
+
+<figure class="highlight"><pre><code class="language-java" data-lang="java"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+</pre></td><td class="code"><pre><span class="kd">class</span> <span class="nc">SuperClass</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kd">final</span> <span class="kt">void</span> <span class="nf">fun1</span><span class="o">()</span> <span class="o">{</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"SuperClass fun1"</span><span class="o">);</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+
+<span class="kd">class</span> <span class="nc">SubClass</span> <span class="kd">extends</span> <span class="nc">SuperClass</span><span class="o">{</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">fun1</span><span class="o">()</span> <span class="o">{</span>    <span class="c1">// Compile Error</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"SubClass fun1"</span><span class="o">);</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Main</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="nc">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+        <span class="nc">SubClass</span> <span class="n">obj</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">SubClass</span><span class="o">();</span>
+        <span class="n">obj</span><span class="o">.</span><span class="na">fun1</span><span class="o">();</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</pre></td></tr></tbody></table></code></pre></figure>
+
+<p>라이브러리에 구현된 메소드 중 final로 선언된 메소드의 예로는 getClass 메소드가 있습니다.</p>
+
+<h2 id="final-class">Final Class</h2>
+
+<p>인스턴스 변수나 메소드와 마찬가지로 클래스 또한 final 접두사를 붙일 수 있습니다. 기능은 역시 비슷하게 final로 선언된 클래스는 상속하는 것 자체가 불가능하게 됩니다. 상속을 시도하게 되면 역시 아래와 같이 컴파일 에러가 발생합니다.</p>
+
+<figure class="highlight"><pre><code class="language-java" data-lang="java"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+</pre></td><td class="code"><pre><span class="kd">final</span> <span class="kd">class</span> <span class="nc">SuperClass</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">fun1</span><span class="o">()</span> <span class="o">{</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"SuperClass fun1"</span><span class="o">);</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+
+<span class="kd">class</span> <span class="nc">SubClass</span> <span class="kd">extends</span> <span class="nc">SuperClass</span><span class="o">{</span>      <span class="c1">// Compile Error</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">fun1</span><span class="o">()</span> <span class="o">{</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"SubClass fun1"</span><span class="o">);</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Main</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="nc">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+        <span class="nc">SubClass</span> <span class="n">obj</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">SubClass</span><span class="o">();</span>
+        <span class="n">obj</span><span class="o">.</span><span class="na">fun1</span><span class="o">();</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</pre></td></tr></tbody></table></code></pre></figure>
+
+<p>라이브러리에 구현된 클래스 중 final로 선언된 클래스의 예로는 String 클래스가 있습니다.</p>
+
+<h2 id="abstract-method-and-abstract-class">Abstract Method and Abstract Class</h2>
+
+<p>클래스나 메소드를 정의할 때, abstract 접두사를 붙이게 되면 구현을 하지 않고 선언만 해 둔채로 남겨둘 수 있습니다. 이런 클래스나 메소드를 추상 클래스(Abstract Class), 추상 메소드(Abstract Method)라고 부릅니다. C언어에서 함수의 프로토타입을 코드 위쪽에 미리 정의해두는 것과 비슷합니다. 보통 슈퍼 클래스에서는 선언만 해 두고, 서브 클래스에서 상속받아 구현을 할 때 사용합니다.</p>
+
+<p>추상 클래스는 지난 시간에 다룬 인터페이스와 유사하다고 볼 수 있습니다. 추상 클래스와 인터페이스의 차이점은 인스턴스 변수와 생성자를 포함할 수 있냐 없냐의 차이입니다. 추상 클래스에서는 둘 다 포함할 수 있지만, 인터페이스에서는 둘 다 포함할 수 없습니다.</p>
+
+<p>추상 클래스는 인터페이스와 마찬가지로 구현이 되지 않은 클래스이기 때문에, 추상 클래스로 객체를 선언할 수 없습니다. 다만 추상 클래스로 객체를 선언한 후, 추상 클래스의 서브 클래스를 대입하는 것은 가능합니다. 아래 프로그램에서는 컴파일 에러가 발생하는 부분과 정상적인 부분을 비교해서 주석으로 표시했습니다.</p>
+
+<figure class="highlight"><pre><code class="language-java" data-lang="java"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+</pre></td><td class="code"><pre><span class="kd">abstract</span> <span class="kd">class</span> <span class="nc">SuperClass</span> <span class="o">{</span>
+    <span class="kd">private</span> <span class="kt">int</span> <span class="n">number</span><span class="o">;</span>
+    <span class="kd">public</span> <span class="kd">abstract</span> <span class="kt">void</span> <span class="nf">fun1</span><span class="o">();</span>
+<span class="o">}</span>
+
+<span class="kd">class</span> <span class="nc">SubClass</span> <span class="kd">extends</span> <span class="nc">SuperClass</span> <span class="o">{</span>
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">fun1</span><span class="o">(){</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"SubClass fun1"</span><span class="o">);</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Main</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="nc">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+        <span class="c1">//SuperClass obj = new SuperClass(); // Causes a Compile Error</span>
+        <span class="nc">SuperClass</span> <span class="n">obj</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">SubClass</span><span class="o">();</span>
+        <span class="n">obj</span><span class="o">.</span><span class="na">fun1</span><span class="o">();</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</pre></td></tr></tbody></table></code></pre></figure>
+
+<h2 id="superclass-and-interface">Superclass and Interface</h2>
+
+<p>인터페이스는 하나만 넘겨받을 수도 있지만, 여러 개의 인터페이스를 하나의 클래스에 넘겨받는 것도 가능합니다. 하지만 상속은 오로지 단 하나의 클래스만 상속받을 수 있습니다. 이 것은 객체 지향 프로그래밍 언어마다 다른데, C++에서는 다중 상속(Multiple Inheritance)을 지원하지만 Java에서는 지원하지 않습니다. 이것은 Java에서 누락한 것이 아니라 “고의적으로” 다중 상속을 제한한 것입니다.</p>
+
+<p>이렇게 고의적으로 다중 상속이 불가능하게 만든 이유는 “죽음의 다이아몬드(The Deadly Diamond of Death)”라는 문제 때문입니다. 이 문제가 왜 발생하는지는 다음 프로그램을 통해 살펴보도록 하겠습니다.</p>
+
+<figure class="highlight"><pre><code class="language-java" data-lang="java"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+</pre></td><td class="code"><pre><span class="kd">class</span> <span class="nc">SuperClass</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">fun1</span><span class="o">(){</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"SuperClass fun1"</span><span class="o">);</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+
+<span class="kd">class</span> <span class="nc">AClass</span> <span class="kd">extends</span> <span class="nc">SuperClass</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">fun1</span><span class="o">(){</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"AClass fun1"</span><span class="o">);</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+
+<span class="kd">class</span> <span class="nc">BClass</span> <span class="kd">extends</span> <span class="nc">SuperClass</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">fun1</span><span class="o">(){</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"BClass fun1"</span><span class="o">);</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+
+<span class="kd">class</span> <span class="nc">SubClass</span> <span class="kd">extends</span> <span class="nc">AClass</span><span class="o">,</span> <span class="nc">BClass</span> <span class="o">{</span>     <span class="c1">// Compile Error</span>
+
+<span class="o">}</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Main</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="nc">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+        <span class="nc">SubClass</span> <span class="n">obj</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">SubClass</span><span class="o">();</span>
+        <span class="n">obj</span><span class="o">.</span><span class="na">fun1</span><span class="o">();</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</pre></td></tr></tbody></table></code></pre></figure>
+
+<p>위의 프로그램을 보시면 SuperClass로부터 AClass와 BClass가 상속을 받고, 그 두 클래스로부터 SubClass가 상속을 받습니다. 그런데 이 때 SubClass는 fun1을 정의하지 않았으므로 상속해준 클래스로부터 fun1이 정의되는데, AClass와 BClass 모두 이 메소드를 정의한 것이 문제입니다. 이렇게 되면 SubClass에서는 AClass의 fun1을 상속받을지, BClass의 fun1을 상속받을지 모호해집니다. Java에서는 이러한 상황을 막기 위해 문법적으로 다중 상속 자체를 막아놓았습니다.</p>
+
+<p>만약 Java에서 다중상속을 구현하고 싶다면 인터페이스를 사용하는 수밖에 없습니다. 상속과 인터페이스는 서로 모호함이 발생하지 않기 때문에 동시에 가능합니다. 위의 프로그램에서 컴파일 에러가 발생하지 않게 수정하려면 아래처럼 인터페이스를 섞어주면 됩니다.</p>
+
+<figure class="highlight"><pre><code class="language-java" data-lang="java"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+</pre></td><td class="code"><pre><span class="kd">class</span> <span class="nc">SuperClass</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">fun1</span><span class="o">(){</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"SuperClass fun1"</span><span class="o">);</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+
+<span class="kd">class</span> <span class="nc">AClass</span> <span class="kd">extends</span> <span class="nc">SuperClass</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">fun1</span><span class="o">(){</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"AClass fun1"</span><span class="o">);</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+
+<span class="kd">interface</span> <span class="nc">BClass</span> <span class="o">{</span>
+    <span class="kt">void</span> <span class="nf">fun1</span><span class="o">();</span>
+<span class="o">}</span>
+
+<span class="kd">class</span> <span class="nc">SubClass</span> <span class="kd">extends</span> <span class="nc">AClass</span> <span class="kd">implements</span> <span class="nc">BClass</span> <span class="o">{</span>
+
+<span class="o">}</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Main</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="nc">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+        <span class="nc">SubClass</span> <span class="n">obj</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">SubClass</span><span class="o">();</span>
+        <span class="n">obj</span><span class="o">.</span><span class="na">fun1</span><span class="o">();</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</pre></td></tr></tbody></table></code></pre></figure>
+
+<p>결과를 보면 알 수 있듯이, 상속과 인터페이스를 동시에 사용하게 되면 상속의 우선순위가 더 높습니다. 왜냐하면 인터페이스는 구현을 하기 전까지는 사용이 불가능하기 때문입니다.</p>
+
+<h2 id="class-object--superclass-of-all-classes">class Object : Superclass of all classes</h2>
+
+<p>Java에서 모든 클래스는 Object라는 클래스로부터 암묵적으로 상속받고 있습니다. 즉, 아무 상속도 받지 않는 클래스는 extends Object라는 코드가 생략된 것과 마찬가지입니다. 다만 다른 클래스를 상속받는다고 해도 Object 클래스를 상속받지 않는 것은 아닙니다. 이 암묵적인 상속은 다중 상속으로 인식되지 않습니다.</p>
+
+<p>Object 클래스에서 정의된 메소드 중 자주 쓰이는 메소드를 몇 개만 정리해서 알려드리겠습니다.</p>
+
+<ul>
+  <li>String toString() : 객체를 문자열로 변환한 결과를 반환합니다.</li>
+  <li>boolean equals(Object obj) : 호출한 객체와 obj 객체가 동일하면 true를 반환하고, 다르면 false를 반환합니다.</li>
+  <li>int hashCode() : 해당 객체의 해시코드를 반환합니다. 해시코드는 고유한 값으로써, 만약 객체가 같다면 해쉬코드도 같습니다. 다만 그 반대는 성립하지 않는데, 해시값이 중복되는 경우가 발생할 수 있기 때문입니다.</li>
+  <li>Class&lt;?&gt; getClass() : 이 객체가 어느 클래스의 객체인지 그 클래스를 반환합니다.</li>
+</ul>
+
+<p>물론 이렇게 사전 정의된 메소드도 오버라이딩이 가능합니다. 아래 프로그램은 위의 사전 정의된 메소드의 사용 예제와 오버라이딩한 예제를 나타내고 있습니다.</p>
+
+<figure class="highlight"><pre><code class="language-java" data-lang="java"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+</pre></td><td class="code"><pre><span class="kd">class</span> <span class="nc">SuperClass</span> <span class="o">{</span>
+    
+<span class="o">}</span>
+
+<span class="kd">class</span> <span class="nc">SubClass</span> <span class="kd">extends</span> <span class="nc">SuperClass</span> <span class="o">{</span>
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="nc">String</span> <span class="nf">toString</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="s">"Overriding toString"</span><span class="o">;</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Main</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="nc">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+        <span class="nc">SubClass</span> <span class="n">obj1</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">SubClass</span><span class="o">();</span>
+        <span class="nc">SuperClass</span> <span class="n">obj2</span> <span class="o">=</span> <span class="n">obj1</span><span class="o">;</span>
+
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">obj1</span><span class="o">.</span><span class="na">toString</span><span class="o">());</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">obj2</span><span class="o">.</span><span class="na">toString</span><span class="o">());</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">obj1</span><span class="o">.</span><span class="na">equals</span><span class="o">(</span><span class="n">obj2</span><span class="o">));</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">obj2</span><span class="o">.</span><span class="na">equals</span><span class="o">(</span><span class="n">obj1</span><span class="o">));</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">obj1</span><span class="o">.</span><span class="na">hashCode</span><span class="o">());</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">obj2</span><span class="o">.</span><span class="na">hashCode</span><span class="o">());</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">obj1</span><span class="o">.</span><span class="na">getClass</span><span class="o">());</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">obj2</span><span class="o">.</span><span class="na">getClass</span><span class="o">());</span>
+
+    <span class="o">}</span>
+<span class="o">}</span>
+</pre></td></tr></tbody></table></code></pre></figure>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> Tags: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/tags/#java" class="page__taxonomy-item p-category" rel="tag">java</a>
+    
+    </span>
+  </p>
+
+
+
+
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> Categories: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/categories/#studies" class="page__taxonomy-item p-category" rel="tag">studies</a>
+    
+    </span>
+  </p>
+
+
+        
+
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time class="dt-published" datetime="2020-07-05T00:00:00+09:00">July 5, 2020</time></p>
+
+      </footer>
+
+      <section class="page__share">
+  
+    <h4 class="page__share-title">Share on</h4>
+  
+
+  <a href="https://twitter.com/intent/tweet?text=Inheritance%20http%3A%2F%2Flocalhost%3A4000%2Fjava%2Finheritance%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Fjava%2Finheritance%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2Fjava%2Finheritance%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+
+      
+  <nav class="pagination">
+    
+      <a href="/java/abstraction-using-interfaces/" class="pagination--pager" title="Abstraction using Interfaces
+">Previous</a>
+    
+    
+      <a href="/java/file-input-and-output/" class="pagination--pager" title="File Input &amp; Output
+">Next</a>
+    
+  </nav>
+
+    </div>
+
+    
+  </article>
+
+  
+  
+</div>
+
+    </div>
+
+    
+      <div class="search-content">
+        <div class="search-content__inner-wrap"><form class="search-content__form" onkeydown="return event.key != 'Enter';" role="search">
+    <label class="sr-only" for="search">
+      Enter your search term...
+    </label>
+    <input type="search" id="search" class="search-input" tabindex="-1" placeholder="Enter your search term..." />
+  </form>
+  <div id="results" class="results"></div></div>
+
+      </div>
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>Follow:</strong></li>
+    
+
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+
+    
+      <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2023 KEEPMIND All rights reserved. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    <script type="text/javascript" async
+   src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      extensions: ["tex2jax.js"],
+      jax: ["input/TeX", "output/HTML-CSS"],
+      tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+        displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+        processEscapes: true
+      },
+      "HTML-CSS": { availableFonts: ["TeX"] }
+    });
+</script>
+
+
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+<script src="/assets/js/lunr/lunr.min.js"></script>
+<script src="/assets/js/lunr/lunr-store.js"></script>
+<script src="/assets/js/lunr/lunr-en.js"></script>
+
+
+
+
+
+
+
+  </body>
+</html>

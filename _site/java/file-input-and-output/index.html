@@ -1,0 +1,843 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.24.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>File Input &amp; Output - KEEPMIND</title>
+<meta name="description" content="File Output : FileOutputStream">
+
+
+  <meta name="author" content="Joonsu Ryu">
+  
+  <meta property="article:author" content="Joonsu Ryu">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="KEEPMIND">
+<meta property="og:title" content="File Input &amp; Output">
+<meta property="og:url" content="http://localhost:4000/java/file-input-and-output/">
+
+
+  <meta property="og:description" content="File Output : FileOutputStream">
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2020-07-11T00:00:00+09:00">
+
+
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="http://localhost:4000/java/file-input-and-output/">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "KEEPMIND",
+      "url": "http://localhost:4000/"
+    
+  }
+</script>
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="KEEPMIND Feed">
+
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css"></noscript>
+
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+<link rel="icon" type="image/png" sizes="16x16" href="/images/favicon.png">
+
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body class="layout--single wide">
+    <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+		<a class="site-title" href="http://localhost:4000/"><img src="/images/logo.png">
+        <!-- <a class="site-title" href="/">
+          KEEPMIND
+           -->
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="/">Home</a>
+            </li><li class="masthead__menu-item">
+              <a href="/cv/">CV</a>
+            </li><li class="masthead__menu-item">
+              <a href="/studies/">Studies</a>
+            </li><li class="masthead__menu-item">
+              <a href="/">Interests</a>
+            </li><li class="masthead__menu-item">
+              <a href="/">Travels</a>
+            </li></ul>
+        
+        <button class="search__toggle" type="button">
+          <span class="visually-hidden">Toggle search</span>
+          <i class="fas fa-search"></i>
+        </button>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person" class="h-card">
+
+  
+    <div class="author__avatar">
+      <!-- <a href="http://localhost:4000/"> -->
+        <img src="/images/profile.jpg" alt="Joonsu Ryu" itemprop="image" class="u-photo">
+      <!-- </a> -->
+    </div>
+  
+
+  <div class="author__content">
+    <h3 class="author__name p-name" itemprop="name">
+      <a class="u-url" rel="me" href="http://localhost:4000/" itemprop="url">Joonsu Ryu</a>
+    </h3>
+    
+      <div class="author__bio p-note" itemprop="description">
+        <p>Researcher</p>
+
+      </div>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">Follow</button>
+    <ul class="author__urls social-icons">
+      
+        <li itemprop="homeLocation" itemscope itemtype="https://schema.org/Place">
+          <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> <span itemprop="name" class="p-locality">Seoul, Korea</span>
+        </li>
+      
+
+      
+        
+          
+            <li><a href="mailto:jsryu@sogang.ac.kr" rel="nofollow noopener noreferrer me"><i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i><span class="label">E-mail</span></a></li>
+          
+        
+          
+            <li><a href="https://github.com/JoonsuRyu" rel="nofollow noopener noreferrer me" itemprop="sameAs"><i class="fab fa-fw fa-github" aria-hidden="true"></i><span class="label">GitHub</span></a></li>
+          
+        
+          
+            <li><a href="https://scholar.google.co.kr/citations?user=UmRh9NQAAAAJ" rel="nofollow noopener noreferrer me" itemprop="sameAs"><i class="fas fa-fw fa-graduation-cap" aria-hidden="true"></i><span class="label">Google Scholar</span></a></li>
+          
+        
+          
+            <li><a href="https://orcid.org/0000-0002-8848-1456" rel="nofollow noopener noreferrer me" itemprop="sameAs"><i class="fab fa-fw fa-orcid" aria-hidden="true"></i><span class="label">ORCID</span></a></li>
+          
+        
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer me">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+
+  
+  </div>
+
+
+
+  <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="File Input &amp; Output">
+    <meta itemprop="description" content="File Output : FileOutputStream">
+    <meta itemprop="datePublished" content="2020-07-11T00:00:00+09:00">
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title p-name" itemprop="headline">
+            <a href="http://localhost:4000/java/file-input-and-output/" class="u-url" itemprop="url">File Input &amp; Output
+</a>
+          </h1>
+          
+
+
+        </header>
+      
+
+      <section class="page__content e-content" itemprop="text">
+        
+          <aside class="sidebar__right sticky">
+            <nav class="toc">
+              <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> Table of Contents</h4></header>
+              <ul class="toc__menu"><li><a href="#file-output--fileoutputstream">File Output : FileOutputStream</a></li><li><a href="#file-output--filewriter">File Output : FileWriter</a></li><li><a href="#file-output--printwriter">File Output : PrintWriter</a></li><li><a href="#file-output--appending-to-a-file">File Output : Appending to a file</a></li><li><a href="#file-input--fileinputstream">File Input : FileInputStream</a></li><li><a href="#file-input--filereader-and-bufferedreader">File Input : FileReader and BufferedReader</a></li></ul>
+
+            </nav>
+          </aside>
+        
+        <h2 id="file-output--fileoutputstream">File Output : FileOutputStream</h2>
+
+<p>먼저 Java에서 파일 출력 방법을 알아보겠습니다. 코드를 보여드리면서 설명하는 것이 편할 것 같아, 파일 출력의 예제 코드를 보여드리고 한 줄씩 설명하도록 하겠습니다. 아래 프로그램은 Hello World!라는 문장이 들어있는 output.txt 파일을 생성하는 프로그램입니다.</p>
+
+<figure class="highlight"><pre><code class="language-java" data-lang="java"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+</pre></td><td class="code"><pre><span class="kn">import</span> <span class="nn">java.io.FileOutputStream</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.io.IOException</span><span class="o">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">FileOutput</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="nc">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="kd">throws</span> <span class="nc">IOException</span> <span class="o">{</span>
+        <span class="nc">FileOutputStream</span> <span class="n">output</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">FileOutputStream</span><span class="o">(</span><span class="s">"src/output.txt"</span><span class="o">);</span>
+        <span class="nc">String</span> <span class="n">str</span> <span class="o">=</span> <span class="s">"Hello World!"</span><span class="o">;</span>
+        <span class="kt">byte</span><span class="o">[]</span> <span class="n">bytes</span> <span class="o">=</span> <span class="n">str</span><span class="o">.</span><span class="na">getBytes</span><span class="o">();</span>
+        <span class="n">output</span><span class="o">.</span><span class="na">write</span><span class="o">(</span><span class="n">bytes</span><span class="o">);</span>
+        <span class="n">output</span><span class="o">.</span><span class="na">close</span><span class="o">();</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</pre></td></tr></tbody></table></code></pre></figure>
+
+<p>Line 1~2</p>
+
+<p>파일 출력을 위해서는 출력을 위한 클래스가 정의되어 있는 FileOutputStream 라이브러리를 먼저 불러와야 합니다. 또한 입출력에서의 예외 처리를 위한 라이브러리인 IOException 라이브러리도 불러와야하는데, 예외 처리에 대한 것은 추후 자세히 다뤄보도록 하고 일단은 이게 입출력에 대한 예외 처리가 담겨있는 라이브러리이구나 라고만 짚고 넘어가도록 하겠습니다.</p>
+
+<p>Line 5</p>
+
+<p>main 메소드를 정의할 때, 뒷 부분에 throws IOException이 붙은 것을 볼 수 있습니다. 이 부분이 바로 예외 처리를 설정한 부분입니다. Java에서 예외가 발생할 수 있는 메소드에서는 이렇게 직접 예외 처리를 해주어야 합니다. main 메소드에서 파일 출력을 할 예정이니, “파일 출력에 대한 예외가 발생할 수도 있다”라고 선언한 거라고 생각하시면 됩니다.</p>
+
+<p>Line 6</p>
+
+<p>파일 출력을 위한 객체를 생성하는 부분입니다. FileOutputStream은 첫째 줄에서 호출한 라이브러리에 정의된 파일 출력에 관한 클래스입니다. FileOutputStream 객체를 생성할 때 들어가는 매개변수는 파일을 생성할 경로가 됩니다.</p>
+
+<p>파일 생성 경로의 표현 방법으로는 상대 경로(Relative Path)와 절대 경로(Absolute Path)가 있습니다. 상대 경로는 현재 프로그램의 위치를 기반해서 정하는 경로이고, 절대 경로는 해당 파일이 가지고 있는 고유 경로를 말합니다. 위의 프로그램에서는 상대 경로를 채택했는데, 만약 이것을 절대 경로로 표기한다면 C:\Users\Username\Java\src와 같은 형식이 됩니다.</p>
+
+<p>어떤 경로를 사용할지는 프로그래머의 취향이지만, 일반적으로는 상대 경로를 더 많이 사용하고 권장됩니다. 절대 경로를 잘 사용하지 않는 이유는 프로그램을 여러 기기에서 실행할 때 각 기기마다 환경이 다를 수 있기 때문입니다. 현재 프로그램의 위치를 기반으로 경로를 정하게 되면 어떤 환경에서 실행해도 경로로 인한 문제가 발생하지 않기 때문에 가급적이면 상대 경로를 사용하는 것을 추천드립니다.</p>
+
+<p>Line 7~8</p>
+
+<p>이 부분은 파일에 쓰여질 문장을 정하는 부분입니다. 7번째 줄에서 String 객체로 Hello World! 라는 문자열을 대입하였는데, 8번째 줄에서는 String 클래스에 미리 정의되어 있는 getBytes라는 메소드를 사용하여 String 객체를 byte형 객체로 변환하는 것을 볼 수 있습니다. 굳이 byte형 객체로 변환하는 이유는 9번째 줄에서 설명드리겠습니다.</p>
+
+<p>Line 9</p>
+
+<p>9번째 줄은 매개변수로 넣은 문자열을 파일에 직접 쓰는 부분입니다. 이전에 문자열을 byte형 객체로 변환하였는데, FileOutputStream 객체의 write 메소드가 아래와 같이 정의되어 있기 때문입니다.</p>
+
+<p>void write(byte buf[])</p>
+
+<p>이렇게 write 메소드의 매개변수가 byte형 배열로 정의되어 있기 때문에 파일에 입력할 때는 byte형 객체로 변환하는 과정이 필요합니다.</p>
+
+<p>Line 10</p>
+
+<p>10번째 줄은 파일에 대한 쓰기가 끝나고 파일을 닫는 부분입니다. 이 과정을 생략해도 컴파일 에러나 런타임 에러가 발생하는 것은 아니고, 프로그램이 종료될때 알아서 닫아주긴 하지만 가급적이면 프로그래머가 스스로 닫아주는 것이 좋습니다.</p>
+
+<h2 id="file-output--filewriter">File Output : FileWriter</h2>
+
+<p>방금 배운 FileOutputStream 라이브러리를 사용한 파일 출력을 하게 되면 byte 형식으로만 쓰기가 가능하기 때문에 String 객체를 바로 파일에 작성하지 못한다는 단점이 있습니다. 그렇기 때문에 파일 출력에는 FileWrite라는 라이브러리가 존재하는데, 이 라이브러리를 사용하면 String 객체를 바로 파일에 쓸 수 있습니다. 사용 방법은 역시 코드를 먼저 보여드리고 한 줄씩 설명하도록 하겠습니다.</p>
+
+<figure class="highlight"><pre><code class="language-java" data-lang="java"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+</pre></td><td class="code"><pre><span class="kn">import</span> <span class="nn">java.io.FileWriter</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.io.IOException</span><span class="o">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">FileWrite</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="nc">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="kd">throws</span> <span class="nc">IOException</span> <span class="o">{</span>
+        <span class="nc">FileWriter</span> <span class="n">fw</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">FileWriter</span><span class="o">(</span><span class="s">"src/output.txt"</span><span class="o">);</span>
+        <span class="nc">String</span> <span class="n">str</span> <span class="o">=</span> <span class="s">"Hello World!"</span><span class="o">;</span>
+        <span class="n">fw</span><span class="o">.</span><span class="na">write</span><span class="o">(</span><span class="n">str</span><span class="o">);</span>
+        <span class="n">fw</span><span class="o">.</span><span class="na">close</span><span class="o">();</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</pre></td></tr></tbody></table></code></pre></figure>
+
+<p>Line 1~2</p>
+
+<p>FileOutputStream 라이브러리를 사용할 때와 마찬가지로, FileWriter 역시 라이브러리를 불러와야 합니다. FileWriter 또한 입출력에 관한 라이브러리이다 보니, 예외 처리를 위한 IOException 라이브러리를 불러와야 합니다.</p>
+
+<p>Line 5</p>
+
+<p>이 부분 역시 FileOutputStream를 사용할 때와 마찬가지로 main 메소드 뒷 부분에 throws IOException을 붙임으로써 예외 처리를 설정해 주어야 합니다.</p>
+
+<p>Line 6</p>
+
+<p>파일 출력을 위한 객체를 생성하는 부분입니다. FileWriter는 첫째 줄에서 호출한 라이브러리에 정의된 파일 출력에 관한 클래스입니다. FileOutputStream 객체와 마찬가지로 FileWriter 객체를 생성할 때 들어가는 매개변수는 파일을 생성할 경로가 됩니다.</p>
+
+<p>Line 7~8</p>
+
+<p>파일에 쓰여질 문장을 정의하고 파일에 쓰는 부분입니다. 7번째 줄에서 String 객체로 Hello World! 라는 문자열을 정의하고 별 다른 변환 없이 8번째 줄에서 바로 write라는 메소드를 사용하여 파일에 쓰는 것을 볼 수 있습니다. FileWriter의 write 메소드는 아래와 같이 정의되어 있습니다.</p>
+
+<p>void write(String str)</p>
+
+<p>다만 여러 줄을 작성할 때는 꼭 \r\n을 붙여야하는 단점이 있습니다. \r\n는 Carriage Return과 Line Feed를 의미하는데, 이것은 다음 줄로 넘긴다는 의미입니다.</p>
+
+<p>Line 9</p>
+
+<p>FileOutputStream 때와 마찬가지로 파일을 닫아주는 부분입니다.</p>
+
+<h2 id="file-output--printwriter">File Output : PrintWriter</h2>
+
+<p>FileWriter도 충분히 편리한 라이브러리이지만, 많은 줄의 프로그램을 작성할 때는 일일이 문장 끝마다 \r\n를 붙여야 하는 불편함이 있습니다. 이에 대한 대안으로 PrintWriter라는 또 다른 파일 출력 라이브러리가 존재합니다. 사용 방법은 아래와 같습니다.</p>
+
+<figure class="highlight"><pre><code class="language-java" data-lang="java"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+</pre></td><td class="code"><pre><span class="kn">import</span> <span class="nn">java.io.PrintWriter</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.io.IOException</span><span class="o">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">PrintWrite</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="nc">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="kd">throws</span> <span class="nc">IOException</span> <span class="o">{</span>
+        <span class="nc">PrintWriter</span> <span class="n">pw</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">PrintWriter</span><span class="o">(</span><span class="s">"src/output.txt"</span><span class="o">);</span>
+        <span class="nc">String</span> <span class="n">str</span> <span class="o">=</span> <span class="s">"Hello World!"</span><span class="o">;</span>
+        <span class="n">pw</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">str</span><span class="o">);</span>
+        <span class="n">pw</span><span class="o">.</span><span class="na">close</span><span class="o">();</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</pre></td></tr></tbody></table></code></pre></figure>
+
+<p>언뜻 보면 FileWriter와 큰 차이가 보이지 않습니다. 차이점은 첫 줄의 라이브러리 선언과 PrintWriter 객체 선언, 그리고 write 메소드 대신 println 메소드가 쓰인 부분입니다. FileWriter와 큰 차이는 없지만, 여러 줄을 입력할 때 \r\n을 사용하지 않아도 되는 편리함이 있습니다.</p>
+
+<h2 id="file-output--appending-to-a-file">File Output : Appending to a file</h2>
+
+<p>파일 쓰기를 할 때, 새로운 파일이 아닌 기존에 열었던 파일에 이어서 작성하고 싶은 경우가 있습니다. 하지만 파일 출력 관련 객체를 선언할 때는 항상 새로운 빈 파일이 먼저 생성되기 때문에 이전에 작성한 내용이 날아가는 문제점이 있습니다. 예를 들어, 다음 프로그램을 실행해보면 첫 번째의 출력문은 날아가는 것을 알 수 있습니다.</p>
+
+<figure class="highlight"><pre><code class="language-java" data-lang="java"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+</pre></td><td class="code"><pre><span class="kn">import</span> <span class="nn">java.io.FileWriter</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.io.IOException</span><span class="o">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">AppendingFile</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="nc">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="kd">throws</span> <span class="nc">IOException</span> <span class="o">{</span>
+        <span class="nc">FileWriter</span> <span class="n">fw</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">FileWriter</span><span class="o">(</span><span class="s">"src/output.txt"</span><span class="o">);</span>
+        <span class="n">fw</span><span class="o">.</span><span class="na">write</span><span class="o">(</span><span class="s">"First Sentence.\r\n"</span><span class="o">);</span>
+        <span class="n">fw</span><span class="o">.</span><span class="na">close</span><span class="o">();</span>
+
+        <span class="nc">FileWriter</span> <span class="n">fw2</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">FileWriter</span><span class="o">(</span><span class="s">"src/output.txt"</span><span class="o">);</span>
+        <span class="n">fw2</span><span class="o">.</span><span class="na">write</span><span class="o">(</span><span class="s">"Second Sentence.\r\n"</span><span class="o">);</span>
+        <span class="n">fw2</span><span class="o">.</span><span class="na">close</span><span class="o">();</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</pre></td></tr></tbody></table></code></pre></figure>
+
+<p>이 문제를 해결하기 위해서는 두 번째 FileWriter 객체를 호출할 때, true라는 새로운 매개변수를 추가하면 됩니다. 이 부분은 이전 파일에 이어서 쓸 것인지, 아니면 새로운 파일에 작성할 것인지를 나타내는 부분인데, 아무 입력을 하지 않았을 때는 기본적으로 false로 설정되어 있습니다. 아래처럼 true 매개변수를 추가하게 되면 정상적으로 원하는 결과가 출력됨을 알 수 있습니다.</p>
+
+<figure class="highlight"><pre><code class="language-java" data-lang="java"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+</pre></td><td class="code"><pre><span class="kn">import</span> <span class="nn">java.io.FileWriter</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.io.IOException</span><span class="o">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">AppendingFileSolution</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="nc">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="kd">throws</span> <span class="nc">IOException</span> <span class="o">{</span>
+        <span class="nc">FileWriter</span> <span class="n">fw</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">FileWriter</span><span class="o">(</span><span class="s">"src/output.txt"</span><span class="o">);</span>
+        <span class="n">fw</span><span class="o">.</span><span class="na">write</span><span class="o">(</span><span class="s">"First Sentence.\r\n"</span><span class="o">);</span>
+        <span class="n">fw</span><span class="o">.</span><span class="na">close</span><span class="o">();</span>
+
+        <span class="nc">FileWriter</span> <span class="n">fw2</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">FileWriter</span><span class="o">(</span><span class="s">"src/output.txt"</span><span class="o">,</span> <span class="kc">true</span><span class="o">);</span>
+        <span class="n">fw2</span><span class="o">.</span><span class="na">write</span><span class="o">(</span><span class="s">"Second Sentence.\r\n"</span><span class="o">);</span>
+        <span class="n">fw2</span><span class="o">.</span><span class="na">close</span><span class="o">();</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</pre></td></tr></tbody></table></code></pre></figure>
+
+<p>PrintWriter를 사용해서도 비슷한 결과를 얻을 수 있지만, 파일을 이어서 쓰는 기능이 FileWriter에만 있기 때문에 조금 번거롭게 간접적으로 객체를 생성해야 하는 단점이 있습니다. 아래는 PrintWriter와 FileWriter를 같이 사용하여 파일을 이어쓴 예제입니다.</p>
+
+<figure class="highlight"><pre><code class="language-java" data-lang="java"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+</pre></td><td class="code"><pre><span class="kn">import</span> <span class="nn">java.io.FileWriter</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.io.PrintWriter</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.io.IOException</span><span class="o">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">AppendingFileSolution2</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="nc">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="kd">throws</span> <span class="nc">IOException</span> <span class="o">{</span>
+        <span class="nc">PrintWriter</span> <span class="n">pw</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">PrintWriter</span><span class="o">(</span><span class="s">"src/output.txt"</span><span class="o">);</span>
+        <span class="n">pw</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"First Sentence."</span><span class="o">);</span>
+        <span class="n">pw</span><span class="o">.</span><span class="na">close</span><span class="o">();</span>
+
+        <span class="nc">PrintWriter</span> <span class="n">pw2</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">PrintWriter</span><span class="o">(</span><span class="k">new</span> <span class="nc">FileWriter</span><span class="o">(</span><span class="s">"src/output.txt"</span><span class="o">,</span> <span class="kc">true</span><span class="o">));</span>
+        <span class="n">pw2</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"Second Sentence."</span><span class="o">);</span>
+        <span class="n">pw2</span><span class="o">.</span><span class="na">close</span><span class="o">();</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</pre></td></tr></tbody></table></code></pre></figure>
+
+<h2 id="file-input--fileinputstream">File Input : FileInputStream</h2>
+
+<p>다음으로는 파일 입력 방법입니다. 파일 입력 때도 출력과 마찬가지로 이미 정의된 라이브러리를 호출하여 사용합니다. 가장 먼저 소개할 방법은 FileInputStream 라이브러리를 이용한 방법입니다. 역시 예제 코드를 먼저 보여드리고 한 줄씩 설명하도록 하겠습니다.</p>
+
+<figure class="highlight"><pre><code class="language-java" data-lang="java"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+</pre></td><td class="code"><pre><span class="kn">import</span> <span class="nn">java.io.FileInputStream</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.io.IOException</span><span class="o">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">FileInput</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="nc">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="kd">throws</span> <span class="nc">IOException</span> <span class="o">{</span>
+        <span class="kt">byte</span><span class="o">[]</span> <span class="n">b</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">byte</span><span class="o">[</span><span class="mi">1024</span><span class="o">];</span>
+        <span class="nc">FileInputStream</span> <span class="n">input</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">FileInputStream</span><span class="o">(</span><span class="s">"src/output.txt"</span><span class="o">);</span>
+        <span class="n">input</span><span class="o">.</span><span class="na">read</span><span class="o">(</span><span class="n">b</span><span class="o">);</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="k">new</span> <span class="nc">String</span><span class="o">(</span><span class="n">b</span><span class="o">));</span>
+        <span class="n">input</span><span class="o">.</span><span class="na">close</span><span class="o">();</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</pre></td></tr></tbody></table></code></pre></figure>
+
+<p>Line 1~2</p>
+
+<p>역시 파일 입력을 위한 라이브러리를 호출하는 부분입니다. 이번에는 FileInputStream 이라는 기본적인 파일 입력 라이브러리와 예외 처리를 위한 IOException 라이브러리를 호출합니다.</p>
+
+<p>Line 5</p>
+
+<p>파일 입력에서의 예외 처리도 필요하기에, 파일 입력을 수행하는 main 메소드에서 예외 처리를 해준 모습입니다.</p>
+
+<p>Line 6</p>
+
+<p>이 부분은 파일로부터 읽어들인 문자열을 저장하는 부분입니다. FileOutputStream과 마찬가지로 FileInputStream도 byte 자료형 단위로 문자를 받기 때문에 byte형 배열로 선언한 모습입니다. 이렇게 파일로부터 읽어들인 문자열을 저장하는 곳을 버퍼(Buffer)라 부릅니다.</p>
+
+<p>Line 7</p>
+
+<p>파일 입력에 대한 객체를 선언하는 부분입니다. FileInputStream의 매개변수로는 읽을 파일이 위치한 경로가 됩니다. 만약 해당 경로에 파일이 없다면 예외가 발생하게 됩니다.</p>
+
+<p>Line 8</p>
+
+<p>파일 입력 객체의 read 메소드를 사용하여 미리 선언해둔 버퍼 b에 데이터를 저장하는 부분입니다.</p>
+
+<p>Line 9</p>
+
+<p>파일을 읽고 저장해둔 버퍼 b를 표준 출력으로 출력하는 부분입니다. 버퍼 b는 byte형으로 선언되어 있기 때문에, String 형 메소드로 타입을 변환한 후 출력해야 합니다.</p>
+
+<p>FileInputStream에서는 버퍼 b의 크기 만큼의 데이터만 저장할 수 있기 때문에, 만약 읽어들일 파일의 내용이 버퍼 b의 크기를 넘어간다면 그 초과분만큼의 데이터는 출력할 수 없다는 문제점이 있습니다. 이 문제점을 개선하려면 아래와 같이 수정할 수 있습니다.</p>
+
+<figure class="highlight"><pre><code class="language-java" data-lang="java"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+</pre></td><td class="code"><pre><span class="kn">import</span> <span class="nn">java.io.FileInputStream</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.io.IOException</span><span class="o">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">FileInputModified</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="nc">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="kd">throws</span> <span class="nc">IOException</span> <span class="o">{</span>
+        <span class="kt">byte</span><span class="o">[]</span> <span class="n">b</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">byte</span><span class="o">[</span><span class="mi">1024</span><span class="o">];</span>
+        <span class="nc">FileInputStream</span> <span class="n">input</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">FileInputStream</span><span class="o">(</span><span class="s">"src/output.txt"</span><span class="o">);</span>
+        <span class="k">while</span><span class="o">(</span><span class="n">input</span><span class="o">.</span><span class="na">read</span><span class="o">(</span><span class="n">b</span><span class="o">)</span> <span class="o">!=</span> <span class="o">-</span><span class="mi">1</span><span class="o">)</span> <span class="o">{</span>
+            <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="k">new</span> <span class="nc">String</span><span class="o">(</span><span class="n">b</span><span class="o">));</span>
+        <span class="o">}</span>
+        <span class="n">input</span><span class="o">.</span><span class="na">close</span><span class="o">();</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</pre></td></tr></tbody></table></code></pre></figure>
+
+<h2 id="file-input--filereader-and-bufferedreader">File Input : FileReader and BufferedReader</h2>
+
+<p>FileInputModified와 같은 방법을 통해 파일의 크기가 버퍼의 크기보다 크더라도 모든 내용을 출력하게 만들 수 있지만, 파일 크기 만큼 while문이 계속 돌기 때문에 하드웨어에 부담을 주게 됩니다. 그렇기 때문에 나온 대안이 FileReader 라이브러리와 BufferedReader 라이브러리입니다.</p>
+
+<p>BufferedReader는 파일을 한 줄씩 읽을 수 있게 만드는 readLine 메소드를 가지고 있기 때문에, FileInputStream처럼 사용자가 직접 버퍼를 할당할 필요가 없는 장점이 있습니다. 사용 예제는 아래와 같습니다.</p>
+
+<figure class="highlight"><pre><code class="language-java" data-lang="java"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+</pre></td><td class="code"><pre><span class="kn">import</span> <span class="nn">java.io.BufferedReader</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.io.FileReader</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.io.IOException</span><span class="o">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">FileBufferReader</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="nc">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="kd">throws</span> <span class="nc">IOException</span> <span class="o">{</span>
+        <span class="nc">BufferedReader</span> <span class="n">br</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">BufferedReader</span><span class="o">(</span><span class="k">new</span> <span class="nc">FileReader</span><span class="o">(</span><span class="s">"src/output.txt"</span><span class="o">));</span>
+        <span class="k">while</span><span class="o">(</span><span class="kc">true</span><span class="o">)</span> <span class="o">{</span>
+            <span class="nc">String</span> <span class="n">line</span> <span class="o">=</span> <span class="n">br</span><span class="o">.</span><span class="na">readLine</span><span class="o">();</span>
+            <span class="k">if</span><span class="o">(</span><span class="n">line</span> <span class="o">==</span> <span class="kc">null</span><span class="o">)</span> <span class="k">break</span><span class="o">;</span>
+            <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">line</span><span class="o">);</span>
+        <span class="o">}</span>
+        <span class="n">br</span><span class="o">.</span><span class="na">close</span><span class="o">();</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</pre></td></tr></tbody></table></code></pre></figure>
+
+<p>대부분은 기존의 파일 입출력과 크게 다르지 않기 때문에 요점만 짚고 넘어가겠습니다.</p>
+
+<p>7번째 줄에서 BufferedReader 객체를 선언하는데, 이 때 FileReader 객체와 같이 선언해야 합니다. BufferedReader 자체에는 파일 입력을 받을 수 있는 기능이 존재하지 않기 때문입니다. 그 이후에는 while문을 돌며 프로그램이 끝날 때까지 파일을 출력할 수 있습니다. readLine 메소드는 파일에 더이상 내용이 없다면 null을 반환합니다.</p>
+
+<p>이 방법의 또 다른 장점은 byte형으로 입력을 받는 FileInputStream과 달리, String 형으로 입력을 받는다는 것입니다. 객체 선언 자체는 FileInputStream보다 조금 복잡할 수도 있지만, 사용 방법이나 데이터 처리에는 훨씬 간편하기 때문에, 별 다른 이유가 없다면 이 방법을 권장하고 싶습니다.</p>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> Tags: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/tags/#java" class="page__taxonomy-item p-category" rel="tag">java</a>
+    
+    </span>
+  </p>
+
+
+
+
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> Categories: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/categories/#studies" class="page__taxonomy-item p-category" rel="tag">studies</a>
+    
+    </span>
+  </p>
+
+
+        
+
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time class="dt-published" datetime="2020-07-11T00:00:00+09:00">July 11, 2020</time></p>
+
+      </footer>
+
+      <section class="page__share">
+  
+    <h4 class="page__share-title">Share on</h4>
+  
+
+  <a href="https://twitter.com/intent/tweet?text=File+Input+%26+Output%20http%3A%2F%2Flocalhost%3A4000%2Fjava%2Ffile-input-and-output%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Fjava%2Ffile-input-and-output%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2Fjava%2Ffile-input-and-output%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+
+      
+  <nav class="pagination">
+    
+      <a href="/java/inheritance/" class="pagination--pager" title="Inheritance
+">Previous</a>
+    
+    
+      <a href="/java/exception-handling/" class="pagination--pager" title="Exception Handling
+">Next</a>
+    
+  </nav>
+
+    </div>
+
+    
+  </article>
+
+  
+  
+</div>
+
+    </div>
+
+    
+      <div class="search-content">
+        <div class="search-content__inner-wrap"><form class="search-content__form" onkeydown="return event.key != 'Enter';" role="search">
+    <label class="sr-only" for="search">
+      Enter your search term...
+    </label>
+    <input type="search" id="search" class="search-input" tabindex="-1" placeholder="Enter your search term..." />
+  </form>
+  <div id="results" class="results"></div></div>
+
+      </div>
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>Follow:</strong></li>
+    
+
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+
+    
+      <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2023 KEEPMIND All rights reserved. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    <script type="text/javascript" async
+   src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      extensions: ["tex2jax.js"],
+      jax: ["input/TeX", "output/HTML-CSS"],
+      tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+        displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+        processEscapes: true
+      },
+      "HTML-CSS": { availableFonts: ["TeX"] }
+    });
+</script>
+
+
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+<script src="/assets/js/lunr/lunr.min.js"></script>
+<script src="/assets/js/lunr/lunr-store.js"></script>
+<script src="/assets/js/lunr/lunr-en.js"></script>
+
+
+
+
+
+
+
+  </body>
+</html>

@@ -149,6 +149,48 @@ var store = [{
         "url": "/java/classes-variables-and-methods/",
         "teaser": null
       },{
+        "title": "Abstraction using Interfaces",
+        "excerpt":"Four Principles of Objected Oriented Programming Java를 포함한 객체 지향 프로그래밍의 공통점으로는 캡슐화(Encapsulation), 추상화(Abstraction), 상속(Inheritance), 다형성(Polymorphism) 4가지 원칙이 있다는 것입니다. 캡슐화에 대해서는 지난 시간에 다루었기 때문에 여기서는 생략하도록 하겠습니다. 캡슐화에 대해서는 아래 포스트를 참고하시기 바랍니다. [Java] 5. Classes, Variables, and Methods 추상화는 복잡한 자료, 모듈, 시스템 등으로부터 핵심적인 개념 또는...","categories": ["studies"],
+        "tags": ["java"],
+        "url": "/java/abstraction-using-interfaces/",
+        "teaser": null
+      },{
+        "title": "Inheritance",
+        "excerpt":"Four Principles of Objected Oriented Programming 지난 시간에 객체 지향 프로그래밍에서의 4가지 요소인 캡슐화, 추상화, 상속, 다형성을 소개하고, 그 중 하나인 추상화에 대해 자세히 알아보았습니다. Java 언어에서 추상화는 인터페이스를 통해 구현되어, 인터페이스의 사용법과 그 응용법을 다뤘습니다. 오늘은 4가지 요소 중 하나인 상속에 대해 배우게 됩니다. 상속은 이전 챕터에서 설명드린바와 같이...","categories": ["studies"],
+        "tags": ["java"],
+        "url": "/java/inheritance/",
+        "teaser": null
+      },{
+        "title": "File Input & Output",
+        "excerpt":"File Output : FileOutputStream 먼저 Java에서 파일 출력 방법을 알아보겠습니다. 코드를 보여드리면서 설명하는 것이 편할 것 같아, 파일 출력의 예제 코드를 보여드리고 한 줄씩 설명하도록 하겠습니다. 아래 프로그램은 Hello World!라는 문장이 들어있는 output.txt 파일을 생성하는 프로그램입니다. 1 2 3 4 5 6 7 8 9 10 11 12 import java.io.FileOutputStream;...","categories": ["studies"],
+        "tags": ["java"],
+        "url": "/java/file-input-and-output/",
+        "teaser": null
+      },{
+        "title": "Exception Handling",
+        "excerpt":"지난 포스트에서 Java의 파일 입출력에 대해 다루었습니다. 파일 입출력을 할 때는 예외 상황(ex. 해당 경로에 파일이 존재하지 않는 경우)이 발생할 수 있기 때문에 예외 처리를 반드시 해주어야 한다고 했었고, 그로 인해 IOException이라는 라이브러리를 호출한 다음, 파일 입출력을 실행하는 메소드에서 예외 처리 구현을 해줬습니다. 이렇게 Java에서는 예외가 발생할 수 있는 경우에서는...","categories": ["studies"],
+        "tags": ["java"],
+        "url": "/java/exception-handling/",
+        "teaser": null
+      },{
+        "title": "Generic Programming",
+        "excerpt":"지난 Java 포스트를 쓴지도 벌써 1년이 훌쩍 지났습니다. 작년에 모바일 게임만 시작하지 않았어도 여가 시간에 계속 포스트를 작성했을 텐데, 한번 시작한 뒤로 지금까지 접지를 못해서 블로그를 거의 방치하고 있었습니다. 아무래도 공부 내용을 정리하는 포스트는 작성하는데 시간도 꽤 걸리기 때문에 귀찮았기도 했구요. 그런데 계속 이렇게 냅두다보면 블로그를 만든 이유가 사라지는 것...","categories": ["studies"],
+        "tags": ["java"],
+        "url": "/java/generic-programming/",
+        "teaser": null
+      },{
+        "title": "Collection Framework (1)",
+        "excerpt":"이번 포스트부터 시작해서 앞으로 4개 정도의 포스트에서는 Collection Framework에 대해 다룰 예정입니다. Collection Framework는 Java의 자료구조라고 생각하시면 됩니다. 정확히는 다수의 데이터를 처리할 때 사용하는 미리 정의된 클래스의 집합입니다. Java에서는 크게 3가지 타입의 자료구조가 정의되어 있으며 Interface로 구현되어 있습니다. List List는 순서가 있는 데이터를 처리하며, 데이터의 중복을 허용합니다. ex) 식당에서 대기하고...","categories": ["studies"],
+        "tags": ["java"],
+        "url": "/java/collection-framework-1/",
+        "teaser": null
+      },{
+        "title": "Collection Framework (2)",
+        "excerpt":"안녕하세요, 이번 포스트에서는 지난 포스트에 이어 Collection Framework에 대해 조금 더 살펴보도록 하겠습니다. 이번 포스트의 주제는 크게 Iterator, Arrays, Comparable, 그리고 Comparator로 나뉘어 있습니다. Iterator Iterator는 Java에서 Collection Framework에 대한 반복적인 작업을 용이하게 처리할 수 있는 메소드를 갖고 있는 인터페이스입니다. 구체적으로 Collection에 저장된 데이터를 읽어오는 방법을 표준화하기 위한 역할입니다. Iterator는...","categories": ["studies"],
+        "tags": ["java"],
+        "url": "/java/collection-framework-2/",
+        "teaser": null
+      },{
         "title": "Prologue",
         "excerpt":"안녕하세요, 2022년에는 새로운 주제로 글을 써볼까 합니다. 예전부터 제가 공부하고 있던 강화학습(Reinforcement Learning) 내용을 정리해보고 싶었는데, 이런 저런 일들로 여건이 되지 않아 미루고 있었습니다. 한동안 다른 문제로 골머리를 썩히다가 이번에 논문 때문에 강화학습을 다시 공부할 일이 생겨 겸사겸사 내용을 정리하고자 합니다. 강화학습 포스트에 참고할 교재는 대부분 학교에서 널리 사용하고 있는...","categories": ["studies"],
         "tags": ["reinforcement learning"],
