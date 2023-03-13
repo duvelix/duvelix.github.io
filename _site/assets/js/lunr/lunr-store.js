@@ -270,7 +270,7 @@ var store = [{
         "teaser": null
       },{
         "title": "Policy Gradient Methods",
-        "excerpt":"이번 장은 드디어 마지막 챕터입니다. 이번 장에서는 지금까지 이 교재에서 다룬 방법인 행동-가치 방법과 다르게, 정책 자체를 매개변수화하는 방법을 알아보겠습니다. 행동-가치 방법은 지금까지 추정된 행동 가치를 기반으로 행동을 선택했기 때문에 행동 가치를 추정하는 것이 중요했습니다. 하지만 이번 장에서 배울 새로운 방법은 행동을 선택하는 데 가치 함수를 사용하지 않습니다. 이번 장에서...","categories": ["studies"],
+        "excerpt":"이번 장은 드디어 마지막 장인 Policy Gradient입니다. 이번 장에서는 지금까지 이 교재에서 다룬 방법들과는 다르게, Policy 자체를 매개변수화하는 방법을 알아보겠습니다. 지금까지의 방법들은 Estimated Action-Value를 기반으로 Action을 선택했기 때문에 Action-Value를 추정하는 것이 중요했습니다. 하지만 이번 장에서 배울 새로운 방법인 Policy Gradient는 Action을 선택하는 데 Value Function을 사용하지 않습니다. 이번 장에서 사용할...","categories": ["studies"],
         "tags": ["reinforcement learning"],
         "url": "/studies/policy-gradient-methods/",
         "teaser": null
