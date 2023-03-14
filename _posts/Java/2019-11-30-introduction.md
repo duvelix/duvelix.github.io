@@ -12,11 +12,11 @@ tags:
 
 Java 언어는 많은 대학교에서 저학년에 가르치는 언어입니다. 최근에는 Python의 등장으로 선택 과목 정도로 비중이 낮아졌지만, 그럼에도 불구하고 Java 언어는 전세계적으로 사용률이 높은 언어이기 때문에 배워두는 것이 좋다고 생각합니다.
 
-Tiobe Index 기준으로 JAVA는 현재 가장 많이 사용하는 언어입니다. (2019년 11월 기준)
+[Tiobe Index](https://www.tiobe.com/tiobe-index/)에 따르면 JAVA는 2019년 11월 기준으로 가장 많이 사용하는 언어입니다.
 
 ![](/images/Java/0. Introduction/Java 00-01.png){: .align-center}
 
-PopularitY of Programming Language (PYPL) 기준으로는 Java가 2위를 차지하고 있습니다. (2019년 11월 기준)
+[PopularitY of Programming Language](http://pypl.github.io/PYPL.html) (PYPL)에 따르면 2019년 11월 기준으로 Java가 2위를 차지하고 있습니다.
 
 ![](/images/Java/0. Introduction/Java 00-02.png){: .align-center}
 
