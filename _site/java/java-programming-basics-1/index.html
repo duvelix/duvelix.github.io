@@ -305,7 +305,7 @@
         
         <h2 id="a-hello-world-program">A “Hello, World!” Program</h2>
 
-<p>Java는 객체 지향 프로그래밍(Object Oriented Programming) 언어입니다. 이것은 Java의 모든 것들은 객체(Object)로 이루어져 있다는 뜻입니다. 객체라는 것은 클래스(Class)의 인스턴스(Instance)를 의미합니다. 이해를 돕기 위해, Java IDE를 설치할 때 테스트했던 HelloWorld 프로그램을 예로 들어보겠습니다.</p>
+<p>Java는 객체 지향 프로그래밍(Object Oriented Programming) 언어입니다. 이것은 Java의 모든 것들은 <span style="color:red">객체(Object)</span>로 이루어져 있다는 뜻입니다. 객체라는 것은 <span style="color:red">클래스(Class)</span>의 <span style="color:red">인스턴스(Instance)</span>를 의미합니다. 이해를 돕기 위해, Java IDE를 설치할 때 테스트했던 HelloWorld 프로그램을 예로 들어보겠습니다.</p>
 
 <figure class="highlight"><pre><code class="language-java" data-lang="java"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
@@ -321,15 +321,15 @@
 <span class="o">}</span>
 </pre></td></tr></tbody></table></code></pre></figure>
 
-<p>프로그램 첫 줄 <code class="language-plaintext highlighter-rouge">public class Main</code>을 통해 이 프로그램은 Main 라는 이름의 클래스를 갖고 있음을 알 수 있습니다. 클래스 안에는 메소드(Method)라는 것을 가질 수 있는데, 메소드는 클래스에서 생성된 인스턴스와 관련된 동작을 의미합니다. 쉽게 말하자면 C언어에서의 사용자 정의 함수와 비슷하다고 보시면 됩니다. 이 프로그램에서는 main 메소드 하나가 존재합니다.</p>
+<p>프로그램 첫 줄 <code class="language-plaintext highlighter-rouge">public class Main</code>을 통해 이 프로그램은 Main 라는 이름의 클래스를 갖고 있음을 알 수 있습니다. 클래스 안에는 <span style="color:red">메소드(Method)</span>라는 것을 가질 수 있는데, 메소드는 클래스에서 생성된 인스턴스와 관련된 동작을 의미합니다. 쉽게 말하자면 C언어에서의 사용자 정의 함수와 비슷하다고 보시면 됩니다. 이 프로그램에서는 main 메소드 하나가 존재합니다.</p>
 
-<p>main 메소드는 프로그램이 실행될 때 가장 먼저 시작되는 부분입니다. main 바로 앞에 붙은 void는 이 메소드가 아무런 반환값(return)이 없다는 의미이고, 그 앞에 붙은 static은 인스턴스가 필요하지 않는다는 뜻입니다. 이런 메소드를 정적 메소드(Static Method)라고 부릅니다.</p>
+<p>main 메소드는 프로그램이 실행될 때 가장 먼저 시작되는 부분입니다. main 바로 앞에 붙은 void는 이 메소드가 아무런 반환값(return)이 없다는 의미이고, 그 앞에 붙은 static은 인스턴스가 필요하지 않는다는 뜻입니다. 이런 메소드를 <span style="color:red">정적 메소드(Static Method)</span>라고 부릅니다.</p>
 
-<p>HelloWorld 클래스와 main 메소드 맨 앞에 붙은 public은 접근 지정자(Access Modifier)라고 부르는데, 이 부분은 중요한 부분이니 나중에 따로 설명하도록 하겠습니다. 일단 클래스와 메소드 앞에는 주로 public으로 선언된다 정도만 알고 넘어갑시다.</p>
+<p>HelloWorld 클래스와 main 메소드 맨 앞에 붙은 public은 <span style="color:red">접근 지정자(Access Modifier)</span>라고 부르는데, 이 부분은 중요한 부분이니 나중에 따로 설명하도록 하겠습니다. 일단 클래스와 메소드 앞에는 주로 public으로 선언된다 정도만 알고 넘어갑시다.</p>
 
-<p>main 메소드 다음 줄에 있는 <code class="language-plaintext highlighter-rouge">//</code>는 주석(Comment)을 의미합니다. 주석이라는 것은 프로그래머가 자신, 또는 타인을 위해 설명을 달아놓는 것으로 프로그램 실행에서는 무시되는 부분입니다.  주석을 한 줄만 달 때는 <code class="language-plaintext highlighter-rouge">//</code>로 표시하지만, 여러 줄을 만들고 싶은 경우에는 <code class="language-plaintext highlighter-rouge">/* */</code>를 사용하시면 됩니다. 이것은 <code class="language-plaintext highlighter-rouge">/*</code>부터 <code class="language-plaintext highlighter-rouge">*/</code>까지 모든 내용을 주석으로 처리하겠다는 의미입니다.</p>
+<p>main 메소드 다음 줄에 있는 <code class="language-plaintext highlighter-rouge">//</code>는 <span style="color:red">주석(Comment)</span>을 의미합니다. 주석이라는 것은 프로그래머가 자신, 또는 타인을 위해 설명을 달아놓는 것으로 프로그램 실행에서는 무시되는 부분입니다.  주석을 한 줄만 달 때는 <code class="language-plaintext highlighter-rouge">//</code>로 표시하지만, 여러 줄을 만들고 싶은 경우에는 <code class="language-plaintext highlighter-rouge">/* */</code>를 사용하시면 됩니다. 이것은 <code class="language-plaintext highlighter-rouge">/*</code>부터 <code class="language-plaintext highlighter-rouge">*/</code>까지 모든 내용을 주석으로 처리하겠다는 의미입니다.</p>
 
-<p>주석 다음줄에 있는 System.out.println(“Hello World!”); 또한 메소드입니다. 앞에 붙은 System.out은 표준 출력(Standard Output)을 의미합니다. 표준 출력이라 함은 프로그램이 출력 데이터를 기록하는 스트림으로써, 쉽게 얘기하면 터미널에 출력하는 것을 의미합니다. 이 프로그램에서는 Hello World! 라는 문자열(String)을 출력하기 위해 사용되었습니다.</p>
+<p>주석 다음줄에 있는 <code class="language-plaintext highlighter-rouge">System.out.println("Hello World!");</code> 또한 메소드입니다. 앞에 붙은 System.out은 표준 출력(Standard Output)을 의미합니다. 표준 출력이라 함은 프로그램이 출력 데이터를 기록하는 스트림으로써, 쉽게 얘기하면 터미널에 출력하는 것을 의미합니다. 이 프로그램에서는 Hello World! 라는 문자열(String)을 출력하기 위해 사용되었습니다.</p>
 
 <p>실행 결과는 지난 포스트에서도 보셨다시피 Hello World!가 출력됩니다.</p>
 
@@ -375,7 +375,7 @@
 
 <p>MyRandom 프로그램은 가장 먼저 java.util.Random 라이브러리를 불러온 다음, main 메소드에서 Random 클래스의 새로운 인스턴스인 number 객체를 생성합니다. Random 클래스에는 무작위 정수를 반환하는 nextInt()라는 메소드가 존재하므로, Random 클래스의 인스턴스인 number에서 nextInt() 메소드를 호출합니다. MyRandom 프로그램을 여러번 실행해보시면, 실행할 때마다 무작위 정수가 출력되는 것을 확인할 수 있습니다.</p>
 
-<p>이렇게 라이브러리를 불러올 때는 반드시 프로그램 맨 위에서 불러와야 한다는 것에 주의하시기 바랍니다.</p>
+<p>이렇게 라이브러리를 불러올 때는 반드시 <strong>프로그램 맨 위</strong>에서 불러와야 한다는 것에 주의하시기 바랍니다.</p>
 
 <h2 id="primitive-types">Primitive Types</h2>
 
@@ -408,7 +408,7 @@
 
 <p>위의 프로그램은 127까지의 정수만 표현할 수 있는 byte형 변수 b에 125를 대입하고, 1씩 더해나가면서 그 결과를 출력하는 프로그램입니다. 125, 126, 127까지는 정상적으로 출력될텐데, 그 이후로는 어떤 숫자가 출력될까요?</p>
 
-<p>dtByte 프로그램을 실행시켜보면 재밌게도 127 다음에 -128이 출력되는 것을 볼 수 있습니다. 이는 해당 변수가 가질 수 있는 최대의 값을 넘는 오버플로(Overflow)가 일어났기 때문입니다. 예를 들어, 2진수 숫자 1111에 1을 더하면 10000이 되어야 하지만, 표현할 수 있는 비트의 한계로 0000으로 표현되는 것과 같은 이치입니다.</p>
+<p>dtByte 프로그램을 실행시켜보면 재밌게도 127 다음에 -128이 출력되는 것을 볼 수 있습니다. 이는 해당 변수가 가질 수 있는 최대의 값을 넘는 <span style="color:red">오버플로(Overflow)</span>가 일어났기 때문입니다. 예를 들어, 2진수 숫자 1111에 1을 더하면 10000이 되어야 하지만, 표현할 수 있는 비트의 한계로 0000으로 표현되는 것과 같은 이치입니다.</p>
 
 <p>Java에는 정수 자료형 뿐만 아니라 실수 자료형 또한 존재합니다. 정수 자료형처럼 다양하지는 않고, float와 double 타입만 존재합니다. float는 4바이트, double은 8바이트의 크기를 차지하는데, 재밌게도 Java에서는 실수 입력에 대해서 기본적으로 double로 인식합니다.</p>
 
@@ -418,39 +418,33 @@
 
 <p>Java에서 변수를 사용하려면 사용하기 전에 반드시 선언을 먼저 해주어야 합니다. 변수 선언 방법은 C언어와 유사한데, 아래와 같은 방법이 모두 허용됩니다.</p>
 
-<figure class="highlight"><pre><code class="language-java" data-lang="java"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
-2
-3
-4
-</pre></td><td class="code"><pre><span class="kt">int</span> <span class="n">number</span><span class="o">;</span>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">int</span> <span class="n">number</span><span class="o">;</span>
 <span class="kt">int</span> <span class="n">number</span> <span class="o">=</span> <span class="mi">10</span><span class="o">;</span> <span class="c1">// 선언 후 초기화</span>
 <span class="kt">int</span> <span class="n">number</span> <span class="o">=</span> <span class="mi">10</span><span class="o">,</span> <span class="n">sum</span><span class="o">;</span> <span class="c1">// 여러 선언을 한 줄에 표현</span>
 <span class="nc">Random</span> <span class="n">number</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Random</span><span class="o">();</span> <span class="c1">// 선언 후 클래스 인스턴스화</span>
-</pre></td></tr></tbody></table></code></pre></figure>
+</code></pre></div></div>
 
-<p>변수 이름은 영문자와 숫자, 그리고 _ (언더바)와 $를 사용할 수 있습니다. 단, 첫 글자에 숫자를 사용할 수는 없습니다. 변수 이름을 짓는 것은 순전히 프로그래머 마음이긴 하지만, 여러 명이 작업하는 환경에서는 가독성을 위해 암묵적인 규칙을 정해놓았습니다. 몇몇 예시를 소개해드리면 아래와 같습니다.</p>
+<p>변수 이름은 <span style="color:red">영문자</span>와 <span style="color:red">숫자</span>, 그리고 <span style="color:red">_ (언더바)</span>와 <span style="color:red">$</span>를 사용할 수 있습니다. 단, 첫 글자에 숫자를 사용할 수는 없습니다. 변수 이름을 짓는 것은 순전히 프로그래머 마음이긴 하지만, 여러 명이 작업하는 환경에서는 가독성을 위해 암묵적인 규칙을 정해놓았습니다. 몇몇 예시를 소개해드리면 아래와 같습니다.</p>
 
-<p>변수 이름과 메소드 이름은 영어 소문자로 시작하고, 단어의 구분이 필요할 때는 첫 글자를 대문자로 작성합니다. 언더바는 사용하지 않습니다.
-int myVar;
-int myMethod()
-상수 이름은 모든 글자를 대문자로 표현하고, 단어의 구분은 언더바를 사용합니다.
-final int MY_CONST = 1;
-클래스 이름은 대문자로 시작하고 단어의 구분은 첫 글자를 대문자로 작성합니다. 언더바는 사용하지 않습니다.
-public class MyClassName</p>
+<ol>
+  <li>변수 이름과 메소드 이름은 영어 소문자로 시작하고, 단어의 구분이 필요할 때는 첫 글자를 대문자로 작성합니다. 언더바는 사용하지 않습니다. ex) <code class="language-plaintext highlighter-rouge">int myVar;</code> <code class="language-plaintext highlighter-rouge">int myMethod()</code></li>
+  <li>상수 이름은 모든 글자를 대문자로 표현하고, 단어의 구분은 언더바를 사용합니다. ex) <code class="language-plaintext highlighter-rouge">final int MY_CONST = 1;</code></li>
+  <li>클래스 이름은 대문자로 시작하고 단어의 구분은 첫 글자를 대문자로 작성합니다. 언더바는 사용하지 않습니다. ex) <code class="language-plaintext highlighter-rouge">public class MyClassName</code></li>
+</ol>
 
 <p>이 외에도 주석이나 중괄호에 대한 규칙도 있습니다만, 내용이 길어 여기에 작성하지는 않겠습니다. 자세하게 알아보고 싶으신 분은 아래 사이트를 참고하시기 바랍니다.</p>
 
 <ul>
-  <li>How To Document and Organize your Java Code (영문)</li>
+  <li><a href="http://www.edparrish.net/common/javadoc.html">How To Document and Organize your Java Code (영문)</a></li>
 </ul>
 
 <h2 id="arithmetic-operators">Arithmetic Operators</h2>
 
-<p>Java에서 사용되는 연산자 또한 다른 프로그래밍 언어와 매우 유사합니다. = 기호는 수학적인 의미의 등호가 아니라 대입에 사용됩니다. 예를 들어 a = 10; 은 a라는 변수에 10을 대입한다는 뜻이 됩니다. 이러한 연산자의 종류는 매우 많고, 우선 순위의 문제도 있어 복잡하므로, 하나하나 자세히 소개하도록 하겠습니다.</p>
+<p>Java에서 사용되는 연산자 또한 다른 프로그래밍 언어와 매우 유사합니다. = 기호는 수학적인 의미의 등호가 아니라 대입에 사용됩니다. 예를 들어 <code class="language-plaintext highlighter-rouge">a = 10;</code> 은 a라는 변수에 10을 대입한다는 뜻이 됩니다. 이러한 연산자의 종류는 매우 많고, 우선 순위의 문제도 있어 복잡하므로, 하나하나 자세히 소개하도록 하겠습니다.</p>
 
 <h3 id="unary-operators">Unary Operators</h3>
 
-<p>단항 연산자(Unary Operator)는 해당 변수의 값을 증가시키는 ++과 감소시키는 –가 있는데, 연산자를 어디에 붙이느냐에 따라 결과가 달라집니다. 만약 ++/–를 변수 앞에 붙인다면 그 즉시 연산을 수행하고, 변수 뒤에 붙인다면 해당 줄이 끝날 때 연산이 수행됩니다. 예를 들어, a라는 변수에 10이 저장되어 있다고 가정했을 때 <code class="language-plaintext highlighter-rouge">b = a++;</code>를 수행하면 b에 a의 값인 10을 대입한 다음 a가 1 증가하지만, <code class="language-plaintext highlighter-rouge">b = ++a;</code>를 수행하면 a가 먼저 1 증가한다음 b에는 11이 들어가게 됩니다.</p>
+<p><span style="color:red">단항 연산자(Unary Operator)</span>는 해당 변수의 값을 증가시키는 ++과 감소시키는 –가 있는데, 연산자를 어디에 붙이느냐에 따라 결과가 달라집니다. 만약 ++/–를 변수 앞에 붙인다면 그 즉시 연산을 수행하고, 변수 뒤에 붙인다면 해당 줄이 끝날 때 연산이 수행됩니다. 예를 들어, a라는 변수에 10이 저장되어 있다고 가정했을 때 <code class="language-plaintext highlighter-rouge">b = a++;</code>를 수행하면 b에 a의 값인 10을 대입한 다음 a가 1 증가하지만, <code class="language-plaintext highlighter-rouge">b = ++a;</code>를 수행하면 a가 먼저 1 증가한다음 b에는 11이 들어가게 됩니다.</p>
 
 <p>이러한 증감 연산자의 위치 문제는 간단하지만 충분히 헷갈릴 수 있는 문제이기 때문에, 역시 시험 문제로 단골 출제되는 문제입니다. 아래 프로그램의 출력이 무엇일지 한번 생각해보세요.</p>
 
@@ -468,7 +462,7 @@ public class MyClassName</p>
 12
 13
 14
-</pre></td><td class="code"><pre><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Main</span> <span class="o">{</span>
+</pre></td><td class="code"><pre><span class="kd">public</span> <span class="kd">class</span> <span class="nc">opPlus</span> <span class="o">{</span>
     <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="nc">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
         <span class="kt">int</span> <span class="n">x</span><span class="o">=</span><span class="mi">1</span><span class="o">;</span>
         <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"x:"</span> <span class="o">+</span> <span class="n">x</span><span class="o">);</span>
@@ -484,7 +478,7 @@ public class MyClassName</p>
 <span class="o">}</span>
 </pre></td></tr></tbody></table></code></pre></figure>
 
-<p>opPlus 프로그램을 직접 실행해보기 전에 한줄 한줄 따라가보며 어떤 출력이 나오는지 알아봅시다. 변수 x는 1로 초기화가 되었고, 그 아래에는 for 라는 함수가 나옵니다. 이것은 반복문으로써, 동일한 동작을 반복한다는 의미입니다. 일단은 for 바로 다음 줄(7번째 줄)에 있는 코드가 3번 반복 실행된다는 것만 알고 넘어갑시다.</p>
+<p>opPlus 클래스를 직접 실행해보기 전에 한줄 한줄 따라가보며 어떤 출력이 나오는지 알아봅시다. 변수 x는 1로 초기화가 되었고, 그 아래에는 for 라는 함수가 나옵니다. 이것은 반복문으로써, 동일한 동작을 반복한다는 의미입니다. 일단은 for 바로 다음 줄(7번째 줄)에 있는 코드가 3번 반복 실행된다는 것만 알고 넘어갑시다.</p>
 
 <p>7번째 줄에 있는 코드를 보니 x++를 출력하는 부분이 있습니다. 위에서 말했듯이 증감 연산자가 변수 뒤에 붙으면 해당 줄이 끝나고 증감이 일어납니다. 즉, 처음 7번째 줄이 실행될 때는 x가 1로 출력됩니다. 두 번째는 2, 그 다음에는 3이 출력 되겠죠.</p>
 
@@ -494,7 +488,7 @@ public class MyClassName</p>
 
 <h3 id="binary-operators">Binary Operators</h3>
 
-<p>이항 연산자(Binary Operator)는 흔히 알고 있는 +(덧셈), -(뻴셈), *(곱셈), /(나눗셈), %(나머지) 등이 있습니다. 이항 연산자에서 하나 주의하실 점은, 변수가 어떤 자료형인지에 따라 결과 값의 자료형이 바뀌게 됩니다. 만약에 double로 선언된 변수가 하나라도 있을 경우, 연산의 결과값은 double로 처리됩니다. 같은 이유로, float + int 같은 경우도 float로 처리되고 long + int라고 해도 long으로 처리됩니다.</p>
+<p><span style="color:red">이항 연산자(Binary Operator)</span>는 흔히 알고 있는 <strong>+(덧셈)</strong>, <strong>-(뻴셈)</strong>, <strong>*(곱셈)</strong>, <strong>/(나눗셈)</strong>, <strong>%(나머지)</strong> 등이 있습니다. 이항 연산자에서 하나 주의하실 점은, 변수가 어떤 자료형인지에 따라 결과 값의 자료형이 바뀌게 됩니다. 만약에 double로 선언된 변수가 하나라도 있을 경우, 연산의 결과값은 double로 처리됩니다. 같은 이유로, float + int 같은 경우도 float로 처리되고 long + int라고 해도 long으로 처리됩니다.</p>
 
 <p>이 말은 결과를 저장하는 변수가 반드시 해당 자료형으로 선언되어야만 한다는 뜻입니다. 그렇게 하지 않으면 어떻게 될까요? 아래 dtDouble 프로그램을 봅시다.</p>
 
@@ -506,7 +500,7 @@ public class MyClassName</p>
 6
 7
 8
-</pre></td><td class="code"><pre><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Main</span> <span class="o">{</span>
+</pre></td><td class="code"><pre><span class="kd">public</span> <span class="kd">class</span> <span class="nc">dtDouble</span> <span class="o">{</span>
     <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="nc">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
         <span class="kt">int</span> <span class="n">a</span> <span class="o">=</span> <span class="mi">4</span><span class="o">;</span>
         <span class="kt">double</span> <span class="n">b</span> <span class="o">=</span> <span class="mf">3.14</span><span class="o">;</span>
@@ -516,9 +510,9 @@ public class MyClassName</p>
 <span class="o">}</span>
 </pre></td></tr></tbody></table></code></pre></figure>
 
-<p>dtDouble 프로그램은 int 변수 a와 double 변수 b를 더한 다음, 그 결과를 int 변수 c에 넣고 그 결과를 출력하는 프로그램입니다. C언어에서 이런 프로그램을 구현한다면 그냥 소수점 아래 부분만 생략되고 정상적으로 프로그램이 돌아가지만, Java에서는 아예 컴파일 에러를 일으킵니다.</p>
+<p>dtDouble 클래스는 int 변수 a와 double 변수 b를 더한 다음, 그 결과를 int 변수 c에 넣고 그 결과를 출력하는 프로그램입니다. C언어에서 이런 프로그램을 구현한다면 그냥 소수점 아래 부분만 생략되고 정상적으로 프로그램이 돌아가지만, Java에서는 아예 컴파일 에러를 일으킵니다.</p>
 
-<p>이 오류를 해결하기 위해서는 변수 c를 double로 선언하거나, 아니면 자료형 변환(Type Casting)을 사용해야 합니다. 자료형 변환은 강제적으로 자료형을 바꿔주는 역할로, 해당 값 앞에 (자료형)을 선언해주면 됩니다. dtDouble에서 자료형 변환을 사용한다면 아래와 같습니다.</p>
+<p>이 오류를 해결하기 위해서는 변수 c를 double로 선언하거나, 아니면 <span style="color:red">자료형 변환(Type Casting)</span>을 사용해야 합니다. 자료형 변환은 강제적으로 자료형을 바꿔주는 역할로, 해당 값 앞에 (자료형)을 선언해주면 됩니다. dtDouble에서 자료형 변환을 사용한다면 아래와 같습니다.</p>
 
 <figure class="highlight"><pre><code class="language-java" data-lang="java"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
@@ -528,7 +522,7 @@ public class MyClassName</p>
 6
 7
 8
-</pre></td><td class="code"><pre><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Main</span> <span class="o">{</span>
+</pre></td><td class="code"><pre><span class="kd">public</span> <span class="kd">class</span> <span class="nc">dtDouble2</span> <span class="o">{</span>
     <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="nc">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
         <span class="kt">int</span> <span class="n">a</span> <span class="o">=</span> <span class="mi">4</span><span class="o">;</span>
         <span class="kt">double</span> <span class="n">b</span> <span class="o">=</span> <span class="mf">3.14</span><span class="o">;</span>
@@ -542,7 +536,7 @@ public class MyClassName</p>
 
 <h3 id="logical-operators">Logical Operators</h3>
 
-<p>논리 연산자(Logical Operator)는 주로 조건문에서 많이 쓰이는 연산자입니다. 논리형 연산자의 결과는 무조건 불 자료형인 true 또는 false 로만 나옵니다. 종류가 꽤 많은데, 대부분 직관적으로 이해 가능한 표현입니다.</p>
+<p><span style="color:red">논리 연산자(Logical Operator)</span>는 주로 조건문에서 많이 쓰이는 연산자입니다. 논리형 연산자의 결과는 무조건 불 자료형인 <strong>true</strong> 또는 <strong>false</strong> 로만 나옵니다. 종류가 꽤 많은데, 대부분 직관적으로 이해 가능한 표현입니다.</p>
 
 <ul>
   <li>== (equal)</li>
@@ -567,7 +561,7 @@ public class MyClassName</p>
 7
 8
 9
-</pre></td><td class="code"><pre><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Main</span> <span class="o">{</span>
+</pre></td><td class="code"><pre><span class="kd">public</span> <span class="kd">class</span> <span class="nc">opLogical</span> <span class="o">{</span>
     <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="nc">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
         <span class="kt">int</span> <span class="n">a</span> <span class="o">=</span> <span class="mi">10</span><span class="o">;</span>
         <span class="kt">int</span> <span class="n">b</span> <span class="o">=</span> <span class="mi">20</span><span class="o">;</span>
@@ -578,7 +572,7 @@ public class MyClassName</p>
 <span class="o">}</span>
 </pre></td></tr></tbody></table></code></pre></figure>
 
-<p>opLogical 프로그램은 (a &lt; b) 와 (++a &lt; c)의 논리합의 결과를 출력하고, 다음 줄에 a의 값을 출력하는 프로그램입니다. 논리합은 둘 중 하나만 true라면 결과가 true가 됩니다. 여기서는 a가 10이고, b가 20이니 a &lt; b라는 명제가 true이므로, 첫 줄에서는 true라는 결과가 출력될 것입니다.</p>
+<p>opLogical 클래스는 (a &lt; b) 와 (++a &lt; c)의 논리합의 결과를 출력하고, 다음 줄에 a의 값을 출력하는 프로그램입니다. 논리합은 둘 중 하나만 true라면 결과가 true가 됩니다. 여기서는 a가 10이고, b가 20이니 a &lt; b라는 명제가 true이므로, 첫 줄에서는 true라는 결과가 출력될 것입니다.</p>
 
 <p>문제는 (++a &lt; c) 부분 입니다. ++a 코드로 인해 a는 1이 증가한 11의 값을 갖고 있어야 합니다. 하지만 실제로 이 프로그램을 실행해보면 a의 값은 그대로 10임을 확인할 수 있습니다.</p>
 
@@ -586,9 +580,9 @@ public class MyClassName</p>
 
 <h3 id="assignment-operators">Assignment Operators</h3>
 
-<p>대입 연산자(Assignment Operators)는 말 그대로 대입을 하기 위한 연산자입니다. 이전에 대입을 위해서는 =가 쓰인다고 말했지만, =에 다른 연산자를 추가함으로써 증감 연산을 한번에 수행할 수 있습니다.</p>
+<p><span style="color:red">대입 연산자(Assignment Operators)</span>는 말 그대로 대입을 하기 위한 연산자입니다. 이전에 대입을 위해서는 =가 쓰인다고 말했지만, =에 다른 연산자를 추가함으로써 증감 연산을 한번에 수행할 수 있습니다.</p>
 
-<p>가장 많이 쓰이는 응용 대입 연산자는 사칙연산을 섞은 대입 연산자입니다. 종류로 +=, -=, *=, /=, %=가 있는데, 이것은 원래 변수에 해당 값을 더한 다음 다시 대입을 시킨다는 의미입니다. 예를 들어 a *= 10; 의 뜻은 변수 a에 10을 곱한 다음, 그 값을 다시 a에 대입한다는 뜻입니다.</p>
+<p>가장 많이 쓰이는 응용 대입 연산자는 사칙연산을 섞은 대입 연산자입니다. 종류로 +=, -=, *=, /=, %=가 있는데, 이것은 원래 변수에 해당 값을 더한 다음 다시 대입을 시킨다는 의미입니다. 예를 들어 <code class="language-plaintext highlighter-rouge">a *= 10;</code> 의 뜻은 변수 a에 10을 곱한 다음, 그 값을 다시 a에 대입한다는 뜻입니다.</p>
 
 <p>대입 연산자를 한 번에 여러번 사용할 수도 있기 때문에, 이걸로 재밌는 문제를 만들 수도 있습니다. 아래의 프로그램을 보시고 어떤 결과가 나올지 예상해보세요.</p>
 
@@ -604,7 +598,7 @@ public class MyClassName</p>
 10
 11
 12
-</pre></td><td class="code"><pre><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Main</span> <span class="o">{</span>
+</pre></td><td class="code"><pre><span class="kd">public</span> <span class="kd">class</span> <span class="nc">opAssignment</span> <span class="o">{</span>
     <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="nc">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
         <span class="kt">int</span> <span class="n">a</span> <span class="o">=</span> <span class="mi">10</span><span class="o">,</span> <span class="n">b</span> <span class="o">=</span> <span class="mi">10</span><span class="o">,</span> <span class="n">c</span> <span class="o">=</span> <span class="mi">10</span><span class="o">,</span> <span class="n">d</span> <span class="o">=</span> <span class="mi">10</span><span class="o">;</span>
 
@@ -618,13 +612,13 @@ public class MyClassName</p>
 <span class="o">}</span>
 </pre></td></tr></tbody></table></code></pre></figure>
 
-<p>opAssignment 프로그램은 먼저 4개의 변수 a, b, c, d를 10으로 정의하고 한번에 여러 대입 연산자를 사용하고 있습니다. 이렇게 대입 연산자가 한 줄에 여러개 쓰일 때는 가장 오른쪽부터 계산해주시면 됩니다. d /= 5 는 d를 5로 나눈 값을 다시 d에 넣으니 2가 저장이 되고, 다음으로 c *= d 를 계산하면 c에 2를 곱한 결과인 20을 c에 넣게 되는 방식입니다. 이런식으로 a까지 계산을 순차적으로 처리합니다. 결과는 위의 Run을 누르셔서 직접 확인해보시기 바랍니다.</p>
+<p>opAssignment 클래스는 먼저 4개의 변수 a, b, c, d를 10으로 정의하고 한번에 여러 대입 연산자를 사용하고 있습니다. 이렇게 대입 연산자가 한 줄에 여러개 쓰일 때는 가장 오른쪽부터 계산해주시면 됩니다. <code class="language-plaintext highlighter-rouge">d /= 5</code> 는 d를 5로 나눈 값을 다시 d에 넣으니 2가 저장이 되고, 다음으로 <code class="language-plaintext highlighter-rouge">c *= d</code> 를 계산하면 c에 2를 곱한 결과인 20을 c에 넣게 되는 방식입니다. 이런식으로 a까지 계산을 순차적으로 처리합니다. 결과는 위의 Run을 누르셔서 직접 확인해보시기 바랍니다.</p>
 
 <p>대입 연산자에는 »= 등의 비트 대입 연산자도 있습니다만, 특별한 경우가 아니라면 잘 사용하지 않으니 이 부분은 생략하도록 하겠습니다.</p>
 
 <h3 id="conditional-operators">Conditional Operators</h3>
 
-<p>조건 연산자(Conditional Operators)는 조건에 따라 어떤 값을 넣을지 정하는 연산자입니다. 시험에서는 많이 나오긴 하지만, 저는 개인적으로 불편해서 조건문을 쓰지 조건 연산자를 사용하진 않습니다. 조건 연산자는 time &lt; 12 ? “am” : “pm” 와 같이 사용합니다. ?를 기준으로 왼쪽이 조건, 오른쪽이 결과에 따른 값을 나타낸 것입니다. : 왼쪽에 있는 부분은 조건이 true일 때의 결과, 오른쪽은 조건이 false일 때의 결과입니다. 위의 조건 연산자를 해석하면, time이라는 변수가 12보다 작으면 결과가 am이 나오고, 크면 pm이 나오게 됩니다.</p>
+<p><span style="color:red">조건 연산자(Conditional Operators)</span>는 조건에 따라 어떤 값을 넣을지 정하는 연산자입니다. 시험에서는 많이 나오긴 하지만, 저는 개인적으로 불편해서 조건문을 쓰지 조건 연산자를 사용하진 않습니다. 조건 연산자는 <code class="language-plaintext highlighter-rouge">time &lt; 12 ? “am” : “pm”</code> 와 같이 사용합니다. ?를 기준으로 왼쪽이 조건, 오른쪽이 결과에 따른 값을 나타낸 것입니다. : 왼쪽에 있는 부분은 조건이 true일 때의 결과, 오른쪽은 조건이 false일 때의 결과입니다. 위의 조건 연산자를 해석하면, time이라는 변수가 12보다 작으면 결과가 am이 나오고, 크면 pm이 나오게 됩니다.</p>
 
 <figure class="highlight"><pre><code class="language-java" data-lang="java"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
@@ -638,7 +632,7 @@ public class MyClassName</p>
 10
 11
 12
-</pre></td><td class="code"><pre><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Main</span> <span class="o">{</span>
+</pre></td><td class="code"><pre><span class="kd">public</span> <span class="kd">class</span> <span class="nc">opConditional</span> <span class="o">{</span>
     <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="nc">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
         <span class="kt">int</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">30</span><span class="o">,</span> <span class="n">y</span> <span class="o">=</span> <span class="mi">10</span><span class="o">,</span> <span class="n">z</span><span class="o">;</span>
         <span class="kt">char</span> <span class="n">op</span><span class="o">;</span>
@@ -652,17 +646,17 @@ public class MyClassName</p>
 <span class="o">}</span>
 </pre></td></tr></tbody></table></code></pre></figure>
 
-<p>opConditional 프로그램은 조건 연산자의 사용 예시를 보여주고 있습니다. x에 30, y에 10으로 정의한 다음, op에 -를 대입합니다. 10번째 줄에서는 op가 +라면 x + y를 수행하고, 그렇지 않으면 x - y를 수행해서 그 결과를 z에 대입하게 됩니다.</p>
+<p>opConditional 클래스는 조건 연산자의 사용 예시를 보여주고 있습니다. x에 30, y에 10으로 정의한 다음, op에 -를 대입합니다. 10번째 줄에서는 op가 +라면 <code class="language-plaintext highlighter-rouge">x + y</code>를 수행하고, 그렇지 않으면 <code class="language-plaintext highlighter-rouge">x - y</code>를 수행해서 그 결과를 z에 대입하게 됩니다.</p>
 
 <h3 id="operator-priority">Operator Priority</h3>
 
 <p>지금까지 여러 종류의 연산자를 알아보았습니다. 그런데 연산자는 하나만 쓸 때보다 여러 연산자를 섞어 쓸 때가 많습니다. 연산자의 종류가 굉장히 많기 때문에, 각각의 연산자마다 우선순위를 정해주어야 정상적인 계산이 가능합니다. 연산자의 우선순위를 알아두는 것 자체도 중요하고, 시험에서도 안나올 수가 없는 문제이기 때문에 전부는 아니더라도 대략적으로는 알아두시는 것이 좋습니다.</p>
 
-<p>이 부분은 교재에 잘 정리되어 있어서 교재 그대로 Java 교재에 나와있는 연산자 우선순위 그림을 삽입하였습니다. 마침 교재 사이트에도 나와있어 쉽게 가져올 수 있었습니다.</p>
+<p>이 부분은 교재에 잘 정리되어 있어서 교재 그대로 Java 교재에 나와있는 연산자 우선순위 그림을 삽입하였습니다. 마침 <a href="https://introcs.cs.princeton.edu/java/11precedence/">교재 사이트</a>에도 나와있어 쉽게 가져올 수 있었습니다.</p>
 
 <p><img src="/images/Java/3. Java Programming Basic (1)/Java 03-01.png" alt="" class="align-center" /></p>
 
-<p>시험에서 연산자의 우선순위를 물어볼 때는 보통 다음과 같이 출제합니다. opPriority.java의 결과가 무엇이 나올지 한번 생각해보시기 바랍니다.</p>
+<p>시험에서 연산자의 우선순위를 물어볼 때는 보통 다음과 같이 출제합니다. 아래 opPriority 클래스의 결과가 무엇이 나올지 한번 생각해보시기 바랍니다.</p>
 
 <figure class="highlight"><pre><code class="language-java" data-lang="java"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
@@ -673,7 +667,7 @@ public class MyClassName</p>
 7
 8
 9
-</pre></td><td class="code"><pre><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Main</span> <span class="o">{</span>
+</pre></td><td class="code"><pre><span class="kd">public</span> <span class="kd">class</span> <span class="nc">opPriority</span> <span class="o">{</span>
     <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="nc">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
         <span class="kt">int</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">1</span><span class="o">,</span> <span class="n">y</span> <span class="o">=</span> <span class="mi">2</span><span class="o">,</span> <span class="n">z</span><span class="o">;</span>
         <span class="n">z</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span> <span class="o">*</span> <span class="mi">2</span> <span class="o">-</span> <span class="o">++</span><span class="n">x</span> <span class="o">+</span> <span class="o">(</span><span class="n">y</span> <span class="o">+=</span> <span class="mi">3</span><span class="o">);</span>
@@ -684,7 +678,7 @@ public class MyClassName</p>
 <span class="o">}</span>
 </pre></td></tr></tbody></table></code></pre></figure>
 
-<p>이 문제는 우선순위 표를 보시면 쉽게 계산할 수 있기 때문에 따로 해설을 달진 않겠습니다. 프로그램을 실행해보기 전에 예상한 값과 일치한지 확인해보시기 바랍니다.</p>
+<p>이 문제는 우선순위 표를 보시면 쉽게 계산할 수 있기 때문에 따로 해설을 달진 않겠습니다. 프로그램을 직접 실행해보기 전에 예상한 값과 일치한지 확인해보시기 바랍니다.</p>
 
         
       </section>
