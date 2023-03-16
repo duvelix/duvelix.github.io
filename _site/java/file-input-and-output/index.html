@@ -333,35 +333,33 @@
 <span class="o">}</span>
 </pre></td></tr></tbody></table></code></pre></figure>
 
-<p>Line 1~2</p>
+<p><strong>Line 1~2</strong></p>
 
 <p>파일 출력을 위해서는 출력을 위한 클래스가 정의되어 있는 FileOutputStream 라이브러리를 먼저 불러와야 합니다. 또한 입출력에서의 예외 처리를 위한 라이브러리인 IOException 라이브러리도 불러와야하는데, 예외 처리에 대한 것은 추후 자세히 다뤄보도록 하고 일단은 이게 입출력에 대한 예외 처리가 담겨있는 라이브러리이구나 라고만 짚고 넘어가도록 하겠습니다.</p>
 
-<p>Line 5</p>
+<p><strong>Line 5</strong></p>
 
 <p>main 메소드를 정의할 때, 뒷 부분에 throws IOException이 붙은 것을 볼 수 있습니다. 이 부분이 바로 예외 처리를 설정한 부분입니다. Java에서 예외가 발생할 수 있는 메소드에서는 이렇게 직접 예외 처리를 해주어야 합니다. main 메소드에서 파일 출력을 할 예정이니, “파일 출력에 대한 예외가 발생할 수도 있다”라고 선언한 거라고 생각하시면 됩니다.</p>
 
-<p>Line 6</p>
+<p><strong>Line 6</strong></p>
 
 <p>파일 출력을 위한 객체를 생성하는 부분입니다. FileOutputStream은 첫째 줄에서 호출한 라이브러리에 정의된 파일 출력에 관한 클래스입니다. FileOutputStream 객체를 생성할 때 들어가는 매개변수는 파일을 생성할 경로가 됩니다.</p>
 
-<p>파일 생성 경로의 표현 방법으로는 상대 경로(Relative Path)와 절대 경로(Absolute Path)가 있습니다. 상대 경로는 현재 프로그램의 위치를 기반해서 정하는 경로이고, 절대 경로는 해당 파일이 가지고 있는 고유 경로를 말합니다. 위의 프로그램에서는 상대 경로를 채택했는데, 만약 이것을 절대 경로로 표기한다면 C:\Users\Username\Java\src와 같은 형식이 됩니다.</p>
+<p>파일 생성 경로의 표현 방법으로는 <span style="color:red">상대 경로(Relative Path)</span>와 <span style="color:red">절대 경로(Absolute Path)</span>가 있습니다. 상대 경로는 현재 프로그램의 위치를 기반해서 정하는 경로이고, 절대 경로는 해당 파일이 가지고 있는 고유 경로를 말합니다. 위의 프로그램에서는 상대 경로를 채택했는데, 만약 이것을 절대 경로로 표기한다면 <strong>C:\Users\Username\Java\src</strong> 와 같은 형식이 됩니다.</p>
 
 <p>어떤 경로를 사용할지는 프로그래머의 취향이지만, 일반적으로는 상대 경로를 더 많이 사용하고 권장됩니다. 절대 경로를 잘 사용하지 않는 이유는 프로그램을 여러 기기에서 실행할 때 각 기기마다 환경이 다를 수 있기 때문입니다. 현재 프로그램의 위치를 기반으로 경로를 정하게 되면 어떤 환경에서 실행해도 경로로 인한 문제가 발생하지 않기 때문에 가급적이면 상대 경로를 사용하는 것을 추천드립니다.</p>
 
-<p>Line 7~8</p>
+<p><strong>Line 7~8</strong></p>
 
 <p>이 부분은 파일에 쓰여질 문장을 정하는 부분입니다. 7번째 줄에서 String 객체로 Hello World! 라는 문자열을 대입하였는데, 8번째 줄에서는 String 클래스에 미리 정의되어 있는 getBytes라는 메소드를 사용하여 String 객체를 byte형 객체로 변환하는 것을 볼 수 있습니다. 굳이 byte형 객체로 변환하는 이유는 9번째 줄에서 설명드리겠습니다.</p>
 
-<p>Line 9</p>
+<p><strong>Line 9</strong></p>
 
-<p>9번째 줄은 매개변수로 넣은 문자열을 파일에 직접 쓰는 부분입니다. 이전에 문자열을 byte형 객체로 변환하였는데, FileOutputStream 객체의 write 메소드가 아래와 같이 정의되어 있기 때문입니다.</p>
-
-<p>void write(byte buf[])</p>
+<p>9번째 줄은 매개변수로 넣은 문자열을 파일에 직접 쓰는 부분입니다. 이전에 문자열을 byte형 객체로 변환하였는데, FileOutputStream 객체의 write 메소드가 <code class="language-plaintext highlighter-rouge">void write(byte buf[])</code> 로 정의되어 있기 때문입니다.</p>
 
 <p>이렇게 write 메소드의 매개변수가 byte형 배열로 정의되어 있기 때문에 파일에 입력할 때는 byte형 객체로 변환하는 과정이 필요합니다.</p>
 
-<p>Line 10</p>
+<p><strong>Line 10</strong></p>
 
 <p>10번째 줄은 파일에 대한 쓰기가 끝나고 파일을 닫는 부분입니다. 이 과정을 생략해도 컴파일 에러나 런타임 에러가 발생하는 것은 아니고, 프로그램이 종료될때 알아서 닫아주긴 하지만 가급적이면 프로그래머가 스스로 닫아주는 것이 좋습니다.</p>
 
@@ -393,33 +391,31 @@
 <span class="o">}</span>
 </pre></td></tr></tbody></table></code></pre></figure>
 
-<p>Line 1~2</p>
+<p><strong>Line 1~2</strong></p>
 
 <p>FileOutputStream 라이브러리를 사용할 때와 마찬가지로, FileWriter 역시 라이브러리를 불러와야 합니다. FileWriter 또한 입출력에 관한 라이브러리이다 보니, 예외 처리를 위한 IOException 라이브러리를 불러와야 합니다.</p>
 
-<p>Line 5</p>
+<p><strong>Line 5</strong></p>
 
-<p>이 부분 역시 FileOutputStream를 사용할 때와 마찬가지로 main 메소드 뒷 부분에 throws IOException을 붙임으로써 예외 처리를 설정해 주어야 합니다.</p>
+<p>이 부분 역시 FileOutputStream를 사용할 때와 마찬가지로 main 메소드 뒷 부분에 <code class="language-plaintext highlighter-rouge">throws IOException</code>을 붙임으로써 예외 처리를 설정해 주어야 합니다.</p>
 
-<p>Line 6</p>
+<p><strong>Line 6</strong></p>
 
 <p>파일 출력을 위한 객체를 생성하는 부분입니다. FileWriter는 첫째 줄에서 호출한 라이브러리에 정의된 파일 출력에 관한 클래스입니다. FileOutputStream 객체와 마찬가지로 FileWriter 객체를 생성할 때 들어가는 매개변수는 파일을 생성할 경로가 됩니다.</p>
 
-<p>Line 7~8</p>
+<p><strong>Line 7~8</strong></p>
 
-<p>파일에 쓰여질 문장을 정의하고 파일에 쓰는 부분입니다. 7번째 줄에서 String 객체로 Hello World! 라는 문자열을 정의하고 별 다른 변환 없이 8번째 줄에서 바로 write라는 메소드를 사용하여 파일에 쓰는 것을 볼 수 있습니다. FileWriter의 write 메소드는 아래와 같이 정의되어 있습니다.</p>
+<p>파일에 쓰여질 문장을 정의하고 파일에 쓰는 부분입니다. 7번째 줄에서 String 객체로 Hello World! 라는 문자열을 정의하고 별 다른 변환 없이 8번째 줄에서 바로 write라는 메소드를 사용하여 파일에 쓰는 것을 볼 수 있습니다. FileWriter의 write 메소드는 <code class="language-plaintext highlighter-rouge">void write(String str)</code> 로 정의되어 있습니다.</p>
 
-<p>void write(String str)</p>
+<p>다만 여러 줄을 작성할 때는 꼭 <strong>\r\n</strong>을 붙여야하는 단점이 있습니다. \r\n는 <span style="color:red">Carriage Return</span>과 <span style="color:red">Line Feed</span>를 의미하는데, 이것은 다음 줄의 첫 칸으로 포인터를 넘긴다는 의미입니다.</p>
 
-<p>다만 여러 줄을 작성할 때는 꼭 \r\n을 붙여야하는 단점이 있습니다. \r\n는 Carriage Return과 Line Feed를 의미하는데, 이것은 다음 줄로 넘긴다는 의미입니다.</p>
-
-<p>Line 9</p>
+<p><strong>Line 9</strong></p>
 
 <p>FileOutputStream 때와 마찬가지로 파일을 닫아주는 부분입니다.</p>
 
 <h2 id="file-output--printwriter">File Output : PrintWriter</h2>
 
-<p>FileWriter도 충분히 편리한 라이브러리이지만, 많은 줄의 프로그램을 작성할 때는 일일이 문장 끝마다 \r\n를 붙여야 하는 불편함이 있습니다. 이에 대한 대안으로 PrintWriter라는 또 다른 파일 출력 라이브러리가 존재합니다. 사용 방법은 아래와 같습니다.</p>
+<p>FileWriter도 충분히 편리한 라이브러리이지만, 많은 줄의 프로그램을 작성할 때는 일일이 문장 끝마다 <strong>\r\n</strong>를 붙여야 하는 불편함이 있습니다. 이에 대한 대안으로 PrintWriter라는 또 다른 파일 출력 라이브러리가 존재합니다. 사용 방법은 아래와 같습니다.</p>
 
 <figure class="highlight"><pre><code class="language-java" data-lang="java"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
@@ -577,27 +573,27 @@
 <span class="o">}</span>
 </pre></td></tr></tbody></table></code></pre></figure>
 
-<p>Line 1~2</p>
+<p><strong>Line 1~2</strong></p>
 
 <p>역시 파일 입력을 위한 라이브러리를 호출하는 부분입니다. 이번에는 FileInputStream 이라는 기본적인 파일 입력 라이브러리와 예외 처리를 위한 IOException 라이브러리를 호출합니다.</p>
 
-<p>Line 5</p>
+<p><strong>Line 5</strong></p>
 
 <p>파일 입력에서의 예외 처리도 필요하기에, 파일 입력을 수행하는 main 메소드에서 예외 처리를 해준 모습입니다.</p>
 
-<p>Line 6</p>
+<p><strong>Line 6</strong></p>
 
-<p>이 부분은 파일로부터 읽어들인 문자열을 저장하는 부분입니다. FileOutputStream과 마찬가지로 FileInputStream도 byte 자료형 단위로 문자를 받기 때문에 byte형 배열로 선언한 모습입니다. 이렇게 파일로부터 읽어들인 문자열을 저장하는 곳을 버퍼(Buffer)라 부릅니다.</p>
+<p>이 부분은 파일로부터 읽어들인 문자열을 저장하는 부분입니다. FileOutputStream과 마찬가지로 FileInputStream도 byte 자료형 단위로 문자를 받기 때문에 byte형 배열로 선언한 모습입니다. 이렇게 파일로부터 읽어들인 문자열을 저장하는 곳을 <span style="color:red">버퍼(Buffer)</span>라고 부릅니다.</p>
 
-<p>Line 7</p>
+<p><strong>Line 7</strong></p>
 
 <p>파일 입력에 대한 객체를 선언하는 부분입니다. FileInputStream의 매개변수로는 읽을 파일이 위치한 경로가 됩니다. 만약 해당 경로에 파일이 없다면 예외가 발생하게 됩니다.</p>
 
-<p>Line 8</p>
+<p><strong>Line 8</strong></p>
 
 <p>파일 입력 객체의 read 메소드를 사용하여 미리 선언해둔 버퍼 b에 데이터를 저장하는 부분입니다.</p>
 
-<p>Line 9</p>
+<p><strong>Line 9</strong></p>
 
 <p>파일을 읽고 저장해둔 버퍼 b를 표준 출력으로 출력하는 부분입니다. 버퍼 b는 byte형으로 선언되어 있기 때문에, String 형 메소드로 타입을 변환한 후 출력해야 합니다.</p>
 

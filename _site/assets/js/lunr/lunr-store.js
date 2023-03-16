@@ -156,7 +156,7 @@ var store = [{
         "teaser": null
       },{
         "title": "Inheritance",
-        "excerpt":"Four Principles of Objected Oriented Programming 지난 시간에 객체 지향 프로그래밍에서의 4가지 요소인 캡슐화, 추상화, 상속, 다형성을 소개하고, 그 중 하나인 추상화에 대해 자세히 알아보았습니다. Java 언어에서 추상화는 인터페이스를 통해 구현되어, 인터페이스의 사용법과 그 응용법을 다뤘습니다. 오늘은 4가지 요소 중 하나인 상속에 대해 배우게 됩니다. 상속은 이전 챕터에서 설명드린바와 같이...","categories": ["studies"],
+        "excerpt":"Four Principles of Objected Oriented Programming 지금까지 객체 지향 프로그래밍에서의 4가지 요소인 캡슐화(Encapsulation), 추상화(Abstraction), 상속(Inheritance), 다형성(Polymorphism)을 소개하고, 그 중 캡슐화와 추상화에 대해 자세히 알아보았습니다. Java 언어에서 추상화는 인터페이스를 통해 구현되어, 인터페이스의 사용법과 그 응용법을 다뤘습니다. 오늘은 나머지 요소 중 하나인 상속에 대해 배우게 됩니다. 상속은 이전 챕터에서 설명드린바와 같이 두...","categories": ["studies"],
         "tags": ["java"],
         "url": "/java/inheritance/",
         "teaser": null
