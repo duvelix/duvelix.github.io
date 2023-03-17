@@ -180,7 +180,7 @@ var store = [{
         "teaser": null
       },{
         "title": "Collection Framework (1)",
-        "excerpt":"이번 포스트부터 시작해서 앞으로 4개 정도의 포스트에서는 Collection Framework에 대해 다룰 예정입니다. Collection Framework는 Java의 자료구조라고 생각하시면 됩니다. 정확히는 다수의 데이터를 처리할 때 사용하는 미리 정의된 클래스의 집합입니다. Java에서는 크게 3가지 타입의 자료구조가 정의되어 있으며 Interface로 구현되어 있습니다. List List는 순서가 있는 데이터를 처리하며, 데이터의 중복을 허용합니다. ex) 식당에서 대기하고...","categories": ["studies"],
+        "excerpt":"이번 포스트부터 시작해서 앞으로 4개 정도의 포스트에서는 Collection Framework에 대해 다룰 예정입니다. Collection Framework는 Java의 자료구조라고 생각하시면 됩니다. 정확히는 다수의 데이터를 처리할 때 사용하는 미리 정의된 클래스의 집합입니다. Java에서는 크게 3가지 타입의 자료구조가 정의되어 있으며 Interface로 구현되어 있습니다. List List는 순서가 있는 데이터를 처리하며, 데이터의 중복을 허용한다. ex) 식당에서 대기하고...","categories": ["studies"],
         "tags": ["java"],
         "url": "/java/collection-framework-1/",
         "teaser": null

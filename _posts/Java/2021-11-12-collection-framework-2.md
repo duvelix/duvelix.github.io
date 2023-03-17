@@ -11,13 +11,13 @@ tags:
   - java
 ---
 
-안녕하세요, 이번 포스트에서는 지난 포스트에 이어 Collection Framework에 대해 조금 더 살펴보도록 하겠습니다. 이번 포스트의 주제는 크게 Iterator, Arrays, Comparable, 그리고 Comparator로 나뉘어 있습니다.
+안녕하세요, 이번 포스트에서는 지난 포스트에 이어 Collection Framework에 대해 조금 더 살펴보도록 하겠습니다. 이번 포스트의 주제는 크게 **Iterator**, **Arrays**, **Comparable**, 그리고 **Comparator**로 나뉘어 있습니다.
 
 ## Iterator
 
-Iterator는 Java에서 Collection Framework에 대한 반복적인 작업을 용이하게 처리할 수 있는 메소드를 갖고 있는 인터페이스입니다. 구체적으로 Collection에 저장된 데이터를 읽어오는 방법을 표준화하기 위한 역할입니다. Iterator는 아래와 같이 정의되어 있습니다.
+<span style="color:red">Iterator</span>는 Java에서 Collection Framework에 대한 반복적인 작업을 용이하게 처리할 수 있는 메소드를 갖고 있는 인터페이스입니다. 구체적으로 Collection에 저장된 데이터를 읽어오는 방법을 표준화하기 위한 역할입니다. Iterator는 아래와 같이 정의되어 있습니다.
 
-```
+```java
 public interface Iterator<E> {
 ...
     boolean hasNext();
@@ -26,9 +26,9 @@ public interface Iterator<E> {
 }
 ```
 
-Collection 인터페이스에서는 Iterator를 반환하는 iterator() 메소드가 있습니다. iterator() 메소드는 List, Set에 구현되어 있지만 Map에는 구현되어 있지 않습니다. iterator() 메소드는 아래처럼 정의되어 있습니다.
+Collection 인터페이스에서는 Iterator를 반환하는 `iterator()` 메소드가 있습니다. `iterator()` 메소드는 List, Set에 구현되어 있지만 Map에는 구현되어 있지 않습니다. `iterator()` 메소드는 아래처럼 정의되어 있습니다.
 
-```
+```java
 public interface Collection<E> {
 ...
     public Iterator iterator();
@@ -66,7 +66,7 @@ class Main {
 
 ## ListIterator
 
-ListIterator는 Iterator 인터페이스를 확장한 인터페이스로써, Iterator에서 추가된 여러 메소드를 가지고 있습니다. 추가된 메소드는 List에서 정방향 및 역방향으로 탐색할 수 있는 기능들을 가지고 있습니다. "List"가 붙은 만큼 ArrayList나 LinkedList처럼 List 인터페이스로 구현된 클래스에서만 사용할 수 있습니다.
+<span style="color:red">ListIterator</span>는 Iterator 인터페이스를 확장한 인터페이스로써, Iterator에서 추가된 여러 메소드를 가지고 있습니다. 추가된 메소드는 List에서 정방향 및 역방향으로 탐색할 수 있는 기능들을 가지고 있습니다. **List**가 붙은 만큼 ArrayList나 LinkedList처럼 List 인터페이스로 구현된 클래스에서만 사용할 수 있습니다.
 
 ListIterator<E> 인터페이스에 구현된 메소드들은 다음과 같습니다.
 
@@ -108,7 +108,7 @@ class Main {
 
 ## Arrays
 
-Array 클래스는 Collection Framework의 포함된 클래스로써, 이름대로 배열(Array)에 관련된 메소드를 제공하고 있습니다. 배열 자체는 기본적인 자료구조이니 자세한 설명은 생략하도록 하고, 어떤 메소드들이 있는지 하나씩 알아보도록 하겠습니다.
+<span style="color:red">Array</span> 클래스는 Collection Framework의 포함된 클래스로써, 이름대로 배열(Array)에 관련된 메소드를 제공하고 있습니다. 배열 자체는 기본적인 자료구조이니 자세한 설명은 생략하도록 하고, 어떤 메소드들이 있는지 하나씩 알아보도록 하겠습니다.
 
 - opyOf() : 원래의 배열에서 원소를 복사해 새 배열을 만듭니다.
 - copyOfRange() : copyOf() 메소드와 기능적으로 유사하지만, 배열 전체가 아닌 특정한 범위의 요소들만 복사할 수 있다는 차이점이 있습니다.
@@ -167,11 +167,11 @@ class Main {
 
 ## Comparable
 
-Array 클래스가 sort 메소드를 호출한다고 가정해 봅시다. 원소가 int나 float 같은 기본적인 자료형인 경우 두 원소를 비교하여 순서를 쉽게 정렬할 수 있습니다. 그러나 원소가 object일 경우, 어떻게 두 원소를 비교하여 정렬할 지에 대한 기준이 필요합니다. 즉, 두 원소가 비교가능(Comparable)할 때만 정렬이 가능합니다.
+Array 클래스가 sort 메소드를 호출한다고 가정해 봅시다. 원소가 int나 float 같은 기본적인 자료형인 경우 두 원소를 비교하여 순서를 쉽게 정렬할 수 있습니다. 그러나 원소가 Object일 경우, 어떻게 두 원소를 비교하여 정렬할 지에 대한 기준이 필요합니다. 즉, 두 원소가 <span style="color:red">비교가능(Comparable)</span>할 때만 정렬이 가능합니다.
 
-Java에서 Sort 메소드는 Comparable<T> 인터페이스가 구현되었을 때만 가능합니다. 예를 들어, Integer 클래스 또한 Comparable<T> 인터페이스로 구현된 클래스입니다. Comparable<T> 인터페이스에는 compareTo 메소드가 정의되어 있고, Arrays.sort()가 호출되면 compareTo 메소드에 정의에 따라 원소들이 정렬됩니다. compareTo 메소드는 아래와 같이 정의되어 있습니다.
+Java에서 Sort 메소드는 `Comparable<T>` 인터페이스가 구현되었을 때만 가능합니다. 예를 들어, Integer 클래스 또한 `Comparable<T>` 인터페이스로 구현된 클래스입니다. `Comparable<T>` 인터페이스에는 `compareTo` 메소드가 정의되어 있고, `Arrays.sort()`가 호출되면 `compareTo` 메소드에 정의에 따라 원소들이 정렬됩니다. `compareTo` 메소드는 아래와 같이 정의되어 있습니다.
 
-```
+```java
 public final class Integer extends Number implements Comparable<Integer> {
 ...
     public int compareTo(Integer anotherInteger) {
@@ -185,7 +185,7 @@ public final class Integer extends Number implements Comparable<Integer> {
 
 ## Comparator
 
-Comparator는 정렬하는 방법을 정의하는 인터페이스입니다. 예를 들자면 오름차순으로 정렬할 것인지, 내림차순으로 정렬할 것인지, 아니면 그 외의 방법으로 정렬할 것인지를 정의할 수 있습니다. Array.sort 메소드는 오름차순으로 정렬하도록 정의되어 있습니다. 실수는 물론, 문자열을 정렬해봐도 알파벳순으로 정렬되는 것을 쉽게 확인할 수 있습니다. (대소문자가 섞여있을 때는 대문자 -> 소문자 순서대로 정렬됩니다)
+<span style="color:red">Comparator</span>는 정렬하는 방법을 정의하는 인터페이스입니다. 예를 들자면 오름차순으로 정렬할 것인지, 내림차순으로 정렬할 것인지, 아니면 그 외의 방법으로 정렬할 것인지를 정의할 수 있습니다. `Array.sort` 메소드는 오름차순으로 정렬하도록 정의되어 있습니다. 실수는 물론, 문자열을 정렬해봐도 알파벳순으로 정렬되는 것을 쉽게 확인할 수 있습니다. (대소문자가 섞여있을 때는 대문자 -> 소문자 순서대로 정렬됩니다)
 
 {% highlight java linenos %}
 import java.util.*;
@@ -226,9 +226,9 @@ public class Main {
 }
 {% endhighlight %}
 
-만약 대소문자에 상관없이 정렬을 원한다면 CASE_INSENSITIVE_ORDER를 사용하시면 됩니다. Java에서는 아래처럼 선언되어 있습니다.
+만약 대소문자에 상관없이 정렬을 원한다면 `CASE_INSENSITIVE_ORDER`를 사용하시면 됩니다. Java에서는 아래처럼 선언되어 있습니다.
 
-```
+```java
 public static final Comparator<String> CASE_INSENSITIVE_ORDER = new CaseInsensitiveComparator();
 
 private static class CaseInsensitiveComparator implements Comparator<String>, java.io.Serializable {
@@ -245,7 +245,7 @@ private static class CaseInsensitiveComparator implements Comparator<String>, ja
 }
 ```
 
-CASE_INSENSITIVE_ORDER를 아래와 같이 사용함으로써 대소문자를 섞어서 정렬할 수 있습니다.
+`CASE_INSENSITIVE_ORDER`를 아래와 같이 사용함으로써 대소문자를 섞어서 정렬할 수 있습니다.
 
 {% highlight java linenos %}
 import java.util.*;

@@ -19,9 +19,9 @@ tags:
 
 프로그램에서 발생할 수 있는 에러는 3 종류가 있습니다. 각각의 에러는 발생하는 이유와 그 해결방법이 모두 다릅니다. 하나씩 소개하면 아래와 같습니다.
 
-- 컴파일 에러(Compile-Time Error) : 프로그램을 컴파일 하는 과정(=목적 프로그램을 만드는 과정)에서 발생하는 에러로써, 주로 문법 오류로 인해 발생한다. 컴파일 자체가 실패하기 때문에 목적 프로그램이 생성되지 않는다.
-- 런타임 에러(Run-Time Error) : 프로그램을 컴파일 하는데 문제가 없으므로 목적 프로그램이 생성되고, 실행도 가능하지만 프로그램 실행 도중 문제가 발생해 프로그램이 강제로 종료되는 에러. 예를 들면 인스턴스가 할당되지 않은 객체의 메소드에 접근하려고 할 때 생긴다.
-- 논리적 에러(Logical Error) : 프로그램을 컴파일 하는데도 문제가 없고, 실행하는 것도 문제가 없으나 프로그램의 잘못된 구현으로 인해 프로그래머가 원하는 결과가 나오지 않는 에러. 주로 수식을 잘못쓰는 등의 프로그래머의 실수로 인해 발생한다.
+- **컴파일 에러(Compile-Time Error)** : 프로그램을 컴파일 하는 과정(=목적 프로그램을 만드는 과정)에서 발생하는 에러로써, 주로 문법 오류로 인해 발생한다. 컴파일 자체가 실패하기 때문에 목적 프로그램이 생성되지 않는다.
+- **런타임 에러(Run-Time Error)** : 프로그램을 컴파일 하는데 문제가 없으므로 목적 프로그램이 생성되고, 실행도 가능하지만 프로그램 실행 도중 문제가 발생해 프로그램이 강제로 종료되는 에러. 예를 들면 인스턴스가 할당되지 않은 객체의 메소드에 접근하려고 할 때 생긴다.
+- **논리적 에러(Logical Error)** : 프로그램을 컴파일 하는데도 문제가 없고, 실행하는 것도 문제가 없으나 프로그램의 잘못된 구현으로 인해 프로그래머가 원하는 결과가 나오지 않는 에러. 주로 수식을 잘못쓰는 등의 프로그래머의 실수로 인해 발생한다.
 
 오늘 다룰 예외 처리는 이 중 런타임 에러 문제를 해결하기 위한 방법입니다.
 
@@ -29,13 +29,13 @@ tags:
 
 런타임 에러는 컴파일러가 잡아낼 수 없는 에러이기 때문에 결국 프로그래머가 해결해야만 합니다. 하지만 컴파일러조차 발견하지 못한 문제를 눈으로 코드를 한줄한줄 보면서 해결하는 것은 굉장히 어렵습니다. 특히 프로그램 길이가 길다면 에러를 잡느라 하루종일 걸릴수도 있습니다.
 
-만약 런타임 에러 중 메모리 에러(Out of Memory)나 스택 오버플로우(Stack Overflow) 문제라면 그나마 발견하기 쉽지만, Arithmetic Exception, Class Cast Exception, Null Pointer Exception, Index out-of-bound Exception 등의 다양한 원인으로 발생하는 런타임 에러는 프로그래머를 피곤하게 만듭니다.
+만약 런타임 에러 중 **메모리 에러(Out of Memory)**나 **스택 오버플로우(Stack Overflow)** 문제라면 그나마 발견하기 쉽지만, **Arithmetic Exception**, **Class Cast Exception**, **Null Pointer Exception**, **Index out-of-bound Exception** 등의 다양한 원인으로 발생하는 런타임 에러는 프로그래머를 피곤하게 만듭니다.
 
 Java에서는 이 문제를 해결하기 위해, 애초에 프로그램에서 예외가 발생할 수 있는 경우에는 무조건 예외처리를 하도록 만들었습니다.
 
 ## Errors and Exceptions
 
-Java에서는 오류(Error)와 예외(Exception)를 클래스로써 정의합니다. 사전 정의된 Object라는 클래스의 서브 클래스인 Throwable 이란 클래스가 있는데, 예외에 사용되는 클래스는 모두 Throwable 클래스의 서브 클래스입니다. 예외에 대한 클래스는 크게 두 가지로 나뉘는데, RuntimeExcpetion 클래스의 서브 클래스와 그렇지 않은 것들로 나뉩니다. 이 관계를 그림으로 표현하면 아래와 같습니다.
+Java에서는 <span style="color:red">오류(Error)</span>와 <span style="color:red">예외(Exception)</span>를 클래스로써 정의합니다. 사전 정의된 **Object**라는 클래스의 서브 클래스인 **Throwable** 이란 클래스가 있는데, 예외에 사용되는 클래스는 모두 Throwable 클래스의 서브 클래스입니다. 예외에 대한 클래스는 크게 두 가지로 나뉘는데, **RuntimeExcpetion** 클래스의 서브 클래스와 그렇지 않은 것들로 나뉩니다. 이 관계를 그림으로 표현하면 아래와 같습니다.
 
 ![](/images/Java/9. Exception Handling/Java 09-01.png){: .align-center}
 
@@ -54,9 +54,9 @@ RuntimeExcpetion으로 분류되는 예외는 주로 프로그래머의 실수�
 
 ## Exception Handling: try-catch
 
-오류(Error)는 프로그래머가 직접 처리할 수 없지만, 예외(Exception)는 처리할 수 있습니다. Java에서는 예외 상황을 try-catch 문을 사용해 처리합니다. 사용 방법은 아래와 같습니다.
+오류(Error)는 프로그래머가 직접 처리할 수 없지만, 예외(Exception)는 처리할 수 있습니다. Java에서는 예외 상황을 <span style="color:red">try-catch</span>를 사용해 처리합니다. 사용 방법은 아래와 같습니다.
 
-```
+```java
 try {
     // 예외가 일어날 수 있는 코드
 } catch (Exception1 e1) {
@@ -83,9 +83,9 @@ public class Main {
 }
 {% endhighlight %}
 
-위의 프로그램은 언뜻 보기에 전혀 문제가 없어 보입니다. 하지만 Math.random()은 0~1 사이의 난수를 생성하기 때문에, 10을 곱한다고 하더라도 결과가 0이 나올 수 있습니다. 그런 상황이 발생한다면 100에서 0을 나눌 수 없기 때문에, 예외 상황이 발생했다는 오류 메시지가 출력됩니다.
+위의 프로그램은 언뜻 보기에 전혀 문제가 없어 보입니다. 하지만 `Math.random()`은 0~1 사이의 난수를 생성하기 때문에, 10을 곱한다고 하더라도 결과가 0이 나올 수 있습니다. 그런 상황이 발생한다면 100에서 0을 나눌 수 없기 때문에, 예외 상황이 발생했다는 오류 메시지가 출력됩니다.
 
-오류 메시지를 확인해보면 ArithmeticException이라는 예외가 발생했다고 나옵니다. 따라서 이 경우에는 아래처럼 ArithmeticException에 대한 예외 처리를 해주면 해결할 수 있습니다.
+오류 메시지를 확인해보면 **ArithmeticException**이라는 예외가 발생했다고 나옵니다. 따라서 이 경우에는 아래처럼 ArithmeticException에 대한 예외 처리를 해주면 해결할 수 있습니다.
 
 {% highlight java linenos %}
 public class Main {
@@ -104,13 +104,13 @@ public class Main {
 
 위의 프로그램은 ArithmeticException이 발생하면 0을 출력하게끔 수정한 결과입니다. 이렇게 예외 처리를 하게 되면 0을 나누게 되는 상황에서도 더 이상 프로그램이 죽는 문제가 발생하지 않습니다.
 
-try-catch문을 사용하게 되면 일반적인 경우에는 try { } 부분이 실행되고, 예외 상황이 발생할 경우에만 catch { } 부분이 실행되므로 두 부분이 동시에 실행되는 경우는 없습니다. try { } 부분이 실행되었다면, catch { } 부분이 무시되며, 그 반대의 경우도 마찬가지입니다.
+try-catch를 사용하게 되면 일반적인 경우에는 `try { }` 부분이 실행되고, 예외 상황이 발생할 경우에만 `catch { }` 부분이 실행되므로 두 부분이 동시에 실행되는 경우는 없습니다. `try { }` 부분이 실행되었다면, `catch { }` 부분이 무시되며, 그 반대의 경우도 마찬가지입니다.
 
 ## The Catch Block
 
-catch 부분은 ( ) 부분에서 명시한 예외가 발생할 때만 실행됩니다. 위의 예외 처리 예제에서는 ArithmeticException이 발생할 때만 catch 부분이 실행되는데, 만약 try 부분에서 ArithmeticException이 아닌 예외가 발생한다면 예외 처리를 하지 않은 것으로 간주되어 프로그램이 죽게 됩니다.
+catch는 ( ) 부분에서 명시한 예외가 발생할 때만 실행됩니다. 위의 예외 처리 예제에서는 ArithmeticException이 발생할 때만 catch 부분이 실행되는데, 만약 try 부분에서 ArithmeticException이 아닌 예외가 발생한다면 예외 처리를 하지 않은 것으로 간주되어 프로그램이 죽게 됩니다.
 
-그렇기 때문에 어떤 예외가 발생할지 모른다면, 특정한 예외를 명시하지 않고 그냥 Exception으로 퉁치는 것도 하나의 해결 방법이 될 수 있습니다. Exception은 모든 예외의 슈퍼 클래스이기 때문에, 어떤 예외가 발생하더라도 해당되기 때문입니다.
+그렇기 때문에 어떤 예외가 발생할지 모른다면, 아래처럼 특정한 예외를 명시하지 않고 그냥 Exception으로 퉁치는 것도 하나의 해결 방법이 될 수 있습니다. Exception은 모든 예외의 슈퍼 클래스이기 때문에, 어떤 예외가 발생하더라도 해당되기 때문입니다.
 
 {% highlight java linenos %}
 public class Main {
@@ -126,7 +126,7 @@ public class Main {
 }
 {% endhighlight %}
 
-ArithmeticException과 Exception 상황을 모두 가정할 수 있습니다. 이 때는 ArithmeticException 부분에 걸리게 되면 바로 ArithmeticException 부분이 실행되고, 그 외에는 Exception 부분이 실행됩니다.
+또는 ArithmeticException과 Exception 상황을 모두 가정할 수 있습니다. 이 때는 ArithmeticException 부분에 걸리게 되면 바로 ArithmeticException 부분이 실행되고, 그 외에는 Exception 부분이 실행됩니다.
 
 {% highlight java linenos %}
 public class Main {
@@ -164,7 +164,7 @@ public class Main {
 
 try-catch를 사용하더라도 프로그래머는 왜 예외가 발생했는지 이유를 모를 수도 있습니다. 짧고 쉬운 프로그램이야 눈으로도 예외가 발생하는 부분을 쉽게 찾을 수 있지만, 프로그램의 길이가 길고 복잡하면 예외는 어찌어찌 처리한다 쳐도, 어디서 발생하는지 찾기가 힘듭니다.
 
-이런 상황에는 와 printStackTrace()나 getMessage() 메소드를 사용하면 됩니다. 이 두 메소드는 디버깅(Debugging)을 위해 사용되는 메소드로, printStackTrace()는 예외가 발생했을 때 출력되는 경고 메시지를 저장해두었다가 출력해주는 메소드이고, getMessage()는 예외가 발생하는 이유를 저장해두는 메소드입니다. 출력되는 방식은 아래 예제를 참고하시면 됩니다.
+이런 상황에는 와 `printStackTrace()`나 `getMessage()` 메소드를 사용하면 됩니다. 이 두 메소드는 <span style="color:red">디버깅(Debugging)</span>을 위해 사용되는 메소드로, `printStackTrace()`는 예외가 발생했을 때 출력되는 경고 메시지를 저장해두었다가 출력해주는 메소드이고, `getMessage()`는 예외가 발생하는 이유를 저장해두는 메소드입니다. 출력되는 방식은 아래 예제를 참고하시면 됩니다.
 
 {% highlight java linenos %}
 public class Main {
@@ -179,7 +179,7 @@ public class Main {
 }
 {% endhighlight %}
 
-실행 결과를 보시면 printStackTrace()는 예외 처리를 하지 않았을 때 출력되는 경고 메시지를 출력하고, getMessage()는 단순히 예외가 발생하는 이유만을 저장해두는 것을 알 수 있습니다.
+이 프로그램을 실행해보시면 `printStackTrace()`는 예외 처리를 하지 않았을 때 출력되는 경고 메시지를 출력하고, `getMessage()`는 단순히 예외가 발생하는 이유만을 저장해두는 것을 알 수 있습니다.
 
 ## Generating an Exception
 
@@ -214,7 +214,7 @@ public class Main {
 }
 {% endhighlight %}
 
-이렇게 예외를 발생시켰을 때, 반드시 예외 처리를 해야만 하는 예외를 Checked Exceptions라고 부릅니다. 반대로 처리를 하지 않아도 괜찮은 예외는 Unchecked Exceptions라고 부릅니다. 사용하는 방법은 당연히 RuntimeException에 속한 예외를 발생시키는 것입니다. 아래의 예제는 위와 거의 비슷한 프로그램이지만, 정상적으로 작동합니다.
+이렇게 예외를 발생시켰을 때, 반드시 예외 처리를 해야만 하는 예외를 <span style="color:red">Checked Exceptions</span>라고 부릅니다. 반대로 처리를 하지 않아도 괜찮은 예외는 <span style="color:red">Unchecked Exceptions</span>라고 부릅니다. 사용하는 방법은 당연히 RuntimeException에 속한 예외를 발생시키는 것입니다. 아래의 예제는 위와 거의 비슷한 프로그램이지만, 정상적으로 작동합니다.
 
 {% highlight java linenos %}
 public class Main {
@@ -228,7 +228,7 @@ public class Main {
 
 ## Methods that throw Exceptions
 
-지금까지는 main 메소드의 try-catch 문을 사용해서 주로 예외를 처리했지만, 클래스에 속해있는 메소드 자체에서도 예외를 처리할 수 있습니다. 메소드 이름 뒤에 throws Exception을 붙이게 되면, 해당 메소드에서 예외가 발생할 수 있다는 의미가 됩니다. 만약 다른 메소드에서 예외 처리가 된 메소드를 호출할 때는 호출한 메소드에서도 꼭 예외를 처리해줘야 합니다. 예를 들어, 아래같은 프로그램은 컴파일 에러가 발생합니다.
+지금까지는 main 메소드의 try-catch 문을 사용해서 주로 예외를 처리했지만, 클래스에 속해있는 메소드 자체에서도 예외를 처리할 수 있습니다. 메소드 이름 뒤에 `throws Exception`을 붙이게 되면, 해당 메소드에서 예외가 발생할 수 있다는 의미가 됩니다. 만약 다른 메소드에서 예외 처리가 된 메소드를 호출할 때는 호출한 메소드에서도 꼭 예외를 처리해줘야 합니다. 예를 들어, 아래와 같은 프로그램은 컴파일 에러가 발생합니다.
 
 {% highlight java linenos %}
 public class Main {
@@ -246,7 +246,7 @@ public class Main {
 
 위의 프로그램를 보시면 method2에서 예외를 처리해주었습니다. 그런데 method1에서 method2를 호출하는데, method1은 예외를 처리하지 않았기 때문에 컴파일 에러가 발생합니다.
 
-MethodException.java를 제대로 동작하게 수정해봅시다. method1을 정의할 때 throws Exception을 붙여주면 끝날 것 같지만, 문제는 main에서도 method1을 호출하고 있기 때문에, main 메소드에서도 마찬가지로 throws Exception을 붙여줘야만 합니다.
+이 프로그램이 제대로 동작할 수 있게 수정해봅시다. method1을 정의할 때 `throws Exception`을 붙여주면 끝날 것 같지만, 문제는 main에서도 method1을 호출하고 있기 때문에, main 메소드에서도 마찬가지로 `throws Exception`을 붙여줘야만 합니다.
 
 {% highlight java linenos %}
 public class Main {
@@ -266,7 +266,7 @@ public class Main {
 
 이 프로그램을 정상적으로 동작하게 수정하는 방법은 두 가지가 있습니다. method1에서 try-catch를 사용해서 예외를 처리하는 방법과, method1에서는 예외를 호출만 하고 main 메소드에서 try-catch를 사용해서 예외를 처리하는 방법이 있습니다. 아래에 두 가지 해결 방법을 모두 소개하겠습니다.
 
-1) method1 메소드에서 예외를 처리하는 방법
+**1) method1 메소드에서 예외를 처리하는 방법**
 
 {% highlight java linenos %}
 public class Main {
@@ -288,7 +288,7 @@ public class Main {
 }
 {% endhighlight %}
 
-2) main 메소드에서 예외를 처리하는 방법
+**2) main 메소드에서 예외를 처리하는 방법**
 
 {% highlight java linenos %}
 public class Main {
@@ -309,9 +309,7 @@ public class Main {
 }
 {% endhighlight %}
 
-눈치가 빠르신 분이라면 지난 포스트에서 파일 입출력을 다룰 때, 메인 메소드에서 예외 처리를 해준 것을 기억하실 수도 있습니다. 당시에는 IOException이라는 예외에 대해 throw를 해 줬는데, 그 이유는 FileOutputStream의 생성자가 다음과 같이 정의되어 있기 때문입니다.
-
-public FileOutputStream(String name) throws FileNotFoundException
+눈치가 빠르신 분이라면 지난 포스트에서 파일 입출력을 다룰 때, 메인 메소드에서 예외 처리를 해준 것을 기억하실 수도 있습니다. 당시에는 IOException이라는 예외에 대해 throw를 해 줬는데, 그 이유는 FileOutputStream의 생성자가 `public FileOutputStream(String name) throws FileNotFoundException` 로 정의되어 있기 때문입니다.
 
 하지만 지금 다시 생각을 해보면, 지난 포스트에서 IOException을 throw만 했지, 이번 포스트에서 배운 것처럼 try-catch문을 사용해서 예외 처리를 제대로 해주진 않았습니다. 따라서 지난 포스트에서 구현한 프로그램은 문제가 있고, FileNotFoundException이 발생한다면 프로그램이 죽게 됩니다. 지난 포스트의 프로그램 중 FileInput.java를 try-catch문을 사용하여 수정한다면 아래와 같습니다.
 
@@ -336,10 +334,10 @@ public class Main {
 
 ## The finally Block
 
-try-catch문에는 finally라는 블록을 추가할 수 있습니다. finally 블록은 예외 상황이 발생하는 것과 상관 없이 무조건 마지막에 실행되는 블록입니다. "그럼 그냥 try-catch문 다음에 작성하면 되는 것 아니냐?" 라고 의문이 드실 텐데, finally 블록의 재밌는 점은 정말 "무조건" 실행된다는 점입니다. 다음 프로그램을 보시면 이것이 무슨 말인지 알 수 있습니다.
+try-catch문에는 finally라는 블록을 추가할 수 있습니다. finally 블록은 예외 상황이 발생하는 것과 상관 없이 무조건 마지막에 실행되는 블록입니다. **그럼 그냥 try-catch문 다음에 작성하면 되는 것 아닌가?** 라고 의문이 드실 텐데, finally 블록의 재밌는 점은 정말 **무조건** 실행된다는 점입니다. 다음 프로그램을 보시면 이것이 무슨 말인지 알 수 있습니다.
 
 {% highlight java linenos %}
-public class Main {
+public class FinallyBlock {
     public static void main(String[] args) {
         System.out.println("Call method1.");
         Main.method1();
@@ -422,7 +420,7 @@ public class Main {
 
 Java에서는 이미 구현되어있는 예외가 많지만, 직접 예외를 구현하고 싶은 경우가 생길 수 있습니다. 새로운 예외는 Exception 클래스를 상속받아 서브 클래스를 구현하는 방식으로 만들 수 있습니다. 일반적인 사용자 정의 예외의 형태는 아래와 같습니다.
 
-```
+```java
 class MyException extends Exception {
      MyException(String msg) {
          super(msg);

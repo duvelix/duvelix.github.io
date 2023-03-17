@@ -303,27 +303,27 @@
             </nav>
           </aside>
         
-        <p>안녕하세요, 이번 포스트에서는 지난 포스트에 이어 Collection Framework에 대해 조금 더 살펴보도록 하겠습니다. 이번 포스트의 주제는 크게 Iterator, Arrays, Comparable, 그리고 Comparator로 나뉘어 있습니다.</p>
+        <p>안녕하세요, 이번 포스트에서는 지난 포스트에 이어 Collection Framework에 대해 조금 더 살펴보도록 하겠습니다. 이번 포스트의 주제는 크게 <strong>Iterator</strong>, <strong>Arrays</strong>, <strong>Comparable</strong>, 그리고 <strong>Comparator</strong>로 나뉘어 있습니다.</p>
 
 <h2 id="iterator">Iterator</h2>
 
-<p>Iterator는 Java에서 Collection Framework에 대한 반복적인 작업을 용이하게 처리할 수 있는 메소드를 갖고 있는 인터페이스입니다. 구체적으로 Collection에 저장된 데이터를 읽어오는 방법을 표준화하기 위한 역할입니다. Iterator는 아래와 같이 정의되어 있습니다.</p>
+<p><span style="color:red">Iterator</span>는 Java에서 Collection Framework에 대한 반복적인 작업을 용이하게 처리할 수 있는 메소드를 갖고 있는 인터페이스입니다. 구체적으로 Collection에 저장된 데이터를 읽어오는 방법을 표준화하기 위한 역할입니다. Iterator는 아래와 같이 정의되어 있습니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>public interface Iterator&lt;E&gt; {
-...
-    boolean hasNext();
-    E next();
-    void remove();
-}
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">interface</span> <span class="nc">Iterator</span><span class="o">&lt;</span><span class="no">E</span><span class="o">&gt;</span> <span class="o">{</span>
+<span class="o">...</span>
+    <span class="kt">boolean</span> <span class="nf">hasNext</span><span class="o">();</span>
+    <span class="no">E</span> <span class="nf">next</span><span class="o">();</span>
+    <span class="kt">void</span> <span class="nf">remove</span><span class="o">();</span>
+<span class="o">}</span>
 </code></pre></div></div>
 
-<p>Collection 인터페이스에서는 Iterator를 반환하는 iterator() 메소드가 있습니다. iterator() 메소드는 List, Set에 구현되어 있지만 Map에는 구현되어 있지 않습니다. iterator() 메소드는 아래처럼 정의되어 있습니다.</p>
+<p>Collection 인터페이스에서는 Iterator를 반환하는 <code class="language-plaintext highlighter-rouge">iterator()</code> 메소드가 있습니다. <code class="language-plaintext highlighter-rouge">iterator()</code> 메소드는 List, Set에 구현되어 있지만 Map에는 구현되어 있지 않습니다. <code class="language-plaintext highlighter-rouge">iterator()</code> 메소드는 아래처럼 정의되어 있습니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>public interface Collection&lt;E&gt; {
-...
-    public Iterator iterator();
-...
-}
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">interface</span> <span class="nc">Collection</span><span class="o">&lt;</span><span class="no">E</span><span class="o">&gt;</span> <span class="o">{</span>
+<span class="o">...</span>
+    <span class="kd">public</span> <span class="nc">Iterator</span> <span class="nf">iterator</span><span class="o">();</span>
+<span class="o">...</span>
+<span class="o">}</span>
 </code></pre></div></div>
 
 <p>Iterator 인터페이스에는 3개의 메소드가 정의되어 있습니다.</p>
@@ -374,7 +374,7 @@
 
 <h2 id="listiterator">ListIterator</h2>
 
-<p>ListIterator는 Iterator 인터페이스를 확장한 인터페이스로써, Iterator에서 추가된 여러 메소드를 가지고 있습니다. 추가된 메소드는 List에서 정방향 및 역방향으로 탐색할 수 있는 기능들을 가지고 있습니다. “List”가 붙은 만큼 ArrayList나 LinkedList처럼 List 인터페이스로 구현된 클래스에서만 사용할 수 있습니다.</p>
+<p><span style="color:red">ListIterator</span>는 Iterator 인터페이스를 확장한 인터페이스로써, Iterator에서 추가된 여러 메소드를 가지고 있습니다. 추가된 메소드는 List에서 정방향 및 역방향으로 탐색할 수 있는 기능들을 가지고 있습니다. <strong>List</strong>가 붙은 만큼 ArrayList나 LinkedList처럼 List 인터페이스로 구현된 클래스에서만 사용할 수 있습니다.</p>
 
 <p>ListIterator<E> 인터페이스에 구현된 메소드들은 다음과 같습니다.</E></p>
 
@@ -438,7 +438,7 @@
 
 <h2 id="arrays">Arrays</h2>
 
-<p>Array 클래스는 Collection Framework의 포함된 클래스로써, 이름대로 배열(Array)에 관련된 메소드를 제공하고 있습니다. 배열 자체는 기본적인 자료구조이니 자세한 설명은 생략하도록 하고, 어떤 메소드들이 있는지 하나씩 알아보도록 하겠습니다.</p>
+<p><span style="color:red">Array</span> 클래스는 Collection Framework의 포함된 클래스로써, 이름대로 배열(Array)에 관련된 메소드를 제공하고 있습니다. 배열 자체는 기본적인 자료구조이니 자세한 설명은 생략하도록 하고, 어떤 메소드들이 있는지 하나씩 알아보도록 하겠습니다.</p>
 
 <ul>
   <li>opyOf() : 원래의 배열에서 원소를 복사해 새 배열을 만듭니다.</li>
@@ -539,24 +539,24 @@
 
 <h2 id="comparable">Comparable</h2>
 
-<p>Array 클래스가 sort 메소드를 호출한다고 가정해 봅시다. 원소가 int나 float 같은 기본적인 자료형인 경우 두 원소를 비교하여 순서를 쉽게 정렬할 수 있습니다. 그러나 원소가 object일 경우, 어떻게 두 원소를 비교하여 정렬할 지에 대한 기준이 필요합니다. 즉, 두 원소가 비교가능(Comparable)할 때만 정렬이 가능합니다.</p>
+<p>Array 클래스가 sort 메소드를 호출한다고 가정해 봅시다. 원소가 int나 float 같은 기본적인 자료형인 경우 두 원소를 비교하여 순서를 쉽게 정렬할 수 있습니다. 그러나 원소가 Object일 경우, 어떻게 두 원소를 비교하여 정렬할 지에 대한 기준이 필요합니다. 즉, 두 원소가 <span style="color:red">비교가능(Comparable)</span>할 때만 정렬이 가능합니다.</p>
 
-<p>Java에서 Sort 메소드는 Comparable<T> 인터페이스가 구현되었을 때만 가능합니다. 예를 들어, Integer 클래스 또한 Comparable<T> 인터페이스로 구현된 클래스입니다. Comparable<T> 인터페이스에는 compareTo 메소드가 정의되어 있고, Arrays.sort()가 호출되면 compareTo 메소드에 정의에 따라 원소들이 정렬됩니다. compareTo 메소드는 아래와 같이 정의되어 있습니다.</T></T></T></p>
+<p>Java에서 Sort 메소드는 <code class="language-plaintext highlighter-rouge">Comparable&lt;T&gt;</code> 인터페이스가 구현되었을 때만 가능합니다. 예를 들어, Integer 클래스 또한 <code class="language-plaintext highlighter-rouge">Comparable&lt;T&gt;</code> 인터페이스로 구현된 클래스입니다. <code class="language-plaintext highlighter-rouge">Comparable&lt;T&gt;</code> 인터페이스에는 <code class="language-plaintext highlighter-rouge">compareTo</code> 메소드가 정의되어 있고, <code class="language-plaintext highlighter-rouge">Arrays.sort()</code>가 호출되면 <code class="language-plaintext highlighter-rouge">compareTo</code> 메소드에 정의에 따라 원소들이 정렬됩니다. <code class="language-plaintext highlighter-rouge">compareTo</code> 메소드는 아래와 같이 정의되어 있습니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>public final class Integer extends Number implements Comparable&lt;Integer&gt; {
-...
-    public int compareTo(Integer anotherInteger) {
-        int thisVal = this.value;
-        int anotherVal = anotherInteger.value;
-        return (thisVal &lt; anotherVal ? -1 : (thisVal == anotherVal ? 0 : 1));
-    }
-...
-}
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">final</span> <span class="kd">class</span> <span class="nc">Integer</span> <span class="kd">extends</span> <span class="nc">Number</span> <span class="kd">implements</span> <span class="nc">Comparable</span><span class="o">&lt;</span><span class="nc">Integer</span><span class="o">&gt;</span> <span class="o">{</span>
+<span class="o">...</span>
+    <span class="kd">public</span> <span class="kt">int</span> <span class="nf">compareTo</span><span class="o">(</span><span class="nc">Integer</span> <span class="n">anotherInteger</span><span class="o">)</span> <span class="o">{</span>
+        <span class="kt">int</span> <span class="n">thisVal</span> <span class="o">=</span> <span class="k">this</span><span class="o">.</span><span class="na">value</span><span class="o">;</span>
+        <span class="kt">int</span> <span class="n">anotherVal</span> <span class="o">=</span> <span class="n">anotherInteger</span><span class="o">.</span><span class="na">value</span><span class="o">;</span>
+        <span class="k">return</span> <span class="o">(</span><span class="n">thisVal</span> <span class="o">&lt;</span> <span class="n">anotherVal</span> <span class="o">?</span> <span class="o">-</span><span class="mi">1</span> <span class="o">:</span> <span class="o">(</span><span class="n">thisVal</span> <span class="o">==</span> <span class="n">anotherVal</span> <span class="o">?</span> <span class="mi">0</span> <span class="o">:</span> <span class="mi">1</span><span class="o">));</span>
+    <span class="o">}</span>
+<span class="o">...</span>
+<span class="o">}</span>
 </code></pre></div></div>
 
 <h2 id="comparator">Comparator</h2>
 
-<p>Comparator는 정렬하는 방법을 정의하는 인터페이스입니다. 예를 들자면 오름차순으로 정렬할 것인지, 내림차순으로 정렬할 것인지, 아니면 그 외의 방법으로 정렬할 것인지를 정의할 수 있습니다. Array.sort 메소드는 오름차순으로 정렬하도록 정의되어 있습니다. 실수는 물론, 문자열을 정렬해봐도 알파벳순으로 정렬되는 것을 쉽게 확인할 수 있습니다. (대소문자가 섞여있을 때는 대문자 -&gt; 소문자 순서대로 정렬됩니다)</p>
+<p><span style="color:red">Comparator</span>는 정렬하는 방법을 정의하는 인터페이스입니다. 예를 들자면 오름차순으로 정렬할 것인지, 내림차순으로 정렬할 것인지, 아니면 그 외의 방법으로 정렬할 것인지를 정의할 수 있습니다. <code class="language-plaintext highlighter-rouge">Array.sort</code> 메소드는 오름차순으로 정렬하도록 정의되어 있습니다. 실수는 물론, 문자열을 정렬해봐도 알파벳순으로 정렬되는 것을 쉽게 확인할 수 있습니다. (대소문자가 섞여있을 때는 대문자 -&gt; 소문자 순서대로 정렬됩니다)</p>
 
 <figure class="highlight"><pre><code class="language-java" data-lang="java"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
@@ -626,25 +626,25 @@
 <span class="o">}</span>
 </pre></td></tr></tbody></table></code></pre></figure>
 
-<p>만약 대소문자에 상관없이 정렬을 원한다면 CASE_INSENSITIVE_ORDER를 사용하시면 됩니다. Java에서는 아래처럼 선언되어 있습니다.</p>
+<p>만약 대소문자에 상관없이 정렬을 원한다면 <code class="language-plaintext highlighter-rouge">CASE_INSENSITIVE_ORDER</code>를 사용하시면 됩니다. Java에서는 아래처럼 선언되어 있습니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>public static final Comparator&lt;String&gt; CASE_INSENSITIVE_ORDER = new CaseInsensitiveComparator();
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kd">final</span> <span class="nc">Comparator</span><span class="o">&lt;</span><span class="nc">String</span><span class="o">&gt;</span> <span class="no">CASE_INSENSITIVE_ORDER</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">CaseInsensitiveComparator</span><span class="o">();</span>
 
-private static class CaseInsensitiveComparator implements Comparator&lt;String&gt;, java.io.Serializable {
-    private static final long serialVersionUID = 8575799808933029326L;
-    public int compare(String s1, String s2) {
-        byte v1[] = s1.value;
-        byte v2[] = s2.value;
-        if(s1.coder() == s2.coder()) {
-            return s1.isLatin1() ? StringLatin1.compareToCI(v1, v2) : StringUTF16.compareToCI(v1, v2);
-        }
-        return s1.isLatin() ? StringLatin1.compareToCI_UTF16(v1, v2) : StringUTF16.compareToCI_Latin1(v1, v2);
-    }
-    private Object readResolve() { return CASE_INSENSITIVE_ORDER; }
-}
+<span class="kd">private</span> <span class="kd">static</span> <span class="kd">class</span> <span class="nc">CaseInsensitiveComparator</span> <span class="kd">implements</span> <span class="nc">Comparator</span><span class="o">&lt;</span><span class="nc">String</span><span class="o">&gt;,</span> <span class="n">java</span><span class="o">.</span><span class="na">io</span><span class="o">.</span><span class="na">Serializable</span> <span class="o">{</span>
+    <span class="kd">private</span> <span class="kd">static</span> <span class="kd">final</span> <span class="kt">long</span> <span class="n">serialVersionUID</span> <span class="o">=</span> <span class="mi">8575799808933029326L</span><span class="o">;</span>
+    <span class="kd">public</span> <span class="kt">int</span> <span class="nf">compare</span><span class="o">(</span><span class="nc">String</span> <span class="n">s1</span><span class="o">,</span> <span class="nc">String</span> <span class="n">s2</span><span class="o">)</span> <span class="o">{</span>
+        <span class="kt">byte</span> <span class="n">v1</span><span class="o">[]</span> <span class="o">=</span> <span class="n">s1</span><span class="o">.</span><span class="na">value</span><span class="o">;</span>
+        <span class="kt">byte</span> <span class="n">v2</span><span class="o">[]</span> <span class="o">=</span> <span class="n">s2</span><span class="o">.</span><span class="na">value</span><span class="o">;</span>
+        <span class="k">if</span><span class="o">(</span><span class="n">s1</span><span class="o">.</span><span class="na">coder</span><span class="o">()</span> <span class="o">==</span> <span class="n">s2</span><span class="o">.</span><span class="na">coder</span><span class="o">())</span> <span class="o">{</span>
+            <span class="k">return</span> <span class="n">s1</span><span class="o">.</span><span class="na">isLatin1</span><span class="o">()</span> <span class="o">?</span> <span class="nc">StringLatin1</span><span class="o">.</span><span class="na">compareToCI</span><span class="o">(</span><span class="n">v1</span><span class="o">,</span> <span class="n">v2</span><span class="o">)</span> <span class="o">:</span> <span class="nc">StringUTF16</span><span class="o">.</span><span class="na">compareToCI</span><span class="o">(</span><span class="n">v1</span><span class="o">,</span> <span class="n">v2</span><span class="o">);</span>
+        <span class="o">}</span>
+        <span class="k">return</span> <span class="n">s1</span><span class="o">.</span><span class="na">isLatin</span><span class="o">()</span> <span class="o">?</span> <span class="nc">StringLatin1</span><span class="o">.</span><span class="na">compareToCI_UTF16</span><span class="o">(</span><span class="n">v1</span><span class="o">,</span> <span class="n">v2</span><span class="o">)</span> <span class="o">:</span> <span class="nc">StringUTF16</span><span class="o">.</span><span class="na">compareToCI_Latin1</span><span class="o">(</span><span class="n">v1</span><span class="o">,</span> <span class="n">v2</span><span class="o">);</span>
+    <span class="o">}</span>
+    <span class="kd">private</span> <span class="nc">Object</span> <span class="nf">readResolve</span><span class="o">()</span> <span class="o">{</span> <span class="k">return</span> <span class="no">CASE_INSENSITIVE_ORDER</span><span class="o">;</span> <span class="o">}</span>
+<span class="o">}</span>
 </code></pre></div></div>
 
-<p>CASE_INSENSITIVE_ORDER를 아래와 같이 사용함으로써 대소문자를 섞어서 정렬할 수 있습니다.</p>
+<p><code class="language-plaintext highlighter-rouge">CASE_INSENSITIVE_ORDER</code>를 아래와 같이 사용함으로써 대소문자를 섞어서 정렬할 수 있습니다.</p>
 
 <figure class="highlight"><pre><code class="language-java" data-lang="java"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2

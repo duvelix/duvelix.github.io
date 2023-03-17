@@ -309,42 +309,42 @@
 
 <p>Generic Programming이 무엇인지 설명하기 전에, 먼저 아래의 두 클래스를 봅시다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>class BoxA {
-    A item;
-    void setItem(A item) { this.item; }
-    A getItem() { return item; }
-}
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nc">BoxA</span> <span class="o">{</span>
+    <span class="no">A</span> <span class="n">item</span><span class="o">;</span>
+    <span class="kt">void</span> <span class="nf">setItem</span><span class="o">(</span><span class="no">A</span> <span class="n">item</span><span class="o">)</span> <span class="o">{</span> <span class="k">this</span><span class="o">.</span><span class="na">item</span><span class="o">;</span> <span class="o">}</span>
+    <span class="no">A</span> <span class="nf">getItem</span><span class="o">()</span> <span class="o">{</span> <span class="k">return</span> <span class="n">item</span><span class="o">;</span> <span class="o">}</span>
+<span class="o">}</span>
 
-class BoxB {
-    B item;
-    void setItem(B item) { this.item; }
-    B getItem() { return item; }
-}
+<span class="kd">class</span> <span class="nc">BoxB</span> <span class="o">{</span>
+    <span class="no">B</span> <span class="n">item</span><span class="o">;</span>
+    <span class="kt">void</span> <span class="nf">setItem</span><span class="o">(</span><span class="no">B</span> <span class="n">item</span><span class="o">)</span> <span class="o">{</span> <span class="k">this</span><span class="o">.</span><span class="na">item</span><span class="o">;</span> <span class="o">}</span>
+    <span class="no">B</span> <span class="nf">getItem</span><span class="o">()</span> <span class="o">{</span> <span class="k">return</span> <span class="n">item</span><span class="o">;</span> <span class="o">}</span>
+<span class="o">}</span>
 </code></pre></div></div>
 
 <p>BoxA와 BoxB은 거의 동일함을 알 수 있습니다. 두 클래스의 유일한 차이는 BoxA는 class A의 object를 사용하고, BoxB는 class B의 object를 사용한다는 것입니다. 이 차이로 인해 클래스를 각각 구현했지만, 이렇게 동일한 기능을 하는 클래스를 중복으로 작성하는 것은 여러모로 낭비입니다.</p>
 
-<p>이에 대한 대안으로 아래처럼 Object라는 superclass를 통해 해결하는 방법이 있습니다.</p>
+<p>이에 대한 대안으로 아래처럼 Object라는 Super Class를 통해 해결하는 방법이 있습니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>class Box {
-    Object item;
-    void setItem(Object item) { this.item; }
-    Object getItem() { return item; }
-}
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nc">Box</span> <span class="o">{</span>
+    <span class="nc">Object</span> <span class="n">item</span><span class="o">;</span>
+    <span class="kt">void</span> <span class="nf">setItem</span><span class="o">(</span><span class="nc">Object</span> <span class="n">item</span><span class="o">)</span> <span class="o">{</span> <span class="k">this</span><span class="o">.</span><span class="na">item</span><span class="o">;</span> <span class="o">}</span>
+    <span class="nc">Object</span> <span class="nf">getItem</span><span class="o">()</span> <span class="o">{</span> <span class="k">return</span> <span class="n">item</span><span class="o">;</span> <span class="o">}</span>
+<span class="o">}</span>
 </code></pre></div></div>
 
-<p>Object는 모든 class의 superclass이기 때문에 동일한 코드를 중복으로 사용하지 않아도 되긴 하지만, 항상 변수 item이 class A의 object인지, class B의 object인지 표기를 해줘야하는 단점이 있습니다. 즉, item 변수를 다른 변수에 assign할 때 아래 예제처럼 반드시 type casting이 필요하다는 뜻입니다.</p>
+<p>Object는 모든 class의 Super Class이기 때문에 동일한 코드를 중복으로 사용하지 않아도 되긴 하지만, 항상 변수 item이 class A의 object인지, class B의 object인지 표기를 해줘야하는 단점이 있습니다. 즉, item 변수를 다른 변수에 assign할 때 아래 예제처럼 반드시 <strong>Type Casting</strong>이 필요하다는 뜻입니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Box b = new Box();
-b.setItem(new Object());
-b.setItem("ABC");
-String item = (String)b.getItem();
-System.out.println(item);
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">Box</span> <span class="n">b</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Box</span><span class="o">();</span>
+<span class="n">b</span><span class="o">.</span><span class="na">setItem</span><span class="o">(</span><span class="k">new</span> <span class="nc">Object</span><span class="o">());</span>
+<span class="n">b</span><span class="o">.</span><span class="na">setItem</span><span class="o">(</span><span class="s">"ABC"</span><span class="o">);</span>
+<span class="nc">String</span> <span class="n">item</span> <span class="o">=</span> <span class="o">(</span><span class="nc">String</span><span class="o">)</span><span class="n">b</span><span class="o">.</span><span class="na">getItem</span><span class="o">();</span>
+<span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">item</span><span class="o">);</span>
 </code></pre></div></div>
 
 <h2 id="generic-classes">Generic Classes</h2>
 
-<p>이 문제를 해결하는 또 다른 방법으로는 오늘 다룰 Generic Programming 방법이 있습니다. Generic Programming을 한 문장으로 정의하면 다음과 같습니다.</p>
+<p>이 문제를 해결하는 또 다른 방법으로는 오늘 다룰 <span style="color:red">Generic Programming</span> 방법이 있습니다. Generic Programming을 한 문장으로 정의하면 다음과 같습니다.</p>
 
 <blockquote>
   <p>A TECHNIQUE FOR REUSING THE SAME CODE FOR VARIOUS TYPES OF OBJECTS.</p>
@@ -352,32 +352,32 @@ System.out.println(item);
 
 <p>즉, Generic Programming은 같은 코드를 여러 자료형에 대해 재사용할 수 있게 만드는 기술입니다. C++에서의 Template과 비슷하다고 보시면 됩니다. 사용법도 거의 동일한데요, 클래스 이름 뒤에 <T>를 붙여주고, 상황에 따라 변경되는 자료형은 T로 선언하시면 됩니다. 예를 들어, Box 클래스를 Generic class로 변경하면 다음과 같습니다.</T></p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>class Box&lt;T&gt; {
-    T item;
-    void setItem(T item) { this.item; }
-    T getItem() { return item; }
-}
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nc">Box</span><span class="o">&lt;</span><span class="no">T</span><span class="o">&gt;</span> <span class="o">{</span>
+    <span class="no">T</span> <span class="n">item</span><span class="o">;</span>
+    <span class="kt">void</span> <span class="nf">setItem</span><span class="o">(</span><span class="no">T</span> <span class="n">item</span><span class="o">)</span> <span class="o">{</span> <span class="k">this</span><span class="o">.</span><span class="na">item</span><span class="o">;</span> <span class="o">}</span>
+    <span class="no">T</span> <span class="nf">getItem</span><span class="o">()</span> <span class="o">{</span> <span class="k">return</span> <span class="n">item</span><span class="o">;</span> <span class="o">}</span>
+<span class="o">}</span>
 </code></pre></div></div>
 
-<p>이렇게 변경한 Box<T>를 Generic class라고 합니다. 부를 때는 "T Box" 또는 "Box of T"라고 부릅니다. T는 Type variable, 그리고 Box는 아직 type이 정해지지 않았다고 해서 raw type이라고 부릅니다. Generic class에 대한 객체를 생성할 때는 자료형을 같이 선언해야 하는데, Box 클래스를 String 자료형 객체로 생성하고 싶다면 아래와 같이 작성해주시면 됩니다.</T></p>
+<p>이렇게 변경한 Box<T>를 <span style="color:red">Generic Class</span>라고 합니다. 부를 때는 **T Box** 또는 **Box of T** 라고 부릅니다. T는 <span style="color:red">Type Variable</span>, 그리고 Box는 아직 type이 정해지지 않았다고 해서 <span style="color:red">Raw Type</span>이라고 부릅니다. Generic Class에 대한 객체를 생성할 때는 자료형을 같이 선언해야 하는데, Box 클래스를 String 자료형 객체로 생성하고 싶다면 아래와 같이 작성해주시면 됩니다.</T></p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Box&lt;String&gt; b = new Box&lt;String&gt;();
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">Box</span><span class="o">&lt;</span><span class="nc">String</span><span class="o">&gt;</span> <span class="n">b</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Box</span><span class="o">&lt;</span><span class="nc">String</span><span class="o">&gt;();</span>
 </code></pre></div></div>
 
-<p>이렇게 String type으로 선언했을 때 String을 Parameterized type이라 부릅니다. 주의점으로는 String으로 선언한 이후, 다른 자료형을 대입하게 되면 오류가 발생합니다.</p>
+<p>이렇게 String type으로 선언했을 때 String을 <span style="color:red">Parameterized Type</span>이라 부릅니다. 주의점으로는 String으로 선언한 이후, 다른 자료형을 대입하게 되면 오류가 발생합니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Box&lt;String&gt; b = new Box&lt;String&gt;();
-b.setItem(new Object()); // error
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">Box</span><span class="o">&lt;</span><span class="nc">String</span><span class="o">&gt;</span> <span class="n">b</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Box</span><span class="o">&lt;</span><span class="nc">String</span><span class="o">&gt;();</span>
+<span class="n">b</span><span class="o">.</span><span class="na">setItem</span><span class="o">(</span><span class="k">new</span> <span class="nc">Object</span><span class="o">());</span> <span class="c1">// error</span>
 </code></pre></div></div>
 
-<p>또한 Box를 String으로 선언하면, 자연스레 T로 선언된 변수는 모두 String 자료형으로 치환되므로 type casting이 필요하지 않습니다.</p>
+<p>또한 Box를 String으로 선언하면, 자연스레 T로 선언된 변수는 모두 String 자료형으로 치환되므로 Type Casting이 필요하지 않습니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Box&lt;String&gt; b = new Box&lt;String&gt;();
-b.setItem("ABC");
-String item = b.getItem();
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">Box</span><span class="o">&lt;</span><span class="nc">String</span><span class="o">&gt;</span> <span class="n">b</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Box</span><span class="o">&lt;</span><span class="nc">String</span><span class="o">&gt;();</span>
+<span class="n">b</span><span class="o">.</span><span class="na">setItem</span><span class="o">(</span><span class="s">"ABC"</span><span class="o">);</span>
+<span class="nc">String</span> <span class="n">item</span> <span class="o">=</span> <span class="n">b</span><span class="o">.</span><span class="na">getItem</span><span class="o">();</span>
 </code></pre></div></div>
 
-<p>Generic class는 하나 뿐만이 아니라 여러 타입의 자료형으로도 선언이 가능합니다. 이 때는 기존과 마찬가지로 객체 생성 시 어떤 자료형으로 대입할 것이지만 제대로 표기해주면 됩니다. 만약 컴파일러가 어떤 자료형인지 이해할 수 있다면 생략이 가능합니다. 아래 예제에서는 2개의 Type Variable을 갖고 있는 Generic class를 정의하고 객체 생성 시 자료형을 생략하는 것을 보여줍니다.</p>
+<p>Generic Class는 하나 뿐만이 아니라 여러 타입의 자료형으로도 선언이 가능합니다. 이 때는 기존과 마찬가지로 객체 생성 시 어떤 자료형으로 대입할 것이지만 제대로 표기해주면 됩니다. 만약 컴파일러가 어떤 자료형인지 이해할 수 있다면 생략이 가능합니다. 아래 예제에서는 2개의 Type Variable을 갖고 있는 Generic Class를 정의하고 객체 생성 시 자료형을 생략하는 것을 보여줍니다.</p>
 
 <figure class="highlight"><pre><code class="language-java" data-lang="java"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
@@ -423,258 +423,233 @@ String item = b.getItem();
 
 <p>이제부터 Generic class를 사용할 때 유의점에 대해 알아보겠습니다.</p>
 
-<ol>
-  <li>
-    <p>Type variable로는 Static variable로 선언할 수 없다.
-Static variable은 모든 인스턴스에서 공유하고 있는 변수입니다. Type variable은 인스턴스에 따라 자료형이 다르기 때문에 Static variable로 선언된다면 어떤 자료형인지 알 수 없겠죠.</p>
-  </li>
-  <li>
-    <p>Type variable은 new, instanceof를 사용할 수 없다.
-컴파일 시 Type variable은 Object로 치환되기 때문에 new나 instanceof 등을 사용하면 논리적 오류가 발생합니다.</p>
-  </li>
-  <li>
-    <p>Generic Array를 만들 수 없다.</p>
-  </li>
-  <li>
-    <p>Primitive type을 Parameterized type으로 사용할 수 없습니다.</p>
-  </li>
-</ol>
+<p><strong>1. Type variable로는 Static variable로 선언할 수 없다.</strong></p>
+
+<p>Static variable은 모든 인스턴스에서 공유하고 있는 변수입니다. Type variable은 인스턴스에 따라 자료형이 다르기 때문에 Static variable로 선언된다면 어떤 자료형인지 알 수 없겠죠.</p>
+
+<p><strong>2. Type Variable은 new, instanceof를 사용할 수 없다.</strong></p>
+
+<p>컴파일 시 Type variable은 Object로 치환되기 때문에 new나 instanceof 등을 사용하면 논리적 오류가 발생합니다.</p>
+
+<p><strong>3. Generic Array를 만들 수 없다.</strong></p>
+
+<p><strong>4. Primitive Type을 Parameterized Type으로 사용할 수 없다.</strong></p>
 
 <h2 id="example--generic-class">Example : Generic Class</h2>
 
 <p>아례 예제는 Fruit 클래스와 Fruit 클래스를 상속받은 Apple, Grape 클래스, 그리고 Toy 클래스와 Generic class인 Box 클래스를 구현한 코드입니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>import java.util.ArrayList;
-class Fruit { public String toString() { return "Fruit"; } }
-class Apple extends Fruit { public String toString() { return "Apple"; } }
-class Grape extends Fruit { public String toString() { return "Grape"; } }
-class Toy { public String toString() { return "Toy" ; } }
-class Box&lt;T&gt; {
-    ArrayList&lt;T&gt; list = new ArrayList&lt;T&gt;();
-    void add(T item) { list.add(item); }
-    T get(int i) { return list.get(i); }
-    int size() { return list.size(); }
-    public String toString() { return list.toString(); }
-}
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">java.util.ArrayList</span><span class="o">;</span>
+<span class="kd">class</span> <span class="nc">Fruit</span> <span class="o">{</span> <span class="kd">public</span> <span class="nc">String</span> <span class="nf">toString</span><span class="o">()</span> <span class="o">{</span> <span class="k">return</span> <span class="s">"Fruit"</span><span class="o">;</span> <span class="o">}</span> <span class="o">}</span>
+<span class="kd">class</span> <span class="nc">Apple</span> <span class="kd">extends</span> <span class="nc">Fruit</span> <span class="o">{</span> <span class="kd">public</span> <span class="nc">String</span> <span class="nf">toString</span><span class="o">()</span> <span class="o">{</span> <span class="k">return</span> <span class="s">"Apple"</span><span class="o">;</span> <span class="o">}</span> <span class="o">}</span>
+<span class="kd">class</span> <span class="nc">Grape</span> <span class="kd">extends</span> <span class="nc">Fruit</span> <span class="o">{</span> <span class="kd">public</span> <span class="nc">String</span> <span class="nf">toString</span><span class="o">()</span> <span class="o">{</span> <span class="k">return</span> <span class="s">"Grape"</span><span class="o">;</span> <span class="o">}</span> <span class="o">}</span>
+<span class="kd">class</span> <span class="nc">Toy</span> <span class="o">{</span> <span class="kd">public</span> <span class="nc">String</span> <span class="nf">toString</span><span class="o">()</span> <span class="o">{</span> <span class="k">return</span> <span class="s">"Toy"</span> <span class="o">;</span> <span class="o">}</span> <span class="o">}</span>
+<span class="kd">class</span> <span class="nc">Box</span><span class="o">&lt;</span><span class="no">T</span><span class="o">&gt;</span> <span class="o">{</span>
+    <span class="nc">ArrayList</span><span class="o">&lt;</span><span class="no">T</span><span class="o">&gt;</span> <span class="n">list</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">ArrayList</span><span class="o">&lt;</span><span class="no">T</span><span class="o">&gt;();</span>
+    <span class="kt">void</span> <span class="nf">add</span><span class="o">(</span><span class="no">T</span> <span class="n">item</span><span class="o">)</span> <span class="o">{</span> <span class="n">list</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">item</span><span class="o">);</span> <span class="o">}</span>
+    <span class="no">T</span> <span class="nf">get</span><span class="o">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">)</span> <span class="o">{</span> <span class="k">return</span> <span class="n">list</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="n">i</span><span class="o">);</span> <span class="o">}</span>
+    <span class="kt">int</span> <span class="nf">size</span><span class="o">()</span> <span class="o">{</span> <span class="k">return</span> <span class="n">list</span><span class="o">.</span><span class="na">size</span><span class="o">();</span> <span class="o">}</span>
+    <span class="kd">public</span> <span class="nc">String</span> <span class="nf">toString</span><span class="o">()</span> <span class="o">{</span> <span class="k">return</span> <span class="n">list</span><span class="o">.</span><span class="na">toString</span><span class="o">();</span> <span class="o">}</span>
+<span class="o">}</span>
 </code></pre></div></div>
 
 <p>이 코드를 기반으로 main 메소드에서 객체를 생성하거나 호출할 때, 어떤 유의점이 있는지 하나하나 알아보도록 하겠습니다.</p>
 
-<ol>
-  <li>인스턴스를 생성할 때, Parameterized type은 생성자와 일치해야 한다.</li>
-</ol>
+<p><strong>1. 인스턴스를 생성할 때, Parameterized Type은 생성자와 일치해야 한다.</strong></p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Box&lt;Apple&gt; appleBox = new Box&lt;Apple&gt;(); // OK
-Box&lt;Grape&gt; appleBox = new Box&lt;Apple&gt;(); // Error
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">Box</span><span class="o">&lt;</span><span class="nc">Apple</span><span class="o">&gt;</span> <span class="n">appleBox</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Box</span><span class="o">&lt;</span><span class="nc">Apple</span><span class="o">&gt;();</span> <span class="c1">// OK</span>
+<span class="nc">Box</span><span class="o">&lt;</span><span class="nc">Grape</span><span class="o">&gt;</span> <span class="n">appleBox</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Box</span><span class="o">&lt;</span><span class="nc">Apple</span><span class="o">&gt;();</span> <span class="c1">// Error</span>
 </code></pre></div></div>
 
-<ol>
-  <li>Parameterized type이 super-sub class의 관계라도 Parameterized type이 다르면 오류가 발생한다.</li>
-</ol>
+<p><strong>2. Parameterized Type이 Super-Sub Class의 관계라도 Parameterized Type이 다르면 오류가 발생한다.</strong></p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Box&lt;Fruit&gt; appleBox = new Box&lt;Apple&gt;(); // Error
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">Box</span><span class="o">&lt;</span><span class="nc">Fruit</span><span class="o">&gt;</span> <span class="n">appleBox</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Box</span><span class="o">&lt;</span><span class="nc">Apple</span><span class="o">&gt;();</span> <span class="c1">// Error</span>
 </code></pre></div></div>
 
-<ol>
-  <li>그러나 Parameterized type이 같다면, sub class의 Raw type으로 인스턴스를 생성하는 것은 가능하다.</li>
-</ol>
+<p><strong>3. 그러나 Parameterized Type이 같다면, Sub Class의 Raw Type으로 인스턴스를 생성하는 것은 가능하다.</strong></p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Box&lt;Apple&gt; appleBox = new FruitBox&lt;Apple&gt;();  // OK
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">Box</span><span class="o">&lt;</span><span class="nc">Apple</span><span class="o">&gt;</span> <span class="n">appleBox</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">FruitBox</span><span class="o">&lt;</span><span class="nc">Apple</span><span class="o">&gt;();</span>  <span class="c1">// OK</span>
 </code></pre></div></div>
 
-<ol>
-  <li>Parameterized type은 반드시 일치해야하기 때문에, 생략이 가능합니다.</li>
-</ol>
+<p><strong>4. Parameterized Type은 반드시 일치해야하기 때문에, 생략이 가능하다다.</strong></p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Box&lt;Apple&gt; appleBox = new Box&lt;Apple&gt;();
-Box&lt;Apple&gt; appleBox = new Box&lt;&gt;();
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">Box</span><span class="o">&lt;</span><span class="nc">Apple</span><span class="o">&gt;</span> <span class="n">appleBox</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Box</span><span class="o">&lt;</span><span class="nc">Apple</span><span class="o">&gt;();</span>
+<span class="nc">Box</span><span class="o">&lt;</span><span class="nc">Apple</span><span class="o">&gt;</span> <span class="n">appleBox</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Box</span><span class="o">&lt;&gt;();</span>
 </code></pre></div></div>
 
-<ol>
-  <li>인스턴스 메소드 add를 호출할 때, Parameterized type은 반드시 일치해야 합니다. 단, sub class는 할당할 수 있습니다.</li>
-</ol>
+<p><strong>5. 인스턴스 메소드 add를 호출할 때, Parameterized Type은 반드시 일치해야 한다. 단, Sub Class는 할당할 수 있다.</strong></p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Box&lt;Apple&gt; appleBox = new Box&lt;Apple&gt;();
-appleBox.add(new Apple()); // OK
-appleBox.add(new Grape()); // Error
-fruitBox.add(new Fruit()); // OK
-fruitBox.add(new Apple()); // OK
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">Box</span><span class="o">&lt;</span><span class="nc">Apple</span><span class="o">&gt;</span> <span class="n">appleBox</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Box</span><span class="o">&lt;</span><span class="nc">Apple</span><span class="o">&gt;();</span>
+<span class="n">appleBox</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="k">new</span> <span class="nc">Apple</span><span class="o">());</span> <span class="c1">// OK</span>
+<span class="n">appleBox</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="k">new</span> <span class="nc">Grape</span><span class="o">());</span> <span class="c1">// Error</span>
+<span class="n">fruitBox</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="k">new</span> <span class="nc">Fruit</span><span class="o">());</span> <span class="c1">// OK</span>
+<span class="n">fruitBox</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="k">new</span> <span class="nc">Apple</span><span class="o">());</span> <span class="c1">// OK</span>
 </code></pre></div></div>
 
 <h2 id="limiting-types">Limiting Types</h2>
 
-<p>원래 Type variable은 객체 생성 시 아무 Type으로 지정할 수 있지만, 원한다면 프로그래머가 이를 제한할 수 있습니다. 이전 예제 프로그램에 이어서, 아래와 같이 Generic class인 FruitBox 클래스를 구현했다고 가정해봅시다.</p>
+<p>원래 Type variable은 객체 생성 시 아무 Type으로 지정할 수 있지만, 원한다면 프로그래머가 이를 제한할 수 있습니다. 이전 예제 프로그램에 이어서, 아래와 같이 Generic Class인 FruitBox 클래스를 구현했다고 가정해봅시다.</p>
 
-<p>원래 Type variable은 객체 생성 시 아무 Type으로 지정할 수 있지만, 원한다면 프로그래머가 이를 제한할 수 있습니다. 이전 예제 프로그램에 이어서, 아래와 같이 Generic class인 FruitBox 클래스를 구현했다고 가정해봅시다.</p>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>class FruitBox&lt;T&gt; {
-    ArrayList&lt;T&gt; list = new ArrayList&lt;T&gt;();
-    void add(T item) { list.add(item); }
-    T get(int i) { return list.get(i); }
-    int size() { return list.size(); }
-    public String toString() { return list.toString(); }
-}
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nc">FruitBox</span><span class="o">&lt;</span><span class="no">T</span><span class="o">&gt;</span> <span class="o">{</span>
+    <span class="nc">ArrayList</span><span class="o">&lt;</span><span class="no">T</span><span class="o">&gt;</span> <span class="n">list</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">ArrayList</span><span class="o">&lt;</span><span class="no">T</span><span class="o">&gt;();</span>
+    <span class="kt">void</span> <span class="nf">add</span><span class="o">(</span><span class="no">T</span> <span class="n">item</span><span class="o">)</span> <span class="o">{</span> <span class="n">list</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">item</span><span class="o">);</span> <span class="o">}</span>
+    <span class="no">T</span> <span class="nf">get</span><span class="o">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">)</span> <span class="o">{</span> <span class="k">return</span> <span class="n">list</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="n">i</span><span class="o">);</span> <span class="o">}</span>
+    <span class="kt">int</span> <span class="nf">size</span><span class="o">()</span> <span class="o">{</span> <span class="k">return</span> <span class="n">list</span><span class="o">.</span><span class="na">size</span><span class="o">();</span> <span class="o">}</span>
+    <span class="kd">public</span> <span class="nc">String</span> <span class="nf">toString</span><span class="o">()</span> <span class="o">{</span> <span class="k">return</span> <span class="n">list</span><span class="o">.</span><span class="na">toString</span><span class="o">();</span> <span class="o">}</span>
+<span class="o">}</span>
 </code></pre></div></div>
 
 <p>만약 FuitBox 클래스를 Toy에 대한 객체로 생성한다면, 아래와 같이 선언할 수 있습니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>FruitBox&lt;Toy&gt; fruitBox = new FruitBox&lt;Toy&gt;();
-fruitBox.add(new Toy());
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">FruitBox</span><span class="o">&lt;</span><span class="nc">Toy</span><span class="o">&gt;</span> <span class="n">fruitBox</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">FruitBox</span><span class="o">&lt;</span><span class="nc">Toy</span><span class="o">&gt;();</span>
+<span class="n">fruitBox</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="k">new</span> <span class="nc">Toy</span><span class="o">());</span>
 </code></pre></div></div>
 
-<p>그런데 만약 Type variable 자체를 특정 Type으로 제한하고 싶다면, 클래스를 선언할 때 아래처럼 변경해주시면 됩니다.</p>
+<p>그런데 만약 Type Variable 자체를 특정 Type으로 제한하고 싶다면, 클래스를 선언할 때 아래처럼 변경해주시면 됩니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>class FruitBox&lt;T extends Fruit&gt; {
-    ArrayList&lt;T&gt; list = new ArrayList&lt;T&gt;();
-    void add(T item) { list.add(item); }
-    T get(int i) { return list.get(i); }
-    int size() { return list.size(); }
-    public String toString() { return list.toString(); }
-}
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nc">FruitBox</span><span class="o">&lt;</span><span class="no">T</span> <span class="kd">extends</span> <span class="nc">Fruit</span><span class="o">&gt;</span> <span class="o">{</span>
+    <span class="nc">ArrayList</span><span class="o">&lt;</span><span class="no">T</span><span class="o">&gt;</span> <span class="n">list</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">ArrayList</span><span class="o">&lt;</span><span class="no">T</span><span class="o">&gt;();</span>
+    <span class="kt">void</span> <span class="nf">add</span><span class="o">(</span><span class="no">T</span> <span class="n">item</span><span class="o">)</span> <span class="o">{</span> <span class="n">list</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">item</span><span class="o">);</span> <span class="o">}</span>
+    <span class="no">T</span> <span class="nf">get</span><span class="o">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">)</span> <span class="o">{</span> <span class="k">return</span> <span class="n">list</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="n">i</span><span class="o">);</span> <span class="o">}</span>
+    <span class="kt">int</span> <span class="nf">size</span><span class="o">()</span> <span class="o">{</span> <span class="k">return</span> <span class="n">list</span><span class="o">.</span><span class="na">size</span><span class="o">();</span> <span class="o">}</span>
+    <span class="kd">public</span> <span class="nc">String</span> <span class="nf">toString</span><span class="o">()</span> <span class="o">{</span> <span class="k">return</span> <span class="n">list</span><span class="o">.</span><span class="na">toString</span><span class="o">();</span> <span class="o">}</span>
+<span class="o">}</span>
 </code></pre></div></div>
 
-<p>이렇게 선언하면 Fruit 클래스의 Subclass만 Type으로 지정해줄 수 있습니다. 또한 이렇게 선언할 경우, FruitBox 클래스의 add 메소드의 매개변수 또한 Fruit 클래스의 Subclass만 사용할 수 있습니다.</p>
+<p>이렇게 선언하면 Fruit 클래스의 Sub Class만 Type으로 지정해줄 수 있습니다. 또한 이렇게 선언할 경우, FruitBox 클래스의 add 메소드의 매개변수 또한 Fruit 클래스의 Sub Class만 사용할 수 있습니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>FruitBox&lt;Fruit&gt; fruitBox = new FruitBox&lt;Fruit&gt;();
-fruitBox.add(new Apple()); // OK
-fruitBox.add(new Grape()); // OK
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">FruitBox</span><span class="o">&lt;</span><span class="nc">Fruit</span><span class="o">&gt;</span> <span class="n">fruitBox</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">FruitBox</span><span class="o">&lt;</span><span class="nc">Fruit</span><span class="o">&gt;();</span>
+<span class="n">fruitBox</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="k">new</span> <span class="nc">Apple</span><span class="o">());</span> <span class="c1">// OK</span>
+<span class="n">fruitBox</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="k">new</span> <span class="nc">Grape</span><span class="o">());</span> <span class="c1">// OK</span>
 </code></pre></div></div>
 
-<p>Java는 C++과 다르게 다중상속이 불가능하고, 이를 대신하는 것이 인터페이스라는 이야기를 한 적이 있습니다. 그렇기 때문에 Generic class의 Type 제한을 인터페이스로 설정하는 것도 가능합니다. 아래 예시는 FruitBox라는 Generic class가 Eatable이라는 인터페이스로 Type 제한을 설정하는 것을 보여줍니다.</p>
+<p>Java는 C++과 다르게 다중상속이 불가능하고, 이를 대신하는 것이 인터페이스라는 이야기를 한 적이 있습니다. 그렇기 때문에 Generic Class의 Type 제한을 인터페이스로 설정하는 것도 가능합니다. 아래 예시는 FruitBox라는 Generic Class가 Eatable이라는 인터페이스로 Type 제한을 설정하는 것을 보여줍니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>interface Eatable {}
-class FruitBox&lt;T extends Eatable&gt; { ... }
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">interface</span> <span class="nc">Eatable</span> <span class="o">{}</span>
+<span class="kd">class</span> <span class="nc">FruitBox</span><span class="o">&lt;</span><span class="no">T</span> <span class="kd">extends</span> <span class="nc">Eatable</span><span class="o">&gt;</span> <span class="o">{</span> <span class="o">...</span> <span class="o">}</span>
 </code></pre></div></div>
 
 <p>마지막으로, 이러한 제한들을 혼용할 수도 있습니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>class FruitBox&lt;T extends Fruit &amp; Eatable&gt; { ... }
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nc">FruitBox</span><span class="o">&lt;</span><span class="no">T</span> <span class="kd">extends</span> <span class="nc">Fruit</span> <span class="o">&amp;</span> <span class="nc">Eatable</span><span class="o">&gt;</span> <span class="o">{</span> <span class="o">...</span> <span class="o">}</span>
 </code></pre></div></div>
 
 <h2 id="inheriting-generic-class">Inheriting Generic Class</h2>
 
-<p>이번에는 Generic class를 상속할 때의 유의할 점을 알아보도록 하겠습니다.</p>
+<p>이번에는 Generic Class를 상속할 때 유의할 점을 알아보도록 하겠습니다.</p>
 
-<ol>
-  <li>Generic class는 Generic class가 아닌 class를 상속받을 수 있다.</li>
-</ol>
+<p><strong>1. Generic Class는 Generic Class가 아닌 Class를 상속받을 수 있다.</strong></p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>class Shape { }
-class FruitBox&lt;T&gt; extends Shape { }
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nc">Shape</span> <span class="o">{</span> <span class="o">}</span>
+<span class="kd">class</span> <span class="nc">FruitBox</span><span class="o">&lt;</span><span class="no">T</span><span class="o">&gt;</span> <span class="kd">extends</span> <span class="nc">Shape</span> <span class="o">{</span> <span class="o">}</span>
 </code></pre></div></div>
 
-<ol>
-  <li>Generic class는 Generic class로부터 상속받을 수 있다. 단, 이 때 Type variable은 동일해야 한다.</li>
-</ol>
+<p><strong>2. Generic Class는 Generic Class로부터 상속받을 수 있다. 단, 이 때 Type Variable은 동일해야 한다.</strong></p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>class Box&lt;T&gt; {
-    ArrayList&lt;T&gt; list = new ArrayList&lt;T&gt;();
-    void add(T item) { list.add(item); }
-    T get(int i) { return list.get(i); }
-    int size() { return list.size(); }
-    public String toString() { return list.toString(); }
-}
-class FruitBox&lt;T&gt; extends Box&lt;T&gt; { }
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nc">Box</span><span class="o">&lt;</span><span class="no">T</span><span class="o">&gt;</span> <span class="o">{</span>
+    <span class="nc">ArrayList</span><span class="o">&lt;</span><span class="no">T</span><span class="o">&gt;</span> <span class="n">list</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">ArrayList</span><span class="o">&lt;</span><span class="no">T</span><span class="o">&gt;();</span>
+    <span class="kt">void</span> <span class="nf">add</span><span class="o">(</span><span class="no">T</span> <span class="n">item</span><span class="o">)</span> <span class="o">{</span> <span class="n">list</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">item</span><span class="o">);</span> <span class="o">}</span>
+    <span class="no">T</span> <span class="nf">get</span><span class="o">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">)</span> <span class="o">{</span> <span class="k">return</span> <span class="n">list</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="n">i</span><span class="o">);</span> <span class="o">}</span>
+    <span class="kt">int</span> <span class="nf">size</span><span class="o">()</span> <span class="o">{</span> <span class="k">return</span> <span class="n">list</span><span class="o">.</span><span class="na">size</span><span class="o">();</span> <span class="o">}</span>
+    <span class="kd">public</span> <span class="nc">String</span> <span class="nf">toString</span><span class="o">()</span> <span class="o">{</span> <span class="k">return</span> <span class="n">list</span><span class="o">.</span><span class="na">toString</span><span class="o">();</span> <span class="o">}</span>
+<span class="o">}</span>
+<span class="kd">class</span> <span class="nc">FruitBox</span><span class="o">&lt;</span><span class="no">T</span><span class="o">&gt;</span> <span class="kd">extends</span> <span class="nc">Box</span><span class="o">&lt;</span><span class="no">T</span><span class="o">&gt;</span> <span class="o">{</span> <span class="o">}</span>
 </code></pre></div></div>
 
-<ol>
-  <li>Generic class를 상속할 때 Type을 제한하는 것 또한 가능하다.</li>
-</ol>
+<p><strong>3. Generic Class를 상속할 때 Type을 제한하는 것 또한 가능하다.</strong></p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>class Box&lt;T&gt; { ... }
-class FruitBox&lt;T extends Fruit&gt; extends Box&lt;T&gt; { }
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nc">Box</span><span class="o">&lt;</span><span class="no">T</span><span class="o">&gt;</span> <span class="o">{</span> <span class="o">...</span> <span class="o">}</span>
+<span class="kd">class</span> <span class="nc">FruitBox</span><span class="o">&lt;</span><span class="no">T</span> <span class="kd">extends</span> <span class="nc">Fruit</span><span class="o">&gt;</span> <span class="kd">extends</span> <span class="nc">Box</span><span class="o">&lt;</span><span class="no">T</span><span class="o">&gt;</span> <span class="o">{</span> <span class="o">}</span>
 </code></pre></div></div>
 
-<ol>
-  <li>만약 Superclass가 Type을 제한한다면, Subclass 또한 Type이 제한된다.</li>
-</ol>
+<p><strong>4. 만약 Super Class가 Type을 제한한다면, Sub Class 또한 Type이 제한된다.</strong></p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>class Box&lt;T extends Fruit&gt; { ... }
-class FruitBox&lt;T&gt; extends Box&lt;T&gt; { ... } // Error
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nc">Box</span><span class="o">&lt;</span><span class="no">T</span> <span class="kd">extends</span> <span class="nc">Fruit</span><span class="o">&gt;</span> <span class="o">{</span> <span class="o">...</span> <span class="o">}</span>
+<span class="kd">class</span> <span class="nc">FruitBox</span><span class="o">&lt;</span><span class="no">T</span><span class="o">&gt;</span> <span class="kd">extends</span> <span class="nc">Box</span><span class="o">&lt;</span><span class="no">T</span><span class="o">&gt;</span> <span class="o">{</span> <span class="o">...</span> <span class="o">}</span> <span class="c1">// Error</span>
 
-class Box&lt;T extends Fruit&gt; { ... }
-class FruitBox&lt;T extends Fruit&gt; extends Box&lt;T&gt; { ... } // OK
+<span class="kd">class</span> <span class="nc">Box</span><span class="o">&lt;</span><span class="no">T</span> <span class="kd">extends</span> <span class="nc">Fruit</span><span class="o">&gt;</span> <span class="o">{</span> <span class="o">...</span> <span class="o">}</span>
+<span class="kd">class</span> <span class="nc">FruitBox</span><span class="o">&lt;</span><span class="no">T</span> <span class="kd">extends</span> <span class="nc">Fruit</span><span class="o">&gt;</span> <span class="kd">extends</span> <span class="nc">Box</span><span class="o">&lt;</span><span class="no">T</span><span class="o">&gt;</span> <span class="o">{</span> <span class="o">...</span> <span class="o">}</span> <span class="c1">// OK</span>
 </code></pre></div></div>
 
 <h2 id="generic-classes--wild-card">Generic Classes : Wild Card</h2>
 
-<p>이번에는 굉장히 특이한 사용법을 소개하도록 하겠습니다. 아래 소스를 보시면 Juicer 클래스는 Generic class가 아닙니다. 하지만 Juicer 클래스에 포함된 정적 메소드(Static method) makeJuice를 보시면 Type variable이 사용된 것을 알 수 있습니다.</p>
+<p>이번에는 굉장히 특이한 사용법을 소개하도록 하겠습니다. 아래 소스를 보시면 Juicer 클래스는 Generic Class가 아닙니다. 하지만 Juicer 클래스에 포함된 정적 메소드(Static method) makeJuice를 보시면 Type Variable이 사용된 것을 알 수 있습니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>class Juicer {
-    static Juice makeJuice(FruitBox&lt;Fruit&gt; box) {
-        String tmp = "";
-        for(Fruit f : box.getList()) tmp += f + " ";
-        return new Juice(tmp);
-    }
-}
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nc">Juicer</span> <span class="o">{</span>
+    <span class="kd">static</span> <span class="nc">Juice</span> <span class="nf">makeJuice</span><span class="o">(</span><span class="nc">FruitBox</span><span class="o">&lt;</span><span class="nc">Fruit</span><span class="o">&gt;</span> <span class="n">box</span><span class="o">)</span> <span class="o">{</span>
+        <span class="nc">String</span> <span class="n">tmp</span> <span class="o">=</span> <span class="s">""</span><span class="o">;</span>
+        <span class="k">for</span><span class="o">(</span><span class="nc">Fruit</span> <span class="n">f</span> <span class="o">:</span> <span class="n">box</span><span class="o">.</span><span class="na">getList</span><span class="o">())</span> <span class="n">tmp</span> <span class="o">+=</span> <span class="n">f</span> <span class="o">+</span> <span class="s">" "</span><span class="o">;</span>
+        <span class="k">return</span> <span class="k">new</span> <span class="nf">Juice</span><span class="o">(</span><span class="n">tmp</span><span class="o">);</span>
+    <span class="o">}</span>
+<span class="o">}</span>
 </code></pre></div></div>
 
-<p>이 경우에는 Juicer가 Generic class가 아니지만, makeJuice 메소드의 파라미터에는 Type variable이 지정되어 있기 때문에 FruitBox<Fruit> 인스턴스만 통과할 수 있습니다. 아래의 소스는 Type variable이 다른 경우 오류가 발생한다는 것을 나타내고 있습니다.</Fruit></p>
+<p>Juicer 클래스는 Generic Class가 아니지만, makeJuice 메소드의 파라미터에는 Type Variable이 지정되어 있기 때문에 FruitBox<Fruit> 인스턴스만 통과할 수 있습니다. 아래의 소스는 Type Variable이 다른 경우 오류가 발생한다는 것을 나타내고 있습니다.</Fruit></p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>FruitBox&lt;Fruit&gt; fruitBox = new FruitBox&lt;Fruit&gt;();
-FruitBox&lt;Apple&gt; appleBox = new FruitBox&lt;Apple&gt;();
-fruitBox = new FruitBox&lt;Fruit&gt;();
-appleBox = new FruitBox&lt;Apple&gt;();
-System.out.println(Juicer.makeJuice(fruitBox)); // OK
-System.out.println(Juicer.makeJuice(appleBox)); // Error
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">FruitBox</span><span class="o">&lt;</span><span class="nc">Fruit</span><span class="o">&gt;</span> <span class="n">fruitBox</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">FruitBox</span><span class="o">&lt;</span><span class="nc">Fruit</span><span class="o">&gt;();</span>
+<span class="nc">FruitBox</span><span class="o">&lt;</span><span class="nc">Apple</span><span class="o">&gt;</span> <span class="n">appleBox</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">FruitBox</span><span class="o">&lt;</span><span class="nc">Apple</span><span class="o">&gt;();</span>
+<span class="n">fruitBox</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">FruitBox</span><span class="o">&lt;</span><span class="nc">Fruit</span><span class="o">&gt;();</span>
+<span class="n">appleBox</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">FruitBox</span><span class="o">&lt;</span><span class="nc">Apple</span><span class="o">&gt;();</span>
+<span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="nc">Juicer</span><span class="o">.</span><span class="na">makeJuice</span><span class="o">(</span><span class="n">fruitBox</span><span class="o">));</span> <span class="c1">// OK</span>
+<span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="nc">Juicer</span><span class="o">.</span><span class="na">makeJuice</span><span class="o">(</span><span class="n">appleBox</span><span class="o">));</span> <span class="c1">// Error</span>
 </code></pre></div></div>
 
 <p>Java에서는 array, ArrayList 같은 반복가능한 객체를 이용하는 특별한 for loop 구문이 존재합니다. 이 것은 C언어에는 없는 내용이기 때문에 예제를 통해 보여드리도록 하겠습니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>String[] numbers = {"one", "two", "three"};
-for(int i=0; i&lt;numbers.length; i++) {
-    System.out.println(numbers[i]);
-}
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">String</span><span class="o">[]</span> <span class="n">numbers</span> <span class="o">=</span> <span class="o">{</span><span class="s">"one"</span><span class="o">,</span> <span class="s">"two"</span><span class="o">,</span> <span class="s">"three"</span><span class="o">};</span>
+<span class="k">for</span><span class="o">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="o">;</span> <span class="n">i</span><span class="o">&lt;</span><span class="n">numbers</span><span class="o">.</span><span class="na">length</span><span class="o">;</span> <span class="n">i</span><span class="o">++)</span> <span class="o">{</span>
+    <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">numbers</span><span class="o">[</span><span class="n">i</span><span class="o">]);</span>
+<span class="o">}</span>
 </code></pre></div></div>
 
 <p>이렇게 문자열 배열의 길이를 알려주는 length 메소드를 이용하여 반복문을 작성하는 것이 가능합니다. 또는 아래와 같이 특이하게 반복문을 사용할 수도 있습니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>String[] numbers = {"one", "two", "three"};
-for(String number: numbers) {
-    System.out.println(number);
-}
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">String</span><span class="o">[]</span> <span class="n">numbers</span> <span class="o">=</span> <span class="o">{</span><span class="s">"one"</span><span class="o">,</span> <span class="s">"two"</span><span class="o">,</span> <span class="s">"three"</span><span class="o">};</span>
+<span class="k">for</span><span class="o">(</span><span class="nc">String</span> <span class="nl">number:</span> <span class="n">numbers</span><span class="o">)</span> <span class="o">{</span>
+    <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">number</span><span class="o">);</span>
+<span class="o">}</span>
 </code></pre></div></div>
 
 <p>언뜻 보면 어떻게 동작을 하는지 이해가 잘 되지 않는데요, 이것은 매 반복때마다 numbers 객체에 들어있는 element를 number라는 String 변수에 대입한다는 뜻입니다.</p>
 
-<p>Generic class의 기능을 설명하다 갑자기 왜 이런 이야기를 하는지 궁금하실 겁니다. 왜냐하면 이번 예시에 관련이 있기 때문입니다. 위에 보여드린 Juicer 클래스에는 FruitBox<Fruit>으로 매개변수 Type이 제한된 makeJuice 메소드가 있습니다. 물론 이것을 사용하여 방금 알려드린 for문을 사용할 수도 있겠죠. 그런데 만약 Juicer 클래스에 매개변수 Type만 다른 makeJuice 메소드를 추가하면 어떻게 될까요? 아래와 같이 말입니다.</Fruit></p>
+<p>Generic Class의 기능을 설명하다 갑자기 왜 이런 이야기를 하는지 궁금하실 겁니다. 왜냐하면 이번 예시에 관련이 있기 때문입니다. 위에 보여드린 Juicer 클래스에는 FruitBox<Fruit>으로 매개변수 Type이 제한된 makeJuice 메소드가 있습니다. 물론 이것을 사용하여 방금 알려드린 for문을 사용할 수도 있겠죠. 그런데 만약 Juicer 클래스에 매개변수 Type만 다른 makeJuice 메소드를 추가하면 어떻게 될까요? 아래와 같이 말입니다.</Fruit></p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>class Juicer {
-    static Juice makeJuice(FruitBox&lt;Fruit&gt; box) {
-        String tmp = "";
-        for(Fruit f : box.getList()) tmp += f + " ";
-        return new Juice(tmp);
-    }
-    static Juice makeJuice(FruitBox&lt;Apple&gt; box) { // Error
-        String tmp = "";
-        for(Fruit f : box.getList()) tmp += f + " ";
-        return new Juice(tmp);
-    }
-}
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nc">Juicer</span> <span class="o">{</span>
+    <span class="kd">static</span> <span class="nc">Juice</span> <span class="nf">makeJuice</span><span class="o">(</span><span class="nc">FruitBox</span><span class="o">&lt;</span><span class="nc">Fruit</span><span class="o">&gt;</span> <span class="n">box</span><span class="o">)</span> <span class="o">{</span>
+        <span class="nc">String</span> <span class="n">tmp</span> <span class="o">=</span> <span class="s">""</span><span class="o">;</span>
+        <span class="k">for</span><span class="o">(</span><span class="nc">Fruit</span> <span class="n">f</span> <span class="o">:</span> <span class="n">box</span><span class="o">.</span><span class="na">getList</span><span class="o">())</span> <span class="n">tmp</span> <span class="o">+=</span> <span class="n">f</span> <span class="o">+</span> <span class="s">" "</span><span class="o">;</span>
+        <span class="k">return</span> <span class="k">new</span> <span class="nf">Juice</span><span class="o">(</span><span class="n">tmp</span><span class="o">);</span>
+    <span class="o">}</span>
+    <span class="kd">static</span> <span class="nc">Juice</span> <span class="nf">makeJuice</span><span class="o">(</span><span class="nc">FruitBox</span><span class="o">&lt;</span><span class="nc">Apple</span><span class="o">&gt;</span> <span class="n">box</span><span class="o">)</span> <span class="o">{</span> <span class="c1">// Error</span>
+        <span class="nc">String</span> <span class="n">tmp</span> <span class="o">=</span> <span class="s">""</span><span class="o">;</span>
+        <span class="k">for</span><span class="o">(</span><span class="nc">Fruit</span> <span class="n">f</span> <span class="o">:</span> <span class="n">box</span><span class="o">.</span><span class="na">getList</span><span class="o">())</span> <span class="n">tmp</span> <span class="o">+=</span> <span class="n">f</span> <span class="o">+</span> <span class="s">" "</span><span class="o">;</span>
+        <span class="k">return</span> <span class="k">new</span> <span class="nf">Juice</span><span class="o">(</span><span class="n">tmp</span><span class="o">);</span>
+    <span class="o">}</span>
+<span class="o">}</span>
 </code></pre></div></div>
 
-<p>이렇게 매개변수만 변경된 메소드를 추가하면 컴파일 에러가 발생합니다. 매개변수 Type만 변경되는 Generic class는 Java에서 허용되지 않기 때문입니다. 만약에 여러 Type을 지원하게 만들고 싶다면,  Wild Card ‘?’ 기호를 사용하는 방법이 있습니다. Wild Card를 사용하여 Juicer 클래스를 여러 Type으로 사용 가능하도록 수정하면, 아래와 같습니다.</p>
+<p>이렇게 매개변수만 변경된 메소드를 추가하면 컴파일 에러가 발생합니다. 매개변수 Type만 변경되는 Generic Class는 Java에서 허용되지 않기 때문입니다. 만약에 여러 Type을 지원하게 만들고 싶다면,  Wild Card ‘?’ 기호를 사용하는 방법이 있습니다. Wild Card를 사용하여 Juicer 클래스를 여러 Type으로 사용 가능하도록 수정하면 아래와 같습니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>class Juicer {
-    static Juice makeJuice(FruitBox&lt;? extends Fruit&gt; box) {
-        String tmp = "";
-        for(Fruit f : box.getList()) tmp += f + " ";
-        return new Juice(tmp);
-    }
-}
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nc">Juicer</span> <span class="o">{</span>
+    <span class="kd">static</span> <span class="nc">Juice</span> <span class="nf">makeJuice</span><span class="o">(</span><span class="nc">FruitBox</span><span class="o">&lt;?</span> <span class="kd">extends</span> <span class="nc">Fruit</span><span class="o">&gt;</span> <span class="n">box</span><span class="o">)</span> <span class="o">{</span>
+        <span class="nc">String</span> <span class="n">tmp</span> <span class="o">=</span> <span class="s">""</span><span class="o">;</span>
+        <span class="k">for</span><span class="o">(</span><span class="nc">Fruit</span> <span class="n">f</span> <span class="o">:</span> <span class="n">box</span><span class="o">.</span><span class="na">getList</span><span class="o">())</span> <span class="n">tmp</span> <span class="o">+=</span> <span class="n">f</span> <span class="o">+</span> <span class="s">" "</span><span class="o">;</span>
+        <span class="k">return</span> <span class="k">new</span> <span class="nf">Juice</span><span class="o">(</span><span class="n">tmp</span><span class="o">);</span>
+    <span class="o">}</span>
+<span class="o">}</span>
 </code></pre></div></div>
 
-<p>makeJuice 메소드의 매개변수 부분에서 &lt;? extends Fruit&gt;는 Fruit 클래스와 Fruit 클래스의 Subclass만을 허용한다는 뜻입니다. 만약 반대로 Fruit 클래스의 Superclass를 허용하고 싶다면 &lt;? super Fruit&gt; 을 사용하면 됩니다. &lt;?&gt;를 사용하면 모든 타입을 매개변수로 받을 수 있으며, &lt;? extends Object&gt;로 사용하는 것과 동일합니다.</p>
+<p>makeJuice 메소드의 매개변수 부분에서 &lt;? extends Fruit&gt;는 Fruit 클래스와 Fruit 클래스의 Sub Class만을 허용한다는 뜻입니다. 만약 반대로 Fruit 클래스의 Super Class를 허용하고 싶다면 &lt;? super Fruit&gt; 을 사용하면 됩니다. &lt;?&gt;를 사용하면 모든 타입을 매개변수로 받을 수 있으며, &lt;? extends Object&gt;로 사용하는 것과 동일합니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>FruitBox&lt;Fruit&gt; fruitBox = new FruitBox&lt;Fruit&gt;();
-FruitBox&lt;Apple&gt; appleBox = new FruitBox&lt;Apple&gt;();
-fruitBox = new FruitBox&lt;Fruit&gt;();
-appleBox = new FruitBox&lt;Apple&gt;();
-System.out.println(Juicer.makeJuice(fruitBox)); // OK
-System.out.println(Juicer.makeJuice(appleBox)); // OK!
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">FruitBox</span><span class="o">&lt;</span><span class="nc">Fruit</span><span class="o">&gt;</span> <span class="n">fruitBox</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">FruitBox</span><span class="o">&lt;</span><span class="nc">Fruit</span><span class="o">&gt;();</span>
+<span class="nc">FruitBox</span><span class="o">&lt;</span><span class="nc">Apple</span><span class="o">&gt;</span> <span class="n">appleBox</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">FruitBox</span><span class="o">&lt;</span><span class="nc">Apple</span><span class="o">&gt;();</span>
+<span class="n">fruitBox</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">FruitBox</span><span class="o">&lt;</span><span class="nc">Fruit</span><span class="o">&gt;();</span>
+<span class="n">appleBox</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">FruitBox</span><span class="o">&lt;</span><span class="nc">Apple</span><span class="o">&gt;();</span>
+<span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="nc">Juicer</span><span class="o">.</span><span class="na">makeJuice</span><span class="o">(</span><span class="n">fruitBox</span><span class="o">));</span> <span class="c1">// OK</span>
+<span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="nc">Juicer</span><span class="o">.</span><span class="na">makeJuice</span><span class="o">(</span><span class="n">appleBox</span><span class="o">));</span> <span class="c1">// OK!</span>
 </code></pre></div></div>
 
-<p>Wild Card를 사용하면 이전과 달리 Juicer 클래스의 makeJuice 메소드가 fruitBox Type 외에도 FruitBox의 Subclass인 appleBox 또한 문제없이 매개변수로 받을 수 있음을 알 수 있습니다.</p>
+<p>Wild Card를 사용하면 이전과 달리 Juicer 클래스의 makeJuice 메소드가 fruitBox Type 외에도 FruitBox의 Sub Class인 appleBox 또한 문제없이 매개변수로 받을 수 있음을 알 수 있습니다.</p>
 
 <h2 id="example--wild-card">Example : Wild Card</h2>
 
@@ -762,95 +737,95 @@ System.out.println(Juicer.makeJuice(appleBox)); // OK!
 
 <p>클래스와 마찬가지로 메소드 또한 Generic으로 선언할 수 있습니다. 메소드를 선언할 때 반환 자료형 앞에 선언해주는 방식으로 사용할 수 있는데요, 예를 들어 위에서 작성한 Juicer 클래스의 makeJuice 메소드를 Generic 메소드로 변환하면 아래와 같습니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>class Juicer {
-    static &lt;T extends Fruit&gt; Juice makeJuice(FruitBox&lt;T&gt; box) {
-        String tmp = "";
-        for(Fruit f : box.getList()) tmp += f + " ";
-        return new Juice(tmp);
-    }
-}
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nc">Juicer</span> <span class="o">{</span>
+    <span class="kd">static</span> <span class="o">&lt;</span><span class="no">T</span> <span class="kd">extends</span> <span class="nc">Fruit</span><span class="o">&gt;</span> <span class="nc">Juice</span> <span class="nf">makeJuice</span><span class="o">(</span><span class="nc">FruitBox</span><span class="o">&lt;</span><span class="no">T</span><span class="o">&gt;</span> <span class="n">box</span><span class="o">)</span> <span class="o">{</span>
+        <span class="nc">String</span> <span class="n">tmp</span> <span class="o">=</span> <span class="s">""</span><span class="o">;</span>
+        <span class="k">for</span><span class="o">(</span><span class="nc">Fruit</span> <span class="n">f</span> <span class="o">:</span> <span class="n">box</span><span class="o">.</span><span class="na">getList</span><span class="o">())</span> <span class="n">tmp</span> <span class="o">+=</span> <span class="n">f</span> <span class="o">+</span> <span class="s">" "</span><span class="o">;</span>
+        <span class="k">return</span> <span class="k">new</span> <span class="nf">Juice</span><span class="o">(</span><span class="n">tmp</span><span class="o">);</span>
+    <span class="o">}</span>
+<span class="o">}</span>
 </code></pre></div></div>
 
-<p>Generic 메소드를 호출할 때는 메소드 이름 앞에 Type을 작성해주시면 됩니다. 아래는 <Fruit> Type과 <Apple> Type으로 호출한 예시입니다. Generic 클래스와 마찬가지로 만약 컴파일러가 어떤 Type인지 확실하게 구분할 수 있는 경우, Type은 생략이 가능합니다.</Apple></Fruit></p>
+<p>Generic 메소드를 호출할 때는 메소드 이름 앞에 Type을 작성해주시면 됩니다. 아래는 <code class="language-plaintext highlighter-rouge">&lt;Fruit&gt; Type</code>과 <code class="language-plaintext highlighter-rouge">&lt;Apple&gt; Type</code>으로 호출한 예시입니다. Generic Class와 마찬가지로 만약 컴파일러가 어떤 Type인지 확실하게 구분할 수 있는 경우, Type은 생략이 가능합니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>FruitBox&lt;Fruit&gt; fruitBox = new FruitBox&lt;Fruit&gt;();
-FruitBox&lt;Apple&gt; appleBox = new FruitBox&lt;Apple&gt;();
-fruitBox = new FruitBox&lt;Fruit&gt;();
-appleBox = new FruitBox&lt;Apple&gt;();
-System.out.println(Juicer.&lt;Fruit&gt;makeJuice(fruitBox));
-System.out.println(Juicer.&lt;Apple&gt;makeJuice(appleBox));
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">FruitBox</span><span class="o">&lt;</span><span class="nc">Fruit</span><span class="o">&gt;</span> <span class="n">fruitBox</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">FruitBox</span><span class="o">&lt;</span><span class="nc">Fruit</span><span class="o">&gt;();</span>
+<span class="nc">FruitBox</span><span class="o">&lt;</span><span class="nc">Apple</span><span class="o">&gt;</span> <span class="n">appleBox</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">FruitBox</span><span class="o">&lt;</span><span class="nc">Apple</span><span class="o">&gt;();</span>
+<span class="n">fruitBox</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">FruitBox</span><span class="o">&lt;</span><span class="nc">Fruit</span><span class="o">&gt;();</span>
+<span class="n">appleBox</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">FruitBox</span><span class="o">&lt;</span><span class="nc">Apple</span><span class="o">&gt;();</span>
+<span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="nc">Juicer</span><span class="o">.&lt;</span><span class="nc">Fruit</span><span class="o">&gt;</span><span class="n">makeJuice</span><span class="o">(</span><span class="n">fruitBox</span><span class="o">));</span>
+<span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="nc">Juicer</span><span class="o">.&lt;</span><span class="nc">Apple</span><span class="o">&gt;</span><span class="n">makeJuice</span><span class="o">(</span><span class="n">appleBox</span><span class="o">));</span>
 </code></pre></div></div>
 
 <h2 id="casting-generic-types">Casting Generic Types</h2>
 
-<p>Java에서 자료형을 강제로 바꾸기 위해서는 Type Casting을 사용해야합니다. 언뜻 보면 Generic 클래스와 메소드에서도 Type Casting을 통해 Type을 바꿀 수 있을 것 같지만, 안타깝게도 이는 불가능합니다.</p>
+<p>Java에서 자료형을 강제로 바꾸기 위해서는 Type Casting을 사용해야합니다. 언뜻 보면 Generic Class와 메소드에서도 Type Casting을 통해 Type을 바꿀 수 있을 것 같지만, 안타깝게도 이는 불가능합니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Box&lt;Object&gt; objBox = null;
-Box&lt;String&gt; strBox = null;
-objBox = (Box&lt;Object&gt;)strBox; // Error
-strBox = (Box&lt;String&gt;)objBox; // Error
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">Box</span><span class="o">&lt;</span><span class="nc">Object</span><span class="o">&gt;</span> <span class="n">objBox</span> <span class="o">=</span> <span class="kc">null</span><span class="o">;</span>
+<span class="nc">Box</span><span class="o">&lt;</span><span class="nc">String</span><span class="o">&gt;</span> <span class="n">strBox</span> <span class="o">=</span> <span class="kc">null</span><span class="o">;</span>
+<span class="n">objBox</span> <span class="o">=</span> <span class="o">(</span><span class="nc">Box</span><span class="o">&lt;</span><span class="nc">Object</span><span class="o">&gt;)</span><span class="n">strBox</span><span class="o">;</span> <span class="c1">// Error</span>
+<span class="n">strBox</span> <span class="o">=</span> <span class="o">(</span><span class="nc">Box</span><span class="o">&lt;</span><span class="nc">String</span><span class="o">&gt;)</span><span class="n">objBox</span><span class="o">;</span> <span class="c1">// Error</span>
 </code></pre></div></div>
 
-<p>String은 분명히 Object의 Subclass이지만, Type Casting을 통한 변환이 불가능함을 알 수 있습니다. 만약 굳이 Type Casting을 사용하고 싶다면, 처음 선언할 때 Wild Card를 통해 선언해주어야만 합니다.</p>
+<p>String은 분명히 Object의 Sub Class이지만, Type Casting을 통한 변환이 불가능함을 알 수 있습니다. 만약 굳이 Type Casting을 사용하고 싶다면, 처음 선언할 때 Wild Card를 통해 선언해주어야만 합니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Box&lt;? extends Object&gt; objBox = new Box&lt;String&gt;(); // OK
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">Box</span><span class="o">&lt;?</span> <span class="kd">extends</span> <span class="nc">Object</span><span class="o">&gt;</span> <span class="n">objBox</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Box</span><span class="o">&lt;</span><span class="nc">String</span><span class="o">&gt;();</span> <span class="c1">// OK</span>
 </code></pre></div></div>
 
-<p>다시 Box/FruitBox 클래스로 돌아가봅시다. 다시 간단하게 설명하자면, FruitBox는 Generic 클래스 Box로부터 상속받은 클래스입니다. 이 때, Type은 Fruit과 Fruit의 Subclass로만 제한하도록 정의하였습니다.</p>
+<p>다시 Box/FruitBox 클래스로 돌아가봅시다. 다시 간단하게 설명하자면, FruitBox는 Generic Class인 Box로부터 상속받은 클래스입니다. 이 때, Type은 Fruit과 Fruit의 Sub Class로만 제한하도록 정의하였습니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>class Box&lt;T&gt; { }
-class FruitBox&lt;T extends Fruit&gt; extends Box&lt;T&gt; { }
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nc">Box</span><span class="o">&lt;</span><span class="no">T</span><span class="o">&gt;</span> <span class="o">{</span> <span class="o">}</span>
+<span class="kd">class</span> <span class="nc">FruitBox</span><span class="o">&lt;</span><span class="no">T</span> <span class="kd">extends</span> <span class="nc">Fruit</span><span class="o">&gt;</span> <span class="kd">extends</span> <span class="nc">Box</span><span class="o">&lt;</span><span class="no">T</span><span class="o">&gt;</span> <span class="o">{</span> <span class="o">}</span>
 </code></pre></div></div>
 
-<p>이렇게 Box/FruitBox 클래스를 정의한 후, Wild Card를 사용하여 FruitBox 클래스에 대한 객체를 생성합니다. Type을 Fruit으로 정의하는 것은 당연히 가능하고, Apple은 Fruit의 Subclass이기 때문에 역시 가능합니다.</p>
+<p>이렇게 Box/FruitBox 클래스를 정의한 후, Wild Card를 사용하여 FruitBox 클래스에 대한 객체를 생성합니다. Type을 Fruit으로 정의하는 것은 당연히 가능하고, Apple은 Fruit의 Sub Class이기 때문에 역시 가능합니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>FruitBox&lt;? extends Fruit&gt; box = new FruitBox&lt;Fruit&gt;(); // OK
-FruitBox&lt;? extends Fruit&gt; box = new FruitBox&lt;Apple&gt;(); // OK
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">FruitBox</span><span class="o">&lt;?</span> <span class="kd">extends</span> <span class="nc">Fruit</span><span class="o">&gt;</span> <span class="n">box</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">FruitBox</span><span class="o">&lt;</span><span class="nc">Fruit</span><span class="o">&gt;();</span> <span class="c1">// OK</span>
+<span class="nc">FruitBox</span><span class="o">&lt;?</span> <span class="kd">extends</span> <span class="nc">Fruit</span><span class="o">&gt;</span> <span class="n">box</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">FruitBox</span><span class="o">&lt;</span><span class="nc">Apple</span><span class="o">&gt;();</span> <span class="c1">// OK</span>
 </code></pre></div></div>
 
-<p>만약 이 상황에서 Fruit Type으로 정의된 box 객체를 Type Casting을 통해 강제로 Apple Type으로 바꾼다면, 오류는 발생하지 않지만 warning이 발생합니다. waring 내용은 Type의 안정성을 보장할 수 없다는 의미로 unchecked cast from FruitBox&lt;? extends Fruit&gt; to FruitBox<Apple> 와 같이 출력됩니다.</Apple></p>
+<p>만약 이 상황에서 Fruit Type으로 정의된 box 객체를 Type Casting을 통해 강제로 Apple Type으로 바꾼다면, 오류는 발생하지 않지만 warning이 발생합니다. waring 내용은 Type의 안정성을 보장할 수 없다는 의미로 <strong>unchecked cast from FruitBox&lt;? extends Fruit&gt; to FruitBox&lt;Apple&gt;</strong> 라고 출력됩니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>FruitBox&lt;? extends Fruit&gt; box = new FruitBox&lt;Fruit&gt;();
-FruitBox&lt;Apple&gt; appleBox = (FruitBox&lt;Apple&gt;)box;
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">FruitBox</span><span class="o">&lt;?</span> <span class="kd">extends</span> <span class="nc">Fruit</span><span class="o">&gt;</span> <span class="n">box</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">FruitBox</span><span class="o">&lt;</span><span class="nc">Fruit</span><span class="o">&gt;();</span>
+<span class="nc">FruitBox</span><span class="o">&lt;</span><span class="nc">Apple</span><span class="o">&gt;</span> <span class="n">appleBox</span> <span class="o">=</span> <span class="o">(</span><span class="nc">FruitBox</span><span class="o">&lt;</span><span class="nc">Apple</span><span class="o">&gt;)</span><span class="n">box</span><span class="o">;</span>
 </code></pre></div></div>
 
 <h2 id="erasure-of-generic-type">Erasure of Generic Type</h2>
 
 <p>Java 컴파일러는 Source 파일에서 Generic Type을 찾은 다음 각 객체별로 적절한 Type으로 변환합니다. 즉, object 파일(.class)에는 Generic Type이 모두 지워져 존재하지 않습니다. 컴파일러를 통해 Generic Type이 변화하는 과정을 보여드리도록 하겠습니다. Generic 클래스를 처음 설명드렸을 때 사용한 Entry 클래스를 예제로 사용하겠습니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>public class Entry&lt;K, V&gt; {
-    private K key;
-    private V value;
-    public Entry(K key, V value) {
-        this.key = key;
-        this.value = value;
-    }
-    public K getKey() { return key; }
-    public V getValue() { return value; }
-}
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Entry</span><span class="o">&lt;</span><span class="no">K</span><span class="o">,</span> <span class="no">V</span><span class="o">&gt;</span> <span class="o">{</span>
+    <span class="kd">private</span> <span class="no">K</span> <span class="n">key</span><span class="o">;</span>
+    <span class="kd">private</span> <span class="no">V</span> <span class="n">value</span><span class="o">;</span>
+    <span class="kd">public</span> <span class="nf">Entry</span><span class="o">(</span><span class="no">K</span> <span class="n">key</span><span class="o">,</span> <span class="no">V</span> <span class="n">value</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">key</span> <span class="o">=</span> <span class="n">key</span><span class="o">;</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">value</span> <span class="o">=</span> <span class="n">value</span><span class="o">;</span>
+    <span class="o">}</span>
+    <span class="kd">public</span> <span class="no">K</span> <span class="nf">getKey</span><span class="o">()</span> <span class="o">{</span> <span class="k">return</span> <span class="n">key</span><span class="o">;</span> <span class="o">}</span>
+    <span class="kd">public</span> <span class="no">V</span> <span class="nf">getValue</span><span class="o">()</span> <span class="o">{</span> <span class="k">return</span> <span class="n">value</span><span class="o">;</span> <span class="o">}</span>
+<span class="o">}</span>
 </code></pre></div></div>
 
 <p>먼저, 컴파일러는 Generic Type을 먼저 특정한 클래스로 변환합니다. 일반적인 Type은 모두 아래처럼 Object 클래스로 변환됩니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>public class Entry {
-    private Object key;
-    private Object value;
-    public Entry(Object key, Object value) {
-        this.key = key;
-        this.value = value;
-    }
-    public Object getKey() { return key; }
-    public Object getValue() { return value; }
-}
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Entry</span> <span class="o">{</span>
+    <span class="kd">private</span> <span class="nc">Object</span> <span class="n">key</span><span class="o">;</span>
+    <span class="kd">private</span> <span class="nc">Object</span> <span class="n">value</span><span class="o">;</span>
+    <span class="kd">public</span> <span class="nf">Entry</span><span class="o">(</span><span class="nc">Object</span> <span class="n">key</span><span class="o">,</span> <span class="nc">Object</span> <span class="n">value</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">key</span> <span class="o">=</span> <span class="n">key</span><span class="o">;</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">value</span> <span class="o">=</span> <span class="n">value</span><span class="o">;</span>
+    <span class="o">}</span>
+    <span class="kd">public</span> <span class="nc">Object</span> <span class="nf">getKey</span><span class="o">()</span> <span class="o">{</span> <span class="k">return</span> <span class="n">key</span><span class="o">;</span> <span class="o">}</span>
+    <span class="kd">public</span> <span class="nc">Object</span> <span class="nf">getValue</span><span class="o">()</span> <span class="o">{</span> <span class="k">return</span> <span class="n">value</span><span class="o">;</span> <span class="o">}</span>
+<span class="o">}</span>
 </code></pre></div></div>
 
 <p>이후에 만약 Type Casting이 필요하다면 Type Casting 처리를 해줌으로써 Generic Class를 사용하지 않은 일반 프로그램으로 변환됩니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Entry&lt;String, Integer&gt; entry = ...;
-String key = (String)entry.getKey();
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">Entry</span><span class="o">&lt;</span><span class="nc">String</span><span class="o">,</span> <span class="nc">Integer</span><span class="o">&gt;</span> <span class="n">entry</span> <span class="o">=</span> <span class="o">...;</span>
+<span class="nc">String</span> <span class="n">key</span> <span class="o">=</span> <span class="o">(</span><span class="nc">String</span><span class="o">)</span><span class="n">entry</span><span class="o">.</span><span class="na">getKey</span><span class="o">();</span>
 </code></pre></div></div>
 
-<p>이번 포스트는 여기까지입니다. 다음에는 Collection Framework에 대해 알아보도록 하겠습니다. 읽어주셔서 감사합니다!</p>
+<p>이번 포스트는 여기까지입니다. 다음 포스트부터는 Collection Framework에 대해 알아보도록 하겠습니다. 읽어주셔서 감사합니다!</p>
 
         
       </section>
