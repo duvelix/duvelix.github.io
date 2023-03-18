@@ -131,10 +131,22 @@ var store = [{
         "url": "/java/install-ide/",
         "teaser": null
       },{
+        "title": "Introduction",
+        "excerpt":"안녕하세요, 오랜만에 새로운 카테고리를 하나 시작할까 합니다. 그 동안 훈련소의 공백 때문에 밀려있는 일과, 학과에서 새로 진행중인 사업 제안서를 작성하느라 블로그에 공부 관련 글을 작성할 시간이 없었습니다. 작년에 블로그를 만들었을 때는 이맘때쯤 공부 관련 카테고리에 글이 한가득 있을 것이라 생각했는데, 계획대로 잘 되지 않았네요. 앞으로는 틈틈히 최대한 짬을 내서 원래의...","categories": ["studies"],
+        "tags": ["data structure"],
+        "url": "/ds/introduction/",
+        "teaser": null
+      },{
         "title": "Java Programming Basics (1)",
         "excerpt":"A “Hello, World!” Program Java는 객체 지향 프로그래밍(Object Oriented Programming) 언어입니다. 이것은 Java의 모든 것들은 객체(Object)로 이루어져 있다는 뜻입니다. 객체라는 것은 클래스(Class)의 인스턴스(Instance)를 의미합니다. 이해를 돕기 위해, Java IDE를 설치할 때 테스트했던 HelloWorld 프로그램을 예로 들어보겠습니다. 1 2 3 4 5 6 public class Main { public static void main(String[]...","categories": ["studies"],
         "tags": ["java"],
         "url": "/java/java-programming-basics-1/",
+        "teaser": null
+      },{
+        "title": "Basic Concepts (1)",
+        "excerpt":"Goals 자료구조 교재의 첫 시작은 이 과목의 목적이 무엇인지, 왜 배우는지에 대한 설명이 나와 있습니다. 원문은 그대로 옮기면 다음과 같습니다. To provide the tools and techniques necessary to design and implement large-scale computer systems. 해석하면, 규모가 큰 컴퓨터 시스템을 디자인하고 구현하는데 필요한 도구와 기술을 제공하는 것입니다. 구체적으로는 이번 시간에는 데이터...","categories": ["studies"],
+        "tags": ["data structure"],
+        "url": "/ds/basic-concepts-1/",
         "teaser": null
       },{
         "title": "Java Programming Basics (2)",
@@ -143,10 +155,22 @@ var store = [{
         "url": "/java/java-programming-basics-2/",
         "teaser": null
       },{
+        "title": "Basic Concepts (2)",
+        "excerpt":"Data Abstraction C언어의 기본 데이터 타입(Data Type)은 int, float, char, … 등이 있습니다. 이러한 기본 데이터 타입을 그룹화하여 배열(Array)과 구조체(Structure)라는 방법으로 데이터 타입을 표현할 수도 있습니다. 그런데 데이터 타입의 명확한 정의는 무엇일까요? 교재에는 다음과 같이 정의하고 있습니다. Definition  A data type is a collection of objects and a set of...","categories": ["studies"],
+        "tags": ["data structure"],
+        "url": "/ds/basic-concepts-2/",
+        "teaser": null
+      },{
         "title": "Classes, Variables, and Methods",
         "excerpt":"Java: An Object-Oriented Language 3장에서도 언급했듯이 Java에서는 대부분이 객체로 이루어져 있습니다. 객체를 처음 설명드릴 때 클래스의 인스턴스가 객체라고 말씀드렸는데, 어떻게 보면 클래스 또안 객체의 타입이라고 볼 수 있습니다. 그렇다면 가장 먼저 클래스가 무엇인지 다음 예제를 보며 설명하도록 하겠습니다. 1 2 3 4 5 6 7 8 9 10 11 12...","categories": ["studies"],
         "tags": ["java"],
         "url": "/java/classes-variables-and-methods/",
+        "teaser": null
+      },{
+        "title": "Basic Concepts (3)",
+        "excerpt":"Asymptotic Notation 지난 포스트에서 시간 복잡도를 계산할 때, 프로그램 단계 수를 체크하여 실행 시간을 계산하였습니다. 이러한 계산의 목적은 같은 기능을 가진 다른 프로그램의 시간 복잡도를 비교하거나, 인스턴스 특성이 변화함에 따라 실행 시간이 어떻게 변하는지를 알아보기 위함이었습니다. 하지만 단순히 프로그램의 단계 수로 실행 시간을 계산하는 것은 정확하지 않을 가능성이 높습니다. 왜냐하면...","categories": ["studies"],
+        "tags": ["data structure"],
+        "url": "/ds/basic-concepts-3/",
         "teaser": null
       },{
         "title": "Abstraction using Interfaces",
@@ -189,6 +213,42 @@ var store = [{
         "excerpt":"안녕하세요, 이번 포스트에서는 지난 포스트에 이어 Collection Framework에 대해 조금 더 살펴보도록 하겠습니다. 이번 포스트의 주제는 크게 Iterator, Arrays, Comparable, 그리고 Comparator로 나뉘어 있습니다. Iterator Iterator는 Java에서 Collection Framework에 대한 반복적인 작업을 용이하게 처리할 수 있는 메소드를 갖고 있는 인터페이스입니다. 구체적으로 Collection에 저장된 데이터를 읽어오는 방법을 표준화하기 위한 역할입니다. Iterator는...","categories": ["studies"],
         "tags": ["java"],
         "url": "/java/collection-framework-2/",
+        "teaser": null
+      },{
+        "title": "Collection Framework (3)",
+        "excerpt":"안녕하세요, 오늘은 Collection Framework 3번째 포스트입니다. 이번에 다룰 Collection Framwork는 HashSet과 TreeSet입니다. HashSet HashSet은 Set Interface를 구현한 클래스입니다. HashSet은 원소의 중복을 허용하지 않고(= e1.equals(e2)를 만족하는 e1, e2가 없음), 최대 1개의 null 원소가 존재할 수 있으며, 원소의 순서가 중요하지 않다는 특징을 가지고 있습니다. HashSet을 생성하는 방법은 다음 4가지가 있습니다. HashSet() :...","categories": ["studies"],
+        "tags": ["java"],
+        "url": "/java/collection-framework-3/",
+        "teaser": null
+      },{
+        "title": "Collection Framework (4)",
+        "excerpt":"안녕하세요, 드디어 길고 길었던 Collection Framework의 마지막 시간입니다. 오늘은 지난 포스트에 이어 HashMap과 TreeMap에 대해 알아보도록 하겠습니다. HashMap HashMap은 이름에서부터 유추할 수 있듯이 Map Interface에서 구현된 클래스입니다. HashSet과 마찬가지로 HashMap 또한 Hash에 쓰이며, 탐색(Search)에 좋은 성능을 보인다는 장점이 있습니다. 이와 비슷한 클래스로 Hashtable이 있는데, HashMap은 비동기식(asynchronous), Hashtable은 동기식(synchronized)이라는 차이점이 있습니다....","categories": ["studies"],
+        "tags": ["java"],
+        "url": "/java/collection-framework-4/",
+        "teaser": null
+      },{
+        "title": "Networking with Java (1)",
+        "excerpt":"지난 4개의 포스트로 Collection Framework는 마무리가 되었습니다. 글을 잘 쓰는 편이 아니라 혹시라도 이해가 안가는 부분이 있다면 댓글을 달아주시기 바랍니다. 최대한 아는 선에서 설명드릴 수 있도록 글을 보완해나가도록 하겠습니다. 이번에는 Java를 사용한 네트워크 프로그램을 다루는 주제입니다. 네트워크 프로그램을 다루기 위해서는 네트워크에 대한 배경지식이 필요한데, 이번 포스트에서는 그 배경지식과 함께 간단한...","categories": ["studies"],
+        "tags": ["java"],
+        "url": "/java/networking-with-java-1/",
+        "teaser": null
+      },{
+        "title": "Networking with Java (2)",
+        "excerpt":"이번 포스트는 지난번에 이어 Java로 네트워크 프로그램을 만드는 주제입니다. 지난 포스트에서는 InetAddress 클래스와 URL 클래스를 위주로 다뤘는데, 오늘은 그보다 조금 어려운 TCP/UDP Socket에 대해 배워보도록 하겠습니다. TCP Socket Programming TCP는 Transmission Control Protocol의 약자로 신뢰성 있는 전송을 보장하는 프로토콜입니다. OSI 7 계층 중 4번째 계층인 Transport 계증에 포함되어 있습니다. 통신...","categories": ["studies"],
+        "tags": ["java"],
+        "url": "/java/networking-with-java-2/",
+        "teaser": null
+      },{
+        "title": "Multithreaded Programming with Java (1)",
+        "excerpt":"안녕하세요, 지난 Networking with Java에 이은 마지막 주제는 Multithreaded Programming with Java입니다. 원래 순서는 Network 1 - Multithread 1 - Network 2 - Multithread 2 이지만 같은 주제는 묶어서 진행하는 것이 좋을 것 같아 임의로 순서를 변경하였습니다. 그로 인해 지난 Network 2번째 포스트에서 뜬금없이 쓰레드가 언급되었는데, 이번 포스트로 쓰레드에 대한...","categories": ["studies"],
+        "tags": ["java"],
+        "url": "/java/multithreaded-programming-with-java-1/",
+        "teaser": null
+      },{
+        "title": "Multithreaded Programming with Java (2)",
+        "excerpt":"안녕하세요, 이번 포스트는 Java 주제의 마지막 포스트입니다. 지난 포스트에 이어 멀티쓰레드 프로그래밍에 대해 더 알아보도록 하겠습니다. Thread States 각 쓰레드는 현재 어떤 일을 수행중인지 나타내기 위해 상태(State)가 존재합니다. NEW : 쓰레드를 처음 만들면 이 상태가 됩니다. 쓰레드를 실행하지 않은 상태입니다. RUNNABLE : 쓰레드가 실행할 준비가 된 상태입니다. 이 상태에서는 쓰레드가...","categories": ["studies"],
+        "tags": ["java"],
+        "url": "/java/multithreaded-programming-with-java-2/",
         "teaser": null
       },{
         "title": "Prologue",

@@ -1,0 +1,920 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.24.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>Collection Framework (4) - KEEPMIND</title>
+<meta name="description" content="안녕하세요, 드디어 길고 길었던 Collection Framework의 마지막 시간입니다. 오늘은 지난 포스트에 이어 HashMap과 TreeMap에 대해 알아보도록 하겠습니다.">
+
+
+  <meta name="author" content="Joonsu Ryu">
+  
+  <meta property="article:author" content="Joonsu Ryu">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="KEEPMIND">
+<meta property="og:title" content="Collection Framework (4)">
+<meta property="og:url" content="http://localhost:4000/java/collection-framework-4/">
+
+
+  <meta property="og:description" content="안녕하세요, 드디어 길고 길었던 Collection Framework의 마지막 시간입니다. 오늘은 지난 포스트에 이어 HashMap과 TreeMap에 대해 알아보도록 하겠습니다.">
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2021-12-10T00:00:00+09:00">
+
+
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="http://localhost:4000/java/collection-framework-4/">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "KEEPMIND",
+      "url": "http://localhost:4000/"
+    
+  }
+</script>
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="KEEPMIND Feed">
+
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css"></noscript>
+
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+<link rel="icon" type="image/png" sizes="16x16" href="/images/favicon.png">
+
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body class="layout--single wide">
+    <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+		<a class="site-title" href="http://localhost:4000/"><img src="/images/logo.png">
+        <!-- <a class="site-title" href="/">
+          KEEPMIND
+           -->
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="/">Home</a>
+            </li><li class="masthead__menu-item">
+              <a href="/cv/">CV</a>
+            </li><li class="masthead__menu-item">
+              <a href="/studies/">Studies</a>
+            </li><li class="masthead__menu-item">
+              <a href="/">Interests</a>
+            </li><li class="masthead__menu-item">
+              <a href="/">Travels</a>
+            </li></ul>
+        
+        <button class="search__toggle" type="button">
+          <span class="visually-hidden">Toggle search</span>
+          <i class="fas fa-search"></i>
+        </button>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person" class="h-card">
+
+  
+    <div class="author__avatar">
+      <!-- <a href="http://localhost:4000/"> -->
+        <img src="/images/profile.jpg" alt="Joonsu Ryu" itemprop="image" class="u-photo">
+      <!-- </a> -->
+    </div>
+  
+
+  <div class="author__content">
+    <h3 class="author__name p-name" itemprop="name">
+      <a class="u-url" rel="me" href="http://localhost:4000/" itemprop="url">Joonsu Ryu</a>
+    </h3>
+    
+      <div class="author__bio p-note" itemprop="description">
+        <p>Researcher</p>
+
+      </div>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">Follow</button>
+    <ul class="author__urls social-icons">
+      
+        <li itemprop="homeLocation" itemscope itemtype="https://schema.org/Place">
+          <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> <span itemprop="name" class="p-locality">Seoul, Korea</span>
+        </li>
+      
+
+      
+        
+          
+            <li><a href="mailto:jsryu@sogang.ac.kr" rel="nofollow noopener noreferrer me"><i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i><span class="label">E-mail</span></a></li>
+          
+        
+          
+            <li><a href="https://github.com/JoonsuRyu" rel="nofollow noopener noreferrer me" itemprop="sameAs"><i class="fab fa-fw fa-github" aria-hidden="true"></i><span class="label">GitHub</span></a></li>
+          
+        
+          
+            <li><a href="https://scholar.google.co.kr/citations?user=UmRh9NQAAAAJ" rel="nofollow noopener noreferrer me" itemprop="sameAs"><i class="fas fa-fw fa-graduation-cap" aria-hidden="true"></i><span class="label">Google Scholar</span></a></li>
+          
+        
+          
+            <li><a href="https://orcid.org/0000-0002-8848-1456" rel="nofollow noopener noreferrer me" itemprop="sameAs"><i class="fab fa-fw fa-orcid" aria-hidden="true"></i><span class="label">ORCID</span></a></li>
+          
+        
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer me">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+
+  
+  </div>
+
+
+
+  <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="Collection Framework (4)">
+    <meta itemprop="description" content="안녕하세요, 드디어 길고 길었던 Collection Framework의 마지막 시간입니다. 오늘은 지난 포스트에 이어 HashMap과 TreeMap에 대해 알아보도록 하겠습니다.">
+    <meta itemprop="datePublished" content="2021-12-10T00:00:00+09:00">
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title p-name" itemprop="headline">
+            <a href="http://localhost:4000/java/collection-framework-4/" class="u-url" itemprop="url">Collection Framework (4)
+</a>
+          </h1>
+          
+
+
+        </header>
+      
+
+      <section class="page__content e-content" itemprop="text">
+        
+          <aside class="sidebar__right sticky">
+            <nav class="toc">
+              <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> Table of Contents</h4></header>
+              <ul class="toc__menu"><li><a href="#hashmap">HashMap</a></li><li><a href="#treemap">TreeMap</a></li></ul>
+
+            </nav>
+          </aside>
+        
+        <p>안녕하세요, 드디어 길고 길었던 Collection Framework의 마지막 시간입니다. 오늘은 지난 포스트에 이어 HashMap과 TreeMap에 대해 알아보도록 하겠습니다.</p>
+
+<h2 id="hashmap">HashMap</h2>
+
+<p>HashMap은 이름에서부터 유추할 수 있듯이 Map Interface에서 구현된 클래스입니다. HashSet과 마찬가지로 HashMap 또한 Hash에 쓰이며, 탐색(Search)에 좋은 성능을 보인다는 장점이 있습니다. 이와 비슷한 클래스로 Hashtable이 있는데, HashMap은 비동기식(asynchronous), Hashtable은 동기식(synchronized)이라는 차이점이 있습니다.</p>
+
+<p><img src="/images/Java/14. Collection Framework (4)/Java 14-01.png" alt="" class="align-center" /></p>
+
+<p>HashMap은 꽤 복잡하게 정의되어 있습니다. Map&lt;K,V&gt;, Cloneable, Serializable 인터페이스를 기반으로 구현되었으며 AbstractMap&lt;K, V&gt;로부터의 파생 클래스입니다. HashMap은 아래와 같이 정의되어 있습니다.</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="nc">HashMap</span><span class="o">&lt;</span><span class="no">K</span><span class="o">,</span><span class="no">V</span><span class="o">&gt;</span> <span class="kd">extends</span> <span class="nc">AbstractMap</span><span class="o">&lt;</span><span class="no">K</span><span class="o">,</span><span class="no">V</span><span class="o">&gt;</span> <span class="kd">implements</span> <span class="nc">Map</span><span class="o">&lt;</span><span class="no">K</span><span class="o">,</span><span class="no">V</span><span class="o">&gt;,</span> <span class="nc">Cloneable</span><span class="o">,</span> <span class="nc">Serializable</span> <span class="o">{</span>
+    <span class="kd">transient</span> <span class="nc">Node</span><span class="o">&lt;</span><span class="no">K</span><span class="o">,</span><span class="no">V</span><span class="o">&gt;[]</span> <span class="n">table</span><span class="o">;</span>
+<span class="o">...</span>
+    <span class="kd">static</span> <span class="kd">class</span> <span class="nc">Node</span><span class="o">&lt;</span><span class="no">K</span><span class="o">,</span><span class="no">V</span><span class="o">&gt;</span> <span class="kd">implements</span> <span class="nc">Map</span><span class="o">.</span><span class="na">Entry</span><span class="o">&lt;</span><span class="no">K</span><span class="o">,</span><span class="no">V</span><span class="o">&gt;</span> <span class="o">{</span>
+        <span class="kd">final</span> <span class="no">K</span> <span class="n">key</span><span class="o">;</span>
+        <span class="no">V</span> <span class="n">value</span><span class="o">;</span>
+<span class="o">...</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p>Key-Value 쌍은 table이라는 Node 배열에 저장되어 있습니다. “Hash”이므로 Key의 값은 중복이 불가능하며, Key가 다르다면 Value의 값은 중복이 가능합니다.</p>
+
+<p>다음으로 HashMap에 대한 메소드들의 간략한 설명입니다. 먼저 다음 4개는 HashMap을 생성하는 메소드입니다.</p>
+
+<ul>
+  <li>HashMap() : 비어있는 새 HashMap을 생성한다. 기본적으로 16의 Capacity와 0.75의 Load Factor를 갖습니다.</li>
+  <li>HashMap(int initialCapacity) : 비어있는 새 HashMap을 생성한다. 매개변수로 넣은 initialCapacity만큼의 Capacity와 0.75의 Load Factor를 갖습니다.</li>
+  <li>HashMap(int initialCapacity, float loadFactor) : 비어있는 새 HashMap을 생성한다. 매개변수로 넣은 initialCapacity만큼의 Capacity와 loadFactor 만큼의 Load Factor를 갖습니다.</li>
+  <li>HashMap(Map&lt;? extends K, ? extends V&gt; m) : 매개변수로 넣은 Map m을 포함한 새로운 Map을 생성한다.</li>
+</ul>
+
+<p>HashMap을 사용하는 메소드는 다음과 같습니다.</p>
+
+<ul>
+  <li>void clear() : Map에 들어있는 모든 원소를 제거한다.</li>
+  <li>Object clone() : HashMap 인스턴스를 복제한다. 단, Key-Value들은 복제되지 않는다.</li>
+  <li>boolean containsKey(Object key) : Map에 매개변수로 들어온 key가 있다면 true를, 그렇지 않다면 false를 반환한다.</li>
+  <li>boolean containsValue(Object value) : Map에 매개변수로 들어온 value가 있다면 true를, 그렇지 않다면 false를 반환한다.</li>
+  <li>Set&lt;Map.Entry&lt;K,V» entrySet() : Map에 포함된 Key-Value Mapping을 Set으로 반환한다.</li>
+  <li>V get(Object key) : Map에서 매개변수로 들어온 key에 Mapping된 value를 반환한다. 만약 key가 없다면 null을 반환한다.</li>
+  <li>boolean isEmpty() : Map에 Key-Value 쌍이 없으면 true를, 그렇지 않으면 false를 반환한다.</li>
+  <li>Set<K> keySet() : Map에 포함된 Key들을 Set으로 반환한다.</K></li>
+  <li>V put(K key, V value) : 매개변수로 들어온 key와 value를 연결한다.</li>
+  <li>void putAll(Map&lt;? extends K, ? extends V&gt; m) : 매개변수로 들어온 Map m의 모든 Mapping을 이 Map으로 복사한다.</li>
+  <li>V remove(Object key) : Map에 매개변수로 들어온 key를 포함한 쌍을 제거한다.</li>
+  <li>int size() : 이 Map의 Key-Value 쌍의 수를 반환한다.</li>
+  <li>Collection<V> values() : Map에 포함된 모든 value를 Collection으로 반환한다.</V></li>
+</ul>
+
+<p>이제 HashMap을 사용한 예제를 하나씩 살펴보도록 하겠습니다. 먼저 다음 프로그램은 HashMap을 사용하여 로그인 시스템을 구현한 예제입니다.</p>
+
+<figure class="highlight"><pre><code class="language-java" data-lang="java"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+</pre></td><td class="code"><pre><span class="kn">import</span> <span class="nn">java.util.*</span><span class="o">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Main</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="nc">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+        <span class="nc">HashMap</span><span class="o">&lt;</span><span class="nc">String</span><span class="o">,</span><span class="nc">String</span><span class="o">&gt;</span> <span class="n">map</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">HashMap</span><span class="o">&lt;&gt;();</span>
+        <span class="n">map</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="s">"myId"</span><span class="o">,</span> <span class="s">"1234"</span><span class="o">);</span>
+        <span class="n">map</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="s">"asdf"</span><span class="o">,</span> <span class="s">"1111"</span><span class="o">);</span>
+        <span class="n">map</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="s">"asdf"</span><span class="o">,</span> <span class="s">"1234"</span><span class="o">);</span>
+        <span class="nc">Scanner</span> <span class="n">s</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Scanner</span><span class="o">(</span><span class="nc">System</span><span class="o">.</span><span class="na">in</span><span class="o">);</span>
+        <span class="k">while</span><span class="o">(</span><span class="kc">true</span><span class="o">)</span> <span class="o">{</span>
+            <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"Please enter id and password."</span><span class="o">);</span>
+            <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">print</span><span class="o">(</span><span class="s">"id: "</span><span class="o">);</span>
+            <span class="nc">String</span> <span class="n">id</span> <span class="o">=</span> <span class="n">s</span><span class="o">.</span><span class="na">nextLine</span><span class="o">().</span><span class="na">trim</span><span class="o">();</span>
+            <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">print</span><span class="o">(</span><span class="s">"password: "</span><span class="o">);</span>
+            <span class="nc">String</span> <span class="n">password</span> <span class="o">=</span> <span class="n">s</span><span class="o">.</span><span class="na">nextLine</span><span class="o">().</span><span class="na">trim</span><span class="o">();</span>
+            <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">();</span>
+            <span class="k">if</span><span class="o">(!</span><span class="n">map</span><span class="o">.</span><span class="na">containsKey</span><span class="o">(</span><span class="n">id</span><span class="o">))</span> <span class="o">{</span>
+                <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"id does not exist."</span><span class="o">);</span>
+                <span class="k">continue</span><span class="o">;</span>
+            <span class="o">}</span> <span class="k">else</span> <span class="o">{</span>
+                <span class="k">if</span><span class="o">(!(</span><span class="n">map</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="n">id</span><span class="o">)).</span><span class="na">equals</span><span class="o">(</span><span class="n">password</span><span class="o">))</span> <span class="o">{</span>
+                    <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"password does not match."</span><span class="o">);</span>
+                <span class="o">}</span> <span class="k">else</span> <span class="o">{</span>
+                    <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"welcome."</span><span class="o">);</span>
+                    <span class="k">break</span><span class="o">;</span>
+                <span class="o">}</span>
+            <span class="o">}</span>
+        <span class="o">}</span>
+        <span class="n">s</span><span class="o">.</span><span class="na">close</span><span class="o">();</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</pre></td></tr></tbody></table></code></pre></figure>
+
+<p>첫 번째 예제에서는 ID를 Key, 비밀번호를 Value로 사용하여 Mapping하고 있습니다. ID와 Value가 일치하면 로그인에 성공하고, 그렇지 않으면 실패했다는 메시지를 띄운 후 다시 ID와 비밀번호를 입력하는 구조입니다. 문제는 7~8번째 라인에서 동일한 Key 값을 가진 노드를 삽입하는 것입니다. 실제로 테스트를 해보면 asdf – 1111 로는 로그인이 되지 않고, asdf – 1234로만 로그인이 가능합니다. 이렇게 Key 값이 같은 노드를 삽입한다면 나중에 삽입한 노드만 남게 됩니다.</p>
+
+<figure class="highlight"><pre><code class="language-java" data-lang="java"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+</pre></td><td class="code"><pre><span class="kn">import</span> <span class="nn">java.util.*</span><span class="o">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Main</span> <span class="o">{</span>
+    <span class="kd">static</span> <span class="nc">HashMap</span><span class="o">&lt;</span><span class="nc">String</span><span class="o">,</span><span class="nc">HashMap</span><span class="o">&lt;</span><span class="nc">String</span><span class="o">,</span><span class="nc">String</span><span class="o">&gt;&gt;</span> <span class="n">phoneBook</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">HashMap</span><span class="o">&lt;&gt;();</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="nc">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">addPhoneNo</span><span class="o">(</span><span class="s">"friend"</span><span class="o">,</span> <span class="s">"Lee Java"</span><span class="o">,</span> <span class="s">"010-111-1111"</span><span class="o">);</span>
+        <span class="n">addPhoneNo</span><span class="o">(</span><span class="s">"friend"</span><span class="o">,</span> <span class="s">"Kim Java"</span><span class="o">,</span> <span class="s">"010-222-2222"</span><span class="o">);</span>
+        <span class="n">addPhoneNo</span><span class="o">(</span><span class="s">"friend"</span><span class="o">,</span> <span class="s">"Kim Java"</span><span class="o">,</span> <span class="s">"010-333-3333"</span><span class="o">);</span>
+        <span class="n">addPhoneNo</span><span class="o">(</span><span class="s">"work"</span><span class="o">,</span> <span class="s">"Kim Daeri"</span><span class="o">,</span> <span class="s">"010-444-4444"</span><span class="o">);</span>
+        <span class="n">addPhoneNo</span><span class="o">(</span><span class="s">"work"</span><span class="o">,</span> <span class="s">"Kim Daeri"</span><span class="o">,</span> <span class="s">"010-555-5555"</span><span class="o">);</span>
+        <span class="n">addPhoneNo</span><span class="o">(</span><span class="s">"work"</span><span class="o">,</span> <span class="s">"Park Daeri"</span><span class="o">,</span> <span class="s">"010-666-6666"</span><span class="o">);</span>
+        <span class="n">addPhoneNo</span><span class="o">(</span><span class="s">"work"</span><span class="o">,</span> <span class="s">"Lee Guajang"</span><span class="o">,</span> <span class="s">"010-777-7777"</span><span class="o">);</span>
+        <span class="n">addPhoneNo</span><span class="o">(</span><span class="s">"laundary"</span><span class="o">,</span> <span class="s">"010-888-8888"</span><span class="o">);</span>
+        <span class="n">printList</span><span class="o">();</span>
+    <span class="o">}</span>
+    <span class="kd">static</span> <span class="kt">void</span> <span class="nf">addPhoneNo</span><span class="o">(</span><span class="nc">String</span> <span class="n">groupName</span><span class="o">,</span> <span class="nc">String</span> <span class="n">name</span><span class="o">,</span> <span class="nc">String</span> <span class="n">tel</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">addGroup</span><span class="o">(</span><span class="n">groupName</span><span class="o">);</span>
+        <span class="nc">HashMap</span><span class="o">&lt;</span><span class="nc">String</span><span class="o">,</span><span class="nc">String</span><span class="o">&gt;</span> <span class="n">group</span> <span class="o">=</span> <span class="n">phoneBook</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="n">groupName</span><span class="o">);</span>
+        <span class="n">group</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="n">tel</span><span class="o">,</span> <span class="n">name</span><span class="o">);</span> <span class="c1">// use phone number as key because names can have duplicates.</span>
+    <span class="o">}</span>
+    <span class="kd">static</span> <span class="kt">void</span> <span class="nf">addGroup</span><span class="o">(</span><span class="nc">String</span> <span class="n">groupName</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">if</span><span class="o">(!</span><span class="n">phoneBook</span><span class="o">.</span><span class="na">containsKey</span><span class="o">(</span><span class="n">groupName</span><span class="o">))</span> <span class="n">phoneBook</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="n">groupName</span><span class="o">,</span> <span class="k">new</span> <span class="nc">HashMap</span><span class="o">&lt;</span><span class="nc">String</span><span class="o">,</span><span class="nc">String</span><span class="o">&gt;());</span>
+    <span class="o">}</span>
+    <span class="kd">static</span> <span class="kt">void</span> <span class="nf">addPhoneNo</span><span class="o">(</span><span class="nc">String</span> <span class="n">name</span><span class="o">,</span> <span class="nc">String</span> <span class="n">tel</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">addPhoneNo</span><span class="o">(</span><span class="s">"others"</span><span class="o">,</span> <span class="n">name</span><span class="o">,</span> <span class="n">tel</span><span class="o">);</span>
+    <span class="o">}</span>
+    <span class="kd">static</span> <span class="kt">void</span> <span class="nf">printList</span><span class="o">()</span> <span class="o">{</span>
+        <span class="nc">Set</span><span class="o">&lt;</span><span class="nc">Map</span><span class="o">.</span><span class="na">Entry</span><span class="o">&lt;</span><span class="nc">String</span><span class="o">,</span><span class="nc">HashMap</span><span class="o">&lt;</span><span class="nc">String</span><span class="o">,</span><span class="nc">String</span><span class="o">&gt;&gt;&gt;</span> <span class="n">set</span> <span class="o">=</span> <span class="n">phoneBook</span><span class="o">.</span><span class="na">entrySet</span><span class="o">();</span>
+        <span class="nc">Iterator</span><span class="o">&lt;</span><span class="nc">Map</span><span class="o">.</span><span class="na">Entry</span><span class="o">&lt;</span><span class="nc">String</span><span class="o">,</span><span class="nc">HashMap</span><span class="o">&lt;</span><span class="nc">String</span><span class="o">,</span><span class="nc">String</span><span class="o">&gt;&gt;&gt;</span> <span class="n">it</span> <span class="o">=</span> <span class="n">set</span><span class="o">.</span><span class="na">iterator</span><span class="o">();</span>
+        <span class="k">while</span><span class="o">(</span><span class="n">it</span><span class="o">.</span><span class="na">hasNext</span><span class="o">())</span> <span class="o">{</span>
+            <span class="nc">Map</span><span class="o">.</span><span class="na">Entry</span><span class="o">&lt;</span><span class="nc">String</span><span class="o">,</span><span class="nc">HashMap</span><span class="o">&lt;</span><span class="nc">String</span><span class="o">,</span><span class="nc">String</span><span class="o">&gt;&gt;</span> <span class="n">e</span> <span class="o">=</span> <span class="o">(</span><span class="nc">Map</span><span class="o">.</span><span class="na">Entry</span><span class="o">&lt;</span><span class="nc">String</span><span class="o">,</span><span class="nc">HashMap</span><span class="o">&lt;</span><span class="nc">String</span><span class="o">,</span><span class="nc">String</span><span class="o">&gt;&gt;)</span><span class="n">it</span><span class="o">.</span><span class="na">next</span><span class="o">();</span>
+            <span class="nc">Set</span><span class="o">&lt;</span><span class="nc">Map</span><span class="o">.</span><span class="na">Entry</span><span class="o">&lt;</span><span class="nc">String</span><span class="o">,</span><span class="nc">String</span><span class="o">&gt;&gt;</span> <span class="n">subset</span> <span class="o">=</span> <span class="n">e</span><span class="o">.</span><span class="na">getValue</span><span class="o">().</span><span class="na">entrySet</span><span class="o">();</span>
+            <span class="nc">Iterator</span><span class="o">&lt;</span><span class="nc">Map</span><span class="o">.</span><span class="na">Entry</span><span class="o">&lt;</span><span class="nc">String</span><span class="o">,</span><span class="nc">String</span><span class="o">&gt;&gt;</span> <span class="n">subIt</span> <span class="o">=</span> <span class="n">subset</span><span class="o">.</span><span class="na">iterator</span><span class="o">();</span>
+            <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">" * "</span> <span class="o">+</span> <span class="n">e</span><span class="o">.</span><span class="na">getKey</span><span class="o">()</span> <span class="o">+</span> <span class="s">"["</span> <span class="o">+</span> <span class="n">subset</span><span class="o">.</span><span class="na">size</span><span class="o">()</span> <span class="o">+</span> <span class="s">"]"</span><span class="o">);</span>
+            <span class="k">while</span><span class="o">(</span><span class="n">subIt</span><span class="o">.</span><span class="na">hasNext</span><span class="o">())</span> <span class="o">{</span>
+                <span class="nc">Map</span><span class="o">.</span><span class="na">Entry</span><span class="o">&lt;</span><span class="nc">String</span><span class="o">,</span><span class="nc">String</span><span class="o">&gt;</span> <span class="n">subE</span> <span class="o">=</span> <span class="o">(</span><span class="nc">Map</span><span class="o">.</span><span class="na">Entry</span><span class="o">&lt;</span><span class="nc">String</span><span class="o">,</span><span class="nc">String</span><span class="o">&gt;)</span><span class="n">subIt</span><span class="o">.</span><span class="na">next</span><span class="o">();</span>
+                <span class="nc">String</span> <span class="n">telNo</span> <span class="o">=</span> <span class="n">subE</span><span class="o">.</span><span class="na">getKey</span><span class="o">();</span>
+                <span class="nc">String</span> <span class="n">name</span> <span class="o">=</span> <span class="n">subE</span><span class="o">.</span><span class="na">getValue</span><span class="o">();</span>
+                <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">name</span> <span class="o">+</span> <span class="s">" "</span> <span class="o">+</span> <span class="n">telNo</span><span class="o">);</span>
+            <span class="o">}</span>
+            <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">();</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</pre></td></tr></tbody></table></code></pre></figure>
+
+<p>두 번째 예제는 전화번호부를 HashMap으로 구현한 프로그램입니다. 보통 이름 - 전화번호 순으로 저장하기 때문에 이름을 Key, 전화번호를 Value로 저장하겠지만, 이름에는 동명이인이 있을 수 있기 때문에 여기서는 전화번호를 Key로, 이름과 그룹을 Value로 정의하였습니다.</p>
+
+<figure class="highlight"><pre><code class="language-java" data-lang="java"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+</pre></td><td class="code"><pre><span class="kn">import</span> <span class="nn">java.util.*</span><span class="o">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Main</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="nc">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+        <span class="nc">String</span><span class="o">[]</span> <span class="n">data</span> <span class="o">=</span> <span class="o">{</span><span class="s">"A"</span><span class="o">,</span> <span class="s">"K"</span><span class="o">,</span> <span class="s">"A"</span><span class="o">,</span> <span class="s">"K"</span><span class="o">,</span> <span class="s">"D"</span><span class="o">,</span> <span class="s">"K"</span><span class="o">,</span> <span class="s">"A"</span><span class="o">,</span> <span class="s">"K"</span><span class="o">,</span> <span class="s">"K"</span><span class="o">,</span> <span class="s">"K"</span><span class="o">,</span> <span class="s">"Z"</span><span class="o">,</span> <span class="s">"D"</span><span class="o">};</span>
+        <span class="nc">HashMap</span><span class="o">&lt;</span><span class="nc">String</span><span class="o">,</span><span class="nc">Integer</span><span class="o">&gt;</span> <span class="n">map</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">HashMap</span><span class="o">&lt;&gt;();</span>
+        <span class="k">for</span><span class="o">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="o">;</span> <span class="n">i</span><span class="o">&lt;</span><span class="n">data</span><span class="o">.</span><span class="na">length</span><span class="o">;</span> <span class="n">i</span><span class="o">++)</span> <span class="o">{</span>
+            <span class="k">if</span><span class="o">(</span><span class="n">map</span><span class="o">.</span><span class="na">containsKey</span><span class="o">(</span><span class="n">data</span><span class="o">[</span><span class="n">i</span><span class="o">]))</span> <span class="o">{</span>
+                <span class="nc">Integer</span> <span class="n">value</span> <span class="o">=</span> <span class="n">map</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="n">data</span><span class="o">[</span><span class="n">i</span><span class="o">]);</span>
+                <span class="n">map</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="n">data</span><span class="o">[</span><span class="n">i</span><span class="o">],</span> <span class="nc">Integer</span><span class="o">.</span><span class="na">valueOf</span><span class="o">(</span><span class="n">value</span><span class="o">.</span><span class="na">intValue</span><span class="o">()</span> <span class="o">+</span> <span class="mi">1</span><span class="o">));</span>
+            <span class="o">}</span> <span class="k">else</span> <span class="o">{</span>
+                <span class="n">map</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="n">data</span><span class="o">[</span><span class="n">i</span><span class="o">],</span> <span class="nc">Integer</span><span class="o">.</span><span class="na">valueOf</span><span class="o">(</span><span class="mi">1</span><span class="o">));</span>
+            <span class="o">}</span>
+        <span class="o">}</span>
+        <span class="nc">Iterator</span><span class="o">&lt;</span><span class="nc">Map</span><span class="o">.</span><span class="na">Entry</span><span class="o">&lt;</span><span class="nc">String</span><span class="o">,</span><span class="nc">Integer</span><span class="o">&gt;&gt;</span> <span class="n">it</span> <span class="o">=</span> <span class="n">map</span><span class="o">.</span><span class="na">entrySet</span><span class="o">().</span><span class="na">iterator</span><span class="o">();</span>
+        <span class="k">while</span><span class="o">(</span><span class="n">it</span><span class="o">.</span><span class="na">hasNext</span><span class="o">())</span> <span class="o">{</span>
+            <span class="nc">Map</span><span class="o">.</span><span class="na">Entry</span><span class="o">&lt;</span><span class="nc">String</span><span class="o">,</span><span class="nc">Integer</span><span class="o">&gt;</span> <span class="n">entry</span> <span class="o">=</span> <span class="n">it</span><span class="o">.</span><span class="na">next</span><span class="o">();</span>
+            <span class="kt">int</span> <span class="n">value</span> <span class="o">=</span> <span class="n">entry</span><span class="o">.</span><span class="na">getValue</span><span class="o">().</span><span class="na">intValue</span><span class="o">();</span>
+            <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">entry</span><span class="o">.</span><span class="na">getKey</span><span class="o">()</span> <span class="o">+</span> <span class="s">": "</span> <span class="o">+</span> <span class="n">printBar</span><span class="o">(</span><span class="sc">'#'</span><span class="o">,</span> <span class="n">value</span><span class="o">)</span> <span class="o">+</span> <span class="s">" "</span> <span class="o">+</span> <span class="n">value</span><span class="o">);</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="nc">String</span> <span class="nf">printBar</span><span class="o">(</span><span class="kt">char</span> <span class="n">ch</span><span class="o">,</span> <span class="kt">int</span> <span class="n">value</span><span class="o">)</span> <span class="o">{</span>
+        <span class="kt">char</span><span class="o">[]</span> <span class="n">bar</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">char</span><span class="o">[</span><span class="n">value</span><span class="o">];</span>
+        <span class="k">for</span><span class="o">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="o">;</span> <span class="n">i</span><span class="o">&lt;</span><span class="n">bar</span><span class="o">.</span><span class="na">length</span><span class="o">;</span> <span class="n">i</span><span class="o">++)</span> <span class="n">bar</span><span class="o">[</span><span class="n">i</span><span class="o">]</span> <span class="o">=</span> <span class="n">ch</span><span class="o">;</span>
+        <span class="k">return</span> <span class="k">new</span> <span class="nf">String</span><span class="o">(</span><span class="n">bar</span><span class="o">);</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</pre></td></tr></tbody></table></code></pre></figure>
+
+<p>세 번째 예제는 HashMap을 사용하여 같은 입력이 몇 번 들어왔는지 카운트하는 프로그램입니다. Key의 값과 일치하는 입력이 들어올 때마다 Value의 값을 1씩 증가시키는 간단한 프로그램입니다.</p>
+
+<p>HashMap은 이름처럼 Hashing을 하는데도 사용됩니다. 첫 번째나 두 번째의 경우처럼 기본적인 1-1 Hashing으로 사용할 수도 있으나, 아래처럼 Linked List를 활용한 구조 또한 가능합니다.</p>
+
+<p><img src="/images/Java/14. Collection Framework (4)/Java 14-02.png" alt="" class="align-center" /></p>
+
+<p>Hashing에서의 성능상의 이점은 Hash 함수를 사용하여 Hash 값을 계산하는 것이 매우 빠르다는 것입니다. 하지만 위처럼 Linked List를 사용하여 한 Hash 값에 여러 데이터를 저장하는 경우 데이터 검색이 느려지는 단점이 있습니다. 따라서 검색 성능이 중요한 프로그램이라면 1개의 슬롯에 1개의 데이터(Value)만 있는 것이 좋습니다.</p>
+
+<p>HashMap과 같이 Hashing을 사용하는 Collection 클래스는 HashCode() 메소드를 Hash 함수로 사용하여 슬롯을 계산합니다. HashCode() 메소드는 Object 클래스에 정의되어 있으며 매개변수가 다른 경우 항상 다른 값을 반환합니다.</p>
+
+<p>물론 이전 포스트의 HashSet처럼 HashCode() 메소드를 재정의(Overriding)해서 사용할 수도 있습니다. 이 경우 HashCode()를 Key로 사용하여 HashMap의 슬롯을 계산하여야 합니다. 만약 equals()를 재정의해서 사용한다면 equals()의 요구사항(지난 포스트 참조)을 반드시 지켜야 합니다.</p>
+
+<p>클래스에서 equals()를 재정의하지만 HashCode()를 재정의하지 않는 경우 클래스는 equals()가 true를 반환하더라도 두 Object를 다른 Object로 간주할 수 있으니 주의해야 합니다.</p>
+
+<h2 id="treemap">TreeMap</h2>
+
+<p>TreeMap은 이름대로 Tree 자료구조를 사용하여 데이터를 저장하는 Map입니다. 하지만 Binary Search Tree를 사용하는 TreeSet과는 다르게 TreeMap은 Red-Black Tree를 사용합니다. Red-Black Tree는 Tree의 각 노드를 특정한 규칙에 따라 Red나 Black으로 나눈 Binary Search Tree입니다. 자세한 내용은 위키백과를 참고해주시기 바랍니다. 추후 자료구조 관련 포스트를 쓰게 되면 Red-Black Tree에 대해 자세히 다뤄보도록 하겠습니다.</p>
+
+<p>TreeMap은 Key를 기준으로 정렬됩니다. 이 때, Key에 사용하는 클래스가 비교가능(Comparable)하지 않은 경우, Exception이 일어납니다. (이 점은 TreeSet과 같습니다) TreeMap은 Key로 원소들을 정렬할 때 유용하지만, 탐색할 때는 HashMap보다 느리다는 단점이 있습니다.</p>
+
+<p>TreeMap을 생성하는 메소드들은 다음과 같습니다.</p>
+
+<ul>
+  <li>TreeMap() : 비어있는 새 TreeMap을 생성한다. (기본 Ordering으로 정렬)</li>
+  <li>TreeMap(Comparator&lt;? super K&gt; comparator) : 비어있는 새 TreeMap을 생성한다. (매개변수로 들어온 Ordering으로 정렬)</li>
+  <li>TreeMap(Map&lt;? extends K, ? extends V&gt; m) : Map m을 포함한 새 TreeMap을 생성한다. (기본 Ordering으로 정렬)</li>
+  <li>TreeMap(SortMap&lt;K, ? extends V&gt; m) : 정렬되어있는 Map m을 포함한 TreeMap을 생성한다. (Ordering은 m를 따른다)</li>
+</ul>
+
+<p>다음으로 TreeMap에 사용되는 메소드 목록입니다. TreeSet과 마찬가지로 메소드가 워낙 많아 정리가 힘드네요.</p>
+
+<ul>
+  <li>Map.Entry&lt;K,V&gt; ceilingEntry(K key) : Map에서 매개변수로 들어온 key보다 크거나 같은 Key중 가장 작은 Key-Value 쌍을 반환한다. 만약 없다면 null을 반환한다.</li>
+  <li>K ceilingKey(K key) : Map에서 매개변수로 들어온 key보다 크거나 같은 Key중 가장 작은 Key를 반환한다. 만약 없다면 null을 반환한다.</li>
+  <li>void clear() : Map에서 모든 Mapping을 제거한다.</li>
+  <li>Object clone() : 이 TreeMap 인스턴스를 복제하여 반환한다.</li>
+  <li>boolean containsKey(Object key) : Map에서 매개변수로 들어온 key가 존재한다면 true를 반환한다.</li>
+  <li>boolean containsValue(Object value) : Map에서 매개변수로 들어온 value가 존재한다면 true를 반환한다.</li>
+  <li>NavigableSet<K> descendingKeySet() : Map의 Key를 역순으로 반환한다.</K></li>
+  <li>NavigableMap&lt;K,V&gt; descendingMap() : Map의 Key-Value 쌍을 역순으로 반환한다.</li>
+  <li>Set&lt;Map.Entry&lt;K,V» entrySet() : Map의 Key-Value 쌍을 Set으로 반환한다.</li>
+  <li>Map.Entry&lt;K,V&gt; firstEntry() : Map에서 가장 작은 Key에 대해 Key-Value 쌍을 반환한다. map이 비어있다면 null을 반환한다.</li>
+  <li>K firstKey() : Map에서 가장 작은 Key를 반환한다.</li>
+  <li>Map.Entry&lt;K,V&gt; floorEntry(K key) : Map에서 매개변수로 들어온 key보다 작거나 같은 Key중 가장 큰 Key-Value 쌍을 반환한다. 만약 없다면 null을 반환한다.</li>
+  <li>K floorKey(K key) : Map에서 매개변수로 들어온 key보다 작거나 같은 Key중 가장 큰 Key를 반환한다. 만약 없다면 null을 반환한다.</li>
+  <li>V get(Object key) : Map에서 매개변수로 들어온 key와 Mapping된 Value를 반환한다. 만약 없다면 null을 반환한다.</li>
+  <li>SortedMap&lt;K,V&gt; headMap(K toKey) : Map에서 매개변수로 들어온 key보다 작은 Key-Value Mapping들을 반환한다.</li>
+  <li>NavigableMap&lt;K,V&gt; headMap(K toKey, boolean inclusive) : Map에서 매개변수로 들어온 key보다 작은 (만약 inclusive가 true라면 같은 것도 포함) Key-Value Mapping들을 반환한다.</li>
+  <li>Map.Entry&lt;K,V&gt; higherEntry(K key) : Map에서 매개변수로 들어온 key보다 큰 Key중 가장 작은 Key-Value 쌍을 반환한다. 만약 없다면 null을 반환한다.</li>
+  <li>K higherKey(K key) : Map에서 매개변수로 들어온 key보다 큰 Key중 가장 작은 Key를 반환한다. 만약 없다면 null을 반환한다.</li>
+  <li>Set<K> keySet() : Map에 포함된 모든 Key를 Set으로 반환한다.</K></li>
+  <li>Map.Entry&lt;K,V&gt; lastEntry() : Map에서 가장 큰 Key에 대해 Key-Value 쌍을 반환한다. map이 비어있다면 null을 반환한다.</li>
+  <li>K lastKey() : Map에서 가장 큰 Key를 반환한다.</li>
+  <li>Map.Entry&lt;K,V&gt; lowerEntry(K key) : Map에서 매개변수로 들어온 key보다 작은 key중 가장 큰 Key-Value 쌍을 반환한다. 만약 없다면 null을 반환한다.</li>
+  <li>K lowerKey(K key) : Map에서 매개변수로 들어온 key보다 작은 Key중 가장 큰 Key를 반환한다. 만약 없다면 null을 반환한다.</li>
+  <li>NavigableSet<K> navigableKeySet() : Map에 포함된 Key들을 NavigableSet으로 반환한다.</K></li>
+  <li>Map.Entry&lt;K,V&gt; pollFirstEntry() : Map에 포함된 Key 중 가장 작은 Key-Value 쌍을 반환하고 Map에서 삭제한다. 만약 Map이 비어있다면 null을 반환한다.</li>
+  <li>Map.Entry&lt;K,V&gt; pollLastEntry() : Map에 포함된 Key 중 가장 큰 Key-Value 쌍을 반환하고 Map에서 삭제한다. 만약 Map이 비어있다면 null을 반환한다.</li>
+  <li>V put(K key, V value) : Map에서 매개변수로 들어온 key에 매개변수로 들어온 value를 Mapping한다.</li>
+  <li>void putAll(Map&lt;? extends K, ? extends V&gt; map) : 매개변수로 들어온 map을 이 Map에 복사한다.</li>
+  <li>V remove(Object key) : Map에서 매개변수로 들어온 key를 포함한 Mapping을 제거한다.</li>
+  <li>int size() : 이 Map의 Key-Value 쌍의 수를 반환한다.</li>
+  <li>NavigableMap&lt;K,V&gt; subMap(K fromKey, boolean fromInclusive, K toKey, boolean toInclusive) : Map에서 매개변수로 들어온 fromKey부터 toKey까지의 Key-Value 쌍들을 반환한다.</li>
+  <li>SortedMap&lt;K,V&gt; subMap(K fromKey, K toKey) : Map에서 매개변수로 들어온 fromKey부터 toKey까지의 Key-Value 쌍들을 반환한다. 이 때 fromKey는 포함하고 toKey는 포함하지 않는다.</li>
+  <li>SortedMap&lt;K,V&gt; tailMap(K fromKey) : Map에서 매개변수로 들어온 fromKey를 포함하여 fromKey보다 큰 Key-Value 쌍들을 반환한다.</li>
+  <li>NavigableMap&lt;K,V&gt; tailMap(K fromKey, boolean inclusive) : Map에서 매개변수로 들어온 fromKey보다 큰 (만약 inclusive가 true라면 같은 것도 포함) Key-Value 쌍들을 반환한다.</li>
+  <li>Collection<V> values() : Map에 포함된 모든 value를 Collection으로 반환한다.</V></li>
+</ul>
+
+<p>메소드가 엄청나게 많지만, 비슷한 메소드들이 많습니다. 적당히 이해하고 넘어가시면 될 것 같습니다. 마지막으로 TreeMap 예제를 하나 보도록 하겠습니다. 이 프로그램은 바로 위에 있는 HashMap의 3번째 예제를 조금 수정하여, 입력 회수가 많은 순서대로 문자를 정렬하는 예제입니다.</p>
+
+<figure class="highlight"><pre><code class="language-java" data-lang="java"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+</pre></td><td class="code"><pre><span class="kn">import</span> <span class="nn">java.util.*</span><span class="o">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Main</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="nc">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+        <span class="nc">String</span><span class="o">[]</span> <span class="n">data</span> <span class="o">=</span> <span class="o">{</span><span class="s">"A"</span><span class="o">,</span><span class="s">"K"</span><span class="o">,</span><span class="s">"A"</span><span class="o">,</span><span class="s">"K"</span><span class="o">,</span><span class="s">"D"</span><span class="o">,</span><span class="s">"K"</span><span class="o">,</span><span class="s">"A"</span><span class="o">,</span><span class="s">"K"</span><span class="o">,</span><span class="s">"K"</span><span class="o">,</span><span class="s">"K"</span><span class="o">,</span><span class="s">"Z"</span><span class="o">,</span><span class="s">"D"</span><span class="o">};</span>
+        <span class="nc">TreeMap</span><span class="o">&lt;</span><span class="nc">String</span><span class="o">,</span><span class="nc">Integer</span><span class="o">&gt;</span> <span class="n">map</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">TreeMap</span><span class="o">&lt;&gt;();</span>
+        <span class="k">for</span><span class="o">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="o">;</span> <span class="n">i</span><span class="o">&lt;</span><span class="n">data</span><span class="o">.</span><span class="na">length</span><span class="o">;</span> <span class="n">i</span><span class="o">++)</span> <span class="o">{</span>
+            <span class="k">if</span><span class="o">(</span><span class="n">map</span><span class="o">.</span><span class="na">containsKey</span><span class="o">(</span><span class="n">data</span><span class="o">[</span><span class="n">i</span><span class="o">]))</span> <span class="o">{</span>
+                <span class="nc">Integer</span> <span class="n">value</span> <span class="o">=</span> <span class="n">map</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="n">data</span><span class="o">[</span><span class="n">i</span><span class="o">]);</span>
+                <span class="n">map</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="n">data</span><span class="o">[</span><span class="n">i</span><span class="o">],</span> <span class="nc">Integer</span><span class="o">.</span><span class="na">valueOf</span><span class="o">(</span><span class="n">value</span><span class="o">.</span><span class="na">intValue</span><span class="o">()</span> <span class="o">+</span> <span class="mi">1</span><span class="o">));</span>
+            <span class="o">}</span> <span class="k">else</span> <span class="o">{</span>
+                <span class="n">map</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="n">data</span><span class="o">[</span><span class="n">i</span><span class="o">],</span> <span class="nc">Integer</span><span class="o">.</span><span class="na">valueOf</span><span class="o">(</span><span class="mi">1</span><span class="o">));</span>
+            <span class="o">}</span>
+        <span class="o">}</span>
+        <span class="nc">Iterator</span><span class="o">&lt;</span><span class="nc">Map</span><span class="o">.</span><span class="na">Entry</span><span class="o">&lt;</span><span class="nc">String</span><span class="o">,</span><span class="nc">Integer</span><span class="o">&gt;&gt;</span> <span class="n">it</span> <span class="o">=</span> <span class="n">map</span><span class="o">.</span><span class="na">entrySet</span><span class="o">().</span><span class="na">iterator</span><span class="o">();</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"=== basic sort ==="</span><span class="o">);</span>
+        <span class="k">while</span><span class="o">(</span><span class="n">it</span><span class="o">.</span><span class="na">hasNext</span><span class="o">())</span> <span class="o">{</span>
+            <span class="nc">Map</span><span class="o">.</span><span class="na">Entry</span><span class="o">&lt;</span><span class="nc">String</span><span class="o">,</span><span class="nc">Integer</span><span class="o">&gt;</span> <span class="n">entry</span> <span class="o">=</span> <span class="n">it</span><span class="o">.</span><span class="na">next</span><span class="o">();</span>
+            <span class="kt">int</span> <span class="n">value</span> <span class="o">=</span> <span class="n">entry</span><span class="o">.</span><span class="na">getValue</span><span class="o">().</span><span class="na">intValue</span><span class="o">();</span>
+            <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">entry</span><span class="o">.</span><span class="na">getKey</span><span class="o">()</span> <span class="o">+</span> <span class="s">": "</span> <span class="o">+</span> <span class="n">printBar</span><span class="o">(</span><span class="sc">'#'</span><span class="o">,</span> <span class="n">value</span><span class="o">)</span> <span class="o">+</span> <span class="s">" "</span> <span class="o">+</span> <span class="n">value</span><span class="o">);</span>
+        <span class="o">}</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">();</span>
+        <span class="nc">Set</span><span class="o">&lt;</span><span class="nc">Map</span><span class="o">.</span><span class="na">Entry</span><span class="o">&lt;</span><span class="nc">String</span><span class="o">,</span><span class="nc">Integer</span><span class="o">&gt;&gt;</span> <span class="n">set</span> <span class="o">=</span> <span class="n">map</span><span class="o">.</span><span class="na">entrySet</span><span class="o">();</span>
+        <span class="nc">List</span><span class="o">&lt;</span><span class="nc">Map</span><span class="o">.</span><span class="na">Entry</span><span class="o">&lt;</span><span class="nc">String</span><span class="o">,</span><span class="nc">Integer</span><span class="o">&gt;&gt;</span> <span class="n">list</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">ArrayList</span><span class="o">&lt;&gt;(</span><span class="n">set</span><span class="o">);</span>
+        <span class="nc">Collections</span><span class="o">.</span><span class="na">sort</span><span class="o">(</span><span class="n">list</span><span class="o">,</span> <span class="k">new</span> <span class="nc">ValueComparator</span><span class="o">&lt;</span><span class="nc">Map</span><span class="o">.</span><span class="na">Entry</span><span class="o">&lt;</span><span class="nc">String</span><span class="o">,</span><span class="nc">Integer</span><span class="o">&gt;&gt;());</span>
+        <span class="n">it</span> <span class="o">=</span> <span class="n">list</span><span class="o">.</span><span class="na">iterator</span><span class="o">();</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"=== sort by the value ==="</span><span class="o">);</span>
+        <span class="k">while</span><span class="o">(</span><span class="n">it</span><span class="o">.</span><span class="na">hasNext</span><span class="o">())</span> <span class="o">{</span>
+            <span class="nc">Map</span><span class="o">.</span><span class="na">Entry</span><span class="o">&lt;</span><span class="nc">String</span><span class="o">,</span><span class="nc">Integer</span><span class="o">&gt;</span> <span class="n">entry</span> <span class="o">=</span> <span class="n">it</span><span class="o">.</span><span class="na">next</span><span class="o">();</span>
+            <span class="kt">int</span> <span class="n">value</span> <span class="o">=</span> <span class="n">entry</span><span class="o">.</span><span class="na">getValue</span><span class="o">().</span><span class="na">intValue</span><span class="o">();</span>
+            <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">entry</span><span class="o">.</span><span class="na">getKey</span><span class="o">()</span> <span class="o">+</span> <span class="s">": "</span> <span class="o">+</span> <span class="n">printBar</span><span class="o">(</span><span class="sc">'#'</span><span class="o">,</span> <span class="n">value</span><span class="o">)</span> <span class="o">+</span> <span class="s">" "</span> <span class="o">+</span> <span class="n">value</span><span class="o">);</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+    <span class="c1">// inner class</span>
+    <span class="nd">@SuppressWarnings</span><span class="o">(</span><span class="s">"unchecked"</span><span class="o">)</span>
+    <span class="kd">static</span> <span class="kd">class</span> <span class="nc">ValueComparator</span><span class="o">&lt;</span><span class="no">T</span><span class="o">&gt;</span> <span class="kd">implements</span> <span class="nc">Comparator</span><span class="o">&lt;</span><span class="no">T</span><span class="o">&gt;</span> <span class="o">{</span>
+        <span class="kd">public</span> <span class="kt">int</span> <span class="nf">compare</span><span class="o">(</span><span class="nc">Object</span> <span class="n">o1</span><span class="o">,</span> <span class="nc">Object</span> <span class="n">o2</span><span class="o">)</span> <span class="o">{</span>
+            <span class="k">if</span><span class="o">(</span><span class="n">o1</span> <span class="k">instanceof</span> <span class="nc">Map</span><span class="o">.</span><span class="na">Entry</span> <span class="o">&amp;&amp;</span> <span class="n">o2</span> <span class="k">instanceof</span> <span class="nc">Map</span><span class="o">.</span><span class="na">Entry</span><span class="o">)</span> <span class="o">{</span>
+                <span class="nc">Map</span><span class="o">.</span><span class="na">Entry</span><span class="o">&lt;</span><span class="nc">String</span><span class="o">,</span><span class="nc">Integer</span><span class="o">&gt;</span> <span class="n">e1</span> <span class="o">=</span> <span class="o">(</span><span class="nc">Map</span><span class="o">.</span><span class="na">Entry</span><span class="o">&lt;</span><span class="nc">String</span><span class="o">,</span> <span class="nc">Integer</span><span class="o">&gt;)</span><span class="n">o1</span><span class="o">;</span>
+                <span class="nc">Map</span><span class="o">.</span><span class="na">Entry</span><span class="o">&lt;</span><span class="nc">String</span><span class="o">,</span><span class="nc">Integer</span><span class="o">&gt;</span> <span class="n">e2</span> <span class="o">=</span> <span class="o">(</span><span class="nc">Map</span><span class="o">.</span><span class="na">Entry</span><span class="o">&lt;</span><span class="nc">String</span><span class="o">,</span> <span class="nc">Integer</span><span class="o">&gt;)</span><span class="n">o2</span><span class="o">;</span>
+                <span class="kt">int</span> <span class="n">v1</span> <span class="o">=</span> <span class="n">e1</span><span class="o">.</span><span class="na">getValue</span><span class="o">().</span><span class="na">intValue</span><span class="o">();</span>
+                <span class="kt">int</span> <span class="n">v2</span> <span class="o">=</span> <span class="n">e2</span><span class="o">.</span><span class="na">getValue</span><span class="o">().</span><span class="na">intValue</span><span class="o">();</span>
+                <span class="k">return</span> <span class="n">v2</span> <span class="o">-</span> <span class="n">v1</span><span class="o">;</span>
+            <span class="o">}</span>
+            <span class="k">return</span> <span class="o">-</span><span class="mi">1</span><span class="o">;</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="nc">String</span> <span class="nf">printBar</span><span class="o">(</span><span class="kt">char</span> <span class="n">ch</span><span class="o">,</span> <span class="kt">int</span> <span class="n">value</span><span class="o">)</span> <span class="o">{</span>
+        <span class="kt">char</span><span class="o">[]</span> <span class="n">bar</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">char</span><span class="o">[</span><span class="n">value</span><span class="o">];</span>
+        <span class="k">for</span><span class="o">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="o">;</span> <span class="n">i</span><span class="o">&lt;</span><span class="n">bar</span><span class="o">.</span><span class="na">length</span><span class="o">;</span> <span class="n">i</span><span class="o">++)</span> <span class="n">bar</span><span class="o">[</span><span class="n">i</span><span class="o">]</span> <span class="o">=</span> <span class="n">ch</span><span class="o">;</span>
+        <span class="k">return</span> <span class="k">new</span> <span class="nf">String</span><span class="o">(</span><span class="n">bar</span><span class="o">);</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</pre></td></tr></tbody></table></code></pre></figure>
+
+<p>basic sort를 출력하는 부분까지는 HashMap과 크게 다르지 않습니다. 그러나 HashMap의 예제와는 달리 여기에는 많이 입력된 문자를 정렬하는 부분이 추가되었습니다. 23번째 Line부터 정렬이 들어가는데, 정렬을 하기 위해 값을 비교하는 ValueComparator 클래스가 추가되었습니다. 이 경우 Key는 입력된 문자(알파벳)이기 때문에 알파벳 순서대로 정렬되기 때문입니다. “많이 입력된 순서”를 따르기 위해서는 Value의 값을 참조해야 하므로 Compare 메소드를 재정의한 것입니다. 이로 인해 프로그램이 조금 길어졌지만, 말씀드린대로 각각의 구조를 살펴보시면 이해가 되실 겁니다.</p>
+
+<p>이번 포스트를 마지막으로 Collection Framework 파트가 마무리되었습니다. 다음 포스트부터는 새 주제로 작성하도록 하겠습니다. 읽어주셔서 감사합니다!</p>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> Tags: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/tags/#java" class="page__taxonomy-item p-category" rel="tag">java</a>
+    
+    </span>
+  </p>
+
+
+
+
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> Categories: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/categories/#studies" class="page__taxonomy-item p-category" rel="tag">studies</a>
+    
+    </span>
+  </p>
+
+
+        
+
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time class="dt-published" datetime="2021-12-10T00:00:00+09:00">December 10, 2021</time></p>
+
+      </footer>
+
+      <section class="page__share">
+  
+    <h4 class="page__share-title">Share on</h4>
+  
+
+  <a href="https://twitter.com/intent/tweet?text=Collection+Framework+%284%29%20http%3A%2F%2Flocalhost%3A4000%2Fjava%2Fcollection-framework-4%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Fjava%2Fcollection-framework-4%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2Fjava%2Fcollection-framework-4%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+
+      
+  <nav class="pagination">
+    
+      <a href="/java/collection-framework-3/" class="pagination--pager" title="Collection Framework (3)
+">Previous</a>
+    
+    
+      <a href="/java/networking-with-java-1/" class="pagination--pager" title="Networking with Java (1)
+">Next</a>
+    
+  </nav>
+
+    </div>
+
+    
+  </article>
+
+  
+  
+</div>
+
+    </div>
+
+    
+      <div class="search-content">
+        <div class="search-content__inner-wrap"><form class="search-content__form" onkeydown="return event.key != 'Enter';" role="search">
+    <label class="sr-only" for="search">
+      Enter your search term...
+    </label>
+    <input type="search" id="search" class="search-input" tabindex="-1" placeholder="Enter your search term..." />
+  </form>
+  <div id="results" class="results"></div></div>
+
+      </div>
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>Follow:</strong></li>
+    
+
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+
+    
+      <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2023 KEEPMIND All rights reserved. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    <script type="text/javascript" async
+   src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      extensions: ["tex2jax.js"],
+      jax: ["input/TeX", "output/HTML-CSS"],
+      tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+        displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+        processEscapes: true
+      },
+      "HTML-CSS": { availableFonts: ["TeX"] }
+    });
+</script>
+
+
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+<script src="/assets/js/lunr/lunr.min.js"></script>
+<script src="/assets/js/lunr/lunr-store.js"></script>
+<script src="/assets/js/lunr/lunr-en.js"></script>
+
+
+
+
+
+
+
+  </body>
+</html>
