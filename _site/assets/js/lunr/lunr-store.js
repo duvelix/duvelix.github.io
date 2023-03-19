@@ -132,6 +132,48 @@ var store = [{
         "teaser": null
       },{
         "title": "Introduction",
+        "excerpt":"Git이란? Git은 리누스 토르발즈가 만든 버전 관리 시스템(Version Control System)입니다. 버전 관리 시스템이 필요한 이유는, 여러 명이 하나의 프로그램을 개발할 때, 각각의 프로그래머가 어떤 부분을 수정했는지 쉽게 확인할 수 있기 때문입니다. 물론 협업할 때 뿐만이 아니라 혼자 개발할때도 유용합니다. 예를 들어, 저같은 경우는 연구실에서 코드를 작성하다가 퇴근 후 굳이 소스를...","categories": ["studies"],
+        "tags": ["git"],
+        "url": "/git/introduction/",
+        "teaser": null
+      },{
+        "title": "Git 설치하기",
+        "excerpt":"Git 및 Github를 사용하기 위해서는 먼저 Git을 설치해주어야 합니다. Git을 설치하는 방법은 그렇게 어렵지 않지만, Windows 환경과 Mac 환경이 조금 다르기 때문에 각각 다른 환경에서 설치하는 방법을 보여드릴 예정입니다. 이번 포스트에서는 Git을 설치하고, 사용자 등록까지 하는 과정을 다루려고 합니다. Git 설치하기 Git을 설치하기 위해서는 Git 공식 홈페이지에 방문해야 합니다. 홈페이지에...","categories": ["studies"],
+        "tags": ["git"],
+        "url": "/git/install-git/",
+        "teaser": null
+      },{
+        "title": "GitHub 가입하기",
+        "excerpt":"Git을 제대로 사용하기 위해서는 원격 저장소가 필요합니다. 원격 저장소를 사용하지 않더라도 Git 기능을 사용할 수는 있지만, 이 경우 다른 컴퓨터에서 작업을 이어 하는 것도 귀찮아지고 무엇보다 남들에게 자신의 결과물을 공개할 수 없습니다. Git 원격 저장소로는 GitHub 외에도 GitLab 등 다른 곳도 몇몇 있으나, 대부분의 개발자들은 GitHub을 사용하고 있으므로, Git을 처음...","categories": ["studies"],
+        "tags": ["git"],
+        "url": "/git/join-github/",
+        "teaser": null
+      },{
+        "title": "Commit과 Push 하기",
+        "excerpt":"지난 시간에 GitHub에 가입하고, (원격) 저장소를 만드는 것까지 다루었습니다. 오늘은 로컬 저장소에서 Commit을 하는 방법과 로컬 저장소의 내용을 원격 저장소에 옮기는 Push 방법을 소개하도록 하겠습니다. Commit 커밋(Commit)은 버전 관리 시스템에서 변경 사항을 반영 시키는 것을 뜻합니다. 예를 들어, 자신이 현재 1.0 버전을 작업하고 있는데, 아무리 많은 부분을 수정하였더라도 커밋을 하지...","categories": ["studies"],
+        "tags": ["git"],
+        "url": "/git/commit-and-push/",
+        "teaser": null
+      },{
+        "title": "Branch 만들기",
+        "excerpt":"프로젝트를 하다 보면 프로그램에서 새로운 기능을 추가하거나 실험을 해보고 싶을 때가 있습니다. 이 때는 원본 프로그램을 직접 수정하기 보다 원본 프로그램을 복사하여 먼저 테스트해보고, 괜찮다고 생각되면 원래 프로그램에 추가하는 것이 훨씬 안전한 방법입니다. 만약에 Git 같은 버전 관리 시스템을 쓰지 않는다면 프로젝트 폴더를 통째로 복사해서 이런 과정을 거쳐야 하지만, Git에서는...","categories": ["studies"],
+        "tags": ["git"],
+        "url": "/git/create-branch/",
+        "teaser": null
+      },{
+        "title": "Branch 병합하기",
+        "excerpt":"지난 포스트에서 브랜치가 무엇인지 알아보고, 어떻게 만드는지도 알아보았습니다. 만약 브랜치에서 추가한 기능을 원래의 프로젝트(마스터 브랜치)에 반영하고 싶을 때는 굳이 마스터 브랜치를 직접 수정할 필요 없이, 병합(Merge)라는 기능을 통해 간단하게 해결할 수 있습니다. 브랜치 병합하기 브랜치를 병합하려면 먼저 마스터 브랜치 외의 다른 브랜치가 있어야 합니다. 저는 지난 포스트에서 만들었던 another 브랜치를...","categories": ["studies"],
+        "tags": ["git"],
+        "url": "/git/merge-branch/",
+        "teaser": null
+      },{
+        "title": "Xcode에서 Git 사용하기",
+        "excerpt":"안녕하세요, 오늘은 Xcode에서 Git을 사용하는 방법을 소개해드리도록 하겠습니다. Xcode는 macOS의 IDE (Integrated Development Environment ; 통합개발도구) 입니다. Windows에서는 공식적인 C 컴파일러가 존재하지 않고, 리눅스는 개인용 컴퓨터에서 잘 사용하지 않기 때문에 컴퓨터공학 전공자라면 Xcode를 많이 사용합니다. C 언어 뿐만이 아니라 C++, Python 등의 언어도 지원하고, 무엇보다 iOS 앱을 프로그래밍하기 위해서는 반드시...","categories": ["studies"],
+        "tags": ["git"],
+        "url": "/git/xcode-git/",
+        "teaser": null
+      },{
+        "title": "Introduction",
         "excerpt":"안녕하세요, 오랜만에 새로운 카테고리를 하나 시작할까 합니다. 그 동안 훈련소의 공백 때문에 밀려있는 일과, 학과에서 새로 진행중인 사업 제안서를 작성하느라 블로그에 공부 관련 글을 작성할 시간이 없었습니다. 작년에 블로그를 만들었을 때는 이맘때쯤 공부 관련 카테고리에 글이 한가득 있을 것이라 생각했는데, 계획대로 잘 되지 않았네요. 앞으로는 틈틈히 최대한 짬을 내서 원래의...","categories": ["studies"],
         "tags": ["data structure"],
         "url": "/ds/introduction/",

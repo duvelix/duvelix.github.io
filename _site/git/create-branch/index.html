@@ -1,0 +1,531 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.24.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>Branch 만들기 - KEEPMIND</title>
+<meta name="description" content="프로젝트를 하다 보면 프로그램에서 새로운 기능을 추가하거나 실험을 해보고 싶을 때가 있습니다. 이 때는 원본 프로그램을 직접 수정하기 보다 원본 프로그램을 복사하여 먼저 테스트해보고, 괜찮다고 생각되면 원래 프로그램에 추가하는 것이 훨씬 안전한 방법입니다. 만약에 Git 같은 버전 관리 시스템을 쓰지 않는다면 프로젝트 폴더를 통째로 복사해서 이런 과정을 거쳐야 하지만, Git에서는 이미 이를 간단하게 만들어주는 기능을 제공합니다.">
+
+
+  <meta name="author" content="Joonsu Ryu">
+  
+  <meta property="article:author" content="Joonsu Ryu">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="KEEPMIND">
+<meta property="og:title" content="Branch 만들기">
+<meta property="og:url" content="http://localhost:4000/git/create-branch/">
+
+
+  <meta property="og:description" content="프로젝트를 하다 보면 프로그램에서 새로운 기능을 추가하거나 실험을 해보고 싶을 때가 있습니다. 이 때는 원본 프로그램을 직접 수정하기 보다 원본 프로그램을 복사하여 먼저 테스트해보고, 괜찮다고 생각되면 원래 프로그램에 추가하는 것이 훨씬 안전한 방법입니다. 만약에 Git 같은 버전 관리 시스템을 쓰지 않는다면 프로젝트 폴더를 통째로 복사해서 이런 과정을 거쳐야 하지만, Git에서는 이미 이를 간단하게 만들어주는 기능을 제공합니다.">
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2020-02-01T00:00:00+09:00">
+
+
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="http://localhost:4000/git/create-branch/">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "KEEPMIND",
+      "url": "http://localhost:4000/"
+    
+  }
+</script>
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="KEEPMIND Feed">
+
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css"></noscript>
+
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+<link rel="icon" type="image/png" sizes="16x16" href="/images/favicon.png">
+
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body class="layout--single wide">
+    <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+		<a class="site-title" href="http://localhost:4000/"><img src="/images/logo.png">
+        <!-- <a class="site-title" href="/">
+          KEEPMIND
+           -->
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="/">Home</a>
+            </li><li class="masthead__menu-item">
+              <a href="/cv/">CV</a>
+            </li><li class="masthead__menu-item">
+              <a href="/studies/">Studies</a>
+            </li><li class="masthead__menu-item">
+              <a href="/">Interests</a>
+            </li><li class="masthead__menu-item">
+              <a href="/">Travels</a>
+            </li></ul>
+        
+        <button class="search__toggle" type="button">
+          <span class="visually-hidden">Toggle search</span>
+          <i class="fas fa-search"></i>
+        </button>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person" class="h-card">
+
+  
+    <div class="author__avatar">
+      <!-- <a href="http://localhost:4000/"> -->
+        <img src="/images/profile.jpg" alt="Joonsu Ryu" itemprop="image" class="u-photo">
+      <!-- </a> -->
+    </div>
+  
+
+  <div class="author__content">
+    <h3 class="author__name p-name" itemprop="name">
+      <a class="u-url" rel="me" href="http://localhost:4000/" itemprop="url">Joonsu Ryu</a>
+    </h3>
+    
+      <div class="author__bio p-note" itemprop="description">
+        <p>Researcher</p>
+
+      </div>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">Follow</button>
+    <ul class="author__urls social-icons">
+      
+        <li itemprop="homeLocation" itemscope itemtype="https://schema.org/Place">
+          <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> <span itemprop="name" class="p-locality">Seoul, Korea</span>
+        </li>
+      
+
+      
+        
+          
+            <li><a href="mailto:jsryu@sogang.ac.kr" rel="nofollow noopener noreferrer me"><i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i><span class="label">E-mail</span></a></li>
+          
+        
+          
+            <li><a href="https://github.com/JoonsuRyu" rel="nofollow noopener noreferrer me" itemprop="sameAs"><i class="fab fa-fw fa-github" aria-hidden="true"></i><span class="label">GitHub</span></a></li>
+          
+        
+          
+            <li><a href="https://scholar.google.co.kr/citations?user=UmRh9NQAAAAJ" rel="nofollow noopener noreferrer me" itemprop="sameAs"><i class="fas fa-fw fa-graduation-cap" aria-hidden="true"></i><span class="label">Google Scholar</span></a></li>
+          
+        
+          
+            <li><a href="https://orcid.org/0000-0002-8848-1456" rel="nofollow noopener noreferrer me" itemprop="sameAs"><i class="fab fa-fw fa-orcid" aria-hidden="true"></i><span class="label">ORCID</span></a></li>
+          
+        
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer me">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+
+  
+  </div>
+
+
+
+  <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="Branch 만들기">
+    <meta itemprop="description" content="프로젝트를 하다 보면 프로그램에서 새로운 기능을 추가하거나 실험을 해보고 싶을 때가 있습니다. 이 때는 원본 프로그램을 직접 수정하기 보다 원본 프로그램을 복사하여 먼저 테스트해보고, 괜찮다고 생각되면 원래 프로그램에 추가하는 것이 훨씬 안전한 방법입니다. 만약에 Git 같은 버전 관리 시스템을 쓰지 않는다면 프로젝트 폴더를 통째로 복사해서 이런 과정을 거쳐야 하지만, Git에서는 이미 이를 간단하게 만들어주는 기능을 제공합니다.">
+    <meta itemprop="datePublished" content="2020-02-01T00:00:00+09:00">
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title p-name" itemprop="headline">
+            <a href="http://localhost:4000/git/create-branch/" class="u-url" itemprop="url">Branch 만들기
+</a>
+          </h1>
+          
+
+
+        </header>
+      
+
+      <section class="page__content e-content" itemprop="text">
+        
+        <p>프로젝트를 하다 보면 프로그램에서 새로운 기능을 추가하거나 실험을 해보고 싶을 때가 있습니다. 이 때는 원본 프로그램을 직접 수정하기 보다 원본 프로그램을 복사하여 먼저 테스트해보고, 괜찮다고 생각되면 원래 프로그램에 추가하는 것이 훨씬 안전한 방법입니다. 만약에 Git 같은 버전 관리 시스템을 쓰지 않는다면 프로젝트 폴더를 통째로 복사해서 이런 과정을 거쳐야 하지만, Git에서는 이미 이를 간단하게 만들어주는 기능을 제공합니다.</p>
+
+<p>Git에서 제공하는 이러한 기능을 브랜치(Branch)라고 합니다. 브랜치의 사전적인 의미는 (나뭇)가지입니다. 이를 기반으로 Git에서 브랜치의 의미를 해석해 보면, 같은 뿌리에서 출발한 서로 다른 독립적인 저장소라는 뜻이 됩니다.</p>
+
+<h2 id="branch-생성하기">Branch 생성하기</h2>
+
+<p><img src="/images/Git/4. Create Branch/Git 04-01.png" alt="" class="align-center" /></p>
+
+<p>지난 시간에 Git을 사용했던 경로에서 Git Bash를 실행합니다. <code class="language-plaintext highlighter-rouge">git branch</code> 명령어를 입력하시면 현재 어떤 브랜치가 존재하는지 알 수 있습니다. 기본적으로 아무런 브랜치를 만들지 않았다면 master 브랜치 하나만 존재합니다.</p>
+
+<p><img src="/images/Git/4. Create Branch/Git 04-02.png" alt="" class="align-center" /></p>
+
+<p>새로운 브랜치를 하나 만들어보겠습니다. <code class="language-plaintext highlighter-rouge">git branch</code> 명령어 뒤에 새로 만들 브랜치 이름을 입력하면 그 이름을 가지는 브랜치가 생성됩니다. 저는 another라는 이름을 가지는 브랜치를 만들어보겠습니다.</p>
+
+<p><img src="/images/Git/4. Create Branch/Git 04-03.png" alt="" class="align-center" /></p>
+
+<p>another 브랜치를 만들고, 브랜치가 제대로 생성되었는지 확인하려면 처음 입력했던 <code class="language-plaintext highlighter-rouge">git branch</code> 명령어를 입력하면 됩니다. 이전에는 master 브랜치 하나만 나왔지만, another 브랜치를 생성한 이후에는 master 브랜치와 another 브랜치 2개가 보이는 것을 알 수 있습니다.</p>
+
+<p><img src="/images/Git/4. Create Branch/Git 04-04.png" alt="" class="align-center" /></p>
+
+<p>another 브랜치에서 작업하기 위해서는 작업 환경을 바꾸어주어야 합니다. 명령어 맨 뒤를 보시면 (master) 라고 나오는데, 이것은 현재 master 브랜치에서 작업하고 있다는 뜻입니다. 다른 브랜치 환경으로 변경하는 명령어는 git checkout 브랜치이름 입니다. 예를 들어, another 브랜치로 작업 환경을 변경하는 명령어는 <code class="language-plaintext highlighter-rouge">git checkout another</code> 가 됩니다.</p>
+
+<p>명령어를 입력하고 Enter 키를 누르면 Switched to branch ‘another’ 라는 메시지가 나오며, 맨 뒤에 (master) 라고 나와 있던 부분이 (another)로 변경된 것을 볼 수 있습니다. 이런 식으로 나오면 정상적으로 브랜치 작업 환경이 변경된 것입니다.</p>
+
+<p><img src="/images/Git/4. Create Branch/Git 04-05.png" alt="" class="align-center" /></p>
+
+<p>현재 another 브랜치에서 소스 코드를 수정해 보겠습니다. 지난번에 커밋과 푸시를 했던 HelloWorld.java 파일을 열어서 한줄을 추가해보겠습니다. 이것은 This is only visible on the ‘another’ branch. 라는 문장을 출력하는 코드입니다.</p>
+
+<p><img src="/images/Git/4. Create Branch/Git 04-06.png" alt="" class="align-center" /></p>
+
+<p>HelloWorld.java 파일을 수정하고 저장한 다음, 커밋을 해주도록 하겠습니다. 커밋을 하는 방법은 지난 포스트에서 다루었기 때문에 따로 설명하지는 않겠습니다. 커밋에 대해 더 정보를 알고 싶다면 아래의 포스트를 참고하시기 바랍니다.</p>
+
+<ul>
+  <li>[Git] 3. Commit과 Push 하기</li>
+</ul>
+
+<p><img src="/images/Git/4. Create Branch/Git 04-07.png" alt="" class="align-center" /></p>
+
+<p>커밋 메시지는 위와 같이 간단하게 another 브랜치에서 수정한 것임을 나타내도록 작성하였습니다.</p>
+
+<p><img src="/images/Git/4. Create Branch/Git 04-08.png" alt="" class="align-center" /></p>
+
+<p>커밋 메시지 입력을 마치고 나가면 정상적으로 커밋이 되었다는 메시지가 출력됩니다.</p>
+
+<p><img src="/images/Git/4. Create Branch/Git 04-09.png" alt="" class="align-center" /></p>
+
+<p>GitHub에서 수정사항을 확인할 수 있도록 푸시까지 하겠습니다.</p>
+
+<p><img src="/images/Git/4. Create Branch/Git 04-10.png" alt="" class="align-center" /></p>
+
+<p>GitHub에 업로드 할 때 another 브랜치가 현재 업로드 되지 않았기 때문에 새로운 브랜치를 업로드했다는 메시지도 같이 출력됩니다.</p>
+
+<p><img src="/images/Git/4. Create Branch/Git 04-11.png" alt="" class="align-center" /></p>
+
+<p>GitHub 원격 저장소를 방문해보면 최근 another 브랜치가 푸시되었다는 창이 나옵니다.</p>
+
+<p><img src="/images/Git/4. Create Branch/Git 04-12.png" alt="" class="align-center" /></p>
+
+<p>하지만 저장소를 확인해보면 소스코드가 바뀌지 않았습니다. 당연한 것이, 제가 수정한 것은 another 브랜치이고, 현재 보이는 화면은 master 브랜치이기 때문입니다. 빨간색 박스를 보시면 현재 보고 있는 브랜치가 master 브랜치라는 것을 알 수 있습니다. 빨간색 박스를 클릭합니다.</p>
+
+<p><img src="/images/Git/4. Create Branch/Git 04-13.png" alt="" class="align-center" /></p>
+
+<p>빨간색 박스를 클릭하면 현재 저장소에 푸시된 브랜치의 목록이 나옵니다. 현재는 기본적으로 있던 master 브랜치와 방금 만든 another 브랜치가 보입니다. another 브랜치를 클릭합니다.</p>
+
+<p><img src="/images/Git/4. Create Branch/Git 04-14.png" alt="" class="align-center" /></p>
+
+<p>another 브랜치 시점으로 넘어가며 방금 수정한 소스코드가 보이는 것을 확인할 수 있습니다.</p>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> Tags: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/tags/#git" class="page__taxonomy-item p-category" rel="tag">git</a>
+    
+    </span>
+  </p>
+
+
+
+
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> Categories: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/categories/#studies" class="page__taxonomy-item p-category" rel="tag">studies</a>
+    
+    </span>
+  </p>
+
+
+        
+
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time class="dt-published" datetime="2020-02-01T00:00:00+09:00">February 1, 2020</time></p>
+
+      </footer>
+
+      <section class="page__share">
+  
+    <h4 class="page__share-title">Share on</h4>
+  
+
+  <a href="https://twitter.com/intent/tweet?text=Branch+%EB%A7%8C%EB%93%A4%EA%B8%B0%20http%3A%2F%2Flocalhost%3A4000%2Fgit%2Fcreate-branch%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Fgit%2Fcreate-branch%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2Fgit%2Fcreate-branch%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+
+      
+  <nav class="pagination">
+    
+      <a href="/git/commit-and-push/" class="pagination--pager" title="Commit과 Push 하기
+">Previous</a>
+    
+    
+      <a href="/git/merge-branch/" class="pagination--pager" title="Branch 병합하기
+">Next</a>
+    
+  </nav>
+
+    </div>
+
+    
+  </article>
+
+  
+  
+</div>
+
+    </div>
+
+    
+      <div class="search-content">
+        <div class="search-content__inner-wrap"><form class="search-content__form" onkeydown="return event.key != 'Enter';" role="search">
+    <label class="sr-only" for="search">
+      Enter your search term...
+    </label>
+    <input type="search" id="search" class="search-input" tabindex="-1" placeholder="Enter your search term..." />
+  </form>
+  <div id="results" class="results"></div></div>
+
+      </div>
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>Follow:</strong></li>
+    
+
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+
+    
+      <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2023 KEEPMIND All rights reserved. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    <script type="text/javascript" async
+   src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      extensions: ["tex2jax.js"],
+      jax: ["input/TeX", "output/HTML-CSS"],
+      tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+        displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+        processEscapes: true
+      },
+      "HTML-CSS": { availableFonts: ["TeX"] }
+    });
+</script>
+
+
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+<script src="/assets/js/lunr/lunr.min.js"></script>
+<script src="/assets/js/lunr/lunr-store.js"></script>
+<script src="/assets/js/lunr/lunr-en.js"></script>
+
+
+
+
+
+
+
+  </body>
+</html>
