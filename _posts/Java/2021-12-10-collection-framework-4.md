@@ -15,7 +15,7 @@ tags:
 
 ## HashMap
 
-HashMap은 이름에서부터 유추할 수 있듯이 Map Interface에서 구현된 클래스입니다. HashSet과 마찬가지로 HashMap 또한 Hash에 쓰이며, 탐색(Search)에 좋은 성능을 보인다는 장점이 있습니다. 이와 비슷한 클래스로 Hashtable이 있는데, HashMap은 비동기식(asynchronous), Hashtable은 동기식(synchronized)이라는 차이점이 있습니다.
+<span style="color:red">HashMap</span>은 이름에서부터 유추할 수 있듯이 Map Interface에서 구현된 클래스입니다. HashSet과 마찬가지로 HashMap 또한 Hash에 쓰이며, 탐색(Search)에 좋은 성능을 보인다는 장점이 있습니다. 이와 비슷한 클래스로 <span style="color:red">Hashtable</span>이 있는데, HashMap은 비동기식(asynchronous), Hashtable은 동기식(synchronized)이라는 차이점이 있습니다.
 
 ![](/images/Java/14. Collection Framework (4)/Java 14-01.png){: .align-center}
 
@@ -33,7 +33,7 @@ public class HashMap<K,V> extends AbstractMap<K,V> implements Map<K,V>, Cloneabl
 }
 ```
 
-Key-Value 쌍은 table이라는 Node 배열에 저장되어 있습니다. “Hash”이므로 Key의 값은 중복이 불가능하며, Key가 다르다면 Value의 값은 중복이 가능합니다.
+Key-Value 쌍은 table이라는 Node 배열에 저장되어 있습니다. **Hash** 이므로 Key의 값은 중복이 불가능하며, Key가 다르다면 Value의 값은 중복이 가능합니다.
 
 다음으로 HashMap에 대한 메소드들의 간략한 설명입니다. 먼저 다음 4개는 HashMap을 생성하는 메소드입니다.
 
@@ -183,15 +183,15 @@ HashMap은 이름처럼 Hashing을 하는데도 사용됩니다. 첫 번째나 �
 
 Hashing에서의 성능상의 이점은 Hash 함수를 사용하여 Hash 값을 계산하는 것이 매우 빠르다는 것입니다. 하지만 위처럼 Linked List를 사용하여 한 Hash 값에 여러 데이터를 저장하는 경우 데이터 검색이 느려지는 단점이 있습니다. 따라서 검색 성능이 중요한 프로그램이라면 1개의 슬롯에 1개의 데이터(Value)만 있는 것이 좋습니다.
 
-HashMap과 같이 Hashing을 사용하는 Collection 클래스는 HashCode() 메소드를 Hash 함수로 사용하여 슬롯을 계산합니다. HashCode() 메소드는 Object 클래스에 정의되어 있으며 매개변수가 다른 경우 항상 다른 값을 반환합니다.
+HashMap과 같이 Hashing을 사용하는 Collection 클래스는 `HashCode()` 메소드를 Hash 함수로 사용하여 슬롯을 계산합니다. `HashCode()` 메소드는 Object 클래스에 정의되어 있으며 매개변수가 다른 경우 항상 다른 값을 반환합니다.
 
-물론 이전 포스트의 HashSet처럼 HashCode() 메소드를 재정의(Overriding)해서 사용할 수도 있습니다. 이 경우 HashCode()를 Key로 사용하여 HashMap의 슬롯을 계산하여야 합니다. 만약 equals()를 재정의해서 사용한다면 equals()의 요구사항(지난 포스트 참조)을 반드시 지켜야 합니다.
+물론 이전 포스트의 HashSet처럼 `HashCode()` 메소드를 재정의(Overriding)해서 사용할 수도 있습니다. 이 경우 `HashCode()`를 Key로 사용하여 HashMap의 슬롯을 계산하여야 합니다. 만약 `equals()`를 재정의해서 사용한다면 `equals()`의 요구사항(지난 포스트 참조)을 반드시 지켜야 합니다.
 
-클래스에서 equals()를 재정의하지만 HashCode()를 재정의하지 않는 경우 클래스는 equals()가 true를 반환하더라도 두 Object를 다른 Object로 간주할 수 있으니 주의해야 합니다.
+클래스에서 `equals()`를 재정의하지만 `HashCode()`를 재정의하지 않는 경우 클래스는 `equals()`가 true를 반환하더라도 두 Object를 다른 Object로 간주할 수 있으니 주의해야 합니다.
 
 ## TreeMap
 
-TreeMap은 이름대로 Tree 자료구조를 사용하여 데이터를 저장하는 Map입니다. 하지만 Binary Search Tree를 사용하는 TreeSet과는 다르게 TreeMap은 Red-Black Tree를 사용합니다. Red-Black Tree는 Tree의 각 노드를 특정한 규칙에 따라 Red나 Black으로 나눈 Binary Search Tree입니다. 자세한 내용은 위키백과를 참고해주시기 바랍니다. 추후 자료구조 관련 포스트를 쓰게 되면 Red-Black Tree에 대해 자세히 다뤄보도록 하겠습니다.
+<span style="color:red">TreeMap</span>은 이름대로 Tree 자료구조를 사용하여 데이터를 저장하는 Map입니다. 하지만 Binary Search Tree를 사용하는 TreeSet과는 다르게 TreeMap은 Red-Black Tree를 사용합니다. Red-Black Tree는 Tree의 각 노드를 특정한 규칙에 따라 Red나 Black으로 나눈 Binary Search Tree입니다. 자세한 내용은 [위키백과](https://ko.wikipedia.org/wiki/%EB%A0%88%EB%93%9C-%EB%B8%94%EB%9E%99_%ED%8A%B8%EB%A6%AC)를 참고해주시기 바랍니다. 추후 자료구조 관련 포스트를 쓰게 되면 Red-Black Tree에 대해 자세히 다뤄보도록 하겠습니다.
 
 TreeMap은 Key를 기준으로 정렬됩니다. 이 때, Key에 사용하는 클래스가 비교가능(Comparable)하지 않은 경우, Exception이 일어납니다. (이 점은 TreeSet과 같습니다) TreeMap은 Key로 원소들을 정렬할 때 유용하지만, 탐색할 때는 HashMap보다 느리다는 단점이 있습니다.
 
@@ -298,6 +298,6 @@ public class Main {
 }
 {% endhighlight %}
 
-basic sort를 출력하는 부분까지는 HashMap과 크게 다르지 않습니다. 그러나 HashMap의 예제와는 달리 여기에는 많이 입력된 문자를 정렬하는 부분이 추가되었습니다. 23번째 Line부터 정렬이 들어가는데, 정렬을 하기 위해 값을 비교하는 ValueComparator 클래스가 추가되었습니다. 이 경우 Key는 입력된 문자(알파벳)이기 때문에 알파벳 순서대로 정렬되기 때문입니다. "많이 입력된 순서"를 따르기 위해서는 Value의 값을 참조해야 하므로 Compare 메소드를 재정의한 것입니다. 이로 인해 프로그램이 조금 길어졌지만, 말씀드린대로 각각의 구조를 살펴보시면 이해가 되실 겁니다.
+basic sort를 출력하는 부분까지는 HashMap과 크게 다르지 않습니다. 그러나 HashMap의 예제와는 달리 여기에는 많이 입력된 문자를 정렬하는 부분이 추가되었습니다. 23번째 Line부터 정렬이 들어가는데, 정렬을 하기 위해 값을 비교하는 ValueComparator 클래스가 추가되었습니다. 이 경우 Key는 입력된 문자(알파벳)이기 때문에 알파벳 순서대로 정렬되기 때문입니다. **많이 입력된 순서**를 따르기 위해서는 Value의 값을 참조해야 하므로 Compare 메소드를 재정의한 것입니다. 이로 인해 프로그램이 조금 길어졌지만, 말씀드린대로 각각의 구조를 살펴보시면 이해가 되실 겁니다.
 
 이번 포스트를 마지막으로 Collection Framework 파트가 마무리되었습니다. 다음 포스트부터는 새 주제로 작성하도록 하겠습니다. 읽어주셔서 감사합니다!

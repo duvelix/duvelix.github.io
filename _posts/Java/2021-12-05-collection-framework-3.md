@@ -15,7 +15,7 @@ tags:
 
 ## HashSet
 
-HashSet은 Set Interface를 구현한 클래스입니다. HashSet은 원소의 중복을 허용하지 않고(= e1.equals(e2)를 만족하는 e1, e2가 없음), 최대 1개의 null 원소가 존재할 수 있으며, 원소의 순서가 중요하지 않다는 특징을 가지고 있습니다.
+<span style="color:red">HashSet</span>은 Set Interface를 구현한 클래스입니다. HashSet은 원소의 중복을 허용하지 않고(= `e1.equals(e2)`를 만족하는 e1, e2가 없음), 최대 1개의 null 원소가 존재할 수 있으며, 원소의 순서가 중요하지 않다는 특징을 가지고 있습니다.
 
 ![](/images/Java/13. Collection Framework (3)/Java 13-01.png){: .align-center}
 
@@ -26,7 +26,7 @@ HashSet을 생성하는 방법은 다음 4가지가 있습니다.
 - HashSet(int initialCapacity, float loadFactor) : 비어있는 새 HashSet을 생성한다. 매개변수로 넣은 initialCapacity만큼의 Capacity와 loadFactor 만큼의 Load Factor를 갖습니다.
 - HashSet(Collection<? extends E> c) : 매개변수로 넣은 Collection을 포함한 새로운 Set을 생성한다.
 
-HashSet에는 특이하게 Load Factor라는 것이 있는데, 이것은 언제 Capacity를 2배로 늘릴지 정하는 기능입니다. 예를 들어, Load Factor가 0.75라면 Capacity의 75%가 채워지면 자동으로 Capacity를 2배로 늘린다는 뜻입니다.
+HashSet에는 특이하게 <span style="color:red">Load Factor</span>라는 것이 있는데, 이것은 언제 Capacity를 2배로 늘릴지 정하는 기능입니다. 예를 들어, Load Factor가 0.75라면 Capacity의 75%가 채워지면 자동으로 Capacity를 2배로 늘린다는 뜻입니다.
 
 다음으로 HashSet의 메소드를 정리해보도록 하겠습니다.
 
@@ -39,7 +39,7 @@ HashSet에는 특이하게 Load Factor라는 것이 있는데, 이것은 언제 
 - boolean remove(Object o) : 이 set에서 특정 원소인 o를 제거한다.
 - int size() : 이 set의 원소의 수(Cardinality)를 반환한다.
 
-이 외에도 AbstractCollection 클래스에서 선언된 addAll, containsAll, retainAll, toArray(), toArray(T[] a), toString 메소드도 사용 가능하고, AbstractSet 클래스에서 선언된 equals, hashCode, removeAll 메소드 또한 사용이 가능합니다.
+이 외에도 AbstractCollection 클래스에서 선언된 `addAll()`, `containsAll()`, `retainAll()`, `toArray()`, `toArray(T[] a)`, `toString()` 메소드도 사용 가능하고, AbstractSet 클래스에서 선언된 `equals()`, `hashCode()`, `removeAll()` 메소드 또한 사용이 가능합니다.
 
 이해를 돕기 위해 몇 가지 예제를 통해 HashSet에 대해 자세히 알아보도록 하겠습니다.
 
@@ -85,7 +85,7 @@ public class Main {
 
 두 번째 예제는 인적사항을 저장하는 Person 클래스를 활용하여 HashSet에 저장하는 프로그램입니다. main 메소드를 보시면 나이가 10살인 David라는 사람을 Set에 두 번 넣은 것이 보입니다. Set은 중복을 허용하지 않기 때문에 동일한 사람을 2번 삽입해도 1개만 저장되어야 하지만, 프로그램을 실행해보시면 이상하게도 2개 모두 저장이 되어버리는 문제가 발생합니다.
 
-이런 문제가 발생하는 이유는 두 개의 Object를 중복으로 판단하는 기준이 equals() 메소드와 hashCode() 메소드이기 때문입니다. 따라서 이 부분은 동일한 사람이 입력되면 수동으로 equals()가 true를 반환하도록, hashCode() 메소드가 같은 값을 반환하도록 설정해주어야 합니다.
+이런 문제가 발생하는 이유는 두 개의 Object를 중복으로 판단하는 기준이 `equals()` 메소드와 `hashCode()` 메소드이기 때문입니다. 따라서 이 부분은 동일한 사람이 입력되면 수동으로 `equals()`가 true를 반환하도록, `hashCode()` 메소드가 같은 값을 반환하도록 설정해주어야 합니다.
 
 {% highlight java linenos %}
 import java.util.*;
@@ -116,16 +116,16 @@ public class Main {
 
 두 번째 예제가 목적에 맞게 실행되기 위해서는 Person 클래스를 이렇게 수정해주시면 됩니다.
 
-여기에서는 기존에 존재하는 hashCode() 메소드를 재정의(Override)함으로써 문제를 해결하였습니다. 하지만 hashCode() 메소드는 마음대로 수정하면 안되고, 수정할 때는 반드시 아래 규칙을 따라야만 합니다.
+여기에서는 기존에 존재하는 `hashCode()` 메소드를 재정의(Override)함으로써 문제를 해결하였습니다. 하지만 `hashCode()` 메소드는 마음대로 수정하면 안되고, 수정할 때는 반드시 아래 규칙을 따라야만 합니다.
 
-같은 프로그램에서 hashCode() 메소드는 동일한 Object에 대해 동일한 값을 반환해야 합니다. (다른 프로그램에서는 달라도 상관이 없습니다)
+같은 프로그램에서 `hashCode()` 메소드는 동일한 Object에 대해 동일한 값을 반환해야 합니다. (다른 프로그램에서는 달라도 상관이 없습니다)
 
-1. equals()가 두 객체에 대해 true를 반환하면 hashCode() 또한 동일해야 합니다.
-2. equals()가 두 객체에 대해 false를 반환할 때 hashCode()가 반드시 다를 필요는 없으나, 다를 것을 권장합니다. 왜냐하면 서로 다른 두 객체가 HashCode() 반환값이 같을 경우 HashSet이나 HashMap에서 원소를 검색할 때 성능이 저하되기 때문입니다.
+1. `equals()`가 두 객체에 대해 true를 반환하면 `hashCode()` 또한 동일해야 합니다.
+2. `equals()`가 두 객체에 대해 false를 반환할 때 `hashCode()`가 반드시 다를 필요는 없으나, 다를 것을 권장합니다. 왜냐하면 서로 다른 두 객체가 `HashCode()` 반환값이 같을 경우 HashSet이나 HashMap에서 원소를 검색할 때 성능이 저하되기 때문입니다.
 
 ## TreeSet
 
-TreeSet은 이진 검색 트리(Binary Search Tree)를 사용하여 데이터를 저장합니다. 이진 검색 트리는 트리 자료구조의 한 종류로써, 각 노드는 최대 2개의 자식 노드(Child node)를 가질 수 있습니다. 이 때 왼쪽에 있는 자식 노드는 부모 노드(Parent node)보다 작은 값, 오른쪽에 있는 자식 노드는 부모 노드보다 큰 값을 갖습니다.
+<span style="color:red">TreeSet</span>은 **이진 검색 트리(Binary Search Tree)**를 사용하여 데이터를 저장합니다. 이진 검색 트리는 트리 자료구조의 한 종류로써, 각 노드는 최대 2개의 자식 노드(Child node)를 가질 수 있습니다. 이 때 왼쪽에 있는 자식 노드는 부모 노드(Parent node)보다 작은 값, 오른쪽에 있는 자식 노드는 부모 노드보다 큰 값을 갖습니다.
 
 TreeSet도 Set Interface로부터 구현된 클래스이기 때문에, 마찬가지로 중복을 허용하지 않습니다. 하지만 데이터의 저장 방식(BST)으로 인해 입력과 함께 정렬되므로 일반적인 Set Interface 파생 클래스에 비해 차이가 있습니다. TreeSet은 정렬 및 검색에서 좋은 성능을 보인다는 장점이 있습니다.
 
