@@ -1,5 +1,6 @@
 ---
 title: "Overfitting"
+permalink: /ml/overfitting/
 toc: true
 toc_label: "Table of Contents"
 toc_sticky: true

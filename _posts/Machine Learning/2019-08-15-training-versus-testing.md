@@ -1,5 +1,6 @@
 ---
 title: "Training versus Testing"
+permalink: /ml/training-versus-testing/
 toc: true
 toc_label: "Table of Contents"
 toc_sticky: true

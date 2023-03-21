@@ -1,5 +1,6 @@
 ---
 title: "Finite Markov Decision Processes"
+permalink: /rl/finite-markov-decision-processes/
 classes: wide
 toc: true
 toc_label: "Table of Contents"

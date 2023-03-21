@@ -1,5 +1,6 @@
 ---
 title: "Error and Noise"
+permalink: /ml/error-and-noise/
 toc: true
 toc_label: "Table of Contents"
 toc_sticky: true

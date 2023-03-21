@@ -1,5 +1,6 @@
 ---
 title: "Is Learning Feasible?"
+permalink: /ml/is-learning-feasible/
 toc: true
 toc_label: "Table of Contents"
 toc_sticky: true

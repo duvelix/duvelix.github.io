@@ -1,5 +1,6 @@
 ---
 title: "Off-policy Methods with Approximation"
+permalink: /rl/off-policy-methods-with-approximation/
 classes: wide
 toc: true
 toc_label: "Table of Contents"

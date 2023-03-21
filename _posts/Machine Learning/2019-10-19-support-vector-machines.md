@@ -1,5 +1,6 @@
 ---
 title: "Support Vector Machines"
+permalink: /ml/support-vector-machines/
 toc: true
 toc_label: "Table of Contents"
 toc_sticky: true

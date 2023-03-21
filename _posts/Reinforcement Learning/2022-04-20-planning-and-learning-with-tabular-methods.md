@@ -1,5 +1,6 @@
 ---
 title: "Planning and Learning with Tabular Methods"
+permalink: /rl/planning-and-learning-with-tabular-methods/
 classes: wide
 toc: true
 toc_label: "Table of Contents"

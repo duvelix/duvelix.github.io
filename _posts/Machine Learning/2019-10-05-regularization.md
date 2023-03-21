@@ -1,5 +1,6 @@
 ---
 title: "Regularization"
+permalink: /ml/regularization/
 toc: true
 toc_label: "Table of Contents"
 toc_sticky: true

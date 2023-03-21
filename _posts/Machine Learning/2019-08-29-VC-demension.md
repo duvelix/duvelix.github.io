@@ -1,5 +1,6 @@
 ---
 title: "VC Dimension"
+permalink: /ml/VC-demension/
 toc: true
 toc_label: "Table of Contents"
 toc_sticky: true

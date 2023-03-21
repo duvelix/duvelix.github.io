@@ -1,5 +1,6 @@
 ---
 title: "Monte Carlo Methods"
+permalink: /rl/monte-carlo-methods/
 classes: wide
 toc: true
 toc_label: "Table of Contents"

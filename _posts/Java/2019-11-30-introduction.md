@@ -2,6 +2,7 @@
 title: "Introduction"
 permalink: /java/introduction/
 classes: wide
+toc: false
 categories:
   - studies
 tags:

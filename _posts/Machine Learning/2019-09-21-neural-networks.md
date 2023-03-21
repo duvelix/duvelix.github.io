@@ -1,5 +1,6 @@
 ---
 title: "Neural Networks"
+permalink: /ml/neural-networks/
 toc: true
 toc_label: "Table of Contents"
 toc_sticky: true

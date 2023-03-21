@@ -1,5 +1,6 @@
 ---
 title: "Validation"
+permalink: /ml/validation/
 toc: true
 toc_label: "Table of Contents"
 toc_sticky: true

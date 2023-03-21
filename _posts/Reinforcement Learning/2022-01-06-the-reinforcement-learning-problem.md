@@ -1,5 +1,6 @@
 ---
 title: "The Reinforcement Learning Problem"
+permalink: /rl/the-reinforcement-learning-problem/
 classes: wide
 toc: true
 toc_label: "Table of Contents"

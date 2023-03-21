@@ -1,5 +1,6 @@
 ---
 title: "Eligibility Trace"
+permalink: /rl/eligibility-traces/
 classes: wide
 toc: true
 toc_label: "Table of Contents"

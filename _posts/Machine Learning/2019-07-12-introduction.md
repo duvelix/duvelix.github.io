@@ -1,5 +1,6 @@
 ---
 title: "Introduction"
+permalink: /ml/introduction/
 toc: true
 toc_label: "Table of Contents"
 toc_sticky: true

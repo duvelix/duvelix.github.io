@@ -1,5 +1,6 @@
 ---
 title: "Three Learning Principles"
+permalink: /ml/three-learning-principles/
 toc: true
 toc_label: "Table of Contents"
 toc_sticky: true

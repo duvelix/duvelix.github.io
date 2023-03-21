@@ -1,5 +1,6 @@
 ---
 title: "Dynamic Programming"
+permalink: /rl/dynamic-programming/
 classes: wide
 toc: true
 toc_label: "Table of Contents"

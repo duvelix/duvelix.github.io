@@ -1,5 +1,6 @@
 ---
 title: "Kernel Methods"
+permalink: /ml/kernel-methods/
 toc: true
 toc_label: "Table of Contents"
 toc_sticky: true

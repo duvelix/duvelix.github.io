@@ -1,5 +1,6 @@
 ---
 title: "Bias-Variance Tradeoff"
+permalink: /ml/bias-variance-tradeoff/
 toc: true
 toc_label: "Table of Contents"
 toc_sticky: true
