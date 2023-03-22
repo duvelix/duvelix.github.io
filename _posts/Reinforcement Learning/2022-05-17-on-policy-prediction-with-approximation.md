@@ -68,7 +68,7 @@ $\overline{\text{VE}}$의 관점에서 이상적인 목표는 모든 $\mathbf{w}
 
 이번 Section에서는 <span style="color:red">Stochastic Gradient Descent (SGD)</span>를 기반으로 하는 Value Function Prediction 방법을 자세히 소개합니다. SGD는 모든 Function Approximation 방법 중 가장 널리 사용되는 방법 중 하나이며, 온라인 강화학습에 적합한 특징을 갖고 있습니다. Gradient Descent와 Stochastic Gradient Descent는 아래 포스트에도 소개되어 있으니 참고해주시면 좋겠습니다.
 
-- [[기계학습] 9. Linear Model II](/studies/linear-models-2/)
+- [[기계학습] 9. Linear Model II](/ml/linear-models-2/)
 
 Gradient Descent에서 Weight Vector $\mathbf{w} \doteq (w_1, w_2, \ldots, w_d)^{\sf T}$는 고정된 실수 값 요소를 갖는 Column Vector이고, $\hat{v}(s, \mathbf{w})$는 모든 State $s \in \mathcal{S}$에 대해 $\mathbf{w}$로 미분가능한 함수입니다. 이산적인 시간 단계 $t = 0, 1, 2, 3, \ldots$에 대한 Weight Vector $\mathbf{w}$의 값을 $\mathbf{w}\_t$로 표기합니다. 또한 State $S\_t$로부터 주어진 Policy에 따른 Real Value를 $S\_t \mapsto v\_{\pi} (S\_t)$와 같이 정확하게 얻는다고 가정하겠습니다.
 
@@ -336,7 +336,7 @@ RBF Network는 Feature에 대해 RBF를 사용하는 Linear Function Approximati
 
 RBF에 대한 더 자세한 내용은 다음 포스트를 참고해주시기 바랍니다.
 
-- [[기계학습] 16. Radial Basis Function](/studies/radial-basis-functions/)
+- [[기계학습] 16. Radial Basis Function](/ml/radial-basis-functions/)
 
 ## Selecting Step-Size Parameters Manually
 
@@ -357,7 +357,7 @@ $\mathbf{x}$는 SGD에서의 Input Vector와 동일한 분포로 선택된 임�
 
 <span style="color:red">Artificial Neural Network (ANN)</span>은 non-Linear Function를 근사할 때 많이 사용됩니다. ANN에 대한 자세한 이론은 아래 포스트를 참고해주시기 바랍니다. 여기서는 ANN과 강화학습 사이의 관계에 대해서만 다루도록 하겠습니다.
 
-- [[기계학습] 10. Neural Network](/studies/neural-networks/)
+- [[기계학습] 10. Neural Network](/ml/neural-networks/)
 
 다음 그림은 기본적인 Feedforward ANN의 구조를 보여줍니다. 루프가 존재하지 않고, 출력이 입력에 영향을 주지도 않습니다. 그림에서는 4개의 입력이 있는 Input Layer, 2개의 출력이 있는 Output Layer, 그리고 2개의 Hidden Layer로 구성되어 있습니다.
 
@@ -369,9 +369,9 @@ $\mathbf{x}$는 SGD에서의 Input Vector와 동일한 분포로 선택된 임�
 
 Backpropagation Algorithm은 Hidden Layer가 많지 않은 ANN에서는 좋은 성능을 보이지만, Hidden Layer가 많은 경우에는 잘 작동하지 않습니다. 그 원인에는 여러가지가 있지만, 대표적으로 학습 데이터가 과도하게 반영되는 <span style="color:red">Overfitting</span> 문제가 있으며, 이를 해결하는 방법으로 <span style="color:red">Regularization</span>, <span style="color:red">Validation</span> 등이 있습니다. 이에 대한 자세한 내용은 아래 포스트를 참고해주시기 바랍니다.
 
-- [[기계학습] 11. Overfitting](/studies/overfitting/)
-- [[기계학습] 12. Regularization](/studies/regularization/)
-- [[기계학습] 13. Validation](/studies/validation/)
+- [[기계학습] 11. Overfitting](/ml/overfitting/)
+- [[기계학습] 12. Regularization](/ml/regularization/)
+- [[기계학습] 13. Validation](/ml/validation/)
 
 이후에도 교재에서는 ANN에서 Hidden Layer가 많은 경우 생길 수 있는 문제와 그 해결 방법을 소개합니다. 다만 여기에서는 그 내용을 굳이 전부 다룰 필요는 없다고 생각하기 때문에 생략하겠습니다. 일단은 강화학습에서 Function Approximation를 할 때, ANN을 통해 non-Linear Function Model로 근사가 가능하다 정도만 이해하고 넘어가시면 될 것 같습니다. ANN과 Deep Learning에 대해서는 추후 기회가 되면 포스팅하겠습니다.
 
@@ -440,7 +440,7 @@ $$k(s, s') = \mathbf{x} (s)^{\sf T} \mathbf{x} (s') \tag{9.24}$$
 
 식 (9.24)와 같은 Kernel Regression은 동일한 학습 데이터로 학습한 경우 Linear Parametric 방법과 동일한 근사값을 생성합니다. 모든 Kernel Function이 식 (9.24)와 같이 Feature Vector의 내적으로 표현될 수 있는 것은 아니지만, 이렇게 표현할 수 있는 Kernel Function은 같은 결과를 생성하는 Parametric 방법에 비해 간단하게 계산할 수 있는 장점이 있습니다. 이것을 보통 <span style="color:red">Kernel Trick</span> 이라고 부릅니다. Kernel에 대한 더 자세한 내용은 다음 포스트를 참고해주시기 바랍니다.
 
-- [[기계학습] 15. Kernel Methods](/studies/kernel-methods/)
+- [[기계학습] 15. Kernel Methods](/ml/kernel-methods/)
 
 ## Looking Deeper at On-policy Learning : Interest and Emphasis
 

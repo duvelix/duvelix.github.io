@@ -311,11 +311,11 @@
   <p>To provide the tools and techniques necessary to design and implement large-scale computer systems.</p>
 </blockquote>
 
-<p>해석하면, 규모가 큰 컴퓨터 시스템을 디자인하고 구현하는데 필요한 도구와 기술을 제공하는 것입니다. 구체적으로는 이번 시간에는 데이터 추상화(Data Abstraction), 알고리즘 명세(Algorithm Specification), 그리고 성능 분석 및 평가(Performance Analysis and Measurement)가 무엇인지를 배우게 됩니다.</p>
+<p>해석하면, 규모가 큰 컴퓨터 시스템을 디자인하고 구현하는데 필요한 도구와 기술을 제공하는 것입니다. 구체적으로는 이번 시간에는 <strong>데이터 추상화(Data Abstraction)</strong>, <strong>알고리즘 명세(Algorithm Specification)</strong>, 그리고 <strong>성능 분석 및 평가(Performance Analysis and Measurement)</strong>가 무엇인지를 배우게 됩니다.</p>
 
 <h2 id="system-life-cycle">System Life Cycle</h2>
 
-<p>시스템 생명 주기(System Life Cycle)란 프로그램의 개발 단계를 의미합니다. 시스템 생명 주기는 요구사항(Requirement), 분석(Analysis), 설계(Design), 정제와 코딩(Refinement and Coding), 그리고 검증(Verification) 과정으로 구성되어 있습니다. 각각의 과정은 독립적인 것처럼 보이지만, 실제로는 상호 밀접한 관계를 갖고 있습니다. 하나하나 살펴보도록 하겠습니다.</p>
+<p><span style="color:red">시스템 생명 주기(System Life Cycle)</span>란 프로그램의 개발 단계를 의미합니다. 시스템 생명 주기는 <strong>요구사항(Requirement)</strong>, <strong>분석(Analysis)</strong>, <strong>설계(Design)</strong>, <strong>정제와 코딩(Refinement and Coding)</strong>, 그리고 <strong>검증(Verification)</strong> 과정으로 구성되어 있습니다. 각각의 과정은 독립적인 것처럼 보이지만, 실제로는 상호 밀접한 관계를 갖고 있습니다. 하나하나 살펴보도록 하겠습니다.</p>
 
 <h3 id="requirement">Requirement</h3>
 
@@ -323,7 +323,7 @@
 
 <h3 id="analysis">Analysis</h3>
 
-<p>시스템 요구사항을 기술한 후에는 커다란 문제를 작은 단위의 문제로 나누어 다루기 쉽게 만들어야 합니다. 예를 들어 계산기 프로그램을 만드는 프로젝트라면, 이를 인터페이스 디자인 , 연산 기능, 결과 출력 방법 등으로 나누어서 접근하는 방식입니다. 분석 방법에는 작은 단위부터 생각하는 상향식(bottom-up) 접근 방법과 최종 프로그램을 잘개 쪼개는 하향식(top-down) 접근 방법이 있는데, 현재는 하향식 접근 방법을 더 많이 사용하고 있습니다.</p>
+<p>시스템 요구사항을 기술한 후에는 커다란 문제를 작은 단위의 문제로 나누어 다루기 쉽게 만들어야 합니다. 예를 들어 계산기 프로그램을 만드는 프로젝트라면, 이를 인터페이스 디자인 , 연산 기능, 결과 출력 방법 등으로 나누어서 접근하는 방식입니다. 분석 방법에는 작은 단위부터 생각하는 <strong>상향식(Bottom-up)</strong> 접근 방법과 최종 프로그램을 잘개 쪼개는 <strong>하향식(Top-down)</strong> 접근 방법이 있는데, 현재는 하향식 접근 방법을 더 많이 사용하고 있습니다.</p>
 
 <h3 id="design">Design</h3>
 
@@ -344,32 +344,32 @@
 <p>알고리즘이란 특정한 일을 수행하는 명령어들의 유한 집합입니다. 모든 알고리즘은 다음 5가지의 조건을 모두 만족해야만 합니다.</p>
 
 <ol>
-  <li>입력(Input) : 외부에서 제공하는 데이터가 0개 이상 존재한다.</li>
-  <li>출력(Output) : 적어도 하나의 결과를 생성해야 한다.</li>
-  <li>명확성(Definiteness) : 각 명령들은 명확하고 모호하지 않아야 한다.</li>
-  <li>유한성(Finiteness) : 알고리즘의 명령대로 수행하면 어떤 경우에도 반드시 종료되어야 한다.</li>
-  <li>유효성(Effectiveness) : 모든 명령들은 종이와 연필만으로도 수행가능해야만 한다.</li>
+  <li><strong>입력(Input)</strong> : 외부에서 제공하는 데이터가 0개 이상 존재한다.</li>
+  <li><strong>출력(Output)</strong> : 적어도 하나의 결과를 생성해야 한다.</li>
+  <li><strong>명확성(Definiteness)</strong> : 각 명령들은 명확하고 모호하지 않아야 한다.</li>
+  <li><strong>유한성(Finiteness)</strong> : 알고리즘의 명령대로 수행하면 어떤 경우에도 반드시 종료되어야 한다.</li>
+  <li><strong>유효성(Effectiveness)</strong> : 모든 명령들은 종이와 연필만으로도 수행가능해야만 한다.</li>
 </ol>
 
 <p>많은 사람들이 알고리즘 = 프로그램이라고 생각하지만, 실제로 이 둘은 다르기 때문에 구별해야만 합니다. 프로그램은 보통 위의 조건 중 유한성을 만족하지 않기 때문입니다. 예를 들어 운영체제(Operating System)는 프로그램이지만, 유한성 조건에 어긋나기 때문에 알고리즘은 아닙니다. 다만 이 교재에서는 반드시 유한성을 만족하는 (= 항상 종료되는) 프로그램만을 다루기 때문에 프로그램과 알고리즘을 같은 의미로 사용합니다.</p>
 
-<p>알고리즘을 표현하는 방법은 자연어(Natural Language), 순서도(Flowchart), 그리고 프로그래밍 언어(Programming Language) 등이 있습니다. 이 교재에서는 책 제목에서도 알 수 있다시피 대부분 C언어로 표현하였습니다. 다음 두 예제를 통해 어떻게 문제를 알고리즘으로 해결하고, 그것을 C언어로 변환하는지를 보도록 하겠습니다.</p>
+<p>알고리즘을 표현하는 방법은 <strong>자연어(Natural Language)</strong>, <strong>순서도(Flowchart)</strong>, 그리고 <strong>프로그래밍 언어(Programming Language)</strong> 등이 있습니다. 이 교재에서는 책 제목에서도 알 수 있다시피 대부분 C언어로 표현하였습니다. 다음 두 예제를 통해 어떻게 문제를 알고리즘으로 해결하고, 그것을 C언어로 변환하는지를 보도록 하겠습니다.</p>
 
 <h3 id="example-1---selection-sort">Example 1 - Selection Sort</h3>
 
-<p>선택 정렬(Selection Sort)은 정렬 알고리즘 중 하나로써, 정렬되지 않은 정수들 중에서 가장 작은 값을 찾아 정렬된 리스트 뒤에 놓는 방법입니다. 먼저 이 문제를 정확하게 명세하면 다음과 같습니다.</p>
+<p><span style="color:red">선택 정렬(Selection Sort)</span>은 정렬 알고리즘 중 하나로써, 정렬되지 않은 정수들 중에서 가장 작은 값을 찾아 정렬된 리스트 뒤에 놓는 방법입니다. 먼저 이 문제를 정확하게 명세하면 다음과 같습니다.</p>
 
-<p>Example 1.1 [Selection Sort] Sorting a set of $n \ge 1$ integers. From those integers that are currently unsorted, find the smallest and place it next in the sorted list.</p>
+<p><strong>Example 1.1. [Selection Sort]</strong> Sorting a set of $n \ge 1$ integers. From those integers that are currently unsorted, find the smallest and place it next in the sorted list.</p>
 
 <p>이 문제를 해결하는 방법을 C언어와 자연어가 섞인 알고리즘으로 표현하면 다음과 같습니다.</p>
 
-<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">for</span> <span class="p">(</span><span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">){</span>
-    <span class="n">list</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="err">에서부터</span> <span class="n">list</span><span class="p">[</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="err">까지의</span> <span class="err">정수</span> <span class="err">중</span> <span class="err">가장</span> <span class="err">작은</span> <span class="err">정수를</span> <span class="n">list</span><span class="p">[</span><span class="n">min</span><span class="p">]</span><span class="err">이라</span> <span class="err">한다</span><span class="p">;</span>
-    <span class="n">list</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="err">와</span> <span class="n">list</span><span class="p">[</span><span class="n">min</span><span class="p">]</span><span class="err">의</span> <span class="err">위치를</span> <span class="err">바꾼다</span><span class="p">;</span>
-<span class="p">}</span>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>for (i = 0; i &lt; n; i++){
+    list[i]에서부터 list[n-1]까지의 정수 중 가장 작은 정수를 list[min]이라 한다;
+    list[i]와 list[min]의 위치를 바꾼다;
+}
 </code></pre></div></div>
 
-<p>자연어와 C언어가 섞여있기 때문에 이를 완전한 C 프로그램으로 변환하기 위해서는 자연어로 표현된 부분을 매크로나 함수를 사용해서 바꿔주어야 합니다. Program 1.1의 3번째 줄을 C언어 함수로 바꾸면 아래와 같습니다.</p>
+<p>자연어와 C언어가 섞여있기 때문에 이를 완전한 C 프로그램으로 변환하기 위해서는 자연어로 표현된 부분을 매크로나 함수를 사용해서 바꿔주어야 합니다. 이 알고리즘의 3번째 줄을 C언어 함수로 바꾸면 아래와 같습니다.</p>
 
 <div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">void</span> <span class="nf">swap</span><span class="p">(</span><span class="kt">int</span> <span class="o">*</span><span class="n">x</span><span class="p">,</span> <span class="kt">int</span> <span class="o">*</span><span class="n">y</span><span class="p">)</span>
 <span class="cm">/* x와 y는 정수형 변수 */</span>
@@ -380,7 +380,7 @@
 <span class="p">}</span>
 </code></pre></div></div>
 
-<p>이 함수를 사용하여 Program 1.1의 3번째 줄을 C언어 코드로 대체한다면 swap(&amp;a, &amp;b); 로 호출할 수 있습니다. 만약 함수가 아니라 매크로를 사용한다면 다음과 같이 작성이 가능합니다.</p>
+<p>이 함수를 사용하여 Example 1.1 알고리즘의 3번째 줄을 C언어 코드로 대체한다면 <code class="language-plaintext highlighter-rouge">swap(&amp;a, &amp;b);</code> 로 호출할 수 있습니다. 만약 함수가 아니라 매크로를 사용한다면 다음과 같이 작성이 가능합니다.</p>
 
 <div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">#define SWAP(x,y,t) ((t) = (x), (x) = (y), (y) = (t))
 </span></code></pre></div></div>
@@ -434,12 +434,16 @@
 45
 46
 47
+48
+49
 </pre></td><td class="code"><pre><span class="cp">#include &lt;stdio.h&gt;
 #include &lt;stdlib.h&gt;
 #include &lt;time.h&gt;
 #define MAX_SIZE 101
 #define SWAP(x, y, t)  ((t) = (x), (x) = (y), (y) = (t))
-</span><span class="kt">void</span> <span class="nf">sort</span><span class="p">(</span><span class="kt">int</span> <span class="p">[],</span> <span class="kt">int</span><span class="p">);</span>  <span class="cm">/* 선택 정렬 */</span>
+</span>
+<span class="kt">void</span> <span class="nf">sort</span><span class="p">(</span><span class="kt">int</span> <span class="p">[],</span> <span class="kt">int</span><span class="p">);</span>  <span class="cm">/* 선택 정렬 */</span>
+
 <span class="kt">int</span> <span class="nf">main</span><span class="p">(){</span>
     <span class="kt">int</span> <span class="n">i</span><span class="p">,</span> <span class="n">n</span><span class="p">;</span>
     <span class="kt">int</span> <span class="n">list</span><span class="p">[</span><span class="n">MAX_SIZE</span><span class="p">];</span>
@@ -483,28 +487,28 @@
 <span class="p">}</span>
 </pre></td></tr></tbody></table></code></pre></figure>
 
-<p>교재에 나온 프로그램과 약간 차이가 있는데, 원래 교재에 나온 프로그램에 몇 가지 컴파일 에러가 발생하여 수정하였습니다. 참고로 저는 애플의 LLVM 컴파일러를 기준으로 작성하였습니다.</p>
+<p>교재에 나온 프로그램과 약간 차이가 있는데, 제가 테스트했을 때 몇 가지 컴파일 에러가 발생하여 수정하였습니다. 참고로 저는 애플의 LLVM 컴파일러를 사용하였습니다.</p>
 
 <p>프로그램을 작성하고나면, 이 프로그램이 목적에 맞게 정확한 결과를 도출하는지 증명해야합니다. 사실 학부 과목에서 알고리즘에 대한 증명은 보통 넘어가곤 하지만, 어떤 것인지를 보여드리기 위해 이번에만 짚고 넘어가도록 하겠습니다.</p>
 
-<p>Theorem 1.1 함수 sort(list, n)은 $n \ge 1$개의 정수를 정확하게 정렬하여, 그 결과는 $list[0] \le list[1] \le … \le list[n-1]$이 된다.</p>
+<p><strong>Theorem 1.1</strong> 함수 <code class="language-plaintext highlighter-rouge">sort(list, n)</code>은 $n \ge 1$개의 정수를 정확하게 정렬하여, 그 결과는 list[0] $\le$ list[1] $\le … \le$ list[n-1]이 된다.</p>
 
-<p>Proof    $n$보다 작은 $i = q$에 대해, sort()의 첫 번째 for문이 완료되면 $q \lt r \lt n$인 $r$에 대해 $list[q] \le list[r]$이 성립한다. 또한 다음 for문에서는 $i$가 $q$보다 커지고, $list[0]$부터 $list[q]$까지는 변하지 않는다. 따라서 첫 번째 for문을 마지막까지 수행하고 나면, (즉, $i = n -2$까지 수행하고 나면) $list[0] \le list[1] \le … \le list[n-1]$이 된다.</p>
+<p><strong>Proof</strong>    $n$보다 작은 $i = q$에 대해, sort()의 첫 번째 for문이 완료되면 $q \lt r \lt n$인 $r$에 대해 list[q] $\le$ list[r]이 성립한다. 또한 다음 for문에서는 $i$가 $q$보다 커지고, list[0]부터 list[q]까지는 변하지 않는다. 따라서 첫 번째 for문을 마지막까지 수행하고 나면, (즉, $i = n -2$까지 수행하고 나면) list[0] $\le$ list[1] $\le … \le$ list[n-1]이 된다.</p>
 
 <p style="text-align:right">□</p>
 
 <h3 id="example-2---binary-search">Example 2 - Binary Search</h3>
 
-<p>다음 예제는 탐색 알고리즘 중 하나인 이진 탐색(Binary Search)입니다. 리스트를 절반씩 나누어 원하는 숫자가 리스트 안에 있는지 찾는 알고리즘입니다. 이 문제를 정확하게 명세하면 아래와 같습니다.</p>
+<p>다음 예제는 탐색 알고리즘 중 하나인 <span style="color:red">이진 탐색(Binary Search)</span>입니다. 리스트를 절반씩 나누어 원하는 숫자가 리스트 안에 있는지 찾는 알고리즘입니다. 이 문제를 정확하게 명세하면 아래와 같습니다.</p>
 
-<p>Example 1.2 [Binary Search] Find out if an integer searchnum is in a sorted list. If so, return $i$ such that $list[i]$ = searchnum, Otherwise, return -1.</p>
+<p><strong>Example 1.2 [Binary Search]</strong> Find out if an integer searchnum is in a sorted list. If so, return $i$ such that list[i] = searchnum, Otherwise, return -1.</p>
 
-<p>이진 탐색에서는 배열 $list$가 (오름차순으로) 정렬되어있기 때문에, 왼쪽 끝을 $left$, 오른쪽 끝을 $right$로 정의하여 이 구간을 줄여나가는 방식으로 숫자를 찾는 방법을 사용합니다. 초기 값을 $left = 0, right = n - 1$로 놓고, 중간 위치 $middle = (left + right)/2$로 설정하여 $list[middle]$과 searchnum을 비교하여 다음과 같은 경우 중 하나를 고려합니다.</p>
+<p>이진 탐색에서는 배열 list가 (오름차순으로) 정렬되어있기 때문에, 왼쪽 끝을 left, 오른쪽 끝을 right로 정의하여 이 구간을 줄여나가는 방식으로 숫자를 찾는 방법을 사용합니다. 초기 값을 left = 0, right = n - 1로 놓고, 중간 위치 middle = (left + right)/2로 설정하여 list[middle]과 searchnum을 비교하여 다음과 같은 경우 중 하나를 고려합니다.</p>
 
 <ol>
-  <li>searchnum $&lt; list[middle]$ : 이 경우에는 searchnum이 $list[0]$과 $list[middle - 1]$ 사이에 있다는 뜻이므로 $right = middle - 1$로 설정한다.</li>
-  <li>searchnum $= list[middle]$ : searchnum과 동일한 숫자를 찾았으므로 $middle$을 반환하면 된다.</li>
-  <li>searchnum $&gt; list[middle]$ : 첫 번째와는 반대로 searchnum이 $list[middle + 1]$과 $list[n - 1]$ 사이에 있다는 뜻이므로 $left = middle + 1$로 설정한다.</li>
+  <li>searchnum $&lt;$ list[middle] : 이 경우에는 searchnum이 list[0]과 list[middle - 1] 사이에 있다는 뜻이므로 right = middle - 1로 설정한다.</li>
+  <li>searchnum $=$ list[middle] : searchnum과 동일한 숫자를 찾았으므로 middle을 반환하면 된다.</li>
+  <li>searchnum $&gt;$ list[middle] : 첫 번째와는 반대로 searchnum이 list[middle + 1]과 list[n - 1] 사이에 있다는 뜻이므로 left = middle + 1로 설정한다.</li>
 </ol>
 
 <p>이를 C언어와 자연어가 섞인 알고리즘으로 표현한다면 아래와 같습니다.</p>
@@ -520,9 +524,9 @@
 <span class="p">}</span>
 </code></pre></div></div>
 
-<p>이 알고리즘을 C언어로 완전히 변환하려면 while 문 안의 조건만 C언어로 바꾸어주면 됩니다. 알고리즘대로 반복한다면 searchnum을 찾지 못한 경우 $left$는 점점 커지고, $right$는 점점 작아지기 때문에 결국에는 searchnum을 찾던가, 아니면 인덱스가 어긋나서 $left$가 $right$보다 커지는 상황이 발생하게 됩니다. $left$와 $right$는 탐색 범위를 나타내기 때문에 이것들이 어긋나면 검사할 원소가 없다는 뜻이 됩니다. 따라서 여기서는 비교 연산을 통해 while문 내의 조건을 구현할 것입니다.</p>
+<p>이 알고리즘을 C언어로 완전히 변환하려면 while 문 안의 조건만 C언어로 바꾸어주면 됩니다. 알고리즘대로 반복한다면 searchnum을 찾지 못한 경우 left는 점점 커지고, right는 점점 작아지기 때문에 결국에는 searchnum을 찾던가, 아니면 인덱스가 어긋나서 left가 right보다 커지는 상황이 발생하게 됩니다. left와 right는 탐색 범위를 나타내기 때문에 이것들이 어긋나면 검사할 원소가 없다는 뜻이 됩니다. 따라서 여기서는 비교 연산을 통해 while문 내의 조건을 구현할 것입니다.</p>
 
-<p>비교 연산은 선택 정렬의 swap()처럼 함수로 구현할 수도 있고 매크로로 구현할 수도 있습니다. 먼저 함수로 구현하게 되면 다음과 같습니다.</p>
+<p>비교 연산은 선택 정렬의 <code class="language-plaintext highlighter-rouge">swap()</code>처럼 함수로 구현할 수도 있고 매크로로 구현할 수도 있습니다. 먼저 함수로 구현하게 되면 다음과 같습니다.</p>
 
 <div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">int</span> <span class="nf">compare</span><span class="p">(</span><span class="kt">int</span> <span class="n">x</span><span class="p">,</span> <span class="kt">int</span> <span class="n">y</span><span class="p">)</span>
 <span class="cm">/* x와 y를 비교하여 x가 y보다 크면 1, 같으면 0, 작으면 -1을 반환한다 */</span>
@@ -583,10 +587,14 @@
 36
 37
 38
+39
+40
 </pre></td><td class="code"><pre><span class="cp">#include &lt;stdio.h&gt;
 #define MAX_SIZE 101
 #define COMPARE(x, y)  (((x) &lt; (y)) ? -1 : ((x) == (y)) ? 0 : 1)
-</span><span class="kt">int</span> <span class="nf">binsearch</span><span class="p">(</span><span class="kt">int</span> <span class="p">[],</span> <span class="kt">int</span><span class="p">,</span> <span class="kt">int</span><span class="p">,</span> <span class="kt">int</span><span class="p">);</span>  <span class="cm">/* 이진 탐색 */</span>
+</span>
+<span class="kt">int</span> <span class="nf">binsearch</span><span class="p">(</span><span class="kt">int</span> <span class="p">[],</span> <span class="kt">int</span><span class="p">,</span> <span class="kt">int</span><span class="p">,</span> <span class="kt">int</span><span class="p">);</span>  <span class="cm">/* 이진 탐색 */</span>
+
 <span class="kt">int</span> <span class="nf">main</span><span class="p">(){</span>
     <span class="kt">int</span> <span class="n">i</span><span class="p">,</span> <span class="n">n</span><span class="p">;</span>
     <span class="kt">int</span> <span class="n">list</span><span class="p">[</span><span class="n">MAX_SIZE</span><span class="p">],</span> <span class="n">result</span><span class="p">;</span>
@@ -623,13 +631,13 @@
 <span class="p">}</span>
 </pre></td></tr></tbody></table></code></pre></figure>
 
-<p>교재에는 binsearch 함수만 수록되어 있지만, 저도 연습할겸 완전한 프로그램으로 만들어서 보여드리는 것이 좋을 것 같아 전체 프로그램을 구현해 봤습니다. 선택 정렬 프로그램과 비슷하게 main 함수를 작성했습니다. 프로그램을 실행해보기 전에 searchnum을 찾았을 때와 그렇지 않았을 때 어떤 방식으로 동작하는지 생각해보시기 바랍니다.</p>
+<p>교재에는 <code class="language-plaintext highlighter-rouge">binsearch()</code> 함수만 수록되어 있지만, 저도 연습할겸 완전한 프로그램으로 만들어서 보여드리는 것이 좋을 것 같아 전체 프로그램을 구현해 봤습니다. <code class="language-plaintext highlighter-rouge">main()</code> 함수는 선택 정렬 프로그램과 비슷하게 작성했습니다. 프로그램을 실행해보기 전에 searchnum을 찾았을 때와 그렇지 않았을 때 어떤 방식으로 동작하는지 생각해보시기 바랍니다.</p>
 
 <h2 id="recursive-algorithms">Recursive Algorithms</h2>
 
-<p>재귀는 함수의 제어 방법 중 하나입니다. 재귀에는 두 종류가 있는데, 함수의 수행이 완료되기 전에 자기 자신을 다시 호출하는 직접 재귀(Direct Recursion)와 호출 함수를 다시 호출하게 되어 있는 간접 재귀(Indirect Recursion) 방법이 있습니다.</p>
+<p><span style="color:red">재귀(Recursive)</span>는 함수의 제어 방법 중 하나입니다. 재귀에는 두 종류가 있는데, 함수의 수행이 완료되기 전에 자기 자신을 다시 호출하는 <span style="color:red">직접 재귀(Direct Recursion)</span>와 호출 함수를 다시 호출하게 되어 있는 <span style="color:red">간접 재귀(Indirect Recursion)</span> 방법이 있습니다.</p>
 
-<p>재귀를 사용할 때 가장 문제가 되는 부분은 “어떤 문제에서 재귀를 사용할 수 있나?” 입니다. 보통 문제 자체가 재귀적으로 정의되어 있다면, 그 문제는 재귀 알고리즘을 사용해서 해결할 수 있습니다. 예를 들어, 이항 계수(Binomial Coefficient)를 구하는 문제가 있습니다. 이항 계수의 공식은 다음과 같습니다.</p>
+<p>재귀를 사용할 때 가장 문제가 되는 부분은 <strong>어떤 문제에서 재귀를 사용할 수 있나?</strong> 입니다. 보통 문제 자체가 재귀적으로 정의되어 있다면, 그 문제는 재귀 알고리즘을 사용해서 해결할 수 있습니다. 예를 들어, 이항 계수(Binomial Coefficient)를 구하는 문제가 있습니다. 이항 계수의 공식은 다음과 같습니다.</p>
 
 \[{n \choose r} = \frac{n!}{r!(n-r)!}\]
 
@@ -643,11 +651,11 @@
 
 <p>보다 구체적인 예시로, 이전에 사용했던 이진 탐색 알고리즘을 재귀 방법으로 바꿔보겠습니다.</p>
 
-<p>Example 1.3 [Binary Search by Recursion] Program 1.6을 재귀 방법으로 변환한다.</p>
+<p><strong>Example 1.3 [Binary Search by Recursion]</strong> Example 1.2의 알고리즘을 재귀 방법으로 변환한다.</p>
 
-<p>이 프로그램을 재귀 방식으로 변환하기 위해서는 두 가지를 고려해야 합니다. 첫째로 언제 재귀 호출이 끝나는지 탈출 조건을 정해주어야 합니다. 이진 탐색에서는 함수가 끝나는 조건으로 $list[middle] =$ searchnum이 되어 탐색에 성공한 경우와, $left$가 $right$보다 커져 탐색에 실패하는 경우가 있습니다. 탐색에 성공한 경우에는 이미 return을 사용했기 때문에 수정할 필요가 없지만, 탐색에 실패한 경우는 조건문을 통해 종료 조건을 설정해줘야만 합니다. 따라서 이진 탐색을 재귀 호출할 때, $left$와 $right$를 매개변수로 넣어줘야만 합니다.</p>
+<p>이 알고리즘을 재귀 방식으로 변환하기 위해서는 두 가지를 고려해야 합니다. 첫째로 언제 재귀 호출이 끝나는지 탈출 조건을 정해주어야 합니다. 이진 탐색에서는 함수가 끝나는 조건으로 list[middle] = searchnum이 되어 탐색에 성공한 경우와, left가 right보다 커져 탐색에 실패하는 경우가 있습니다. 탐색에 성공한 경우에는 이미 return을 사용했기 때문에 수정할 필요가 없지만, 탐색에 실패한 경우는 조건문을 통해 종료 조건을 설정해줘야만 합니다. 따라서 이진 탐색을 재귀 호출할 때, left와 right를 매개변수로 넣어줘야만 합니다.</p>
 
-<p>둘째로, 재귀 함수가 호출될 때마다 해답에 점점 가까워져야 합니다. 이것은 매번 이진 탐색을 할 때 $left$나 $right$의 값을 변화시키면서 범위를 줄이므로, 이전과 마찬가지로 매개변수에 넣기만 하면 간단하게 해결할 수 있습니다. 다음은 Program 1.6을 재귀 방법으로 변환한 프로그램입니다.</p>
+<p>둘째로, 재귀 함수가 호출될 때마다 해답에 점점 가까워져야 합니다. 이것은 매번 이진 탐색을 할 때 left나 right의 값을 변화시키면서 범위를 줄이므로, 이전과 마찬가지로 매개변수에 넣기만 하면 간단하게 해결할 수 있습니다. 다음은 이진 탐색을 재귀 방법으로 변환한 프로그램입니다.</p>
 
 <figure class="highlight"><pre><code class="language-c" data-lang="c"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
@@ -686,10 +694,14 @@
 35
 36
 37
+38
+39
 </pre></td><td class="code"><pre><span class="cp">#include &lt;stdio.h&gt;
 #define MAX_SIZE 101
 #define COMPARE(x, y)  (((x) &lt; (y)) ? -1 : ((x) == (y)) ? 0 : 1)
-</span><span class="kt">int</span> <span class="nf">binsearch</span><span class="p">(</span><span class="kt">int</span> <span class="p">[],</span> <span class="kt">int</span><span class="p">,</span> <span class="kt">int</span><span class="p">,</span> <span class="kt">int</span><span class="p">);</span>  <span class="cm">/* 이진 탐색 */</span>
+</span>
+<span class="kt">int</span> <span class="nf">binsearch</span><span class="p">(</span><span class="kt">int</span> <span class="p">[],</span> <span class="kt">int</span><span class="p">,</span> <span class="kt">int</span><span class="p">,</span> <span class="kt">int</span><span class="p">);</span>  <span class="cm">/* 이진 탐색 */</span>
+
 <span class="kt">int</span> <span class="nf">main</span><span class="p">(){</span>
     <span class="kt">int</span> <span class="n">i</span><span class="p">,</span> <span class="n">n</span><span class="p">;</span>
     <span class="kt">int</span> <span class="n">list</span><span class="p">[</span><span class="n">MAX_SIZE</span><span class="p">],</span> <span class="n">result</span><span class="p">;</span>
@@ -725,7 +737,7 @@
 <span class="p">}</span>
 </pre></td></tr></tbody></table></code></pre></figure>
 
-<p>main 함수는 그대로이고 binsearch 함수의 내용만 조금 바뀌었습니다. while문이 if문으로 바뀌었고, switch문의 각 케이스가 모두 반환 값을 가진 모습입니다. binsearch를 호출할 때마다  $left$ 또는 $right$가 수정되어 범위가 점점 좁아짐을 알 수 있습니다.</p>
+<p><code class="language-plaintext highlighter-rouge">main()</code> 함수는 그대로이고 <code class="language-plaintext highlighter-rouge">binsearch()</code> 함수의 내용만 조금 바뀌었습니다. while문이 if문으로 바뀌었고, switch문의 각 케이스가 모두 반환 값을 가진 모습입니다. binsearch를 호출할 때마다 left 또는 right가 수정되어 범위가 점점 좁아짐을 알 수 있습니다.</p>
 
 <h3 id="example-4---permutations">Example 4 - Permutations</h3>
 
@@ -733,7 +745,7 @@
 
 <p>이번에는 재귀를 사용해 처음부터 문제를 해결해보겠습니다. 이번 예제에서는 순열을 구하는 문제를 재귀 방법으로 해결하는 과정을 보여줍니다.</p>
 
-<p>Example 1.4 [Permutations] $n \ge 1$개의 원소를 가진 집합이 주어졌을 때, 이 집합의 모든 가능한 순열을 출력한다.</p>
+<p><strong>Example 1.4 [Permutations]</strong> $n \ge 1$개의 원소를 가진 집합이 주어졌을 때, 이 집합의 모든 가능한 순열을 출력한다.</p>
 
 <p>순열은 주어진 원소를 나열하는 경우의 수를 모두 구하는 문제입니다. 예를 들어 주어진 집합이 $\{a, b, c \}$라면, 순열의 집합은 $\{(a, b, c), (a, c, b), (b, a, c), (b, c, a), (c, a, b), (c, b, a) \}$입니다. $n$개의 원소에 대해 $n!$개의 서로 다른 결과가 나오는 것을 알 수 있습니다.</p>
 
@@ -796,11 +808,15 @@
 46
 47
 48
+49
+50
 </pre></td><td class="code"><pre><span class="cp">#include &lt;stdio.h&gt;
 #include &lt;stdlib.h&gt;
 #define ALPHABET 26
 #define SWAP(x, y, t)  ((t) = (x), (x) = (y), (y) = (t))
-</span><span class="kt">void</span> <span class="nf">perm</span><span class="p">(</span><span class="kt">char</span> <span class="o">*</span><span class="p">,</span> <span class="kt">int</span><span class="p">,</span> <span class="kt">int</span><span class="p">);</span>
+</span>
+<span class="kt">void</span> <span class="nf">perm</span><span class="p">(</span><span class="kt">char</span> <span class="o">*</span><span class="p">,</span> <span class="kt">int</span><span class="p">,</span> <span class="kt">int</span><span class="p">);</span>
+
 <span class="kt">int</span> <span class="nf">main</span><span class="p">(){</span>
     <span class="kt">int</span> <span class="n">i</span><span class="p">,</span> <span class="n">n</span><span class="p">;</span>
     <span class="kt">char</span> <span class="n">list</span><span class="p">[</span><span class="n">ALPHABET</span><span class="p">];</span>
@@ -846,9 +862,9 @@
 <span class="p">}</span>
 </pre></td></tr></tbody></table></code></pre></figure>
 
-<p>역시 교재에 주어진 프로그램은 perm 함수만 나와있지만, 제가 임의로 main 함수를 포함한 전체 프로그램을 구현했습니다. 입력으로 26 이하의 숫자를 받아, 그 개수만큼의 알파벳을 가지는 집합을 생성합니다. 예를 들어, 3을 입력하면 $\{a, b, c \}$가 되는 방식입니다.</p>
+<p>교재에는 <code class="language-plaintext highlighter-rouge">perm()</code> 함수만 나와있지만, 제가 임의로 <code class="language-plaintext highlighter-rouge">main()</code> 함수를 포함한 전체 프로그램을 구현했습니다. 입력으로 26 이하의 숫자를 받아, 그 개수만큼의 알파벳을 가지는 집합을 생성합니다. 예를 들어, 3을 입력하면 $\{a, b, c \}$가 되는 방식입니다.</p>
 
-<p>이후로는 perm 함수를 호출하여 순열을 구합니다. main에서 처음 호출할 때는 <code class="language-plaintext highlighter-rouge">perm(list, 0, n-1);</code>을 사용하고, perm 함수에서는 else 부분으로 넘어가게 됩니다. 이 곳의 for문이 조금 비직관적이므로 손으로 어떤 순서대로 perm 함수가 호출되는지 직접 종이로 그려가며 분석해보시는 것을 추천드립니다. 확인해보시면 어떤 방식으로 순열을 호출하는지 눈에 들어옵니다. 저는 처음 이 프로그램을 보았을 때 굉장히 신기했습니다.</p>
+<p>이후로는 <code class="language-plaintext highlighter-rouge">perm()</code> 함수를 호출하여 순열을 구합니다. <code class="language-plaintext highlighter-rouge">main()</code> 함수에서 처음 호출할 때는 <code class="language-plaintext highlighter-rouge">perm(list, 0, n-1);</code>을 사용하고, <code class="language-plaintext highlighter-rouge">perm()</code> 함수에서는 else 부분으로 넘어가게 됩니다. 이 곳의 for문이 조금 비직관적이므로 손으로 어떤 순서대로 <code class="language-plaintext highlighter-rouge">perm()</code> 함수가 호출되는지 직접 종이로 그려가며 분석해보시는 것을 추천드립니다. 확인해보시면 어떤 방식으로 순열을 호출하는지 눈에 들어옵니다. 저는 처음 이 프로그램을 보았을 때 굉장히 신기했습니다.</p>
 
         
       </section>
