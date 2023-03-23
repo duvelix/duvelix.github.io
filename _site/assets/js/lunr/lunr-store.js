@@ -138,19 +138,19 @@ var store = [{
         "teaser": null
       },{
         "title": "Git 설치하기",
-        "excerpt":"Git 및 Github를 사용하기 위해서는 먼저 Git을 설치해주어야 합니다. Git을 설치하는 방법은 그렇게 어렵지 않지만, Windows 환경과 Mac 환경이 조금 다르기 때문에 각각 다른 환경에서 설치하는 방법을 보여드릴 예정입니다. 이번 포스트에서는 Git을 설치하고, 사용자 등록까지 하는 과정을 다루려고 합니다. Git 설치하기 Git을 설치하기 위해서는 Git 공식 홈페이지에 방문해야 합니다. 홈페이지에...","categories": ["studies"],
+        "excerpt":"Git 및 GitHub를 사용하기 위해서는 먼저 Git을 설치해주어야 합니다. Git을 설치하는 방법은 그렇게 어렵지 않지만, Windows 환경과 Mac 환경이 조금 다르기 때문에 각각 다른 환경에서 설치하는 방법을 보여드릴 예정입니다. 이번 포스트에서는 Git을 설치하고, 사용자 등록까지 하는 과정을 다루려고 합니다. Git 설치하기 Git을 설치하기 위해서는 Git 공식 홈페이지에 방문해야 합니다. 홈페이지에...","categories": ["studies"],
         "tags": ["git"],
         "url": "/git/install-git/",
         "teaser": null
       },{
         "title": "GitHub 가입하기",
-        "excerpt":"Git을 제대로 사용하기 위해서는 원격 저장소가 필요합니다. 원격 저장소를 사용하지 않더라도 Git 기능을 사용할 수는 있지만, 이 경우 다른 컴퓨터에서 작업을 이어 하는 것도 귀찮아지고 무엇보다 남들에게 자신의 결과물을 공개할 수 없습니다. Git 원격 저장소로는 GitHub 외에도 GitLab 등 다른 곳도 몇몇 있으나, 대부분의 개발자들은 GitHub을 사용하고 있으므로, Git을 처음...","categories": ["studies"],
+        "excerpt":"Git을 제대로 사용하기 위해서는 원격 저장소가 필요합니다. 원격 저장소를 사용하지 않더라도 Git 기능을 사용할 수는 있지만, 이 경우 다른 컴퓨터에서 작업을 이어 하는 것도 귀찮아지고 무엇보다 남들에게 자신의 결과물을 공개할 수 없습니다. 대표적인 원격 저장소로는 이번 포스트에서 소개할 GitHub가 있습니다. Git 원격 저장소로는 GitHub 외에도 GitLab 등 다른 곳도 몇몇...","categories": ["studies"],
         "tags": ["git"],
         "url": "/git/join-github/",
         "teaser": null
       },{
         "title": "Commit과 Push 하기",
-        "excerpt":"지난 시간에 GitHub에 가입하고, (원격) 저장소를 만드는 것까지 다루었습니다. 오늘은 로컬 저장소에서 Commit을 하는 방법과 로컬 저장소의 내용을 원격 저장소에 옮기는 Push 방법을 소개하도록 하겠습니다. Commit 커밋(Commit)은 버전 관리 시스템에서 변경 사항을 반영 시키는 것을 뜻합니다. 예를 들어, 자신이 현재 1.0 버전을 작업하고 있는데, 아무리 많은 부분을 수정하였더라도 커밋을 하지...","categories": ["studies"],
+        "excerpt":"지난 시간에 GitHub에 가입하고, 원격 저장소를 만드는 것까지 다루었습니다. 오늘은 로컬 저장소에서 Commit을 하는 방법과 로컬 저장소의 내용을 원격 저장소에 옮기는 Push 방법을 소개하도록 하겠습니다. Commit 커밋(Commit)은 버전 관리 시스템에서 변경 사항을 반영 시키는 것을 뜻합니다. 예를 들어, 자신이 현재 1.0 버전을 작업하고 있는데, 아무리 많은 부분을 수정하였더라도 커밋을 하지...","categories": ["studies"],
         "tags": ["git"],
         "url": "/git/commit-and-push/",
         "teaser": null
