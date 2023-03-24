@@ -168,7 +168,7 @@ var store = [{
         "teaser": null
       },{
         "title": "Xcode에서 Git 사용하기",
-        "excerpt":"안녕하세요, 오늘은 Xcode에서 Git을 사용하는 방법을 소개해드리도록 하겠습니다. Xcode는 macOS의 IDE (Integrated Development Environment ; 통합개발도구) 입니다. Windows에서는 공식적인 C 컴파일러가 존재하지 않고, 리눅스는 개인용 컴퓨터에서 잘 사용하지 않기 때문에 컴퓨터공학 전공자라면 Xcode를 많이 사용합니다. C 언어 뿐만이 아니라 C++, Python 등의 언어도 지원하고, 무엇보다 iOS 앱을 프로그래밍하기 위해서는 반드시...","categories": ["studies"],
+        "excerpt":"안녕하세요, 오늘은 Xcode에서 Git을 사용하는 방법을 소개해드리도록 하겠습니다. Xcode는 macOS의 IDE (Integrated Development Environment) 입니다. Windows에서는 공식적인 C 컴파일러가 존재하지 않고, 리눅스는 개인용 컴퓨터에서 잘 사용하지 않기 때문에 컴퓨터공학 전공자라면 Xcode를 많이 사용합니다. C 언어 뿐만이 아니라 C++, Python 등의 언어도 지원하고, 무엇보다 iOS 앱을 프로그래밍하기 위해서는 반드시 사용해야 하는...","categories": ["studies"],
         "tags": ["git"],
         "url": "/git/xcode-git/",
         "teaser": null
