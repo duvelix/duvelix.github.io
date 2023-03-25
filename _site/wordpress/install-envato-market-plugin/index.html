@@ -1,0 +1,569 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.24.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>Envato Market 플러그인 설치하기 - KEEPMIND</title>
+<meta name="description" content="워드프레스 유료 테마는 굉장히 자주 업데이트가 이루어집니다. Newspaper 같은 경우는 1년에 한번 정도 메이저 업데이트, 그 외에는 비정기적으로 마이너 업데이트가 제공됩니다. 테마를 업데이트하기 위해서는 FTP에 파일을 직접 업로드하는 것이 일반적인 방법인데, 이것이 여간 귀찮은 것이 아닙니다. 그렇기 때문에 Envato Market에서는 워드프레스 플러그인으로 이것을 편하게 해주는 방법을 제공합니다. 초기 설정이 조금 귀찮긴 하지만, 한번만 설정해 놓으면 그 이후로는 워드프레스 관리자 페이지에서 업데이트를 할 수 있기 때문에, 저는 이 방법을 사용해보기로 했습니다.">
+
+
+  <meta name="author" content="Joonsu Ryu">
+  
+  <meta property="article:author" content="Joonsu Ryu">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="KEEPMIND">
+<meta property="og:title" content="Envato Market 플러그인 설치하기">
+<meta property="og:url" content="http://localhost:4000/wordpress/install-envato-market-plugin/">
+
+
+  <meta property="og:description" content="워드프레스 유료 테마는 굉장히 자주 업데이트가 이루어집니다. Newspaper 같은 경우는 1년에 한번 정도 메이저 업데이트, 그 외에는 비정기적으로 마이너 업데이트가 제공됩니다. 테마를 업데이트하기 위해서는 FTP에 파일을 직접 업로드하는 것이 일반적인 방법인데, 이것이 여간 귀찮은 것이 아닙니다. 그렇기 때문에 Envato Market에서는 워드프레스 플러그인으로 이것을 편하게 해주는 방법을 제공합니다. 초기 설정이 조금 귀찮긴 하지만, 한번만 설정해 놓으면 그 이후로는 워드프레스 관리자 페이지에서 업데이트를 할 수 있기 때문에, 저는 이 방법을 사용해보기로 했습니다.">
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2019-11-14T00:00:00+09:00">
+
+
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="http://localhost:4000/wordpress/install-envato-market-plugin/">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "KEEPMIND",
+      "url": "http://localhost:4000/"
+    
+  }
+</script>
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="KEEPMIND Feed">
+
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css"></noscript>
+
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+<link rel="icon" type="image/png" sizes="16x16" href="/images/favicon.png">
+
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body class="layout--single wide">
+    <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+		<a class="site-title" href="http://localhost:4000/"><img src="/images/logo.png">
+        <!-- <a class="site-title" href="/">
+          KEEPMIND
+           -->
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="/">Home</a>
+            </li><li class="masthead__menu-item">
+              <a href="/cv/">CV</a>
+            </li><li class="masthead__menu-item">
+              <a href="/studies/">Studies</a>
+            </li><li class="masthead__menu-item">
+              <a href="/">Interests</a>
+            </li><li class="masthead__menu-item">
+              <a href="/">Travels</a>
+            </li></ul>
+        
+        <button class="search__toggle" type="button">
+          <span class="visually-hidden">Toggle search</span>
+          <i class="fas fa-search"></i>
+        </button>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person" class="h-card">
+
+  
+    <div class="author__avatar">
+      <!-- <a href="http://localhost:4000/"> -->
+        <img src="/images/profile.jpg" alt="Joonsu Ryu" itemprop="image" class="u-photo">
+      <!-- </a> -->
+    </div>
+  
+
+  <div class="author__content">
+    <h3 class="author__name p-name" itemprop="name">
+      <a class="u-url" rel="me" href="http://localhost:4000/" itemprop="url">Joonsu Ryu</a>
+    </h3>
+    
+      <div class="author__bio p-note" itemprop="description">
+        <p>Researcher</p>
+
+      </div>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">Follow</button>
+    <ul class="author__urls social-icons">
+      
+        <li itemprop="homeLocation" itemscope itemtype="https://schema.org/Place">
+          <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> <span itemprop="name" class="p-locality">Seoul, Korea</span>
+        </li>
+      
+
+      
+        
+          
+            <li><a href="mailto:jsryu@sogang.ac.kr" rel="nofollow noopener noreferrer me"><i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i><span class="label">E-mail</span></a></li>
+          
+        
+          
+            <li><a href="https://github.com/JoonsuRyu" rel="nofollow noopener noreferrer me" itemprop="sameAs"><i class="fab fa-fw fa-github" aria-hidden="true"></i><span class="label">GitHub</span></a></li>
+          
+        
+          
+            <li><a href="https://scholar.google.co.kr/citations?user=UmRh9NQAAAAJ" rel="nofollow noopener noreferrer me" itemprop="sameAs"><i class="fas fa-fw fa-graduation-cap" aria-hidden="true"></i><span class="label">Google Scholar</span></a></li>
+          
+        
+          
+            <li><a href="https://orcid.org/0000-0002-8848-1456" rel="nofollow noopener noreferrer me" itemprop="sameAs"><i class="fab fa-fw fa-orcid" aria-hidden="true"></i><span class="label">ORCID</span></a></li>
+          
+        
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer me">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+
+  
+  </div>
+
+
+
+  <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="Envato Market 플러그인 설치하기">
+    <meta itemprop="description" content="워드프레스 유료 테마는 굉장히 자주 업데이트가 이루어집니다. Newspaper 같은 경우는 1년에 한번 정도 메이저 업데이트, 그 외에는 비정기적으로 마이너 업데이트가 제공됩니다. 테마를 업데이트하기 위해서는 FTP에 파일을 직접 업로드하는 것이 일반적인 방법인데, 이것이 여간 귀찮은 것이 아닙니다. 그렇기 때문에 Envato Market에서는 워드프레스 플러그인으로 이것을 편하게 해주는 방법을 제공합니다. 초기 설정이 조금 귀찮긴 하지만, 한번만 설정해 놓으면 그 이후로는 워드프레스 관리자 페이지에서 업데이트를 할 수 있기 때문에, 저는 이 방법을 사용해보기로 했습니다.">
+    <meta itemprop="datePublished" content="2019-11-14T00:00:00+09:00">
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title p-name" itemprop="headline">
+            <a href="http://localhost:4000/wordpress/install-envato-market-plugin/" class="u-url" itemprop="url">Envato Market 플러그인 설치하기
+</a>
+          </h1>
+          
+
+
+        </header>
+      
+
+      <section class="page__content e-content" itemprop="text">
+        
+          <aside class="sidebar__right sticky">
+            <nav class="toc">
+              <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> Table of Contents</h4></header>
+              <ul class="toc__menu"><li><a href="#envato-market-플러그인-다운로드">Envato Market 플러그인 다운로드</a></li><li><a href="#envato-market-플러그인-설치하기">Envato Market 플러그인 설치하기</a></li><li><a href="#envato-market-플러그인-활성화하기">Envato Market 플러그인 활성화하기</a></li><li><a href="#newspaper-테마-업데이트하기">Newspaper 테마 업데이트하기</a></li></ul>
+
+            </nav>
+          </aside>
+        
+        <p>워드프레스 유료 테마는 굉장히 자주 업데이트가 이루어집니다. Newspaper 같은 경우는 1년에 한번 정도 메이저 업데이트, 그 외에는 비정기적으로 마이너 업데이트가 제공됩니다. 테마를 업데이트하기 위해서는 FTP에 파일을 직접 업로드하는 것이 일반적인 방법인데, 이것이 여간 귀찮은 것이 아닙니다. 그렇기 때문에 Envato Market에서는 워드프레스 플러그인으로 이것을 편하게 해주는 방법을 제공합니다. 초기 설정이 조금 귀찮긴 하지만, 한번만 설정해 놓으면 그 이후로는 워드프레스 관리자 페이지에서 업데이트를 할 수 있기 때문에, 저는 이 방법을 사용해보기로 했습니다.</p>
+
+<h2 id="envato-market-플러그인-다운로드">Envato Market 플러그인 다운로드</h2>
+
+<p><img src="/images/WordPress/7. Install Envato Market Plugin/WP 07-01.png" alt="" class="align-center" /></p>
+
+<p>가장 먼저 Envato Market에서 제공하는 플러그인을 받아야 합니다. 아쉽게도 워드프레스 플러그인 메뉴에서 검색으로는 찾을 수 없고, 공식 홈페이지에서 직접 받아 업로드해야 합니다. 접속하신 후, Download Latest Version 버튼을 클릭하시면 바로 다운로드를 받을 수 있습니다.</p>
+
+<p><img src="/images/WordPress/7. Install Envato Market Plugin/WP 07-02.png" alt="" class="align-center" /></p>
+
+<p>바탕화면에 위와 같은 압축파일을 받을 수 있습니다. 압축을 풀지 마시고 이 상태로 놔둡니다.</p>
+
+<h2 id="envato-market-플러그인-설치하기">Envato Market 플러그인 설치하기</h2>
+
+<p><img src="/images/WordPress/7. Install Envato Market Plugin/WP 07-03.png" alt="" class="align-center" /></p>
+
+<p>플러그인 파일을 받은 후 워드프레스 관리자 화면으로 들어와서, 왼쪽 메뉴의 플러그인에 마우스를 올리면 서브 메뉴가 펼쳐집니다. 새로 추가를 클릭합니다.</p>
+
+<p><img src="/images/WordPress/7. Install Envato Market Plugin/WP 07-04.png" alt="" class="align-center" /></p>
+
+<p>플러그인을 직접 업로드하기 위해, 플러그인 업로드 버튼을 클릭합니다.</p>
+
+<p><img src="/images/WordPress/7. Install Envato Market Plugin/WP 07-05.png" alt="" class="align-center" /></p>
+
+<p>버튼을 누르시면, 파일을 업로드할 수 있는 화면이 나옵니다. 파일 선택 버튼을 눌러, 아까 받은 Envato Market 플러그인 압축 파일을 업로드합니다.</p>
+
+<p><img src="/images/WordPress/7. Install Envato Market Plugin/WP 07-06.png" alt="" class="align-center" /></p>
+
+<p>업로드가 완료되면, 지금 설치 버튼을 클릭합니다.</p>
+
+<p><img src="/images/WordPress/7. Install Envato Market Plugin/WP 07-07.png" alt="" class="align-center" /></p>
+
+<p>잠시 기다리시면 플러그인 설치가 완료됩니다. 플러그인 활성화 버튼을 클릭합니다.</p>
+
+<p><img src="/images/WordPress/7. Install Envato Market Plugin/WP 07-08.png" alt="" class="align-center" /></p>
+
+<p>플러그인이 활성화되면, 왼쪽 메뉴에 Envato Market 이라는 새로운 메뉴가 추가된 것을 볼 수 있습니다. Envato Market 메뉴를 클릭합니다.</p>
+
+<h2 id="envato-market-플러그인-활성화하기">Envato Market 플러그인 활성화하기</h2>
+
+<p><img src="/images/WordPress/7. Install Envato Market Plugin/WP 07-09.png" alt="" class="align-center" /></p>
+
+<p>Envato Market 메뉴를 들어가시면, Envato Market 계정과 연동을 지어야 한다고 나옵니다. 계정 연동을 시키기 위해선 토큰을 받아야 하는데, 가운데의 clicking this link를 클릭합니다.</p>
+
+<p><img src="/images/WordPress/7. Install Envato Market Plugin/WP 07-10.png" alt="" class="align-center" /></p>
+
+<p>Envato Account 페이지가 나옵니다. 지난번에 테마를 구입할 때 가입했던 아이디와 비밀번호를 넣으시고 로그인하시면 됩니다.</p>
+
+<p><img src="/images/WordPress/7. Install Envato Market Plugin/WP 07-11.png" alt="" class="align-center" /></p>
+
+<p>토큰을 생성하는 화면이 나오는데, 토큰 이름을 입력해야하고 어떤 권한을 줄 것인지 정해주어야 합니다. 토큰 이름은 아무거나 상관 없습니다. 여기서는 My WordPress site로 입력하겠습니다.</p>
+
+<p><img src="/images/WordPress/7. Install Envato Market Plugin/WP 07-12.png" alt="" class="align-center" /></p>
+
+<p>스크롤을 조금 내리시면 권한을 정할 수 있는데, 반드시 체크해야될 부분은 Download the user’s purchased items와 List purchases the user has made입니다. 나머지는 굳이 체크할 필요가 없습니다.</p>
+
+<p><img src="/images/WordPress/7. Install Envato Market Plugin/WP 07-13.png" alt="" class="align-center" /></p>
+
+<p>맨 아래로 내리신 후, 약관에 동의한다는 체크를 하시고 Create Token 버튼을 클릭합니다.</p>
+
+<p><img src="/images/WordPress/7. Install Envato Market Plugin/WP 07-14.png" alt="" class="align-center" /></p>
+
+<p>토큰이 생성된 것을 확인할 수 있습니다. 가운데에 나온 토큰을 잘 복사해 놓습니다. (메모장 같은 곳에 붙여놓으시는 것이 좋습니다.) 그리고 아래에 체크를 하고 Woohoo! Got it. 버튼을 클릭합니다.</p>
+
+<p><img src="/images/WordPress/7. Install Envato Market Plugin/WP 07-15.png" alt="" class="align-center" /></p>
+
+<p>다시 워드프레스 관리자 화면으로 돌아와, 복사한 토큰을 붙여넣고 아래의 Save Changes 버튼을 클릭합니다.</p>
+
+<p><img src="/images/WordPress/7. Install Envato Market Plugin/WP 07-16.png" alt="" class="align-center" /></p>
+
+<p>또는 오른쪽의 Add Item 버튼을 클릭하셔도 됩니다.</p>
+
+<p><img src="/images/WordPress/7. Install Envato Market Plugin/WP 07-17.png" alt="" class="align-center" /></p>
+
+<p>버튼을 클릭하시면 위와 같은 팝업이 뜨는데, 이 곳에도 마찬가지로 토큰을 붙여넣고, Item ID에 테마의 Item ID를 입력하시면 됩니다. 참고로 Newspaper 테마의 Item ID는 5489609 입니다. 입력을 다 하셨다면 Save 버튼을 클릭합니다.</p>
+
+<h2 id="newspaper-테마-업데이트하기">Newspaper 테마 업데이트하기</h2>
+
+<p><img src="/images/WordPress/7. Install Envato Market Plugin/WP 07-18.png" alt="" class="align-center" /></p>
+
+<p>저는 보여드리기 위해 두 개를 모두 다 등록했지만, 둘 중 하나만 등록하셔도 상관 없습니다. 토큰을 성공적으로 활성화했다면 위에 Themes 탭이 추가되는데, 이 탭을 클릭합니다.</p>
+
+<p><img src="/images/WordPress/7. Install Envato Market Plugin/WP 07-19.png" alt="" class="align-center" /></p>
+
+<p>제가 Newspaper 테마를 처음 설치했을 때의 버전은 9 버전이었는데, 이 Envato Market 플러그인을 설치하던 시점에는 10 버전으로 업데이트 되었습니다. 만약에 새로운 패치 버전이 나왔다면, Update Available을 클릭하시면 됩니다.</p>
+
+<p><img src="/images/WordPress/7. Install Envato Market Plugin/WP 07-20.png" alt="" class="align-center" /></p>
+
+<p>테마 업데이트는 완료했는데, 메이저 업데이트이다보니 9버전에서 사용하던 Newspaper 플러그인이 호환이 되질 않습니다. plugin section 버튼을 클릭하시면 플러그인을 업데이트 할 수 있는 화면으로 넘어갑니다.</p>
+
+<p><img src="/images/WordPress/7. Install Envato Market Plugin/WP 07-21.png" alt="" class="align-center" /></p>
+
+<p>깜빡하고 업데이트 하기 전의 화면을 캡쳐하지 못했는데, 문제가 생긴 플러그인은 UPDATE 버튼이 생길 것입니다. 그 버튼을 누르시면 플러그인이 최신 버전으로 업데이트되고, 테마 업데이트의 모든 과정이 끝나게 됩니다.</p>
+
+<p><img src="/images/WordPress/7. Install Envato Market Plugin/WP 07-22.png" alt="" class="align-center" /></p>
+
+<p>Newspaper 메인 화면으로 가면 10.1 버전으로 업데이트가 된 것을 볼 수 있습니다.</p>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> Tags: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/tags/#wordpress" class="page__taxonomy-item p-category" rel="tag">wordpress</a>
+    
+    </span>
+  </p>
+
+
+
+
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> Categories: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/categories/#studies" class="page__taxonomy-item p-category" rel="tag">studies</a>
+    
+    </span>
+  </p>
+
+
+        
+
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time class="dt-published" datetime="2019-11-14T00:00:00+09:00">November 14, 2019</time></p>
+
+      </footer>
+
+      <section class="page__share">
+  
+    <h4 class="page__share-title">Share on</h4>
+  
+
+  <a href="https://twitter.com/intent/tweet?text=Envato+Market+%ED%94%8C%EB%9F%AC%EA%B7%B8%EC%9D%B8+%EC%84%A4%EC%B9%98%ED%95%98%EA%B8%B0%20http%3A%2F%2Flocalhost%3A4000%2Fwordpress%2Finstall-envato-market-plugin%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Fwordpress%2Finstall-envato-market-plugin%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2Fwordpress%2Finstall-envato-market-plugin%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+
+      
+  <nav class="pagination">
+    
+      <a href="/ml/three-learning-principles/" class="pagination--pager" title="Three Learning Principles
+">Previous</a>
+    
+    
+      <a href="/ml/epilogue/" class="pagination--pager" title="Epilogue
+">Next</a>
+    
+  </nav>
+
+    </div>
+
+    
+  </article>
+
+  
+  
+</div>
+
+    </div>
+
+    
+      <div class="search-content">
+        <div class="search-content__inner-wrap"><form class="search-content__form" onkeydown="return event.key != 'Enter';" role="search">
+    <label class="sr-only" for="search">
+      Enter your search term...
+    </label>
+    <input type="search" id="search" class="search-input" tabindex="-1" placeholder="Enter your search term..." />
+  </form>
+  <div id="results" class="results"></div></div>
+
+      </div>
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>Follow:</strong></li>
+    
+
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+
+    
+      <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2023 KEEPMIND All rights reserved. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    <script type="text/javascript" async
+   src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      extensions: ["tex2jax.js"],
+      jax: ["input/TeX", "output/HTML-CSS"],
+      tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+        displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+        processEscapes: true
+      },
+      "HTML-CSS": { availableFonts: ["TeX"] }
+    });
+</script>
+
+
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+<script src="/assets/js/lunr/lunr.min.js"></script>
+<script src="/assets/js/lunr/lunr-store.js"></script>
+<script src="/assets/js/lunr/lunr-en.js"></script>
+
+
+
+
+
+
+
+  </body>
+</html>

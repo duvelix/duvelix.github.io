@@ -71,10 +71,28 @@ var store = [{
         "url": "/ml/overfitting/",
         "teaser": null
       },{
+        "title": "워드프레스를 시작했던 이유",
+        "excerpt":"제가 블로그를 시작한 이유는 지금까지 공부했던 내용을 정리하기 위함이 목적이었습니다. 이공계 특성상 수학 수식이 거의 필수적으로 사용되는데, 티스토리에서는 LaTeX 문법 오류가 너무 잦았습니다. 특히 문법을 맞게 작성하더라도 아래 그림처럼 아예 작동조차 안하는 원인 모를 오류까지 자주 발생했습니다. 그렇기에 장기적으로 운영하기에는 티스토리 블로그가 맞지 않다고 생각하여 워드프레스 블로그로 이전하기로 결정했습니다. 예전에...","categories": ["studies"],
+        "tags": ["wordpress"],
+        "url": "/wordpress/introduction/",
+        "teaser": null
+      },{
+        "title": "NameCheap에서 도메인 구입하기",
+        "excerpt":"설치형 워드프레스를 시작하려고 하시는 분들이라면, 가장 먼저 도메인을 구매하시는 것이 좋습니다. 아무리 좋은 블로그 이름을 생각하였더라도 도메인이 선점되어 있다면 눈물을 머금고 이름을 바꿔야 하기 때문입니다. 저는 괜찮은 이름 몇 개를 생각해 놔서 이것들을 검색해 보았는데, 이미 다른 사람들이 선점해놓았기 때문에 고민을 거듭한 끝에 KEEPMIND로 결정하였습니다. 도메인 이름을 정했다면 도메인을 어디서...","categories": ["studies"],
+        "tags": ["wordpress"],
+        "url": "/wordpress/buy-domain/",
+        "teaser": null
+      },{
         "title": "Regularization",
         "excerpt":"12장은 지난 시간에 배웠던 문제점인 Overfitting을 해결하는 방법 중 Regularization (정규화)에 대해 배우게 됩니다. Outline 이번 장에서는 먼저 직관적인 접근 방식으로 정규화가 무엇인지 알아보고, 그 후에 수학적인 방법으로 정규화가 정확하게 무엇인지 알아봅니다. 그 후 정규화에서 중요한 Weight Decay가 무엇인지 배운 다음, Regularizer를 선택하는 방법을 공부하게 됩니다. Regularization - informal 정규화에...","categories": ["studies"],
         "tags": ["machine learning"],
         "url": "/ml/regularization/",
+        "teaser": null
+      },{
+        "title": "SiteGround에서 웹 호스팅 서비스 구입하기",
+        "excerpt":"지난 시간에 도메인을 구입했지만, 그것은 이름만을 구매한 것이기 때문에 워드프레스를 설치할 장소를 따로 구해주어야 합니다. 호스팅 서비스는 국내/외를 막론하고 많은 곳에서 제공하고 있고, 특히 워드프레스는 사용자가 많다보니 워드프레스에 맞춘 호스팅을 제공하는 업체도 상당히 많이 늘어났습니다. 워드프레스 공식 홈페이지에서는 Bluehost (블루호스트), DreamHost (드림호스트), 그리고 SiteGround (사이트그라운드)의 호스팅을 공식적으로 추천하고 있습니다. 저는...","categories": ["studies"],
+        "tags": ["wordpress"],
+        "url": "/wordpress/buy-web-hosting/",
         "teaser": null
       },{
         "title": "Validation",
@@ -83,10 +101,22 @@ var store = [{
         "url": "/ml/validation/",
         "teaser": null
       },{
+        "title": "도메인과 웹 호스팅 서버 연결하기",
+        "excerpt":"지금까지 도메인과 웹 호스팅을 구매하였지만, 각각 다른 회사에서 구매하였기 때문에 도메인과 웹 호스팅을 연결해주는 작업이 필요합니다. 도메인과 웹 호스팅을 같이 구매하면 연결을 자동으로 해주는 곳도 있으나, 보통은 도메인은 가장 싼 곳, 웹 호스팅은 가장 안정적인 곳을 많이 사용합니다. 저는 NameCheap에서 도메인을 구입했기 때문에 NameCheap을 기준으로 설명을 드리지만, 다른 곳에서 구매하셨더라도...","categories": ["studies"],
+        "tags": ["wordpress"],
+        "url": "/wordpress/connect-domain/",
+        "teaser": null
+      },{
         "title": "Support Vector Machines",
         "excerpt":"14장은 새로운 기계학습의 방법인 Support Vector Machine을 배우게 됩니다. 지금처럼 Neural Network가 유명해지기 전까지는 가장 널리 쓰이던 방법이었습니다. Outline 이번 장은 Classification 문제에서 Margin을 최대화하는 것부터 시작해서, 그것을 찾는 해법, 그리고 Nonlinear Transform에 응용하는 방법까지를 다루게 됩니다. Maximizing the margin 먼저, 선형 분리가 가능한 데이터 집합이 있다고 가정해봅시다. 간단하게 표현하기...","categories": ["studies"],
         "tags": ["machine learning"],
         "url": "/ml/support-vector-machines/",
+        "teaser": null
+      },{
+        "title": "워드프레스 기본 설정하기",
+        "excerpt":"워드프레스 사용자가 점점 늘고 있다보니 최근 웹 호스팅 서비스에서는 워드프레스 설치 기능을 내장하는 경우가 많아졌습니다. SiteGround도 워드프레스를 간편하게 설치해주는 기능을 갖고 있습니다. 지난번에 웹 사이트를 만들 때 설치까지 끝냈지만, 제대로 사용하기 위해 워드프레스를 설정해보도록 하겠습니다. 먼저 SiteGround 홈페이지로 접속한 후, 로그인을 합니다. 그 후, 상단 메뉴의 Websites를 클릭합니다. 이 화면은...","categories": ["studies"],
+        "tags": ["wordpress"],
+        "url": "/wordpress/wordpress-setting/",
         "teaser": null
       },{
         "title": "Kernel Methods",
@@ -95,10 +125,22 @@ var store = [{
         "url": "/ml/kernel-methods/",
         "teaser": null
       },{
+        "title": "Newspaper 테마 구매 및 적용하기",
+        "excerpt":"지난 시간에 워드프레스를 설치했습니다만, PHP 프로그래밍에 능숙한 분이 아니라면 워드프레스 테마를 직접 만들어서 운영하기 쉽지 않습니다. 그렇기 때문에 대부분의 사용자들은 전문가들이 제작한 워드프레스 테마를 사용하고 있습니다. 워드프레스 테마는 네이버 블로그나 티스토리 블로그의 스킨과 비슷하다고 생각하시면 됩니다. 워드프레스 테마는 크게 무료 테마와 유료 테마로 나눌 수 있습니다. 가벼운 블로그를 운영하실 계획이거나...","categories": ["studies"],
+        "tags": ["wordpress"],
+        "url": "/wordpress/buy-newspaper-theme/",
+        "teaser": null
+      },{
         "title": "Radial Basis Functions",
         "excerpt":"16장은 Radial Basis Function을 배우게 됩니다. 이것으로 데이터에 Label이 없는 Unsupervised Learning을 해결하는 방법을 배우게 됩니다. Outline 이번 장에서 다룰 내용은 총 4가지인데, 첫 번째 주제를 제외한 나머지는 짧게 다루기 때문에 분량은 다른 장들과 비슷합니다. 첫 번째로 Radial Basis Function 표준 모델을 배우고 Nearest Neighbors Algorithm과 비교합니다. 두 번째로는 Neural...","categories": ["studies"],
         "tags": ["machine learning"],
         "url": "/ml/radial-basis-functions/",
+        "teaser": null
+      },{
+        "title": "Newspaper 테마 데모 적용하기",
+        "excerpt":"지난 시간에 Newspaper 테마를 구입하고, 적용하는 것까지 성공했습니다. 하지만 제대로 된 블로그를 만들기 위해서는 이것 저것 건드려서 디자인을 해 주어야합니다. Newspaper 테마는 tagDiv Composer라는 플러그인을 제공하여 초보자도 쉽게 화면을 꾸밀 수 있는 기능을 제공하고 있습니다. 그럼에도 불구하고 저처럼 워드프레스 자체가 처음인 사람은 그것조차도 쉽지 않습니다. 이런 경우에는 밑바닥부터 하나씩 만드는...","categories": ["studies"],
+        "tags": ["wordpress"],
+        "url": "/wordpress/newspaper-theme-demo/",
         "teaser": null
       },{
         "title": "Three Learning Principles",
@@ -107,10 +149,28 @@ var store = [{
         "url": "/ml/three-learning-principles/",
         "teaser": null
       },{
+        "title": "Envato Market 플러그인 설치하기",
+        "excerpt":"워드프레스 유료 테마는 굉장히 자주 업데이트가 이루어집니다. Newspaper 같은 경우는 1년에 한번 정도 메이저 업데이트, 그 외에는 비정기적으로 마이너 업데이트가 제공됩니다. 테마를 업데이트하기 위해서는 FTP에 파일을 직접 업로드하는 것이 일반적인 방법인데, 이것이 여간 귀찮은 것이 아닙니다. 그렇기 때문에 Envato Market에서는 워드프레스 플러그인으로 이것을 편하게 해주는 방법을 제공합니다. 초기 설정이 조금...","categories": ["studies"],
+        "tags": ["wordpress"],
+        "url": "/wordpress/install-envato-market-plugin/",
+        "teaser": null
+      },{
         "title": "Epilogue",
         "excerpt":"드디어 대망의 마지막 장입니다. 이번 장에서는 지금까지 배웠던 기계학습을 정리하고 강의에서 다루지 못했던 기계학습에 대해 간략하게 설명하고 마무리합니다. Outline 이번 장은 크게 4가지의 소주제로 이루어져 있습니다. 가장 먼저 지금까지 배운 기계학습을 간단하게 정리하고, 본 강의에서 다루지 못했던 기계학습 중 Baysian Learning과 Aggregation Methods를 간략하게 소개합니다. 마지막으로는 강의에 큰 도움을 줬던...","categories": ["studies"],
         "tags": ["machine learning"],
         "url": "/ml/epilogue/",
+        "teaser": null
+      },{
+        "title": "Google Analytics 등록하기",
+        "excerpt":"어떤 블로그를 운영하더라도 통계를 확인하는 일은 중요합니다. 왜냐하면 통계로부터 내 블로그가 어디에서 많이 유입되었는지를 분석하고, 그에 맞는 컨텐츠를 생산하는 것이 많은 방문자를 끌어모을 수 있기 때문입니다. 서비스형 블로그는 보통 이러한 기능을 자체적으로 내장하고 있습니다. 이전에 운영하던 티스토리 블로그 또한 아래와 같이 방문자 통계와 함께 유입 경로를 보여주고 있습니다. 하지만 설치형...","categories": ["studies"],
+        "tags": ["wordpress"],
+        "url": "/wordpress/regist-google-analytics/",
+        "teaser": null
+      },{
+        "title": "Yoast SEO 플러그인 설치하기",
+        "excerpt":"어떤 웹 사이트를 만들더라도 방문자를 많이 유치하는 것은 중요합니다. 새로운 방문자를 유치하기 위해서는 무엇보다 포털 사이트에서 검색이 잘 되어야 합니다. 검색 엔진 상위에 뜨기 위해서는 웹 사이트를 검색 엔진에 최적화 시켜주어야 하는데, 이것을 Search Engine Optimization (SEO)이라고 합니다. 워드프레스는 SEO에 유리한 구조를 갖고 있지만, 그것만을 마냥 믿을 수는 없습니다. 특히...","categories": ["studies"],
+        "tags": ["wordpress"],
+        "url": "/wordpress/install-yoast-plugin/",
         "teaser": null
       },{
         "title": "Introduction",

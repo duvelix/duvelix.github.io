@@ -1,0 +1,551 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.24.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>워드프레스 기본 설정하기 - KEEPMIND</title>
+<meta name="description" content="워드프레스 사용자가 점점 늘고 있다보니 최근 웹 호스팅 서비스에서는 워드프레스 설치 기능을 내장하는 경우가 많아졌습니다. SiteGround도 워드프레스를 간편하게 설치해주는 기능을 갖고 있습니다. 지난번에 웹 사이트를 만들 때 설치까지 끝냈지만, 제대로 사용하기 위해 워드프레스를 설정해보도록 하겠습니다.">
+
+
+  <meta name="author" content="Joonsu Ryu">
+  
+  <meta property="article:author" content="Joonsu Ryu">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="KEEPMIND">
+<meta property="og:title" content="워드프레스 기본 설정하기">
+<meta property="og:url" content="http://localhost:4000/wordpress/wordpress-setting/">
+
+
+  <meta property="og:description" content="워드프레스 사용자가 점점 늘고 있다보니 최근 웹 호스팅 서비스에서는 워드프레스 설치 기능을 내장하는 경우가 많아졌습니다. SiteGround도 워드프레스를 간편하게 설치해주는 기능을 갖고 있습니다. 지난번에 웹 사이트를 만들 때 설치까지 끝냈지만, 제대로 사용하기 위해 워드프레스를 설정해보도록 하겠습니다.">
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2019-10-24T00:00:00+09:00">
+
+
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="http://localhost:4000/wordpress/wordpress-setting/">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "KEEPMIND",
+      "url": "http://localhost:4000/"
+    
+  }
+</script>
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="KEEPMIND Feed">
+
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css"></noscript>
+
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+<link rel="icon" type="image/png" sizes="16x16" href="/images/favicon.png">
+
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body class="layout--single wide">
+    <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+		<a class="site-title" href="http://localhost:4000/"><img src="/images/logo.png">
+        <!-- <a class="site-title" href="/">
+          KEEPMIND
+           -->
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="/">Home</a>
+            </li><li class="masthead__menu-item">
+              <a href="/cv/">CV</a>
+            </li><li class="masthead__menu-item">
+              <a href="/studies/">Studies</a>
+            </li><li class="masthead__menu-item">
+              <a href="/">Interests</a>
+            </li><li class="masthead__menu-item">
+              <a href="/">Travels</a>
+            </li></ul>
+        
+        <button class="search__toggle" type="button">
+          <span class="visually-hidden">Toggle search</span>
+          <i class="fas fa-search"></i>
+        </button>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person" class="h-card">
+
+  
+    <div class="author__avatar">
+      <!-- <a href="http://localhost:4000/"> -->
+        <img src="/images/profile.jpg" alt="Joonsu Ryu" itemprop="image" class="u-photo">
+      <!-- </a> -->
+    </div>
+  
+
+  <div class="author__content">
+    <h3 class="author__name p-name" itemprop="name">
+      <a class="u-url" rel="me" href="http://localhost:4000/" itemprop="url">Joonsu Ryu</a>
+    </h3>
+    
+      <div class="author__bio p-note" itemprop="description">
+        <p>Researcher</p>
+
+      </div>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">Follow</button>
+    <ul class="author__urls social-icons">
+      
+        <li itemprop="homeLocation" itemscope itemtype="https://schema.org/Place">
+          <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> <span itemprop="name" class="p-locality">Seoul, Korea</span>
+        </li>
+      
+
+      
+        
+          
+            <li><a href="mailto:jsryu@sogang.ac.kr" rel="nofollow noopener noreferrer me"><i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i><span class="label">E-mail</span></a></li>
+          
+        
+          
+            <li><a href="https://github.com/JoonsuRyu" rel="nofollow noopener noreferrer me" itemprop="sameAs"><i class="fab fa-fw fa-github" aria-hidden="true"></i><span class="label">GitHub</span></a></li>
+          
+        
+          
+            <li><a href="https://scholar.google.co.kr/citations?user=UmRh9NQAAAAJ" rel="nofollow noopener noreferrer me" itemprop="sameAs"><i class="fas fa-fw fa-graduation-cap" aria-hidden="true"></i><span class="label">Google Scholar</span></a></li>
+          
+        
+          
+            <li><a href="https://orcid.org/0000-0002-8848-1456" rel="nofollow noopener noreferrer me" itemprop="sameAs"><i class="fab fa-fw fa-orcid" aria-hidden="true"></i><span class="label">ORCID</span></a></li>
+          
+        
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer me">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+
+  
+  </div>
+
+
+
+  <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="워드프레스 기본 설정하기">
+    <meta itemprop="description" content="워드프레스 사용자가 점점 늘고 있다보니 최근 웹 호스팅 서비스에서는 워드프레스 설치 기능을 내장하는 경우가 많아졌습니다. SiteGround도 워드프레스를 간편하게 설치해주는 기능을 갖고 있습니다. 지난번에 웹 사이트를 만들 때 설치까지 끝냈지만, 제대로 사용하기 위해 워드프레스를 설정해보도록 하겠습니다.">
+    <meta itemprop="datePublished" content="2019-10-24T00:00:00+09:00">
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title p-name" itemprop="headline">
+            <a href="http://localhost:4000/wordpress/wordpress-setting/" class="u-url" itemprop="url">워드프레스 기본 설정하기
+</a>
+          </h1>
+          
+
+
+        </header>
+      
+
+      <section class="page__content e-content" itemprop="text">
+        
+        <p>워드프레스 사용자가 점점 늘고 있다보니 최근 웹 호스팅 서비스에서는 워드프레스 설치 기능을 내장하는 경우가 많아졌습니다. SiteGround도 워드프레스를 간편하게 설치해주는 기능을 갖고 있습니다. 지난번에 웹 사이트를 만들 때 설치까지 끝냈지만, 제대로 사용하기 위해 워드프레스를 설정해보도록 하겠습니다.</p>
+
+<p><img src="/images/WordPress/4. WordPress Setting/WP 04-01.png" alt="" class="align-center" /></p>
+
+<p>먼저 SiteGround 홈페이지로 접속한 후, 로그인을 합니다. 그 후, 상단 메뉴의 Websites를 클릭합니다.</p>
+
+<p><img src="/images/WordPress/4. WordPress Setting/WP 04-02.png" alt="" class="align-center" /></p>
+
+<p>이 화면은 웹 호스팅 구매하기에서 웹 사이트 생성까지 완료했던 화면입니다. 여기서 SITE TOOLS를 클릭합니다.</p>
+
+<p><img src="/images/WordPress/4. WordPress Setting/WP 04-03.png" alt="" class="align-center" /></p>
+
+<p>왼쪽을 보시면 여러가지 메뉴가 보입니다. 이 중 WORDPRESS 메뉴를 클릭합니다.</p>
+
+<p><img src="/images/WordPress/4. WordPress Setting/WP 04-04.png" alt="" class="align-center" /></p>
+
+<p>WORDPRESS 메뉴를 클릭하면 하위 메뉴가 펼쳐지는데, 이 중 Install &amp; Manage를 클릭합니다.</p>
+
+<p><img src="/images/WordPress/4. WordPress Setting/WP 04-05.png" alt="" class="align-center" /></p>
+
+<p>지난 시간에 웹 사이트를 설정하면서 워드프레스 설치까지는 이미 끝난 상황입니다. 하지만 초기 설정을 해야하므로 Actions 탭에 있는 문 모양의 아이콘을 클릭해줍니다.</p>
+
+<p><img src="/images/WordPress/4. WordPress Setting/WP 04-06.png" alt="" class="align-center" /></p>
+
+<p>문 모양 아이콘을 클릭하시면 새 탭이 열리면서 워드프레스 사이트에 온 것을 환영하는 안내문이 나옵니다. START NOW를 클릭합시다.</p>
+
+<p><img src="/images/WordPress/4. WordPress Setting/WP 04-07.png" alt="" class="align-center" /></p>
+
+<p>바로 워드프레스 관리 화면이 나오는데, 다른 메뉴를 클릭하기 전에 먼저 WordPress Starter를 사용해야 합니다. 화면 맨 위에 있는 START NOW를 클릭합니다.</p>
+
+<p><img src="/images/WordPress/4. WordPress Setting/WP 04-08.png" alt="" class="align-center" /></p>
+
+<p>우선 어떤 디자인의 테마를 사용할 것인지를 선택하는 화면이 나옵니다. 무료 테마를 사용하실 분들은 여기서 마음에 드는 테마를 선택하시면 되고, 저처럼 유료 테마를 구매하실 분들은 아무거나 선택해 놓으시면 됩니다. 선택이 끝났으면 스크롤을 아래로 내립니다.</p>
+
+<p><img src="/images/WordPress/4. WordPress Setting/WP 04-09.png" alt="" class="align-center" /></p>
+
+<p>맨 아래에 보시면 CONTINUE 버튼이 보입니다. 이것을 클릭합니다.</p>
+
+<p><img src="/images/WordPress/4. WordPress Setting/WP 04-10.png" alt="" class="align-center" /></p>
+
+<p>이제는 워드프레스 사이트에 사용할 플러그인을 선택하는 페이지입니다. Contact Form은 기본적으로 선택되어 있고, 나머지는 원하면 기능을 추가할 수 있습니다. 이 중 Jetpack은 워드프레스에서 제공하는 플러그인인데, 규모가 방대해서 사용하게 되면 생각보다 사이트 로딩이 느려지므로 반드시 필요한 경우가 아니면 추천드리고 싶지 않습니다. Shop은 워드프레스로 쇼핑몰을 운영하시는 분들이 사용하시게 될 WooCommerce 플러그인입니다.</p>
+
+<p>저는 일단 Jetpack에서 제공하는 Beautiful Math 기능이 필요해서 선택해보았습니다.</p>
+
+<p><img src="/images/WordPress/4. WordPress Setting/WP 04-11.png" alt="" class="align-center" /></p>
+
+<p>그 다음으로는 통계 및 홍보를 위한 플러그인을 선택해야 합니다. 저는 Google Analytics를 사용할 예정이고, Yoast SEO는 검색 엔진 최적화(SEO : Search Engine Optimization)에 도움을 주는 플러그인이라 이 둘을 선택했습니다. 3번째 플러그인은 30일만 무료이기도 하고 딱히 필요가 없어보여서 선택하지 않았습니다.</p>
+
+<p>선택을 완료하신 후, COMPLETE 버튼을 클릭합니다.</p>
+
+<p><img src="/images/WordPress/4. WordPress Setting/WP 04-12.png" alt="" class="align-center" /></p>
+
+<p><img src="/images/WordPress/4. WordPress Setting/WP 04-13.png" alt="" class="align-center" /></p>
+
+<p>COMPLETE 버튼을 누르면 선택한 플러그인을 설치하기 위해 약간 기다려야 하고, 설치가 끝나면 위와 같이 사이트가 준비되었다는 팝업이 뜹니다. VIEW SITE를 누르면 바로 구경할 수 있지만, 아직 세팅이 끝나지 않았기 때문에 우선 GO TO DASHBOARD 버튼을 클릭합니다.</p>
+
+<p><img src="/images/WordPress/4. WordPress Setting/WP 04-14.png" alt="" class="align-center" /></p>
+
+<p>혹시나 VIEW SITE 버튼을 누르면 어떤 화면이 나올지 궁금하실 분들을 위해 스크린샷을 찍어두었습니다.</p>
+
+<p><img src="/images/WordPress/4. WordPress Setting/WP 04-15.png" alt="" class="align-center" /></p>
+
+<p>GO TO DASHBOARD 버튼을 클릭하신분은 이런 화면이 나올 텐데, 왼쪽 메뉴에 있는 Settings를 클릭합니다.</p>
+
+<p><img src="/images/WordPress/4. WordPress Setting/WP 04-16.png" alt="" class="align-center" /></p>
+
+<p>또는 그냥 Settings에 마우스를 올려두고 General을 클릭하셔도 됩니다.</p>
+
+<p><img src="/images/WordPress/4. WordPress Setting/WP 04-17.png" alt="" class="align-center" /></p>
+
+<p>이 화면으로 들어오시면 워드프레스 홈페이지에 대한 기본적인 설정을 바꿀 수 있습니다. 일단은 기본 언어 설정이 영어, 시간이 UTC+0을 기준으로 설정되어 있기 때문에 우선 이 옵션부터 바꾸어주어야 합니다.</p>
+
+<p><img src="/images/WordPress/4. WordPress Setting/WP 04-18.png" alt="" class="align-center" /></p>
+
+<p>Site Language를 한국어, Timezone을 UTC+9로 변경해줍니다.</p>
+
+<p><img src="/images/WordPress/4. WordPress Setting/WP 04-19.png" alt="" class="align-center" /></p>
+
+<p>스크롤을 아래로 내리시면 설정을 저장하는 버튼이 보입니다. Save Changes를 클릭합니다.</p>
+
+<p><img src="/images/WordPress/4. WordPress Setting/WP 04-20.png" alt="" class="align-center" /></p>
+
+<p>워드프레스 관리자 인터페이스가 한글로 바뀐 것을 볼 수 있습니다. 하지만 모든 인터페이스가 한글로 바뀐 것은 아니고, 대부분의 플러그인은 한국어가 지원되지 않습니다. 예를 들어 Yoast SEO 등의 플러그인을 사용하실 때는 여전히 영어로 인터페이스가 표시됩니다.</p>
+
+<p><img src="/images/WordPress/4. WordPress Setting/WP 04-21.png" alt="" class="align-center" /></p>
+
+<p>한국어 설정을 완료한 후 사이트의 모습입니다. 이전에는 메뉴가 모두 영어로 나와있었는데, 한국어로 바뀌었음을 알 수 있습니다.</p>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> Tags: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/tags/#wordpress" class="page__taxonomy-item p-category" rel="tag">wordpress</a>
+    
+    </span>
+  </p>
+
+
+
+
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> Categories: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/categories/#studies" class="page__taxonomy-item p-category" rel="tag">studies</a>
+    
+    </span>
+  </p>
+
+
+        
+
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time class="dt-published" datetime="2019-10-24T00:00:00+09:00">October 24, 2019</time></p>
+
+      </footer>
+
+      <section class="page__share">
+  
+    <h4 class="page__share-title">Share on</h4>
+  
+
+  <a href="https://twitter.com/intent/tweet?text=%EC%9B%8C%EB%93%9C%ED%94%84%EB%A0%88%EC%8A%A4+%EA%B8%B0%EB%B3%B8+%EC%84%A4%EC%A0%95%ED%95%98%EA%B8%B0%20http%3A%2F%2Flocalhost%3A4000%2Fwordpress%2Fwordpress-setting%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Fwordpress%2Fwordpress-setting%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2Fwordpress%2Fwordpress-setting%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+
+      
+  <nav class="pagination">
+    
+      <a href="/ml/support-vector-machines/" class="pagination--pager" title="Support Vector Machines
+">Previous</a>
+    
+    
+      <a href="/ml/kernel-methods/" class="pagination--pager" title="Kernel Methods
+">Next</a>
+    
+  </nav>
+
+    </div>
+
+    
+  </article>
+
+  
+  
+</div>
+
+    </div>
+
+    
+      <div class="search-content">
+        <div class="search-content__inner-wrap"><form class="search-content__form" onkeydown="return event.key != 'Enter';" role="search">
+    <label class="sr-only" for="search">
+      Enter your search term...
+    </label>
+    <input type="search" id="search" class="search-input" tabindex="-1" placeholder="Enter your search term..." />
+  </form>
+  <div id="results" class="results"></div></div>
+
+      </div>
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>Follow:</strong></li>
+    
+
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+
+    
+      <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2023 KEEPMIND All rights reserved. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    <script type="text/javascript" async
+   src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      extensions: ["tex2jax.js"],
+      jax: ["input/TeX", "output/HTML-CSS"],
+      tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+        displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+        processEscapes: true
+      },
+      "HTML-CSS": { availableFonts: ["TeX"] }
+    });
+</script>
+
+
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+<script src="/assets/js/lunr/lunr.min.js"></script>
+<script src="/assets/js/lunr/lunr-store.js"></script>
+<script src="/assets/js/lunr/lunr-en.js"></script>
+
+
+
+
+
+
+
+  </body>
+</html>
