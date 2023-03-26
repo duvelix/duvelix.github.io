@@ -179,10 +179,34 @@ var store = [{
         "url": "/java/introduction/",
         "teaser": null
       },{
+        "title": "Google Search Console 등록하기",
+        "excerpt":"힘들게 블로그를 만들었으면, 이제 방문자를 유치할 방법을 찾아야합니다. 구글이나 네이버 등의 검색엔진은 굳이 사이트를 등록하지 않아도 시간이 지나면 검색이 가능하지만, 자신의 사이트를 직접 등록하게 되면 좀 더 효과적으로 검색 결과에 노출이 될 수 있습니다. 모든 검색 엔진에 각각 등록하는 과정을 거쳐야 하기 때문에 약간은 귀찮은 작업이긴 합니다. 가장 먼저 오늘은...","categories": ["studies"],
+        "tags": ["wordpress"],
+        "url": "/wordpress/regist-google-search-console/",
+        "teaser": null
+      },{
         "title": "JDK 설치하기",
         "excerpt":"Java 언어를 사용하기 위해서는 가장 먼저 JDK (Java Development Kit)를 설치해야 합니다. 쉽게 말하자면 컴퓨터에서 Java 언어를 컴파일하기 위한 도구입니다. Java 언어는 썬 마이크로시스템즈가 개발했지만, 현재는 오라클에서 인수했기 때문에 Java 관련 도구들은 오라클 공식 홈페이지에서 받아야 합니다. Oracle JDK 설치하기 먼저 Oracle 홈페이지의 Download 페이지로 접속합니다. 아래의 Developer Downloads 항목을 보시면...","categories": ["studies"],
         "tags": ["java"],
         "url": "/java/install-jdk/",
+        "teaser": null
+      },{
+        "title": "네이버, 다음 검색 엔진 등록하기",
+        "excerpt":"지난 시간에 구글 서치 콘솔을 사용하여 구글에 사이트가 검색될 수 있도록 등록하였습니다. 하지만 아직도 한국에서 네이버와 다음의 점유율은 낮지 않기 때문에 이곳에서도 사이트가 검색되어야 더 많은 방문자를 모을 수 있습니다. 그렇기 때문에 오늘은 네이버와 다음에서 자신의 웹 사이트를 등록해보도록 하겠습니다. 네이버 서치 어드바이저 등록하기 구글에 사이트를 등록했던 것과 마찬가지로, 네이버에...","categories": ["studies"],
+        "tags": ["wordpress"],
+        "url": "/wordpress/regist-search-engine/",
+        "teaser": null
+      },{
+        "title": "네이버 서치 어드바이저 수동 크롤링하기",
+        "excerpt":"지난 시간에 네이버 서치 어드바이저를 통해 자신의 웹 사이트를 네이버 검색에 노출되도록 설정했습니다. 네이버 검색에 노출되기 위해서는 사이트의 모든 글이 네이버 서치 어드바이저에 의해 크롤링되어야 하는데, 저는 어떤 문제인지 몰라도 1주일째 단 1개의 글도 크롤링되지 않았습니다. 이런 경우에는 수동으로 일일이 작업을 해주어야 하는데, 혹시 저와 같은 문제가 발생한 분들을 위해...","categories": ["studies"],
+        "tags": ["wordpress"],
+        "url": "/wordpress/naver-webpage-collection/",
+        "teaser": null
+      },{
+        "title": "Google Analytics에서 관리자 IP 제외하기",
+        "excerpt":"지난번에 워드프레스 사이트를 구글 애널리틱스에 등록하여 방문 통계를 측정하는 방법을 알아봤습니다. 만약 워드프레스 사이트에 구글 애널리틱시를 등록하는 방법이 궁금하시다면 아래의 포스트를 참고하시기 바랍니다. [WordPress] 구글 애널리틱스 등록하기 구글 애널리틱스에 등록만 해도 기본적인 통계는 확인할 수 있지만, 관리자의 IP 주소를 필터링하지 않는다면 자신이 접속한 기록도 통계에 반영되기 때문에 정확한 통계를 알...","categories": ["studies"],
+        "tags": ["wordpress"],
+        "url": "/wordpress/exclude-admin-ip/",
         "teaser": null
       },{
         "title": "IDE 설치하기",
@@ -191,10 +215,22 @@ var store = [{
         "url": "/java/install-ide/",
         "teaser": null
       },{
+        "title": "Google Analytics와 Search Console 연결하기",
+        "excerpt":"이전 포스트에서 구글 애널리틱스와 서치 콘솔 세팅 방법을 설명드린 바 있습니다. 구글 애널리틱스는 사이트의 방문 통계를 제공하고, 서치 콘솔은 사이트가 검색이 더 잘되도록 도와줍니다. 구글 애널리틱스와 서치 콘솔 모두 구글의 서비스이기 때문에, 이 둘을 연결함으로써 더 발전된 서비스를 받을 수 있습니다. 예를 들어, 사용자가 구글 검색으로 사이트를 방문한 경우, 어떤...","categories": ["studies"],
+        "tags": ["wordpress"],
+        "url": "/wordpress/connect-analytics-search-console/",
+        "teaser": null
+      },{
         "title": "Introduction",
         "excerpt":"Git이란? Git은 리누스 토르발즈가 만든 버전 관리 시스템(Version Control System)입니다. 버전 관리 시스템이 필요한 이유는, 여러 명이 하나의 프로그램을 개발할 때, 각각의 프로그래머가 어떤 부분을 수정했는지 쉽게 확인할 수 있기 때문입니다. 물론 협업할 때 뿐만이 아니라 혼자 개발할때도 유용합니다. 예를 들어, 저같은 경우는 연구실에서 코드를 작성하다가 퇴근 후 굳이 소스를...","categories": ["studies"],
         "tags": ["git"],
         "url": "/git/introduction/",
+        "teaser": null
+      },{
+        "title": "JetPack 플러그인 설치하기",
+        "excerpt":"오늘은 워드프레스 플러그인 중 하나인 Jetpack을 설치하는 법을 설명하려고 합니다. Jetpack은 워드프레스에서 공식으로 제공하는 플러그인으로, 워드프레스에서 기본적으로 제공하지 않는 보안 설정이나 사이트 관리 도구를 모아놓은 플러그인입니다. 워드프레스에서 공식으로 제공하기 때문에 기본적으로 한글이 지원되며, 무료 서비스와 유료 서비스로 나뉘어 있습니다. 무료 서비스에서도 기본적인 기능은 제공하지만, 자동 백업이나 스팸 필터링 등의 서비스를...","categories": ["studies"],
+        "tags": ["wordpress"],
+        "url": "/wordpress/install-jetpack-plugin/",
         "teaser": null
       },{
         "title": "Git 설치하기",
@@ -203,10 +239,28 @@ var store = [{
         "url": "/git/install-git/",
         "teaser": null
       },{
+        "title": "Google AdSense 설정하기",
+        "excerpt":"구글 애드센스는 구글에서 컨텐츠 제공자들이 수익을 얻을 수 있게 만드는 광고 게제 서비스입니다. 구글 계정을 통해 가입하여, 제공 받은 광고 태그를 블로그나 유튜브에 삽입하면 방문자들이 광고를 보거나 클릭한 수에 따라 보수가 지급되는 방식입니다. 국내에서 많은 블로거가 사용하는 네이버 블로그는 구글 애드센스 광고를 삽입할 수 없기 때문에 몇 년 전만 해도...","categories": ["studies"],
+        "tags": ["wordpress"],
+        "url": "/wordpress/setting-google-adsense/",
+        "teaser": null
+      },{
+        "title": "Newspaper 테마에 Google AdSense 광고 삽입하기",
+        "excerpt":"지난 포스트에서 구글 애드센스에 가입하고, 광고 게제 승인을 받은 후 ads.txt를 업로드하는 과정까지 마쳤습니다. 혹시 이 포스트를 보실 때, 이 과정을 아직 끝내지 않으신 분은 먼저 아래의 포스트를 참고해주시기 바랍니다. [WordPress] Google AdSense 설정하기 이번 포스트에서는 구글 애드센스 광고를 워드프레스 사이트에 게제하는 법을 알아보겠습니다. 광고 게제 방법에는 여러 가지가 있지만,...","categories": ["studies"],
+        "tags": ["wordpress"],
+        "url": "/wordpress/setup-newspaper-adsense/",
+        "teaser": null
+      },{
         "title": "GitHub 가입하기",
         "excerpt":"Git을 제대로 사용하기 위해서는 원격 저장소가 필요합니다. 원격 저장소를 사용하지 않더라도 Git 기능을 사용할 수는 있지만, 이 경우 다른 컴퓨터에서 작업을 이어 하는 것도 귀찮아지고 무엇보다 남들에게 자신의 결과물을 공개할 수 없습니다. 대표적인 원격 저장소로는 이번 포스트에서 소개할 GitHub가 있습니다. Git 원격 저장소로는 GitHub 외에도 GitLab 등 다른 곳도 몇몇...","categories": ["studies"],
         "tags": ["git"],
         "url": "/git/join-github/",
+        "teaser": null
+      },{
+        "title": "워드프레스에서 수식 입력하기",
+        "excerpt":"저처럼 공학을 주제로 한 블로그에서는 수식을 사용할 일이 많습니다. 다만 대부분의 플랫폼에서는 전문적인 지식을 다루는 블로거가 많지 않다보니 수식 입력을 기본으로 지원하지 않습니다. 네이버 블로그나 티스토리 블로그 같은 서비스형 블로그에서는 스크립트를 이용하여 수식 입력을 할 수 있지만, 제가 사용해본 결과 로딩 시간도 긴데다 원인 모를 이유로 수식이 제대로 보이지 않는...","categories": ["studies"],
+        "tags": ["wordpress"],
+        "url": "/wordpress/wordpress-type-formula/",
         "teaser": null
       },{
         "title": "Commit과 Push 하기",
@@ -215,10 +269,22 @@ var store = [{
         "url": "/git/commit-and-push/",
         "teaser": null
       },{
+        "title": "가입형 워드프레스 시작하기",
+        "excerpt":"저는 워드프레스 입문을 설치형 워드프레스로 시작했지만, 서비스형 블로그에 익숙하신 분들은 번거로운 초기 세팅으로 인해 설치형 워드프레스를 꺼리는 경우가 많습니다. 특히 아무리 간단한 블로그를 만들더라도 직접 웹 호스팅 서비스를 신청하고, 워드프레스 설치 파일을 업로드하기 위해 FTP를 어느정도 사용할 줄 알아야 하기 때문입니다. 그렇기 때문에 쉽게 워드프레스에 입문하는 하나의 대안으로, 가입형 워드프레스가...","categories": ["studies"],
+        "tags": ["wordpress"],
+        "url": "/wordpress/start-wordpress.com/",
+        "teaser": null
+      },{
         "title": "Branch 만들기",
         "excerpt":"프로젝트를 하다 보면 프로그램에서 새로운 기능을 추가하거나 실험을 해보고 싶을 때가 있습니다. 이 때는 원본 프로그램을 직접 수정하기 보다 원본 프로그램을 복사하여 먼저 테스트해보고, 괜찮다고 생각되면 원래 프로그램에 추가하는 것이 훨씬 안전한 방법입니다. 만약에 Git 같은 버전 관리 시스템을 쓰지 않는다면 프로젝트 폴더를 통째로 복사해서 이런 과정을 거쳐야 하지만, Git에서는...","categories": ["studies"],
         "tags": ["git"],
         "url": "/git/create-branch/",
+        "teaser": null
+      },{
+        "title": "가입형 워드프레스에서 테마 적용하기",
+        "excerpt":"지난 포스트에서 가입형 워드프레스를 시작하는 과정을 다루었습니다. 설치형 워드프레스와 마찬가지로, 가입형 워드프레스도 물론 테마를 변경할 수 있습니다. 관리자 페이지의 인터페이스가 조금 다르긴 하지만, 변경하는 과정이 어렵지는 앟습니다. 가입형 워드프레스의 관리자 화면입니다. 보시다시피 설치형 워드프레스의 인터페이스와는 약간의 차이가 있습니다. 왼쪽에 있는 메뉴에서 디자인을 클릭하면 서브 메뉴가 펼쳐지는데, 이 중 테마 항목을...","categories": ["studies"],
+        "tags": ["wordpress"],
+        "url": "/wordpress/wordpress.com-theme/",
         "teaser": null
       },{
         "title": "Branch 병합하기",

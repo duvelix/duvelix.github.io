@@ -1,0 +1,551 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.24.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>Google AdSense 설정하기 - KEEPMIND</title>
+<meta name="description" content="구글 애드센스는 구글에서 컨텐츠 제공자들이 수익을 얻을 수 있게 만드는 광고 게제 서비스입니다. 구글 계정을 통해 가입하여, 제공 받은 광고 태그를 블로그나 유튜브에 삽입하면 방문자들이 광고를 보거나 클릭한 수에 따라 보수가 지급되는 방식입니다. 국내에서 많은 블로거가 사용하는 네이버 블로그는 구글 애드센스 광고를 삽입할 수 없기 때문에 몇 년 전만 해도 인지도가 높지 않았지만, 유튜브의 시청자가 크게 증가함에 따라 자연스레 구글 애드센스에 대한 관심도가 증가하였습니다.">
+
+
+  <meta name="author" content="Joonsu Ryu">
+  
+  <meta property="article:author" content="Joonsu Ryu">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="KEEPMIND">
+<meta property="og:title" content="Google AdSense 설정하기">
+<meta property="og:url" content="http://localhost:4000/wordpress/setting-google-adsense/">
+
+
+  <meta property="og:description" content="구글 애드센스는 구글에서 컨텐츠 제공자들이 수익을 얻을 수 있게 만드는 광고 게제 서비스입니다. 구글 계정을 통해 가입하여, 제공 받은 광고 태그를 블로그나 유튜브에 삽입하면 방문자들이 광고를 보거나 클릭한 수에 따라 보수가 지급되는 방식입니다. 국내에서 많은 블로거가 사용하는 네이버 블로그는 구글 애드센스 광고를 삽입할 수 없기 때문에 몇 년 전만 해도 인지도가 높지 않았지만, 유튜브의 시청자가 크게 증가함에 따라 자연스레 구글 애드센스에 대한 관심도가 증가하였습니다.">
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2020-01-14T00:00:00+09:00">
+
+
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="http://localhost:4000/wordpress/setting-google-adsense/">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "KEEPMIND",
+      "url": "http://localhost:4000/"
+    
+  }
+</script>
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="KEEPMIND Feed">
+
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css"></noscript>
+
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+<link rel="icon" type="image/png" sizes="16x16" href="/images/favicon.png">
+
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body class="layout--single wide">
+    <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+		<a class="site-title" href="http://localhost:4000/"><img src="/images/logo.png">
+        <!-- <a class="site-title" href="/">
+          KEEPMIND
+           -->
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="/">Home</a>
+            </li><li class="masthead__menu-item">
+              <a href="/cv/">CV</a>
+            </li><li class="masthead__menu-item">
+              <a href="/studies/">Studies</a>
+            </li><li class="masthead__menu-item">
+              <a href="/">Interests</a>
+            </li><li class="masthead__menu-item">
+              <a href="/">Travels</a>
+            </li></ul>
+        
+        <button class="search__toggle" type="button">
+          <span class="visually-hidden">Toggle search</span>
+          <i class="fas fa-search"></i>
+        </button>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person" class="h-card">
+
+  
+    <div class="author__avatar">
+      <!-- <a href="http://localhost:4000/"> -->
+        <img src="/images/profile.jpg" alt="Joonsu Ryu" itemprop="image" class="u-photo">
+      <!-- </a> -->
+    </div>
+  
+
+  <div class="author__content">
+    <h3 class="author__name p-name" itemprop="name">
+      <a class="u-url" rel="me" href="http://localhost:4000/" itemprop="url">Joonsu Ryu</a>
+    </h3>
+    
+      <div class="author__bio p-note" itemprop="description">
+        <p>Researcher</p>
+
+      </div>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">Follow</button>
+    <ul class="author__urls social-icons">
+      
+        <li itemprop="homeLocation" itemscope itemtype="https://schema.org/Place">
+          <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> <span itemprop="name" class="p-locality">Seoul, Korea</span>
+        </li>
+      
+
+      
+        
+          
+            <li><a href="mailto:jsryu@sogang.ac.kr" rel="nofollow noopener noreferrer me"><i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i><span class="label">E-mail</span></a></li>
+          
+        
+          
+            <li><a href="https://github.com/JoonsuRyu" rel="nofollow noopener noreferrer me" itemprop="sameAs"><i class="fab fa-fw fa-github" aria-hidden="true"></i><span class="label">GitHub</span></a></li>
+          
+        
+          
+            <li><a href="https://scholar.google.co.kr/citations?user=UmRh9NQAAAAJ" rel="nofollow noopener noreferrer me" itemprop="sameAs"><i class="fas fa-fw fa-graduation-cap" aria-hidden="true"></i><span class="label">Google Scholar</span></a></li>
+          
+        
+          
+            <li><a href="https://orcid.org/0000-0002-8848-1456" rel="nofollow noopener noreferrer me" itemprop="sameAs"><i class="fab fa-fw fa-orcid" aria-hidden="true"></i><span class="label">ORCID</span></a></li>
+          
+        
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer me">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+
+  
+  </div>
+
+
+
+  <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="Google AdSense 설정하기">
+    <meta itemprop="description" content="구글 애드센스는 구글에서 컨텐츠 제공자들이 수익을 얻을 수 있게 만드는 광고 게제 서비스입니다. 구글 계정을 통해 가입하여, 제공 받은 광고 태그를 블로그나 유튜브에 삽입하면 방문자들이 광고를 보거나 클릭한 수에 따라 보수가 지급되는 방식입니다. 국내에서 많은 블로거가 사용하는 네이버 블로그는 구글 애드센스 광고를 삽입할 수 없기 때문에 몇 년 전만 해도 인지도가 높지 않았지만, 유튜브의 시청자가 크게 증가함에 따라 자연스레 구글 애드센스에 대한 관심도가 증가하였습니다.">
+    <meta itemprop="datePublished" content="2020-01-14T00:00:00+09:00">
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title p-name" itemprop="headline">
+            <a href="http://localhost:4000/wordpress/setting-google-adsense/" class="u-url" itemprop="url">Google AdSense 설정하기
+</a>
+          </h1>
+          
+
+
+        </header>
+      
+
+      <section class="page__content e-content" itemprop="text">
+        
+          <aside class="sidebar__right sticky">
+            <nav class="toc">
+              <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> Table of Contents</h4></header>
+              <ul class="toc__menu"><li><a href="#구글-애드센스-가입하기">구글 애드센스 가입하기</a></li><li><a href="#구글-애드센스-계정-활성화하기">구글 애드센스 계정 활성화하기</a></li><li><a href="#adstxt-업로드하기">ads.txt 업로드하기</a></li></ul>
+
+            </nav>
+          </aside>
+        
+        <p>구글 애드센스는 구글에서 컨텐츠 제공자들이 수익을 얻을 수 있게 만드는 광고 게제 서비스입니다. 구글 계정을 통해 가입하여, 제공 받은 광고 태그를 블로그나 유튜브에 삽입하면 방문자들이 광고를 보거나 클릭한 수에 따라 보수가 지급되는 방식입니다. 국내에서 많은 블로거가 사용하는 네이버 블로그는 구글 애드센스 광고를 삽입할 수 없기 때문에 몇 년 전만 해도 인지도가 높지 않았지만, 유튜브의 시청자가 크게 증가함에 따라 자연스레 구글 애드센스에 대한 관심도가 증가하였습니다.</p>
+
+<p>사람마다 구글 애드센스에 가입을 하는 목적은 조금씩 다르지만, 크게 나누자면 블로그, 유튜브, 구글 플레이스토어에서의 수익 창출일 것입니다. 어떤 목적이든 구글 애드센스에 가입을 한 후, 광고 게제 승인이 떨어져야 수익 창출이 가능하지만, 생각보다 승인 기준이 높은 편입니다. 블로그의 경우에는 기준은 명확하지 않으나 컨텐츠가 적절해야 하고, 유튜브에서는 구독자 1000명 이상과 최근 1년간 시청 시간이 4000시간 이상이 되어야 합니다.</p>
+
+<p>저는 우선 기존에 운영하던 블로그가 있었기 때문에 블로그에서 먼저 승인을 받았는데, 이 포스트에서는 구글 애드센스 가입부터 수익 창출 승인을 받는 과정을 설명드리려고 합니다.</p>
+
+<h2 id="구글-애드센스-가입하기">구글 애드센스 가입하기</h2>
+
+<p><img src="/images/WordPress/16. Setting Google AdSense/WP 16-01.png" alt="" class="align-center" /></p>
+
+<p>먼저 구글 애드센스 홈페이지에 방문합니다. 홈페이지에 접속하면 바로 보이는 화면에서 지금 가입하기 버튼을 클릭하고 구글 계정에 가입하거나 로그인합니다.</p>
+
+<p><img src="/images/WordPress/16. Setting Google AdSense/WP 16-02.png" alt="" class="align-center" /></p>
+
+<p>구글 계정이 있더라도 애드센스에 가입하기 위해서는 여러 정보를 입력해야 합니다. 가장 먼저 광고를 게시할 사이트와 주로 사용하는 이메일 주소를 적습니다. 이메일 주소는 굳이 구글 이메일이 아니여도 됩니다. 아래에는 애드센스에 대한 유용한 정보를 받겠냐는 선택지가 있는데, 필요하지 않다면 아니요를 선택하신 후 저장하고 계속하기 버튼을 클릭합니다.</p>
+
+<p><img src="/images/WordPress/16. Setting Google AdSense/WP 16-03.png" alt="" class="align-center" /></p>
+
+<p>다음으로는 사용자의 국가와 이용약관에 대한 동의가 필요합니다. 동의하지 않으면 가입할 수 없으니, 동의에 체크하고 계정 만들기 버튼을 클릭합니다.</p>
+
+<p><img src="/images/WordPress/16. Setting Google AdSense/WP 16-04.png" alt="" class="align-center" /></p>
+
+<p>이렇게 구글 애드센스 계정은 만들었지만, 광고를 게시하기 위해서는 먼저 간단한 설정을 해주어야 합니다. 계정을 만들게 되면 위처럼 바로 애드센스 관리자 화면으로 페이지가 넘어가게 되는데, 시작하기 버튼을 클릭합니다.</p>
+
+<p><img src="/images/WordPress/16. Setting Google AdSense/WP 16-05.png" alt="" class="align-center" /></p>
+
+<p>가장 먼저 수익금을 받을 주소를 입력해야 합니다. 예전에는 우편으로 수표를 보내줬기 때문에 주소가 중요했는데, 요즘에는 수익금을 계좌로 입금해주기 때문에 사실 크게 중요하진 않습니다. 그래도 추후 문제가 생길 수도 있으니 올바르게 주소를 적어줍시다. 작성을 완료한 후 제출을 클릭합니다.</p>
+
+<h2 id="구글-애드센스-계정-활성화하기">구글 애드센스 계정 활성화하기</h2>
+
+<p><img src="/images/WordPress/16. Setting Google AdSense/WP 16-06.png" alt="" class="align-center" /></p>
+
+<p>구글 애널리틱스를 연결했을 때와 같이 사이트에 구글에서 제공하는 코드를 입력해야 합니다. 먼저 중간에 복사하기 버튼을 눌러 코드를 복사합니다. 이미 구글 애널리틱스를 연결해보신 분이라면 똑같이 주어진 코드를 &lt;HEAD&gt;와 &lt;/HEAD&gt; 사이에 붙여넣으면 됩니다.</p>
+
+<p>워드프레스에서는 코드를 붙여넣는 방법이 여러 가지인데, 저는 워드프레스의 뉴스페이퍼 테마를 사용하고 있으므로, 이 테마를 기준으로 설명드리겠습니다. 참고로 위의 WordPress 사용자인가요?에 나온 도움말은 여기에서 확인하실 수 있습니다. 요약해서 말씀드리자면, 구글에서 만든 Site Kit 플러그인을 사용하면 간단하는 이야기입니다. 추후에 기회가 되면 이 플러그인에 대한 사용법도 포스팅하도록 하겠습니다.</p>
+
+<p><img src="/images/WordPress/16. Setting Google AdSense/WP 16-07.png" alt="" class="align-center" /></p>
+
+<p>뉴스페이퍼 테마의 Theme panel에 들어가시면 메뉴 중 ANALYTICS/JS CODES 부분이 있는데, 여기서 HEADER SCRIPT CODE의 PASTE YOUR CODE HERE 부분에 코드를 붙여넣으시면 됩니다. 참고로 이곳은 구글 애널리틱스 코드를 붙여넣는 곳과 동일한 부분입니다.</p>
+
+<p><img src="/images/WordPress/16. Setting Google AdSense/WP 16-08.png" alt="" class="align-center" /></p>
+
+<p>다시 구글 애드센스 관리자 화면으로 돌아와서, 코드를 사이트에 붙여넣었습니다에 체크한 후 완료 버튼을 클릭합니다.</p>
+
+<p><img src="/images/WordPress/16. Setting Google AdSense/WP 16-09.png" alt="" class="align-center" /></p>
+
+<p>코드를 입력했다고 바로 사용할 수 있는 것은 아니고, 계정 활성화가 되어야 합니다. 확인 버튼을 클릭합니다.</p>
+
+<p><img src="/images/WordPress/16. Setting Google AdSense/WP 16-10.png" alt="" class="align-center" /></p>
+
+<p>계정 활성화에는 하루 정도 걸린다고 나와있는데, 사이트 검토에는 최대 2주가 소요된다고 합니다. 완료되면 이메일로 연락이 옵니다.</p>
+
+<p><img src="/images/WordPress/16. Setting Google AdSense/WP 16-11.png" alt="" class="align-center" /></p>
+
+<p>검토가 완료되면 위와 같이 승인 메일이 옵니다. 저는 최대 2주가 걸린다고 해서 꽤 오래 기다려야할 줄 알았는데, 하루 만에 승인 메일이 도착했습니다.</p>
+
+<p><img src="/images/WordPress/16. Setting Google AdSense/WP 16-12.png" alt="" class="align-center" /></p>
+
+<p>승인 후 구글 애드센스에 로그인하면 계정이 활성화되었다는 안내가 나옵니다. 가운데에 있는 광고 설정 버튼을 클릭합니다.</p>
+
+<h2 id="adstxt-업로드하기">ads.txt 업로드하기</h2>
+
+<p><img src="/images/WordPress/16. Setting Google AdSense/WP 16-13.png" alt="" class="align-center" /></p>
+
+<p>구글 애드센스 관리자 페이지로 넘어오면 이전과는 다른 화면이 나옵니다. 팝업으로 광고에 대한 팁이 나오는데, 적당히 읽어보시고 화살표 버튼을 눌러 닫습니다.</p>
+
+<p><img src="/images/WordPress/16. Setting Google AdSense/WP 16-14.png" alt="" class="align-center" /></p>
+
+<p>사이트에 광고를 달기 전에, 제 호스트 계정에 ads.txt 파일이 없다는 경고문이 나옵니다. 수익에 영향이 갈 수 있다고 하니, 업로드 하는 것이 좋을 것 같습니다. 지금 해결하기를 클릭하면 ads.txt 파일 만들기라는 안내가 나오는데, 다운로드를 클릭하면 바로 ads.txt를 받을 수 있습니다.</p>
+
+<p><img src="/images/WordPress/16. Setting Google AdSense/WP 16-15.png" alt="" class="align-center" /></p>
+
+<p>받은 ads.txt를 위처럼 자신의 웹 호스팅 최상위 경로에 업로드하면 됩니다. 저는 FileZilla를 사용하여 업로드 했는데, 어떤 FTP 프로그램을 사용해도 문제는 없습니다. 사실 이 글을 쓰면서 생각난건데, SiteGround에서는 관리자 패너에서 웹 FTP를 지원하기 때문에 굳이 이렇게 번거롭게 업로드할 필요가 없습니다.</p>
+
+<p><img src="/images/WordPress/16. Setting Google AdSense/WP 16-16.png" alt="" class="align-center" /></p>
+
+<p>ads.txt를 업로드했다고 바로 경고창이 사라지지는 않습니다. 아마 확인하는데 시간이 좀 걸리는 듯 합니다. 며칠 후에 확인해보시면 위처럼 경고창이 깔끔하게 사라진 것을 볼 수 있습니다.</p>
+
+<p>원래 이 포스트에 광고 게제 방법까지 같이 올리려고 했는데, 포스트가 너무 길어지다보니 그 부분은 다음 포스트에 이어서 올리도록 하겠습니다. 읽어주셔서 감사합니다.</p>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> Tags: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/tags/#wordpress" class="page__taxonomy-item p-category" rel="tag">wordpress</a>
+    
+    </span>
+  </p>
+
+
+
+
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> Categories: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/categories/#studies" class="page__taxonomy-item p-category" rel="tag">studies</a>
+    
+    </span>
+  </p>
+
+
+        
+
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time class="dt-published" datetime="2020-01-14T00:00:00+09:00">January 14, 2020</time></p>
+
+      </footer>
+
+      <section class="page__share">
+  
+    <h4 class="page__share-title">Share on</h4>
+  
+
+  <a href="https://twitter.com/intent/tweet?text=Google+AdSense+%EC%84%A4%EC%A0%95%ED%95%98%EA%B8%B0%20http%3A%2F%2Flocalhost%3A4000%2Fwordpress%2Fsetting-google-adsense%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Fwordpress%2Fsetting-google-adsense%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2Fwordpress%2Fsetting-google-adsense%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+
+      
+  <nav class="pagination">
+    
+      <a href="/git/install-git/" class="pagination--pager" title="Git 설치하기
+">Previous</a>
+    
+    
+      <a href="/wordpress/setup-newspaper-adsense/" class="pagination--pager" title="Newspaper 테마에 Google AdSense 광고 삽입하기
+">Next</a>
+    
+  </nav>
+
+    </div>
+
+    
+  </article>
+
+  
+  
+</div>
+
+    </div>
+
+    
+      <div class="search-content">
+        <div class="search-content__inner-wrap"><form class="search-content__form" onkeydown="return event.key != 'Enter';" role="search">
+    <label class="sr-only" for="search">
+      Enter your search term...
+    </label>
+    <input type="search" id="search" class="search-input" tabindex="-1" placeholder="Enter your search term..." />
+  </form>
+  <div id="results" class="results"></div></div>
+
+      </div>
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>Follow:</strong></li>
+    
+
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+
+    
+      <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2023 KEEPMIND All rights reserved. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    <script type="text/javascript" async
+   src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      extensions: ["tex2jax.js"],
+      jax: ["input/TeX", "output/HTML-CSS"],
+      tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+        displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+        processEscapes: true
+      },
+      "HTML-CSS": { availableFonts: ["TeX"] }
+    });
+</script>
+
+
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+<script src="/assets/js/lunr/lunr.min.js"></script>
+<script src="/assets/js/lunr/lunr-store.js"></script>
+<script src="/assets/js/lunr/lunr-en.js"></script>
+
+
+
+
+
+
+
+  </body>
+</html>

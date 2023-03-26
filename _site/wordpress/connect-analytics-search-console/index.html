@@ -1,0 +1,513 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.24.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>Google Analytics와 Search Console 연결하기 - KEEPMIND</title>
+<meta name="description" content="이전 포스트에서 구글 애널리틱스와 서치 콘솔 세팅 방법을 설명드린 바 있습니다. 구글 애널리틱스는 사이트의 방문 통계를 제공하고, 서치 콘솔은 사이트가 검색이 더 잘되도록 도와줍니다. 구글 애널리틱스와 서치 콘솔 모두 구글의 서비스이기 때문에, 이 둘을 연결함으로써 더 발전된 서비스를 받을 수 있습니다. 예를 들어, 사용자가 구글 검색으로 사이트를 방문한 경우, 어떤 검색어를 사용했는지에 대한 구체적인 통계를 알 수 있습니다.">
+
+
+  <meta name="author" content="Joonsu Ryu">
+  
+  <meta property="article:author" content="Joonsu Ryu">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="KEEPMIND">
+<meta property="og:title" content="Google Analytics와 Search Console 연결하기">
+<meta property="og:url" content="http://localhost:4000/wordpress/connect-analytics-search-console/">
+
+
+  <meta property="og:description" content="이전 포스트에서 구글 애널리틱스와 서치 콘솔 세팅 방법을 설명드린 바 있습니다. 구글 애널리틱스는 사이트의 방문 통계를 제공하고, 서치 콘솔은 사이트가 검색이 더 잘되도록 도와줍니다. 구글 애널리틱스와 서치 콘솔 모두 구글의 서비스이기 때문에, 이 둘을 연결함으로써 더 발전된 서비스를 받을 수 있습니다. 예를 들어, 사용자가 구글 검색으로 사이트를 방문한 경우, 어떤 검색어를 사용했는지에 대한 구체적인 통계를 알 수 있습니다.">
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2020-01-02T00:00:00+09:00">
+
+
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="http://localhost:4000/wordpress/connect-analytics-search-console/">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "KEEPMIND",
+      "url": "http://localhost:4000/"
+    
+  }
+</script>
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="KEEPMIND Feed">
+
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css"></noscript>
+
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+<link rel="icon" type="image/png" sizes="16x16" href="/images/favicon.png">
+
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body class="layout--single wide">
+    <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+		<a class="site-title" href="http://localhost:4000/"><img src="/images/logo.png">
+        <!-- <a class="site-title" href="/">
+          KEEPMIND
+           -->
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="/">Home</a>
+            </li><li class="masthead__menu-item">
+              <a href="/cv/">CV</a>
+            </li><li class="masthead__menu-item">
+              <a href="/studies/">Studies</a>
+            </li><li class="masthead__menu-item">
+              <a href="/">Interests</a>
+            </li><li class="masthead__menu-item">
+              <a href="/">Travels</a>
+            </li></ul>
+        
+        <button class="search__toggle" type="button">
+          <span class="visually-hidden">Toggle search</span>
+          <i class="fas fa-search"></i>
+        </button>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person" class="h-card">
+
+  
+    <div class="author__avatar">
+      <!-- <a href="http://localhost:4000/"> -->
+        <img src="/images/profile.jpg" alt="Joonsu Ryu" itemprop="image" class="u-photo">
+      <!-- </a> -->
+    </div>
+  
+
+  <div class="author__content">
+    <h3 class="author__name p-name" itemprop="name">
+      <a class="u-url" rel="me" href="http://localhost:4000/" itemprop="url">Joonsu Ryu</a>
+    </h3>
+    
+      <div class="author__bio p-note" itemprop="description">
+        <p>Researcher</p>
+
+      </div>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">Follow</button>
+    <ul class="author__urls social-icons">
+      
+        <li itemprop="homeLocation" itemscope itemtype="https://schema.org/Place">
+          <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> <span itemprop="name" class="p-locality">Seoul, Korea</span>
+        </li>
+      
+
+      
+        
+          
+            <li><a href="mailto:jsryu@sogang.ac.kr" rel="nofollow noopener noreferrer me"><i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i><span class="label">E-mail</span></a></li>
+          
+        
+          
+            <li><a href="https://github.com/JoonsuRyu" rel="nofollow noopener noreferrer me" itemprop="sameAs"><i class="fab fa-fw fa-github" aria-hidden="true"></i><span class="label">GitHub</span></a></li>
+          
+        
+          
+            <li><a href="https://scholar.google.co.kr/citations?user=UmRh9NQAAAAJ" rel="nofollow noopener noreferrer me" itemprop="sameAs"><i class="fas fa-fw fa-graduation-cap" aria-hidden="true"></i><span class="label">Google Scholar</span></a></li>
+          
+        
+          
+            <li><a href="https://orcid.org/0000-0002-8848-1456" rel="nofollow noopener noreferrer me" itemprop="sameAs"><i class="fab fa-fw fa-orcid" aria-hidden="true"></i><span class="label">ORCID</span></a></li>
+          
+        
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer me">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+
+  
+  </div>
+
+
+
+  <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="Google Analytics와 Search Console 연결하기">
+    <meta itemprop="description" content="이전 포스트에서 구글 애널리틱스와 서치 콘솔 세팅 방법을 설명드린 바 있습니다. 구글 애널리틱스는 사이트의 방문 통계를 제공하고, 서치 콘솔은 사이트가 검색이 더 잘되도록 도와줍니다. 구글 애널리틱스와 서치 콘솔 모두 구글의 서비스이기 때문에, 이 둘을 연결함으로써 더 발전된 서비스를 받을 수 있습니다. 예를 들어, 사용자가 구글 검색으로 사이트를 방문한 경우, 어떤 검색어를 사용했는지에 대한 구체적인 통계를 알 수 있습니다.">
+    <meta itemprop="datePublished" content="2020-01-02T00:00:00+09:00">
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title p-name" itemprop="headline">
+            <a href="http://localhost:4000/wordpress/connect-analytics-search-console/" class="u-url" itemprop="url">Google Analytics와 Search Console 연결하기
+</a>
+          </h1>
+          
+
+
+        </header>
+      
+
+      <section class="page__content e-content" itemprop="text">
+        
+          <aside class="sidebar__right sticky">
+            <nav class="toc">
+              <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> Table of Contents</h4></header>
+              <ul class="toc__menu"><li><a href="#구글-애널리틱스에서-서치-콘솔-연결하기">구글 애널리틱스에서 서치 콘솔 연결하기</a></li><li><a href="#확인한-사이트가-없습니다라고-나오는-경우">확인한 사이트가 없습니다라고 나오는 경우</a></li></ul>
+
+            </nav>
+          </aside>
+        
+        <p>이전 포스트에서 구글 애널리틱스와 서치 콘솔 세팅 방법을 설명드린 바 있습니다. 구글 애널리틱스는 사이트의 방문 통계를 제공하고, 서치 콘솔은 사이트가 검색이 더 잘되도록 도와줍니다. 구글 애널리틱스와 서치 콘솔 모두 구글의 서비스이기 때문에, 이 둘을 연결함으로써 더 발전된 서비스를 받을 수 있습니다. 예를 들어, 사용자가 구글 검색으로 사이트를 방문한 경우, 어떤 검색어를 사용했는지에 대한 구체적인 통계를 알 수 있습니다.</p>
+
+<h2 id="구글-애널리틱스에서-서치-콘솔-연결하기">구글 애널리틱스에서 서치 콘솔 연결하기</h2>
+
+<p><img src="/images/WordPress/14. Connect Analytics Search Console/WP 14-01.png" alt="" class="align-center" /></p>
+
+<p>먼저 구글 애널리틱스에 방문하고, 로그인합니다. 왼쪽 맨 아래를 보시면 관리 메뉴가 보이는데, 이것을 클릭합니다.</p>
+
+<p><img src="/images/WordPress/14. Connect Analytics Search Console/WP 14-02.png" alt="" class="align-center" /></p>
+
+<p>관리 화면에는 크게 계정, 속성, 보기로 나뉘어 있습니다. 이 중 가운데의 속성에서 모든 제품 메뉴를 클릭합니다.</p>
+
+<p><img src="/images/WordPress/14. Connect Analytics Search Console/WP 14-03.png" alt="" class="align-center" /></p>
+
+<p>모든 제품 메뉴에는 구글과 연관된 많은 서비스 목록이 나옵니다. 스크롤을 쭉 내리시면 맨 아래에 Search Console 항목이 보입니다. 이 항목에서 Search Console 연결 버튼을 클릭하시면 됩니다.</p>
+
+<p><img src="/images/WordPress/14. Connect Analytics Search Console/WP 14-04.png" alt="" class="align-center" /></p>
+
+<p>버튼을 클릭하시면 새 탭으로 화면이 넘어가고, 동일한 구글 계정에 연결된 Search Console 속성이 나옵니다. 이 속성을 선택하신 다음 저장 버튼을 클릭하시면 됩니다.</p>
+
+<p><img src="/images/WordPress/14. Connect Analytics Search Console/WP 14-05.png" alt="" class="align-center" /></p>
+
+<p>연결을 정말 할 것인지를 물어보는 창이 나오는데, 확인 버튼을 클릭합니다.</p>
+
+<p><img src="/images/WordPress/14. Connect Analytics Search Console/WP 14-06.png" alt="" class="align-center" /></p>
+
+<p>확인 버튼을 누르셔도 화면 자체는 바뀌지 않는데, 새로고침(F5)을 한번 누르시면 구글 애널리틱스와 서치 콘솔이 연결된 것을 볼 수 있습니다.</p>
+
+<p><img src="/images/WordPress/14. Connect Analytics Search Console/WP 14-07.png" alt="" class="align-center" /></p>
+
+<p>구글 애널리틱스 화면으로 넘어가도, 바로 바뀌어 보이지 않기 때문에 역시 새로고침(F5)을 한번 눌러주셔야 합니다. 새로고침 후 위처럼 정상적으로 연결되었다는 화면이 나오면 저장 버튼을 클릭하시면 됩니다.</p>
+
+<h2 id="확인한-사이트가-없습니다라고-나오는-경우">확인한 사이트가 없습니다라고 나오는 경우</h2>
+
+<p><img src="/images/WordPress/14. Connect Analytics Search Console/WP 14-08.png" alt="" class="align-center" /></p>
+
+<p>만약에 구글 서치 콘솔에 등록했을 때 저처럼 도메인 속성으로 등록하신 경우에는 위처럼 확인한 사이트가 없습니다라고 나옵니다. 이 경우에는 구글 서치 콘솔 관리자 화면으로 가서, 새로운 속성을 추가해주셔야 합니다.</p>
+
+<p><img src="/images/WordPress/14. Connect Analytics Search Console/WP 14-09.png" alt="" class="align-center" /></p>
+
+<p>위의 화면 처럼 URL 접두어를 사용하여 속성을 추가해주면 서치 콘솔과 구글 애널리틱스를 연결할 수 있습니다. 서치 콘솔에서 도메인 속성이 최근에 나온 옵션이다보니 아직 애널리틱스와 연결하는 것을 지원하지 않는 것 같습니다.</p>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> Tags: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/tags/#wordpress" class="page__taxonomy-item p-category" rel="tag">wordpress</a>
+    
+    </span>
+  </p>
+
+
+
+
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> Categories: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/categories/#studies" class="page__taxonomy-item p-category" rel="tag">studies</a>
+    
+    </span>
+  </p>
+
+
+        
+
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time class="dt-published" datetime="2020-01-02T00:00:00+09:00">January 2, 2020</time></p>
+
+      </footer>
+
+      <section class="page__share">
+  
+    <h4 class="page__share-title">Share on</h4>
+  
+
+  <a href="https://twitter.com/intent/tweet?text=Google+Analytics%EC%99%80+Search+Console+%EC%97%B0%EA%B2%B0%ED%95%98%EA%B8%B0%20http%3A%2F%2Flocalhost%3A4000%2Fwordpress%2Fconnect-analytics-search-console%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Fwordpress%2Fconnect-analytics-search-console%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2Fwordpress%2Fconnect-analytics-search-console%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+
+      
+  <nav class="pagination">
+    
+      <a href="/java/install-ide/" class="pagination--pager" title="IDE 설치하기
+">Previous</a>
+    
+    
+      <a href="/git/introduction/" class="pagination--pager" title="Introduction
+">Next</a>
+    
+  </nav>
+
+    </div>
+
+    
+  </article>
+
+  
+  
+</div>
+
+    </div>
+
+    
+      <div class="search-content">
+        <div class="search-content__inner-wrap"><form class="search-content__form" onkeydown="return event.key != 'Enter';" role="search">
+    <label class="sr-only" for="search">
+      Enter your search term...
+    </label>
+    <input type="search" id="search" class="search-input" tabindex="-1" placeholder="Enter your search term..." />
+  </form>
+  <div id="results" class="results"></div></div>
+
+      </div>
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>Follow:</strong></li>
+    
+
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+
+    
+      <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2023 KEEPMIND All rights reserved. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    <script type="text/javascript" async
+   src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      extensions: ["tex2jax.js"],
+      jax: ["input/TeX", "output/HTML-CSS"],
+      tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+        displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+        processEscapes: true
+      },
+      "HTML-CSS": { availableFonts: ["TeX"] }
+    });
+</script>
+
+
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+<script src="/assets/js/lunr/lunr.min.js"></script>
+<script src="/assets/js/lunr/lunr-store.js"></script>
+<script src="/assets/js/lunr/lunr-en.js"></script>
+
+
+
+
+
+
+
+  </body>
+</html>

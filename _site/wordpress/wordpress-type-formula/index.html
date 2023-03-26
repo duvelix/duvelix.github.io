@@ -1,0 +1,509 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.24.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>워드프레스에서 수식 입력하기 - KEEPMIND</title>
+<meta name="description" content="저처럼 공학을 주제로 한 블로그에서는 수식을 사용할 일이 많습니다. 다만 대부분의 플랫폼에서는 전문적인 지식을 다루는 블로거가 많지 않다보니 수식 입력을 기본으로 지원하지 않습니다. 네이버 블로그나 티스토리 블로그 같은 서비스형 블로그에서는 스크립트를 이용하여 수식 입력을 할 수 있지만, 제가 사용해본 결과 로딩 시간도 긴데다 원인 모를 이유로 수식이 제대로 보이지 않는 경우까지 있었습니다.">
+
+
+  <meta name="author" content="Joonsu Ryu">
+  
+  <meta property="article:author" content="Joonsu Ryu">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="KEEPMIND">
+<meta property="og:title" content="워드프레스에서 수식 입력하기">
+<meta property="og:url" content="http://localhost:4000/wordpress/wordpress-type-formula/">
+
+
+  <meta property="og:description" content="저처럼 공학을 주제로 한 블로그에서는 수식을 사용할 일이 많습니다. 다만 대부분의 플랫폼에서는 전문적인 지식을 다루는 블로거가 많지 않다보니 수식 입력을 기본으로 지원하지 않습니다. 네이버 블로그나 티스토리 블로그 같은 서비스형 블로그에서는 스크립트를 이용하여 수식 입력을 할 수 있지만, 제가 사용해본 결과 로딩 시간도 긴데다 원인 모를 이유로 수식이 제대로 보이지 않는 경우까지 있었습니다.">
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2020-01-23T00:00:00+09:00">
+
+
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="http://localhost:4000/wordpress/wordpress-type-formula/">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "KEEPMIND",
+      "url": "http://localhost:4000/"
+    
+  }
+</script>
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="KEEPMIND Feed">
+
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css"></noscript>
+
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+<link rel="icon" type="image/png" sizes="16x16" href="/images/favicon.png">
+
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body class="layout--single wide">
+    <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+		<a class="site-title" href="http://localhost:4000/"><img src="/images/logo.png">
+        <!-- <a class="site-title" href="/">
+          KEEPMIND
+           -->
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="/">Home</a>
+            </li><li class="masthead__menu-item">
+              <a href="/cv/">CV</a>
+            </li><li class="masthead__menu-item">
+              <a href="/studies/">Studies</a>
+            </li><li class="masthead__menu-item">
+              <a href="/">Interests</a>
+            </li><li class="masthead__menu-item">
+              <a href="/">Travels</a>
+            </li></ul>
+        
+        <button class="search__toggle" type="button">
+          <span class="visually-hidden">Toggle search</span>
+          <i class="fas fa-search"></i>
+        </button>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person" class="h-card">
+
+  
+    <div class="author__avatar">
+      <!-- <a href="http://localhost:4000/"> -->
+        <img src="/images/profile.jpg" alt="Joonsu Ryu" itemprop="image" class="u-photo">
+      <!-- </a> -->
+    </div>
+  
+
+  <div class="author__content">
+    <h3 class="author__name p-name" itemprop="name">
+      <a class="u-url" rel="me" href="http://localhost:4000/" itemprop="url">Joonsu Ryu</a>
+    </h3>
+    
+      <div class="author__bio p-note" itemprop="description">
+        <p>Researcher</p>
+
+      </div>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">Follow</button>
+    <ul class="author__urls social-icons">
+      
+        <li itemprop="homeLocation" itemscope itemtype="https://schema.org/Place">
+          <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> <span itemprop="name" class="p-locality">Seoul, Korea</span>
+        </li>
+      
+
+      
+        
+          
+            <li><a href="mailto:jsryu@sogang.ac.kr" rel="nofollow noopener noreferrer me"><i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i><span class="label">E-mail</span></a></li>
+          
+        
+          
+            <li><a href="https://github.com/JoonsuRyu" rel="nofollow noopener noreferrer me" itemprop="sameAs"><i class="fab fa-fw fa-github" aria-hidden="true"></i><span class="label">GitHub</span></a></li>
+          
+        
+          
+            <li><a href="https://scholar.google.co.kr/citations?user=UmRh9NQAAAAJ" rel="nofollow noopener noreferrer me" itemprop="sameAs"><i class="fas fa-fw fa-graduation-cap" aria-hidden="true"></i><span class="label">Google Scholar</span></a></li>
+          
+        
+          
+            <li><a href="https://orcid.org/0000-0002-8848-1456" rel="nofollow noopener noreferrer me" itemprop="sameAs"><i class="fab fa-fw fa-orcid" aria-hidden="true"></i><span class="label">ORCID</span></a></li>
+          
+        
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer me">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+
+  
+  </div>
+
+
+
+  <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="워드프레스에서 수식 입력하기">
+    <meta itemprop="description" content="저처럼 공학을 주제로 한 블로그에서는 수식을 사용할 일이 많습니다. 다만 대부분의 플랫폼에서는 전문적인 지식을 다루는 블로거가 많지 않다보니 수식 입력을 기본으로 지원하지 않습니다. 네이버 블로그나 티스토리 블로그 같은 서비스형 블로그에서는 스크립트를 이용하여 수식 입력을 할 수 있지만, 제가 사용해본 결과 로딩 시간도 긴데다 원인 모를 이유로 수식이 제대로 보이지 않는 경우까지 있었습니다.">
+    <meta itemprop="datePublished" content="2020-01-23T00:00:00+09:00">
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title p-name" itemprop="headline">
+            <a href="http://localhost:4000/wordpress/wordpress-type-formula/" class="u-url" itemprop="url">워드프레스에서 수식 입력하기
+</a>
+          </h1>
+          
+
+
+        </header>
+      
+
+      <section class="page__content e-content" itemprop="text">
+        
+          <aside class="sidebar__right sticky">
+            <nav class="toc">
+              <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> Table of Contents</h4></header>
+              <ul class="toc__menu"><li><a href="#jetpack-플러그인을-사용하는-방법">Jetpack 플러그인을 사용하는 방법</a></li><li><a href="#wp-katex-플러그인을-사용하는-방법">WP-KaTeX 플러그인을 사용하는 방법</a></li></ul>
+
+            </nav>
+          </aside>
+        
+        <p>저처럼 공학을 주제로 한 블로그에서는 수식을 사용할 일이 많습니다. 다만 대부분의 플랫폼에서는 전문적인 지식을 다루는 블로거가 많지 않다보니 수식 입력을 기본으로 지원하지 않습니다. 네이버 블로그나 티스토리 블로그 같은 서비스형 블로그에서는 스크립트를 이용하여 수식 입력을 할 수 있지만, 제가 사용해본 결과 로딩 시간도 긴데다 원인 모를 이유로 수식이 제대로 보이지 않는 경우까지 있었습니다.</p>
+
+<p>설치형 블로그에서는 수식 입력이 그나마 편한 편입니다. 제가 처음 사용했던 블로그인 Jekyll을 이용한 Github 블로그에서도 수식 입력은 깔끔하게 나온 편입니다. 포스트를 올리는 것만 편했더라도 아마 계속 사용했을 것 같습니다.</p>
+
+<p>워드프레스는 수식 입력 기능을 기본적으로 지원하지 않지만, 플러그인을 이용하면 수식 입력이 가능하도록 할 수 있습니다. 워드프레스에서 수식을 입력하는 방법은 크게 두 가지인데, 워드프레스에서 공식으로 지원하는 Jetpack 플러그인을 사용한 방법과 WP-KaTeX라는 플러그인을 사용한 방법을 소개해드리려고 합니다.</p>
+
+<h2 id="jetpack-플러그인을-사용하는-방법">Jetpack 플러그인을 사용하는 방법</h2>
+
+<p>서비스형 워드프레스를 사용하는 경우 기본적으로 Jetpack이 설치되어 있기도 하고, 설치형 워드프레스를 사용하는 경우라고 해도 Jetpack을 사용하는 분이 많기 때문에 접근하기 쉽습니다. 다만 이미 Jetpack의 다른 기능을 사용하고 계시다면 문제가 없지만, 오로지 수식 입력 하나만 위해서 Jetpack을 설치하려고 하신다면 추천드리지 않습니다. Jetpack 플러그인 자체가 굉장히 많은 기능을 지원하고 있긴 하지만, 그만큼 많이 무겁기 때문에 사이트 로딩 속도가 급격하게 저하되기 때문입니다.</p>
+
+<p>Jetpack 플러그인을 설치하는 방법은 이미 이전에 포스팅했으니 혹시나 설치하는 방법을 보고 싶으시다면 아래에 링크한 포스트를 참고하시기 바랍니다.</p>
+
+<ul>
+  <li><a href="/wordpress/install-jetpack-plugin/">[워드프레스] Jetpack 플러그인 설치하기</a></li>
+</ul>
+
+<p><img src="/images/WordPress/18. WordPress Type Formula/WP 18-01.png" alt="" class="align-center" /></p>
+
+<p>우선 워드프레스 관리자 페이지의 플러그인 메뉴에서 Jetpack 플러그인을 활성화시킵니다.</p>
+
+<p><img src="/images/WordPress/18. WordPress Type Formula/WP 18-02.png" alt="" class="align-center" /></p>
+
+<p>Jetpack 플러그인을 설치하였다면, Jetpack 설정에서 쓰기 탭으로 가시면 번역되지 않은 문장 하나가 보이는데, Use the LaTeX ~~ 라고 나와있는 옵션을 켜주시면 포스트에서 LaTeX 문법을 사용하실 수 있습니다. LaTeX 문법을 사용하실 때는 <code class="language-plaintext highlighter-rouge">[latex]</code> ~ <code class="language-plaintext highlighter-rouge">[/latex]</code> 사이에 LaTeX 문법을 입력하시면 됩니다. LaTeX 문법 리스트는 위키백과에 자세히 나와 있습니다.</p>
+
+<p>Jetpack 플러그인의 LaTeX 기능을 비추천하는 이유는 그 속도에 있습니다. 포스트에 LaTeX 문법을 많이 삽입하면 수식 변환 속도가 눈에 보일 정도로 느리기 때문입니다. 사실 이 점 때문에 Jetpack을 사용하고 계신분들도 플러그인 수를 줄이고 싶다던가 하는 특수한 이유가 아니라면, 아래의 방법을 더 추천합니다.</p>
+
+<h2 id="wp-katex-플러그인을-사용하는-방법">WP-KaTeX 플러그인을 사용하는 방법</h2>
+
+<p>만약 Jetpack 플러그인을 지금 사용하고 있지 않고, 수식 입력만을 목적으로 하신다면 이 방법을 추천합니다. 이 플러그인은 공식 플러그인은 아니지만, 수식 입력이라는 단 하나의 목적으로 만들어진 플러그인이기 때문에 굉장히 가볍고, 수식을 표현하는 속도 또한 매우 빠르다는 장점이 있습니다. 아무래도 수식 입력을 필요로 하는 사람이 많지 않다보니, 사용자는 약 1000명 남짓에 불과합니다.</p>
+
+<p><img src="/images/WordPress/18. WordPress Type Formula/WP 18-03.png" alt="" class="align-center" /></p>
+
+<p>사실 플러그인 목록에서 Latex로 검색하면 이 플러그인 외에도 여러 플러그인을 볼 수 있습니다. 이보다 더 많은 사용자를 보유하고 있는 플러그인도 있지만, 제가 여러 개를 사용해본 결과, 이 플러그인이 가장 수식 로딩 속도가 빠르고 안정적이었습니다. 같은 TeX 문법이라고 해도 LaTeX와 KaTeX의 속도가 차이가 나기 때문인 것으로 보입니다.</p>
+
+<p><img src="/images/WordPress/18. WordPress Type Formula/WP 18-04.png" alt="" class="align-center" /></p>
+
+<p>설치 방법은 어렵지 않습니다. 워드프레스 관리자 화면에서 플러그인 메뉴 - 새로 추가로 들어가신 후, katex라고 검색하시면 첫 번째로 나오는 플러그인을 설치하시면 됩니다. Jetpack과는 달리 따로 설정할 것이 없기 때문에, 설치 후 활성화만 하시면 바로 사용하실 수 있습니다. 사용 방법은 Jetpack의 기능과 동일하게,  <code class="language-plaintext highlighter-rouge">[latex]</code> ~ <code class="language-plaintext highlighter-rouge">[/latex]</code> 사이에 LaTeX 문법을 입력하시면 됩니다.</p>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> Tags: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/tags/#wordpress" class="page__taxonomy-item p-category" rel="tag">wordpress</a>
+    
+    </span>
+  </p>
+
+
+
+
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> Categories: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/categories/#studies" class="page__taxonomy-item p-category" rel="tag">studies</a>
+    
+    </span>
+  </p>
+
+
+        
+
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time class="dt-published" datetime="2020-01-23T00:00:00+09:00">January 23, 2020</time></p>
+
+      </footer>
+
+      <section class="page__share">
+  
+    <h4 class="page__share-title">Share on</h4>
+  
+
+  <a href="https://twitter.com/intent/tweet?text=%EC%9B%8C%EB%93%9C%ED%94%84%EB%A0%88%EC%8A%A4%EC%97%90%EC%84%9C+%EC%88%98%EC%8B%9D+%EC%9E%85%EB%A0%A5%ED%95%98%EA%B8%B0%20http%3A%2F%2Flocalhost%3A4000%2Fwordpress%2Fwordpress-type-formula%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Fwordpress%2Fwordpress-type-formula%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2Fwordpress%2Fwordpress-type-formula%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+
+      
+  <nav class="pagination">
+    
+      <a href="/git/join-github/" class="pagination--pager" title="GitHub 가입하기
+">Previous</a>
+    
+    
+      <a href="/git/commit-and-push/" class="pagination--pager" title="Commit과 Push 하기
+">Next</a>
+    
+  </nav>
+
+    </div>
+
+    
+  </article>
+
+  
+  
+</div>
+
+    </div>
+
+    
+      <div class="search-content">
+        <div class="search-content__inner-wrap"><form class="search-content__form" onkeydown="return event.key != 'Enter';" role="search">
+    <label class="sr-only" for="search">
+      Enter your search term...
+    </label>
+    <input type="search" id="search" class="search-input" tabindex="-1" placeholder="Enter your search term..." />
+  </form>
+  <div id="results" class="results"></div></div>
+
+      </div>
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>Follow:</strong></li>
+    
+
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+
+    
+      <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2023 KEEPMIND All rights reserved. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    <script type="text/javascript" async
+   src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      extensions: ["tex2jax.js"],
+      jax: ["input/TeX", "output/HTML-CSS"],
+      tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+        displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+        processEscapes: true
+      },
+      "HTML-CSS": { availableFonts: ["TeX"] }
+    });
+</script>
+
+
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+<script src="/assets/js/lunr/lunr.min.js"></script>
+<script src="/assets/js/lunr/lunr-store.js"></script>
+<script src="/assets/js/lunr/lunr-en.js"></script>
+
+
+
+
+
+
+
+  </body>
+</html>
