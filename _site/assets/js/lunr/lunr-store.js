@@ -138,7 +138,7 @@ var store = [{
         "teaser": null
       },{
         "title": "Newspaper 테마 데모 적용하기",
-        "excerpt":"지난 시간에 Newspaper 테마를 구입하고, 적용하는 것까지 성공했습니다. 하지만 제대로 된 블로그를 만들기 위해서는 이것 저것 건드려서 디자인을 해 주어야합니다. Newspaper 테마는 tagDiv Composer라는 플러그인을 제공하여 초보자도 쉽게 화면을 꾸밀 수 있는 기능을 제공하고 있습니다. 그럼에도 불구하고 저처럼 워드프레스 자체가 처음인 사람은 그것조차도 쉽지 않습니다. 이런 경우에는 밑바닥부터 하나씩 만드는...","categories": ["studies"],
+        "excerpt":"지난 시간에 Newspaper 테마를 구입하고, 적용하는 것까지 성공했습니다. 하지만 제대로 된 블로그를 만들기 위해서는 이것저것 건드려서 디자인을 해 주어야합니다. Newspaper 테마는 다행히도 tagDiv Composer라는 플러그인을 제공하여 초보자도 쉽게 화면을 꾸밀 수 있는 기능을 제공하고 있습니다. 그럼에도 불구하고 저처럼 워드프레스 자체가 처음인 사람은 그것조차도 쉽지 않습니다. 이런 경우에는 밑바닥부터 하나씩 만드는...","categories": ["studies"],
         "tags": ["wordpress"],
         "url": "/wordpress/newspaper-theme-demo/",
         "teaser": null
@@ -150,7 +150,7 @@ var store = [{
         "teaser": null
       },{
         "title": "Envato Market 플러그인 설치하기",
-        "excerpt":"워드프레스 유료 테마는 굉장히 자주 업데이트가 이루어집니다. Newspaper 같은 경우는 1년에 한번 정도 메이저 업데이트, 그 외에는 비정기적으로 마이너 업데이트가 제공됩니다. 테마를 업데이트하기 위해서는 FTP에 파일을 직접 업로드하는 것이 일반적인 방법인데, 이것이 여간 귀찮은 것이 아닙니다. 그렇기 때문에 Envato Market에서는 워드프레스 플러그인으로 이것을 편하게 해주는 방법을 제공합니다. 초기 설정이 조금...","categories": ["studies"],
+        "excerpt":"워드프레스 유료 테마는 굉장히 자주 업데이트가 이루어집니다. Newspaper 같은 경우는 1년에 한번 정도 메이저 업데이트, 그 외에는 비정기적으로 마이너 업데이트가 제공됩니다. 테마를 업데이트하기 위해서는 FTP에 파일을 직접 업로드하는 것이 일반적인 방법인데, 이것이 여간 귀찮은 것이 아닙니다. (최근에는 자동 업데이트도 지원하긴 합니다) 다행히 Envato Market에서는 워드프레스 플러그인으로 이것을 편하게 해주는 방법을...","categories": ["studies"],
         "tags": ["wordpress"],
         "url": "/wordpress/install-envato-market-plugin/",
         "teaser": null
