@@ -16,7 +16,7 @@ tags:
 
 ![](/images/WordPress/12. Naver Webpage Collection/WP 12-02.png){: .align-center}
 
-수동으로 웹 페이지를 수집하기 위해서는 왼쪽의 요청 메뉴를 클릭하시고, 서브 메뉴가 펼쳐지면 웹 페이지 수집 메뉴를 클릭하시면 됩니다.
+수동으로 웹 페이지를 수집하기 위해서는 왼쪽의 <span style="color:red">요청</span> 메뉴를 클릭하시고, 서브 메뉴가 펼쳐지면 <span style="color:red">웹 페이지 수집</span> 메뉴를 클릭하시면 됩니다.
 
 ![](/images/WordPress/12. Naver Webpage Collection/WP 12-03.png){: .align-center}
 
@@ -28,7 +28,7 @@ tags:
 
 ![](/images/WordPress/12. Naver Webpage Collection/WP 12-05.png){: .align-center}
 
-복사한 URL을 웹 페이지 수집 화면에 붙여넣고, 확인 버튼을 클릭하시면 됩니다.
+복사한 URL을 웹 페이지 수집 화면에 붙여넣고, <span style="color:red">확인</span> 버튼을 클릭하시면 됩니다.
 
 ![](/images/WordPress/12. Naver Webpage Collection/WP 12-06.png){: .align-center}
 
@@ -36,7 +36,7 @@ tags:
 
 ![](/images/WordPress/12. Naver Webpage Collection/WP 12-07.png){: .align-center}
 
-잠시 기다리시면 요청완료 부분이 수집성공으로 바뀌어 있는 것을 볼 수 있습니다.
+잠시 기다리시면 **요청완료** 부분이 수집성공으로 바뀌어 있는 것을 볼 수 있습니다.
 
 ![](/images/WordPress/12. Naver Webpage Collection/WP 12-08.png){: .align-center}
 

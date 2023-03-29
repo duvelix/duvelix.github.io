@@ -17,23 +17,23 @@ tags:
 
 ![](/images/WordPress/14. Connect Analytics Search Console/WP 14-01.png){: .align-center}
 
-먼저 구글 애널리틱스에 방문하고, 로그인합니다. 왼쪽 맨 아래를 보시면 관리 메뉴가 보이는데, 이것을 클릭합니다.
+먼저 구글 애널리틱스에 방문하고, 로그인합니다. 왼쪽 맨 아래를 보시면 <span style="color:red">관리</span> 메뉴가 보이는데, 이것을 클릭합니다.
 
 ![](/images/WordPress/14. Connect Analytics Search Console/WP 14-02.png){: .align-center}
 
-관리 화면에는 크게 계정, 속성, 보기로 나뉘어 있습니다. 이 중 가운데의 속성에서 모든 제품 메뉴를 클릭합니다.
+관리 화면에는 크게 계정, 속성, 보기로 나뉘어 있습니다. 이 중 가운데의 속성에서 <span style="color:red">모든 제품</span> 메뉴를 클릭합니다.
 
 ![](/images/WordPress/14. Connect Analytics Search Console/WP 14-03.png){: .align-center}
 
-모든 제품 메뉴에는 구글과 연관된 많은 서비스 목록이 나옵니다. 스크롤을 쭉 내리시면 맨 아래에 Search Console 항목이 보입니다. 이 항목에서 Search Console 연결 버튼을 클릭하시면 됩니다.
+모든 제품 메뉴에는 구글과 연관된 많은 서비스 목록이 나옵니다. 스크롤을 쭉 내리시면 맨 아래에 **Search Console** 항목이 보입니다. 이 항목에서 <span style="color:red">Search Console 연결</span> 버튼을 클릭하시면 됩니다.
 
 ![](/images/WordPress/14. Connect Analytics Search Console/WP 14-04.png){: .align-center}
 
-버튼을 클릭하시면 새 탭으로 화면이 넘어가고, 동일한 구글 계정에 연결된 Search Console 속성이 나옵니다. 이 속성을 선택하신 다음 저장 버튼을 클릭하시면 됩니다.
+버튼을 클릭하시면 새 탭으로 화면이 넘어가고, 동일한 구글 계정에 연결된 Search Console 속성이 나옵니다. 이 속성을 선택하신 다음 <span style="color:red">저장</span> 버튼을 클릭하시면 됩니다.
 
 ![](/images/WordPress/14. Connect Analytics Search Console/WP 14-05.png){: .align-center}
 
-연결을 정말 할 것인지를 물어보는 창이 나오는데, 확인 버튼을 클릭합니다.
+연결을 정말 할 것인지를 물어보는 창이 나오는데, <span style="color:red">확인</span> 버튼을 클릭합니다.
 
 ![](/images/WordPress/14. Connect Analytics Search Console/WP 14-06.png){: .align-center}
 
@@ -41,7 +41,7 @@ tags:
 
 ![](/images/WordPress/14. Connect Analytics Search Console/WP 14-07.png){: .align-center}
 
-구글 애널리틱스 화면으로 넘어가도, 바로 바뀌어 보이지 않기 때문에 역시 새로고침(F5)을 한번 눌러주셔야 합니다. 새로고침 후 위처럼 정상적으로 연결되었다는 화면이 나오면 저장 버튼을 클릭하시면 됩니다.
+구글 애널리틱스 화면으로 넘어가도, 바로 바뀌어 보이지 않기 때문에 역시 새로고침(F5)을 한번 눌러주셔야 합니다. 새로고침 후 위처럼 정상적으로 연결되었다는 화면이 나오면 <span style="color:red">저장</span> 버튼을 클릭하시면 됩니다.
 
 ## 확인한 사이트가 없습니다라고 나오는 경우
 
