@@ -20,19 +20,19 @@ tags:
 
 만약 저처럼 SiteGround에서 워드프레스를 설치하셨다면 이미 MonsterInsights 플러그인이 설치되어있을 것입니다. 설치되어있지 않더라도 플러그인 새로 추가에서 MonsterInsights로 검색하시면 바로 나오기 때문에 설치에 어려움은 없을 것이라고 생각합니다. 역시나 그냥 설치만 하면 끝나는 것이 아니라 추가로 설정해줄 부분이 있으니, 상단의 <span style="color:red">Connect MonsterInsights and Setup Website Analytics</span> 버튼을 클릭합니다.
 
-![](/images/WordPress/8. Regist Google Analytics/WP 08-03.png){: .align-center}
+![](/images/WordPress/8. Regist Google Analytics/WP 08-03.png){: width="600"}{: .align-center}
 
 설정창에는 사용자의 웹 사이트가 어떤 카테고리인지를 알려달라고 합니다. 저는 블로그이기 때문에 가운데의 **Publisher (Blog)**를 선택했습니다. 원하시는 카테고리를 선택하신 후, 아래의 <span style="color:red">Save and Continue</span> 버튼을 클릭합니다.
 
-![](/images/WordPress/8. Regist Google Analytics/WP 08-04.png){: .align-center}
+![](/images/WordPress/8. Regist Google Analytics/WP 08-04.png){: width="600"}{: .align-center}
 
 MonsterInsights 플러그인은 기본적으로 무료지만, Pro버전으로 업그레이드 함으로써 더 많은 기능을 사용할 수 있습니다. 문제는 Pro 버전의 가격이 연간 200달러나 된다는 점입니다. 통계를 알려주는 것 치고는 너무 비싼 금액입니다. 블로그 정도라면 기본 기능이면 충분하니, 그냥 <span style="color:red">Connect MonsterInsights</span> 버튼을 클릭합시다.
 
-![](/images/WordPress/8. Regist Google Analytics/WP 08-05.png){: .align-center}
+![](/images/WordPress/8. Regist Google Analytics/WP 08-05.png){: width="600"}{: .align-center}
 
 구글 애널리틱스에 연결하는 플러그인이므로, 구글 로그인 화면이 나옵니다. 연결하실 구글 계정을 입력하고 로그인하시면 됩니다.
 
-![](/images/WordPress/8. Regist Google Analytics/WP 08-06.png){: .align-center}
+![](/images/WordPress/8. Regist Google Analytics/WP 08-06.png){: width="600"}{: .align-center}
 
 로그인 하시면 MonsterInsights 플러그인에 구글 애널리틱스 권한을 허용해달라는 화면이 나옵니다. <span style="color:red">허용</span> 버튼을 누르시면 됩니다.
 
@@ -52,35 +52,35 @@ MonsterInsights 플러그인은 기본적으로 무료지만, Pro버전으로 �
 
 속성이 만들어지면 구글 애널리틱스를 통해 통계를 제공받을 수 있는 소스코드가 주어집니다. 어떤 사이트를 막론하고 이 소스코드가 웹 사이트에 들어가지 않으면 통계자료를 제공받지 못합니다. 이 소스코드를 잘 복사해 놓습니다.
 
-![](/images/WordPress/8. Regist Google Analytics/WP 08-11.png){: .align-center}
+![](/images/WordPress/8. Regist Google Analytics/WP 08-11.png){: width="600"}{: .align-center}
 
 다시 MonsterInsights 설정창으로 돌아오면, 구글 애널리틱스에 연결하는 화면이 나옵니다. 방금 만든 속성을 선택하고, <span style="color:red">Complete Connection</span> 버튼을 클릭합니다.
 
-![](/images/WordPress/8. Regist Google Analytics/WP 08-12.png){: .align-center}
+![](/images/WordPress/8. Regist Google Analytics/WP 08-12.png){: width="600"}{: .align-center}
 
 잠시 기다리면 연결이 완료됩니다.
 
-![](/images/WordPress/8. Regist Google Analytics/WP 08-13.png){: .align-center}
+![](/images/WordPress/8. Regist Google Analytics/WP 08-13.png){: width="600"}{: .align-center}
 
 다음으로는 MonsterInsights 플러그인의 설정이 나오는데, 따로 건드릴 필요는 없으니 한번 쭉 훑어보면서 스크롤을 아래로 내립니다.
 
-![](/images/WordPress/8. Regist Google Analytics/WP 08-14.png){: .align-center}
+![](/images/WordPress/8. Regist Google Analytics/WP 08-14.png){: width="600"}{: .align-center}
 
 스크롤을 아래로 내리시면 <span style="color:red">Save and continue</span> 버튼이 보입니다. 이 버튼을 클릭합니다.
 
-![](/images/WordPress/8. Regist Google Analytics/WP 08-15.png){: .align-center}
+![](/images/WordPress/8. Regist Google Analytics/WP 08-15.png){: width="600"}{: .align-center}
 
 Pro 버전으로 업그레이드하면 이런 기능이 추가된다는 광고문구가 또 나옵니다. 저는 Pro로 업그레이드할 생각이 없으니 그냥 스크롤을 아래로 내렸습니다.
 
-![](/images/WordPress/8. Regist Google Analytics/WP 08-16.png){: .align-center}
+![](/images/WordPress/8. Regist Google Analytics/WP 08-16.png){: width="600"}{: .align-center}
 
 스크롤을 아래로 내리시면 바로 보이는 <span style="color:red">Save and continue</span> 버튼을 클릭합니다.
 
-![](/images/WordPress/8. Regist Google Analytics/WP 08-17.png){: .align-center}
+![](/images/WordPress/8. Regist Google Analytics/WP 08-17.png){: width="600"}{: .align-center}
 
 설정이 완료되었다는 문구가 나옵니다. <span style="color:red">Finish Setup & Exit Wizard</span> 버튼을 누르시면 워드프레스 관리자 화면으로 돌아갈 수 있습니다.
 
-![](/images/WordPress/8. Regist Google Analytics/WP 08-18.png){: .align-center}
+![](/images/WordPress/8. Regist Google Analytics/WP 08-18.png){: width="600"}{: .align-center}
 
 이 화면이 나오면 구글 애널리틱스와 연결이 성공적으로 이루어진 것입니다. 앞으로는 구글 애널리틱스를 워드프레스 관리자 화면에서 확인할 수 있습니다.
 

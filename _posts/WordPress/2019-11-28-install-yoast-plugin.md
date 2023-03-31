@@ -39,7 +39,7 @@ configuration wizard를 클릭하면 바로 설정 마법사로 넘어갑니다.
 
 다음으로는 웹 사이트가 어떤 목적인지 선택해야합니다. 저는 블로그이기 때문에 **A Blog**를 선택했습니다. 목록을 보시고, 운영하고 있는 웹 사이트의 목적을 선택하시면 됩니다. 선택하셨다면 <span style="color:red">Next</span>를 클릭하세요.
 
-![](/images/WordPress/9. Install Yoast Plugin/WP 09-06.png){: .align-center}
+![](/images/WordPress/9. Install Yoast Plugin/WP 09-06.png){: width="600"}{: .align-center}
 
 이제는 웹 사이트가 **Person (개인)**인지, **Organization (단체)**인지를 선택해주어야 합니다. 저는 이 부분에서 고민을 좀 했는데, 제 블로그는 KEEPMIND라는 브랜드로 운영하고 있기 때문에 Organization으로 선택했습니다. Organization을 선택했다면 위처럼 로고를 업로드할 수 있습니다.
 

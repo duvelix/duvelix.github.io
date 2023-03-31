@@ -23,11 +23,11 @@ tags:
 
 먼저 [구글 애드센스 홈페이지](https://www.google.com/intl/ko_kr/adsense/start/)에 방문합니다. 홈페이지에 접속하면 바로 보이는 화면에서 <span style="color:red">지금 가입하기</span> 버튼을 클릭하고 구글 계정에 가입하거나 로그인합니다.
 
-![](/images/WordPress/16. Setting Google AdSense/WP 16-02.png){: .align-center}
+![](/images/WordPress/16. Setting Google AdSense/WP 16-02.png){: width="600"}{: .align-center}
 
 구글 계정이 있더라도 애드센스에 가입하기 위해서는 여러 정보를 입력해야 합니다. 가장 먼저 광고를 게시할 사이트와 주로 사용하는 이메일 주소를 적습니다. 이메일 주소는 굳이 구글 이메일이 아니여도 됩니다. 아래에는 애드센스에 대한 유용한 정보를 받겠냐는 선택지가 있는데, 필요하지 않다면 **아니요**를 선택하신 후 <span style="color:red">저장하고 계속하기</span> 버튼을 클릭합니다.
 
-![](/images/WordPress/16. Setting Google AdSense/WP 16-03.png){: .align-center}
+![](/images/WordPress/16. Setting Google AdSense/WP 16-03.png){: width="600"}{: .align-center}
 
 다음으로는 사용자의 국가와 이용약관에 대한 동의가 필요합니다. 동의하지 않으면 가입할 수 없으니, **동의**에 체크하고 <span style="color:red">계정 만들기</span> 버튼을 클릭합니다.
 
@@ -63,9 +63,9 @@ tags:
 
 계정 활성화에는 하루 정도 걸린다고 나와있는데, 사이트 검토에는 최대 2주가 소요된다고 합니다. 완료되면 이메일로 연락이 옵니다.
 
-![](/images/WordPress/16. Setting Google AdSense/WP 16-11.png){: .align-center}
+![](/images/WordPress/16. Setting Google AdSense/WP 16-11.png){: width="800"}{: .align-center}
 
-검토가 완료되면 위와 같이 승인 메일이 옵니다. 저는 최대 2주가 걸린다고 해서 꽤 오래 기다려야할 줄 알았는데, 하루 만에 승인 메일이 도착했습니다.
+검토가 완료되면 위와 같이 승인 메일이 옵니다. 저는 꽤 오래 기다려야할 줄 알았는데, 하루 만에 승인 메일이 도착했습니다.
 
 ![](/images/WordPress/16. Setting Google AdSense/WP 16-12.png){: .align-center}
 
@@ -81,7 +81,7 @@ tags:
 
 사이트에 광고를 달기 전에, 제 호스트 계정에 **ads.txt** 파일이 없다는 경고문이 나옵니다. 수익에 영향이 갈 수 있다고 하니, 업로드 하는 것이 좋을 것 같습니다. <span style="color:red">지금 해결하기</span>를 클릭하면 ads.txt 파일 만들기라는 안내가 나오는데, <span style="color:red">다운로드</span>를 클릭하면 바로 ads.txt를 받을 수 있습니다.
 
-![](/images/WordPress/16. Setting Google AdSense/WP 16-15.png){: .align-center}
+![](/images/WordPress/16. Setting Google AdSense/WP 16-15.png){: width="600"}{: .align-center}
 
 받은 ads.txt를 위처럼 자신의 웹 호스팅 최상위 경로에 업로드하면 됩니다. 저는 **FileZilla**를 사용하여 업로드 했는데, 어떤 FTP 프로그램을 사용해도 문제는 없습니다. 사실 이 글을 쓰면서 생각난건데, 대부분의 웹 호스팅 사이트에서는 관리자 패널에서 웹 FTP를 지원하기 때문에 굳이 이렇게 번거롭게 업로드할 필요가 없습니다.
 

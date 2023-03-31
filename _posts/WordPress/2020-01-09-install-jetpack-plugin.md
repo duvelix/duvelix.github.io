@@ -35,11 +35,11 @@ tags:
 
 Jetpack 플러그인을 활성화하게 되면, Jetpack 플러그인을 사용하기 위한 설정 화면이 나옵니다. 가운데에 나와있는 젯팩 설정 버튼을 클릭하세요.
 
-![](/images/WordPress/15. Install JetPack Plugin/WP 15-04.png){: .align-center}
+![](/images/WordPress/15. Install JetPack Plugin/WP 15-04.png){: width="600"}{: .align-center}
 
 Jetpack을 사용하기 위해서는 계정을 만들어야 합니다. 또는 구글이나 애플 계정을 사용할 수도 있습니다. 워드프레스와 애플과는 별 관련이 없어보이는데, 통합 계정을 사용하는 것이 신기하네요. 저는 새 계정을 만들어서 사용하도록 하겠습니다.
 
-![](/images/WordPress/15. Install JetPack Plugin/WP 15-05.png){: .align-center}
+![](/images/WordPress/15. Install JetPack Plugin/WP 15-05.png){: width="600"}{: .align-center}
 
 로그인을 하게 되면 해당 아이디로 연결한다는 화면이 나옵니다. 잠시만 기다리시면 다음 화면으로 넘어갑니다.
 

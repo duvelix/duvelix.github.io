@@ -39,7 +39,7 @@ FTP에 접속하는 방법은 많지만, 여기서는 **FileZila**를 사용하�
 
 HTML 파일 업로드가 완료되었다면, 다시 네이버 서치 어드바이저 페이지로 돌아와서 <span style="color:red">확인</span> 버튼을 클릭합니다.
 
-![](/images/WordPress/11. Regist Search Engine/WP 11-06.png){: .align-center}
+![](/images/WordPress/11. Regist Search Engine/WP 11-06.png){: width="600"}{: .align-center}
 
 HTML 파일이 제대로 올라갔다면, 위처럼 소유 확인이 완료되었다는 메시지가 나옵니다.
 

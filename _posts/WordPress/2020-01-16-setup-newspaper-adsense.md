@@ -37,7 +37,7 @@ tags:
 
 광고 단위 이름에는 자신이 알아볼 수 있는 아무 이름이나 입력하면 됩니다. 저는 광고를 게제하는 위치를 이름으로 넣었습니다. 예를 들어, 예전 제 블로그의 오른쪽 사이드바에 위치한 광고의 이름은 사이드바로 지정하였습니다. 이름은 뭘로 정하든 큰 상관은 없으니 원하는 이름을 입력하시면 됩니다. 그 후 오른쪽 아래에 있는 <span style="color:red">만들기</span> 버튼을 클릭합니다.
 
-![](/images/WordPress/17. Setup Newspaper Adsense/WP 17-05.png){: .align-center}
+![](/images/WordPress/17. Setup Newspaper Adsense/WP 17-05.png){: width="800"}{: .align-center}
 
 광고를 만들면 바로 광고 코드가 발급됩니다. 먼저 <span style="color:red">코드 복사</span>를 클릭하여 광고 코드를 복사한 다음, <span style="color:red">완료</span> 버튼을 클릭합니다.
 

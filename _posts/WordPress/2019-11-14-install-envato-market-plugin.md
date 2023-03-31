@@ -65,15 +65,15 @@ Envato Account 페이지가 나옵니다. 지난번에 테마를 구입할 때 �
 
 토큰을 생성하는 화면이 나오는데, 토큰 이름을 입력해야하고 어떤 권한을 줄 것인지 정해주어야 합니다. 토큰 이름은 아무거나 상관 없습니다. 여기서는 <span style="color:red">My WordPress site</span>로 입력하겠습니다.
 
-![](/images/WordPress/7. Install Envato Market Plugin/WP 07-12.png){: .align-center}
+![](/images/WordPress/7. Install Envato Market Plugin/WP 07-12.png){: width="600"}{: .align-center}
 
 스크롤을 조금 내리시면 권한을 정할 수 있는데, 반드시 체크해야될 부분은 **Download the user's purchased items**와 **List purchases the user has made**입니다. 나머지는 굳이 체크할 필요가 없습니다.
 
-![](/images/WordPress/7. Install Envato Market Plugin/WP 07-13.png){: .align-center}
+![](/images/WordPress/7. Install Envato Market Plugin/WP 07-13.png){: width="600"}{: .align-center}
 
 맨 아래로 내리신 후, 약관에 동의한다는 체크를 하시고 <span style="color:red">Create Token</span> 버튼을 클릭합니다.
 
-![](/images/WordPress/7. Install Envato Market Plugin/WP 07-14.png){: .align-center}
+![](/images/WordPress/7. Install Envato Market Plugin/WP 07-14.png){: width="600"}{: .align-center}
 
 토큰이 생성된 것을 확인할 수 있습니다. 가운데에 나온 토큰을 잘 복사해 놓습니다. (메모장 같은 곳에 붙여놓으시는 것이 좋습니다.) 그리고 아래에 체크를 하고 <span style="color:red">Woohoo! Got it.</span> 버튼을 클릭합니다.
 
