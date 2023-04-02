@@ -1,5 +1,5 @@
 ---
-title: "전문연구요원 훈련소 후기 - Prologue"
+title: "전문연구요원 훈련소 후기 - 프롤로그"
 permalink: /katc/boot-camp-0/
 classes: wide
 toc: true
