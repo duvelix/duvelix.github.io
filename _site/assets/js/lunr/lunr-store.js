@@ -1,8 +1,26 @@
 var store = [{
+        "title": "RAZER Rogue Backpack",
+        "excerpt":"2달전쯤 키보드와 마우스를 바꾸기 위해 컴퓨존에서 RAZER 키보드, 마우스를 주문했는데 어느 날 아래와 같은 연락이 왔습니다. 평생 이벤트와는 인연이 없을 것만 같았는데 있었는지도 몰랐던 이벤트에 당첨이 되니 기분이 묘했습니다. 어떤 물건이 당첨이 되었나 찾아보니 RAZER에서 나온 배낭이었습니다. 가방을 보니 있으면 좋을 것 같지만 가방치고는 상당히 고가라 제 돈주고 사기에는 아까운...","categories": ["interests"],
+        "tags": ["unboxing"],
+        "url": "/unboxing/razer-rogue-backpack/",
+        "teaser": null
+      },{
+        "title": "닌텐도 스위치 프로 컨트롤러 - 슈퍼 스매시 브라더스 얼티밋 에디션",
+        "excerpt":"스위치를 구매하고 1년 정도 조이콘을 사용해서 게임을 즐겼었는데, 저는 스위치를 독 모드에서만 사용했기 때문에 게임을 제대로 즐기기에는 조이콘이 너무 작았습니다. 어차피 언젠가는 프로콘이 필요할 것이라고 생각해서 마음먹은 김에 구입하였습니다. 슈퍼 스매시브라더스 얼티밋 에디션으로 구매했는데, 사실 이 게임의 팬이라서 구매했다기 보단 색이 마음에 들어서 이걸로 구매했습니다. 일반 프로 컨트롤러는 그냥 완전히...","categories": ["interests"],
+        "tags": ["unboxing"],
+        "url": "/unboxing/nintendo-switch-pro-controller/",
+        "teaser": null
+      },{
         "title": "Introduction",
         "excerpt":"안녕하세요, 오늘은 Machine Learning 카테고리에 대해 말씀드리려 합니다. 이 카테고리에는 제가 예전에 기계학습을 공부하며 이해한 내용을 정리하는 식으로 진행하려고 합니다. Textbook 작성된 글의 기반은 위의 사진에 나와있는 Learning From Data라는 교재입니다. 책의 저자이신 Abu-Mostafa 교수님은 칼텍 소속으로 실제로 Machine Learning 수업을 강의하실 때 이 교재를 사용하는 것으로 알고 있습니다. 강의자료는...","categories": ["studies"],
         "tags": ["machine learning"],
         "url": "/ml/introduction/",
+        "teaser": null
+      },{
+        "title": "슈퍼 마리오 메이커 2",
+        "excerpt":"이번에 슈퍼 마리오 메이커2를 구매하면서 이제는 게임 패키지 개봉기도 기록으로 남겨두면 좋겠다고 생각이 들어 개봉 전에 사진을 찍어봤습니다. 아무래도 2로 오면서 추가된 것이 슈퍼 마리오 3D 월드 요소이다 보니 표지에 해당 작품의 요소들이 많은 부분을 차지한 것이 눈에 띕니다. 앞면에는 슈퍼 마리오 메이커2의 타이틀 이미지가 약간 편집되어 담겨있습니다. 원래 타이틀...","categories": ["interests"],
+        "tags": ["unboxing"],
+        "url": "/unboxing/super-mario-maker-2/",
         "teaser": null
       },{
         "title": "The Learning Problem",
@@ -11,10 +29,28 @@ var store = [{
         "url": "/ml/the-learning-problem/",
         "teaser": null
       },{
+        "title": "PowerA 프로콘 충전 거치대",
+        "excerpt":"게임 컨트롤러는 항상 보관이 문제입니다. 사용하지 않을 때 아무데나 방치하면 보기에도 좋지 않을 뿐더러 충전하는 것도 귀찮기 때문입니다. 그래서 저는 가급적이면 컨트롤러를 구매할 때 보관할 파우치나 충전독을 꼭 구입하는 편입니다. 듀얼쇼크 충전독은 이미 국내에 정식으로 판매가 되고있고, 엘리트 컨트롤러는 파우치를 처음부터 제공하는데 비해 프로콘 악세서리는 국내에서 구하기가 쉽지 않습니다. 마침...","categories": ["interests"],
+        "tags": ["unboxing"],
+        "url": "/unboxing/powera-procon-charge-stand/",
+        "teaser": null
+      },{
+        "title": "레드 데드 리뎀션 GOTY Edition",
+        "excerpt":"이번 휴가 때 어떤 게임을 마스터할지 고민하다가 락스타 게임즈의 레드 데드 리뎀션을 플레이해보기로 결정했습니다. 레드 데드 리뎀션은 2010년 최다 GOTY상을 수상한 명작으로, 한국에서도 정발이 되었습니다. 다만 한글화가 되지 않아 영어로 플레이해야 하는 불편함과 PC판 미출시로 인해 한국에서의 인지도는 높지 않은 편입니다. 플레이하기 위해서는 플레이스테이션3이나 XBOX(360이나 ONE)가 필요한데, 플레이스테이션4의 경우 하위호환을...","categories": ["interests"],
+        "tags": ["unboxing"],
+        "url": "/unboxing/red-dead-redemption-goty/",
+        "teaser": null
+      },{
         "title": "Is Learning Feasible?",
         "excerpt":"2장은 지난 장의 마지막 이슈였던 학습은 가능한 것인가? 라는 의문을 해결하는 강의입니다. Outline 이번 장은 총 4부분으로 구성되어 있습니다. 먼저 확률론적으로 예제를 통해 접근하고, 이를 기계학습과 연결하는 과정을 거칩니다. 하지만 이 과정에서 몇 가지의 문제가 생기는데, 이 원인과 그 해결책은 무엇인지까지 다루게 됩니다. Probability to the rescue 가장 먼저, 위...","categories": ["studies"],
         "tags": ["machine learning"],
         "url": "/ml/is-learning-feasible/",
+        "teaser": null
+      },{
+        "title": "삼성 보조 배터리",
+        "excerpt":"휴대용 선풍기나, 보조배터리 같은 물건들은 일상생활에서 유용하지만 차마 돈주고 사기는 아깝습니다. 작년 여름에 참석했던 학회에서 운 좋게 휴대용 선풍기를 받아 유용하게 쓰고있는데, 보조배터리는 돈 주고 살만큼 급하지 않아 아직까지 구매하지 않았습니다. 그러다가 마침 최근에 삼성 네트워크 사업부에서 진행하는 리쿠르팅에 참여했더니 기념품으로 삼성 보조배터리를 받았습니다. 박스 앞면에는 10,000mAh 용량과 15W 출력,...","categories": ["interests"],
+        "tags": ["unboxing"],
+        "url": "/unboxing/samsung-auxiliary-battery/",
         "teaser": null
       },{
         "title": "Linear Models I",
@@ -23,10 +59,34 @@ var store = [{
         "url": "/ml/linear-models-1/",
         "teaser": null
       },{
+        "title": "LISA Selfie Stick LS-CT01",
+        "excerpt":"저는 사진을 정말 못찍습니다. 얼마나 못찍는지는 개봉기에 올라와 있는 사진들을 보시면 바로 아실 수 있습니다. 저도 사진을 좀 이쁘게 찍고싶은 마음에 삼각대 같은 촬영 도구가 있다면 좀 나아지지 않을까 싶어 찾아봤습니다. 그러다 마침 위메프에서 첫 구매 특가로 100원에 삼각대겸 셀카봉을 판매하는 것을 보고 싼맛에 구매해봤습니다. 배송비가 무료라 정말 딱 100원만...","categories": ["interests"],
+        "tags": ["unboxing"],
+        "url": "/unboxing/lisa-selfie-stick-ls-ct01/",
+        "teaser": null
+      },{
         "title": "Error and Noise",
         "excerpt":"4장에서는 Error와 Noise에 대해 알아보겠습니다. Outline 이번 장의 구성은 총 4개로 나뉩니다. 먼저 지난 장 마지막에 다루었던 Nonlinear Transformation에 대해 좀 더 이야기해보고, 다음으로 Error를 측정하는 방법, 그리고 Noise가 발생하는 이유와 모델에 적용하는 법, 마지막으로 앞으로 이런 문제를 어떻게 접근할지에 대한 간단한 정리를 하며 마치게 됩니다. Nonlinear transformation (continued) 지난...","categories": ["studies"],
         "tags": ["machine learning"],
         "url": "/ml/error-and-noise/",
+        "teaser": null
+      },{
+        "title": "슈퍼 마리오 3D 랜드",
+        "excerpt":"최근 젤다의 전설 : 신들의 트라이포스 2 게임을 클리어하고 이제 어떤 게임을 할까 고민하다 3DS 명작 중 하나인 슈퍼 마리오 3D 랜드를 해보기로 결정했습니다. 아직 못해본 게임들도 많지만 이왕이면 다른 장르의 게임을 하는게 더 색다른 느낌을 줄 것 같았습니다. 슈퍼 마리오 3D 랜드는 닌텐도 3DS의 런칭 타이틀이라 나온지는 꽤 되어...","categories": ["interests"],
+        "tags": ["unboxing"],
+        "url": "/unboxing/super-mario-3d-land/",
+        "teaser": null
+      },{
+        "title": "샤오미 USB 멀티탭 블랙",
+        "excerpt":"최근에 Wii U를 구매해서 배송을 기다리는 중인데, 북미판을 구매했기 때문에 한국에서 사용하려면 돼지코라 불리는 변환 어댑터가 필요합니다. Wii U에는 게임기 본체와 게임 패드용 전원이 따로 있기 때문에 2개의 돼지코를 구매해야 했는데, 돼지코를 2개나 구매할 바에는 멀티 플러그 멀티탭을 구매하는게 나을 것 같아 샤오미 멀티탭을 구매하였습니다. 개인적으로 중국 브랜드 물건은 여러가지...","categories": ["interests"],
+        "tags": ["unboxing"],
+        "url": "/unboxing/xiaomi-usb-power-strip/",
+        "teaser": null
+      },{
+        "title": "호리 닌텐도 New 3DS LL TPU 커버 (클리어)",
+        "excerpt":"New 3DS XL을 최근에 중고로 구매했는데, 본체의 상태는 좋았으나 케이스가 한쪽이 부러져있고, 플라스틱 재질은 본체에 상처를 줄 수 있다고 해 새로운 케이스를 구매했습니다. 좀 더 저렴한 선택지도 있었지만, 값이 좀 비싸더라도 호리 사의 제품은 대부분 높은 신뢰도를 갖고 있기에 호리의 TPU 투명 케이스를 구매했습니다. 구매했을 당시 가격은 약 17000원 정도입니다....","categories": ["interests"],
+        "tags": ["unboxing"],
+        "url": "/unboxing/hori-nintendo-new-3ds-ll-tpu-cover/",
         "teaser": null
       },{
         "title": "Training versus Testing",
@@ -35,10 +95,34 @@ var store = [{
         "url": "/ml/training-versus-testing/",
         "teaser": null
       },{
+        "title": "젤다의 전설 : 황혼의 공주 HD",
+        "excerpt":"젤다의 전설 : 황혼의 공주는 Wii로 한국에서 정발했었습니다. 다만 저는 최근에 Wii U를 구입했기 때문에 Wii U 리마스터 판인 HD 버전으로 구매했습니다. 사실 리마스터를 감안하더라도 영어의 압박 때문에 Wii 버전을 구입하고 싶었지만, 닌텐도의 거지같은 지역제한 정책 때문에 Wii U에서는 한국 정발 Wii 소프트웨어를 실행할 수 없습니다. Wii U로 발매한 황혼의...","categories": ["interests"],
+        "tags": ["unboxing"],
+        "url": "/unboxing/zelda-twilight-princess-hd/",
+        "teaser": null
+      },{
+        "title": "닌텐도 Wii U",
+        "excerpt":"기다리고 기다리던 Wii U 입니다. 원래는 월요일에 즐겁게 설치를 하고 개봉기를 쓸 예정이었으나, 황혼의 공주 개봉기에서 보시듯 단자 문제로 인해 오늘에서야 설치하게 되었습니다. 원래는 급한대로 어제 다이소에서 판매하는 유니버셜 어댑터를 사려고 했으나, 개당 5천원이라는 엄청난 가격을 보고 인터넷에서 저렴한 유니버셜 어댑터를 구매하여 오늘 배송받았습니다. 2개가 필요하지만 혹시 몰라 3개를 주문하여...","categories": ["interests"],
+        "tags": ["unboxing"],
+        "url": "/unboxing/nintendo-wii-u/",
+        "teaser": null
+      },{
+        "title": "닌텐도 Wii U 악세사리 셋",
+        "excerpt":"닌텐도에서 공식적으로 판매하는 악세사리 셋이 있길래 Wii U를 주문할 때 같이 주문했습니다. Wii U가 단종되다보니 이것도 가격이 그렇게 싸지만은 않았습니다. 무려 15달러나 주고 구입했습니다. 물론 서드파티에서 만든 비슷한 제품은 더 저렴한 가격에 구매할 수 있었지만, 몇 달러 아껴느니 닌텐도 공식 제품을 구매하는 것이 좋을 것 같아 이 제품을 구매하게 되었습니다....","categories": ["interests"],
+        "tags": ["unboxing"],
+        "url": "/unboxing/nintendo-wii-u-accessory-set/",
+        "teaser": null
+      },{
         "title": "Theory of Generalization",
         "excerpt":"6장에서는 지난 장에서 다루었던 $m_{\\mathcal{H}}$에 대한 증명들을 배우게 됩니다. 증명을 다루는 만큼, 이번 장은 가장 이론적인 내용을 담고 있습니다. 수학식이 많이 나오기 때문에 다소 지루할 수 있다는 것을 미리 말씀드립니다. Outline 이번 장의 증명은 크게 두 가지로 나뉘어 있습니다. 첫째는 $m_{\\mathcal{H}}$가 다항 함수인 것을 증명하는 것이고, 두 번째는 $m_{\\mathcal{H}}$가 Hoeffding’s...","categories": ["studies"],
         "tags": ["machine learning"],
         "url": "/ml/theory-of-generalization/",
+        "teaser": null
+      },{
+        "title": "롯데 아임 원더풀 카드",
+        "excerpt":"조만간 핸드폰을 바꾸기 위해 통신비에 혜택을 받을 수 있는 신용카드를 찾고 있었는데, 롯데 텔로카드가 괜찮아 보였습니다. 하지만 저는 롯데카드를 지금까지 사용한적이 없어서 카드를 만들때 보너스를 받고 싶었는데, 텔로카드 자체는 아무런 신규가입자 보상이 없어서 보상을 받을 수 있는 카드를 먼저 신청하고, 텔로카드를 추가 발급하는 방법을 사용하기로 했습니다. 저는 네이버페이 혜택을 집중적으로...","categories": ["interests"],
+        "tags": ["unboxing"],
+        "url": "/unboxing/lotte-im-wonderful-card/",
         "teaser": null
       },{
         "title": "VC Dimension",
@@ -293,7 +377,7 @@ var store = [{
         "url": "/git/merge-branch/",
         "teaser": null
       },{
-        "title": "전문연구요원 훈련소 후기 - Prologue",
+        "title": "전문연구요원 훈련소 후기 - 프롤로그",
         "excerpt":"훈련소를 수료하고 돌아온지도 거의 열흘이 지났습니다. 그 동안 밀려있던 일들을 처리하기도 하고 오랜만에(?) 느낀 사회의 자유를 즐기느라 포스트를 작성하지 못했습니다. 당분간은 정기적으로 작성해던 포스트의 주제보다 앞으로 가실 분들을 위해 후기와 팁 같은 것들을 정리해서 올려볼까 합니다. 까먹기 전에 정리할 목적도 있기 때문에 가급적이면 자세하게 작성할 예정입니다. 모든 내용을 하나의 포스트에...","categories": ["interests"],
         "tags": ["katc"],
         "url": "/katc/boot-camp-0/",
