@@ -131,10 +131,28 @@ var store = [{
         "url": "/ml/VC-demension/",
         "teaser": null
       },{
+        "title": "롯데카드 텔로 SKT",
+        "excerpt":"며칠 전에 롯데 아임 원더풀 카드를 발급받았으나, 실사용 목적이 아니라 체리피킹용으로 발급받았기 때문에 발급이 완료된 후 바로 텔로 SKT 카드를 신청하였습니다. 텔로 SKT 카드는 기본 혜택 외에 발급 시 혜택이 전혀 없기 때문입니다. 사족으로, 카드 이름이 조금 부자연스럽다고 생각합니다. 제휴 카드라도 롯데 OOO 카드 이런 식으로 네이밍을 짓는 것이 좋을...","categories": ["interests"],
+        "tags": ["unboxing"],
+        "url": "/unboxing/lotte-card-tello-skt/",
+        "teaser": null
+      },{
         "title": "Bias-Variance Tradeoff",
         "excerpt":"8장에서는 Bias와 Variance에 대해 배웁니다. Bias-Variance는 지난 장에서 배운 VC 처럼 Error에 대해 분석하는 방법이지만, 직접적인 관련은 없으므로 VC를 제대로 이해하지 못하셨더라도 이번 장을 배우는 것에는 큰 무리가 없습니다. Outline 이번 장은 크게 2개의 소주제로 구성되어 있습니다. 먼저 Bias와 Variance가 무엇인지 배우고, 이것이 어떤 의지를 가지는지를 예제를 통해 설명합니다. 아무래도...","categories": ["studies"],
         "tags": ["machine learning"],
         "url": "/ml/bias-variance-tradeoff/",
+        "teaser": null
+      },{
+        "title": "갤럭시 노트 10+ 아우라 화이트",
+        "excerpt":"저는 고등학생 때부터 아이팟 터치를 사용했기 때문에 자연스레 스마트폰도 아이폰으로 시작했습니다. 근 10년간 아이폰만을 사용했지만, 이번 아이폰 11의 디자인보다는 갤럭시 노트 10의 디자인이 너무 맘이 들었기 때문에 처음으로 갤럭시 스마트폰을 구매했습니다. 저에게는 첫 안드로이드 스마트폰이라 적응이 잘 될지 불안하기는 하지만, 차차 사용하다 보면 적응될 것이라고 믿고 과감하게 교체하였습니다. 박스의 윗부분...","categories": ["interests"],
+        "tags": ["unboxing"],
+        "url": "/unboxing/samsung-galaxy-note-10-plus/",
+        "teaser": null
+      },{
+        "title": "파이어 엠블렘 풍화설월 Fodlan Collection",
+        "excerpt":"파이어 엠블렘 시리즈는 닌텐도의 퍼스트 파티 타이틀 중 하나입니다. 전작인 if와 에코즈가 한국에 정식발매하긴 했지만, 한국에서의 인지도는 그렇게 높지 않았습니다. 그런데 풍화설월은 스위치 타이틀로 발매되어 그런지 한정판은 물론, 일반판마저 물량 부족으로 구하기 힘들다는 소식이 들려왔습니다. 저는 다행히 출시하자마자 한정판을 구매하였습니다. 구매한지 시간이 좀 되었지만, 그동안 바빠서 방 한켠에 처박혀 있었는데...","categories": ["interests"],
+        "tags": ["unboxing"],
+        "url": "/unboxing/fire-emblem-three-house/",
         "teaser": null
       },{
         "title": "Linear Model II",
@@ -143,10 +161,28 @@ var store = [{
         "url": "/ml/linear-model-2/",
         "teaser": null
       },{
+        "title": "배트맨 대 슈퍼맨 4K 블루레이",
+        "excerpt":"제 취미 중 하나는 영화 감상인데, 엑스박스가 있기 때문에 영화는 가급적이면 4K 블루레이를 구매해 감상하고 있습니다. 최근 맨 오브 스틸을 재밌게 봐서 그 후속작인 배트맨 대 슈퍼맨을 구입했습니다. 영화의 평은 좋지 않지만, 영화의 평과 제가 느끼는 재미가 꼭 일치하지도 않고, 어차피 후속작의 스토리를 이해하려면 보긴 해야 할 것 같은 생각에...","categories": ["interests"],
+        "tags": ["unboxing"],
+        "url": "/unboxing/batman-vs-superman-4k-bluray/",
+        "teaser": null
+      },{
+        "title": "삼성 네이버페이 taptap 카드",
+        "excerpt":"저는 온라인 간편결제로 네이버페이를 많이 사용하고 있습니다. 그래서 첫 신용카드로 네이버페이 신한 신용카드를 발급받았는데, 사실 모든 결제를 신한 신용카드로 사용하는 것은 조금 비효율적입니다. 기본 1% 적립에 온라인 간편결제 사용 시 2% 추가적립인데, 적립 비율로만 따지면 적지는 않지만 다른 카드를 병용한다면 조금 더 많은 적립이 가능할 것 같았습니다. 그래서 추가 발급...","categories": ["interests"],
+        "tags": ["unboxing"],
+        "url": "/unboxing/samsung-naverpay-taptap-card/",
+        "teaser": null
+      },{
         "title": "Neural Networks",
         "excerpt":"10장은 인공신경망(Neural Network)에 대해 배우게 됩니다. 현재 인공신경망 모델은 기계학습의 대세가 되어 많은 관심을 받고 있습니다. Outline 이번 장의 구성은 3개로 나뉘어 있습니다. 지난 장에서 배운 경사하강법(Gradient Descent)의 변형인 확률적 경사하강법(Stochastic Gradient Descent)를 배우고, 본격적인 인공신경망 모델에 대해서 배운 다음, 마지막으로 인공신경망 모델의 학습 알고리즘인 역전파(Backpropagation) 알고리즘을 배우게 됩니다. Stochastic...","categories": ["studies"],
         "tags": ["machine learning"],
         "url": "/ml/neural-networks/",
+        "teaser": null
+      },{
+        "title": "젤다의 전설 : 꿈꾸는 섬 ARTBOOK SET",
+        "excerpt":"지난달에 예약구매했던 젤다의 전설 꿈꾸는 섬 아트북 세트가 오늘 도착하였습니다. 사실 구매한지 한달정도 지났고 그동안 바빴기 때문에 잊고있었다가 택배를 받고서야 게임 출시가 되었다는 것을 알았습니다. 요즘 게임할 시간이 많지 않아 지난번에 개봉한 풍화설월도 아직 못켜봤지만, 어떤 구성으로 되어있을지 궁금해서 그냥 개봉해보았습니다. 일단 패키지는 스위치 게임팩보다 조금 큰 사이즈이고, 닌텐도의 다른...","categories": ["interests"],
+        "tags": ["unboxing"],
+        "url": "/unboxing/zelda-links-awakening-artbook-set/",
         "teaser": null
       },{
         "title": "Overfitting",
