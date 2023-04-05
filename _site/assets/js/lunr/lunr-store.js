@@ -185,6 +185,18 @@ var store = [{
         "url": "/unboxing/zelda-links-awakening-artbook-set/",
         "teaser": null
       },{
+        "title": "Small Eva Case for N-Switch Pockball",
+        "excerpt":"제목만 보고 이게 뭐지? 하는 분들이 많으실 것 같은데 이건 서드파티에서 출시한 레츠고 시리즈의 전용 컨트롤러인 몬스터볼 Plus를 담아 보관할 수 있는 파우치입니다. 몬스터볼 Plus 자체가 구 모양이기 때문에 선반 위에 올려두면 이리저리 굴러다니다 떨어질 가능성도 있기 때문에 보통은 서랍 안에 많이 보관하시는데, 그냥 서랍 안에 쑤셔넣기는 좀 그래서 국전에서...","categories": ["interests"],
+        "tags": ["unboxing"],
+        "url": "/unboxing/small-eva-case-for-pockpall/",
+        "teaser": null
+      },{
+        "title": "시크리드 슬림월렛 베지터블 탠 블랙",
+        "excerpt":"저는 평소에 3개의 신용카드를 사용하는 중인데, 기존에 사용하던 카드지갑은 카드 1개만 들어가던 간단한 카드지갑이었습니다. 하는 수 없이 일반지갑에 넣어 들고다녔는데, 지갑이 크다보니 갖고다니기도 불편하고 교통카드를 찍을 때 NFC 중복으로 인해 매번 카드를 빼서 찍는게 귀찮아 이참에 카드지갑을 하나 구입하였습니다. 시크리드 지갑은 여러 개의 카드를 넣고 다녀도 불편하지 않게 NFC를 차단하는...","categories": ["interests"],
+        "tags": ["unboxing"],
+        "url": "/unboxing/secrid-slim-wallet/",
+        "teaser": null
+      },{
         "title": "Overfitting",
         "excerpt":"11장은 Overfitting에 대해 배우게 됩니다. 단어의 뜻만 봐도 이게 무엇을 의미하는지 대충 알 수 있습니다. 예를 들면 옷 가게에서 Fitting Room은 옷이 자기한테 잘 맞는지를 확인하는 곳입니다. Fit의 의미는 맞다이고 Over는 무언가 과다한 상태의 형용사이기 때문에, Overfit은 과다하게 맞다라고 해석이 가능합니다. 기계학습에서 Overfitting도 이와 비슷한 의미입니다. Outline 이번 장의 구성은...","categories": ["studies"],
         "tags": ["machine learning"],
@@ -209,16 +221,34 @@ var store = [{
         "url": "/ml/regularization/",
         "teaser": null
       },{
+        "title": "삼성 갤럭시 버즈 (실버)",
+        "excerpt":"지난달에 핸드폰을 바꾸고 요즘 유행하는 무선 이어폰을 하나 사려고 했습니다. 이번에 구매한 노트10도 그렇지만, 이전에 쓰던 아이폰7도 3.5mm 이어폰잭이 없어서 유선 이어폰의 선택지는 그다지 많지 않았기 때문입니다. 에어팟을 고려하기도 했지만, 어차피 핸드폰도 갤럭시고 마침 노트10 출시 프로모션으로 갤럭시 버즈 실버를 99,000원에 판매했기 때문에 그냥 구매했습니다. 사실 노트10 아우라 화이트와 깔맞춤을...","categories": ["interests"],
+        "tags": ["unboxing"],
+        "url": "/unboxing/samsung-galaxy-buds/",
+        "teaser": null
+      },{
         "title": "SiteGround에서 웹 호스팅 서비스 구입하기",
         "excerpt":"지난 시간에 도메인을 구입했지만, 그것은 이름만을 구매한 것이기 때문에 워드프레스를 설치할 장소를 따로 구해주어야 합니다. 호스팅 서비스는 국내/외를 막론하고 많은 곳에서 제공하고 있고, 특히 워드프레스는 사용자가 많다보니 워드프레스에 맞춘 호스팅을 제공하는 업체도 상당히 많이 늘어났습니다. 워드프레스 공식 홈페이지에서는 블루호스트(Bluehost), 드림호스트(DreamHost), 그리고 사이트그라운드(SiteGround) 호스팅을 공식적으로 추천하고 있습니다. 저는 이 중 사이트그라운드의...","categories": ["studies"],
         "tags": ["wordpress"],
         "url": "/wordpress/buy-web-hosting/",
         "teaser": null
       },{
+        "title": "삼성 무선 충전 패드 듀오 (화이트)",
+        "excerpt":"최근 갤럭시 버즈를 구입하고 충전할 전자기기가 2개가 됨에 따라 충전기가 추가로 필요함을 느꼈습니다. 처음에는 기본 충전기를 하나 더 살까 했으나, 사무실에서는 들락날락 거릴일이 많아 그때마다 충전기를 연결하는 것이 귀찮을 것이라고 생각했습니다. 어차피 추후에 스마트 워치 구입까지 고려하고 있어서, 이왕 구매하는거 무선 충전기를 사는게 좋을 것 같아 삼성에서 나온 무선 충전...","categories": ["interests"],
+        "tags": ["unboxing"],
+        "url": "/unboxing/samsung-wireless-charge-pad-duo/",
+        "teaser": null
+      },{
         "title": "Validation",
         "excerpt":"13장에서는 Overfitting을 해결하는 방법 중 Validation (검증)이라는 방법을 배우게 됩니다. Outline 이번 장은 Validation Set (검증 집합), Model Selection (모델 선택), Cross Validation (교차 검증) 순서대로 배우게 됩니다. Validation이 무엇인지 알지 못하는 지금은 소제목을 봐도 이해가 쉽지 않으니 일단 넘어가도록 합시다. The validation set 기본적으로 Out of Sample Error는 In...","categories": ["studies"],
         "tags": ["machine learning"],
         "url": "/ml/validation/",
+        "teaser": null
+      },{
+        "title": "Wii 리모컨 + 눈차크",
+        "excerpt":"이전에 Wii U를 구매한 이유는 Wii 게임도 플레이 해보기 위함이었습니다. 하지만 Wii U에는 센서바만 들어있고 Wii 리모컨이나 눈차크는 들어있지 않습니다. 하는 수 없이 Wii 게임을 플레이하기 위해 아마존에서 Wii 리모컨과 눈차크를 구입했습니다. 패키지의 크기는 사진으로 보던 것보다 훨씬 작습니다. 리모컨의 크기보다 살짝 큰 정도입니다. 박스째로 손으로 잡아도 한손에 쏙 들어오는...","categories": ["interests"],
+        "tags": ["unboxing"],
+        "url": "/unboxing/wii-remote-plus-nunchuk/",
         "teaser": null
       },{
         "title": "도메인과 웹 호스팅 서버 연결하기",
