@@ -251,6 +251,12 @@ var store = [{
         "url": "/unboxing/wii-remote-plus-nunchuk/",
         "teaser": null
       },{
+        "title": "뉴 슈퍼마리오 브라더스 Wii",
+        "excerpt":"어제 Wii 리모콘과 눈차크를 뜯어보았는데, 뜯기만 하고 사용해보지 않으면 불량인지 아닌지 알 수가 없다 보니 한번 사용해보고 싶었습니다. 뭐 새 걸 샀으니까 고장 났을 일은 거의 없겠지만, 멀리서 온 제품이기 때문에 혹시나 하는 마음에 테스트하기 위해 Wii 게임을 하나 뜯어볼까 합니다. Wii 리모콘, 눈차크만 구매하긴 배송비가 조금 아까워 게임도 몇...","categories": ["interests"],
+        "tags": ["unboxing"],
+        "url": "/unboxing/new-super-mario-bros-wii/",
+        "teaser": null
+      },{
         "title": "도메인과 웹 호스팅 서버 연결하기",
         "excerpt":"지금까지 도메인과 웹 호스팅을 구매하였지만, 각각 다른 회사에서 구매하였기 때문에 도메인과 웹 호스팅을 연결해주는 작업이 필요합니다. 도메인과 웹 호스팅을 같이 구매하면 연결을 자동으로 해주는 곳도 있으나, 보통은 도메인은 가장 싼 곳, 웹 호스팅은 가장 안정적인 곳을 많이 사용합니다. 저는 네임칩(NameCheap)에서 도메인을 구입했기 때문에 네임칩을 기준으로 설명을 드리지만, 다른 곳에서 구매하셨더라도...","categories": ["studies"],
         "tags": ["wordpress"],
@@ -263,6 +269,12 @@ var store = [{
         "url": "/ml/support-vector-machines/",
         "teaser": null
       },{
+        "title": "쉬크 하이드로 5 커스텀 하이드레이트",
+        "excerpt":"오늘은 면도기 하나를 언박싱해볼까 합니다. 저는 면도를 시작한 이후로 도루코에서 나오는 일회용 면도기만을 계속 써왔기 때문에 다른 면도기를 사본 적이 없습니다. 그러다가 어느 날 대학내일에서 판촉 행사로 무료로 나누어 주길래 한번 써보고자 합니다. 가격을 검색해보니 가격은 만원이 조금 넘는 것 같습니다. 일회용 면도기보다 가격이 비싼 만큼 면도날만 갈면 계속 쓸...","categories": ["interests"],
+        "tags": ["unboxing"],
+        "url": "/unboxing/schick-hydro-5-custom-hydrate/",
+        "teaser": null
+      },{
         "title": "워드프레스 기본 설정하기",
         "excerpt":"워드프레스 사용자가 점점 늘고 있다보니 최근 웹 호스팅 서비스에서는 워드프레스 설치 기능을 내장하는 경우가 많아졌습니다. 사이트그라운드(SiteGround)도 워드프레스를 간편하게 설치해주는 기능을 갖고 있습니다. 지난번에 웹 사이트를 만들 때 설치까지 끝냈지만, 제대로 사용하기 위해 워드프레스를 설정해보도록 하겠습니다. 먼저 사이트그라운드 홈페이지로 접속한 후, 로그인을 합니다. 그 후, 상단 메뉴의 Websites를 클릭합니다. 이 화면은...","categories": ["studies"],
         "tags": ["wordpress"],
@@ -273,6 +285,12 @@ var store = [{
         "excerpt":"15장은 Kernel Method를 배우게 됩니다. 지난 시간에 배웠던 Support Vector Machine에서 이어지는 내용입니다. Outline 이번 장은 크게 두 주제로 나뉘어 있습니다. 비선형 변환을 처리하기 위한 Kernel Trick이 무엇인지를 먼저 배우고, SVM의 방법 중 하나인 Soft-margin SVM을 배우게 됩니다. 두 주제가 서로 연관이 되어있지는 않지만, 두 주제 모두 비선형 문제를 해결하기...","categories": ["studies"],
         "tags": ["machine learning"],
         "url": "/ml/kernel-methods/",
+        "teaser": null
+      },{
+        "title": "공공의 적 2 DVD",
+        "excerpt":"공공의 적 2는 제가 중학생 때인가 고등학생 때인가 학교에서 학기말에 틀어줘서 보게 된 영화입니다. 이전 작품을 보지 않았었기 때문에 (지금보니 어차피 청소년 관람불가라 알았더라도 못봤겠네요) 이 작품 또한 들어본 적이 없었는데, 기대하지 않고 봐서 그런지 상당히 인상 깊었던 영화였습니다. 지금 보면 조금 오그라드는 대사도 있긴 하지만 그 당시 저는 이...","categories": ["interests"],
+        "tags": ["unboxing"],
+        "url": "/unboxing/public-enemy-2-dvd/",
         "teaser": null
       },{
         "title": "Newspaper 테마 구매 및 적용하기",
@@ -299,10 +317,22 @@ var store = [{
         "url": "/ml/three-learning-principles/",
         "teaser": null
       },{
+        "title": "우리카드 DA@ 카드의 정석",
+        "excerpt":"카드 관련 이전 게시물을 보시면 아시겠지만, 저는 네이버페이 서비스를 좋아하기 때문에 평소에 사용하는 것은 물론, 네이버페이 포인트를 얻을 방법이 있나 주기적으로 이벤트 페이지도 확인하고 있습니다. 최근 네이버페이와 우리카드의 제휴 이벤트를 하고 있어 대상 카드인 DA@ 카드의 정석 카드를 발급받았습니다. 주거래은행은 아니지만 우리은행에 청약통장도 갖고있고 비상금을 저축하고 있기 때문에 카드 발급이...","categories": ["interests"],
+        "tags": ["unboxing"],
+        "url": "/unboxing/woori-card-da/",
+        "teaser": null
+      },{
         "title": "Envato Market 플러그인 설치하기",
         "excerpt":"워드프레스 유료 테마는 굉장히 자주 업데이트가 이루어집니다. Newspaper 같은 경우는 1년에 한번 정도 메이저 업데이트, 그 외에는 비정기적으로 마이너 업데이트가 제공됩니다. 테마를 업데이트하기 위해서는 FTP에 파일을 직접 업로드하는 것이 일반적인 방법인데, 이것이 여간 귀찮은 것이 아닙니다. (최근에는 자동 업데이트도 지원하긴 합니다) 다행히 Envato Market에서는 워드프레스 플러그인으로 이것을 편하게 해주는 방법을...","categories": ["studies"],
         "tags": ["wordpress"],
         "url": "/wordpress/install-envato-market-plugin/",
+        "teaser": null
+      },{
+        "title": "포켓몬스터 소드/실드 더블팩",
+        "excerpt":"그렇습니다. 저는 개돼지입니다. 포켓몬이 절반으로 줄어도 기어코 더블팩을 구매하고 말았습니다. 지금까지 4세대 이후부터 포켓몬스터 게임은 쭉 모아왔기 때문에 자연스럽게 그만 구매해버렸습니다. 그렇게 욕을 먹던 레츠고도 어느정도의 재미는 보장했기 때문에, 혹시 이것도 할만한 게임은 아닐까? 하는 궁금증이 있었거든요. 예약구매는 G마켓의 빅스마일데이를 이용하여 조금이나마 저렴하게 구매했습니다. 택배 박스를 열었을 때의 구성품입니다. 참...","categories": ["interests"],
+        "tags": ["unboxing"],
+        "url": "/unboxing/pokemon-sword-shield-double-pack/",
         "teaser": null
       },{
         "title": "Epilogue",
