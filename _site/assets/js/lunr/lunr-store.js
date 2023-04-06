@@ -347,6 +347,18 @@ var store = [{
         "url": "/wordpress/regist-google-analytics/",
         "teaser": null
       },{
+        "title": "슈퍼마리오 올스타 25주년 한정판",
+        "excerpt":"오늘은 귀한 물건을 하나 구해왔습니다. 바로 슈퍼마리오 올스타 25주년 한정판입니다. 한국에서도 오래전에 판매한 적이 있지만, Wii가 10년도 더 된 게임기이기 때문에 요즘 신품을 구하기는 거의 불가능합니다. 구하더라도 단종 프리미엄이 붙어 엄청나게 비싼 가격이 되지 않을까 싶습니다. 다행히 북미에서는 아직도 Wii와 Wii U를 플레이하는 사람이 있다보니, 생각보다 합리적인 가격으로 구할 수...","categories": ["interests"],
+        "tags": ["unboxing"],
+        "url": "/unboxing/super-mario-25th-anniversary-limited-edition/",
+        "teaser": null
+      },{
+        "title": "레드 데드 리뎀션 2 얼티밋 에디션",
+        "excerpt":"레드 데드 리뎀션 2는 GTA 시리즈로 유명한 락스타 게임즈에서 만든 대작입니다. 전작이었던 레드 데드 리볼버와 레드 데드 리뎀션은 모두 콘솔로만 출시되었기 때문에 한국에서의 인지도는 GTA에 훨씬 못미쳤지만, 최근작인 GTA 5의 흥행으로 인해 이 게임의 인지도 또한 덩달아 올라갔습니다. 아쉽게도 전작들은 모두 한글화가 이루어지지 않았지만, 이번 작은 한글화로 인해 (출시 당시)...","categories": ["interests"],
+        "tags": ["unboxing"],
+        "url": "/unboxing/red-dead-redemption-2-ultimate-edition/",
+        "teaser": null
+      },{
         "title": "Yoast SEO 플러그인 설치하기",
         "excerpt":"어떤 웹 사이트를 만들더라도 방문자를 많이 유치하는 것은 중요합니다. 새로운 방문자를 유치하기 위해서는 무엇보다 포털 사이트에서 검색이 잘 되어야 합니다. 검색 엔진 상위에 뜨기 위해서는 웹 사이트를 검색 엔진에 최적화 시켜주어야 하는데, 이것을 Search Engine Optimization (SEO)이라고 합니다. 워드프레스는 SEO에 유리한 구조를 갖고 있지만, 그것만을 마냥 믿을 수는 없습니다. 특히...","categories": ["studies"],
         "tags": ["wordpress"],
@@ -371,10 +383,22 @@ var store = [{
         "url": "/java/install-jdk/",
         "teaser": null
       },{
+        "title": "애플 매직 키보드 & 매직 마우스2 & 멀티포트 어댑터",
+        "excerpt":"저는 맥북 프로를 갖고 있지만, 제 소유가 아니라 연구실 기자재이기 때문에 공식적인 업무가 아니라면 연구실 밖으로 가지고 나가기가 조금 꺼려집니다. 그렇기 때문에 연구실 내에서만 주로 사용하는데, 터치 패드와 키보드가 많이 불편했습니다. 터치 패드는 드래그 앤 드롭을 할 때 너무 느려서 불편했고, 키보드는 방향키의 배치가 정말 짜증났습니다. 마침 연구실 비용이 꽤...","categories": ["interests"],
+        "tags": ["unboxing"],
+        "url": "/unboxing/apple-magic-keyboard-and-mouse/",
+        "teaser": null
+      },{
         "title": "네이버, 다음 검색 엔진 등록하기",
         "excerpt":"지난 시간에 구글 서치 콘솔을 사용하여 구글에 사이트가 검색될 수 있도록 등록하였습니다. 하지만 아직도 한국에서 네이버와 다음의 점유율은 낮지 않기 때문에 이곳에서도 사이트가 검색되어야 더 많은 방문자를 모을 수 있습니다. 그렇기 때문에 오늘은 네이버와 다음에서 자신의 웹 사이트를 등록해보도록 하겠습니다. 네이버 서치 어드바이저 등록하기 구글에 사이트를 등록했던 것과 마찬가지로, 네이버에...","categories": ["studies"],
         "tags": ["wordpress"],
         "url": "/wordpress/regist-search-engine/",
+        "teaser": null
+      },{
+        "title": "한일트랜스 가정용 변압기",
+        "excerpt":"국가별로 전압 규격이 다르기 때문에 해외 직구를 많이 하시는 분들은 보통 변압기를 하나씩 장만해 놓습니다. 미국과 일본 모두 한국보다 낮은 100~110V 정도의 전압을 사용하기 때문입니다. 최근 출시되는 전자제품은 대부분 프리볼트(Free Volt)를 채택하고 있기 때문에 돼지코를 사용하여 단자만 바꿔주면 사용할 수 있지만, 모종의 이유로 옛날 전자 제품을 사용하는 경우에는 어쩔 수...","categories": ["interests"],
+        "tags": ["unboxing"],
+        "url": "/unboxing/haniltrans-transformers/",
         "teaser": null
       },{
         "title": "네이버 서치 어드바이저 수동 크롤링하기",
@@ -393,6 +417,12 @@ var store = [{
         "excerpt":"지난 시간에 Java 언어를 사용하기 위해서 JDK를 설치하였습니다. Java 언어를 코딩할 때 메모장이나 EditPlus 같은 간단한 문서 편집 프로그램을 사용해도 되지만, 지원하는 기능이 많지 않다보니 그렇게 추천하는 환경은 아닙니다. 다른 언어도 마찬가지이지만, 가급적이면 코딩을 할 때는 IDE에서 하시는게 좋습니다. IDE는 Integrated Development Environment (통합 개발 환경)이라는 뜻입니다. IDE는 프로그램마다 조금씩...","categories": ["studies"],
         "tags": ["java"],
         "url": "/java/install-ide/",
+        "teaser": null
+      },{
+        "title": "콜드스틸 SRK",
+        "excerpt":"오늘은 특이하게 나이프를 하나 개봉해볼까 합니다. 원래 이런 나이프는 보통 캠핑용으로 많이 구매하는데, 저는 그럴 목적은 아니고 영상을 찍을 때 사용할 용도로 구매했습니다. 제가 구독하고 있는 유튜브 채널에서 항상 이러한 나이프를 사용해서 개봉하는 영상을 찍는데, 그것이 꽤 멋있어보였거든요. 아무래도 일반적인 커터칼로 개봉을 하는 것보다 특이해서 눈길이 많이 갔습니다. 나이프를 구매해본...","categories": ["interests"],
+        "tags": ["unboxing"],
+        "url": "/unboxing/coldsteel-srk/",
         "teaser": null
       },{
         "title": "Google Analytics와 Search Console 연결하기",
