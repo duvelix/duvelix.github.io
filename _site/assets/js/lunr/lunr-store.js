@@ -551,10 +551,22 @@ var store = [{
         "url": "/katc/boot-camp-2/",
         "teaser": null
       },{
+        "title": "겨울왕국 3-Movie Collection 블루레이",
+        "excerpt":"오랜만에 블루레이 개봉기입니다. 사실 이전에 개봉했던 토이스토리 블루레이도 아직 다 못봤는데, 겨울왕국은 워낙 인기있는 영화다보니 예약구매를 하지 않으면 금방 품절될 것 같아 그냥 빨리 구매했습니다. 충분한만큼 찍어냈는지, 글을 쓴 시점까지도 구매가 가능하긴 했습니다. 디즈니 애니메이션을 좋아하는 편이긴 하지만, 겨울왕국을 아직까지 보진 못했습니다. 워낙 바쁘다보니 영화를 챙겨볼 시간이 많이 없는데, 밀려있는...","categories": ["interests"],
+        "tags": ["unboxing"],
+        "url": "/unboxing/frozen-3-movie-collection-bluray/",
+        "teaser": null
+      },{
         "title": "전문연구요원 훈련소 후기 - 3주차",
         "excerpt":"훈련소 생활 3주차를 맞이하게 되면 슬슬 훈련소 일정에 적응이 됩니다. 일과표를 보지 않아도 하루 일과를 대충 꿰고 있으며, 오늘은 이정도 하고 쉬겠구나~ 하는 감이 슬슬 올 때입니다. 게다가 드디어 절반이 지나갔다는 생각에 안도감이 들기도 합니다. 문제는 본격적인 훈련은 이제 시작이라는 겁니다. 사실 시간만 2주가 지나갔을 뿐, 제대로 된 훈련은 사격술...","categories": ["interests"],
         "tags": ["katc"],
         "url": "/katc/boot-camp-3/",
+        "teaser": null
+      },{
+        "title": "파이어 엠블렘 에코즈 프리미엄 에디션",
+        "excerpt":"오랜만에 3DS 게임 개봉기입니다. 오늘 개봉할 제품은 파이어 엠블렘 에코즈 프리미엄 에디션입니다. 파이어 엠블렘 시리즈는 닌텐도의 주력 시리즈 중 하나이지만, 한국에서는 슈퍼 마리오 시리즈나 젤다의 전설 시리즈에 비해 인지도가 높지 않은 시리즈입니다. 스위치에서 발매된 파이어 엠블렘 풍화설월이 히트하며 인지도가 상당히 올라가긴 했지만, 오늘 소개해드리는 파이어 엠블렘 에코즈 프리미엄 에디션은 나름...","categories": ["interests"],
+        "tags": ["unboxing"],
+        "url": "/unboxing/fire-emblem-echoes-premium-edition/",
         "teaser": null
       },{
         "title": "전문연구요원 훈련소 후기 - 4주차",
@@ -573,6 +585,12 @@ var store = [{
         "excerpt":"지난 포스트들을 통해 훈련소에서의 일정을 모두 소개했습니다. 이번 포스트부터는 훈련소 생활에서 궁금하실 사항들을 주제별로 정리해서 알려드리겠습니다. 첫 포스트는 먼저 훈련소에서의 식사 및 부식에 관한 이야기입니다. 훈련소의 식사 메뉴 (출처 : 서울신문) 아마 많은 분들이 가장 궁금해하실 사항일 것입니다. 군필자들이 공통적으로 하는 말이 군대 식사는 맛이 없다, 메뉴는 태반이 콩나물이라 질리도록...","categories": ["interests"],
         "tags": ["katc"],
         "url": "/katc/boot-camp-meal/",
+        "teaser": null
+      },{
+        "title": "마인크래프트 마스터 컬렉션",
+        "excerpt":"한국에서 XBOX는 솔직히 실패했습니다. 전세계적으로는 모르겠으나, 요즘 같이 콘솔 기기가 귀해지는 시점에서도 XBOX 콘솔이나 게임은 여전히 떨이로 판매하고 있으니까요. 오늘 개봉할 게임도 그 중 하나입니다. 마인크래프트 게임 자체는 한국에서 (특히 저연령층들에게) 흥행했습니다만, 워낙 다양한 플랫폼으로 나오기도 했고 한국에서는 PC 유저와 모바일 유저가 절대 다수이기 때문에 오히려 본진인 엑스박스 플랫폼에서 즐기는...","categories": ["interests"],
+        "tags": ["unboxing"],
+        "url": "/unboxing/minecraft-master-collection/",
         "teaser": null
       },{
         "title": "전문연구요원 훈련소 후기 - 불침번 및 전우조",
@@ -611,10 +629,22 @@ var store = [{
         "url": "/java/java-programming-basics-2/",
         "teaser": null
       },{
+        "title": "조커 4K 블루레이",
+        "excerpt":"저는 DC 코믹스의 실사 영화를 좋아합니다. 놀란 감독의 다크 나이트 트릴로지를 워낙 재밌게 봐서, 아직도 종종 블루레이를 꺼내보며 감상할 정도입니다. 물론 DC 확장 유니버스의 스토리와는 관련이 없지만, “히어로물은 유치하다”라는 제 편견을 깨버린 기념비적인 작품입니다. 오늘 개봉할 조커 역시 DC 확장 유니버스 작품은 아니지만, 다크 나이트의 조커와는 어떤 차이가 있을지 매우...","categories": ["interests"],
+        "tags": ["unboxing"],
+        "url": "/unboxing/joker-4k-bluray/",
+        "teaser": null
+      },{
         "title": "Basic Concepts (2)",
         "excerpt":"Data Abstraction C언어의 기본 데이터 타입(Data Type)은 int, float, char, … 등이 있습니다. 이러한 기본 데이터 타입을 그룹화하여 배열(Array)과 구조체(Structure)라는 방법으로 데이터 타입을 표현할 수도 있습니다. 그런데 데이터 타입의 명확한 정의는 무엇일까요? 교재에는 다음과 같이 정의하고 있습니다. Definition  A data type is a collection of objects and a set of...","categories": ["studies"],
         "tags": ["data structure"],
         "url": "/ds/basic-concepts-2/",
+        "teaser": null
+      },{
+        "title": "젤다의 전설 : 시간의 오카리나 3D & 무쥬라의 가면 3D",
+        "excerpt":"안녕하세요, 오늘은 젤다의 전설 시간의 오카리나 3D와 무쥬라의 가면 3D를 개봉해보려고 합니다. 이 두 작품은 이전에 닌텐도 64로 나온 동명의 작품들을 닌텐도 3DS 플랫폼으로 리메이크한 작품입니다.  젤다의 전설 시리즈는 대부분 독립적인 배경을 갖고 있지만, 이 두 작품은 서로 이어지는 스토리를 가지고 있습니다. 보통은 스토리가 이어진다고 해도 전작의 후손 정도로 등장하던 작품들과는...","categories": ["interests"],
+        "tags": ["unboxing"],
+        "url": "/unboxing/zelda-ocarina-3d-and-majora-3d/",
         "teaser": null
       },{
         "title": "Classes, Variables, and Methods",
