@@ -1,8 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
+<loc>http://localhost:4000/review/new-super-mario-bros/</loc>
+<lastmod>2019-06-24T00:00:00+09:00</lastmod>
+</url>
+<url>
+<loc>http://localhost:4000/review/uncharted-the-nathan-drake-collection/</loc>
+<lastmod>2019-06-30T00:00:00+09:00</lastmod>
+</url>
+<url>
 <loc>http://localhost:4000/unboxing/razer-rogue-backpack/</loc>
 <lastmod>2019-07-03T00:00:00+09:00</lastmod>
+</url>
+<url>
+<loc>http://localhost:4000/review/call-of-duty-advanced-warfare/</loc>
+<lastmod>2019-07-06T00:00:00+09:00</lastmod>
 </url>
 <url>
 <loc>http://localhost:4000/unboxing/nintendo-switch-pro-controller/</loc>
@@ -11,6 +23,10 @@
 <url>
 <loc>http://localhost:4000/ml/introduction/</loc>
 <lastmod>2019-07-12T00:00:00+09:00</lastmod>
+</url>
+<url>
+<loc>http://localhost:4000/review/far-cry-3/</loc>
+<lastmod>2019-07-14T00:00:00+09:00</lastmod>
 </url>
 <url>
 <loc>http://localhost:4000/unboxing/super-mario-maker-2/</loc>
@@ -23,6 +39,10 @@
 <url>
 <loc>http://localhost:4000/unboxing/powera-procon-charge-stand/</loc>
 <lastmod>2019-07-19T00:00:00+09:00</lastmod>
+</url>
+<url>
+<loc>http://localhost:4000/review/tomb-raider-reboot/</loc>
+<lastmod>2019-07-21T00:00:00+09:00</lastmod>
 </url>
 <url>
 <loc>http://localhost:4000/unboxing/red-dead-redemption-goty/</loc>
@@ -646,5 +666,8 @@
 </url>
 <url>
 <loc>http://localhost:4000/page28/</loc>
+</url>
+<url>
+<loc>http://localhost:4000/page29/</loc>
 </url>
 </urlset>

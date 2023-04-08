@@ -1,8 +1,26 @@
 var store = [{
+        "title": "뉴 슈퍼마리오 브라더스",
+        "excerpt":"어렸을 때 즐겼던 슈퍼마리오 게임이 슈퍼마리오 시리즈라면 구세대, 뉴 슈퍼마리오 시리즈라면 신세대라고 합니다. 저는 아쉽게도 구세대 게이머라 뉴 슈퍼마리오 브라더스를 계란 한 판 나이 직전에서야 플레이해보게 되었습니다. 발매된 당시 닌텐도의 구세주라는 굉장한 평가를 받은 명작 타이틀이라는 말을 들었기 때문에 기대감이 컸습니다. 게다가 어렸을 때 슈퍼마리오 시리즈를 상당히 재밌게 즐겼기 때문에,...","categories": ["interests"],
+        "tags": ["review"],
+        "url": "/review/new-super-mario-bros/",
+        "teaser": null
+      },{
+        "title": "언차티드 : 네이선 드레이크 컬렉션",
+        "excerpt":"언차티드 시리즈는 플레이스테이션의 간판 타이틀 중 하나입니다. 플레이스테이션에 입문하는 사람들에게 필수 구매 타이틀로 추천될만큼 유명한 타이틀인데다가 1편을 제외하고는 항상 올해의 게임(GOTY : Games of the year) 상을 최소 한 개 이상 수상했으며 2, 4편은 그 해의 최다 갯수의 GOTY상을 받았습니다. 하위호환을 포기한 소니의 삽질 덕분에 PS3에서 흥행했던 몇몇 타이틀들은 리마스터가...","categories": ["interests"],
+        "tags": ["review"],
+        "url": "/review/uncharted-the-nathan-drake-collection/",
+        "teaser": null
+      },{
         "title": "RAZER Rogue Backpack",
         "excerpt":"2달전쯤 키보드와 마우스를 바꾸기 위해 컴퓨존에서 RAZER 키보드, 마우스를 주문했는데 어느 날 아래와 같은 연락이 왔습니다. 평생 이벤트와는 인연이 없을 것만 같았는데 있었는지도 몰랐던 이벤트에 당첨이 되니 기분이 묘했습니다. 어떤 물건이 당첨이 되었나 찾아보니 RAZER에서 나온 배낭이었습니다. 가방을 보니 있으면 좋을 것 같지만 가방치고는 상당히 고가라 제 돈주고 사기에는 아까운...","categories": ["interests"],
         "tags": ["unboxing"],
         "url": "/unboxing/razer-rogue-backpack/",
+        "teaser": null
+      },{
+        "title": "콜 오브 듀티 : 어드밴스드 워페어",
+        "excerpt":"콜 오브 듀티 시리즈는 서양에서 국민 FPS 게임으로 불리는 시리즈입니다. 하지만 한국에서는 이미 서든어택, 카운터 스트라이크 시리즈가 FPS 유저층을 대부분 흡수하였고, 무엇보다 몇몇 작품을 제외하면 한글화조차 되지 않았기 때문에, 매니아층이 아니라면 인지도 자체도 그렇게 높지 않은 상황입니다. 저 또한 이미 카운터 스트라이크 시리즈를 즐기고 있었기 때문에 콜 오브 듀티 시리즈에...","categories": ["interests"],
+        "tags": ["review"],
+        "url": "/review/call-of-duty-advanced-warfare/",
         "teaser": null
       },{
         "title": "닌텐도 스위치 프로 컨트롤러 - 슈퍼 스매시 브라더스 얼티밋 에디션",
@@ -15,6 +33,12 @@ var store = [{
         "excerpt":"안녕하세요, 오늘은 Machine Learning 카테고리에 대해 말씀드리려 합니다. 이 카테고리에는 제가 예전에 기계학습을 공부하며 이해한 내용을 정리하는 식으로 진행하려고 합니다. Textbook 작성된 글의 기반은 위의 사진에 나와있는 Learning From Data라는 교재입니다. 책의 저자이신 Abu-Mostafa 교수님은 칼텍 소속으로 실제로 Machine Learning 수업을 강의하실 때 이 교재를 사용하는 것으로 알고 있습니다. 강의자료는...","categories": ["studies"],
         "tags": ["machine learning"],
         "url": "/ml/introduction/",
+        "teaser": null
+      },{
+        "title": "파 크라이 3",
+        "excerpt":"어렸을 적 살아남기 시리즈 만화를 굉장히 재밌게 봤었습니다. 주인공이 무인도나 정글, 사막 등에 조난당해 생존을 목표로 자연속에서 분투했던 스토리였는데요, 현재에도 정글의 법칙이나, Man vs Wild 등의 TV 프로그램이 흥행하는 것을 보면 조난 속에서 생존하는 이야기는 시대나 동서양을 가리지 않고 인기있는 주제임이 분명합니다. 파 크라이 시리즈도 주인공이 조난을 당해 생존하는 것으로...","categories": ["interests"],
+        "tags": ["review"],
+        "url": "/review/far-cry-3/",
         "teaser": null
       },{
         "title": "슈퍼 마리오 메이커 2",
@@ -33,6 +57,12 @@ var store = [{
         "excerpt":"게임 컨트롤러는 항상 보관이 문제입니다. 사용하지 않을 때 아무데나 방치하면 보기에도 좋지 않을 뿐더러 충전하는 것도 귀찮기 때문입니다. 그래서 저는 가급적이면 컨트롤러를 구매할 때 보관할 파우치나 충전독을 꼭 구입하는 편입니다. 듀얼쇼크 충전독은 이미 국내에 정식으로 판매가 되고있고, 엘리트 컨트롤러는 파우치를 처음부터 제공하는데 비해 프로콘 악세서리는 국내에서 구하기가 쉽지 않습니다. 마침...","categories": ["interests"],
         "tags": ["unboxing"],
         "url": "/unboxing/powera-procon-charge-stand/",
+        "teaser": null
+      },{
+        "title": "툼 레이더 리부트",
+        "excerpt":"저는 “툼 레이더” 라는 단어를 처음 접한 것이 게임이 아니라 영화였습니다. 툼 레이더 영화도 제가 초등학생 때 나올 정도였기 때문에 툼 레이더 같은 게임을 접하기에는 너무 어렸기 때문입니다. 툼 레이더 영화는 흥행에 성공했을 뿐만 아니라 안젤리나 졸리가 워낙 라라 크로프트의 배역에 잘 어울렸던 탓에 한 때 툼 레이더를 인터넷에 검색하면...","categories": ["interests"],
+        "tags": ["review"],
+        "url": "/review/tomb-raider-reboot/",
         "teaser": null
       },{
         "title": "레드 데드 리뎀션 GOTY Edition",
