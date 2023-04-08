@@ -191,6 +191,12 @@ var store = [{
         "url": "/ml/VC-demension/",
         "teaser": null
       },{
+        "title": "젤다의 전설 : 신들의 트라이포스 2",
+        "excerpt":"젤다의 전설 시리즈는 예전부터 알고 있었습니다만, 지금까지 플레이해본 적은 한 번도 없었습니다. 초등학교 시절쯤에 있던 슈퍼패미컴 이후로는 플레이스테이션 4를 구입할 때까지 콘솔이 없었기 때문입니다. 닌텐도 3DS를 1여 년 전쯤에 구입했을 때는 하도 많은 게임이 나와서 어디서부터 시작해야 할지 몰라 입문하기에 조금 망설였습니다. 인터넷을 뒤져본 결과 젤다의 전설 시리즈는 몇몇 게임을...","categories": ["interests"],
+        "tags": ["review"],
+        "url": "/review/zelda-link-between-worlds/",
+        "teaser": null
+      },{
         "title": "롯데카드 텔로 SKT",
         "excerpt":"며칠 전에 롯데 아임 원더풀 카드를 발급받았으나, 실사용 목적이 아니라 체리피킹용으로 발급받았기 때문에 발급이 완료된 후 바로 텔로 SKT 카드를 신청하였습니다. 텔로 SKT 카드는 기본 혜택 외에 발급 시 혜택이 전혀 없기 때문입니다. 사족으로, 카드 이름이 조금 부자연스럽다고 생각합니다. 제휴 카드라도 롯데 OOO 카드 이런 식으로 네이밍을 짓는 것이 좋을...","categories": ["interests"],
         "tags": ["unboxing"],
@@ -201,6 +207,12 @@ var store = [{
         "excerpt":"8장에서는 Bias와 Variance에 대해 배웁니다. Bias-Variance는 지난 장에서 배운 VC 처럼 Error에 대해 분석하는 방법이지만, 직접적인 관련은 없으므로 VC를 제대로 이해하지 못하셨더라도 이번 장을 배우는 것에는 큰 무리가 없습니다. Outline 이번 장은 크게 2개의 소주제로 구성되어 있습니다. 먼저 Bias와 Variance가 무엇인지 배우고, 이것이 어떤 의지를 가지는지를 예제를 통해 설명합니다. 아무래도...","categories": ["studies"],
         "tags": ["machine learning"],
         "url": "/ml/bias-variance-tradeoff/",
+        "teaser": null
+      },{
+        "title": "퀀텀 브레이크",
+        "excerpt":"시간은 게임의 주제로써 상당히 흔한 소재입니다. 크로노 트리거, 젤다의 전설 시간의 오카리나, 라이프 이즈 스트레인지 등등 손에 꼽을 수 없을 정도입니다. 퀀텀 브레이크도 이 인기있는 시간이라는 소재로 한 게임입니다. 퀀텀 브레이크는 우연한 계기로 시간을 다룰 수 있는 능력을 갖게 된 잭 조이스가 형의 복수를 갚기 위함과 시간의 끝을 막으려는 두...","categories": ["interests"],
+        "tags": ["review"],
+        "url": "/review/quantum-break/",
         "teaser": null
       },{
         "title": "갤럭시 노트 10+ 아우라 화이트",
@@ -221,6 +233,12 @@ var store = [{
         "url": "/ml/linear-model-2/",
         "teaser": null
       },{
+        "title": "포켓몬스터 레츠고! 피카츄",
+        "excerpt":"초등학생 때 학교 컴퓨터실에서 제일 재밌게 한 게임은 포켓몬스터 레드/그린이었습니다. 물론 그 당시에는 게임보이의 존재를 몰랐기 때문에 불법인지도 모르고 즐겼지요. 하긴, 게임보이라는 것을 알았다고 해도 부모님께서 사주셨을 리가 없으므로 상황이 별 반 다르지 않았을 것 같습니다. 그 당시에는 컴퓨터 게임치고 형편없는 도트 그래픽을 가졌었기 때문에 1인 개발자가 만든 게임인 줄...","categories": ["interests"],
+        "tags": ["review"],
+        "url": "/review/pokemon-lets-go-pikachu/",
+        "teaser": null
+      },{
         "title": "배트맨 대 슈퍼맨 4K 블루레이",
         "excerpt":"제 취미 중 하나는 영화 감상인데, 엑스박스가 있기 때문에 영화는 가급적이면 4K 블루레이를 구매해 감상하고 있습니다. 최근 맨 오브 스틸을 재밌게 봐서 그 후속작인 배트맨 대 슈퍼맨을 구입했습니다. 영화의 평은 좋지 않지만, 영화의 평과 제가 느끼는 재미가 꼭 일치하지도 않고, 어차피 후속작의 스토리를 이해하려면 보긴 해야 할 것 같은 생각에...","categories": ["interests"],
         "tags": ["unboxing"],
@@ -237,6 +255,12 @@ var store = [{
         "excerpt":"10장은 인공신경망(Neural Network)에 대해 배우게 됩니다. 현재 인공신경망 모델은 기계학습의 대세가 되어 많은 관심을 받고 있습니다. Outline 이번 장의 구성은 3개로 나뉘어 있습니다. 지난 장에서 배운 경사하강법(Gradient Descent)의 변형인 확률적 경사하강법(Stochastic Gradient Descent)를 배우고, 본격적인 인공신경망 모델에 대해서 배운 다음, 마지막으로 인공신경망 모델의 학습 알고리즘인 역전파(Backpropagation) 알고리즘을 배우게 됩니다. Stochastic...","categories": ["studies"],
         "tags": ["machine learning"],
         "url": "/ml/neural-networks/",
+        "teaser": null
+      },{
+        "title": "콜 오브 듀티 : 모던 워페어 리마스터드",
+        "excerpt":"콜 오브 듀티 : 모던 워페어는 콜 오브 듀티 시리즈를 지금과 같은 압도적인 판매량과 인지도를 가질 수 있게끔 만든 명작 게임입니다. 원작은 2007년에 발매하였는데, 콜 오브 듀티 시리즈 중 최고의 메타크리틱 평점인 94점(엑스박스, PS3 기준)과 22개의 올해의 게임(GoTY) 상을 받았습니다. 저는 콜 오브 듀티 시리즈의 입문을 어드밴스드 워페어로 했는데, 그...","categories": ["interests"],
+        "tags": ["review"],
+        "url": "/review/call-of-duty-modern-warfare-remastered/",
         "teaser": null
       },{
         "title": "젤다의 전설 : 꿈꾸는 섬 ARTBOOK SET",
@@ -261,6 +285,12 @@ var store = [{
         "excerpt":"11장은 Overfitting에 대해 배우게 됩니다. 단어의 뜻만 봐도 이게 무엇을 의미하는지 대충 알 수 있습니다. 예를 들면 옷 가게에서 Fitting Room은 옷이 자기한테 잘 맞는지를 확인하는 곳입니다. Fit의 의미는 맞다이고 Over는 무언가 과다한 상태의 형용사이기 때문에, Overfit은 과다하게 맞다라고 해석이 가능합니다. 기계학습에서 Overfitting도 이와 비슷한 의미입니다. Outline 이번 장의 구성은...","categories": ["studies"],
         "tags": ["machine learning"],
         "url": "/ml/overfitting/",
+        "teaser": null
+      },{
+        "title": "라이즈 오브 더 툼 레이더",
+        "excerpt":"라이즈 오브 더 툼레이더는 전에 리뷰했던 툼 레이더 리부트의 후속작입니다. 전작을 상당히 재밌게 플레이했기 때문에 이 게임 또한 상당히 기대를 많이 했는데, 결론부터 말씀드리면 기대에 훌륭하게 보답한 명작이었습니다. 전체적인 게임의 구성이나 인터페이스는 전작과 크게 다르지 않아, 전작을 플레이하셨다면 바로 적응할 수 있을 정도입니다. 스토리는 전작에서 이어지긴 하지만, 전작을 플레이하지 않았더라도...","categories": ["interests"],
+        "tags": ["review"],
+        "url": "/review/rise-of-the-tomb-raider/",
         "teaser": null
       },{
         "title": "워드프레스를 시작했던 이유",
