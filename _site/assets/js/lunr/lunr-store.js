@@ -77,6 +77,12 @@ var store = [{
         "url": "/ml/is-learning-feasible/",
         "teaser": null
       },{
+        "title": "카운터 스트라이크 : 글로벌 오펜시브",
+        "excerpt":"제가 중학생이던 시절, 한국에서 FPS 게임이라고 하면 사실상 서든어택과 동의어나 마찬가지였습니다. 물론 그 당시에도 배틀필드, 콜 오브 듀티, 카운터 스트라이크 같은 FPS 게임이 있긴 했으나 당시 콘솔은 정말 매니아들만 갖고 있던 데다 PC방에서도 지금처럼 스팀이 많이 깔려있는 환경이 아니었기 때문입니다. 그러다가 제가 고등학생 때, 넥슨에서 카운터 스트라이크 온라인이 출시되고 학교...","categories": ["interests"],
+        "tags": ["review"],
+        "url": "/review/counter-strike-global-offensive/",
+        "teaser": null
+      },{
         "title": "삼성 보조 배터리",
         "excerpt":"휴대용 선풍기나, 보조배터리 같은 물건들은 일상생활에서 유용하지만 차마 돈주고 사기는 아깝습니다. 작년 여름에 참석했던 학회에서 운 좋게 휴대용 선풍기를 받아 유용하게 쓰고있는데, 보조배터리는 돈 주고 살만큼 급하지 않아 아직까지 구매하지 않았습니다. 그러다가 마침 최근에 삼성 네트워크 사업부에서 진행하는 리쿠르팅에 참여했더니 기념품으로 삼성 보조배터리를 받았습니다. 박스 앞면에는 10,000mAh 용량과 15W 출력,...","categories": ["interests"],
         "tags": ["unboxing"],
@@ -87,6 +93,12 @@ var store = [{
         "excerpt":"3장에서는 새로운 이슈인 Linear Model (선형 모델)에 대해서 알아보는 시간입니다. Introduction에서도 언급했었지만, 본 교재와 강의자료의 순서가 다른 부분이 조금 있는데, 오늘 할 Linear Model 부분이 바로 그런 부분입니다. 교재에서는 Linear Model 파트가 한 장으로 묶여 있는데, 강의에서는 두 부분으로 나누어 앞부분을 3장에 넣고, 뒷부분을 9장에 배치하였습니다. 왜 이렇게 만들었는가 궁금했는데,...","categories": ["studies"],
         "tags": ["machine learning"],
         "url": "/ml/linear-models-1/",
+        "teaser": null
+      },{
+        "title": "톰 클랜시의 디비전",
+        "excerpt":"전염병을 주제로 하는 게임은 상당히 흔한 편입니다. 예를 들어, 더 라스트 오브 어스, 전염병 주식회사, 최근작으로는 데이즈 곤 등등 어떻게보면 진부한 주제라고 볼 수 있습니다. 다만 대부분 전염병을 주제로 한 게임은 인간 생존자들이 전염병에 걸린 괴물들을 상대하며 살아남는 스토리를 갖고있는데, 오늘 리뷰할 디비전은 전염병으로 인한 혼란스러운 사회에 질서를 찾아온다는 참신한...","categories": ["interests"],
+        "tags": ["review"],
+        "url": "/review/tom-clancys-the-division/",
         "teaser": null
       },{
         "title": "LISA Selfie Stick LS-CT01",
@@ -107,6 +119,12 @@ var store = [{
         "url": "/unboxing/super-mario-3d-land/",
         "teaser": null
       },{
+        "title": "포켓몬스터 하트골드",
+        "excerpt":"어렸을 적 가장 재밌게 했던 게임 중 하나인 포켓몬스터 골드였습니다. 전작인 포켓몬스터 적/녹 또한 엄청나게 재밌었기 때문에 자연스레 후속작인 포켓몬스터 골드도 접하게 되는데다, 일어판과 영문판만 존재해 스토리나 대사를 제대로 이해할 수 없었던 적/녹 버전과는 달리 한글화로 발매한 골드버전은 스토리의 몰입감을 증대시켰기 때문입니다. 또한 전작에 대한 팬 서비스인지 성도 지방을 배경으로...","categories": ["interests"],
+        "tags": ["review"],
+        "url": "/review/pokemon-heartgold/",
+        "teaser": null
+      },{
         "title": "샤오미 USB 멀티탭 블랙",
         "excerpt":"최근에 Wii U를 구매해서 배송을 기다리는 중인데, 북미판을 구매했기 때문에 한국에서 사용하려면 돼지코라 불리는 변환 어댑터가 필요합니다. Wii U에는 게임기 본체와 게임 패드용 전원이 따로 있기 때문에 2개의 돼지코를 구매해야 했는데, 돼지코를 2개나 구매할 바에는 멀티 플러그 멀티탭을 구매하는게 나을 것 같아 샤오미 멀티탭을 구매하였습니다. 개인적으로 중국 브랜드 물건은 여러가지...","categories": ["interests"],
         "tags": ["unboxing"],
@@ -123,6 +141,12 @@ var store = [{
         "excerpt":"5장에서는 Training과 Testing이 어떻게 다른지 다루게 됩니다. 핵심은 2장에서 다루었던 Hypothesis의 수인 $M$을 어떻게 효과적으로 줄일 수 있는가 하는 것입니다. Outline 이번 장의 구성은 제목과 같이 Training에서 Testing으로 넘어가면서 생기는 문제에 대해 알아보고, Hypothesis의 수를 줄이기 위해 Dichotomies, Growth function 등의 개념을 설명합니다. 그 다음에는 예제를 통해 Growth function을 계산하는...","categories": ["studies"],
         "tags": ["machine learning"],
         "url": "/ml/training-versus-testing/",
+        "teaser": null
+      },{
+        "title": "포 아너",
+        "excerpt":"중세시대를 다루는 게임들은 기사나 바이킹 같은 전투 직업이 꼭 나오는 편입니다. 동양에서는 일본의 사무라이가 거의 필수적으로 등장하는 것처럼요. 사실 이들이 활동했던 시대는 전부 다르기 때문에 붙어볼 일이 없었겠지만, 포 아너는 바로 거기서 착안하여 기사, 바이킹, 사무라이들이 서로 싸운다는 재미있는 설정을 가져온 게임입니다. 물론 실제 역사와 연관되어서는 곤란하니 게임의 배경은 현실과는...","categories": ["interests"],
+        "tags": ["review"],
+        "url": "/review/for-honor/",
         "teaser": null
       },{
         "title": "젤다의 전설 : 황혼의 공주 HD",
@@ -147,6 +171,12 @@ var store = [{
         "excerpt":"6장에서는 지난 장에서 다루었던 $m_{\\mathcal{H}}$에 대한 증명들을 배우게 됩니다. 증명을 다루는 만큼, 이번 장은 가장 이론적인 내용을 담고 있습니다. 수학식이 많이 나오기 때문에 다소 지루할 수 있다는 것을 미리 말씀드립니다. Outline 이번 장의 증명은 크게 두 가지로 나뉘어 있습니다. 첫째는 $m_{\\mathcal{H}}$가 다항 함수인 것을 증명하는 것이고, 두 번째는 $m_{\\mathcal{H}}$가 Hoeffding’s...","categories": ["studies"],
         "tags": ["machine learning"],
         "url": "/ml/theory-of-generalization/",
+        "teaser": null
+      },{
+        "title": "엘더스크롤 5 : 스카이림",
+        "excerpt":"어렸을 적 RPG게임을 하다보면 의문이 든 점이 있습니다. 왜 항상 게임의 주인공은 플레이어의 의사와 상관 없이 정의의 편만 할 수 있는지요. 게임 내에서는 상점이나 NPC를 털어 재물을 쉽게 얻는 도둑들이 있음에도 왜 주인공은 목숨을 걸고 악당과 싸워야만 돈을 벌 수 있는 것일까요. 그리고 왜 NPC들은 집이 있는데 주인공은 거처없이 떠돌아야...","categories": ["interests"],
+        "tags": ["review"],
+        "url": "/review/the-elder-scroll-5-skyrim/",
         "teaser": null
       },{
         "title": "롯데 아임 원더풀 카드",
