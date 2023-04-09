@@ -91,3 +91,34 @@ author_profile: true
   </div>
 {% endfor %}
 </div>
+
+## 게임기
+
+{% assign tag = "console" %}
+
+<style>
+  .grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 16px;
+  }
+
+  .grid-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+</style>
+
+<div class="grid-container">
+{% assign posts = site.posts | where_exp:"post", "post.tags contains tag" | reverse %}
+{% for post in posts %}
+  <div class="grid-item">
+    {% if post.thumbnail %}
+      <a href="{{ post.url }}">
+        <img src="{{ post.thumbnail }}" alt="{{ post.title }} 썸네일" style="width: 100%; height: auto;">
+      </a>
+    {% endif %}
+  </div>
+{% endfor %}
+</div>

@@ -101,6 +101,12 @@ var store = [{
         "url": "/review/tom-clancys-the-division/",
         "teaser": null
       },{
+        "title": "New 닌텐도 3DS XL vs New 닌텐도 2DS XL",
+        "excerpt":"안녕하세요, 오늘 포스트는 New 닌텐도 3DS XL과 New 닌텐도 2DS XL의 차이점을 소개하려고 합니다. 저는 New 닌텐도 2DS XL로 시작을 했고 최근에 New 닌텐도 3DS XL로 기기를 새로 구입했는데, 3D 영상을 볼 수 있다는 것 외에도 상당한 차이가 존재하길래 이를 정리해보고자 합니다. 먼저 위의 사진을 보시면 왼쪽이 New 닌텐도 3DS XL(이하...","categories": ["interests"],
+        "tags": ["console"],
+        "url": "/console/new-3ds-xl-vs-new-2ds-xl/",
+        "teaser": null
+      },{
         "title": "LISA Selfie Stick LS-CT01",
         "excerpt":"저는 사진을 정말 못찍습니다. 얼마나 못찍는지는 개봉기에 올라와 있는 사진들을 보시면 바로 아실 수 있습니다. 저도 사진을 좀 이쁘게 찍고싶은 마음에 삼각대 같은 촬영 도구가 있다면 좀 나아지지 않을까 싶어 찾아봤습니다. 그러다 마침 위메프에서 첫 구매 특가로 100원에 삼각대겸 셀카봉을 판매하는 것을 보고 싼맛에 구매해봤습니다. 배송비가 무료라 정말 딱 100원만...","categories": ["interests"],
         "tags": ["unboxing"],
@@ -291,6 +297,12 @@ var store = [{
         "excerpt":"라이즈 오브 더 툼레이더는 전에 리뷰했던 툼 레이더 리부트의 후속작입니다. 전작을 상당히 재밌게 플레이했기 때문에 이 게임 또한 상당히 기대를 많이 했는데, 결론부터 말씀드리면 기대에 훌륭하게 보답한 명작이었습니다. 전체적인 게임의 구성이나 인터페이스는 전작과 크게 다르지 않아, 전작을 플레이하셨다면 바로 적응할 수 있을 정도입니다. 스토리는 전작에서 이어지긴 하지만, 전작을 플레이하지 않았더라도...","categories": ["interests"],
         "tags": ["review"],
         "url": "/review/rise-of-the-tomb-raider/",
+        "teaser": null
+      },{
+        "title": "닌텐도 스위치에서 5Ghz Wi-Fi 사용하기",
+        "excerpt":"요즘 출시되는 공유기는 대부분 2.4Ghz와 5Ghz의 주파수 대역을 지원합니다. 공유기와 기기 사이의 거리가 가깝다면 5Ghz의 속도가 빠르기 때문에 5Ghz 대역폭을 주로 사용하실텐데, 스위치 물론 2.4Ghz와 5Ghz의 주파수 대역을 지원하기 때문에 거리만 가깝다면 5Ghz의 대역폭을 사용하는 것이 좋습니다. 그러나 스위치의 인터넷 설정을 보면 5Ghz 대역폭이 기본적으로 검색이 되지 않는데, 한국에서의 제어...","categories": ["interests"],
+        "tags": ["console"],
+        "url": "/console/nintendo-switch-5ghz-wi-fi/",
         "teaser": null
       },{
         "title": "워드프레스를 시작했던 이유",
@@ -603,6 +615,12 @@ var store = [{
         "excerpt":"Git을 제대로 사용하기 위해서는 원격 저장소가 필요합니다. 원격 저장소를 사용하지 않더라도 Git 기능을 사용할 수는 있지만, 이 경우 다른 컴퓨터에서 작업을 이어 하는 것도 귀찮아지고 무엇보다 남들에게 자신의 결과물을 공개할 수 없습니다. 대표적인 원격 저장소로는 이번 포스트에서 소개할 GitHub가 있습니다. Git 원격 저장소로는 GitHub 외에도 GitLab 등 다른 곳도 몇몇...","categories": ["studies"],
         "tags": ["git"],
         "url": "/git/join-github/",
+        "teaser": null
+      },{
+        "title": "닌텐도 Wii에 17가지 서로 다른 디스크를 넣어보면?",
+        "excerpt":"안녕하세요, 오늘은 닌텐도 Wii U를 가지고 실험을 하나 해보려고 합니다. 보통 콘솔 게임기는 해당 제조사에서 발매한 디스크를 넣었을 때만 동작하도록 설계되었는데, 만약에 다른 종류의 디스크를 넣는다면 어떻게 될까요? 제가 총 17가지의 서로 다른 종류의 디스크를 준비했는데, 하나씩 넣어보면서 어떤 결과가 나오는지 확인해보도록 하겠습니다. 먼저 위와 같이 Wii U를 세팅해봤습니다. 종류별로...","categories": ["interests"],
+        "tags": ["console"],
+        "url": "/console/nintendo-wii-u-experiment/",
         "teaser": null
       },{
         "title": "워드프레스에서 수식 입력하기",
