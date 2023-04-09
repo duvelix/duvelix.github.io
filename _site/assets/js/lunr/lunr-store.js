@@ -311,6 +311,12 @@ var store = [{
         "url": "/ml/regularization/",
         "teaser": null
       },{
+        "title": "어쌔신 크리드 : 오리진",
+        "excerpt":"어쌔신 크리드 시리즈는 이전부터 꽤 많이 들어봤던 게임입니다. 예전에 어쌔신 크리드 유니티의 시네마틱 트레일러를 감명깊게 봤기 때문에 그 게임으로 어쌔신 크리드 시리즈를 입문할까 고민하기도 했었는데, 역대급으로 실망스러웠던 게임 평가로 인해 보류했었던 기억이 있었습니다. 그러다가 어쌔신 크리드의 오리진의 호평과, 입문에 좋을 것 같은 타이틀(Origin)로 인해 이 게임으로 입문하고자 결정하였습니다. 나오자마자 구매해서...","categories": ["interests"],
+        "tags": ["review"],
+        "url": "/review/assassin-creed-origin/",
+        "teaser": null
+      },{
         "title": "삼성 갤럭시 버즈 (실버)",
         "excerpt":"지난달에 핸드폰을 바꾸고 요즘 유행하는 무선 이어폰을 하나 사려고 했습니다. 이번에 구매한 노트10도 그렇지만, 이전에 쓰던 아이폰7도 3.5mm 이어폰잭이 없어서 유선 이어폰의 선택지는 그다지 많지 않았기 때문입니다. 에어팟을 고려하기도 했지만, 어차피 핸드폰도 갤럭시고 마침 노트10 출시 프로모션으로 갤럭시 버즈 실버를 99,000원에 판매했기 때문에 그냥 구매했습니다. 사실 노트10 아우라 화이트와 깔맞춤을...","categories": ["interests"],
         "tags": ["unboxing"],
@@ -333,6 +339,12 @@ var store = [{
         "excerpt":"13장에서는 Overfitting을 해결하는 방법 중 Validation (검증)이라는 방법을 배우게 됩니다. Outline 이번 장은 Validation Set (검증 집합), Model Selection (모델 선택), Cross Validation (교차 검증) 순서대로 배우게 됩니다. Validation이 무엇인지 알지 못하는 지금은 소제목을 봐도 이해가 쉽지 않으니 일단 넘어가도록 합시다. The validation set 기본적으로 Out of Sample Error는 In...","categories": ["studies"],
         "tags": ["machine learning"],
         "url": "/ml/validation/",
+        "teaser": null
+      },{
+        "title": "포탈",
+        "excerpt":"포탈은 밸브에서 만든 퍼즐 게임입니다. 퍼즐 게임이라고 하면 보통 어린아이들도 할 수 있게 아기자기한 게임이 생각나지만, 포탈은 오히려 성인이 하기에 더 적합한 게임입니다. 후반으로 갈수록 고난이도 퍼즐로 인해 많은 고민을 하게 만들기 때문이기도 하지만, 생각보다 잔인한 배경 때문이기도 합니다. 메인 스토리는 애퍼처 사이언스가 운영하는 연구실에서 깨어난 첼의 이야기를 다루고 있습니다....","categories": ["interests"],
+        "tags": ["review"],
+        "url": "/review/portal/",
         "teaser": null
       },{
         "title": "Wii 리모컨 + 눈차크",
@@ -461,6 +473,12 @@ var store = [{
         "url": "/java/introduction/",
         "teaser": null
       },{
+        "title": "포탈 2",
+        "excerpt":"오랜만에 쓰는 게임 리뷰입니다. 그동안 블로그를 이전하는 일도 있었고 개인적으로 바쁘기도 해서 리뷰 쓸 시간은 커녕 게임을 즐길 시간조차 없었습니다. 다음 주가 되면 또 바쁠 것 같아 본격적으로 게임을 즐기려면 내년 1월이 되어야 할 것 같지만, 잠깐 글 쓸 시간이 생겨 이렇게 리뷰를 작성하게 되었습니다. 포탈 2는 지난번에 리뷰한 포탈의...","categories": ["interests"],
+        "tags": ["review"],
+        "url": "/review/portal-2/",
+        "teaser": null
+      },{
         "title": "Google Search Console 등록하기",
         "excerpt":"힘들게 블로그를 만들었으면, 이제 방문자를 유치할 방법을 찾아야합니다. 구글이나 네이버 등의 검색엔진은 굳이 사이트를 등록하지 않아도 시간이 지나면 검색이 가능하지만, 자신의 사이트를 직접 등록하게 되면 좀 더 효과적으로 검색 결과에 노출이 될 수 있습니다. 모든 검색 엔진에 각각 등록하는 과정을 거쳐야 하기 때문에 약간은 귀찮은 작업이긴 합니다. 가장 먼저 오늘은...","categories": ["studies"],
         "tags": ["wordpress"],
@@ -485,6 +503,12 @@ var store = [{
         "url": "/wordpress/regist-search-engine/",
         "teaser": null
       },{
+        "title": "포켓몬스터 PT 기라티나",
+        "excerpt":"포켓몬스터 PT 기라티나는 4세대 포켓몬스터 게임입니다. 포켓몬스터 시리즈는 매년 신작이 나오고 있지만, 현재와 같은 시스템이 정착된 것은 4세대부터라고 볼 수 있습니다. 가장 큰 변경점으로 볼 수 있는 것은 바로 물리/특수 기술의 분리입니다. 이후의 포켓몬스터 게임에도 큰 영향을 끼쳤던 세대이기 때문에, 이전 세대나 이후 세대보다 유저들의 평가가 매우 좋기도 합니다. 다만...","categories": ["interests"],
+        "tags": ["review"],
+        "url": "/review/pokemon-platinum/",
+        "teaser": null
+      },{
         "title": "한일트랜스 가정용 변압기",
         "excerpt":"국가별로 전압 규격이 다르기 때문에 해외 직구를 많이 하시는 분들은 보통 변압기를 하나씩 장만해 놓습니다. 미국과 일본 모두 한국보다 낮은 100~110V 정도의 전압을 사용하기 때문입니다. 최근 출시되는 전자제품은 대부분 프리볼트(Free Volt)를 채택하고 있기 때문에 돼지코를 사용하여 단자만 바꿔주면 사용할 수 있지만, 모종의 이유로 옛날 전자 제품을 사용하는 경우에는 어쩔 수...","categories": ["interests"],
         "tags": ["unboxing"],
@@ -507,6 +531,12 @@ var store = [{
         "excerpt":"지난 시간에 Java 언어를 사용하기 위해서 JDK를 설치하였습니다. Java 언어를 코딩할 때 메모장이나 EditPlus 같은 간단한 문서 편집 프로그램을 사용해도 되지만, 지원하는 기능이 많지 않다보니 그렇게 추천하는 환경은 아닙니다. 다른 언어도 마찬가지이지만, 가급적이면 코딩을 할 때는 IDE에서 하시는게 좋습니다. IDE는 Integrated Development Environment (통합 개발 환경)이라는 뜻입니다. IDE는 프로그램마다 조금씩...","categories": ["studies"],
         "tags": ["java"],
         "url": "/java/install-ide/",
+        "teaser": null
+      },{
+        "title": "더 위쳐 3 : 와일드 헌트",
+        "excerpt":"저는 액션 RPG 장르 게임을 굉장히 좋아합니다. 모든 액션 RPG 게임을 일일이 찾아다니면서 할 정도는 아니지만, 새로운 게임을 접했을 때 그것이 액션 RPG 게임이라면 일단 흥미가 생깁니다. 어쩌다가 험블 번들에서 1달러에 구매한 반 헬싱의 놀라운 모험이라는 게임도 뭔 게임인지 궁금해서 한번 켜보다가 꽤 취향에 맞아서 5시간 가까이 플레이했던 기억이 있습니다....","categories": ["interests"],
+        "tags": ["review"],
+        "url": "/review/the-witcher-3-wild-hunt/",
         "teaser": null
       },{
         "title": "콜드스틸 SRK",
