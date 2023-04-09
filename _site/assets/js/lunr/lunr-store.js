@@ -575,6 +575,12 @@ var store = [{
         "url": "/git/install-git/",
         "teaser": null
       },{
+        "title": "Grand Theft Auto 5",
+        "excerpt":"GTA 시리즈는 어렸을 적 학교 컴퓨터실에 설치되어 있던 GTA 2로 처음 접해봤습니다. 그 당시에는 영어를 이해할 수 없었기 때문에 단순히 지나가던 차를 뺏고, 어디선가 총을 구해 지나가는 사람들을 쏘는 것 밖에 하지 않았지만 그마저도 재밌었기 때문에 꽤 인기가 있었습니다. 성인이 되서는 막연하게 GTA라는 게임을 알고만 있을 뿐 따로 찾아서 플레이해보지는...","categories": ["interests"],
+        "tags": ["review"],
+        "url": "/review/grand-theft-auto-5/",
+        "teaser": null
+      },{
         "title": "Google AdSense 설정하기",
         "excerpt":"구글 애드센스는 구글에서 컨텐츠 제공자들이 수익을 얻을 수 있게 만드는 광고 게제 서비스입니다. 구글 계정을 통해 가입하여, 제공 받은 광고 태그를 블로그나 유튜브에 삽입하면 방문자들이 광고를 보거나 클릭한 수에 따라 보수가 지급되는 방식입니다. 국내에서 많은 블로거가 사용하는 네이버 블로그는 구글 애드센스 광고를 삽입할 수 없기 때문에 몇 년 전만 해도...","categories": ["studies"],
         "tags": ["wordpress"],
@@ -609,6 +615,12 @@ var store = [{
         "excerpt":"지난 시간에 GitHub에 가입하고, 원격 저장소를 만드는 것까지 다루었습니다. 오늘은 로컬 저장소에서 Commit을 하는 방법과 로컬 저장소의 내용을 원격 저장소에 옮기는 Push 방법을 소개하도록 하겠습니다. Commit 커밋(Commit)은 버전 관리 시스템에서 변경 사항을 반영 시키는 것을 뜻합니다. 예를 들어, 자신이 현재 1.0 버전을 작업하고 있는데, 아무리 많은 부분을 수정하였더라도 커밋을 하지...","categories": ["studies"],
         "tags": ["git"],
         "url": "/git/commit-and-push/",
+        "teaser": null
+      },{
+        "title": "스타크래프트 2",
+        "excerpt":"스타크래프트 2는 한 때 국민 게임이었던 스타크래프트의 후속작으로 출시된 게임입니다. 스타크래프트 : 종족 전쟁이 1998년에 나왔는데, 무려 12년이나 지나서야 비로소 후속작이 출시되었습니다. 사실 커뮤니티를 둘러보면 스타크래프트 2의 스토리는 상당히 평가가 낮습니다. 게다가 매 시리즈마다 인상깊은(?) 대사를 남겼기 때문에 인터넷에서 자주 언급되며 패러디되곤 합니다. 대표적으로 “난 죽음을 경험한 적이 없네”, “언제든지”,...","categories": ["interests"],
+        "tags": ["review"],
+        "url": "/review/starcraft-2/",
         "teaser": null
       },{
         "title": "세 얼간이 블루레이",
@@ -927,6 +939,18 @@ var store = [{
         "excerpt":"이 책은 5장 이후로 Generalized Policy Iteration (GPI)에서 내재된 Exploitation과 Exploration 사이의 Trade-off를 처리하는 방법으로 On-policy와 Off-policy를 사용했습니다. 9장과 10장에서는 On-policy의 경우를 Function Approximation로 처리했으며, 이번 장에서는 Off-policy에서의 Function Approximation을 다룰 예정입니다. Off-policy 방법을 Function Approximation로 확장하는 것은 On-policy의 경우에서와 다른 점도 많고 어려운 점도 많습니다. 6장과 7장에서 소개한 Tabular...","categories": ["studies"],
         "tags": ["reinforcement learning"],
         "url": "/rl/off-policy-methods-with-approximation/",
+        "teaser": null
+      },{
+        "title": "마법소녀 마도카☆마기카 감상평",
+        "excerpt":"이번 학기에 일본 애니메이션과 관련한 강의를 청강하면서 제출한 과제입니다. 대단한 글은 아니지만, 기록을 위해 포스트로 남깁니다. (주의) 마법소녀 마도카 마기카의 결말에 대한 스포일러가 포함되어 있습니다. 과제 내용 2주차~6주차까지 수업에서 소개된 일본 애니메이션 장르 중 하나를 선택하고, 해당 장르가 현대인 및 현대사회를 잘 반영하고 있다고 생각하는 근거를 구체적인 작품(교재와 수업에 소개된...","categories": ["interests"],
+        "tags": ["talk"],
+        "url": "/talk/puella-magi-madoka-magica/",
+        "teaser": null
+      },{
+        "title": "초속 5센티미터 감상평",
+        "excerpt":"지난 포스트에 이어 제출한 두 번째 과제입니다. 역시 기록을 위해 포스팅합니다. (주의) 마법소녀 마도카 마기카의 결말에 대한 스포일러가 포함되어 있습니다. 과제 내용 교재 ‘애니메이션에 빠진 인문학’의 내용과 7주차~11주차 수업 내용을 참고하여 작성하기 바랍니다. 현대인의 개념, 속성, 가치관, 상황 등을 이해하기 쉽다고 판단되는 애니메이션 작품을 하나 선택하고(교재와 수업에 소개된 작품으로 한정함),...","categories": ["interests"],
+        "tags": ["talk"],
+        "url": "/talk/5-centimeters-per-second/",
         "teaser": null
       },{
         "title": "Eligibility Trace",
