@@ -857,10 +857,40 @@ var store = [{
         "url": "/unboxing/tom-and-jerry-bluray-combo/",
         "teaser": null
       },{
+        "title": "헤일로 워즈 2 얼티밋 에디션",
+        "excerpt":"안녕하세요, 오늘은 오랜만에 XBOX 게임을 하나 개봉하려고 합니다. 요즘 시간이 없어서 게임도 거의 못하고 있는데, 언박싱하는 게임만 많아진 것 같네요… 어쨌든 오늘 가져온 게임은 헤일로 워즈 2 얼티밋 에디션입니다. 헤일로 시리즈는 XBOX의 간판 FPS 게임인데, 그 세계관을 가져온 외전 격인 게임입니다. 장르도 FPS가 아닌 RTS로 바뀌었구요. 게임 패드로 RTS를 한다는...","categories": ["interests"],
+        "tags": ["unboxing"],
+        "url": "/unboxing/halo-wars-2-ultimate-edition/",
+        "teaser": null
+      },{
         "title": "Exception Handling",
         "excerpt":"지난 포스트에서 Java의 파일 입출력에 대해 다루었습니다. 파일 입출력을 할 때는 예외 상황(ex. 해당 경로에 파일이 존재하지 않는 경우)이 발생할 수 있기 때문에 예외 처리를 반드시 해주어야 한다고 했었고, 그로 인해 IOException이라는 라이브러리를 호출한 다음, 파일 입출력을 실행하는 메소드에서 예외 처리 구현을 해줬습니다. 이렇게 Java에서는 예외가 발생할 수 있는 경우에서는...","categories": ["studies"],
         "tags": ["java"],
         "url": "/java/exception-handling/",
+        "teaser": null
+      },{
+        "title": "Razer Blackwidow Elite & Deathadder Elite",
+        "excerpt":"안녕하세요, 오늘은 RAZER의 주력 제품인 데스에더 엘리트 마우스와 블랙위도우 엘리트 키보드를 개봉하려고 합니다. 사실 이 제품은 1년 2개월 전에 같이 구매하고 지금까지 사용해왔습니다. 키보드가 구매 6개월 시점부터 살짝 맛이 가더니 최근에는 마우스까지 왼쪽 클릭이 안되는 문제로 인해 결국 AS 센터에 방문해 이상 증상을 확인받고 새 제품으로 교환받았습니다. 두 제품 모두...","categories": ["interests"],
+        "tags": ["unboxing"],
+        "url": "/unboxing/razer-blackwidow-elite-and-deathadder-elite/",
+        "teaser": null
+      },{
+        "title": "Playstation Vita 2세대",
+        "excerpt":"어렸을 때 부잣집 친구들의 집에는 플레이스테이션 2가 있었고, PSP를 가지고 다녔던 것이 기억에 남습니다. 아마 요즘도 많은 집에서 게임 콘솔을 사주시는 부모님은 많이 없을 것 같습니다. 가격도 아이들에게는 선뜻 사주기 힘들 정도로 비싼 편이고, 무엇보다 공부에 방해가 된다는 이유가 클 것 같습니다. 어쨌든 어렸을 때 콘솔 게임기에 대한 열망이 강했기...","categories": ["interests"],
+        "tags": ["unboxing"],
+        "url": "/unboxing/playstation-vita-gen-2/",
+        "teaser": null
+      },{
+        "title": "삼성전자 SFN-M35RSBL 선풍기",
+        "excerpt":"안녕하세요, 오늘은 특이하게 선풍기를 하나 개봉해 보겠습니다. 갑자기 왠 선풍기냐… 라고 궁금해하실 수도 있는데, 당연히 제 돈으로 산건 아닙니다. 마침 학교에서 연구실마다 선풍기를 구매할 수 있도록 해줬기에, 저희 연구실에서는 이 선풍기를 구매했습니다. 연구실에 에어컨이 있긴 한데, 대학교 등의 공공장소에서는 실내 온도를 26도로 제한해놨기 때문에 틀어놔도 엄청 시원하지가 않습니다. 그래서 교수님들도...","categories": ["interests"],
+        "tags": ["unboxing"],
+        "url": "/unboxing/samsung-sfn-m35rsbl-fan/",
+        "teaser": null
+      },{
+        "title": "eBay에서 구매한 닌텐도 Wii",
+        "excerpt":"안녕하세요, 정말 오랜만에 포스트를 올립니다. 8월에는 학회 준비로 인해 몹시 바빴기 때문에 블로그나 유튜브를 신경쓸 겨를이 없었는데, 한 달 정도 관리를 안하다보니 자연스레 방치하게 되었습니다. 그렇게 미루다보니 어느새 10월이 되었네요. 이제부터는 다시 조금씩 관리를 하려고 하는데, 하필 슬슬 바빠질 시기가 다가와 예전처럼 주 2~3회 포스팅은 힘들 것 같습니다. 여튼 오늘...","categories": ["interests"],
+        "tags": ["unboxing"],
+        "url": "/unboxing/nintendo-wii-from-ebay/",
         "teaser": null
       },{
         "title": "Generic Programming",
