@@ -809,10 +809,28 @@ var store = [{
         "url": "/ds/basic-concepts-3/",
         "teaser": null
       },{
+        "title": "셜록 시리즈 블루레이",
+        "excerpt":"예전에 대학원 모 강의에서, 가르치시던 교수님이 “셜록 드라마 만큼은 공부할 시간을 쪼개서라도 봐야한다” 라고 극찬을 하신 적이 있습니다. 해외 드라마와 영화를 즐겨보시던 분이셨는데, 그렇게 조예(?)가 깊으신 분이 추천할 정도면 어떻길래 하는 궁금증이 있었습니다. 그러면서도 “대신 시즌 4의 에피소드 1까지만 보는게 Optimal한 시청이다” 라고 추가로 말씀하셨지만요. 여튼 이 드라마의 내용이 궁금했던...","categories": ["interests"],
+        "tags": ["unboxing"],
+        "url": "/unboxing/sherlock-series-bluray/",
+        "teaser": null
+      },{
         "title": "Abstraction using Interfaces",
         "excerpt":"Four Principles of Objected Oriented Programming Java를 포함한 객체 지향 프로그래밍의 공통점으로는 캡슐화(Encapsulation), 추상화(Abstraction), 상속(Inheritance), 다형성(Polymorphism) 4가지 원칙이 있다는 것입니다. 캡슐화에 대해서는 지난 시간에 다루었기 때문에 여기서는 생략하도록 하겠습니다. 캡슐화에 대해서는 아래 포스트를 참고하시기 바랍니다. [Java] 5. Classes, Variables, and Methods 추상화는 복잡한 자료, 모듈, 시스템 등으로부터 핵심적인 개념 또는...","categories": ["studies"],
         "tags": ["java"],
         "url": "/java/abstraction-using-interfaces/",
+        "teaser": null
+      },{
+        "title": "데이즈 곤 초회판",
+        "excerpt":"생각해보니 그동안 개봉기를 작성하면서, 의외로 플레이스테이션 게임을 개봉한 적이 없다는 사실을 최근 깨달았습니다. 그래서 오늘은 가지고 있던 데이즈 곤 초회판을 개봉해볼까 합니다. 데이즈 곤은 플레이스테이션의 AAA급 독점작 중 하나인데, 기대와는 다르게 게임 여러 문제로 인해 평가는 생각보다 많이 낮았던 작품입니다. 그래서인지 발매 후 1년이 지난 시점까지도 초회판을 정가보다도 낮은 가격에...","categories": ["interests"],
+        "tags": ["unboxing"],
+        "url": "/unboxing/days-gone-first-edition/",
+        "teaser": null
+      },{
+        "title": "뉴 닌텐도 2DS XL 마리오 카트 7 에디션",
+        "excerpt":"저는 현재 뉴 닌텐도 3DS XL을 갖고 있습니다. 다만 올해 들어 3DS 계열 기기를 계속해서 떨이하는 것으로 볼 때, 3DS 기기와 소프트 모두 대부분 올해 안에 단종될 것 같습니다. 그래서 단종되기 전에 예비용 기기를 마련하는 것이 좋을 것 같아 뉴 닌텐도 2DS XL을 구매했습니다. 일반판은 색상이 별로 마음에 들지 않아...","categories": ["interests"],
+        "tags": ["unboxing"],
+        "url": "/unboxing/new-nintendo-2ds-xl-mario-kart-7-edition/",
         "teaser": null
       },{
         "title": "Inheritance",
@@ -821,10 +839,22 @@ var store = [{
         "url": "/java/inheritance/",
         "teaser": null
       },{
+        "title": "LG전자 외장형 블루레이 레코더",
+        "excerpt":"안녕하세요, 오랜만에 올리는 개봉기입니다. 오늘은 외장형 블루레이 드라이브를 하나 개봉하려고 합니다. 최근 USB의 보급으로 인해, 광학 드라이브를 잘 사용하지 않아 노트북은 물론이고 데스크탑에서도 점점 광학 드라이브가 사라져가는 추세입니다. 다만 아직도 음반은 CD로 계속 나오고 있고, DVD나 블루레이 같은 매체들도 꾸준히 발매되고 있기 때문에, 이런 외장형 드라이브 하나는 가지고 있는 것이...","categories": ["interests"],
+        "tags": ["unboxing"],
+        "url": "/unboxing/lg-portable-bluray-writer/",
+        "teaser": null
+      },{
         "title": "File Input & Output",
         "excerpt":"File Output : FileOutputStream 먼저 Java에서 파일 출력 방법을 알아보겠습니다. 코드를 보여드리면서 설명하는 것이 편할 것 같아, 파일 출력의 예제 코드를 보여드리고 한 줄씩 설명하도록 하겠습니다. 아래 프로그램은 Hello World!라는 문장이 들어있는 output.txt 파일을 생성하는 프로그램입니다. 1 2 3 4 5 6 7 8 9 10 11 12 import java.io.FileOutputStream;...","categories": ["studies"],
         "tags": ["java"],
         "url": "/java/file-input-and-output/",
+        "teaser": null
+      },{
+        "title": "톰과 제리 3종 블루레이 콤보팩",
+        "excerpt":"안녕하세요, 오늘은 톰과 제리 3종 블루레이 콤보팩을 개봉하려고 합니다. 톰과 제리는 어렸을 때 케이블 방송에서 종종 재밌게 봤는데, 최근 유튜브에 올라와있는 몇몇 에피소드를 보고 추억에 젖어 바로 구매했습니다. 가격도 배송비 포함해서 3만원이 채 안되었고, 유튜브에는 전체 에피소드가 올라와 있는 것도 아닌데다 화질이 너무 안좋았거든요. 낱개로도 구매가 가능했지만 3개의 시리즈를 합본으로...","categories": ["interests"],
+        "tags": ["unboxing"],
+        "url": "/unboxing/tom-and-jerry-bluray-combo/",
         "teaser": null
       },{
         "title": "Exception Handling",
