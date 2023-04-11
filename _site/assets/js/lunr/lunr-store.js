@@ -906,7 +906,7 @@ var store = [{
         "teaser": null
       },{
         "title": "아이패드 프로 12.9 4세대 개봉기",
-        "excerpt":"                                                                                            ","categories": ["interests"],
+        "excerpt":"오늘은 예전부터 갖고싶었던 아이패드를 개봉하겠습니다. 아이패드를 사용하는 용도는 제각각 다르지만, 대학원생의 경우 보통 논문을 읽는 용도로 많이 사용합니다. 최근 주변 대학원생들이 많이 사용하는 것을 보고 저도 하나 마련하게 되었습니다. 저는 애플 공식 홈페이지에서 주문했습니다. 국내 배송임에도 불구하고 마치 해외 배송 같은 박스입니다. 신기한 점은 다른 택배 박스와 다르게 열 때...","categories": ["interests"],
         "tags": ["unboxing"],
         "url": "/unboxing/apple-ipad-pro-129-gen4/",
         "teaser": null
@@ -941,10 +941,34 @@ var store = [{
         "url": "/java/collection-framework-2/",
         "teaser": null
       },{
+        "title": "에어팟 프로",
+        "excerpt":"안녕하세요, 오랜만에 올리는 개봉기 포스트입니다. 원래 개봉기는 영상으로 먼저 남기고 포스트를 썼었는데, 이번 포스트부터는 영상을 찍지 않기로 결정했습니다. 영상을 편집할 시간도 없어서 거의 원본을 그대로 올리는데, 제가 봐도 조금 재미가 없기 때문에… 그 시간에 포스트를 더 정성들여 쓰는게 좋다고 생각했습니다. 오늘 개봉할 제품은 에어팟 프로입니다. 2년 전 쯤에 삼성 갤럭시...","categories": ["interests"],
+        "tags": ["unboxing"],
+        "url": "/unboxing/apple-airpods-pro/",
+        "teaser": null
+      },{
+        "title": "아이폰 13 프로 맥스",
+        "excerpt":"안녕하세요, 오늘은 지난 포스트에 이어 또 다른 애플 제품을 개봉하는 포스트입니다. 원래 이번에 아이폰을 구매하기 위해 10월 초에 예약을 했었는데, 반도체 대란과 아이폰 13 시리즈의 인기로 인해 11월 중순까지도 물건을 받지 못했습니다. 원래 알고있던 통신사 대리점에서 예약을 했었으나, 요즘 아이폰의 할인가도 그렇게 많지 않고 요금제도 비싼 요금제를 3달간 유지해야하는 제약을...","categories": ["interests"],
+        "tags": ["unboxing"],
+        "url": "/unboxing/apple-iphone-13-pro-max/",
+        "teaser": null
+      },{
+        "title": "애플 워치 7",
+        "excerpt":"지난 포스트인 아이폰 13 개봉기에서 잠깐 말씀드렸지만, 이번 기회에 전체적으로 애플 생태계로 넘어가고자 합니다. 맥북와 아이패드는 이미 있었기 때문에 이번이 마지막 애플 기기가 될 것 같네요. 스마트워치는 지금까지 한번도 써보지 않았기 때문에 구매가 조금 고민되었으나, 나이를 먹으면서 패션용으로라도 시계 하나쯤은 필요할 것 같아 큰맘먹고 구매하게 되었습니다. 아무래도 추후 취업하게 되면...","categories": ["interests"],
+        "tags": ["unboxing"],
+        "url": "/unboxing/apple-watch-7/",
+        "teaser": null
+      },{
         "title": "Collection Framework (3)",
         "excerpt":"안녕하세요, 오늘은 Collection Framework 3번째 포스트입니다. 이번에 다룰 Collection Framwork는 HashSet과 TreeSet입니다. HashSet HashSet은 Set Interface를 구현한 클래스입니다. HashSet은 원소의 중복을 허용하지 않고(= e1.equals(e2)를 만족하는 e1, e2가 없음), 최대 1개의 null 원소가 존재할 수 있으며, 원소의 순서가 중요하지 않다는 특징을 가지고 있습니다. HashSet을 생성하는 방법은 다음 4가지가 있습니다. HashSet() :...","categories": ["studies"],
         "tags": ["java"],
         "url": "/java/collection-framework-3/",
+        "teaser": null
+      },{
+        "title": "오닉스 북스 노바 에어",
+        "excerpt":"요즘 사고 싶은게 많아 큰일입니다. 지난번에 올렸던 애플 3종 세트를 구매하느라 큰 돈을 썼는데, 없는 살림에 또 무언가를 사고 말았습니다. 최근 “청춘 돼지” 시리즈 애니메이션을 매우 재밌게 보았습니다. TVA와 극장판을 모두 봤는데 극장판을 보고 눈물을 뚝뚝 흘릴 정도로 감명깊게 봐서 원작 소설에 흥미가 생겼습니다. 그래서 원작 소설을 구매하려고 했는데 두...","categories": ["interests"],
+        "tags": ["unboxing"],
+        "url": "/unboxing/onyx-boox-nova-air/",
         "teaser": null
       },{
         "title": "Collection Framework (4)",
@@ -1017,6 +1041,12 @@ var store = [{
         "excerpt":"이번 장은 강화학습의 핵심 아이디어인 Temporal-Difference (TD) Learning을 다루게 됩니다. TD Learning은 Environment에 대한 정확한 Model 없이 경험을 통해 학습한다는 Monte Carlo의 아이디어와 Bootstrap 하지 않고 학습된 다른 추정치를 기반으로 추정치를 업데이트한다는 Dynamic Programming 아이디어를 결합하여 만들어졌습니다. 이번 장의 시작은 이전 장들과 같이 주어진 Policy $\\pi$에 대한 Value Function $v_{\\pi}$를...","categories": ["studies"],
         "tags": ["reinforcement learning"],
         "url": "/rl/temporal-difference-learning/",
+        "teaser": null
+      },{
+        "title": "4월은 너의 거짓말 블루레이",
+        "excerpt":"안녕하세요, 오늘은 오랜만에 작성하는 언박싱 포스트입니다. 저는 애니메이션을 감상하는 취미가 있는데, 최근 “4월은 너의 거짓말” 이라는 작품을 너무 감명깊게 봤습니다. 저는 클래식을 그다지 좋아하지 않지만, 아는 후배가 추천해서 보게되었는데 예상과 다르게 너무 훌륭한 작품이었습니다. 마지막 화를 보고 눈물을 흘릴 정도로 감동해서 시청 후에 후유증이 꽤 오래 남았습니다. 그러던 중에 한국에...","categories": ["interests"],
+        "tags": ["unboxing"],
+        "url": "/unboxing/your-lie-in-april-bluray/",
         "teaser": null
       },{
         "title": "$n$-step Bootstrapping",
