@@ -893,6 +893,36 @@ var store = [{
         "url": "/unboxing/nintendo-wii-from-ebay/",
         "teaser": null
       },{
+        "title": "슈퍼 소닉 4K 블루레이",
+        "excerpt":"오랜만에 개봉하는 블루레이입니다. 오늘은 실사 게임 영화인 슈퍼 소닉 4K 블루레이를 개봉하려고 합니다. 어렸을 때 소닉 게임을 워낙 재밌게 했던 기억이 있어서 관심이 있었는데, 마침 한국에 4K 블루레이가 출시되어 망설임 없이 바로 구매하였습니다. 4K 블루레이는 보통 슬립 케이스가 없이 출시되는 경우가 많은데, 초도한정판이라 그런지 이건 슬립 케이스가 씌여 왔습니다. 이걸...","categories": ["interests"],
+        "tags": ["unboxing"],
+        "url": "/unboxing/super-sonic-4k-bluray/",
+        "teaser": null
+      },{
+        "title": "슈퍼 소닉 4K 블루레이",
+        "excerpt":"오늘은 예전에 구매했던 콘솔 하나를 개봉하려고 합니다. 닌텐도 2DS 인데요, 사실 저는 3DS 계열 기기를 대부분 가지고 있습니다. 그럼에도 불구하고 이걸 구매한 이유는, 다른 3DS 계열 기기에 비해 독특한 디자인을 가지고 있기 때문입니다. 닌텐도 2DS가 처음 공개되었을 당시 워낙 특이한 모양으로 인해 도끼다수, 식빵다수 등의 별명이 붙었는데, 실제로 사용해본 사람들의...","categories": ["interests"],
+        "tags": ["unboxing"],
+        "url": "/unboxing/nintendo-2ds/",
+        "teaser": null
+      },{
+        "title": "아이패드 프로 12.9 4세대 개봉기",
+        "excerpt":"                                                                                            ","categories": ["interests"],
+        "tags": ["unboxing"],
+        "url": "/unboxing/apple-ipad-pro-129-gen4/",
+        "teaser": null
+      },{
+        "title": "커세어 K70 RGB Mk.2 갈축 키보드",
+        "excerpt":"안녕하세요, 정말 오랜만에 올리는 포스트네요. 날짜를 따져보니 벌써 7개월이나 지났습니다. 그동안 바쁜 이유도 있었지만 요즘 에픽세븐이라는 게임에 빠져있어서… 여가 시간을 거의 그 게임을 하느라 보내고 있습니다. 이 포스트도 원래 12월쯤에 쓰려고 했는데 귀찮아서 미루다보니 이제서야 작성하게 되네요. 앞으로는 최대한 짬을 내서 밀렸던 포스트를 작성해보도록 하겠습니다. 이 키보드는 연구실에서 쓰던 키보드가...","categories": ["interests"],
+        "tags": ["unboxing"],
+        "url": "/unboxing/corsair-k70-rgb-mk2-brown-switch/",
+        "teaser": null
+      },{
+        "title": "뉴 닌텐도 3DS XL",
+        "excerpt":"안녕하세요, 거의 3달만에 올리는 포스트입니다. 사실 그 동안 바빠서 포스트를 쓸 시간이 없었다… 고 하면 핑계겠네요. 사실 작년 이맘때 쯤부터 모바일 게임에 빠져서 여가 시간을 대부분 게임하는데 쓰고 있어서 자연스레 블로그와 유튜브를 방치해놓고 있습니다. 처음 각오는 이런게 아니었는데… 이런 개봉기 말고도 쓰다만 공부 관련 포스트도 이어서 작성해야 하는데 큰일이네요. 여튼...","categories": ["interests"],
+        "tags": ["unboxing"],
+        "url": "/unboxing/new-nintendo-3ds-xl/",
+        "teaser": null
+      },{
         "title": "Generic Programming",
         "excerpt":"지난 Java 포스트를 쓴지도 벌써 1년이 훌쩍 지났습니다. 작년에 모바일 게임만 시작하지 않았어도 여가 시간에 계속 포스트를 작성했을 텐데, 한번 시작한 뒤로 지금까지 접지를 못해서 블로그를 거의 방치하고 있었습니다. 아무래도 공부 내용을 정리하는 포스트는 작성하는데 시간도 꽤 걸리기 때문에 귀찮았기도 했구요. 그런데 계속 이렇게 냅두다보면 블로그를 만든 이유가 사라지는 것...","categories": ["studies"],
         "tags": ["java"],
