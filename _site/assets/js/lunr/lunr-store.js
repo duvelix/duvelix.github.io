@@ -1126,4 +1126,22 @@ var store = [{
         "tags": ["unboxing"],
         "url": "/Unboxing/pokemon-scarlet-violet-double-pack/",
         "teaser": null
+      },{
+        "title": "Amazon에서 구매한 PSP",
+        "excerpt":"저는 어지간하면 중고 제품을 구매하지 않습니다. 특히 전자기기는 무조건 신품으로 사는 편인데, 겉보기만으로는 기기의 상태를 제대로 알기 힘들기 때문입니다. 하지만 신품을 구하는 것이 불가능하거나, 가능하더라도 가격이 너무 비싼 경우에는 어쩔 수 없이 중고를 구매합니다. 저는 보통 소장용으로 구매하기 때문에, 중고를 구매할 때도 상태를 굉장히 꼼꼼히 확인하는 편입니다. 중고를 구매할 때...","categories": ["interests"],
+        "tags": ["unboxing"],
+        "url": "/Unboxing/psp-from-amazon/",
+        "teaser": null
+      },{
+        "title": "POPUP PARADE 마마마 피규어",
+        "excerpt":"최근 제가 올린 게시물을 보시면 알겠지만, 저는 마법소녀 마도카☆마기카를 굉장이 재밌게 보았습니다. 그래서 마마마에 관련된 이런 저런 굿즈를 모으고 있는데요, 마침 타이밍 좋게 마마마 피규어가 새롭게 출시되어 이 참에 구매했습니다. 원래 피규어는 상당히 고가의 물건인데, POPUP PARADE 시리즈는 피규어 입문자를 위해 저가로 판매하는 브랜드라고 합니다. 사실 지금까지 피규어를 사 본...","categories": ["interests"],
+        "tags": ["unboxing"],
+        "url": "/Unboxing/puella-magi-madoka-magica-figure/",
+        "teaser": null
+      },{
+        "title": "빙과 블루레이",
+        "excerpt":"지금까지 올렸던 많은 블루레이 관련 포스트에서 짐작하셨을 수도 있지만, 저는 재밌게 본 작품은 블루레이로 소장하고 있습니다. 소장하는 이유에는 여러가지가 있지만, 가장 큰 이유는 정발되는 애니메이션 블루레이에는 한국어 더빙판이 포함되어 있는 경우가 많기 때문입니다. 한국어 더빙에 대한 호불호는 사람마다 갈리지만, 저는 한국어 더빙만이 주는 또 다른 느낌이 있기 때문에 선호하는 편입니다....","categories": ["interests"],
+        "tags": ["unboxing"],
+        "url": "/Unboxing/hyouka-bluray/",
+        "teaser": null
       }]
