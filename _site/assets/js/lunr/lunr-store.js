@@ -1079,6 +1079,12 @@ var store = [{
         "url": "/rl/off-policy-methods-with-approximation/",
         "teaser": null
       },{
+        "title": "에어팟 맥스",
+        "excerpt":"안녕하세요, 정말 오랜만에 개봉기 포스트를 작성합니다. 요즘 뭔가 물건을 살 일이 없어서 개봉기 포스트를 쓰고 싶어도 쓸 수가 없었네요. 사실 요즘도 비싼(?) 전자제품은 잘 사지 않습니다만, 이번에는 아는 후배에게 제품을 제공받아 개봉하게 되었습니다. 오늘 개봉할 제품은 에어팟 맥스입니다. 제가 애플 제품을 좋아하긴 합니다만, 헤드셋에 70만원 이상을 쓰는 것은 도저히 엄두가...","categories": ["interests"],
+        "tags": ["unboxing"],
+        "url": "/unboxing/apple-airpods-max/",
+        "teaser": null
+      },{
         "title": "마법소녀 마도카☆마기카 감상평",
         "excerpt":"이번 학기에 일본 애니메이션과 관련한 강의를 청강하면서 제출한 과제입니다. 대단한 글은 아니지만, 기록을 위해 포스트로 남깁니다. (주의) 마법소녀 마도카 마기카의 결말에 대한 스포일러가 포함되어 있습니다. 과제 내용 2주차~6주차까지 수업에서 소개된 일본 애니메이션 장르 중 하나를 선택하고, 해당 장르가 현대인 및 현대사회를 잘 반영하고 있다고 생각하는 근거를 구체적인 작품(교재와 수업에 소개된...","categories": ["interests"],
         "tags": ["talk"],
@@ -1091,6 +1097,12 @@ var store = [{
         "url": "/talk/5-centimeters-per-second/",
         "teaser": null
       },{
+        "title": "JBL Quantum 810",
+        "excerpt":"안녕하세요, 어쩌다보니 지난번에 이어서 또 헤드셋을 개봉하게 되었네요. (정확하게 말하면 지난번에는 헤드폰이었고 이번에는 헤드셋이라는 차이가 있습니다만) 원래 저는 커세어 보이드 무선 제품을 쭉 사용해오고 있었습니다. 착용감이 편하기도 했고, 제가 막귀라 음질에 크게 구애받지 않았기 때문에 나름 만족하며 사용했습니다. 다만 구매한지 5년이나 지나다보니 쿠션 부분이 다 떨어지고, 가죽 부분이 벗겨지는 바람에...","categories": ["interests"],
+        "tags": ["unboxing"],
+        "url": "/unboxing/jbl-quantum-810/",
+        "teaser": null
+      },{
         "title": "Eligibility Trace",
         "excerpt":"이번 장에서 새로 배우는 Eligibility Trace는 강화학습의 기본 메커니즘 중 하나입니다. 예를 들어, TD($\\lambda$)에서 $\\lambda$는 Eligibility Trace를 사용한다는 것을 의미합니다. Q-learning과 Sarsa를 포함한 대부분의 TD 방법은 Eligibility Trace와 결합하여 보다 효율적으로 학습할 수 있습니다. Eligibility Trace는 TD와 Monte Carlo Method를 통합하여 일반화하는 방법입니다. TD 방법을 Eligibility Trace를 사용하여 일반화하면 $\\lambda...","categories": ["studies"],
         "tags": ["reinforcement learning"],
@@ -1101,5 +1113,17 @@ var store = [{
         "excerpt":"이번 장은 드디어 마지막 장인 Policy Gradient입니다. 이번 장에서는 지금까지 이 교재에서 다룬 방법들과는 다르게, Policy 자체를 매개변수화하는 방법을 알아보겠습니다. 지금까지의 방법들은 Estimated Action-Value를 기반으로 Action을 선택했기 때문에 Action-Value를 추정하는 것이 중요했습니다. 하지만 이번 장에서 배울 새로운 방법인 Policy Gradient는 Action을 선택하는 데 Value Function을 사용하지 않습니다. 이번 장에서 사용할...","categories": ["studies"],
         "tags": ["reinforcement learning"],
         "url": "/rl/policy-gradient-methods/",
+        "teaser": null
+      },{
+        "title": "마법소녀 마도카☆마기카 굿즈",
+        "excerpt":"예전에 마법소녀 마도카 마기카를 감명깊게 봤기 때문에 요즘 관련 굿즈를 모으고 있습니다. 피규어도 구매했지만 12월에나 전부 도착할 것 같아서, 먼저 도착한 물품들만 후기를 작성해보도록 하겠습니다. 오늘 소개할 관련 굿즈는 블루레이와 PSP, Vita 게임입니다. 굿즈를 모아놓고 찍어본 사진입니다. 오른쪽부터 Vita 게임, PSP 게임, 그리고 블루레입니다. PSP 게임이 유난히 커 보이는데, 그...","categories": ["interests"],
+        "tags": ["unboxing"],
+        "url": "/Unboxing/puella-magi-madoka-magica-goods/",
+        "teaser": null
+      },{
+        "title": "포켓몬스터 스칼렛/바이올렛 더블팩",
+        "excerpt":"그동안 바빠서 게임을 못하고 있었는데, 어느새 소드/실드가 발매된지 3년이나 지났네요. 그런데 저는 아직도 소드/실드를 못했습니다. 해야지 해야지 하면서도 계속 미루다보니 결국 이렇게 되었네요. 하지만 그렇다고 포켓몬 신작이 발매되었는데 그냥 넘어갈 수는 없죠. 그래서 이번에도 스칼렛/바이올렛 더블팩을 구매했습니다. 저는 분명히 예약 구매를 했지만, 소드/실드 때처럼 예약 구매 특전 같은 것은 따로...","categories": ["interests"],
+        "tags": ["unboxing"],
+        "url": "/Unboxing/pokemon-scarlet-violet-double-pack/",
         "teaser": null
       }]
