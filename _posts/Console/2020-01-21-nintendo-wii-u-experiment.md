@@ -1,5 +1,5 @@
 ---
-title: "닌텐도 Wii에 17가지 서로 다른 디스크를 넣어보면?"
+title: "닌텐도 Wii U에 17가지 서로 다른 디스크를 넣어보면?"
 permalink: /Console/nintendo-wii-u-experiment/
 classes: wide
 thumbnail: /images/Console/003/00.jpg
