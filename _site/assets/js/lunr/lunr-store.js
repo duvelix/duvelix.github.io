@@ -104,7 +104,7 @@ var store = [{
         "title": "New 닌텐도 3DS XL vs New 닌텐도 2DS XL",
         "excerpt":"안녕하세요, 오늘 포스트는 New 닌텐도 3DS XL과 New 닌텐도 2DS XL의 차이점을 소개하려고 합니다. 저는 New 닌텐도 2DS XL로 시작을 했고 최근에 New 닌텐도 3DS XL로 기기를 새로 구입했는데, 3D 영상을 볼 수 있다는 것 외에도 상당한 차이가 존재하길래 이를 정리해보고자 합니다. 먼저 위의 사진을 보시면 왼쪽이 New 닌텐도 3DS XL(이하...","categories": ["interests"],
         "tags": ["console"],
-        "url": "/console/new-3ds-xl-vs-new-2ds-xl/",
+        "url": "/Console/new-3ds-xl-vs-new-2ds-xl/",
         "teaser": null
       },{
         "title": "LISA Selfie Stick LS-CT01",
@@ -302,7 +302,7 @@ var store = [{
         "title": "닌텐도 스위치에서 5Ghz Wi-Fi 사용하기",
         "excerpt":"요즘 출시되는 공유기는 대부분 2.4Ghz와 5Ghz의 주파수 대역을 지원합니다. 공유기와 기기 사이의 거리가 가깝다면 5Ghz의 속도가 빠르기 때문에 5Ghz 대역폭을 주로 사용하실텐데, 스위치 물론 2.4Ghz와 5Ghz의 주파수 대역을 지원하기 때문에 거리만 가깝다면 5Ghz의 대역폭을 사용하는 것이 좋습니다. 그러나 스위치의 인터넷 설정을 보면 5Ghz 대역폭이 기본적으로 검색이 되지 않는데, 한국에서의 제어...","categories": ["interests"],
         "tags": ["console"],
-        "url": "/console/nintendo-switch-5ghz-wi-fi/",
+        "url": "/Console/nintendo-switch-5ghz-wi-fi/",
         "teaser": null
       },{
         "title": "워드프레스를 시작했던 이유",
@@ -620,7 +620,7 @@ var store = [{
         "title": "닌텐도 Wii에 17가지 서로 다른 디스크를 넣어보면?",
         "excerpt":"안녕하세요, 오늘은 닌텐도 Wii U를 가지고 실험을 하나 해보려고 합니다. 보통 콘솔 게임기는 해당 제조사에서 발매한 디스크를 넣었을 때만 동작하도록 설계되었는데, 만약에 다른 종류의 디스크를 넣는다면 어떻게 될까요? 제가 총 17가지의 서로 다른 종류의 디스크를 준비했는데, 하나씩 넣어보면서 어떤 결과가 나오는지 확인해보도록 하겠습니다. 먼저 위와 같이 Wii U를 세팅해봤습니다. 종류별로...","categories": ["interests"],
         "tags": ["console"],
-        "url": "/console/nintendo-wii-u-experiment/",
+        "url": "/Console/nintendo-wii-u-experiment/",
         "teaser": null
       },{
         "title": "워드프레스에서 수식 입력하기",
@@ -645,6 +645,12 @@ var store = [{
         "excerpt":"제 인생 영화 중 하나는 세 얼간이입니다. 비록 한국에서 제대로 개봉한 적은 없기 때문에 웹하드에서 받아 감상했지만, 기회가 된다면 꼭 소장하고 싶다고 생각했습니다. 그러다 우연히 알라딘 중고장터에 미개봉 신품이 판매되고 있던 것을 발견하여, 이번에 구매하게 되었습니다. 나온지 오래되었기도 하고 더이상 구하기 어려운 물건이다보니 신품에 비해 약간 웃돈을 주고 구매했지만, 워낙...","categories": ["interests"],
         "tags": ["unboxing"],
         "url": "/unboxing/3-idiots-bluray/",
+        "teaser": null
+      },{
+        "title": "XBOX ONE X에 서로 다른 17개의 디스크를 넣어보면?",
+        "excerpt":"안녕하세요, 오늘은 지난번과 비슷하게 콘솔 실험을 해보려고 합니다. 이번에는 XBOX ONE X를 준비했습니다. 마찬가지로 17가지의 서로 다른 종류의 디스크를 준비했는데, 하나씩 넣어보면서 어떤 결과가 나오는지 확인해보도록 하겠습니다. 이렇게 XBOX ONE X를 설치하고, 디스크를 종류별로 하나씩 넣어보겠습니다. CD 첫 번째로 넣어볼 디스크는 역시 CD (Compact Disc)입니다. 준비한 타이틀은 디아블로 2의 사운드...","categories": ["interests"],
+        "tags": ["console"],
+        "url": "/Console/xbox-one-x-experiment/",
         "teaser": null
       },{
         "title": "가입형 워드프레스 시작하기",
@@ -675,6 +681,12 @@ var store = [{
         "excerpt":"지난 포스트에서 브랜치가 무엇인지 알아보고, 어떻게 만드는지도 알아보았습니다. 만약 브랜치에서 추가한 기능을 원래의 프로젝트(마스터 브랜치)에 반영하고 싶을 때는 굳이 마스터 브랜치를 직접 수정할 필요 없이, 병합(Merge)라는 기능을 통해 간단하게 해결할 수 있습니다. 브랜치 병합하기 브랜치를 병합하려면 먼저 마스터 브랜치 외의 다른 브랜치가 있어야 합니다. 저는 지난 포스트에서 만들었던 another 브랜치를...","categories": ["studies"],
         "tags": ["git"],
         "url": "/git/merge-branch/",
+        "teaser": null
+      },{
+        "title": "PS4 PRO에 서로 다른 17개의 디스크를 넣어보면?",
+        "excerpt":"오랜만에 포스팅입니다. 사실 갑자기 2월 20일부터 기초군사훈련 소집 통보를 받아 입소 준비로 인해 정신이 없었습니다. 이 컨텐츠도 갔다 와서 할까 하다가 이미 영상 촬영 및 편집도 끝나 까먹기 전에 글로 정리하는 것이 좋을 것 같아 작성하게 되었습니다. 실험 자체는 지난번에 Wii U나 XBOX ONE X로 했던 것과 비슷합니다. 이번의 실험...","categories": ["interests"],
+        "tags": ["console"],
+        "url": "/Console/playstation-4-pro-experiment/",
         "teaser": null
       },{
         "title": "전문연구요원 훈련소 후기 - 프롤로그",
@@ -771,6 +783,12 @@ var store = [{
         "excerpt":"Goals 자료구조 교재의 첫 시작은 이 과목의 목적이 무엇인지, 왜 배우는지에 대한 설명이 나와 있습니다. 원문은 그대로 옮기면 다음과 같습니다. To provide the tools and techniques necessary to design and implement large-scale computer systems. 해석하면, 규모가 큰 컴퓨터 시스템을 디자인하고 구현하는데 필요한 도구와 기술을 제공하는 것입니다. 구체적으로는 이번 시간에는 데이터...","categories": ["studies"],
         "tags": ["data structure"],
         "url": "/ds/basic-concepts-1/",
+        "teaser": null
+      },{
+        "title": "PS3에 서로 다른 17개의 디스크를 넣어보면?",
+        "excerpt":"석 달만에 올리는 콘솔 실험입니다. 훈련소에 갔다온 뒤로 바쁘기도 했고, 영상 편집도 늦어지는 바람에 포스트 작성과 유튜브 업로드가 너무 늦어버렸습니다. 현 세대 기기 중에서는 닌텐도 스위치를 제외한 모든 콘솔에서 실험을 끝냈기 때문에, 이번에는 이전 세대 기기인 플레이스테이션 3으로 실험을 해봤습니다. 추후 외장 ODD를 구매하면 스위치로도 실험을 해보겠습니다. CD 역시 첫...","categories": ["interests"],
+        "tags": ["console"],
+        "url": "/Console/playstation-3-experiment/",
         "teaser": null
       },{
         "title": "Java Programming Basics (2)",

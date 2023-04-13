@@ -1,6 +1,6 @@
 ---
 title: "닌텐도 스위치에서 5Ghz Wi-Fi 사용하기"
-permalink: /console/nintendo-switch-5ghz-wi-fi/
+permalink: /Console/nintendo-switch-5ghz-wi-fi/
 classes: wide
 thumbnail: /images/Console/002/00.jpg
 categories:

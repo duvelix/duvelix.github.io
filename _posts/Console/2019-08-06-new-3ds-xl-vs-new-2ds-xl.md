@@ -1,6 +1,6 @@
 ---
 title: "New 닌텐도 3DS XL vs New 닌텐도 2DS XL"
-permalink: /console/new-3ds-xl-vs-new-2ds-xl/
+permalink: /Console/new-3ds-xl-vs-new-2ds-xl/
 classes: wide
 thumbnail: /images/Console/001/00.jpg
 categories:

@@ -1,6 +1,6 @@
 ---
 title: "닌텐도 Wii에 17가지 서로 다른 디스크를 넣어보면?"
-permalink: /console/nintendo-wii-u-experiment/
+permalink: /Console/nintendo-wii-u-experiment/
 classes: wide
 thumbnail: /images/Console/003/00.jpg
 categories:
@@ -47,7 +47,7 @@ CD를 넣으니 "Invalid Disc" 라고 인식됩니다. 실행을 시키면 읽�
 
 역시 생각했던 대로 읽을 수 없는 디스크라는 경고가 나오고 실행이 되지 않습니다.
 
-## Blu-ray
+## Bluray
 
 ![](/images/Console/003/08.png){: .align-center}
 
@@ -57,7 +57,7 @@ CD를 넣으니 "Invalid Disc" 라고 인식됩니다. 실행을 시키면 읽�
 
 하지만 Wii U 게임이 아닌 블루레이 디스크는 다른 디스크와 마찬가지로 실행할 수 없습니다. 닌텐도에서는 저작권을 회피하기 위해 독자적인 블루레이 디스크 규격을 사용했기 때문에 일반적인 블루레이 디스크는 실행할 수 없다고 합니다. 예전부터 자기들만의 독자 규격을 욕먹으면서도 꿋꿋이 유지하고, 닌텐도 스위치에서야 비로소 표준 규격을 받아들인 닌텐도 답습니다.
 
-## 4k Blu-ray
+## 4k Bluray
 
 ![](/images/Console/003/10.png){: .align-center}
 
