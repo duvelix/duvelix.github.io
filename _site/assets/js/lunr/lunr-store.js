@@ -419,10 +419,22 @@ var store = [{
         "url": "/ml/radial-basis-functions/",
         "teaser": null
       },{
+        "title": "아마존에서 해외 직접 구매하기",
+        "excerpt":"최근에는 해외 직구를 하시는 분들이 굉장히 많아졌습니다. 특히 전자기기의 경우 한국보다 해외가 더 저렴한 경우가 많기 때문에 해외 직구가 활발한 품목 중 하나입니다. 저는 주로 Wii U 처럼 국내에서 정발하지 않은 게임기나, 국내에서 구하기 어려운 게임 등을 해외에서 구매하는 편입니다. 오늘은 한국어를 지원하지 않아 해외 직구에 익숙하지 않은 분들을 위해...","categories": ["interests"],
+        "tags": ["tip"],
+        "url": "/Tip/how-to-use-amazon/",
+        "teaser": null
+      },{
         "title": "Newspaper 테마 데모 적용하기",
         "excerpt":"지난 시간에 Newspaper 테마를 구입하고, 적용하는 것까지 성공했습니다. 하지만 제대로 된 블로그를 만들기 위해서는 이것저것 건드려서 디자인을 해 주어야합니다. Newspaper 테마는 다행히도 tagDiv Composer라는 플러그인을 제공하여 초보자도 쉽게 화면을 꾸밀 수 있는 기능을 제공하고 있습니다. 그럼에도 불구하고 저처럼 워드프레스 자체가 처음인 사람은 그것조차도 쉽지 않습니다. 이런 경우에는 밑바닥부터 하나씩 만드는...","categories": ["studies"],
         "tags": ["wordpress"],
         "url": "/wordpress/newspaper-theme-demo/",
+        "teaser": null
+      },{
+        "title": "이하넥스(홋타운)에서 배송대행 신청하기",
+        "excerpt":"아마존이나 이베이 같은 해외 쇼핑몰에서 한국으로 직접 배송하지 않는 물품을 구매할 경우, 배송대행 서비스를 신청해야 합니다. 배송대행 업체는 아마존과 관련이 없는 회사이고, 총 2번의 배송이 일어나기 때문에 아마존 직접 배송보다 배송비는 더 비쌉니다. 하지만 배송대행으로 인해 추가로 소모되는 비용을 감안하더라도 직접 배송보다 싼 경우도 있고, 해외 배송을 하지 않는 물품은...","categories": ["interests"],
+        "tags": ["tip"],
+        "url": "/Tip/how-to-use-ehanex/",
         "teaser": null
       },{
         "title": "Three Learning Principles",
@@ -467,6 +479,12 @@ var store = [{
         "url": "/unboxing/super-mario-25th-anniversary-limited-edition/",
         "teaser": null
       },{
+        "title": "OBS Studio로 녹화하기",
+        "excerpt":"게임을 할 때나, 컴퓨터로 복잡한 작업을 할 때는 기록을 위해 녹화를 하고 싶은 경우가 있습니다. 컴퓨터 화면을 녹화할 수 있는 프로그램은 Fraps, 반디캠, 오캠 등 여러 종류가 있지만, 무료 버전에서는 워터마크가 강제로 박히거나, 기능에 제한이 있습니다. 오늘 소개할 OBS Studio는 오픈 소스 프로그램이기 때문에 무료로 아무 제약 없이 사용이 가능합니다....","categories": ["interests"],
+        "tags": ["tip"],
+        "url": "/Tip/how-to-use-obs-studio/",
+        "teaser": null
+      },{
         "title": "레드 데드 리뎀션 2 얼티밋 에디션",
         "excerpt":"레드 데드 리뎀션 2는 GTA 시리즈로 유명한 락스타 게임즈에서 만든 대작입니다. 전작이었던 레드 데드 리볼버와 레드 데드 리뎀션은 모두 콘솔로만 출시되었기 때문에 한국에서의 인지도는 GTA에 훨씬 못미쳤지만, 최근작인 GTA 5의 흥행으로 인해 이 게임의 인지도 또한 덩달아 올라갔습니다. 아쉽게도 전작들은 모두 한글화가 이루어지지 않았지만, 이번 작은 한글화로 인해 (출시 당시)...","categories": ["interests"],
         "tags": ["unboxing"],
@@ -489,6 +507,12 @@ var store = [{
         "excerpt":"오랜만에 쓰는 게임 리뷰입니다. 그동안 블로그를 이전하는 일도 있었고 개인적으로 바쁘기도 해서 리뷰 쓸 시간은 커녕 게임을 즐길 시간조차 없었습니다. 다음 주가 되면 또 바쁠 것 같아 본격적으로 게임을 즐기려면 내년 1월이 되어야 할 것 같지만, 잠깐 글 쓸 시간이 생겨 이렇게 리뷰를 작성하게 되었습니다. 포탈 2는 지난번에 리뷰한 포탈의...","categories": ["interests"],
         "tags": ["review"],
         "url": "/review/portal-2/",
+        "teaser": null
+      },{
+        "title": "eBay에서 해외 직접 구매하기",
+        "excerpt":"대부분 해외 직구를 할 때는 주로 아마존닷컴을 많이 이용합니다. 아마존 인터페이스가 편한 것도 있지만, 구매자를 배려하는 아마존의 정책 덕분에 해외 직구 초보도 쉽게 구매할 수 있기 때문입니다. 혹시 아마존에서 구입하는 방법을 알고 싶으신 분은 아래의 포스트를 참고하시기 바랍니다. [Tip] 아마존에서 해외 직접 구매하기 eBay는 우리나라로 치면 중고나라라고 생각하시면 됩니다. 판매하는...","categories": ["interests"],
+        "tags": ["tip"],
+        "url": "/Tip/how-to-use-ebay/",
         "teaser": null
       },{
         "title": "Google Search Console 등록하기",
@@ -617,7 +641,7 @@ var store = [{
         "url": "/git/join-github/",
         "teaser": null
       },{
-        "title": "닌텐도 Wii에 17가지 서로 다른 디스크를 넣어보면?",
+        "title": "닌텐도 Wii U에 17가지 서로 다른 디스크를 넣어보면?",
         "excerpt":"안녕하세요, 오늘은 닌텐도 Wii U를 가지고 실험을 하나 해보려고 합니다. 보통 콘솔 게임기는 해당 제조사에서 발매한 디스크를 넣었을 때만 동작하도록 설계되었는데, 만약에 다른 종류의 디스크를 넣는다면 어떻게 될까요? 제가 총 17가지의 서로 다른 종류의 디스크를 준비했는데, 하나씩 넣어보면서 어떤 결과가 나오는지 확인해보도록 하겠습니다. 먼저 위와 같이 Wii U를 세팅해봤습니다. 종류별로...","categories": ["interests"],
         "tags": ["console"],
         "url": "/Console/nintendo-wii-u-experiment/",
@@ -911,6 +935,12 @@ var store = [{
         "url": "/unboxing/nintendo-wii-from-ebay/",
         "teaser": null
       },{
+        "title": "닌텐도 Wii에 17가지 서로 다른 디스크를 넣어보면?",
+        "excerpt":"8월 이후로 일이 많아져 그동안 거의 포스트를 올리지 못했습니다. 개봉기 같은 일상 포스트는 물론이고 원래 목적이었던 공부 정리 관련 게시글도 작성할 시간이 부족했거든요. 지금 올리는 포스트도 한 달 전에 찍어놓은 컨텐츠를 이제야 업로드하게 되었습니다. 지난 포스트에서 eBay에서 구매한 Wii를 개봉했는데, 이것을 가지고 이전과 마찬가지로 여러 종류의 디스크를 넣는 실험을 해보았습니다....","categories": ["interests"],
+        "tags": ["console"],
+        "url": "/Console/nintendo-wii-experiment/",
+        "teaser": null
+      },{
         "title": "슈퍼 소닉 4K 블루레이",
         "excerpt":"오랜만에 개봉하는 블루레이입니다. 오늘은 실사 게임 영화인 슈퍼 소닉 4K 블루레이를 개봉하려고 합니다. 어렸을 때 소닉 게임을 워낙 재밌게 했던 기억이 있어서 관심이 있었는데, 마침 한국에 4K 블루레이가 출시되어 망설임 없이 바로 구매하였습니다. 4K 블루레이는 보통 슬립 케이스가 없이 출시되는 경우가 많은데, 초도한정판이라 그런지 이건 슬립 케이스가 씌여 왔습니다. 이걸...","categories": ["interests"],
         "tags": ["unboxing"],
@@ -939,6 +969,12 @@ var store = [{
         "excerpt":"안녕하세요, 거의 3달만에 올리는 포스트입니다. 사실 그 동안 바빠서 포스트를 쓸 시간이 없었다… 고 하면 핑계겠네요. 사실 작년 이맘때 쯤부터 모바일 게임에 빠져서 여가 시간을 대부분 게임하는데 쓰고 있어서 자연스레 블로그와 유튜브를 방치해놓고 있습니다. 처음 각오는 이런게 아니었는데… 이런 개봉기 말고도 쓰다만 공부 관련 포스트도 이어서 작성해야 하는데 큰일이네요. 여튼...","categories": ["interests"],
         "tags": ["unboxing"],
         "url": "/unboxing/new-nintendo-3ds-xl/",
+        "teaser": null
+      },{
+        "title": "닌텐도 3DS 화면을 컴퓨터에 출력하기",
+        "excerpt":"지난번에 올렸던 뉴 닌텐도 3DS XL 개봉 포스트에서 니세트로 캡쳐를 잠깐 언급했었는데 오늘 이게 무엇인지 간단하게 설명해볼까 합니다. 보통 콘솔 기기는 캡쳐보드라는 것을 사용하면 컴퓨터에 화면을 출력할 수 있습니다. 게임을 방송하는 스트리머분들이 이러한 캡쳐보드를 사용하여 방송하는 것으로 알고 있습니다. 다만 닌텐도 3DS는 인터넷 방송이 흔하지 않던 시기에 출시된 제품이라, 컴퓨터에...","categories": ["interests"],
+        "tags": ["console"],
+        "url": "/Console/nintendo-3ds-nisetoro-capture/",
         "teaser": null
       },{
         "title": "Generic Programming",

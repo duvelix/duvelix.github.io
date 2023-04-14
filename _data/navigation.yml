@@ -9,7 +9,7 @@ main:
    - title: "Interests"
      url: /interests/
    - title: "Travels"
-     url: /
+     url: /travels/
   
   # default menu
   # - title: "Quick-Start Guide"
