@@ -14,7 +14,7 @@ classes: wide
 
 ### Bachelor of Science in Mathematics
 #### <img src="\images\sogang.png" width = 50 height=50> **Sogang University** | 2010 - 2015
-- Double major : Computer Science and Engineering
+- Double major: Computer Science and Engineering
 - Advisor: Prof. Sungho Park
 
 ## Publications
