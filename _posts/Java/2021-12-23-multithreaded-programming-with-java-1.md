@@ -17,7 +17,7 @@ tags:
 
 저희는 지금 Java를 사용해서 프로그램(Program)을 만들고 있습니다. 프로그램을 실행시키기 위해서는 OS에서 프로그램을 실행하기 위한 <span style="color:red">프로세스(Process)</span>를 만들어줘야 합니다. 각 프로세스에는 필요한 만큼의 메모리가 할당됩니다. 윈도우 10에서는 작업 관리자의 프로세스 탭을 통해 실행 중인 프로세스를 확인할 수 있습니다.
 
-![](/images/Java/17. Multithreaded Programming with Java (1)/Java 17-01.png){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/Java/017/01.png?raw=true){: .align-center}
 
 <span style="color:red">쓰레드(Thread)</span>란 프로그램된 명령어의 가장 작은 시퀀스(Sequence)로 스케줄러(Scheduler)에 의해 독립적으로 관리됩니다. 하나의 프로세스는 1개 이상의 쓰레드를 갖고 있습니다. 즉, 이 말은 프로세스가 1개의 쓰레드만 갖고 있을 수도 있고 필요에 따라서 여러 개의 쓰레드를 가질 수도 있다는 뜻입니다. 후자처럼 프로세스가 2개 이상의 쓰레드를 갖고 있을 경우 <span style="color:red">멀티쓰레드 프로세스(Multi-threaded Process)</span>라고 부릅니다.
 
@@ -95,11 +95,11 @@ ThreadEx1_1 클래스는 Thread 클래스를 상속받아 만든 클래스이고
 
 만약 `main()` 메소드에서 `run()` 메소드를 호출한다면 새로운 쓰레드를 만들지 않고 그냥 메소드로써 호출되기 때문입니다. 메소드를 호출하게 되면 stack에 쌓이고 가장 위에 있는 메소드 순서대로 실행이 되는데요, `main()` 메소드에서 `run()` 메소드를 호출했을 때의 스택 상황은 이렇습니다.
 
-![](/images/Java/17. Multithreaded Programming with Java (1)/Java 17-02.png){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/Java/017/02.png?raw=true){: .align-center}
 
 이렇게 실행되면 `run()` 메소드가 끝날 때까지 기다려야하기 때문에 우리가 원하는 쓰레드를 실행할 수 없습니다. 그렇기 때문에 Java에서는 `start()` 메소드를 호출하여 `start()` 메소드로 새로운 쓰레드를 만들고, 그 쓰레드에서 `run()`을 호출함으로써 쓰레드를 구현합니다. 이렇게 되면 할일이 끝난 `start()` 메소드는 스택에서 빠지게 되고 `run()` 메소드를 실행하는 동안 `main()` 메소드도 같이 실행할 수 있게 되는 것입니다.
 
-![](/images/Java/17. Multithreaded Programming with Java (1)/Java 17-03.png){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/Java/017/03.png?raw=true){: .align-center}
 
 그림상으로 표현하면 위와 같습니다만, `main()` 메소드와 `run()` 메소드가 완벽히 동시에 실행되기 위해서는 컴퓨터 CPU에 2개 이상의 코어가 필요합니다. 만약 싱글 코어 CPU라면 스케쥴러에서 언제 쓰레드를 실행할 것인지 결정합니다.
 
@@ -176,17 +176,17 @@ class AnotherThread extends Thread {
 
 먼저 단일 쓰레드 프로그램에서는 a를 출력하는 부분(A)와 b를 출력하는 부분(B)가 그림처럼 순서대로 실행됩니다.
 
-![](/images/Java/17. Multithreaded Programming with Java (1)/Java 17-04.png){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/Java/017/04.png?raw=true){: .align-center}
 
 A와 B를 각각 다른 쓰레드에서 실행할 경우 가능한 경우는 2가지가 있습니다. 만약 CPU가 1개의 코어만 갖고 있다면 쓰레드를 동시에 실행할 수 없기 때문에 스케쥴러가 두 작업을 적절히 조절하여 실행합니다. 만약 스케쥴러가 라운드-로빈(Round-Robin) 시스템을 사용한다면 A와 B를 다음과 같이 할당하여 실행합니다.
 
-![](/images/Java/17. Multithreaded Programming with Java (1)/Java 17-05.png){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/Java/017/05.png?raw=true){: .align-center}
 
 이 경우 사용자는 마치 A와 B 작업이 동시에 실행되는 것처럼 보이지만, 실제로는 짧은 시간동안 번갈아가며 실행되는 것이기 때문에 단일 쓰레드 작업에서의 실행 시간과 큰 차이가 없게됩니다. 오히려 쓰레드를 만드는데 생기는 추가 작업으로 인해 더 많은 시간이 걸릴 수도 있습니다. 따라서 단일 코어 시스템을 상정하고 만드는 프로그램은 쓰레드를 사용하지 않는 것이 좋습니다.
 
 반대로 여러 개의 코어가 있는 CPU라면 두 개의 쓰레드가 각각 다른 코어에서 실행되므로 멀티쓰레드 프로그램의 목적대로 동시에 두 작업을 실행할 수 있습니다. 따라서 이 경우에는 단일 쓰레드 작업보다 확실히 소요시간이 줄어듭니다. (물론 정확하게 절반으로 줄어드는 것은 아닙니다)
 
-![](/images/Java/17. Multithreaded Programming with Java (1)/Java 17-06.png){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/Java/017/06.png?raw=true){: .align-center}
 
 이렇게 보면 멀티 쓰레드 프로그램은 그다지 큰 메리트가 없는 것처럼 보입니다. 하지만 이번에는 또 다른 예제를 통해 멀티 쓰레드 프로그램을 왜 사용하는지 알아보겠습니다. 이번에 보여드릴 예제는 사용자로부터 입력을 받고, 10초를 기다리는 간단한 프로그램입니다. 먼저 단일 쓰레드로 구현한 프로그램입니다.
 
@@ -236,7 +236,7 @@ class ThreadExample extends Thread {
 
 단일 쓰레드 프로그램은 입력이 끝난 후에 10초를 기다리는 부분이 시작되지만, 2개의 쓰레드를 사용할 때는 사용자의 입력을 기다리는 동안 10초를 기다리는 부분이 동시에 진행됩니다.
 
-![](/images/Java/17. Multithreaded Programming with Java (1)/Java 17-07.png){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/Java/017/07.png?raw=true){: .align-center}
 
 위의 그림처럼 단일 쓰레드 프로그램에서는 사용자의 입력을 기다리는 동안 시간이 낭비되는 문제가 있습니다. 여러 쓰레드를 사용하게 되면 기다리는 동안 다른 작업을 수행할 수 있기 때문에 이러한 시간 낭비 문제를 해결할 수 있습니다.
 

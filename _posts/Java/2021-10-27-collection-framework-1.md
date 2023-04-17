@@ -35,7 +35,7 @@ tags:
 
 먼저 <span style="color:red">Collection Framework Interface</span>가 어떻게 구성되어 있는지부터 살펴보도록 하겠습니다. 아래 그림을 보시면 List Interface와 Set Interface는 Collection Interface의 subtype으로 분류됨을 알 수 있습니다. 그러나 Map Interface는 이와 별개로 정의된 Interface입니다.
 
-![](/images/Java/11. Collection Framework (1)/Java 11-01.png){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/Java/011/01.png?raw=true){: .align-center}
 
 다음으로 Collection<E> Interface에 정의된 메소드의 목록입니다. 갯수가 많아 간단하게만 설명을 달도록 하겠습니다.
 
@@ -59,7 +59,7 @@ tags:
 
 먼저 <span style="color:red">List</span> Interface에 대해 자세히 알아보도록 하겠습니다. List는 이전에 설명드린바와 같이 순서가 있는 데이터 집합이며 데이터의 중복을 허용하는 자료구조입니다. 기본적으로 **Vector**, **ArrayList**, **LinkedList** 클래스가 이에 속하며 **Stack** 클래스는 **Vector** 클래스의 Sub Class라고 보시면 됩니다.
 
-![](/images/Java/11. Collection Framework (1)/Java 11-02.png){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/Java/011/02.png?raw=true){: .align-center}
 
 다음으로 List<E> Interface에 정의된 메소드의 목록입니다. 마찬가지로 간단하게 설명을 덧붙이겠습니다.
 
@@ -79,7 +79,7 @@ tags:
 
 다음으로 <span style="color:red">Set Interface</span>입니다. Set은 중복을 허용하지 않기 때문에 임의의 두 원소를 선택했을 때 동일한 경우가 절때 존재하지 않습니다. 그리고 데이터의 순서가 없습니다. Set Interface의 구조를 도식화하면 다음과 같습니다.
 
-![](/images/Java/11. Collection Framework (1)/Java 11-03.png){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/Java/011/03.png?raw=true){: .align-center}
 
 Set<E> Interface의 메소드는 Collection<E> Interface의 메소드와 동일합니다. (생략)
 
@@ -87,7 +87,7 @@ Set<E> Interface의 메소드는 Collection<E> Interface의 메소드와 동일�
 
 <span style="color:red">Map Interface</span>는 key-value의 쌍으로 이루어져 있는 독특한 특징을 가지고 있습니다. value는 중복이 가능하나 key의 중복은 불가능하고, 각 key는 최대 한 개의 value와 mapping 할 수 있습니다. Map Interface의 구조는 다음과 같습니다.
 
-![](/images/Java/11. Collection Framework (1)/Java 11-04.png){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/Java/011/04.png?raw=true){: .align-center}
 
 Map<K, V> Interface에 정의된 메소드의 목록입니다. Map Interface는 key와 value가 모두 쓰이다보니 Type variable이 K와 V 2개가 존재합니다.
 
@@ -282,23 +282,23 @@ public class Main {
 
 Vector에서는 크기를 나타내는 메소드가 <span style="color:red">Size</span>와 <span style="color:red">Capacity</span>가 있는데, 이것이 처음 배울 때는 혼동되기 쉽기 때문에 위에서부터 하나하나 따져보도록 하겠습니다. Line 5에서 Vector의 Capacity는 5로 정의됩니다. 이후 순서대로 1, 2, 3을 삽입합니다. 원소의 개수가 3개이므로 이 Vector의 Size는 3이 됩니다.
 
-![](/images/Java/11. Collection Framework (1)/Java 11-05.png){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/Java/011/05.png?raw=true){: .align-center}
 
 `trimToSize()` 메소드는 Capacity와 Size를 같게 만드는 명령어입니다. 정확하게 표현하면, 아래 그림처럼 Capacity와 Size가 동일한 새로운 인스턴스를 만들어서 원소의 내용을 복사합니다.
 
-![](/images/Java/11. Collection Framework (1)/Java 11-06.png){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/Java/011/06.png?raw=true){: .align-center}
 
 다음으로는 `ensureCapacity(6)` 메소드를 사용하는데, 이것은 해당 Vector의 Capacity가 6 이상이면 아무 일이 일어나지 않지만 그렇지 않으면 크기가 6인 새로운 인스턴스를 만들어서 기존 Vector의 원소를 복사합니다.
 
-![](/images/Java/11. Collection Framework (1)/Java 11-07.png){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/Java/011/07.png?raw=true){: .align-center}
 
 다음으로 나오는 `setSize(7)` 메소드는 `ensureCapacity()` 메소드처럼 Capacity가 7 이상이라면 아무 일이 일어나지 않습니다. 하지만 그렇지 않을 때 동작하는 방식은 조금 다른데요, Vector는 Capacity가 부족할 경우 자동적으로 기존의 Capacity를 2배 늘린 새로운 인스턴스를 생성합니다. 즉, 현재 Capacity가 6인 상태에서 `setSize(7)` 메소드를 호출한다면 Capacity가 6의 2배인 12가 되는 것입니다.
 
-![](/images/Java/11. Collection Framework (1)/Java 11-08.png){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/Java/011/08.png?raw=true){: .align-center}
 
 마지막으로 `clear()` 메소드를 사용하면 Size는 0이 되고 Capacity는 그대로 유지됩니다.
 
-![](/images/Java/11. Collection Framework (1)/Java 11-09.png){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/Java/011/09.png?raw=true){: .align-center}
 
 위의 예제에서는 매번 명령어를 수행 후 Size와 Capacity를 출력하여 어떻게 변화하는지를 보여주고 있습니다. 프로그램을 실행해보기 전에 먼저 머릿속으로 위와 같이 Size와 Capacity를 직접 계산해보시기 바랍니다.
 
@@ -308,7 +308,7 @@ Vector에서는 크기를 나타내는 메소드가 <span style="color:red">Size
 
 <span style="color:red">LinkedList</span>는 다른 컴퓨터공학 수업에서도 단골로 나오는 중요한 자료구조입니다. 데이터는 Head부터 순차적으로 접근할 수 있으며, 각 데이터가 아래처럼 연결되어 있기 때문에 LinkedList라 불립니다.
 
-![](/images/Java/11. Collection Framework (1)/Java 11-10.png){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/Java/011/10.png?raw=true){: .align-center}
 
 데이터는 <span style="color:red">노드(Node)</span>라는 덩어리에 저장되어 있으며, 각 노드는 다음 노드를 가리키는 방식으로 구성되어 있습니다. 가장 기본적인 LinkedList의 노드는 아래와 같이 구성할 수 있습니다.
 
@@ -321,19 +321,19 @@ class Node {
 
 LinkedList에서 새로운 노드를 추가하는 과정은 아래 그림과 같이 1개의 인스턴스 생성과 2개의 참조 업데이트 과정을 거치게 됩니다.
 
-![](/images/Java/11. Collection Framework (1)/Java 11-11.png){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/Java/011/11.png?raw=true){: .align-center}
 
 그에 반해 LinkedList에서 노드를 삭제하는 과정은 단순히 1개의 참조 업데이트만 필요합니다.
 
-![](/images/Java/11. Collection Framework (1)/Java 11-12.png){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/Java/011/12.png?raw=true){: .align-center}
 
 LinkedList는 처음 소개한 기본적인 구성 외에도 다양한 바리에이션이 존재합니다. <span style="color:red">Doubly Linked List</span>는 다음 노드 뿐만 아니라 이전 노드도 가리키게 만드는 구조입니다. Doubly Linked List의 구조는 다음과 같습니다.
 
-![](/images/Java/11. Collection Framework (1)/Java 11-13.png){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/Java/011/13.png?raw=true){: .align-center}
 
 Doubly Linked List의 구조를 보완하여, 마지막 노드가 다음 노드로 처음 노드를 가리키게 하고 처음 노드의 이전 노드로 마지막 노드를 가리키게 만든 구조가 <span style="color:red">Doubly Circular Linked List</span>입니다.
 
-![](/images/Java/11. Collection Framework (1)/Java 11-14.png){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/Java/011/14.png?raw=true){: .align-center}
 
 이렇게 Doubly한 구조는 이전 노드와 다음 노드를 모두 가리켜야하기 때문에 아래와 같이 클래스를 구성하게 됩니다.
 
@@ -438,7 +438,7 @@ ArrayList는 Random Access가 가능하기 때문에 어느 위치에 접근하�
 
 LinkedList 외에 또 중요하게 다루는 자료구조가 <span style="color:red">스택(Stack)</span>과 <span style="color:red">큐(Queue)</span>입니다. 이것들은 자료구조 시간에 자세하게 다루는 내용이기 때문에 여기서는 간단하게만 다루도록 하겠습니다. 스택은 먼저 삽입된 데이터일수록 나중에 나오는 구조(LIFO)이고, 큐는 먼저 들어간 데이터일수록 먼저 나오는 구조(FIFO)입니다.
 
-![](/images/Java/11. Collection Framework (1)/Java 11-15.png){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/Java/011/15.png?raw=true){: .align-center}
 
 Java에서는 스택이 클래스로 구현되어 있으며, 큐는 인터페이스로 구현되어 있습니다. 이전에 다룬 LinkedList가 Queue 인터페이스로 구현된 클래스 중 하나입니다. 먼저 Stack 클래스와 Queue 인터페이스의 메소드를 간단하게 알아보도록 하겠습니다.
 

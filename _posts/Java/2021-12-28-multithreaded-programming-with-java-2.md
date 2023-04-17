@@ -26,7 +26,7 @@ tags:
 
 쓰레드는 상황에 따라 각 상태에 돌입하며, 이를 도식화하면 아래 그림과 같습니다.
 
-![](/images/Java/18. Multithreaded Programming with Java (2)/Java 18-01.png){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/Java/018/01.png?raw=true){: .align-center}
 
 Java에서는 쓰레드의 상태를 조절하는 메소드가 존재합니다. 각 상태를 설명했을 때 나온 `join()` 등이 그 예시입니다. 이러한 메소드를 하나씩 정리해보겠습니다.
 

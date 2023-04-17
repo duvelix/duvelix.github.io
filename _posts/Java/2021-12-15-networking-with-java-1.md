@@ -21,11 +21,11 @@ tags:
 
 Network Architecture는 크게 <span style="color:red">클라이언트-서버(Client-Server)</span> 방식과 <span style="color:red">피어 투 피어(Peer-to-Peer; P2P)</span> 방식으로 나뉘어 있습니다. 클라이언트-서버 방식은 서버 하나, 또는 서버의 군집이 여러 클라이언트에게 서비스를 제공하는 방식입니다. 서버가 대기하고 있으면 클라이언트가 서버에 연결을 시도하는 방식으로 네트워크가 이루어집니다. 대표적으로 메일 서버, 웹 서버 (HTTP), 파일 서버 (FTP) 등이 있습니다.
 
-![](/images/Java/15. Networking with Java (1)/Java 15-01.png){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/Java/015/01.png?raw=true){: .align-center}
 
 P2P 방식은 단말기들이 클라이언트나 서버로 분류되지 않고 상황에 따라 클라이언트가 될 수도, 서버가 될 수도 있는 방식입니다. 현재 많은 사람들이 사용하고 있는 BitTorrent가 대표적인 P2P 방식입니다.
 
-![](/images/Java/15. Networking with Java (1)/Java 15-02.png){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/Java/015/02.png?raw=true){: .align-center}
 
 단말기가 인터넷에 연결되기 위해서는 반드시 고유한 IP 주소가 필요합니다. IP 주소는 현실의 집 주소와 비슷하게 상대방을 찾는 용도로 사용됩니다. 현재 사용하고 있는 IPv4 기준으로 IP 주소는 32 bit이며, 약 43억개의 고유 주소를 사용할 수 있습니다. 하지만 단말기가 점점 늘어남에 따라 고유 주소가 부족해지고 있으며, 이를 해결하기 위해 128 bit의 주소를 사용하는 IPv6가 고안되었습니다. 하지만 아직은 IPv4를 사용하고 있기 때문에 IP 주소라고 하면 IPv4를 의미합니다.
 
@@ -39,7 +39,7 @@ IP 주소는 32 bit의 주소를 8 bit씩 나누어 .(dot)으로 구분하여 �
 
 또한 단말기도 사람처럼 이름이 존재합니다. 단말기를 식별하는데 사용되는 할당된 문자열 레이블을 <span style="color:red">호스트 이름(Host Name)</span>이라고 합니다. 호스트 이름을 확인하려면 윈도우 10을 기준으로 **시스템**의 **장치 이름**을 보시면 됩니다.
 
-![](/images/Java/15. Networking with Java (1)/Java 15-03.png){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/Java/015/03.png?raw=true){: .align-center}
 
 단말기의 이름 외에도 네트워크 상의 IP 주소를 대체하는 <span style="color:red">도메인 이름(Domain Name)</span>도 있습니다. 도메인 이름 또한 IP 주소처럼 고유하며 주로 웹 사이트의 주소를 식별하는데 사용합니다. 예를 들어 네이버 웹 사이트의 도메인 이름은 naver.com 입니다.
 
@@ -47,7 +47,7 @@ IP 주소는 32 bit의 주소를 8 bit씩 나누어 .(dot)으로 구분하여 �
 
 마지막으로 <span style="color:red">Fully Qualified Domain Name (FQDN)</span>이 있습니다. FQDN은 Absolute Domain Name이라고도 불리며, Domain Name 시스템의 트리 계층 구조에서 정확한 위치를 지정하는 Domain Name을 말합니다. 예를 들어, en.wikipedia.org를 FQDN으로 표현하면 아래 그림과 같습니다.
 
-![](/images/Java/15. Networking with Java (1)/Java 15-04.png){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/Java/015/04.png?raw=true){: .align-center}
 
 <span style="color:red">네임 서버(Name Server)</span>는 위에서 언급한 IP 주소와 도메인 이름을 연결해주는 역할을 하는 서버입니다. 웹 브라우저에서 웹 사이트를 방문할 때, IP 주소는 외우기 힘들기 때문에 주로 도메인 이름을 입력합니다. 예를 들어 웹 브라우저 주소창에 www.naver.com을 입력하면 브라우저는 www.naver.com에 Mapping된 IP 주소를 자동으로 연결해주게 됩니다. 만약 브라우저에서 IP 주소를 알 수 없다면, 브라우저는 네임 서버에 IP 주소를 물어보고 네임 서버는 클라이언트 브라우저에 IP 주소를 보내주는 방식이 됩니다.
 
@@ -357,27 +357,27 @@ Parsing을 좀 더 간편하게 하기 위해 <span style="color:red">jsoup</spa
 
 jsoup은 [jsoup 공식 홈페이지](https://jsoup.org/download)에 방문하여 다운로드 받을 수 있습니다.
 
-![](/images/Java/15. Networking with Java (1)/Java 15-05.png){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/Java/015/05.png?raw=true){: .align-center}
 
 링크를 타고 들어가신 후, 가장 위에 보이는 core library를 다운로드 받으시면 됩니다.
 
-![](/images/Java/15. Networking with Java (1)/Java 15-06.png){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/Java/015/06.png?raw=true){: .align-center}
 
 그 다음 IntelliJ IDEA를 실행하신 후, 사용하실 프로젝트를 여신 다음 **File** - **Project Structure** 메뉴를 클릭합니다.
 
-![](/images/Java/15. Networking with Java (1)/Java 15-07.png){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/Java/015/07.png?raw=true){: .align-center}
 
 Project Structure에서 **Modules** - **프로젝트 이름** - **Dependencies**를 순서대로 클릭합니다.
 
-![](/images/Java/15. Networking with Java (1)/Java 15-08.png){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/Java/015/08.png?raw=true){: .align-center}
 
 중간에 있는 + 메뉴를 클릭하면 서브 메뉴가 나오는데, 첫 번째인 **JARs or Directries**를 클릭합니다. 그 후, 방금 다운받은 jsoup core file을 불러오시면 됩니다.
 
-![](/images/Java/15. Networking with Java (1)/Java 15-09.png){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/Java/015/09.png?raw=true){: .align-center}
 
 jsoup core file을 정상적으로 불러온 모습입니다. **OK 버튼**을 클릭합니다.
 
-![](/images/Java/15. Networking with Java (1)/Java 15-10.png){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/Java/015/10.png?raw=true){: .align-center}
 
 정상적으로 처리되었다면 위처럼 External Libraries에 jsoup이 추가된 것을 확인할 수 있습니다.
 

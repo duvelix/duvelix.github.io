@@ -422,7 +422,7 @@ var store = [{
         "title": "아마존에서 해외 직접 구매하기",
         "excerpt":"최근에는 해외 직구를 하시는 분들이 굉장히 많아졌습니다. 특히 전자기기의 경우 한국보다 해외가 더 저렴한 경우가 많기 때문에 해외 직구가 활발한 품목 중 하나입니다. 저는 주로 Wii U 처럼 국내에서 정발하지 않은 게임기나, 국내에서 구하기 어려운 게임 등을 해외에서 구매하는 편입니다. 오늘은 한국어를 지원하지 않아 해외 직구에 익숙하지 않은 분들을 위해...","categories": ["interests"],
         "tags": ["tip"],
-        "url": "/Tip/how-to-use-amazon/",
+        "url": "/tip/how-to-use-amazon/",
         "teaser": null
       },{
         "title": "Newspaper 테마 데모 적용하기",
@@ -434,7 +434,7 @@ var store = [{
         "title": "이하넥스(홋타운)에서 배송대행 신청하기",
         "excerpt":"아마존이나 이베이 같은 해외 쇼핑몰에서 한국으로 직접 배송하지 않는 물품을 구매할 경우, 배송대행 서비스를 신청해야 합니다. 배송대행 업체는 아마존과 관련이 없는 회사이고, 총 2번의 배송이 일어나기 때문에 아마존 직접 배송보다 배송비는 더 비쌉니다. 하지만 배송대행으로 인해 추가로 소모되는 비용을 감안하더라도 직접 배송보다 싼 경우도 있고, 해외 배송을 하지 않는 물품은...","categories": ["interests"],
         "tags": ["tip"],
-        "url": "/Tip/how-to-use-ehanex/",
+        "url": "/tip/how-to-use-ehanex/",
         "teaser": null
       },{
         "title": "Three Learning Principles",
@@ -482,7 +482,7 @@ var store = [{
         "title": "OBS Studio로 녹화하기",
         "excerpt":"게임을 할 때나, 컴퓨터로 복잡한 작업을 할 때는 기록을 위해 녹화를 하고 싶은 경우가 있습니다. 컴퓨터 화면을 녹화할 수 있는 프로그램은 Fraps, 반디캠, 오캠 등 여러 종류가 있지만, 무료 버전에서는 워터마크가 강제로 박히거나, 기능에 제한이 있습니다. 오늘 소개할 OBS Studio는 오픈 소스 프로그램이기 때문에 무료로 아무 제약 없이 사용이 가능합니다....","categories": ["interests"],
         "tags": ["tip"],
-        "url": "/Tip/how-to-use-obs-studio/",
+        "url": "/tip/how-to-use-obs-studio/",
         "teaser": null
       },{
         "title": "레드 데드 리뎀션 2 얼티밋 에디션",
@@ -512,7 +512,7 @@ var store = [{
         "title": "eBay에서 해외 직접 구매하기",
         "excerpt":"대부분 해외 직구를 할 때는 주로 아마존닷컴을 많이 이용합니다. 아마존 인터페이스가 편한 것도 있지만, 구매자를 배려하는 아마존의 정책 덕분에 해외 직구 초보도 쉽게 구매할 수 있기 때문입니다. 혹시 아마존에서 구입하는 방법을 알고 싶으신 분은 아래의 포스트를 참고하시기 바랍니다. [Tip] 아마존에서 해외 직접 구매하기 eBay는 우리나라로 치면 중고나라라고 생각하시면 됩니다. 판매하는...","categories": ["interests"],
         "tags": ["tip"],
-        "url": "/Tip/how-to-use-ebay/",
+        "url": "/tip/how-to-use-ebay/",
         "teaser": null
       },{
         "title": "Google Search Console 등록하기",
