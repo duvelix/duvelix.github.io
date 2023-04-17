@@ -1,6 +1,6 @@
 ---
 title: "이하넥스(홋타운)에서 배송대행 신청하기"
-permalink: /Tip/how-to-use-ehanex/
+permalink: /tip/how-to-use-ehanex/
 classes: wide
 toc: true
 toc_label: "Table of Contents"

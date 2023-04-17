@@ -1,6 +1,6 @@
 ---
 title: "eBay에서 해외 직접 구매하기"
-permalink: /Tip/how-to-use-ebay/
+permalink: /tip/how-to-use-ebay/
 classes: wide
 toc: true
 toc_label: "Table of Contents"

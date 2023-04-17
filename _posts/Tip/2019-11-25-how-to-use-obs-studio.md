@@ -1,6 +1,6 @@
 ---
 title: "OBS Studio로 녹화하기"
-permalink: /Tip/how-to-use-obs-studio/
+permalink: /tip/how-to-use-obs-studio/
 classes: wide
 toc: true
 toc_label: "Table of Contents"
