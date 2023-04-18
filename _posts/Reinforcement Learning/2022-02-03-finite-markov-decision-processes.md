@@ -1,7 +1,6 @@
 ---
 title: "Finite Markov Decision Processes"
 permalink: /rl/finite-markov-decision-processes/
-classes: wide
 toc: true
 toc_label: "Table of Contents"
 toc_sticky: true
@@ -25,7 +24,7 @@ $$S_0, A_0, R_1, S_1, A_1, R_2, S_2, A_2, R_3, ... \tag{3.1}$$
 
 또한 이것을 그림으로 표현하면 다음과 같습니다. 강화학습을 다루는 논문에는 이것과 비슷한 그림이 들어가는 경우가 많으니 참고해주시기 바랍니다.
 
-![](/images/Reinforcement Learning/3. Finite Markov Decision Processes/RL 03-01.png){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/RL/003/01.png?raw=true){: .align-center}
 
 Finite MDP에서 State set $\mathcal{S}$, Action set $\mathcal{A}$, Reward set $\mathcal{R}$은 모두 유한집합입니다. 이 때, 확률변수 $R_t$와 $S_t$는 이전 State와 Action에 따른 이산 확률 분포가 됩니다. 이것을 확률적으로 표현하면 다음과 같습니다.
 
@@ -106,7 +105,7 @@ $$G_t = \sum_{k=0}^{\infty} \gamma^k = \frac{1}{1 - \gamma} \tag{3.10}$$
 
 다음은 Return에 대한 표기입니다. 이전에는 Episodic Task에서 식 (3.7)로 표기하였고 Continuing Task에서는 식 (3.8)로 표기하였습니다. 이것은 Episodic Task를 Continuing Task와 같은 식으로 바꾸는 것으로 해결할 수 있습니다. 아래 그림과 같이 Episodic Task가 끝난 이후로는 모든 Reward를 0으로 정의하고 같은 State에 반복적으로 돌아오게 설계하면 됩니다.
 
-![](/images/Reinforcement Learning/3. Finite Markov Decision Processes/RL 03-02.png){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/RL/003/02.png?raw=true){: .align-center}
 
 위의 **State Diagram**에서 마지막 사각형은 Episode의 끝을 나타내며, 이를 <span style="color:red">Absorbing State</span>라고 부릅니다. 위의 예제에서 모든 Reward를 합쳐도 $R_4$ 이후로는 Reward가 0이기 때문에 $R_1$, $R_2$, $R_3$을 더한 값과 동일합니다. Discounting을 포함해도 마찬가지입니다. 이로써 다음과 같이 Return $G_t$를 통합하여 표기할 수 있습니다.
 
@@ -149,7 +148,7 @@ v_{\pi} (s) & \doteq \mathbb{E}_{\pi} \left[ G_t | S_t = s \right] \\ \\
 
 식 (3.14)를 $v_{\pi}$에 대한 <span style="color:red">Bellman Equation</span>이라고 합니다. Bellman Equation은 현재 State의 Value와 이어지는 State의 Value 사이의 관계를 표현합니다. 아래에 있는 Backup Diagram을 보시면 현재 State $s$에서 이어질 수 있는 모든 후속 State $s'$을 고려하는 것을 알 수 있습니다. 앞에서 말씀드렸듯이 Policy $\pi$는 Action을 선택할 확률을 의미하기 때문에, 각 Action을 선택했을 때 받을 수 있는 Reward에 확률 가중치를 포함한 평균을 계산하게 됩니다.
 
-![](/images/Reinforcement Learning/3. Finite Markov Decision Processes/RL 03-03.png){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/RL/003/04.png?raw=true){: .align-center}
 
 Value Function $v_{\pi}$는 Bellman Equation에 대한 유일한 해법입니다. 4장에서 Bellman Equation이 어떻게 $v_{\pi}$를 계산하고, 근사화하고, 학습하는지를 자세하게 다룰 예정입니다.
 
@@ -185,7 +184,7 @@ q_{*} (s, a) &= \mathbb{E} \left[ R_{t+1} + \gamma \max_{a'} q_{*} (S_{t+1}, a')
 
 아래 그림은 $v\_{\*}$와 $q\_{\*}$에 대한 Bellman Optimality Equation에서 고려되는 미래의 State와 Action의 범위를 표현한 Backup Diagram입니다. 왼쪽은 식 (3.19)를 표현한 그림이고, 오른쪽은 식 (3.20)을 표현한 그림입니다.
 
-![](/images/Reinforcement Learning/3. Finite Markov Decision Processes/RL 03-04.png){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/RL/003/04.png?raw=true){: .align-center}
 
 Finite MDP에서 $v\_{\*}$에 대한 Bellman Optimality Equation에는 고유한 해법이 있습니다. Bellman Optimality Equation에서는 각각의 State에 대해 하나의 방정식이 있는 구조이기 때문에, $n$개의 State가 있으면 $n$개의 미지수가 있는 $n$개의 방정식이 나옵니다. 만약 Environment에서 $p$를 알 수 있다면 Nonlinear Equation을 품으로써 $v\_{\*}$를 구할 수 있습니다. (ex. Newton-Raphson Method) 같은 이유로 $q\_{\*}$도 마찬가지입니다.
 

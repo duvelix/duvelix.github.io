@@ -1,7 +1,6 @@
 ---
 title: "Classes, Variables, and Methods"
 permalink: /java/classes-variables-and-methods/
-classes: wide
 toc: true
 toc_label: "Table of Contents"
 toc_sticky: true

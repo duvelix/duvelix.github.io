@@ -1,7 +1,6 @@
 ---
 title: "Networking with Java (2)"
 permalink: /java/networking-with-java-2/
-classes: wide
 toc: true
 toc_label: "Table of Contents"
 toc_sticky: true

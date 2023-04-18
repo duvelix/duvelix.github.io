@@ -1,7 +1,6 @@
 ---
 title: "The Reinforcement Learning Problem"
 permalink: /rl/the-reinforcement-learning-problem/
-classes: wide
 toc: true
 toc_label: "Table of Contents"
 toc_sticky: true
@@ -55,7 +54,7 @@ Reward Signal이 즉각적은 의미에서 무엇이 좋은지를 나타내는 �
 
 강화학습의 일반적인 개념과 다른 접근 방식과 비교할 수 있도록 구체적인 예시를 하나 살펴보겠습니다. Tic-Tac-Toe는 보드게임 중 하나로 2명의 플레이어가 3 * 3 크기의 보드에서 교대로 플레이하는 게임입니다. 플레이어는 자신의 턴에 9개의 칸 중 비어있는 칸에 O 또는 X를 표기할 수 있으며 만약 한 플레이어가 가로, 세로, 대각선 중 하나를 자신의 기호(O 또는 X)로 연결하면 이기는 게임입니다. 만약 두 명 다 한 줄을 만들지 못하고 9칸을 채우면 무승부가 됩니다. 사실 이 게임은 필승 전략이 존재하는 게임이기 때문에 상대방 플레이어는 이 게임을 처음 해보는 상황이라고 가정하겠습니다. 이 게임을 이기기 위해서는 어떤 Policy을 취해야 할까요?
 
-![](/images/Reinforcement Learning/1. The Reinforcement Learning Problem/RL 01-01.png){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/RL/001/01.png?raw=true){: .align-center}
 
 게임의 대한 전략을 구상할 때 빼놓을 수 없는 이론이 바로 <span style="color:red">Game Theory</span>입니다. 하지만 Game Theory의 방법 중 하나인 Minimax 솔루션은 상대방 이득의 최대값을 최소화한다는 전략으로 플레이하는 것을 가정하기 때문에 이 문제에 적합하지 않습니다. Dynamic Programming 같은 순차적 최적화 방법은 모든 경우에 대해 최적의 솔루션을 계산할 수 있지만 상대방이 어떤 위치에 체크를 할 것인가에 대한 확률 정보를 포함한 완전한 데이터가 필요합니다. 이렇게 완전한 정보가 주어지는 경우는 현실에서 찾아보기 쉽지 않기 때문에 역시 적합하지 않습니다. 물론 이러한 정보는 경험을 통해 추정할 수는 있습니다. 만약 동일한 상대방과 수많은 게임을 플레이한다면 대략적으로 이 사람이 특정 위치에 체크할 확률을 알 수 있습니다. 이렇게 수많은 게임을 통해 상대방의 행동 패턴을 신뢰할 수 있을 정도가 되면 그 후에 동적 프로그래밍을 사용하여 최적의 솔루션을 계산할 수 있습니다. 추후 다룰 강화학습의 방법 중에는 이러한 메커니즘을 이용하는 경우도 있습니다.
 
@@ -65,7 +64,7 @@ Value Function을 Tic-Tac-Toe 문제에 적용할 수도 있습니다. Dynamic P
 
 그 후 마찬가지로 상대방 플레이어와 수많은 게임을 플레이합니다. 자신의 매 턴마다 가능한 선택지(다음 State)를 확인하여 대부분 가장 큰 Value를 가진 State로 갈 수 있는 곳에 체크를 합니다. 하지만 더 나은 State가 있을지도 모르기 때문에 가끔은 가장 큰 Value가 아닌 State를 무작위로 선택함으로써 다른 State의 Value를 갱신합니다. 이 방법을 요약하면 다음 그림과 같이 표현할 수 있습니다.
 
-![](/images/Reinforcement Learning/1. The Reinforcement Learning Problem/RL 01-02.png){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/RL/001/02.png?raw=true){: .align-center}
 
 게임을 하는 동안 승률을 높일 수 있도록 State Value를 보다 정교하게 수정합니다. 위 그림에서의 빨간색 선은 자신이 행동한 후의 결과를 토대로 이전의 State Value를 수정한다는 의미입니다. 현재 시간을 $t$라고 했을 때 $S_t$는 현재 State, $S_{t+1}$은 다음 State를 의미합니다. $S_t$의 Value를 $V(S_t)$라고 하면 $V(S_t)$는 다음과 같이 정의할 수 있습니다.
 

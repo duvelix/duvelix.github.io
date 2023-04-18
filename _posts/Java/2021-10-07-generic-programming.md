@@ -1,7 +1,6 @@
 ---
 title: "Generic Programming"
 permalink: /java/generic-programming/
-classes: wide
 toc: true
 toc_label: "Table of Contents"
 toc_sticky: true

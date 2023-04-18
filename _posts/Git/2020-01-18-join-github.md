@@ -1,7 +1,6 @@
 ---
 title: "GitHub 가입하기"
 permalink: /git/join-github/
-classes: wide
 toc: true
 toc_label: "Table of Contents"
 toc_sticky: true

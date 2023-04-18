@@ -1,7 +1,6 @@
 ---
 title: "JDK 설치하기"
 permalink: /java/install-jdk/
-classes: wide
 toc: true
 toc_label: "Table of Contents"
 toc_sticky: true

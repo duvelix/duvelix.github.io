@@ -1,7 +1,6 @@
 ---
 title: "$n$-step Bootstrapping"
 permalink: /rl/n-step-bootstrapping/
-classes: wide
 toc: true
 toc_label: "Table of Contents"
 toc_sticky: true
@@ -21,7 +20,7 @@ tags:
 
 Policy $\pi$를 사용하여 생성된 Sample Episode에서 $v_{\pi}$를 추정할 때, Monte Carlo Method는 Episode가 끝날 때까지 해당 State부터 관찰된 전체 Reward의 합인 Return을 기반으로 업데이트하고, 1-step TD는 1개의 Reward만 관찰한 후 업데이트합니다. 이번에는 이 두 극단적인 방법의 중간점으로 $n$개의 Reward를 관찰한 후 업데이트를 수행하는 $n$-step TD에 대해 알아보겠습니다. 1-step TD, $n$-step TD, 그리고 Monte Carlo Method의 차이는 아래의 Backup Diagram을 보시면 쉽게 이해할 수 있습니다.
 
-![](/images/Reinforcement Learning/7. n-step bootstrapping/RL 07-01.png){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/RL/007/01.png?raw=true){: .align-center}
 
 $n$-step 업데이트를 1-step TD와 마찬가지로 TD라고 부르는 이유는, 1-step TD처럼 이후의 추정이 어떻게 달라지는지에 따라 이전의 추정이 변하기 때문입니다. 다만 그 추정이 1-step 후가 아니라 $n$-step 후일 뿐입니다.
 
@@ -49,7 +48,7 @@ $$V_{t+n} (S_t) \doteq V_{t+n-1} (S_t) + \alpha \left[ G_{t:t+n} - V_{t+n-1} (S_
 
 이 때, $S_t$ 이외의 State에서는 Value Function이 변하지 않습니다. 즉, 모든 $s \ne S_t$에 대해서 $V_{t+n} (s) = V_{t+n-1} (s)$입니다. 이것을 $n$-step TD라고 부릅니다. $n$-step TD의 모든 Episode에서는 처음 $n-1$ 시간 단계까지는 아무것도 변하지 않는데, 이를 보완하기 위해 각 Episode가 끝난 후 다음 Episode가 시작되기 전에 동일한 수의 추가적인 업데이트가 이루어집니다. 완전한 Pseudocode를 보시면 이것이 어떤 의미인지 이해가 되실 겁니다.
 
-![](/images/Reinforcement Learning/7. n-step bootstrapping/RL 07-02.png){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/RL/007/02.png?raw=true){: .align-center}
 
 $n$-step Return은 Value Function $V_{t+n-1}$를 사용하여 $R_{t+n}$ 이후에 누락된 Reward를 보완합니다. $n$-step Return의 장점은 최악의 상황에서 $V_{t+n-1}$보다 $v_{\pi}$ 추정값이 더 낫다는 것입니다. 다시말해, $n$-step Return에서 가장 큰 오차는 $V_{t+n-1}$의 가장 큰 오차보다 $\gamma^n$ 배 만큼 작거나 같습니다. 이것을 수식으로 표현하면 다음과 같습니다.
 
@@ -61,7 +60,7 @@ $$\max_s \left| \mathbb{E}_{\pi} \left[ G_{t:t+n} | S_t = s \right] - v_{\pi} (s
 
 이번에는 $n$-step과 Sarsa를 결합한 Control을 배우도록 하겠습니다. 새로 배우는 Sarsa와 구분하기 위해, 이전 장에서 배운 Sarsa를 1-step Sarsa, 또는 Sarsa(0)으로 표기하고, 이번 장에서 배우는 새로운 방법은 <span style="color:red">$n$-step Sarsa</span>로 부르겠습니다. $n$-step Sarsa의 기본 개념은 아래의 Backup Diagram과 같습니다.
 
-![](/images/Reinforcement Learning/7. n-step bootstrapping/RL 07-03.png){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/RL/007/03.png?raw=true){: .align-center}
 
 이를 기반으로 $n$-step Return을 재정의하면 다음과 같습니다.
 
@@ -73,11 +72,11 @@ $$Q_{t+n} (S_t, A_t) \doteq Q_{t+n-1} (S_t, A_t) + \alpha \left[ G_{t:t+n} - Q_{
 
 $n$-step Return처럼 식 (7.5)도 모든 $s \ne S_t$, $a \ne A_t$에 대해 $Q_{t+n} (s, a) = Q_{t+n-1}$입니다. 즉, 학습하고 있는 State-Action 쌍을 제외하고는 $Q$ 값이 변하지 않습니다. 그렇기 때문에 $n$-step Sarsa라고 부르는 것입니다. $n$-step Sarsa의 완전한 Pseudocode은 다음과 같습니다.
 
-![](/images/Reinforcement Learning/7. n-step bootstrapping/RL 07-04.png){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/RL/007/04.png?raw=true){: .align-center}
 
 $n$-step Sarsa의 장점은 1-step Sarsa보다 학습 속도가 빠르다는 점입니다. 아래 그림은 Grid World에서의 예시를 보여주고 있습니다. 첫 번째 그림과 같은 Episode에 대해, 1-step Sarsa는 가운데 그림처럼 마지막 State-Action 쌍에 대해서만 $Q$ 값의 업데이트가 일어납니다. 하지만 세 번째 그림을 보시면 10-step Sarsa는 Episode 뒤 10개의 State-Action 쌍이 모두 업데이트가 되는 장점이 있습니다. 즉, 하나의 Episode에서 더 많은 것을 학습할 수 있다는 장점이 있습니다.
 
-![](/images/Reinforcement Learning/7. n-step bootstrapping/RL 07-05.png){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/RL/007/05.png?raw=true){: .align-center}
 
 $n$-step과 Expected Sarsa를 결합하는 방법도 동일합니다. 이에 대한 Backup Diagram은 $n$-step Sarsa의 Backup Diagram 맨 오른쪽에 나타나 있습니다. 주의할 점은 시간 단계 $t$부터 $t+n$까지 모두 평균값을 사용하는 것이 아니라, 마지막 단계에서만 평균값을 사용합니다. <span style="color:red">$n$-step Expected Sarsa</span>의 Return 식은 다음과 같습니다.
 
@@ -107,7 +106,7 @@ $$Q_{t+n} (S_t, A_t) \doteq Q_{t+n-1} (S_t, A_t) + \alpha \rho_{t+1:t+n} \left[ 
 
 여기서 Importance Sampling Ratio는 식 (7.9)의 $n$-step TD 보다 한 단계 늦게 시작하고 끝납니다. 왜냐면 Sarsa는 Q-learning과 달리 다음 Action을 선택한 후에 학습을 하기 때문입니다. 전체 Pseudocode는 다음과 같습니다.
 
-![](/images/Reinforcement Learning/7. n-step bootstrapping/RL 07-06.png){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/RL/007/06.png?raw=true){: .align-center}
 
 $n$-step Expected Sarsa의 Off-policy 버전은 Importance Sampling Ratio만 약간 변형시키면 됩니다. $\rho_{t+1:t+n-1}$ 대신 $\rho_{t+1:t+n}$로 바꾼 다음 나머지는 동일합니다. (물론 Return 식은 식 (7.7)을 사용합니다)
 
@@ -138,7 +137,7 @@ Recursive Form에서 $h < T$인 경우 $G_{h:h} \doteq Q_{h-1} (S_h, A_h)$로, $
 
 6장에서 1-step  Q-learning과 Expected Sarsa를 배울 때 Importance Sampling을 사용하지 않는 방법에 대해 배웠습니다. 이를 $n$-step으로 확장한 방법으로 Tree-backup Algorithm이 있습니다.
 
-![](/images/Reinforcement Learning/7. n-step bootstrapping/RL 07-07.png){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/RL/007/07.png?raw=true){: .align-center}
 
 Tree-backup Algorithm의 기본 아이디어는 위의 Backup Diagram과 같습니다. Diagram의 각 단계에는 3가지 Sample State와 Reward, 그리고 2개의 Sample Action이 있습니다. 이것은 초기 State, Action 쌍인 $(S_t, A_t)$ 이후에 발생하는 이벤트를 나타냅니다. 각 State에서 가운데 Action을 제외한 나머지 Action은 선택되지 않은 Action입니다. 선택되지 않은 Action은 Sample 데이터가 없기 때문에 Bootstrap하고 Target Policy의 추정값을 업데이트하는데 사용합니다. 이것이 Backup Diagram처럼 나무 모양과 비슷하기 때문에 <span style="color:red">Tree-backup</span>이라고 불립니다.
 
@@ -166,13 +165,13 @@ $$Q_{t+n} (S_t, A_t) \doteq Q_{t+n-1} (S_t, A_t) + \alpha \left[ G_{t:t+n} - Q_{
 
 물론 학습에 사용되지 않는 모든 State $s \ne S_t$, 모든 Action $a \ne A_t$에 대해서는 Q 값이 변하지 않습니다. (즉, $Q_{t+n} (s, a) = Q_{t+n-1} (s, a)$) 전체 Pseudocode는 다음과 같습니다.
 
-![](/images/Reinforcement Learning/7. n-step bootstrapping/RL 07-08.png){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/RL/007/08.png?raw=true){: .align-center}
 
 ## A Unifying Algorithm: $n$-step $Q(\sigma)$
 
 지금까지 우리는 $n$-step Sarsa, $n$-step Tree-backup, 그리고 $n$-step Expected Sarsa에 대해 공부했습니다. 이 셋의 가장 큰 차이는 Sample로 인한 Importance Sampling의 여부입니다. $n$-step Sarsa는 매 단계마다 Importance Sampling Ratio를 보정해주어야 하고, $n$-step Expected Sarsa 또한 마지막을 제외한 모든 단계에서 Importance Sampling Ratio 보정이 필요합니다. $n$-step Tree-backup 알고리즘은 Importance Sampling이 필요없는 것이 특징입니다. 이번 Section에서는 이 3개의 알고리즘을 통합하는 방법을 알아보겠습니다.
 
-![](/images/Reinforcement Learning/7. n-step bootstrapping/RL 07-09.png){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/RL/007/09.png?raw=true){: .align-center}
 
 기본적인 아이디어는 위의 그림에서 네 번째 Backup Diagram과 같습니다. 매 단계 Sarsa 처럼 처리할 것인지, 아니면 Tree-backup 처럼 처리할 것인지의 여부를 따로 정하는 것입니다. Expected Sarsa 처럼 처리하기 위해서는 마지막 단계를 Tree-backup 처럼 처리하면 됩니다.
 
@@ -195,13 +194,13 @@ G_{t:h} & \doteq R_{t+1} + \gamma \left( \sigma_{t+1} \rho_{t+1} + (1 - \sigma_{
 
 이 때 $t < h \le T$ 입니다. Recursive Form에서 $h < T$인 경우 $G_{h:h} \doteq Q_{h-1} (S_h, A_h)$가 되고, $h = T$인 경우 $G_{T-1:T} \doteq R_T$가 됩니다. 그 후 식 (7.11) 대신 Importance Sampling Ratio가 없는 식 (7.5)를 사용하여 $n$-step Sarsa 업데이트를 사용합니다. Importance Sampling Ratio 자체가 $n$-step Return에 포함되기 때문입니다. $Q(\sigma)$의 완전한 Pseudocode는 다음과 같습니다.
 
-![](/images/Reinforcement Learning/7. n-step bootstrapping/RL 07-10.png){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/RL/007/10.png?raw=true){: .align-center}
 
 ## Summary
 
 이번 장에서는 1-step TD와 Monte Carlo Method의 중간으로 볼 수 있는 **$n$-step TD**에 대해 배웠습니다. 이렇게 극단적인 두 방법을 적절히 조절하여 중간 정도의 방법을 사용하는 것은 때때로 좋은 성능을 보입니다.
 
-![](/images/Reinforcement Learning/7. n-step bootstrapping/RL 07-09.png){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/RL/007/09.png?raw=true){: .align-center}
 
 Section 7.6에서 사용했던 그림을 다시 가져와보면 이번 장에서 배운 내용이 요약되어 있습니다. **$n$-step Sarsa**나 **Expected Sarsa**는 기본적으로 Return을 계산할 때 Importance Sampling Ratio를 반드시 고려해야하며, 그 방법을 회피하기 위해 **$n$-step Tree-backup**을 고안하였습니다. 마지막으로는 이것들을 일반화할 수 있는 **$n$-step $Q(\sigma)$**를 제안하였습니다.
 

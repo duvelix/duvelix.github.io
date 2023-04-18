@@ -1,7 +1,6 @@
 ---
 title: "Java Programming Basics (1)"
 permalink: /java/java-programming-basics-1/
-classes: wide
 toc: true
 toc_label: "Table of Contents"
 toc_sticky: true

@@ -1,7 +1,6 @@
 ---
 title: "Eligibility Trace"
 permalink: /rl/eligibility-traces/
-classes: wide
 toc: true
 toc_label: "Table of Contents"
 toc_sticky: true
@@ -33,7 +32,7 @@ $$G_{t:t+n} \doteq R_{t+1} + \gamma R_{t+2} + \cdots + \gamma^{n-1} R_{t+n} + \g
 
 또한 이러한 Update는 $n$-step Return 뿐만 아니라 다른 모든 $n$에 대한 $n$-step Return의 평균에 대해서도 유효합니다. 예를 들자면, 2-step Return의 절반과 4-step Return의 절반의 합으로 구성된 $\frac{1}{2} G_{t:t+2} + \frac{1}{2} G_{t:t+4}$와 같은 식에 대해서도 Update를 수행할 수 있다는 것입니다. 이렇게 각 Return의 Weight가 양수이면서 합이 1인 조건 하에서는 모든 $n$-step Return이 이런 방식으로 평균을 낼 수 있습니다. 심지어 항의 개수가 무한해도 말입니다. 이러한 평균화 기법을 이용하면 새로운 알고리즘을 개발할 수 있습니다. 예를 들어, TD나 Monte Carlo Method를 연결하기 위해 1-step 및 무한 단계 Return을 평균화하는 식으로 말입니다. 이와 같이 간단하게 구성 요소를 Update 하는 평균화 기법을 <span style="color:red">Compound Update</span> 라고 합니다. 이에 대한 Backup Diagram은 Update 식에 따라 달라지는데, 방금 다룬 2-step Return의 절반과 4-step Return의 절반을 합친 식에 대한 Backup Diagram은 다음과 같습니다.
 
-![](/images/Reinforcement Learning/12. Eligibility Traces/RL 12-01.png){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/RL/012/01.png?raw=true){: .align-center}
 
 Backup Diagram에서 볼 수 있듯이, Compound Update의 Update를 수행하기 위해서는 가장 긴 구성 요소의 Update가 완료되어야 수행할 수 있습니다. 예를 들어, 위의 Backup Diagram에서 가장 긴 구성 요소는 4-step Return이므로, 시간 $t$에서의 추정치는 시간 $t+4$에 도달해야만 추정이 가능합니다. 이러한 문제로 인해 Update에 지연이 발생할 수 있으므로, 일반적으로는 가장 긴 구성 요소의 길이를 제한하는 방식으로 해결합니다.
 
@@ -43,11 +42,11 @@ $$G_t^{\lambda} \doteq (1 - \lambda) \sum_{n=1}^{\infty} \lambda^{n-1} G_{t:t+n}
 
 식 (12.2)의 Update 식을 <span style="color:red">$\lambda$-Return</span> 이라고 합니다. $\lambda$-Return의 Backup Diagram은 다음과 같이 표현할 수 있습니다.
 
-![](/images/Reinforcement Learning/12. Eligibility Traces/RL 12-02.png){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/RL/012/02.png?raw=true){: .align-center}
 
 $\lambda$-Return에서는 각 항의 계수가 다르기 때문에 Weight 또한 항 마다 다릅니다. 예를 들어, 1-step Return의 계수는 $(1 - \lambda)$이지만, 2-step Return은 $(1 - \lambda) \lambda$의 계수를 갖습니다. 이렇게 시간 $t$를 기준으로 멀어질수록 $\lambda$를 곱하기 때문에 Weight가 낮아집니다. 이것을 그림으로 표현하면 다음과 같습니다.
 
-![](/images/Reinforcement Learning/12. Eligibility Traces/RL 12-03.png){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/RL/012/03.png?raw=true){: .align-center}
 
 그림에서 보시다피시 마지막 항의 계수만 다른 항과 표현 방식이 다르기 때문에, 식 (12.2)를 다음과 같이 마지막 항만 분리하여 표현할 수도 있습니다.
 
@@ -63,11 +62,11 @@ $\lambda$-Return은 7장에서 배웠던 $n$-step bootstrapping 방법과 다른
 
 아래 그림은 19개의 State를 가진 Random Walk Example에서의 $\lambda$-Return Algorithm과 $n$-step TD 방법 비교 그래프입니다. 두 방법 모두 처음 10개의 Episode에 대한 평균을 나타내며 그래프의 세로축은 Root Mean Square Error를 의미하기 때문에 낮을 수록 좋습니다. 그래프를 보면 두 방법 모두 성능이 비슷하며, 중간 정도의 $\lambda$와 $n$일 때 최적의 성능을 보임을 알 수 있습니다.
 
-![](/images/Reinforcement Learning/12. Eligibility Traces/RL 12-04.png){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/RL/012/04.png?raw=true){: .align-center}
 
 우리가 지금까지 취한 접근 방식은 학습 알고리즘에 대한 Theoretical View, 혹은 Forward View라고 부를 수 있습니다. 방문하는 각 State에 대해 향후 얻을 수 있는 모든 Reward에 대한 기대값과 이를 결합하는 최선의 방법을 결정하기 때문입니다. 아래 그림과 같이 Update를 결정하기 위해 각 State에서 기다리면서 State의 흐름을 타고 있다고 볼 수 있습니다. 한 State를 Update 한 후, 다음 State로 이동한 후에는 이 작업을 반복할 필요가 없습니다. 반면에 미래 State는 이전의 유리한 지점에서 한 번씩 반복적으로 처리됩니다.
 
-![](/images/Reinforcement Learning/12. Eligibility Traces/RL 12-05.png){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/RL/012/05.png?raw=true){: .align-center}
 
 ## TD($\lambda$)
 
@@ -94,11 +93,11 @@ $$\mathbf{w}_{t+1} \doteq \mathbf{w}_t + \alpha \delta_t \mathbf{z}_t \tag{12.7}
 
 Semi-gradient TD($\lambda$)의 전체 Pseudocode는 다음과 같습니다.
 
-![](/images/Reinforcement Learning/12. Eligibility Traces/RL 12-06.png){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/RL/012/06.png?raw=true){: .align-center}
 
 TD($\lambda$)는 시간적으로 Backward View라고 볼 수 있습니다. 매 순간 현재의 TD Error를 확인하고, 그 State가 당시 Eligibility Trace에 얼마나 기여했는지에 따라 각각의 이전 State에 거꾸로 반영합니다. State가 미래에 다시 발생할 때를 대비하여 아래 그림과 같이 State의 흐름과 TD Error를 계산하고 식 (12.7)에 의해 얻은 Update를 이용하여 과거의 Value를 변경합니다.
 
-![](/images/Reinforcement Learning/12. Eligibility Traces/RL 12-07.png){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/RL/012/07.png?raw=true){: .align-center}
 
 이것을 조금 더 잘 이해하기 위해서는 $\lambda$에 값에 따라 어떻게 달라지는지 생각해보면 됩니다. 만약 $\lambda = 0$인 경우라면 식 (12.5)에 의해 시간 $t$ 에서의 Trace는 정확히 State $S_t$에서 Value의 Gradient와 같습니다. 따라서 이 때의 TD($\lambda$) Update인 식 (12.7)은 9장에서 배운 1-step TD Update와 동일합니다. 이것이 그 당시 1-step TD Update를 TD(0)로도 불렀던 이유입니다. 위의 그림을 토대로 설명하자면, TD(0)는 현재 State를 기준으로 한 단계 이전의 State에 대한 TD Error로만 Update하는 경우입니다. 하지만 만약 $\lambda < 1$ 조건 하에 $\lambda$의 값이 증가한다면 더 많은 이전 State들이 Update되는데, 그림에서 볼 수 있듯이 시간적으로 멀리 떨어진 State일수록 Eligibility Trace가 더 작기 때문에 덜 Update됩니다. 이것을 **초기 State는 TD Error에 대해 더 적은 Credit을 받았다**라고 표현하기도 합니다.
 
@@ -108,7 +107,7 @@ TD(1)은 기존의 Monte Carlo Method를 더 일반적으로 구현한 방법입
 
 TD($\lambda$)가 Off-line $\lambda$-Return Algorithm을 근사하는데 얼마나 성능이 좋은지 알아보기 위해 또 다시 19개의 State를 가진 Random Walk Example을 놓고 비교해보겠습니다. 아래 그림을 보시면 그래프의 모양 자체는 차이가 있지만, $\lambda$의 값이 최적인 State에서는 거의 동일한 성능을 보임을 알 수 있습니다. 다만 $\lambda$가 최적보다 크게 선택되는 상황을 보면 TD($\lambda$)는 Off-line $\lambda$-Return Algorithm보다 성능이 더 나쁘다는 것을 알 수 있습니다. 일반적으로 최적의 State를 제외하고는 $\lambda$를 사용하지 않기 때문에 큰 문제는 아닙니다만, TD($\lambda$)가 **더 불안정하다**라고는 말할 수 있을 정도의 단점은 됩니다.
 
-![](/images/Reinforcement Learning/12. Eligibility Traces/RL 12-08.png){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/RL/012/08.png?raw=true){: .align-center}
 
 Linear TD($\lambda$)는 On-policy인 경우 조건 식 (2.7)에 따라 Step-size Parameter가 시간에 따라 감소한다면 수렴합니다. Section 9.4에서 다룬 바와 같이 수렴한다는 것은 Weight Vector의 최소 오차가 $\lambda$에 따른다는 것을 의미합니다. 식 (9.14)에서 배운 오차 한계식은 $\lambda$에 의해 일반화될 수 있습니다. 만약 Discounted Continuing Task라면, 다음과 같습니다.
 
@@ -128,7 +127,7 @@ $$G_{t:h}^{\lambda} \doteq (1 - \lambda) \sum_{n=1}^{h-t-1} \lambda^{n-1} G_{t:t
 
 Truncated $\lambda$-Return은 7장에서의 $n$-step 방법과 유사한 $n$-step Return Algorithm을 즉시 생성하는 방식으로 구성됩니다. 이 때의 Update는 $n$-step 만큼 지연되고 처음 $n$-step만 고려되었지만, 이제는 모든 $k$-step ($1 \le k \le n$) Return이 포함됩니다. State-Value의 경우 이 알고리즘과 같은 종류를 <span style="color:red">Truncated TD($\lambda$)</span>, 또는 <span style="color:red">TTD($\lambda$)</span>라고 부릅니다. 아래 그림의 복합적인 Backup Diagram은 가장 긴 구성 요소에 대한 Update가 항상 Episode의 끝까지 진행되는 것이 아니라 최대 $n$-step이라는 점을 명시하고 있습니다. 그 점을 제외한다면 이전에 보여드린 $\lambda$-Return의 Backup Diagram과 유사합니다.
 
-![](/images/Reinforcement Learning/12. Eligibility Traces/RL 12-09.png){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/RL/012/09.png?raw=true){: .align-center}
 
 TTD($\lambda$)에 대한 식은 다음과 같이 표현할 수 있습니다.
 
@@ -169,7 +168,7 @@ $$\mathbf{w}_{t+1}^h \doteq \mathbf{w}_t^h + \alpha \left[ G_{t:h}^{\lambda} - \
 
 On-line $\lambda$-Return Algorithm은 완전하게 On-line으로 동작하며, 시간 $t$에서 사용할 수 있는 정보만 사용하여 새로운 Weight Vector $\mathbf{w}_t$를 계산합니다. 이 때의 단점은 매 시간 단계마다 경험한 Episode의 일부를 사용하여 계산하는 것이 계산 복잡도가 높다는 것입니다. Off-line $\lambda$-Return Algorithm은 Episode를 수행하는 동안 Update를 수행하지 않고, Episode를 종료하는 시점에서 모든 시간 단계에 대한 Update를 수행했기 때문에 계산 복잡도가 높지 않았습니다. On-line $\lambda$-Return Algorithm은 그 계산 복잡도를 대가로 Episode가 진행되는 도중 뿐만 아니라 Episode가 끝날 때도 더 나은 성능을 기대할 수 있습니다. Bootrstrapping에 사용되는 Weight Vector에 반영되는 정보가 더 많기 때문입니다. 아래 그림은 지금까지 보았던 Random Walk Example에서 On-line과 Off-line 알고리즘을 비교한 그래프입니다.
 
-![](/images/Reinforcement Learning/12. Eligibility Traces/RL 12-10.png){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/RL/012/10.png?raw=true){: .align-center}
 
 ## True Online TD($\lambda$)
 
@@ -177,7 +176,7 @@ On-line $\lambda$-Return Algorithm은 완전하게 On-line으로 동작하며, �
 
 True On-line TD($\lambda$)를 유도하는 과정을 여기에서 보이기에는 너무 복잡하기 때문에 여기에서는 생략하겠습니다. (다음 Section 및 van Seijen et al., 2016) 대략적인 아이디어를 소개하자면, 먼저 On-line $\lambda$-Return Algorithm은 다음과 같이 삼각형으로 나열할 수 있습니다.
 
-![](/images/Reinforcement Learning/12. Eligibility Traces/RL 12-11.png){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/RL/012/11.png?raw=true){: .align-center}
 
 이 삼각형에서 하나의 행은 각 시간 단계에서 생성됩니다. 삼각형을 구성하는 요소는 많지만, 이전 Section에서 보았듯이 우리에게 필요한 것은 대각선 요소인 $\mathbf{w}_t^t$뿐입니다. 첫 번째 요소인 $\mathbf{w}_0^0$는 Episode의 초기 Weight Vector이고, 마지막 요소인 $\mathbf{w}_T^T$는 최종 Weight Vector이며, 그 중간 요소인 $\mathbf{w}_t^t$는 Update에 필요한 $n$-step Return을 얻기 위한 Bootstrapping 역할을 합니다.
 
@@ -193,7 +192,7 @@ $$\mathbf{z}_t \doteq \gamma \lambda \mathbf{z}_{t-1} + \left( 1 - \alpha \gamma
 
 True On-line TD($\lambda$)의 전체 Pseudocode는 다음과 같습니다.
 
-![](/images/Reinforcement Learning/12. Eligibility Traces/RL 12-12.png){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/RL/012/12.png?raw=true){: .align-center}
 
 True On-line TD($\lambda$)에 사용된 Eligibility Trace 식 (12.11)은 기존의 TD($\lambda$)에서 사용한 Eligibility Trace 식 (12.5)와 구분하기 위해 <span style="color:red">Dutch Trace</span>라고 부릅니다. 참고로 식 (12.5)와 같은 Eligibility Trace은 Accumulating Trace라고 부르기도 합니다.
 
@@ -263,7 +262,7 @@ $$\mathbf{w}_{t+1} \doteq \mathbf{w}_t + \alpha \left[ G_t^{\lambda} - \hat{q} \
 
 이 때 $G_t^{\lambda} \doteq G_{t:\infty}^{\lambda}$입니다. 이 Forward View 에 대한 복합적인 Backup Diagram은 다음과 같습니다.
 
-![](/images/Reinforcement Learning/12. Eligibility Traces/RL 12-13.png){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/RL/012/13.png?raw=true){: .align-center}
 
 위의 Backup Diagram과 TD($\lambda$)의 Backup Diagram을 비교해보면 굉장히 유사하다는 것을 알 수 있습니다. 또한 $\lambda$-Return에서 각 $n$-step Update의 Weight는 TD($\lambda$) 및 $\lambda$-Return 알고리즘에서와 같습니다.
 
@@ -284,13 +283,13 @@ $$ \begin{align}
 
 Sarsa($\lambda$)의 완전한 Pseudocode는 다음과 같습니다.
 
-![](/images/Reinforcement Learning/12. Eligibility Traces/RL 12-14.png){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/RL/012/14.png?raw=true){: .align-center}
 
 **Example 12.1) Traces in Gridworld**
 
 Eligibility Trace를 사용하면 1-step 방법이나 $n$-step 방법보다 Control 알고리즘의 효율성을 크게 높일 수 있습니다. Gridworld 예제를 이용하여 이것을 설명하겠습니다.
 
-![](/images/Reinforcement Learning/12. Eligibility Traces/RL 12-15.png){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/RL/012/15.png?raw=true){: .align-center}
 
 첫 번째 그림은 단일 Episode에서 Agent가 이동한 경로를 나타냅니다. 초기 Estimated Value는 0이고, G로 표시된 Target 지점을 제외하면 모든 Reward는 0입니다. 나머지 그림에 나타난 화살표는 각각의 알고리즘에 대해 어떤 Action-Value가 얼마나 증가하는지를 나타냅니다. 1-step Sarsa는 Target에 도달했을 때 마지막 Action에 대한 Value만 증가시키지만, $n$-step 방법은 마지막 $n$개의 Action에 대한 Value를 동일하게 증가시킵니다. ($\gamma = 1$이라고 가정) 가장 오른쪽에 있는 Sarsa($\lambda$) 방법은 Episode에서의 모든 Action에 대한 Value를 Update 하지만, Target 지점에서 (시간적으로) 멀어질수록 더 적게 반영됩니다. 이러한 Update 방법을 <span style="color:red">Fading</span>이라고 하는데, 일반적으로 Fading 방법이 제일 좋은 경우가 많습니다.
 
@@ -298,7 +297,7 @@ Eligibility Trace를 사용하면 1-step 방법이나 $n$-step 방법보다 Cont
 
 **Example 12.2) Sarsa($\lambda$) on Mountain Car**
 
-![](/images/Reinforcement Learning/12. Eligibility Traces/RL 12-16.png){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/RL/012/16.png?raw=true){: .align-center}
 
 이번에는 10장에서 다루었던 Mountain Car 예제에 Sarsa($\lambda$)를 적용해 보겠습니다. 기본적인 예제의 세팅은 10장에서와 동일합니다. 위의 그림은 Mountain Car 문제에 대해  Sarsa($\lambda$)와 $n$-step Sarsa의 성능을 비교한 그래프입니다. $n$-step Sarsa에서는 변수로써 $n$의 값을 변경하며 비교했지만, Sarsa($\lambda$)에서는 $\lambda$의 값을 변경하며 비교합니다. 두 그래프를 비교해보면 Sarsa($\lambda$)의 Fading-trace bootstrapping 전략이 이 문제에 대해 더 효율적인 학습 방법이라는 것을 알 수 있습니다.
 
@@ -306,11 +305,11 @@ Eligibility Trace를 사용하면 1-step 방법이나 $n$-step 방법보다 Cont
 
 또한 이상적인 TD 방법의 Action-Value 버전을 On-line $\lambda$-Return 알고리즘 및 True On-line TD($\lambda$)으로 구현할 수도 있습니다. Section 12.4에서 다룬 On-line $\lambda$-Return 알고리즘의 Action-Value 버전은 $n$-step Return을 Action-Value 형식으로 바꾸는 것 외에는 변경할 부분이 없습니다. 또한 Section 12.5와 12.6에서의 분석은 Action-Value에 대해서도 동일하며, 유일한 차이점은 State에 대한 Feature Vector를 $\mathbf{x}_t = \mathbf{x}(S_t)$ 대신 $\mathbf{x}_t = \mathbf{x}(S_t, A_t)$로 사용한다는 것입니다. True On-line Sarsa($\lambda$)에 대한 전체 Pseudocode는 다음과 같습니다.
 
-![](/images/Reinforcement Learning/12. Eligibility Traces/RL 12-17.png){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/RL/012/17.png?raw=true){: .align-center}
 
 아래 그림은 Mountain Car 예제에서 Sarsa($\lambda$)의 여러 버전에 대해 성능을 비교하는 그래프입니다. True On-line Sarsa($\lambda$)는 일반 Sarsa($\lambda$)보다 더 나은 성능을 보여줌을 알 수 있습니다.
 
-![](/images/Reinforcement Learning/12. Eligibility Traces/RL 12-18.png){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/RL/012/18.png?raw=true){: .align-center}
 
 ## Variable $\lambda$ and $\gamma$
 
@@ -432,13 +431,13 @@ $\lambda = 1$에서 이러한 알고리즘은 Monte Carlo 알고리즘과 밀접
 
 Q-learning을 Eligibility Trace로 확장하기 위해 여러 방법이 제안되었습니다. 가장 처음 제안된 방법은 Watkins의 <span style="color:red">Q($\lambda$)</span>로, Greedy Action이 수행되는 한 일반적인 방식으로 Eligibility Trace을 감소시킨 다음, 첫 번째 non-Greedy Action 후에 Trace를 0으로 줄입니다. Q($\lambda$)의 Backup Diagram은 다음과 같습니다.
 
-![](/images/Reinforcement Learning/12. Eligibility Traces/RL 12-19.png){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/RL/012/19.png?raw=true){: .align-center}
 
 6장에서 Q-learning과 Expected Sarsa를 통합하여 임의의 Target Policy로 일반화했으며, 이 장의 이전 Section에서 Expected Sarsa를 Off-policy Eligibility Trace로 일반화하였습니다. 그러나 7장에서는 Importance Sampling을 사용하지 않는 속성을 유지한 $n$-step Tree Backup과 $n$-step Expected Sarsa를 구분했습니다. 이제 우리는 Tree Backup의 Eligibility Trace 버전인 <span style="color:red">Tree Backup($\lambda$)</span>, 또는 <span style="color:red">TB($\lambda$)</span>를 제시해야 합니다. 이는 Off-policy 데이터에 적용할 수 있음에도 불구하고 Importance Sampling이 없다는 장점이 있기 때문에 Q-learning의 진정한 확장이라고 볼 수 있습니다.
 
 TB($\lambda$)의 개념은 간단합니다. Section 7.5에서와 같이 Tree Backup의 Update는 Bootstrapping Parameter $\lambda$에 따라 일반적인 방식으로 Weight가 부여됩니다. TB($\lambda$)의 Backup Diagram은 다음과 같습니다.
 
-![](/images/Reinforcement Learning/12. Eligibility Traces/RL 12-20.png){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/RL/012/20.png?raw=true){: .align-center}
 
 일반적인 Bootstrapping 및 Discounting Parameter에 대한 올바른 Index를 사용하여 구체적인 방정식을 얻으려면, 다음과 같이 식 (12.20) $\lambda$-Return의 재귀 형식으로 시작한 다음, 식 (7.16) Target의 Bootstrapping 경우로 확장하는 것이 가장 좋습니다.
 
@@ -524,7 +523,7 @@ TD Error를 사용하는 Eligibility Trace는 Monte Carlo와 TD 방법의 중간
 
 $\lambda$의 값을 조절하여 Monte Carlo에서 1-step TD 방법에 이르기까지 Eligibility Trace를 어디에나 사용할 수 있습니다. 그렇다면 어느 단계에서 사용하는 것이 가장 좋을까요? 안타깝게도 이 질문에 대한 명확한 이론적인 답이 없습니다. 대신 경험적인 답으로써, Episode당 단계가 많거나 Discounting이 반감기 내에 단계가 많은 작업에서 Eligibility Trace를 사용하는 것이 더 좋다고 판단됩니다. 아래의 그래프는 $\lambda$에 따른 강화학습의 성능을 나타내고 있는데, 이것을 통해 대략적인 답을 낼 수 있습니다.
 
-![](/images/Reinforcement Learning/12. Eligibility Traces/RL 12-21.png){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/RL/012/21.png?raw=true){: .align-center}
 
 반면에 순수한 Monte Carlo Method에 가까워지면 성능이 급격히 저하됩니다. 그렇기 때문에 적당히 중간 정도의 Step이 최선의 선택이라고 볼 수 있습니다. 미래에는 $\lambda$를 사용하여 TD와 Monte Carlo Method 간 Trade-off를 더 미세하게 조절하는 것이 가능할 수도 있겠지만, 현재로서는 이것을 어떻게 안정적이고 유용하게 사용할 수 있을지 명확한 결론을 내릴 수가 없습니다.
 

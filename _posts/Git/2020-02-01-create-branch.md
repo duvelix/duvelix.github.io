@@ -1,7 +1,6 @@
 ---
 title: "Branch 만들기"
 permalink: /git/create-branch/
-classes: wide
 toc: false
 categories:
   - studies

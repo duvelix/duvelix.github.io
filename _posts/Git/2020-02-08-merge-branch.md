@@ -1,7 +1,6 @@
 ---
 title: "Branch 병합하기"
 permalink: /git/merge-branch/
-classes: wide
 toc: true
 toc_label: "Table of Contents"
 toc_sticky: true

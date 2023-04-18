@@ -1,7 +1,6 @@
 ---
 title: "Policy Gradient Methods"
 permalink: /rl/policy-gradient-methods/
-classes: wide
 toc: true
 toc_label: "Table of Contents"
 toc_sticky: true
@@ -41,7 +40,7 @@ Action Preference의 Soft-max에 따라 Policy를 매개변수화하는 것의 �
 
 **Example 13.1) Short corridor with switched actions**
 
-![](/images/Reinforcement Learning/13. Policy Gradient Methods/RL 13-01.png){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/RL/013/01.png?raw=true){: .align-center}
 
 위의 그래프에 삽입된 작은 Gridworld 문제가 있습니다. Reward는 각 단계당 -1로 설정되어 있습니다. Episode는 항상 S에서 시작하고, G에 도착하면 종료됩니다. 맨 오른쪽 State를 제외한 나머지 State에서는 각각 오른쪽/왼쪽으로 이동하는 2가지 Action이 있습니다. (단, S에서 왼쪽으로 가는 Action은 움직이지 않는 것으로 대체합니다) 이 문제에서 재밌는 점은 왼쪽에서 두 번째 State의 경우, Action에 따른 결과가 반전된다는 것입니다. 즉, 왼쪽을 선택하면 오른쪽으로, 오른쪽을 선택하면 왼쪽으로 움직입니다.
 
@@ -129,7 +128,7 @@ $$\boldsymbol{\theta}_{t+1} \doteq \boldsymbol{\theta}_t + \alpha G_t \frac{\nab
 
 REINFORCE는 Episode가 끝날 때까지 미래의 모든 Reward를 포함하는 시간 $t$부터 완전한 Return을 사용합니다. 이런 의미에서 REINFORCE는 Monte Carlo 알고리즘이라고 볼 수 있으며, Episode가 끝난 후 모든 업데이트가 수행되는 Episode Task에만 잘 정의됩니다. REINFORCE 알고리즘의 전체 Pseudocode는 다음과 같습니다.
 
-![](/images/Reinforcement Learning/13. Policy Gradient Methods/RL 13-02.png){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/RL/013/02.png?raw=true){: .align-center}
 
 위의 Pseudocode에서 마지막 줄은 REINFORCE 업데이트인 식 (13.8)과 다른 점이 있습니다. 먼저 $\nabla \ln x = \frac{\nabla x}{x}$라는 것을 이용하여, $\frac{\nabla \pi (A_t \mid S_t, \boldsymbol{\theta}_t)}{\pi (A_t \mid S_t, \boldsymbol{\theta}_t)}$를  $\nabla \ln \pi (A_t \mid S_t, \boldsymbol{\theta}_t)$로 바꾸었습니다. 이 벡터의 이름은 문헌에 따라 다르지만, 여기서는 간단하게 <span style="color:red">Eligibility Vector</span>라고 명칭하겠습니다. 이 부분이 알고리즘에서 Policy 매개변수화가 나타나는 유일한 부분입니다.
 
@@ -137,7 +136,7 @@ REINFORCE는 Episode가 끝날 때까지 미래의 모든 Reward를 포함하는
 
 다음의 그래프는 Example 13.1에서 REINFORCE의 성능을 나타내고 있습니다. $\alpha$에 값에 따라 성능의 차이가 크기 때문에, 좋은 $\alpha$를 정하는 것이 중요하다는 것을 알 수 있습니다.
 
-![](/images/Reinforcement Learning/13. Policy Gradient Methods/RL 13-03.png){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/RL/013/03.png?raw=true){: .align-center}
 
 REINFORCE는 Stochastic Gradient Method로 인해 좋은 이론적 수렴 특성을 가지고 있습니다. Episode에 대한 예상 업데이트는 성능에 대한 Gradient와 같은 방향입니다. 이것은 충분히 작은 $\alpha$에 대해 예상되는 성능의 개선과, $\alpha$가 감소하는 일반적인 확률적 근사 조건 하에 Local Optimum에 수렴하는 것을 보장합니다. 그러나 Monte Carlo Method인 REINFORCE는 Variance가 커서 학습이 느려질 수 있습니다.
 
@@ -161,11 +160,11 @@ Bandit Algorithm에서 Baseline은 숫자(=평균 Reward)에 불과했지만, MD
 
 Baseline에 대한 자연스러운 선택 중 하나는 State-Value의 추정값인 $\hat{v} (S_t, \mathbf{w})$ 입니다. 여기서 $\mathbf{w} \in \mathbb{R}^d$는 이전 장에서 제시된 방법 중 하나로 학습된 Weight Vector입니다. REINFORCE는 Policy 매개변수 $\boldsymbol{\theta}$를 학습하기 위한 Monte Carlo Method이기 때문에 Monte Carlo Method를 사용하여 State-Value의 Weight인 $\mathbf{w}$를 학습할 수도 있습니다. 학습된 State-Value Function을 Baseline으로 사용하는 REINFORCE의 전체 Pseudocode는 다음과 같습니다.
 
-![](/images/Reinforcement Learning/13. Policy Gradient Methods/RL 13-04.png){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/RL/013/04.png?raw=true){: .align-center}
 
 위의 알고리즘에는 두 개의 Step-size Parameter인 $\alpha^{\boldsymbol{\theta}}$와 $\alpha^{\mathbf{w}}$가 있습니다. 이 중 $\alpha^{\mathbf{w}}$를 선택하는 것은 비교적 쉽습니다. 예를 들어, Section 9.6에서와 같이 Linear의 경우 $\alpha^{\mathbf{w}} = 0.1 / \mathbb{E} [ \lVert \nabla \hat{v} (S_t, \mathbf{w}) \rVert^2_{\mu}]$라는 경험적인 법칙이 있었습니다. 하지만 $\alpha^{\boldsymbol{\theta}}$는 Reward의 범위와 Policy 매개변수화에 따라 결정해야하기 때문에 명확한 방법이 존재하지 않습니다.
 
-![](/images/Reinforcement Learning/13. Policy Gradient Methods/RL 13-05.png){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/RL/013/05.png?raw=true){: .align-center}
 
 위의 그림은 예제 13.1에서 Baseline이 있는 경우와 없는 경우 REINFORCE의 성능을 비교합니다. 이 비교에 사용된 State-Value Function의 추정값은 $\hat{v} (s, \mathbf{w}) = w$입니다. 즉, $\mathbf{w}$는 단일 요소 $w$로 구성되어 있습니다. 그래프를 보시면, 수렴되는 값은 두 방법이 차이가 없지만, Baseline을 사용하는 방법이 더 빠르게 수렴함을 알 수 있습니다.
 
@@ -185,11 +184,11 @@ $$ \begin{align}
 
 이 업데이트와 짝을 이루는 State-Value Function의 학습 방법은 Semi-gradient TD(0)입니다. 이것을 반영한 전체 알고리즘의 Pseudocode는 다음과 같습니다. 이 알고리즘은 State, Action, 그리고 Reward가 발생하는 즉시 처리되는 완전한 On-line Incremental 알고리즘이라는 점에 유의하시기 바랍니다.
 
-![](/images/Reinforcement Learning/13. Policy Gradient Methods/RL 13-06.png){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/RL/013/06.png?raw=true){: .align-center}
 
 위의 1-step 방법의 Forward View에 대한 일반화 및 $n$-step으로의 일반화는 간단합니다. 이 때, 식 (13.12)의 1-step Return은 각각 $G_{t:t+n}$ 또는 $G^{\lambda}_t$로 대체됩니다. $\lambda$-return 알고리즘의 Backward View도 12장의 패턴을 따라 Actor와 Critic에 대해 별도의 Eligibility Trace를 사용하여 처리합니다. 이것을 반영한 전체 알고리즘의 Pseudocode는 다음과 같습니다.
 
-![](/images/Reinforcement Learning/13. Policy Gradient Methods/RL 13-07.png){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/RL/013/07.png?raw=true){: .align-center}
 
 ## Policy Gradient for Continuing Problems
 
@@ -207,7 +206,7 @@ $$\sum_s \mu (s) \sum_a \pi (a|s, \boldsymbol{\theta}) p(s'|s,a) = \mu (s'), \qu
 
 (Backward View) Continuing Task에서 Actor-Critic 알고리즘의 전체 Pseudocode는 다음과 같습니다.
 
-![](/images/Reinforcement Learning/13. Policy Gradient Methods/RL 13-08.png){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/RL/013/08.png?raw=true){: .align-center}
 
 이러한 Continuing Task에서 Value Function은 각각 $v\_{\pi} (s) \doteq \mathbb{E}\_{\pi} \left[ G\_t \mid S\_t = s \right]$ (State-Value)와 $q\_{\pi} (s, a) \doteq \mathbb{E} \left[ G\_t \mid S\_t = s, A\_t = a \right]$ (Action-Value)로 정의됩니다. 이 때, Return $G\_t$는 다음과 같습니다.
 
@@ -249,7 +248,7 @@ $$p(x) \doteq \frac{1}{\sigma \sqrt{2 \pi}} \exp \left( - \frac{(x - \mu)^2}{2 \
 
 Probability Density Function에서 $\mu$는 Normal Distribution의 평균이고, $\sigma$는 표준편차입니다. 이 때 $p(x)$는 $x$가 일어날 확률이 아니라 $x$에서의 Probability Density입니다. 즉, 1보다 클 수도 있습니다. 합이 1이 되어야 하는 부분은 $p(x)$와 $x$축 사이의 총 넓이입니다. 일반적으로 $x$의 값을 범위로 정하여 적분을 취하면 해당 범위 내에 $x$가 존재할 확률을 구할 수 있습니다. Probability Density Function에서 평균과 표준편차의 값에 따라 나타낸 그래프는 다음과 같습니다.
 
-![](/images/Reinforcement Learning/13. Policy Gradient Methods/RL 13-09.png){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/RL/013/09.png?raw=true){: .align-center}
 
 Probability Density Function을 기반으로 Policy 매개변수화를 생성하기 위해서는, Policy를 State에 따라 달라지는 매개변수 함수 근사가 제공하는 평균 및 표준편차와 함께 실수 값 Scalar Action을 Normal Probability Density로 정의하면 됩니다. 즉,
 

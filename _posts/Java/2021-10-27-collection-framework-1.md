@@ -1,7 +1,6 @@
 ---
 title: "Collection Framework (1)"
 permalink: /java/collection-framework-1/
-classes: wide
 toc: true
 toc_label: "Table of Contents"
 toc_sticky: true
