@@ -10,7 +10,7 @@ tags:
   - machine learning
 ---
 
-![](/images/Machine Learning/1. The Learning Problem/ML 01-02.png){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/ML/001/01.png?raw=true){: .align-center}
 
 1장은 어떤 것이 Learning Problem인가에 대해 설명하는 강의입니다.
 
@@ -18,13 +18,13 @@ tags:
 
 ## Outline
 
-![](/images/Machine Learning/1. The Learning Problem/ML 01-03.png){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/ML/001/02.png?raw=true){: .align-center}
 
 이번 장은 총 다섯 부분으로 구성되어 있습니다. 첫째로 기계학습의 예시를 보여주고, 둘째로 기계학습의 구성 요소를 설명합니다. 셋째로 간단한 예시 모델을 설명하며, 넷째로 기계학습의 종류를 설명합니다. 마지막으로 간단한 퍼즐을 통해 이번 장에서 배운 내용을 점검하게 됩니다.
 
 ## Example of Machine Learning
 
-![](/images/Machine Learning/1. The Learning Problem/ML 01-04.png){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/ML/001/03.png?raw=true){: .align-center}
 
 먼저 간단한 기계 학습의 예시를 들면서 시작하겠습니다.
 
@@ -46,7 +46,7 @@ tags:
 
 따라서, 세 조건을 모두 만족하므로 영화를 추천하는 문제는 기계학습으로 해결할 수 있다고 말할 수 있습니다.
 
-![](/images/Machine Learning/1. The Learning Problem/ML 01-05.png){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/ML/001/04.png?raw=true){: .align-center}
 
 그럼 이 문제를 한번 분석해봅시다.
 
@@ -56,7 +56,7 @@ tags:
 
 그러나, 이 방법은 단순한 해결 방법의 한 종류일 뿐, 기계학습으로 해결했다고 말할 수 없습니다.
 
-![](/images/Machine Learning/1. The Learning Problem/ML 01-06.png){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/ML/001/05.png?raw=true){: .align-center}
 
 그럼 어떤 방식으로 해결해야 기계학습으로 해결했다고 말할 수 있을까요?
 
@@ -70,19 +70,19 @@ tags:
 
 ## Components of Learning
 
-![](/images/Machine Learning/1. The Learning Problem/ML 01-07.png){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/ML/001/06.png?raw=true){: .align-center}
 
 이제 다른 예시를 하나 더 들어봅시다.
 
 만약 당신이 카드 회사에서 카드를 발급해주는 직원이라고 가정해보겠습니다. 그리고 어떤 사람이 당신에게 카드 발급 신청서를 작성하여 제출했습니다. (그 신청서의 내용은 슬라이드에 나와있는 표와 같다고 생각합시다) 이제 당신은 이 사람에게 카드를 발급해 줄 지, 아니면 거부할지 판단해야 합니다.
 
-![](/images/Machine Learning/1. The Learning Problem/ML 01-08.png){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/ML/001/07.png?raw=true){: .align-center}
 
 이 문제를 구체적으로 모델링을 해봅시다. 이전 슬라이드에 나와있는 표의 요소를 Input $\mathbf{x}$로 설정합니다. 즉, $\mathbf{x} =$ (나이, 성별, 연봉, ...) 으로 이루어진 Vector입니다. $y$는 해당 Input $\mathbf{x}$에 대한 Output입니다. 카드를 발급해준다면 $y = +1$, 그렇지 않다면 $y = -1$ 입니다. 그리고 Input $\mathbf{x}$와 결과 $y$를 완벽하게 매칭한 함수 $f$가 있다고 가정해봅시다. 3번 슬라이드에서도 언급했듯이, 이 함수는 당연히 구할 수 없습니다. 하지만 이 함수를 구하는 것이 궁극적인 **목적**이므로, 이 함수의 이름을 <span style="color:red">Target Function</span>이라 부릅니다.
 
 Data는 지금까지 카드를 발급하거나 거부했던 지원자들의 목록입니다. 이를 기반으로 새로운 지원자의 카드 발급 여부를 결정할 것입니다. 이를 통하여 우리의 목적은 ($f$라고 예상되는) Hypothesis function $g$를 도출하는 것입니다.
 
-![](/images/Machine Learning/1. The Learning Problem/ML 01-09.png){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/ML/001/08.png?raw=true){: .align-center}
 
 이전 슬라이드의 요소들을 도식화하면 위와 같습니다.
 
@@ -90,7 +90,7 @@ Data는 지금까지 카드를 발급하거나 거부했던 지원자들의 목�
 
 이 기록들을 Training Examples, Training Set, 또는 간단하게 <span style="color:red">Sample</span> 로 부릅니다.
 
-![](/images/Machine Learning/1. The Learning Problem/ML 01-10.png){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/ML/001/09.png?raw=true){: .align-center}
 
 Hypothesis Set은 이 데이터를 통해 함수 $g$를 구할 수 있는 후보입니다. 가령 모든 지원자들의 카드 발급을 거부한다는 것도 하나의 Hypothesis라고 볼 수 있습니다. 이런 것들을 포함해 모든 Hypothesis들의 집합이 바로 Hypothesis Set입니다. 쉽게 얘기하자면, **정답 후보들의 집합**이라고 이해하시면 됩니다. 그렇다면 이제 정답(이라고 생각되는 것)을 구하기 위해 여러분이 갖고있는 데이터와 이런 가설을 묶어 Learning Algorithm을 사용해 Final Hypothesis를 결과물로 도출합니다. Learning Algorithm이라는 것은 앞으로 배울 Perceptron Learning Algorithm이라던가, Neural Network라던가, Support Vector Machine 등을 일컫는 말입니다. 이 두 가지를 합쳐 <span style="color:red">Learning Model</span> 이라 부릅니다.
 
@@ -98,7 +98,7 @@ Hypothesis Set은 이 데이터를 통해 함수 $g$를 구할 수 있는 후보
 
 ## A Simple Model
 
-![](/images/Machine Learning/1. The Learning Problem/ML 01-11.png){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/ML/001/10.png?raw=true){: .align-center}
 
 이해를 돕기 위해 구체적인 하나의 Model로 예시로 들어보겠습니다. 이 방법은 <span style="color:red">Perceptron</span>이라고 합니다.
 
@@ -112,7 +112,7 @@ $$w_1 x_1 + w_2 x_2 + ... + w_d x_d = \sum_{i=1}^d w_i x_i$$
 
 $\text{sign}$의 의미는 괄호 안의 값이 양수이면 $+1$이고 음수이면 $-1$의 값으로 정한다는 뜻입니다. 예를 들어 $\text{sign}(-0.2) = -1$, $\text{sign}(3.4) = +1$ 입니다. 식에서 빨간색으로 표현된 값들이 구해야 할 값들입니다. ($x_i$는 고객의 데이터로 처음부터 주어진 값이기 때문에 구할 필요가 없습니다)
 
-![](/images/Machine Learning/1. The Learning Problem/ML 01-12.png){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/ML/001/11.png?raw=true){: .align-center}
 
 표현을 조금 간단하게 하기 위해, 식을 수정해보겠습니다.
 
@@ -124,7 +124,7 @@ Threshold를 $w_0$으로 표현하겠습니다. 눈썰미가 좋으신 분들은
 
 방금까지 유도해낸 Hypothesis $h$ (Perceptron)는 결국 두 Vector(또는 Matrix)의 곱으로 이루어진 Linear (선형)식이기 때문에 이 방법으로 데이터를 완벽하게 구분하려면(카드를 발급해줄 사람과 거부해줄 사람을 구분하려면) 반드시 데이터를 직선 하나로 나눌 수 있어야 합니다. 이것을 <span style="color:red">Linearly Separable</span> 데이터라고 합니다.
 
-![](/images/Machine Learning/1. The Learning Problem/ML 01-13.png){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/ML/001/12.png?raw=true){: .align-center}
 
 그럼 이 Perceptron에서 Weight Vector $\mathbf{w}$를 구하는 것이 목적이 되었습니다. 여기서는 간단한 알고리즘인 <span style="color:red">Perceptron Learning Algorithm (PLA)</span>을 소개합니다.
 
@@ -136,7 +136,7 @@ $$\mathbf{w} = \mathbf{w} + y_n \mathbf{x}_n$$
 
 그렇게 하면 위 슬라이드의 오른쪽 그림과 같이 Weight Vector $\mathbf{w}$의 방향이 수정됩니다.
 
-![](/images/Machine Learning/1. The Learning Problem/ML 01-14.png){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/ML/001/13.png?raw=true){: .align-center}
 
 이것을 11번 슬라이드에서 보았던 그림처럼 표현한다면 13번 슬라이드의 오른쪽 그림과 같습니다. 분홍색 선이 현재의 Weight Vector $\mathbf{w}$의 위치입니다. (13번 슬라이드 식의 빨간색 $\mathbf{w}$를 의미합니다) 동그라미 친 파란색 (+) 데이터가 Perceptron 식에 대입이 되었다고 가정해봅시다. 그렇다면 이 (+) 데이터는 Misclassified (잘못 분류된) 데이터이기 때문에 (양의 값을 가지는 Output인데 음의 값을 가지는 Output들과 같이 분류되어 있으므로) Weight Vector $\mathbf{w}$의 업데이트가 필요합니다. 따라서 현재의 분홍색 선이 왼쪽방향으로 살짝 휘게 되어 새로운 Weight Vector $\mathbf{w}$가 나오게 됩니다. (13번 슬라이드 식의 파란색 $\mathbf{w}$를 의미합니다)
 
@@ -151,27 +151,27 @@ $$\mathbf{w} = \mathbf{w} + y_n \mathbf{x}_n$$
 
 ## Types of Learning
 
-![](/images/Machine Learning/1. The Learning Problem/ML 01-15.png){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/ML/001/14.png?raw=true){: .align-center}
 
 이제 기계학습에 어떤 종류가 존재하는지 하나씩 살펴보겠습니다.
 
-![](/images/Machine Learning/1. The Learning Problem/ML 01-16.png){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/ML/001/15.png?raw=true){: .align-center}
 
 기본적으로 학습의 전제는 **A Set of Observations (관찰된 결과의 집합)을 사용하여 Underlying Process (근본적인 과정)를 밝혀낸다** 입니다. 여기서 Underlying Process가 의미하는 것은 어떤 데이터를 출력하는지에 대한 Probability Distribution (확률 분포)이고, A Set of Observations이란 그 Probability Distribution으로부터 생성된 Data(=Sample)라는 뜻입니다. 이 전제가 굉장히 방대하기 때문에, 이 전제를 만족하는 방법은 수많은 종류가 있습니다.
 
 여기서는 크게 3가지로 나누어 Supervised Learning, Unsupervised Learning, 그리고 Reinforcement Learning이 소개되어 있습니다.
 
-![](/images/Machine Learning/1. The Learning Problem/ML 01-17.png){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/ML/001/16.png?raw=true){: .align-center}
 
 <span style="color:red">Supervised Learning (지도학습)</span>이란 사람이 데이터를 학습시킬 때 Input $\mathbf{x}$와 정답 Label $y$를 주고 학습시키는 방법입니다.
 
 슬라이드의 예제에서는 자판기에서 사용되는 동전 분류 방법을 제시하고 있습니다. 동전은 종류에 따라(각인되어있는 액수에 따라) 각각 크기와 질량이 다릅니다. 다만 같은 액수의 동전이라고 해도 이것들이 완벽하게 같지는 않습니다. 왜냐하면 동전은 사용되면서 이물질이 묻을 수도 있고, 닳을 수도 있기 때문입니다. 이 예제에서 Supervised Learning을 사용한다면 자판기에 동전을 넣어주면서 **이것이 10센트 동전이다**, **이것이 25센트 동전이다**라고 정답을 입력해주는 것입니다. 이렇게 되면 위 슬라이드의 왼쪽 그림과 같이 각 동전의 크기와 질량 분포를 알 수 있고, 이를 사용하여 오른쪽 그림과 같이 동전을 분류할 수 있는 것입니다.
 
-![](/images/Machine Learning/1. The Learning Problem/ML 01-18.png){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/ML/001/17.png?raw=true){: .align-center}
 
 다음으로 <span style="color:red">Unsupervised Learning (비지도학습)</span>은 Supervised Learning과는 다르게 Input $\mathbf{x}$만 주고 정답 $y$를 제공하지 않는 방법입니다. 자판기 예제로 돌아가보면, 동전의 크기와 질량을 기준으로 위의 그래프와 같이 명확하게 구분할 수는 있지만, 어느 분포가 어느 액수의 동전인지를 구분할 수 없습니다. 언뜻 보면 왜 쉬운 Supervised Learning을 놔두고 Unsupervised Learning을 사용하는지 의문이 들 수도 있습니다만, 일반적으로 정답이 주어져 있는 데이터보다 주어져 있지 않은 데이터가 훨씬 많으므로 이 방법을 연구하는 것도 상당히 중요합니다. Unsupervised Learning은 주로 **Clustering (군집화)**을 통해 구현합니다.
 
-![](/images/Machine Learning/1. The Learning Problem/ML 01-19.png){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/ML/001/18.png?raw=true){: .align-center}
 
 마지막으로 <span style="color:red">Reinforcement Learning (강화학습)</span>은 Supervised Learning이나 Unsupervised Learning과는 전혀 다른 구조를 갖고 있습니다. Reinforcement Learning도 앞의 두 방법과 마찬가지로 Input $\mathbf{x}$가 주어집니다. 그러나 이 Input에 대해 정답이 주어지는 것이 아니라 이것이 얼마나 괜찮은지에 대한 평가를 하게 됩니다.
 
@@ -183,7 +183,7 @@ $$\mathbf{w} = \mathbf{w} + y_n \mathbf{x}_n$$
 
 ## A Learning Puzzle
 
-![](/images/Machine Learning/1. The Learning Problem/ML 01-20.png){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/ML/001/19.png?raw=true){: .align-center}
 
 지금까지 배운 내용을 토대로 간단한 퍼즐 문제를 풀어보도록 하겠습니다.
 
