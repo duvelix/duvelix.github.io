@@ -17,65 +17,65 @@ tags:
 
 SEO에 관련된 플러그인 중, 가장 많이 사용하는 플러그인은 **All In One SEO**와 **Yoast SEO**입니다. Yoast SEO가 더 많은 기능을 제공하지만 더 무겁다고 합니다. 저는 SiteGround에서 워드프레스를 만들 때, Yoast SEO 플러그인을 자동으로 설치해주었기 때문에 이 플러그인을 이용하려자 합니다.
 
-![](/images/WordPress/9. Install Yoast Plugin/WP 09-01.png){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/WordPress/009/01.png?raw=true){: .align-center}
 
 저는 Yoast 플러그인이 이미 설치되었지만, 만약 설치하지 않으신 분들은 워드프레스 관리자 화면에서 플러그인 - 새로 추가를 통해 쉽게 설치할 수 있습니다. 플러그인 설치는 지금까지 여러 포스트에서 보여드렸기 때문에 여기서는 설치 과정을 생략하도록 하겠습니다.
 
-![](/images/WordPress/9. Install Yoast Plugin/WP 09-02.png){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/WordPress/009/02.png?raw=true){: .align-center}
 
 Yoast SEO 플러그인을 설치하고 활성화하면, 왼쪽 메뉴에 SEO 라는 항목이 추가됩니다. 마우스를 **SEO**에 올리면 서브 메뉴가 펼쳐지는데, 이 중 <span style="color:red">General</span>를 클릭합니다.
 
-![](/images/WordPress/9. Install Yoast Plugin/WP 09-03.png){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/WordPress/009/03.png?raw=true){: .align-center}
 
 Yoast SEO를 설치하고 처음 사용하는 것이기 때문에 설정 마법사를 실행해주어야 합니다. Dashboard에서 바로 보이는 <span style="color:red">configuration wizard</span>를 클릭합니다.
 
 ## Yoast SEO 설정 마법사
 
-![](/images/WordPress/9. Install Yoast Plugin/WP 09-04.png){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/WordPress/009/04.png?raw=true){: .align-center}
 
 configuration wizard를 클릭하면 바로 설정 마법사로 넘어갑니다. 가장 먼저 웹 사이트의 환경을 설정해주어야 합니다. 두 가지 옵션이 있는데, 만약 현재 블로그가 정상적으로 운영중이라면 **Option A**를, 아직 공사중일 경우에는 **Option B**를 선택하시면 됩니다. 알맞은 옵션을 선택하신 후, <span style="color:red">Next</span>를 클릭합니다.
 
-![](/images/WordPress/9. Install Yoast Plugin/WP 09-05.png){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/WordPress/009/05.png?raw=true){: .align-center}
 
 다음으로는 웹 사이트가 어떤 목적인지 선택해야합니다. 저는 블로그이기 때문에 **A Blog**를 선택했습니다. 목록을 보시고, 운영하고 있는 웹 사이트의 목적을 선택하시면 됩니다. 선택하셨다면 <span style="color:red">Next</span>를 클릭하세요.
 
-![](/images/WordPress/9. Install Yoast Plugin/WP 09-06.png){: width="600"}{: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/WordPress/009/06.png?raw=true){: width="600"}{: .align-center}
 
 이제는 웹 사이트가 **Person (개인)**인지, **Organization (단체)**인지를 선택해주어야 합니다. 저는 이 부분에서 고민을 좀 했는데, 제 블로그는 KEEPMIND라는 브랜드로 운영하고 있기 때문에 Organization으로 선택했습니다. Organization을 선택했다면 위처럼 로고를 업로드할 수 있습니다.
 
-![](/images/WordPress/9. Install Yoast Plugin/WP 09-07.png){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/WordPress/009/07.png?raw=true){: .align-center}
 
 마우스 스크롤을 아래로 내리면 운영하고 있는 SNS 또한 입력할 수 있습니다. 저는 페이스북, 인스타그램, 유튜브의 주소를 입력하였습니다. 입력을 마쳤으면 <span style="color:red">Next</span>를 클릭합니다.
 
-![](/images/WordPress/9. Install Yoast Plugin/WP 09-08.png){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/WordPress/009/08.png?raw=true){: .align-center}
 
 4번째 단계는 검색 엔진에 노출시킬 부분을 정하는 부분입니다. 당연히 게시한 글은 Yes로 체크해야 검색 엔진에 노출됩니다. 제 블로그의 홈 화면은 페이지로 만들었기 때문에 페이지도 **Yes**로 체크했습니다. Cloud Templates는 Newspaper 테마를 사용하고 계신 분들에게만 나올 텐데, 이 부분은 테마에만 영향을 주는 부분이기 때문에 **No**를 선택하였습니다. 선택을 하셨으면 <span style="color:red">Next</span>를 클릭합니다.
 
-![](/images/WordPress/9. Install Yoast Plugin/WP 09-09.png){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/WordPress/009/09.png?raw=true){: .align-center}
 
 다음 단계는 웹 사이트의 글쓴이가 여러 명인지를 물어보는 항목입니다. 저는 혼자서 글을 쓰고 있기 때문에 **No**를 선택하였습니다. 선택을 하시고 <span style="color:red">Next</span>를 클릭합니다.
 
-![](/images/WordPress/9. Install Yoast Plugin/WP 09-10.png){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/WordPress/009/10.png?raw=true){: .align-center}
 
 6번째 단계에서는 웹 사이트의 이름을 설정하고, 웹 사이트와 게시글의 구분 문자를 어떤 것으로 정할지 선택하는 부분입니다. 저는 그냥 기본 설정인 '-'로 설정하였습니다. 예를 들어, 홈 화면에서는 페이지 이름이 Home - KEEPMIND 로 나오게 되는 형식입니다. 선택을 하셨으면 <span style="color:red">Next</span>를 클릭합니다.
 
-![](/images/WordPress/9. Install Yoast Plugin/WP 09-11.png){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/WordPress/009/11.png?raw=true){: .align-center}
 
-![](/images/WordPress/9. Install Yoast Plugin/WP 09-12.png){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/WordPress/009/12.png?raw=true){: .align-center}
 
 다음으로 Yoast에서 보내는 이메일을 받을 것인지 물어봅니다. 저는 딱히 필요 없을 것 같아 선택하지 않았습니다. 스크롤을 아래로 내리고 <span style="color:red">Next</span>를 클릭합니다.
 
-![](/images/WordPress/9. Install Yoast Plugin/WP 09-13.png){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/WordPress/009/13.png?raw=true){: .align-center}
 
 드디어 길고 긴 설정이 끝났습니다. <span style="color:red">Close</span>를 클릭하시면 다시 워드프레스의 관리자 화면으로 돌아갑니다.
 
-![](/images/WordPress/9. Install Yoast Plugin/WP 09-14.png){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/WordPress/009/14.png?raw=true){: .align-center}
 
 워드프레스 관리자 화면으로 돌아오시면 SEO 세팅이 끝났다는 메시지가 나옵니다. 이제 글을 쓸 때 SEO가 얼마나 좋은지, 글을 얼마나 잘 썼는지를 알 수 있습니다.
 
 ## Yoast SEO 사용 예시
 
-![](/images/WordPress/9. Install Yoast Plugin/WP 09-15.png){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/WordPress/009/15.png?raw=true){: .align-center}
 
 글을 작성하실 때 맨 아래로 가시면 위와 같은 SEO 분석이 나옵니다. SEO 탭은 해당 글의 **Focus keyphrase (핵심 문구)**를 적을 수 있고, Focus keyphrase가 얼마나 적절한지 알려줍니다. 아직 입력하지 않았을 경우 위처럼 회색의 원으로 표시됩니다.
 
