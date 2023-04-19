@@ -117,7 +117,7 @@ Big-O 표기법과 오메가 표기법과는 달리, 세타 표기법은 상한�
 
 **Example 1.18 [Complexity of Matrix Addition]**
 
-![](/images/Data Structure/3. Basic Concepts (3)/DS 03-01.png){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/Data%20Structure/003/01.png?raw=true){: .align-center}
 
 이 방법은 지난 포스트에서 다루었던 테이블 방법(Tabular Method)과 비슷합니다. 하지만 테이블 방법에서 엄격하게 계산했던 Step/Execution, Frequency 등을 오차없이 정확하게 계산하는 것이 아니라, 대략적으로 이정도의 세타 표기법을 갖는다는 것만 보이고 넘어가면 훨씬 간단합니다. 또한 합산할 때도 가장 큰 시간 복잡도만 고려하면 된다는 장점이 있습니다.
 
@@ -135,7 +135,7 @@ $T_{perm}(i + 1, n)$은 $i + 1 \le n$일 때 적어도 $n$번 수행되므로, $
 
 이번에는 마방진(Magic Square) 생성 문제의 시간 복잡도를 구해보겠습니다. 마방진은 1부터 $n^2$까지의 자연수를 $n \times n$ 크기의 행렬에 집어넣어 각각의 행, 열, 그리고 주 대각선(Major Diagonal)의 합이 모두 같은 특징을 가지고 있습니다.  예를 들어, 다음은 $n = 5$일 때의 마방진 예시입니다. 이 마방진은 각각의 행, 열, 주 대각선의 합이 65로 동일함을 확인할 수 있습니다.
 
-![](/images/Data Structure/3. Basic Concepts (3)/DS 03-02.png){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/Data%20Structure/003/02.png?raw=true){: .align-center}
 
 마방진을 만드는 방법은 복잡해 보이지만, $n$이 홀수일 때는 Coxeter의 규칙을 사용하여 쉽게 만들 수 있습니다. 이 규칙에 따르면 먼저 1을 첫째 행 가운데에 놓고, 왼쪽 위 대각선 방향으로 올라가면서 1씩 큰 수를 삽입하는 것입니다. 만약 왼쪽이나 위로 올라갈 수 없다면, 반대편 자리로 이동해서 반복합니다. 예를 들어, 첫째 행 가운데의 1에서 왼쪽 위로 올라갈 수 없으니, 왼쪽 마지막 행에 2를 삽입하는 방식입니다. 만약 다음에 들어갈 자리가 빈 칸이 아니라면, (ex. 5 다음 위치에 1이 채워져 있는 경우) 바로 아래에 다음 번호를 삽입합니다.
 
@@ -214,7 +214,7 @@ int main(){
 
 다음 그림은 인스턴스 특성 $n$에 따라 각 시간 복잡도가 어떻게 변하는지 나타낸 그래프입니다. 비록 그래프 상에서는 지수형태의 시간 복잡도가 결과적으로 가장 높게 나오지만, $n \le 5$인 경우에서는 그렇게 큰 차이가 나지 않음을 알 수 있습니다.
 
-![](/images/Data Structure/3. Basic Concepts (3)/DS 03-03.png){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/Data%20Structure/003/03.png?raw=true){: .align-center}
 
 ## Performance Measurement
 
@@ -304,7 +304,7 @@ void sort(int list[], int n){
 
 다만 프로그램을 이용해 정확한 시간의 변화를 알아보기 위해서는 같은 인스턴스 특성에 대해 여러 번 실행해 본 다음 평균 값을 계산해야 합니다. 아래의 그래프는 교재의 저자가 실제로 다수의 테스트를 통해 얻은 소요 시간 그래프입니다. Big-O 표기법과 완벽하게 일치하지는 않지만, 대략적으로 $n^2$을 따르는 것을 확인할 수 있습니다.
 
-![](/images/Data Structure/3. Basic Concepts (3)/DS 03-04.png){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/Data%20Structure/003/04.png?raw=true){: .align-center}
 
 ## Generating Test Data
 
