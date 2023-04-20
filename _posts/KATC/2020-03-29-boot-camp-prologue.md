@@ -1,7 +1,6 @@
 ---
 title: "전문연구요원 훈련소 후기 - 프롤로그"
 permalink: /katc/boot-camp-0/
-classes: wide
 toc: true
 toc_label: "Table of Contents"
 toc_sticky: true
@@ -77,19 +76,19 @@ tags:
 
 ### (1) 손목 시계
 
-![](/images/KATC/0. Prologue/00-01.jpg){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/KATC/000/01.jpg?raw=true){: .align-center}
 
 군대에서는 시간을 확인할 일이 굉장히 많습니다. 집합을 할 때도 몇 시 몇 분까지 집합! 이런 식으로 명령이 내려오기 때문에 다른 건 몰라도 손목 시계만큼은 꼭 가져가는 것을 추천합니다. 생활관 내에 시계가 배치되어 있긴 하지만 그 외의 장소에는 시계가 없으므로 가져가지 않는다면 답답할 수 있습니다. 특히 불침번을 설 때 매우 유용합니다. 비싼 거 살 필요 없이, 만원 정도에 팔고있는 카시오 시계를 구매하는 것을 추천합니다.
 
 ### (2) 큰 가방 (가급적이면 여행용 캐리어)
 
-![](/images/KATC/0. Prologue/00-02.jpg){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/KATC/000/02.jpg?raw=true){: .align-center}
 
 위에 적은 대로 훈련소에서는 보급품이 굉장히 많습니다. 게다가 휴지나 치약같은 소모품을 제외하고는 무조건 집에 가져가게 시키는데, 가방이 작다면 들고가는데 꽤나 문제가 생깁니다. 비닐 봉지나 박스 같은 것을 구매할 수 있게는 해주는데, 이왕이면 아예 커다란 여행용 캐리어를 들고 가는 것이 좋습니다. 캐리어가 아니더라도 가방은 무조건 커야합니다.
 
 ### (3) 신분증 및 나라사랑카드
 
-![](/images/KATC/0. Prologue/00-03.jpg){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/KATC/000/03.jpg?raw=true){: .align-center}
 
 이거 없으면 훈련소에서 받아주질 않습니다. 나라사랑카드를 잃어버렸을 경우에는 훈련소에서도 발급이 가능하긴 합니다. 나라사랑카드만 달랑 가져가면 되는 것이 아니라, 잔액도 10만원 이상은 넣어가는 것이 좋습니다. 나라사랑카드가 없다면 사용이 가능한 신용카드나 잔고가 충분한 체크카드 한개 이상은 꼭 가져가셔야 합니다. 훈련 기간동안 전화나 PX를 몇 번 이용하게 되는데, 이 때 결제를 카드로 하기 때문에 없다면 이용 자체가 불가능합니다.
 
@@ -97,9 +96,9 @@ tags:
 
 ### (4) 귀마개 및 안대
 
-![](/images/KATC/0. Prologue/00-04.jpg){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/KATC/000/04.jpg?raw=true){: .align-center}
 
-![](/images/KATC/0. Prologue/00-05.jpg){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/KATC/000/05.jpg?raw=true){: .align-center}
 
 사람들이 다닥다닥 모여서 자는데 코를 고는 사람이 한명도 없을 확률은 로또에 당첨될 확률과 비슷합니다. 편안한 취침을 위해서는 귀마개는 필수입니다. 위의 보급품 목록에 귀마개가 있으니 안가져가야지~ 하시면 큰일납니다. 보급 귀마개는 입소 당일 주는 것이 아니라 2주차의 사격 훈련 때 지급하기 때문에 안가져가면 열흘 정도는 제대로 못잘수도 있습니다.
 
@@ -107,7 +106,7 @@ tags:
 
 ### (5) 샴푸, 바디 워시 등의 세면 도구
 
-![](/images/KATC/0. Prologue/00-06.jpg){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/KATC/000/06.jpg?raw=true){: .align-center}
 
 훈련소 보급품 목록을 보시면 아시겠지만 세면 도구는 칫솔, 치약, 비누가 끝입니다. 샴푸를 가져가지 않는다면 한 달 내내 비누로 머리를 감아야 합니다. 다른건 몰라도 샴푸는 꼭 가져가도록 합시다. 세수를 할 때도 비누보다는 클렌징 폼 같은 것이 좋습니다.
 
@@ -115,25 +114,25 @@ tags:
 
 ### (6) 로션 및 핸드크림
 
-![](/images/KATC/0. Prologue/00-07.jpg){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/KATC/000/07.jpg?raw=true){: .align-center}
 
 군대에서는 손을 매우 자주 씻을 뿐만 아니라 식사 후 설거지도 본인이 해야합니다. 이렇게 자주 손에 물이 닿는 환경에서 핸드크림이 없다면 큰일납니다. 저는 사회에서 핸드크림을 거의 바르지 않았는데, 군대에서는 하도 손이 터서 하루에 3번씩 발랐습니다. 끝까지 핸드크림을 바르지 않은 몇몇 동기들은 나중에 손에 피까지 났습니다. 겨울철에 입소하시는 분이라면 무조건 가져가야 하고, 여름철에 입소하신다고 해도 가급적이면 가져가시는 것이 좋습니다.
 
 ### (7) 수건 (특히 샤워용)
 
-![](/images/KATC/0. Prologue/00-08.jpg){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/KATC/000/08.jpg?raw=true){: .align-center}
 
 보급품으로 수건을 2개 주기는 하는데, 이건 사실상 손씻고 나서 닦는 용도지 샤워할 때 쓰기에는 잘 닦이지도 않고 갯수도 부족합니다. 샤워할 때 쓰는 용도로 넉넉하게 3~5장 정도 가져가시면 요긴하게 사용할 수 있습니다. 저는 샤워 수건 2개를 가져갔는데 빨래를 자주 할 수 있는게 아니다보니 부족했습니다.
 
 ### (8) 볼펜
 
-![](/images/KATC/0. Prologue/00-09.jpg){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/KATC/000/09.jpg?raw=true){: .align-center}
 
 볼펜은 첫날부터 나가는 그 날까지 써야되는 도구입니다. 첫날에 도착하고 나면 여러 가지 서류를 작성해야 하는데, 볼펜을 따로 주지 않습니다. 일기나 편지를 쓸때도 유용하고 정훈 교육을 들을 때 필기할 용도로도 좋으니 한 개 이상은 꼭 들고가도록 합시다.
 
 ### (9) 상비약 (특히 감기약)
 
-![](/images/KATC/0. Prologue/00-10.jpg){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/KATC/000/10.jpg?raw=true){: .align-center}
 
 사실 처방전이 있는 약을 제외한 상비약은 소지 금지 품목입니다. 훈련소 첫 날 핸드폰, 담배와 같이 꼭 내라고 언급하는 물품이긴 하지만, 가방까지 뒤져서 찾지는 않기 때문에 눈치껏 숨겨두면 됩니다. 상비약이 반입금지 물품인 이유는 군대 내에서 스트레스로 인해 한번에 많은 양의 약을 먹고 자살하려는 훈련병이 있기 때문인데, 사실 한 달 있으면 집에 가는 전문연구요원들에게는 의미가 없습니다.
 
@@ -143,7 +142,7 @@ tags:
 
 ### (10) 무릎 및 팔꿈치 보호대
 
-![](/images/KATC/0. Prologue/00-11.jpg){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/KATC/000/11.jpg?raw=true){: .align-center}
 
 이건 가져가서 딱 3일 쓰게 됩니다. 그럼에도 꼭 가져가야 하는 이유는 각개 전투 때 이게 없다면 무릎과 팔꿈치가 다 망가집니다. 전문연구요원 훈련은 보충역 훈련 중에서도 널널한 편에 속하지만, 그럼에도 불구하고 각개 전투 30분만에 팔꿈치와 무릎에 멍이 들고 상처가 납니다. 무조건 가져가는 것이 좋습니다.
 
@@ -151,7 +150,7 @@ tags:
 
 ### (1) 우표
 
-![](/images/KATC/0. Prologue/00-12.jpg){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/KATC/000/12.jpg?raw=true){: .align-center}
 
 아마 훈련소에서 수료하기 전까지 편지를 적어도 한 개 이상은 작성할 것입니다. 만약 애인이 있다면 더 많이 쓸 수도 있겠지요. 기본적으로 1인당 1편은 군사우편을 통해 무료로 편지를 보낼 수 있지만, 그 이후로는 무조건 우표를 붙여야 하기 때문에 편지를 쓸 생각이 있다면 꼭 가져가셔야 합니다. 이건 PX에서도 팔지 않기 때문에 가져가지 않는다면 구할 수가 없습니다. 훈련소 내에서 화폐의 기능도 하기 때문에 넉넉하게 가져가시는 것도 좋습니다.
 
@@ -159,7 +158,7 @@ tags:
 
 ### (2) 책
 
-![](/images/KATC/0. Prologue/00-13.jpg){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/KATC/000/13.jpg?raw=true){: .align-center}
 
 훈련소에서는 의외로 시간이 많이 남습니다. 일정 자체도 여유롭게 주어지는데다 주말이 되면 청소 외에는 정해진 일정이 없기 때문에 책이라도 읽으면서 시간을 때워야 합니다. 생활관에 책이 비치되어 있긴 한데, 대부분 쓸데없는 자기계발서이기 때문에 왠만해서는 재밌는 책을 몇 권 들고가시는 것이 좋습니다. 너무 많이 들고가면 돌아올 때 짐이 되기 때문에 적당히 2~3권 정도면 충분합니다.
 
@@ -167,13 +166,13 @@ tags:
 
 ### (3) 개인 물통
 
-![](/images/KATC/0. Prologue/00-14.jpg){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/KATC/000/14.jpg?raw=true){: .align-center}
 
 생활관 앞에는 항상 물을 마실 수 있도록 정수기와 컵이 비치되어 있습니다. 다만 물을 자주 마시는 사람이라면 목 마를때마다 복도에 나가는 것이 귀찮기도 하고, 특히 밤에 자다 깨서 물 마실때 번거롭기 때문에 가급적이면 텀블러를 하나 가져가는 것이 좋습니다. 새걸 사가기 보다는 쓰던 것을 가져가서 돌아올 때 버리고 오는 것을 추천합니다.
 
 ### (4) 물티슈
 
-![](/images/KATC/0. Prologue/00-15.jpg){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/KATC/000/15.jpg?raw=true){: .align-center}
 
 물티슈는 일단 반입 금지 품목 중 하나입니다. 이유로는 이걸로 용변 후 뒤처리를 할 때 변기가 막힌다는 것인데, 솔직히 그 용도로만 사용하지 않으면 눈치껏 사용할 수 있습니다. 군화에 흙먼지를 닦을 때나, 생활관을 청소할 때 유용하기 때문에 큰 거(100매입) 1~2개 정도 들고가시면 유용하게 사용할 수 있습니다.
 
@@ -181,31 +180,31 @@ tags:
 
 ### (5) 면봉
 
-![](/images/KATC/0. Prologue/00-16.jpg){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/KATC/000/16.jpg?raw=true){: .align-center}
 
 훈련소에서 면봉은 보통 총기 손질 시 사용하게 됩니다. 원래는 부직포같은 천에 기름을 묻혀 총기 부품을 닦는데, 총구 등을 닦을 때 면봉이 훨씬 효율적이기 때문에 가져가시는 것을 추천합니다. 면봉 자체가 워낙 유명한 훈련소 준비물이기 때문에 대부분 다 갖고오기도 하고, 많은 양을 사용하는 것도 아니라 빌려서 사용할 수도 있긴 합니다.
 
 ### (6) 썬크림
 
-![](/images/KATC/0. Prologue/00-17.jpg){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/KATC/000/17.jpg?raw=true){: .align-center}
 
 야외에서 보내는 시간이 많다보니 피부가 쉽게 타게 됩니다. 저는 크게 상관하지 않아서 바르진 않았는데, 훈련소를 마치고 집에 와서 확인해보니 생각보다 꽤 심하게 탔습니다. 피부가 타는 것에 민감하신 분은 꼭 가져가시기 바랍니다.
 
 ### (7) 네임펜
 
-![](/images/KATC/0. Prologue/00-18.jpg){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/KATC/000/18.jpg?raw=true){: .align-center}
 
 여러 명이 동일한 물품을 지급받아 사용하기 때문에 다른 사람들과 물건이 섞일 수가 있습니다. 특히 빨래는 본인만 할 수 있는 것이 아니라 다른 분대원들과 같이 해야하기 때문에 구분하기 위해서는 네임펜이 필수입니다. 속옷, 양말, 셔츠 등에는 꼭 이름이나 교번을 적도록 합시다. 굳이 필수 품목에 넣지 않은 이유는 보통 분대원 중에 한명은 가져오기 때문입니다.
 
 ### (8) 마스크
 
-![](/images/KATC/0. Prologue/00-19.jpg){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/KATC/000/19.jpg?raw=true){: .align-center}
 
 군대에서도 마스크를 지급하긴 합니다. 저는 훈련소 기간 동안 면 마스크 4개와 1회용 마스크(KF94) 6개를 지급받았는데, 아마 우한 폐렴으로 인해 평소보다 많이 지급한 것 같습니다. 다른 분들 후기를 보니 저렇게 많이 지급하지는 않는다고 하더군요. 보급 수량이 적기 때문에 1회용 마스크를 여러 번 재사용해야 하는데, 이것이 찝찝하신 분이라면 마스크를 넉넉하게 들고가시는 것이 좋습니다.
 
 ### (9) 페브리즈
 
-![](/images/KATC/0. Prologue/00-20.jpg){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/KATC/000/20.jpg?raw=true){: .align-center}
 
 아무래도 남자들끼리 단체생활을 하기 때문에 냄새가 납니다. 집에서처럼 빨래를 자주하기도 쉽지 않기 때문에 옷 하나를 며칠 동안 입기도 하므로 페브리즈를 들고가서 자주 뿌려주는 것이 좋습니다. (페브리즈 for men을 추천합니다) PX에서도 판매합니다.
 
@@ -213,7 +212,7 @@ tags:
 
 ### (10) 위생장갑
 
-![](/images/KATC/0. Prologue/00-21.jpg){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/KATC/000/21.jpg?raw=true){: .align-center}
 
 사격 훈련이 있는 2주차부터는 총기손질을 틈나는 대로 하는데, 총기손질 때 기름칠을 하기 때문에 맨손으로 작업하게 되면 손이 기름범벅이 됩니다. 비누로 빡빡 씻어도 잘 닦이지 않고, 기름 냄새가 생각보다 오래가기 때문에 위생장갑을 가져가시면 유용하게 사용할 수 있습니다.
 
@@ -221,13 +220,13 @@ tags:
 
 ### (1) 라이트펜
 
-![](/images/KATC/0. Prologue/00-22.jpg){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/KATC/000/22.jpg?raw=true){: .align-center}
 
 다른 훈련소 후기를 보시면 라이트펜은 아마 취침 시간에 책을 읽거나 불침번 시 편지를 읽는 용도로 사용한다고 소개하는데, 훈련소에 가보시면 알겠지만 취침 시간에는 그냥 자는 것이 제일 좋습니다. 훈련이 없어도 일과 자체가 피곤하기 때문에 잠을 제때 안자면 피곤하고, 불침번 때는 편지를 읽기보다 그냥 조용히 생각을 하는 것이 더 좋습니다. 만약 불침번 때 편지를 읽다가 당직분대장이 본다면 잔소리 듣기 딱 좋기도 합니다.
 
 ### (2) 면도기
 
-![](/images/KATC/0. Prologue/00-23.jpg){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/KATC/000/23.jpg?raw=true){: .align-center}
 
 훈련소에서 지급하는 면도기가 마음에 들지 않을 수 있어서 쓰던 걸 가져오고 싶으신 분들도 있겠지만, 면도날이 흉기가 될 수 있기 때문에 면도기는 반입이 불가능합니다. 불편하시더라도 1달만 참으면 되니까 그냥 지급받은 면도기를 사용하세요.
 
@@ -235,13 +234,13 @@ tags:
 
 ### (3) 물집방지패드
 
-![](/images/KATC/0. Prologue/00-24.jpg){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/KATC/000/24.jpg?raw=true){: .align-center}
 
 훈련소에 가기 전 다른 블로그에서 꼭 필요하다고 해서 가져갔는데 저는 필요가 없었습니다. 요즘 군화가 좋아진 것인지 행군을 하더라도 물집 같은 것이 전혀 생기지 않았습니다. 군화를 보급받을 때 평소의 발 사이즈보다 한 사이즈 크게 신청하면 훈련소 기간 내내 물집이 전혀 생기지 않기 때문에 안가져가셔도 됩니다. 군화 사이즈를 신청할 때, 분대장들도 한 치수 크게 신청하라고 미리 귀뜀해줍니다.
 
 ### (4) 깔창
 
-![](/images/KATC/0. Prologue/00-25.jpg){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/KATC/000/25.jpg?raw=true){: .align-center}
 
 위와 같은 이유로 전혀 필요없는데다 군화를 보급할 때 깔창도 같이 주기 때문에 필요하다면 훈련소 내에서 쉽게 구할 수 있습니다.
 
