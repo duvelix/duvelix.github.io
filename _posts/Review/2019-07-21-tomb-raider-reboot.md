@@ -2,14 +2,14 @@
 title: "툼 레이더 리부트"
 permalink: /review/tomb-raider-reboot/
 classes: wide
-thumbnail: /images/Review/005/00.jpg
+thumbnail: https://github.com/JoonsuRyu/images/blob/master/Review/005/00.jpg?raw=true
 categories:
   - interests
 tags:
   - review
 ---
 
-![](/images/Review/005/00.jpg){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/Review/005/00.jpg?raw=true){: .align-center}
 
 저는 "툼 레이더" 라는 단어를 처음 접한 것이 게임이 아니라 영화였습니다. 툼 레이더 영화도 제가 초등학생 때 나올 정도였기 때문에 툼 레이더 같은 게임을 접하기에는 너무 어렸기 때문입니다. 툼 레이더 영화는 흥행에 성공했을 뿐만 아니라 안젤리나 졸리가 워낙 라라 크로프트의 배역에 잘 어울렸던 탓에 한 때 툼 레이더를 인터넷에 검색하면 게임보다 영화가 더 많이 검색되었던 것으로 기억합니다.
 
@@ -17,36 +17,36 @@ tags:
 
 그러나 즐겨보던 게임 리뷰인 Clueless Gamer에서 툼 레이더 리부트 게임을 리뷰하는 것을 보고 흥미가 생기게 되었고, 그 영상을 접하던 당시 스팀에서 DLC까지 모두 포함한 GOTY Edition이 7천원이라는 값싼 가격에 판매하길래 싼맛에 구입하여 플레이하게 되었습니다. 게임을 설치하고 처음 실행시킬때까지만 해도 큰 기대를 하지 않았으나, 플레이하면 할수록 예상보다 훨씬 재밌는 게임이라는 것을 느끼게 되었습니다.
 
-![](/images/Review/005/01.jpg){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/Review/005/01.jpg?raw=true){: .align-center}
 
 오픈월드 게임이라고 해도 게임 자체의 목적이 있기 때문에 엔딩을 보기 위해서는 어느정도 일직선적인 진행이 요구됩니다. 그렇기에 그 진행을 위한 부분 외에는 모두 부가적인 요소가 되는데, 많은 게임에서 플레이어가 이러한 탐험을 하게 만들도록 동기를 부여합니다. 서브 퀘스트를 통해 메인 스토리 진행에 도움이 되는 보상을 제공하는 것이 대표적인 예라고 할 수 있습니다.
 
-![](/images/Review/005/02.jpg){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/Review/005/02.jpg?raw=true){: .align-center}
 
 툼 레이더는 탐험에 대한 동기로 수집 요소와 도전 과제를 제시했습니다. 수집 요소를 넣은 것 자체는 별 특이한게 없지만, 툼 레이더에서는 새로운 유물을 발견할 때 라라가 유물을 보고 느낀 점을 알려준다는 것입니다. 어떤 유물은 자세히 보니 모조품인걸 눈치채고 실망하는 내용도 있어 소소한 재미를 주기도 합니다.
 
-![](/images/Review/005/03.jpg){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/Review/005/03.jpg?raw=true){: .align-center}
 
 수집 요소 중 문서 또한 찾을 만한 가치가 있습니다. 문서를 통해 현재 탐험하고 있는 지역에 대한 배경도 있고, 라라 주변 인물의 일기를 통해 몰랐던 사람들과의 관계, 스토리 등을 알 수 있는 점도 좋았습니다.
 
-![](/images/Review/005/04.jpg){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/Review/005/04.jpg?raw=true){: .align-center}
 
-![](/images/Review/005/05.jpg){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/Review/005/05.jpg?raw=true){: .align-center}
 
 처음에는 조잡한 활이나 권총만을 사용할 수 있으나 섬을 탐험하고 스토리를 진행하면서 샷건과 라이플 같은 무기를 얻을 수 있고, 부품을 모으면서 기존의 장비 또한 업그레이드를 할 수 있습니다. 업그레이드를 할 때마다 장비의 외형이 (어떻게 보면 비현실적일 정도로) 눈에 띄게 변하고 성능 또한 향상됩니다. 이 점은 전투 스킬을 배워나가는 것과 합쳐져 시간이 지날 수록 캐릭터가 성장하고 있다는 것이 체감됩니다. 다만 무기간의 밸런스가 그다지 좋지 못해 모든 무기를 끝까지 업그레이드 하더라도 한 무기만 계속 쓰게 되는 것이 아쉬운 점입니다.
 
-![](/images/Review/005/06.jpg){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/Review/005/06.jpg?raw=true){: .align-center}
 
-![](/images/Review/005/07.jpg){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/Review/005/07.jpg?raw=true){: .align-center}
 
 2013년에 출시된 게임임을 감안하지 않더라도 그래픽은 뛰어난 편에 속합니다. Definitive Edition이 나오고 그래픽이 한층 더 업그레이드 되었는데, 현재 시점에서 플레이해도 훌륭하다고 말할 수 있습니다. 초반 지역을 벗어나면 등장하는 산촌 지역의 풍경은 분위기와 잘 어우러져 신비한 느낌을 줍니다. 다만 게임 특성상 뛰어난 그래픽이 오히려 독으로 작용할 때도 있는데, 피와 시체가 난무하는 몇몇 유적은 고어한 느낌이 더 강하게 드는 문제가 있습니다.
 
-![](/images/Review/005/08.jpg){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/Review/005/08.jpg?raw=true){: .align-center}
 
 원래 툼 레이더 시리즈가 유적에서 보물을 찾는 컨셉이 있었기 때문에 리부트작에서도 이 요소가 그대로 들어갔습니다. 당연히 유적에 간다고 공짜로 보물을 주는 것이 아니라 일종의 퍼즐을 풀어 보물로 도달할 수 있는 방법을 찾아야하는데, 전체적으로 퍼즐의 퀄리티가 언차티드 시리즈의 퍼즐 따위보다 훨씬 퀄리티가 높습니다. 게다가 생존 본능이란 스킬을 쓰면 위의 스크린샷 처럼 어떤 아이템을 사용해야 하는지 힌트도 알려주기 때문에 난이도도 적당합니다. 대부분의 퍼즐은 공략을 따로 보지 않아도 풀 수 있을 만큼 직관적이기 때문에 조금만 고민하면 해법이 보이는 점이 마음에 들었습니다.
 
 ## 총평
 
-![](/images/Review/005/09.png){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/Review/005/09.png?raw=true){: .align-center}
 
 플레이 타임은 생각보다 길지 않은 편입니다. 저는 1회차 엔딩을 보고 이곳저곳 탐험하면서 수집요소를 100% 채우는데 25시간이 조금 넘게 걸렸습니다. 스토리만 쭉 달리실 경우 15시간 정도 소요될 것 같습니다. 분량이 적긴 하지만 정가 자체도 그렇게 비싼 게임은 아닐 뿐더러 할인 시즌이면 최근에는 5천원 정도면 구입이 가능하기 때문에 가성비는 나쁘지 않은 편입니다. 스토리도 기승전결이 깔끔하게 구성되어 있기 때문에 엔딩을 보고 찝찝한 뒷맛이 느껴지지 않습니다. 파 크라이 시리즈를 좋아하시거나, 그렇지 않더라도 할 게임이 없어서 고민중인 분들께는 꼭 플레이 해보는 것을 추천합니다.

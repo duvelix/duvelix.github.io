@@ -2,56 +2,56 @@
 title: "더 위쳐 3 : 와일드 헌트"
 permalink: /review/the-witcher-3-wild-hunt/
 classes: wide
-thumbnail: /images/Review/020/00.jpg
+thumbnail: https://github.com/JoonsuRyu/images/blob/master/Review/020/00.jpg?raw=true
 categories:
   - interests
 tags:
   - review
 ---
 
-![](/images/Review/020/00.jpg){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/Review/020/00.jpg?raw=true){: .align-center}
 
 저는 액션 RPG 장르 게임을 굉장히 좋아합니다. 모든 액션 RPG 게임을 일일이 찾아다니면서 할 정도는 아니지만, 새로운 게임을 접했을 때 그것이 액션 RPG 게임이라면 일단 흥미가 생깁니다. 어쩌다가 험블 번들에서 1달러에 구매한 반 헬싱의 놀라운 모험이라는 게임도 뭔 게임인지 궁금해서 한번 켜보다가 꽤 취향에 맞아서 5시간 가까이 플레이했던 기억이 있습니다.
 
-![](/images/Review/020/01.jpg){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/Review/020/01.jpg?raw=true){: .align-center}
 
 그런데 오늘 리뷰할 게임은 액션 RPG 게임임에도 불구하고 처음에 흥미를 끌지 못했습니다. 구매 당시에는 30분 정도 플레이해보고 재미가 없어 라이브러리에 쳐박아뒀다가, 한참 후에야 본격적으로 플레이 했습니다. 하다보니 점점 게임 시스템을 이해하게 되고, 갈수록 스토리에 몰입감이 생겨 결국 본편과 확장팩 모두 엔딩을 보게 되었습니다.
 
-![](/images/Review/020/02.jpg){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/Review/020/02.jpg?raw=true){: .align-center}
 
 게임을 진행하다보면 상당히 많이 분기가 발생하게 됩니다. 어떤 분기를 선택하는지에 따라 많은 것들이 바뀌게 되는데, 어떤 히로인과 연애를 하게 되냐 같은 단순한 요소 뿐만이 아니라 엔딩까지도 분기에 따라 여러 가지로 나뉘게 됩니다.
 
 분기로 인한 멀티 엔딩 시스템 자체는 나쁘지 않지만, 위쳐 3는 분량이 큰 RPG 게임이기 때문에 멀티 엔딩 요소가 그렇게 장점은 아니라고 생각합니다. 모든 엔딩을 다 보기에는 시간이 너무 많이 걸리기 때문입니다. 분기 시점마다 세이브를 해도, 나중에 다시 그 지점으로 돌아가서 엔딩까지 달리기에는 귀찮은 점이 한두가지가 아니기 때문에, 저는 하나의 분기로만 엔딩을 보고 나머지는 유튜브로 무슨 내용인지만 확인했습니다.
 
-![](/images/Review/020/03.jpg){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/Review/020/03.jpg?raw=true){: .align-center}
 
 분기에서 마음에 들었던 부분은 서브 퀘스트에서 플레이어의 선택이 의외의 결과를 불러올 때가 있다는 겁니다. 누가 봐도 정의로운 선택지 A와 정 반대인 선택지 B가 있을 때, A를 선택했다면 결과도 정의롭다고 생각하기 쉬운데, 실제로는 그 반대의 결과를 불러올 때도 있었기 때문입니다. 이러한 반전 요소는 마음에 들었습니다.
 
 하지만 전체적인 메인 스토리는 그다지 흥미롭지 않았습니다. 위쳐 3의 메인 스토리는 사람마다 의견이 매우 크게 갈리는 점이지만, 저는 부정적인 쪽에 한 표를 던지고 싶습니다. 모 커뮤니티의 한 마디 요약으로, "두부 심부름" 이라는 말이 있습니다. 게임을 플레이해보시면 이 말이 굉장히 와닿으실 겁니다.
 
-![](/images/Review/020/04.jpg){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/Review/020/04.jpg?raw=true){: .align-center}
 
 현실의 술집에서 포커나 화투로 노름을 하듯이 위쳐의 술집에서도 역시 노름이 있습니다. 궨트라는 카드 게임을 하면서 돈을 거는데, 플레이어도 꽤 자주 플레이하게 됩니다. 궨트에서 이기게 되면 돈 뿐만이 아니라 새로운 카드도 얻게 되는데, 전 세계를 돌아다니며 궨트 카드를 모아 덱을 만드는 재미가 상당히 쏠쏠합니다.
 
 미니게임으로 만든 게임치고 오히려 본편보다 재밌다는 의견도 많습니다. 저도 게임 내내 궨트를 즐겨했는데, 룰은 단순하지만 의외로 상당히 재미있습니다.
 
-![](/images/Review/020/05.jpg){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/Review/020/05.jpg?raw=true){: .align-center}
 
 보통 수집 요소를 언급하면 유비소프트 게임들을 떠올리게 됩니다. 그런데 위쳐 3는 유비소프트의 양쪽 뺨을 후려갈길 정도로 수집 요소가 너무 많습니다. 물론 모든 수집 요소를 찾는 것이 필수는 아니지만, 지도를 펼쳤을 때 찾지 않은 수집 요소가 보이면 마음이 불편합니다. 저는 보이는 대로 주변에 있는 수집 요소는 다 모으고 다녔지만, 차마 스켈리게 지역의 수집 요소는 건들지 못했습니다. 위의 스크린샷에서 보이는 대로, 물 속에 있는 보물이 너무 많습니다.
 
-![](/images/Review/020/06.jpg){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/Review/020/06.jpg?raw=true){: .align-center}
 
 게임을 하면서 가장 불편한 점은 빠른 이동을 아무 곳에서 할 수 있는 게 아니라는 겁니다. 맵 곳곳에 빠른 이동이 가능한 거점이 있는데, 이곳에서만 빠른 이동이 가능합니다. 방대한 세계와 맞물려, 이 점은 엄청난 귀찮음을 유발합니다. 특히나 노비그라드같은 대도시는 게임 내내 방문할 일이 매우 많은데, 빠른 이동 거점을 찾는 시간이 너무 낭비된다는 느낌을 받았습니다.
 
 또 문제가 되는 것은 무게 제한입니다. 위쳐에서는 생각보다 돈이 여유있지 않기 때문에 보통 주변의 산적 기지를 털어 돈이 될만한 장비들을 털어오는 편입니다. 값이 나가는 물건들은 방어구나 무기 같은 무거운 장비들인데, 무게 제한 때문에 한번에 많이 들고올 수가 없습니다. 게다가 바로 위에서 언급한 빠른 이동의 불편함 때문에 돈을 버는 과정이 매우 번거롭습니다. 산적 기지 주변에 빠른 이동 거점이 있을리가 없으니까요.
 
-![](/images/Review/020/07.png){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/Review/020/07.png?raw=true){: .align-center}
 
 이런 불편함을 저만 느낀 것이 아닌지, [Nexus Mods](https://www.nexusmods.com/witcher3/mods/top/)의 위쳐 카테고리를 보시면 무게 제한을 9000 (사실상 무한)으로 늘려주는 모드와 아무데서나 빠른 이동이 가능하게 해주는 모드가 각각 인기 순위 2위, 5위를 차지하고 있습니다. 저는 첫 회차는 바닐라 상태에서 게임을 즐기는 것을 선호하기 때문에 설치하지 않고 클리어했지만, 또 이 게임을 플레이하게 된다면 이런 편의성 개선 모드를 설치하고 플레이할 예정입니다.
 
 ## 총평
 
-![](/images/Review/020/08.png){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/Review/020/08.png?raw=true){: .align-center}
 
 플레이타임은 굉장히 만족할만할 정도입니다. 본편과 DLC 및 서브 퀘스트를 대부분 클리어하였을 때 기준으로 140시간 정도 소요되었습니다. 지역이 워낙 방대하고, 제가 놓친 숨겨진 퀘스트나 수집 요소가 꽤 많기 때문에, 100% 클리어를 목적으로 하신다면 이보다 플레이타임이 더 필요할 것입니다. 다만 앞에서도 언급했듯이, 수집 요소가 과다하게 많고 접근하기 쉽지 않은 위치에 있는 경우도 많기 때문에 100% 클리어는 그다지 추천드리지 않습니다.
 

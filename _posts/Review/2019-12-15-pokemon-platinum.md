@@ -2,14 +2,14 @@
 title: "포켓몬스터 PT 기라티나"
 permalink: /review/pokemon-platinum/
 classes: wide
-thumbnail: /images/Review/019/00.jpg
+thumbnail: https://github.com/JoonsuRyu/images/blob/master/Review/019/00.jpg?raw=true
 categories:
   - interests
 tags:
   - review
 ---
 
-![](/images/Review/019/00.jpg){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/Review/019/00.jpg?raw=true){: .align-center}
 
 포켓몬스터 PT 기라티나는 4세대 포켓몬스터 게임입니다. 포켓몬스터 시리즈는 매년 신작이 나오고 있지만, 현재와 같은 시스템이 정착된 것은 4세대부터라고 볼 수 있습니다. 가장 큰 변경점으로 볼 수 있는 것은 바로 물리/특수 기술의 분리입니다. 이후의 포켓몬스터 게임에도 큰 영향을 끼쳤던 세대이기 때문에, 이전 세대나 이후 세대보다 유저들의 평가가 매우 좋기도 합니다.
 
@@ -17,35 +17,35 @@ tags:
 
 게임 내적인 이야기로 돌아오면, 4세대 포켓몬스터의 배경은 신오지방이라는 곳입니다. 플레이어 캐릭터의 복장이나 눈이 내리는 것을 볼 때 추운 지방으로 보이지만, 시작 지점인 떡잎마을이나 완전 눈덮인 마을인 선단시티가 아니라면 날씨를 체감하기 힘듭니다. 플레이어 캐릭터는 신오지방에서 유명한 포켓몬 박사인 마박사에게 포켓몬을 받으러 가는 것으로 모험이 시작됩니다.
 
-![](/images/Review/019/01.jpg){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/Review/019/01.jpg?raw=true){: .align-center}
 
 어른의 시점에서 포켓몬스터의 스토리를 판단하는 것은 조금 그렇지만, 시작부터 스토리가 조금 이상함을 느꼈습니다. 일단 1~3세대와는 다르게 스타팅 포켓몬을 주는 역할인 포켓몬 박사(마박사)와 주인공과는 아무런 친분이 없습니다. 그런데도 불구하고 주인공과 라이벌이 포켓몬을 받기 위해 찾아갑니다. 어쩌다보니 마박사를 찾아가기 전에 길에서 만나지만, 처음 보는 아이들이 포켓몬을 달라고 하는데 순순히 주는 것도 납득하기 힘든 전개입니다.
 
-![](/images/Review/019/02.jpg){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/Review/019/02.jpg?raw=true){: .align-center}
 
 디아루가/펄기아 버전에서는 스타팅 포켓몬을 얻는 전개가 조금 다릅니다. 라이벌과 같이 진실호수로 놀러가다 우연히 야생 포켓몬을 마주쳤는데, 포켓몬이 없던 주인공과 라이벌이 우연히 마박사가 두고간 포켓몬을 발견하고 사용하는 스토리입니다. 어떻게보면 운명적인 만남이라는 점에서 이 스토리라인이 더 설득력있다고 느껴지는데, 기라티나에서 이런 식으로 바뀌게 된 것은 조금 실망스럽습니다.
 
-![](/images/Review/019/03.jpg){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/Review/019/03.jpg?raw=true){: .align-center}
 
-![](/images/Review/019/04.jpg){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/Review/019/04.jpg?raw=true){: .align-center}
 
 포켓몬스터 시리즈의 난이도는 시작 지점 인근의 야생 포켓몬의 성능으로 결정된다고 해도 과언이 아닙니다. 지난번에 리뷰한 하트골드 같은 경우에는 메리프를 제외하고 하나같이 나사빠진 성능을 갖고 있었기 때문에 엔트리를 구성하는게 쉽지 않았지만, 기라티나는 쓸만한 야생 포켓몬이 한가득 나오기 때문에 극초반에 엔트리를 구성하기 상당히 쉽습니다.
 
 기라티나에서는 디아루가/펄기아와 달리 600족인 딥상어동을 극초반에 구할 수 있다는 점이 특이합니다. 물론 미혹의 동굴의 숨겨진 곳에 있기 때문에 공략을 보지 않고서는 쉽게 찾을 수 없긴 합니다. 굳이 딥상어동에 목매지 않아도 쓸만한 포켓몬이 넘치기 때문에 저는 잡지 않았습니다. 스타팅 포켓몬 성능도 다른 버전에 비해 굉장히 쓸만하기 때문에 어떤 포켓몬을 엔트리에 넣을지 행복한 고민을 하게 됩니다.
 
-![](/images/Review/019/05.jpg){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/Review/019/05.jpg?raw=true){: .align-center}
 
-![](/images/Review/019/06.jpg){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/Review/019/06.jpg?raw=true){: .align-center}
 
 표지를 장식한 만큼 스토리를 진행하다보면 기라티나와 마주치게 됩니다. 기라티나 또한 전설의 포켓몬 답게 깨어진 세계라는 자신만의 지역을 갖고 있는데, 이 곳의 연출이 상당히 인상깊었습니다. 깨어진 세계는 마치 3D 게임처럼 여러 방향에서의 시점으로 돌아가기도 하고 움직이는 경로도 벽을 타고 가는 등 색다른 부분이 많습니다.
 
-![](/images/Review/019/07.gif){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/Review/019/07.gif?raw=true){: .align-center}
 
 이런 점은 반대로 단점이 되는 부분이기도 합니다. 깨어진 세계에서 길을 찾는 것 자체도 어렵지만, 위의 영상처럼 길이 없는 것처럼 보이는 부분도 실제로 가보면 길이 있기도 합니다. 게다가 위에서 언급했듯이 벽을 타고 이동하거나 엘리베이터 비슷한 구조물도 있기 때문에 처음에는 많이 헤멜 수밖에 없습니다.
 
 ## 총평
 
-![](/images/Review/019/08.jpg){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/Review/019/08.jpg?raw=true){: .align-center}
 
 깨어진 세계 뿐만이 아니라 전체적으로 길을 찾는 것이 어려워서 많이 헤멘 것 같은데, 생각보다 플레이 타임이 길지는 않게 나왔습니다. 저는 챔피언을 쓰러트리는 것까지만 플레이했기 때문에 그런 것일수도 있습니다. 이후에도 리조트에리어 등의 추가 컨텐츠가 남아있기 때문에, 그 부분까지 즐긴다면 플레이타임이 더 길게 나올수도 있습니다.
 

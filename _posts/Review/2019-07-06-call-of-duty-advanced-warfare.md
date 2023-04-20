@@ -2,48 +2,48 @@
 title: "콜 오브 듀티 : 어드밴스드 워페어"
 permalink: /review/call-of-duty-advanced-warfare/
 classes: wide
-thumbnail: /images/Review/003/00.jpg
+thumbnail: https://github.com/JoonsuRyu/images/blob/master/Review/003/00.jpg?raw=true
 categories:
   - interests
 tags:
   - review
 ---
 
-![](/images/Review/003/00.jpg){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/Review/003/00.jpg?raw=true){: .align-center}
 
 콜 오브 듀티 시리즈는 서양에서 국민 FPS 게임으로 불리는 시리즈입니다. 하지만 한국에서는 이미 서든어택, 카운터 스트라이크 시리즈가 FPS 유저층을 대부분 흡수하였고, 무엇보다 몇몇 작품을 제외하면 한글화조차 되지 않았기 때문에, 매니아층이 아니라면 인지도 자체도 그렇게 높지 않은 상황입니다. 저 또한 이미 카운터 스트라이크 시리즈를 즐기고 있었기 때문에 콜 오브 듀티 시리즈에 별 관심이 없었지만, 이 작품의 초반 배경이 서울이라는 것을 보고 흥미를 느껴 시작하게 되었습니다.
 
 콜 오브 듀티 시리즈는 일반적인 FPS 게임과 다르게 싱글 플레이 캠페인이 있다는 것이 특징입니다. 매년 신작이 출시될 정도로 발매 텀이 짧은 게임이기 때문에 새 작품에서 어떤 것이 바뀌고 새롭게 도입되었는지 배우는 것이 목적이겠지만, 캠페인 스토리 자체도 굉장히 짜임새 있고 연출이 뛰어나기 때문에 오로지 싱글 캠페인만을 즐기는 유저도 있습니다. 저 또한 싱글 캠페인만을 플레이하였기 때문에 리뷰도 싱글 플레이 위주로 진행하겠습니다.
 
-![](/images/Review/003/01.jpg){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/Review/003/01.jpg?raw=true){: .align-center}
 
-![](/images/Review/003/02.jpg){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/Review/003/02.jpg?raw=true){: .align-center}
 
-![](/images/Review/003/03.jpg){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/Review/003/03.jpg?raw=true){: .align-center}
 
-![](/images/Review/003/04.jpg){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/Review/003/04.jpg?raw=true){: .align-center}
 
 먼저, FPS 게임은 전장 한복판에 있는 것 같은 몰입감이 들어야 하기 때문에 그래픽이 좋아야 한다고 생각합니다. 그러한 면에 있어서 이 게임은 그래픽에 있어서는 흠잡을 곳이 없습니다. 2014년 게임임에도 불구하고 비슷한 시기에 출시한 어쎄신 크리드 : 유니티나, 데스티니와 비교해봐도 뒤쳐지기는 커녕, 우위에 있다고 느꼈습니다.
 
 이 게임은 전 세계 곳곳을 돌아다니며 스토리가 진행되는데, 정말 해당 나라에 있다는 느낌을 줄 수 있도록 분위기와 고증을 잘 살렸다는 것이 느껴집니다. 비록 작중 시간대가 현재와는 좀 떨어져 있는 2050년대이지만, 근 미래에는 사람들이 이렇게 살고 있고 이런 무기를 사용할 것이다 라는 것을 보여준 것이 인상깊었습니다. 북한군의 말투처럼 고증이 떨어지는 부분이 있긴 하지만 게임 플레이에 크게 영향을 주는 부분은 아닙니다.
 
-![](/images/Review/003/05.jpg){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/Review/003/05.jpg?raw=true){: .align-center}
 
 비록 한글화가 되지 않아 영어로 봐야 하는 부담감이 있긴 하지만, 각 미션이 시작하기 전에 현재 스토리가 어떻게 돌아가고 있는지 2-3분 정도의 영상을 보여주는 점도 좋았습니다. 영상의 그래픽이 실사가 아닌가 싶을 정도로 뛰어나기 때문에 영상을 보는 것 자체가 재밌습니다. 영상의 대부분은 주인공의 시점에서 진행되고 주인공이 현재 상태에 대해 느끼는 속마음을 말해주기 때문에 주인공에게 몰입할 수 있는 좋은 요소라고 생각합니다.
 
 영어가 부담되시는 분들은 [이 유튜브 채널](https://www.youtube.com/playlist?list=PLCfJNQ1Polt-bUdy2rd2Ai8lJvaCbLENi)을 보시면 한글 자막으로 감상하실 수 있으니, 플레이 중 이해가 안되는 부분이 있다면 참고하시면 좋을 것 같습니다.
 
-![](/images/Review/003/06.jpg){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/Review/003/06.jpg?raw=true){: .align-center}
 
 근미래를 배경으로 한 게임이기 때문에 전통적인 FPS와는 다르게 여러 가지 스킬이 존재합니다. 플레이어가 입고 있는 엑소 슈트에 따라 사용할 수 있는 스킬이 달라지는데, 캠페인 상에서는 어썰트 타입과 스페셜리스트 타입이 존재합니다. 미션마다 특정 엑소 슈트의 기능이 반드시 필요한 부분이 있기 때문에 마음대로 선택할 수는 없습니다. 특정 기능이 필요한 구간의 경우 처음 플레이하는 사람이 헤메지 않도록 주변 동료가 "그 기능을 써!"라고 넌지시 알려줍니다. FPS 게임의 미션이 단순히 총쏘는 것으로만 이루어지 않은 점이 신선해 좋았습니다.
 
-![](/images/Review/003/07.jpg){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/Review/003/07.jpg?raw=true){: .align-center}
 
 스토리 진행 중에는 엑소 슈트 뿐만이 아니라 여러 탈것을 타 볼 기회가 있습니다. 저는 탈것을 타는 부분이 제일 좋았는데 이 때의 진행 방식이 색달랐기 때문입니다. 위 스크린샷은 마지막 미션에서 AST에 탑승해 전투하는 장면인데, 주인공과 동료가 비행기에 매달려서 지상의 적과 전투하게 됩니다. 기관총으로 보트나 전차를 격파하는 것이 마치 메탈슬러그가 생각날 정도로 손맛이 좋았습니다.
 
 ## 총평
 
-![](/images/Review/003/08.png){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/Review/003/08.png?raw=true){: .align-center}
 
 싱글 캠페인의 플레이 타임은 긴 편은 아닙니다. 싱글 캠페인은 대략 15개 정도의 미션으로 이루어져 있는데, 각 미션은 인트로 영상 포함 20분 내외로 클리어가 가능합니다. 저는 1회차 플레이를 가장 쉬운 난이도(Recruit)로 클리어하고 2회차를 가장 어려운 난이도(Veteran)로 진행하고 있는데, 대략 15시간정도 플레이했으니 실제 1회차 플레이타임은 12~13시간 정도로 보시면 될 것 같습니다.
 

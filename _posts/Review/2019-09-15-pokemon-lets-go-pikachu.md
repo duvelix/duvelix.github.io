@@ -2,14 +2,14 @@
 title: "포켓몬스터 레츠고! 피카츄"
 permalink: /review/pokemon-lets-go-pikachu/
 classes: wide
-thumbnail: /images/Review/013/00.jpg
+thumbnail: https://github.com/JoonsuRyu/images/blob/master/Review/013/00.jpg?raw=true
 categories:
   - interests
 tags:
   - review
 ---
 
-![](/images/Review/013/00.jpg){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/Review/013/00.jpg?raw=true){: .align-center}
 
 초등학생 때 학교 컴퓨터실에서 제일 재밌게 한 게임은 포켓몬스터 레드/그린이었습니다. 물론 그 당시에는 게임보이의 존재를 몰랐기 때문에 불법인지도 모르고 즐겼지요. 하긴, 게임보이라는 것을 알았다고 해도 부모님께서 사주셨을 리가 없으므로 상황이 별 반 다르지 않았을 것 같습니다. 그 당시에는 컴퓨터 게임치고 형편없는 도트 그래픽을 가졌었기 때문에 1인 개발자가 만든 게임인 줄 알고 대단하다 라고만 생각했습니다.
 
@@ -19,39 +19,39 @@ tags:
 
 모두가 알고 있는 관동지방을 주제로 신작을 냈기에 얼마나 변했는지 궁금하여 한번 쭉 클리어 해봤는데, 분명히 장점도 있었지만 전체적으로 보면 실망한 점이 더 많았습니다.
 
-![](/images/Review/013/01.jpg){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/Review/013/01.jpg?raw=true){: .align-center}
 
 레츠고 시리즈로 1세대 리메이크를 하면서 라이트 유저를 끌어모으려고 했다는데, 솔직히 저는 이렇게 쉬운 게임에 애초부터 라이트 유저는 차고 넘치지 않았나 생각이 듭니다. 앞에서도 말씀드렸다시피 저는 초등학생 때 레드/그린을 공략없이 클리어했기 때문에 그 정도 난이도면 충분히 쉽다고 보기 때문입니다. 물론 온라인 대전은 개체치/성격/노력치 등의 하드한 요소가 있으나, 대부분의 포켓몬 유저층은 온라인 대전까지 즐기지는 않기 때문에 의미는 없다고 생각합니다. 이런 걱정은 거의 적중하여, 스타팅 포켓몬 하나로 사천왕까지 무쌍을 찍을 수 있는 게임이 되어버렸습니다.
 
 물론 다른 포켓몬스터 게임도 스타팅 포켓몬 하나로 사천왕까지 깰 수는 있습니다. 하지만 레츠고의 스타팅 포켓몬은 강력함이 도를 넘었습니다. 통 크게 개체치를 6V로 고정시켜주는 것은 물론이고 기본 종족값조차도 일반 피카츄보다 90이나 높습니다. 뭐 이건 피카츄의 종족값이 워낙 형편없으니까 이해는 됩니다만, 거기에 더해 파트너 기술이라고 해서 삼색빔보다도 좋은 기술까지 공짜로 배울 수 있습니다. 전기 포켓몬은 일반적으로 공격 속성이 다채롭지 않은 편인데, 파트너 기술로 비행 기술과 물 기술을 주고 기본적으로 격투 기술을 익힐 수 있으니 다양한 약점을 찌를 수 있어 피카츄 혼자 다 해먹을 수 있을 정도입니다. 약점을 못 찌르는 타입이라고 해봐야 같은 전기/독/에스퍼/고스트/드래곤/페어리 정도인데, 그래봐야 파찌파찌엑셀이라는 사기급 기술로 인해 약점을 못찌르더라도 반감만 되지 않는다면 의미가 없을 정도입니다.
 
-![](/images/Review/013/02.jpg){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/Review/013/02.jpg?raw=true){: .align-center}
 
-![](/images/Review/013/03.jpg){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/Review/013/03.jpg?raw=true){: .align-center}
 
 그래픽 또한 그다지 뛰어난 편이 아닙니다. 물론 스위치가 일반적인 콘솔보다는 성능이 낮은 것을 감안해도 그렇습니다. 같은 기종으로 나온 비슷한 3D 게임인 슈퍼마리오 오디세이와는 비교하는 것도 실례일 정도 입니다. 필드의 그래픽은 그럭저럭 봐줄만 하나 전투는 정말 실망스럽습니다. 파트너 기술을 제외하고는 움직이는 애니메이션이 전혀 전투하는 느낌이 들지 않습니다. 막말로 레드/그린 때나 지금이나 2D가 3D로 바뀐 것 외에는 똑같습니다. 또한 최적화도 개판인지 상록숲 같이 어둡고 야생 포켓몬의 밀집도가 높은 경우 버벅임까지 있습니다.
 
-![](/images/Review/013/04.jpg){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/Review/013/04.jpg?raw=true){: .align-center}
 
 이제부터 장점을 얘기해보자면, 야생 포켓몬을 조우하는 것이 상당히 괜찮게 변했습니다. 기존 포켓몬스터 게임은 모두 풀숲에서 무작위로 포켓몬을 만나는 랜덤 인카운터 방식이었는데, 이번작에서는 풀숲에 포켓몬이 독립된 개채로써 등장하여 원하는 포켓몬만을 만날 수도 있고, 귀찮은 경우 그냥 지나갈수도 있게끔 바뀌었다는 것입니다. 저는 야생 포켓몬을 만나는 것이 귀찮아 지금까지는 스프레이를 뿌리고 다녔는데, 이번에는 굳이 그럴 필요가 없게끔 바뀌었습니다. 물론 스프레이 아이템은 그대로 있습니다. 뿌릴 경우 풀숲에 포켓몬이 모두 사라집니다.
 
-![](/images/Review/013/05.jpg){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/Review/013/05.jpg?raw=true){: .align-center}
 
 이건 7세대와 마찬가지이긴 한데, 비전머신이 더 이상 존재하지 않습니다. 비전머신은 지금까지 파도타기 같은 것을 제외하면 기술칸만 잡아먹는 잉여 기술이었는데, 이제는 비술로 분류가 되어 고민할 필요가 없어졌습니다. 제 생각이긴 한데 다음 세대인 소드/실드에서도 이것은 유지되지 않을까 싶습니다.
 
-![](/images/Review/013/06.jpg){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/Review/013/06.jpg?raw=true){: .align-center}
 
 또한 이제 야생 포켓몬을 만나도 더 이상 전투하지 않습니다. 완전히 없어진 것은 아니고, 일반 몬스터의 경우 바로 포획으로 들어가 몬스터볼을 던지는 것만 하면 되고, 특수한 몬스터(전설의 새, 뮤츠 등)들은 전투가 끝나고 포획으로 넘어갑니다. 이전작들에서 포켓몬을 잡을 때 아슬아슬하게 빨간색 피로 만들기 위해 골치 꽤나 썩었음을 생각하면 환영할만한 점입니다.
 
-![](/images/Review/013/07.jpg){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/Review/013/07.jpg?raw=true){: .align-center}
 
-![](/images/Review/013/08.jpg){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/Review/013/08.jpg?raw=true){: .align-center}
 
 이건 장점이라고 하기 뭐하지만, 아이템이나 포켓몬 목록은 아직도 예전같이 도트로 남아있어서 옛날 생각이 나게끔 만들어 줍니다.
 
 ## 총평
 
-![](/images/Review/013/09.jpg){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/Review/013/09.jpg?raw=true){: .align-center}
 
 플레이타임은 괜찮은 편입니다. 제 플레이타임은 약 40시간정도로 나와있는데, 전당등록을 마치고 전설의 새 3마리와 뮤츠까지 잡는 것 까지 포함된 시간입니다. 물론 전 게임을 플레이하면서 이곳저곳 돌아다니는 것을 좋아하고, 궁금한 게 있으면 한번 해보는 성격이기에 일직선 진행을 하실 경우 이보다 낮을 수 있으므로 감안하시기 바랍니다.
 
