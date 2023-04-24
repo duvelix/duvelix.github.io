@@ -2,14 +2,14 @@
 title: "POPUP PARADE 마마마 피규어"
 permalink: /Unboxing/puella-magi-madoka-magica-figure/
 classes: wide
-thumbnail: /images/Unboxing/071/00.jpg
+thumbnail: https://github.com/JoonsuRyu/images/blob/master/Unboxing/071/00.jpg?raw=true
 categories:
   - interests
 tags:
   - unboxing
 ---
 
-![](/images/Unboxing/071/00.jpg){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/Unboxing/071/00.jpg?raw=true){: .align-center}
 
 최근 제가 올린 게시물을 보시면 알겠지만, 저는 마법소녀 마도카☆마기카를 굉장이 재밌게 보았습니다.
 
@@ -21,7 +21,7 @@ tags:
 
 피규어 관련 커뮤니티에서도 가격 만큼의 값을 한다는 평가가 많았습니다.
 
-![](/images/Unboxing/071/01.png){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/Unboxing/071/01.png?raw=true){: .align-center}
 
 저는 매니아하우스에서 구매했습니다.
 
@@ -33,7 +33,7 @@ tags:
 
 아무래도 이 둘의 인기가 나머지 셋 보다 더 좋아서일까요?
 
-![](/images/Unboxing/071/02.jpg){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/Unboxing/071/02.jpg?raw=true){: .align-center}
 
 먼저 마도카/호무라/마미를 배송받고 찍어본 사진입니다. 
 
@@ -41,19 +41,19 @@ tags:
 
 피규어 크기도 생각보다 컸지만, 피규어를 보호하기 위함인지 박스의 크기도 굉장히 컸습니다.
 
-![](/images/Unboxing/071/03.jpg){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/Unboxing/071/03.jpg?raw=true){: .align-center}
 
 먼저 주인공인 카나메 마도카의 피규어입니다. 
 
 사진을 이상하게 찍어서 색감이 좀 이상한데, 실제로는 박스 아래쪽이 핑크색입니다.
 
-![](/images/Unboxing/071/04.jpg){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/Unboxing/071/04.jpg?raw=true){: .align-center}
 
 구성품은 마도카 본체, 받침대, 그리고 무기(활)로 나뉘어져 있습니다. 
 
 무기 구조가 좀 특이한데, 활이 통째로 들어있는 것이 아니라, 윗부분/아랫부분으로 나뉘어서 손 위/아래에 끼우는 구조입니다.
 
-![](/images/Unboxing/071/05.jpg){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/Unboxing/071/05.jpg?raw=true){: .align-center}
 
 완성한 모습의 정면입니다. 
 
@@ -63,13 +63,13 @@ tags:
 
 다행히 제품 소개에 완성 이미지가 있기 때문에, 그걸 보고 확인하면 되긴 합니다.
 
-![](/images/Unboxing/071/06.jpg){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/Unboxing/071/06.jpg?raw=true){: .align-center}
 
 마도카의 뒷모습입니다. 
 
 애니에서는 뒷 모습을 볼 일이 없어서 몰랐는데, 등 부분에 하트 모양으로 옷이 파여있었네요.
 
-![](/images/Unboxing/071/07.jpg){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/Unboxing/071/07.jpg?raw=true){: .align-center}
 
 위에서 본 모습입니다. 
 
@@ -79,7 +79,7 @@ tags:
 
 한번 눈에 띄면 계속 거슬리거든요.
 
-![](/images/Unboxing/071/08.jpg){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/Unboxing/071/08.jpg?raw=true){: .align-center}
 
 치마의 구조가 굉장히 신기합니다. 
 
@@ -91,31 +91,31 @@ tags:
 
 그리고 뭔가 치마에 비해 다리가 가늘어서 재밌네요.
 
-![](/images/Unboxing/071/09.jpg){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/Unboxing/071/09.jpg?raw=true){: .align-center}
 
 두 번째는 진주인공이나 마찬가지인 아케미 호무라의 피규어입니다. 
 
 애니에서는 안경을 쓴 모습과 냉정한 모습 두 가지로 나오는데, 아쉽게도 이 피규어는 안경 쓴 모습으로 구현되어 있습니다.
 
-![](/images/Unboxing/071/10.jpg){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/Unboxing/071/10.jpg?raw=true){: .align-center}
 
 작중에서 호무라의 대표적인 무기라고 할 만한 것이 없었기 때문에, 무기는 없고 피규어 본체와 받침대만 들어있습니다.
 
-![](/images/Unboxing/071/11.jpg){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/Unboxing/071/11.jpg?raw=true){: .align-center}
 
 호무라 뒤에는 허리춤에 묶은 리본이 있는데, 이 리본을 보호하기 위함인지 별도의 비닐로 조심스럽게 포장되어 있었습니다.
 
-![](/images/Unboxing/071/12.jpg){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/Unboxing/071/12.jpg?raw=true){: .align-center}
 
 정면 모습입니다. 조립은 그냥 받침에 피규어를 끼우기만 하면 되서 매우 간단합니다.
 
-![](/images/Unboxing/071/13.jpg){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/Unboxing/071/13.jpg?raw=true){: .align-center}
 
 뒷모습도 리본을 제외하면 딱히 특이한 점은 없었습니다. 
 
 솔직한 감상으로는 다섯명 중 가장 제작비가 적을 것 같은 느낌입니다.
 
-![](/images/Unboxing/071/14.jpg){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/Unboxing/071/14.jpg?raw=true){: .align-center}
 
 그나마 볼만한 점은 옷의 주름이 매우 잘 표현되어 있다는 것입니다.
 
@@ -123,25 +123,25 @@ tags:
 
 물론 이 점은 다른 캐릭터도 동일합니다만, 호무라의 옷에 주름이 많아서 그런지 특히 눈에 잘 띄었습니다.
 
-![](/images/Unboxing/071/15.jpg){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/Unboxing/071/15.jpg?raw=true){: .align-center}
 
 위에서 보면 마도카와 마찬가지로 머리의 접합선이 그대로 나와있습니다.
 
-![](/images/Unboxing/071/16.jpg){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/Unboxing/071/16.jpg?raw=true){: .align-center}
 
 아래에서 보면 마도카와 다르게 치마의 속이 차있지는 않습니다.
 
 다만 스타킹의 색이 상당히 짙어서 그런지 팬티는 구현되어 있지 않습니다. 저런걸 팬티 스타킹이라고 하던가요?
 
-![](/images/Unboxing/071/17.jpg){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/Unboxing/071/17.jpg?raw=true){: .align-center}
 
 다음으로는 토모에 마미입니다.
 
-![](/images/Unboxing/071/18.jpg){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/Unboxing/071/18.jpg?raw=true){: .align-center}
 
 구성품은 토모에 마미 본체, 받침대, 그리고 무기(총 2자루)로 구성되어 있습니다.
 
-![](/images/Unboxing/071/19.jpg){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/Unboxing/071/19.jpg?raw=true){: .align-center}
 
 무기 2개가 얼핏 보면 똑같이 보이지만, 자세히 보면 조금 다릅니다. 
 
@@ -149,15 +149,15 @@ tags:
 
 총구가 조금 더 긴 왼쪽이 바닥에 꽂는 부품입니다.
 
-![](/images/Unboxing/071/20.jpg){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/Unboxing/071/20.jpg?raw=true){: .align-center}
 
-![](/images/Unboxing/071/21.jpg){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/Unboxing/071/21.jpg?raw=true){: .align-center}
 
 이 총 조립이 상당히 어렵습니다. 
 
 손에 튀어나온 부분을 총의 홈에 끼워 맞춰야하는데, 이 작업이 생각보다 쉽지 않습니다.
 
-![](/images/Unboxing/071/22.jpg){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/Unboxing/071/22.jpg?raw=true){: .align-center}
 
 간신히 조립을 완성한 모습을 보습니다.
 
@@ -171,19 +171,19 @@ tags:
 
 저는 조립 순서를 몰라서 한번 분해하고 다시 조립했습니다.
 
-![](/images/Unboxing/071/23.jpg){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/Unboxing/071/23.jpg?raw=true){: .align-center}
 
 뒷모습입니다. 허리에 리본이 가장 눈에 띄네요.
 
 개인적으로 호무라의 리본보다 훨씬 마음에 듭니다.
 
-![](/images/Unboxing/071/24.jpg){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/Unboxing/071/24.jpg?raw=true){: .align-center}
 
 정면 부분의 디자인도 괜찮게 되어 있습니다.
 
 코르셋 부분이 도색하기 어려웠을 것 같은데, 가격에 비해 상당히 괜찮은 마감이라고 생각합니다.
 
-![](/images/Unboxing/071/25.jpg){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/Unboxing/071/25.jpg?raw=true){: .align-center}
 
 마미의 소울젬인 브로치도 제대로 구현되어 있습니다.
 
@@ -191,23 +191,23 @@ tags:
 
 사실 보석 부분의 도색 마감 자체가 조금 별로긴 한데, 이 가격대에 그런 것까지 기대할 순 없을 것 같습니다.
 
-![](/images/Unboxing/071/26.jpg){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/Unboxing/071/26.jpg?raw=true){: .align-center}
 
 그리고 마도카나 호무라와 다르게 팬티가 구현되어 있습니다.
 
 사실 마미가 작품 내 비중이 많은 편이 아니기 때문에 반역의 이야기 극장판에서 서비스씬 비슷한 장면도 나왔는데요, 그래서 이런 컨셉(?)이 유지된 것일지도 모르겠습니다.
 
-![](/images/Unboxing/071/27.jpg){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/Unboxing/071/27.jpg?raw=true){: .align-center}
 
 사진에서도 티가 납니다만, 미키 사야카는 다른 캐릭터들에 비해 포장 사이즈 자체가 큽니다.
 
 왜 그런지 생각해봤는데, 다른 캐릭터들과 달리 사야카는 처음부터 무기가 부착되어 나오기 때문이 아닌가 싶습니다.
 
-![](/images/Unboxing/071/28.jpg){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/Unboxing/071/28.jpg?raw=true){: .align-center}
 
 구성품은 단순히 본체와 받침대 뿐입니다.
 
-![](/images/Unboxing/071/29.jpg){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/Unboxing/071/29.jpg?raw=true){: .align-center}
 
 받침대는 뒷발만으로 전체를 지탱하는 구조로 되어 있습니다.
 
@@ -215,13 +215,13 @@ tags:
 
 실제로 저런 자세로는 서있기 어렵지 않을까요?
 
-![](/images/Unboxing/071/30.jpg){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/Unboxing/071/30.jpg?raw=true){: .align-center}
 
 게다가 미키 사야카는 왜인지 정면을 쳐다보는 구조로 되어 있지 않습니다.
 
 왜 얘만 옆을 보는 구조일까요?
 
-![](/images/Unboxing/071/31.jpg){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/Unboxing/071/31.jpg?raw=true){: .align-center}
 
 사실 사야카의 복장은 나머지 캐릭터에 비해 굉장히 노출도가 높습니다.
 
@@ -229,19 +229,19 @@ tags:
 
 게다가 치마도 미니스커트 수준으로 짧습니다.
 
-![](/images/Unboxing/071/32.jpg){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/Unboxing/071/32.jpg?raw=true){: .align-center}
 
 사야카의 상징인 음표 모양의 브로치도 제대로 구현되어 있습니다.
 
-![](/images/Unboxing/071/33.jpg){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/Unboxing/071/33.jpg?raw=true){: .align-center}
 
 뒷모습은 망토가 몸 대부분을 가려주고 있습니다.
 
-![](/images/Unboxing/071/34.jpg){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/Unboxing/071/34.jpg?raw=true){: .align-center}
 
 역시 사야카도 머리 접합선은 피해갈 수 없었습니다.
 
-![](/images/Unboxing/071/35.jpg){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/Unboxing/071/35.jpg?raw=true){: .align-center}
 
 사야카의 치마가 비대칭 형태인데, 앞이 길고 뒤가 짧은 구조입니다. 
 
@@ -251,27 +251,27 @@ tags:
 
 오른쪽에서 보면 허벅지 전체가 드러날 정도네요.
 
-![](/images/Unboxing/071/36.jpg){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/Unboxing/071/36.jpg?raw=true){: .align-center}
 
 마지막으로 사쿠라 쿄코입니다.
 
-![](/images/Unboxing/071/37.jpg){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/Unboxing/071/37.jpg?raw=true){: .align-center}
 
 구성품은 본체, 무기(창), 받침대입니다.
 
-![](/images/Unboxing/071/38.jpg){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/Unboxing/071/38.jpg?raw=true){: .align-center}
 
 머리카락이 상당히 역동적으로 흩날려 보이는 구조인데, 그래서 그런지 머리카락이 비닐로 한 겹 더 포장되어 있습니다. 
 
 그런데 팔은 왜 비닐로 감싸져있는지 모르겠네요.
 
-![](/images/Unboxing/071/39.jpg){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/Unboxing/071/39.jpg?raw=true){: .align-center}
 
 무기는 별도의 조립이 필요 없이 바로 장착이 가능하게끔 되어 있습니다.
 
 하단 부분에 약간 튀어나온 부분이 있는데, 저 부분을 손에 장착시키는 구조인 것으로 보입니다.
 
-![](/images/Unboxing/071/40.jpg){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/Unboxing/071/40.jpg?raw=true){: .align-center}
 
 완성한 모습입니다. 
 
@@ -281,13 +281,13 @@ tags:
 
 사야카 관련 굿즈나 일러스트를 보면 겨드랑이를 강조한 자세가 많던데, 이것도 그렇네요.
 
-![](/images/Unboxing/071/41.jpg){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/Unboxing/071/41.jpg?raw=true){: .align-center}
 
 지금보니 자세도 자세지만 고개도 뭔가 부자연스럽다는 느낌이 들긴 하네요.
 
 그리고 움직이는 자세가 아님에도 불구하고 바람이 부는듯 치마가 뒤로 펄럭이고 있습니다.
 
-![](/images/Unboxing/071/42.jpg){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/Unboxing/071/42.jpg?raw=true){: .align-center}
 
 창은 생각보다 장착하기 쉽지 않았습니다.
 
@@ -295,11 +295,11 @@ tags:
 
 이렇게 만들거면 차라리 사야카처럼 그냥 일체형으로 만들어줬으면 좋았을 텐데요.
 
-![](/images/Unboxing/071/43.jpg){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/Unboxing/071/43.jpg?raw=true){: .align-center}
 
 뒤에서 본 자세는 무난합니다.
 
-![](/images/Unboxing/071/44.jpg){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/Unboxing/071/44.jpg?raw=true){: .align-center}
 
 지금보니 쿄코의 속치마도 사야카처럼 굉장히 짧습니다.
 
@@ -307,13 +307,13 @@ tags:
 
 쿄코의 저 겉치마가 사야카의 망토처럼 뒤를 가려주는 역할인가 봅니다.
 
-![](/images/Unboxing/071/45.jpg){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/Unboxing/071/45.jpg?raw=true){: .align-center}
 
 다른 캐릭터와 마찬가지로 팬티는 흰색입니다.
 
-![](/images/Unboxing/071/46.jpg){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/Unboxing/071/46.jpg?raw=true){: .align-center}
 
-![](/images/Unboxing/071/47.jpg){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/Unboxing/071/47.jpg?raw=true){: .align-center}
 
 다섯 명을 선반에 장식해 보았습니다. 
 

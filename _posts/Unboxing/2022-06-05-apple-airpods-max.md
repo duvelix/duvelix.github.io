@@ -2,102 +2,102 @@
 title: "에어팟 맥스"
 permalink: /unboxing/apple-airpods-max/
 classes: wide
-thumbnail: /images/Unboxing/066/00.jpg
+thumbnail: https://github.com/JoonsuRyu/images/blob/master/Unboxing/066/00.jpg?raw=true
 categories:
   - interests
 tags:
   - unboxing
 ---
 
-![](/images/Unboxing/066/00.jpg){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/Unboxing/066/00.jpg?raw=true){: .align-center}
 
 안녕하세요, 정말 오랜만에 개봉기 포스트를 작성합니다. 요즘 뭔가 물건을 살 일이 없어서 개봉기 포스트를 쓰고 싶어도 쓸 수가 없었네요. 사실 요즘도 비싼(?) 전자제품은 잘 사지 않습니다만, 이번에는 아는 후배에게 제품을 제공받아 개봉하게 되었습니다.
 
 오늘 개봉할 제품은 에어팟 맥스입니다. 제가 애플 제품을 좋아하긴 합니다만, 헤드셋에 70만원 이상을 쓰는 것은 도저히 엄두가 안나서 잘되었다 싶었습니다. 이런 기회가 아니면 에어팟 맥스를 써볼 일이 앞으로도 없을 것 같거든요. 착한 후배는 마침 제가 블로그를 하는 것을 알고 기꺼이 첫 개봉의 기회를 저에게 제공해주었습니다.
 
-![](/images/Unboxing/066/01.jpg){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/Unboxing/066/01.jpg?raw=true){: .align-center}
 
 애플 공식 홈페이지에서 주문하면 보통 이런식으로 배송이 됩니다. 예전에 아이패드하고 에어팟도 공식 홈페이지에서 구매했었는데, 애플만의 박스 포장 방식이 있는 것 같았습니다.
 
-![](/images/Unboxing/066/02.jpg){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/Unboxing/066/02.jpg?raw=true){: .align-center}
 
 애플의 박스 포장은 이렇게 칼을 쓰지 않고 박스를 개봉할 수 있다는 특징이 있습니다. 가운데에 저 부분을 잡아 당기면 바로 박스가 열리는 구조로 되어있습니다.
 
-![](/images/Unboxing/066/03.jpg){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/Unboxing/066/03.jpg?raw=true){: .align-center}
 
 저 부분을 잡고 이렇게 쭉 당기면
 
-![](/images/Unboxing/066/04.jpg){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/Unboxing/066/04.jpg?raw=true){: .align-center}
 
 박스가 위 아래로 열리는 구조입니다. 박스 크기가 딱 제품 박스에 맞게 되어 있어서, 흔히 택배 박스에 들어 있는 뽁뽁이 같은 것은 없습니다. 포장이 깔끔한 것은 좋은데, 저는 이렇게 포장하면 충격에 약할 것 같다는 생각이 들었습니다.
 
-![](/images/Unboxing/066/05.jpg){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/Unboxing/066/05.jpg?raw=true){: .align-center}
 
 박스를 제거하면 패키지는 애플 답게 흰색으로 디자인 되어있습니다. 최근 애플 패키지는 비닐 포장을 없애고 종이로만 포장한다고 하는데, 에어팟 맥스는 아직까지도 비닐로 포장되어 있었습니다.
 
-![](/images/Unboxing/066/06.jpg){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/Unboxing/066/06.jpg?raw=true){: .align-center}
 
 뒷면에는 이렇게 에어팟 맥스가 케이스에 들어있는 그림이 그려져 있습니다.
 
-![](/images/Unboxing/066/07.jpg){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/Unboxing/066/07.jpg?raw=true){: .align-center}
 
 케이스 그림을 보고 설마 케이스까지 들어있나? 싶었는데 저 부분을 보니 진짜 들어있는게 맞았습니다. 아무래도 에어팟 맥스는 휴대성을 염두에 두고 만든 제품이다 보니 케이스를 넣어준 것 같습니다. 조금 의외였던 것은 애플이라면 케이스를 당연히 별도로 팔 줄 알았거든요.
 
-![](/images/Unboxing/066/08.jpg){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/Unboxing/066/08.jpg?raw=true){: .align-center}
 
 케이스에 씌여진 비닐도 저 부분을 잡아 당기면 칼 없이 깔끔하게 제거할 수 있습니다.
 
-![](/images/Unboxing/066/09.jpg){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/Unboxing/066/09.jpg?raw=true){: .align-center}
 
 패키지를 열어보니 에어팟 맥스 본체가 케이스에 끼워진 채로 담겨 있습니다. 회색 빛이 도는 것은 반투명 종이에 한 겹 더 쌓여있기 때문입니다.
 
-![](/images/Unboxing/066/10.jpg){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/Unboxing/066/10.jpg?raw=true){: .align-center}
 
 패키지 뚜껑 부분에는 아무것도 없습니다.
 
-![](/images/Unboxing/066/11.jpg){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/Unboxing/066/11.jpg?raw=true){: .align-center}
 
 본체를 먼저 꺼내봤습니다. 헤드셋이라 어느 정도 클 것이라고 예상했는데, 생각보다 작아서 놀랐습니다. 물론 이것은 크기를 줄여 케이스에 넣은 상태라 그런 것이고, 실제로 사용할 때는 이것보다는 약간 더 커집니다. 그래도 이 정도면 문제없이 가방에 쉽게 넣어다닐 수 있을 것 같습니다.
 
-![](/images/Unboxing/066/12.jpg){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/Unboxing/066/12.jpg?raw=true){: .align-center}
 
 본체 아래쪽에는 품질 보증서가 들어있는 종이 뭉치와 USB-C to Lightning 케이블이 있습니다. 아쉽게도 충전기는 들어있지 않기 때문에, 별도로 구매를 하던가 아니면 컴퓨터에 연결하여 충전해야 합니다. 이제는 아이폰에도 충전기를 안넣어주기 때문에 딱히 놀랍지도 않네요.
 
-![](/images/Unboxing/066/13.jpg){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/Unboxing/066/13.jpg?raw=true){: .align-center}
 
 혹시나 애플 스티커가 들어있을까 싶어서 종이 뭉치를 열어봤는데, 들어있지 않았습니다.
 
-![](/images/Unboxing/066/14.jpg){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/Unboxing/066/14.jpg?raw=true){: .align-center}
 
 본체에 씌여져 있던 반투명 비닐을 벗기면 이런 모양입니다.
 
-![](/images/Unboxing/066/15.jpg){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/Unboxing/066/15.jpg?raw=true){: .align-center}
 
 케이스와 에어팟 맥스 본체를 분리했습니다. 케이스 안쪽을 보여드리면 이렇게 아래쪽이 반쯤 뚫려 있는 구조입니다. 윗 덮개는 자석으로 붙는 구조인데, 자석이 생각보다 강해서 쉽게 떨어지지 않을까 하는 걱정은 안하셔도 될 것 같습니다.
 
-![](/images/Unboxing/066/16.jpg){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/Unboxing/066/16.jpg?raw=true){: .align-center}
 
 처음에는 이어패드 색이 본체와 다른가 싶었는데, 알고보니 초기에는 흰색 종이로 이어패드가 덮여 있었습니다.
 
-![](/images/Unboxing/066/17.jpg){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/Unboxing/066/17.jpg?raw=true){: .align-center}
 
 흰색 종이 포장을 제거하고 이어패드를 착용할 때처럼 돌려보니 이런 느낌입니다. 제 손이 조금 크긴 한데, 그걸 감안해도 에어팟 맥스는 생각보다 작다고 생각합니다.
 
-![](/images/Unboxing/066/18.jpg){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/Unboxing/066/18.jpg?raw=true){: .align-center}
 
 오른쪽 위에는 애플 워치와 비슷하게 다이얼과 버튼이 있습니다. 버튼의 용도는 아마 전원일테고, 다이얼은 볼륨 조절인 것 같습니다.
 
-![](/images/Unboxing/066/19.jpg){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/Unboxing/066/19.jpg?raw=true){: .align-center}
 
 충전 포트는 오른쪽 아래에 있습니다. 당연히 애플 제품 답게 Lightning 포트가 달려 있습니다.
 
-![](/images/Unboxing/066/20.jpg){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/Unboxing/066/20.jpg?raw=true){: .align-center}
 
-![](/images/Unboxing/066/21.jpg){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/Unboxing/066/21.jpg?raw=true){: .align-center}
 
 에어팟 맥스는 대칭형 모양이기 때문에 어느 쪽이 왼쪽이고 오른쪽인지 구분이 잘 안됩니다. 그래서인지 이어패드 안쪽에 저렇게 R, L로 왼쪽과 오른쪽을 표시해 놓았습니다. 이걸 굉장히 작게 표시해둔 헤드셋도 있는데, 이건 확실히 마음에 드네요.
 
-![](/images/Unboxing/066/22.jpg){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/Unboxing/066/22.jpg?raw=true){: .align-center}
 
 본체와 케이스를 따로 놓고 찍어봤습니다. 실제로 착용할 때는 프레임 부분을 늘려야합니다.
 

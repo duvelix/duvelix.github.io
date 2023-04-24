@@ -97,7 +97,7 @@
 
   </head>
 
-  <body class="layout--single wide">
+  <body class="layout--single">
     <nav class="skip-links">
   <ul>
     <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
@@ -369,7 +369,7 @@ G_{t:t+n} &amp; \doteq \hat{q}(S_t, A_t, \mathbf{w}_{t+n-1}) + \sum_{k=t}^{t+n-1
 
 <p>Off-policy가 어떤 상황에서 문제가 발생하는지 직관적으로 알기위해 간단한 예시를 하나 소개하겠습니다. MDP 중 일부에서 다음과 같은 2개의 State가 있다고 가정합니다. 여기서 매개변수 Vector $\mathbf{w}$는 단일 구성 요소 $w$로만 구성됩니다. 만약 두 State에 대한 Feature Vector가 각각 단순한 숫자로 이루어진 경우, Linear Function Approximation을 할 수 있습니다. 여기서는 각 State의 Value를 $w$와 $2w$로 설정합니다. 첫 번째 State에서는 Reward 0을 받고 두 번째 State로 이동하는 단 한 개의 Action만 존재합니다. 이것을 도식화하면 다음과 같습니다.</p>
 
-<p><img src="/images/Reinforcement Learning/11. Off-policy Methods with Approximation/RL 11-01.png" alt="" class="align-center" /></p>
+<p><img src="https://github.com/JoonsuRyu/images/blob/master/RL/011/01.png?raw=true" alt="" class="align-center" /></p>
 
 <p>이 간단한 예제에서 어떻게 발산이 발생하는지 계산해보겠습니다. 먼저 초기에 $w = 10$이라고 가정합니다. 그러면 Estimated Value가 10인 State에서 Estimated Value가 20인 State로 이동합니다. Value가 상승했으므로 좋은 Action으로 판단되기 때문에, $w$는 첫 번째 State의 Estimated Value를 높이기 위해 증가합니다. $\gamma$가 1에 가까우면 TD Error는 10에 가까워질 것이고, 만약 $\alpha = 0.1$이면 TD Error를 줄이기 위해 $w$는 11에 가깝게 증가시킬 것입니다. 문제는 두 번째 State가 $2w$로 근사되었기 때문에 동시에 22 정도가 증가한다는 것입니다. 그렇게 되면 TD Error가 오히려 11로 증가합니다. 따라서 첫 번째 State의 Value가 다시 증가하며, 이전보다 더 많은 수치인 12.1 정도가 증가합니다. 이후로는 역시 두 번째 State의 Value도 증가하며, 결국 $w$는 무한대로 발산합니다.</p>
 
@@ -387,11 +387,11 @@ G_{t:t+n} &amp; \doteq \hat{q}(S_t, A_t, \mathbf{w}_{t+n-1}) + \sum_{k=t}^{t+n-1
 
 <p>다만 이 예제는 전체 MDP의 일부만 놓고 가정한 예시입니다. 이제 따져봐야 할 것은 예제와 같이 불안정하고 완전한 MDP 시스템이 실제로 존재할 수 있는지에 대한 여부입니다. 결론부터 말하자면 그런 시스템은 존재하며, <span style="color:red">Baird’s Counterexample</span>이라는 이름으로 알려져 있습니다. 아래 그림과 같이 7개의 State와 2개의 Action이 있는 Episodic MDP가 있습니다. 점선으로 표시된 동작은 동일한 확률로 6개의 State 중 하나로 Action할 수 있다는 뜻이고, 실선으로 표시된 동작은 모두 맨 아래의 7번째 State로 이동합니다. Behavior Policy $b$는 확률 $\frac{6}{7}$로 점선 Action, 확률 $\frac{1}{7}$로 실선의 Action을 선택합니다. 이 확률 분포는 각 Episode의 시작 분포이기도 합니다. Target Policy $\pi$는 항상 실선 Action만 선택하여 7번째 State로만 이동하려고 합니다. Reward는 모든 Transition에서 0입니다. Discount Factor는 $\gamma = 0.99$로 정의됩니다.</p>
 
-<p><img src="/images/Reinforcement Learning/11. Off-policy Methods with Approximation/RL 11-02.png" alt="" class="align-center" /></p>
+<p><img src="https://github.com/JoonsuRyu/images/blob/master/RL/011/02.png?raw=true" alt="" class="align-center" /></p>
 
 <p>각각의 State에 나타난 식은 Linear Parameter를 사용하여 State-Value를 추정한 것입니다. $w$ 아래에 있는 첨자는 Weight Vector $\mathbf{w} \in \mathbb{R}^8$의 몇 번째 요소인지 표시한 것입니다. 그러므로 맨 왼쪽의 State를 Feature Vector로 표현하면 $\mathbf{x} = (2,0,0,0,0,0,0,1)^{\sf T}$입니다. Reward는 모든 Transition에서 0으로 정의되어 있으므로 실제 Value Function은 모든 State $s$에 대해 $v_{\pi} = 0$입니다.  따라서 Weight Vector가 $\mathbf{w} = \mathbf{0}$에 수렴한다면 정확하게 근사가 가능합니다. (다만 이전 예제와 달리 구성 요소가 많기 때문에 이 외에도 더 많은 해법이 존재합니다) 또한 Feature Vector의 집합 $\{ \mathbf{x}(s) : s \in \mathcal{S} \}$는 Linear Independent 집합입니다. 이렇게 보았을 때 이 문제는 Linear Function Approximation에 적합한 것처럼 보입니다.</p>
 
-<p><img src="/images/Reinforcement Learning/11. Off-policy Methods with Approximation/RL 11-03.png" alt="" class="align-center" /></p>
+<p><img src="https://github.com/JoonsuRyu/images/blob/master/RL/011/03.png?raw=true" alt="" class="align-center" /></p>
 
 <p>그런데 이 문제에 식 (11.2)와 같은 Semi-gradient TD(0)를 적용하면 위의 그림의 왼쪽과 같이 Weight가 무한대로 발산합니다. 심지어 그림의 오른쪽처럼 Expected Update를 이용한 Dynamic Programming을 사용해도 마찬가지로 발산합니다. 이 때 Weight Vector $\mathbf{w}$가 DP Target을 사용하여 Semi-gradient 방법으로 동시에 Update 되는 방식은 다음과 같습니다.</p>
 
@@ -405,7 +405,7 @@ G_{t:t+n} &amp; \doteq \hat{q}(S_t, A_t, \mathbf{w}_{t+n-1}) + \sum_{k=t}^{t+n-1
 
 <p><strong>Example 11.1) Tsitsiklis and Van Roy’s Counterexample</strong></p>
 
-<p><img src="/images/Reinforcement Learning/11. Off-policy Methods with Approximation/RL 11-04.png" alt="" class="align-center" /></p>
+<p><img src="https://github.com/JoonsuRyu/images/blob/master/RL/011/04.png?raw=true" alt="" class="align-center" /></p>
 
 <p>이 예제는 각각의 단계에서 Least-Squares 해법을 찾은 경우에도 Linear Function Approximation이 DP에서 제대로 동작하지 않는 것을 보여줍니다. 위의 그림에서 나온 것처럼 $w$와 $2w$로 근사된 State가 있고, $2w$ State에서 $1-\epsilon$ 확률로 자기 자신으로 돌아오는 Action과 $\epsilon$ 확률로 마지막 State로 이동하는 Action이 있습니다. 모든 Transition에서 Reward는 0으로 정의되어 있기 때문에 Real Value는 $w = 0$일 경우 정확하게 추정이 가능합니다. 각 단계에서 1-step Return과 Estimated Value에 대한 $\overline{\text{VE}}$를 최소화하는 것으로 $w_{k+1}$를 정의하면 다음과 같이 전개할 수 있습니다.</p>
 
@@ -449,7 +449,7 @@ w_{k+1} &amp;= \underset{w \in \mathbb{R}}{\operatorname{argmin}} \sum_{s \in \m
 
 <p>간단하게 3개의 State $\mathcal{S} = \{ s_1, s_2, s_3 \}$와 2개의 매개변수 $\mathbf{w} = (w_1, w_2)^{\sf T}$를 예시로 들어보겠습니다. 이 예시에서 모든 Value Function/Vector는 3차원 공간의 점으로 볼 수 있습니다. 매개변수는 2차원 부분공간에 대한 대체 좌표계를 제공합니다. 또한 모든 Weight Vector $\mathbf{w} = (w_1, w_2)^{\sf T}$는 2차원 부분공간의 한 점이므로 3가지 State 전부에게 값을 할당하는 완전한 Value Function $v_{\mathbf{w}}$이기도 합니다. 일반적인 Function Approximation을 사용하면 전체 공간과 표현 가능한 함수 사이의 관계가 복잡할 수 있으나, 이 경우에는 Linear Value Function Approximation을 사용하면 부분 공간은 아래 그림과 같은 간단한 평면으로 나옵니다.</p>
 
-<p><img src="/images/Reinforcement Learning/11. Off-policy Methods with Approximation/RL 11-05.png" alt="" class="align-center" /></p>
+<p><img src="https://github.com/JoonsuRyu/images/blob/master/RL/011/05.png?raw=true" alt="" class="align-center" /></p>
 
 <p>이 예시에서 고정된 단일 Policy $\pi$에 대하여, Real Value Function $v_{\pi}$가 너무 복잡해 근사값으로 정확하게 표현되지 않는다고 가정해보겠습니다. 이것은 $v_{\pi}$가 부분공간에 있지 않다는 의미입니다. 따라서 $v_{\pi}$는 위의 그림과 같이 표현 가능한 평면 (부분공간) 밖에 있는 것으로 나타낼 수 있습니다.</p>
 
@@ -558,7 +558,7 @@ w_{k+1} &amp;= \underset{w \in \mathbb{R}}{\operatorname{argmin}} \sum_{s \in \m
 
 <p>아래 그림과 같이 3개의 State로 이루어진 Episodic MRP를 가정해보겠습니다. Episode는 항상 State A에서 시작한 다음, 확률적으로 Split됩니다. 50% 확률로 B로 간 다음 1의 Reward를 받고 종료되는 분기와, 50% 확률로 C로 간 다음 0의 Reward를 받고 종료되는 분기가 있습니다. A에서 B를 가는 것과 C를 가는 것 자체는 모두 0의 Reward를 받게 설계되어 있습니다. 이것은 Episodic Task이기 때문에 $\gamma$를 1로 간주할 수 있습니다. 또한 $\rho_t$가 항상 1이 될 수 있게 On-policy라고 가정하고, Tabular Function Approximation을 사용하도록 하겠습니다. 문제 설정만 보면 굉장히 간단한 것처럼 보입니다.</p>
 
-<p><img src="/images/Reinforcement Learning/11. Off-policy Methods with Approximation/RL 11-06.png" alt="" class="align-center" /></p>
+<p><img src="https://github.com/JoonsuRyu/images/blob/master/RL/011/06.png?raw=true" alt="" class="align-center" /></p>
 
 <p>이 문제에서 State A의 Value를 구해보면 50% 확률로 1의 Reward를 받고 50% 확률로 0의 Reward를 받기 때문에 A의 Value는 $1/2$이라고 쉽게 계산할 수 있습니다. 마찬가지로 State B의 Value는 1, State C의 Value는 0이 됩니다.</p>
 
@@ -596,7 +596,7 @@ w_{k+1} &amp;= \underset{w \in \mathbb{R}}{\operatorname{argmin}} \sum_{s \in \m
 
 <p>아래 그림과 같은 3개의 State A, B, C로 이루어진 Episodic MRP가 있습니다. Episode는 동일한 확률로 A1 또는 A2에서 시작합니다. 그러나 State A1, A2는 Function Approximation을 수행할 때 A라는 동일한 State로 간주됩니다.</p>
 
-<p><img src="/images/Reinforcement Learning/11. Off-policy Methods with Approximation/RL 11-07.png" alt="" class="align-center" /></p>
+<p><img src="https://github.com/JoonsuRyu/images/blob/master/RL/011/07.png?raw=true" alt="" class="align-center" /></p>
 
 <p>Function Approximation 방법의 매개변수는 3가지 구성요소를 갖고 있습니다. 하나는 State B의 Value, 하나는 State C의 Value, 나머지 하나는 State A (=A1과 A2)의 Value를 표현합니다. 초기 State를 제외하고 시스템은 Deterministic입니다. Episode가 A1에서 시작하면 0의 Reward를 받고 B로 Transition되고, 1의 Reward를 받은 다음 Episode가 종료됩니다. 마찬가지로 A2에서 시작하는 경우에는 0의 Reward를 받고 C로 Transition되고, 0의 Reward를 받고 Episode가 종료됩니다.</p>
 
@@ -620,7 +620,7 @@ w_{k+1} &amp;= \underset{w \in \mathbb{R}}{\operatorname{argmin}} \sum_{s \in \m
 
 <p>Learnable의 개념을 명확하게 하기 위해 몇 가지 간단한 예부터 시작하겠습니다. 다음과 같은 두 개의 Markov Reward Process (MRP)를 가정해봅시다.</p>
 
-<p><img src="/images/Reinforcement Learning/11. Off-policy Methods with Approximation/RL 11-08.png" alt="" class="align-center" /></p>
+<p><img src="https://github.com/JoonsuRyu/images/blob/master/RL/011/08.png?raw=true" alt="" class="align-center" /></p>
 
 <p>위의 두 MRP에서 Edge는 모두 동일한 확률로 발생하는 것으로 가정하고, Edge에 있는 숫자는 그 Transition이 일어났을 때 받게 되는 Reward를 의미합니다. 모든 State는 단일 성분 Feature Vector $x = 1$과 $w$로 포함됩니다. 따라서 MRP에서 유일하게 변화하는 부분은 Reward의 순서입니다. 왼쪽 MRP는 계속 같은 State에 있으면서 각각 0.5의 확률로 0이나 2의 Reward를 받습니다. 오른쪽 MRP는 같은 확률로 다른 State로 움직이거나 같은 State에 있는데, Reward는 한 State에서는 무조건 0이고 다른 State에서는 무조건 2입니다. 두 MRP가 다르게 설계되어 있지만, Reward를 관찰하게 되면 두 MRP 모두 0, 2, 2, 0, 2, 0, 0, 0, … 과 같은 Sequence로 나오게 됩니다. 따라서 무한한 양의 데이터가 주어진다고 하더라도 이 Sequence이 주어졌을 때 두 MRP중 어느 곳에서 생성된 MRP인지 알 수 없습니다. 심지어, 데이터로부터 MRP의 State가 1개인지 2개인지, Stochastic인지 Deterministic인지조차 알 수 없습니다. 이런 것을 <span style="color:red">Not Learnable</span>이라고 합니다.</p>
 
@@ -637,7 +637,7 @@ w_{k+1} &amp;= \underset{w \in \mathbb{R}}{\operatorname{argmin}} \sum_{s \in \m
 
 <p>식 (11.24)를 보면 $\overline{\text{RE}}$와 $\overline{\text{VE}}$는 매개변수 Vector $\mathbf{w}$에 의존하지 않는 항을 제외하고는 동일합니다. 따라서 두 목표는 동일한 최적의 매개변수 $\mathbf{w}$가 필요합니다. 이 둘의 관계는 아래 그림을 보시면 더 이해가 쉬울 것입니다.</p>
 
-<p><img src="/images/Reinforcement Learning/11. Off-policy Methods with Approximation/RL 11-09.png" alt="" class="align-center" /></p>
+<p><img src="https://github.com/JoonsuRyu/images/blob/master/RL/011/09.png?raw=true" alt="" class="align-center" /></p>
 
 <p>이제 다시 $\overline{\text{BE}}$로 돌아가보면, $\overline{\text{RE}}$는 MDP에 대한 지식을 토대로 계산하는 것이 가능하지만, 데이터에서 학습할 수 없다는 점에서 $\overline{\text{VE}}$와 유사합니다. 하지만 $\overline{\text{BE}}$가 $\overline{\text{VE}}$와 다른 점은 최적화하는 해법을 학습할 수 없다는 점입니다. 바로 아래의 반례를 통해 그것을 알 수 있습니다.</p>
 
@@ -645,7 +645,7 @@ w_{k+1} &amp;= \underset{w \in \mathbb{R}}{\operatorname{argmin}} \sum_{s \in \m
 
 <p>이번에는 앞에서 다루었던 예시보다 약간 더 복잡한 MRP가 필요합니다. 반례에 사용할 두 개의 MRP는 다음과 같습니다.</p>
 
-<p><img src="/images/Reinforcement Learning/11. Off-policy Methods with Approximation/RL 11-10.png" alt="" class="align-center" /></p>
+<p><img src="https://github.com/JoonsuRyu/images/blob/master/RL/011/10.png?raw=true" alt="" class="align-center" /></p>
 
 <p>먼저 왼쪽 MRP에는 서로 구분되는 두 개의 State가 있습니다. 하지만 오른쪽 MRP는 세 가지 State가 있는데, 그 중 B와 B’은 동일한 State로 판단되기 때문에 동일한 Value로 추정해야 합니다. 구체적으로 매개변수 Vector $\mathbf{w}$는 2개의 성분이 있으며, State A의 Value는 첫 번째 성분에 의해 표현되고, B와 B’의 Value는 두 번째 성분에 의해 표현됩니다. 두 번째 MRP는 세 State 모두 동일한 시간이 소요되도록 설계되었으므로 모든 State에 대해 $\mu(s) = 1/3$임을 쉽게 알 수 있습니다.</p>
 
@@ -745,7 +745,7 @@ w_{k+1} &amp;= \underset{w \in \mathbb{R}}{\operatorname{argmin}} \sum_{s \in \m
 
 <p>마찬가지로, 마지막 곱셈 부분인 $(\mathbf{x}_t^{\sf T} \mathbf{v}_t)$가 먼저 수행되면 시간 복잡도는 $O(d)$가 됩니다. 이 알고리즘은 <span style="color:red">TD(0) with Gradient Correction (TDC)</span> 또는 <span style="color:red">GTD(0)</span>라고 부릅니다.</p>
 
-<p><img src="/images/Reinforcement Learning/11. Off-policy Methods with Approximation/RL 11-11.png" alt="" class="align-center" /></p>
+<p><img src="https://github.com/JoonsuRyu/images/blob/master/RL/011/11.png?raw=true" alt="" class="align-center" /></p>
 
 <p>위의 그림은 Baird’s Counterexample에 대한 Sample과 TDC의 추정 결과를 보여줍니다. 의도했던 대로 $\overline{\text{PBE}}$는 0으로 감소하지만 매개변수 Vector $\mathbf{w}$의 구성 요소들은 0에 접근하지 않습니다. 그래프를 보면 최적의 해법인 $\hat{v} = 0$과는 거리가 멀며, 다른 최적의 해법이라도 $\mathbf{w}$가 $(1, 1, 1, 1, 1, 1, 4, -2)^{\sf T}$에 비례해야 하는데, 1000번의 반복 후에도 그것에 가깝게 수렴하지 않습니다. 사실 실제로 최적의 해법으로 수렴을 하고 있긴 하지만, $\overline{\text{PBE}}$가 이미 0에 너무 가깝기 때문에 수렴 속도가 너무 느릴 뿐입니다.</p>
 
@@ -781,7 +781,7 @@ M_t &amp;= \gamma \rho_{t-1} M_{t-1} + I_t
 
 <p>위 식에서 Interest $I_t$는 임의의 초기값을 갖고, Emphasis $M_t$는 $M_{-1} = 0$으로 초기화됩니다. 아래 그림은 Baird’s counterexample에서 Parameter Vector의 구성 요소 값이 어떻게 변하는지 나타내고 있습니다. (이 그래프는 모든 시간 단계 $t$에 대해서 $I_t = 1$로 설정되어 있다고 가정했습니다) 그래프 중간에서 약간의 출렁임이 보이긴 하지만, 결국 모든 값은 특정 값으로 수렴하며 $\overline{\text{VE}}$는 0에 가까워집니다.</p>
 
-<p><img src="/images/Reinforcement Learning/11. Off-policy Methods with Approximation/RL 11-12.png" alt="" class="align-center" /></p>
+<p><img src="https://github.com/JoonsuRyu/images/blob/master/RL/011/12.png?raw=true" alt="" class="align-center" /></p>
 
 <p>이러한 Trajectory는 Transition나 Reward에 대한 Sampling으로 인한 Variance 없이, Parameter Vector Trajectory의 기대값을 반복적으로 계산해서 얻습니다. 안타깝게도 Emphatic-TD 알고리즘을 직접 적용한다면 Baird’s counterexample에서 Variance가 너무 크기 때문에 계산 실험에서 일관된 결과를 얻는 것이 불가능합니다. 알고리즘은 이 문제에 대해 이론적으로 최적의 해법으로 수렴하지만, 실제로는 그렇지 않습니다. 다음 Section에서는 이런 알고리즘의 Variance를 어떻게 줄일 수 있을지에 대해 논의합니다.</p>
 

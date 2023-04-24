@@ -2,14 +2,14 @@
 title: "Amazon에서 구매한 PSP"
 permalink: /Unboxing/psp-from-amazon/
 classes: wide
-thumbnail: /images/Unboxing/070/00.jpg
+thumbnail: https://github.com/JoonsuRyu/images/blob/master/Unboxing/070/00.jpg?raw=true
 categories:
   - interests
 tags:
   - unboxing
 ---
 
-![](/images/Unboxing/070/00.jpg){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/Unboxing/070/00.jpg?raw=true){: .align-center}
 
 저는 어지간하면 중고 제품을 구매하지 않습니다. 특히 전자기기는 무조건 신품으로 사는 편인데, 겉보기만으로는 기기의 상태를 제대로 알기 힘들기 때문입니다. 
 
@@ -21,7 +21,7 @@ tags:
 
 지난번 포스트에서 마마마 PSP 게임을 샀는데, 저는 PSP를 갖고 있지 않았습니다. 그래서 이 참에 기기를 하나 마련하기 위해 일본 아마존을 찾아보았습니다. 마침 괜찮은 가격에 Like New 제품이 있었기 때문에 악세서리와 같이 구매하였습니다.
 
-![](/images/Unboxing/070/01.png){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/Unboxing/070/01.png?raw=true){: .align-center}
 
 PSP 본체는 약 11만원, 파우치는 약 2만 5천원, 보호필름은 7천원 정도에 구매했습니다. 
 
@@ -29,7 +29,7 @@ PSP 본체는 약 11만원, 파우치는 약 2만 5천원, 보호필름은 7천�
 
 보호필름은 예비용을 포함해 2개 구매했습니다.
 
-![](/images/Unboxing/070/02.jpg){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/Unboxing/070/02.jpg?raw=true){: .align-center}
 
 제품을 배송 받고, 택배 상자에서 제품을 꺼낸 모습입니다. 
 
@@ -39,21 +39,21 @@ PSP 본체는 약 11만원, 파우치는 약 2만 5천원, 보호필름은 7천�
 
 솔직히 이 상태로 온 것은 조금 실망스러웠습니다.
 
-![](/images/Unboxing/070/03.jpg){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/Unboxing/070/03.jpg?raw=true){: .align-center}
 
 보시다시피 구성품이 전부 랩을 돌돌 감아져 있습니다. 
 
 맨 아래에 있는 것이 본체고, 그 위에 충전기와 배터리가 있네요.
 
-![](/images/Unboxing/070/04.jpg){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/Unboxing/070/04.jpg?raw=true){: .align-center}
 
 랩을 벗겨보니 구성품의 상태는 나름 괜찮습니다. 
 
 충전기와 배터리, 본체 모두 개별 포장이 되어 있네요.
 
-![](/images/Unboxing/070/05.jpg){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/Unboxing/070/05.jpg?raw=true){: .align-center}
 
-![](/images/Unboxing/070/06.jpg){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/Unboxing/070/06.jpg?raw=true){: .align-center}
 
 본체의 상태는 놀랄 만큼 괜찮았습니다. 
 
@@ -63,7 +63,7 @@ PSP 본체는 약 11만원, 파우치는 약 2만 5천원, 보호필름은 7천�
 
 그 외에 부분도 눈에 띄는 흠집은 없었습니다.
 
-![](/images/Unboxing/070/07.jpg){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/Unboxing/070/07.jpg?raw=true){: .align-center}
 
 뒷 부분에 디스크를 넣는 부분을 열어봤습니다. 
 
@@ -73,11 +73,11 @@ PSP는 다른 휴대용 게임기와 다르게 칩이 아니라 UMD를 사용하
 
 이번에 어떤 느낌인지 제대로 볼 수 있을 것 같습니다.
 
-![](/images/Unboxing/070/08.jpg){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/Unboxing/070/08.jpg?raw=true){: .align-center}
 
 윗 부분에는 기기로 데이터를 넣기 위한 USB Type-B 포트와, 정체 모를 WLAN 스위치가 있네요.
 
-![](/images/Unboxing/070/09.jpg){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/Unboxing/070/09.jpg?raw=true){: .align-center}
 
 아랫 부분에는 이어폰 잭과 충전 포트가 있습니다. 
 
@@ -87,7 +87,7 @@ PSP는 다른 휴대용 게임기와 다르게 칩이 아니라 UMD를 사용하
 
 ## 파우치
 
-![](/images/Unboxing/070/10.jpg){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/Unboxing/070/10.jpg?raw=true){: .align-center}
 
 다음은 기기를 담아둘 파우치입니다. 
 
@@ -95,9 +95,9 @@ PSP는 다른 휴대용 게임기와 다르게 칩이 아니라 UMD를 사용하
 
 PSP 전 세대와 Vita 까지 사용할 수 있는 크기라고 나와있네요.
 
-![](/images/Unboxing/070/11.jpg){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/Unboxing/070/11.jpg?raw=true){: .align-center}
 
-![](/images/Unboxing/070/12.jpg){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/Unboxing/070/12.jpg?raw=true){: .align-center}
 
 제품 사진으로 볼 때는 잘 몰랐는데, 받아보고 나니 뭔가 싼마이한 느낌이 드네요. 
 
@@ -105,7 +105,7 @@ PSP 전 세대와 Vita 까지 사용할 수 있는 크기라고 나와있네요.
 
 그냥 네이버 쇼핑에서 파는 싸구려 파우치를 살껄 하는 생각이 드네요.
 
-![](/images/Unboxing/070/13.jpg){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/Unboxing/070/13.jpg?raw=true){: .align-center}
 
 파우치를 열어보고 제품을 넣어보니 그럭저럭 비싼 값을 하는 것 같습니다. 
 
@@ -113,7 +113,7 @@ PSP 전 세대와 Vita 까지 사용할 수 있는 크기라고 나와있네요.
 
 ## 메모리카드 & 보호필름
 
-![](/images/Unboxing/070/14.jpg){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/Unboxing/070/14.jpg?raw=true){: .align-center}
 
 그런데 제가 간과한 점이 있습니다.
 
@@ -121,7 +121,7 @@ Vita와 마찬가지로 게임을 세이브하기 위해서는 별도의 저장 
 
 하필 메모리스틱이라고 하는 독자 규격 저장장치라 구매를 안 할 수가 없네요.
 
-![](/images/Unboxing/070/15.jpg){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/Unboxing/070/15.jpg?raw=true){: .align-center}
 
 결국 메모리스틱을 새로 구매했습니다. 
 
@@ -133,17 +133,17 @@ Vita와 마찬가지로 게임을 세이브하기 위해서는 별도의 저장 
 
 ## 기기 세팅
 
-![](/images/Unboxing/070/16.jpg){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/Unboxing/070/16.jpg?raw=true){: .align-center}
 
 일본에서 구매한 기기이기 때문에 당연히 기기도 일본어만 가능할 줄 알았는데, 놀랍게도 한국어 설정이 있었습니다. 
 
 다만 저는 일본판 게임을 플레이할 예정이기 때문에 큰 상관은 없습니다.
 
-![](/images/Unboxing/070/17.jpg){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/Unboxing/070/17.jpg?raw=true){: .align-center}
 
 메모리스틱은 16기가지만, 실제로 사용할 수 있는 용량은 약 14기가로 보입니다.
 
-![](/images/Unboxing/070/18.jpg){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/Unboxing/070/18.jpg?raw=true){: .align-center}
 
 지난 포스트에서 구매한 마법소녀 마도카☆마기카 포터블 디스크를 넣었습니다.
 
@@ -155,7 +155,7 @@ Vita와 마찬가지로 게임을 세이브하기 위해서는 별도의 저장 
 
 이 부분은 좀 더 사용해보고 난 뒤에야 판단할 수 있을 것 같습니다.
 
-![](/images/Unboxing/070/19.jpg){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/Unboxing/070/19.jpg?raw=true){: .align-center}
 
 이상하게 생각보다 UMD의 플라스틱 부분이 빠르게 흠집이 납니다. 
 

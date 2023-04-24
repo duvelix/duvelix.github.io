@@ -2,51 +2,51 @@
 title: "젤다의 전설 : 시간의 오카리나 3D & 무쥬라의 가면 3D"
 permalink: /unboxing/zelda-ocarina-3d-and-majora-3d/
 classes: wide
-thumbnail: /images/Unboxing/045/00.jpg
+thumbnail: https://github.com/JoonsuRyu/images/blob/master/Unboxing/045/00.jpg?raw=true
 categories:
   - interests
 tags:
   - unboxing
 ---
 
-![](/images/Unboxing/045/00.jpg){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/Unboxing/045/00.jpg?raw=true){: .align-center}
 
 안녕하세요, 오늘은 젤다의 전설 시간의 오카리나 3D와 무쥬라의 가면 3D를 개봉해보려고 합니다. 이 두 작품은 이전에 닌텐도 64로 나온 동명의 작품들을 닌텐도 3DS 플랫폼으로 리메이크한 작품입니다.  젤다의 전설 시리즈는 대부분 독립적인 배경을 갖고 있지만, 이 두 작품은 서로 이어지는 스토리를 가지고 있습니다. 보통은 스토리가 이어진다고 해도 전작의 후손 정도로 등장하던 작품들과는 달리, 주인공 자체가 동일 인물로 설정되었다는 점이 특이합니다.
 
-![](/images/Unboxing/045/01.jpg){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/Unboxing/045/01.jpg?raw=true){: .align-center}
 
 시간의 오카리나와 무쥬라의 가면 두 작품 모두 높은 평가를 받은 게임이지만, 한국에서는 닌텐도 64가 제대로 도입되지 못했기 때문에 원작이 발매되지 못했습니다. 다행히도 3DS는 한국에서 흥행한 덕분에 리메이크 두 작품 모두 한글화 정발이 되었습니다. 원작과 비교해 불편했던 게임성도 편해졌다고 하니, 시간이 날 때 틈틈히 즐겨봐야겠습니다.
 
-![](/images/Unboxing/045/02.jpg){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/Unboxing/045/02.jpg?raw=true){: .align-center}
 
 시간의 오카리나 3D는 2012년에 출시되었는데, 시간이 좀 지난 다음 닌텐도 셀렉츠 버전으로 재출시되어 가격이 인하되었습니다. 정가는 44,000원이지만, 셀렉츠 버전은 27,000원이었던 것으로 기억합니다. 셀렉츠 버전은 많이 풀렸기 때문에 현재도 구하는 것은 어렵지 않지만, 오리지날 버전은 웃돈을 주고 구해야합니다. 아무래도 저 셀렉츠 디자인을 싫어하시는 분이 꽤 많아서 그런 것 같습니다.
 
-![](/images/Unboxing/045/03.jpg){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/Unboxing/045/03.jpg?raw=true){: .align-center}
 
 다만 뒷면은 셀렉츠 버전이나 일반 버전이나 큰 차이가 없습니다. 타이틀 이름에서 알 수 있다시피, 닌텐도 3DS의 3D 기능을 제대로 지원합니다. 눈이 아프다고 이 기능을 끄시는 분들이 많은데, 전 3D 기능을 굉장히 좋아해서 지원하는 게임들은 전부 켜놓고 하는 것을 선호합니다.
 
 하나 아쉬운 점은 3D 액션 어드벤처 게임인데 C스틱을 지원하지 않습니다. 아무래도 시점을 이동할 때 불편할 것으로 생각됩니다.
 
-![](/images/Unboxing/045/04.jpg){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/Unboxing/045/04.jpg?raw=true){: .align-center}
 
 케이스 내부는 평범합니다. 게임 메뉴얼은 들어있지 않고, 소프트웨어 주의사항 및 카카오 스토리 친구 홍보물, 그리고 선불 카드 홍보물이 들어있습니다.
 
-![](/images/Unboxing/045/05.jpg){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/Unboxing/045/05.jpg?raw=true){: .align-center}
 
 칩 디자인은 단순한 편입니다. 젤다의 전설 로고만 단순히 나와 있습니다.
 
-![](/images/Unboxing/045/06.jpg){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/Unboxing/045/06.jpg?raw=true){: .align-center}
 
 무쥬라의 가면 3D도 셀렉츠 버전이 있지만, 한국에서는 출시하지 않았습니다. 한국에서는 그 시기에 이미 닌텐도 스위치로 넘어가는 시기였기 때문에, 3DS 신작 출시를 포기한 것 같습니다. 덕분에 한때 떨어졌던 무쥬라의 가면 3D 가격이 다시 확 뛰었습니다. 다행히 정가보다 웃돈을 줄 정도는 아닙니다.
 
-![](/images/Unboxing/045/07.jpg){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/Unboxing/045/07.jpg?raw=true){: .align-center}
 
 뒷면에는 무쥬라의 가면 배경에 대해 간략하게 소개하고 있습니다. 시간의 오카리나 3D에서는 C스틱을 지원하지 않았는데, 무쥬라의 가면 3D는 C스틱을 지원한다고 나와 있습니다. 아무래도 무쥬라의 가면 3D는 뉴 3DS 시리즈가 나온 후에 발매된 게임이라 그런 것 같습니다.
 
-![](/images/Unboxing/045/08.jpg){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/Unboxing/045/08.jpg?raw=true){: .align-center}
 
 케이스 내부는 아쉽게도 시간의 오카리나 3D와 똑같습니다. 구성품이 다른게 하나도 없네요.
 
-![](/images/Unboxing/045/09.jpg){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/Unboxing/045/09.jpg?raw=true){: .align-center}
 
 역시 게임 칩 디자인은 심플합니다. 게임의 분위기가 다른 젤다 시리즈에 비해 많이 어둡다고 들었는데, 이를 표현하기 위함인지 배경이 검은색입니다. 보라색도 그렇게 긍정적인 색이 아니다보니 칩 디자인에서부터 음울한 분위기가 풍겨나오는 것 같습니다.
