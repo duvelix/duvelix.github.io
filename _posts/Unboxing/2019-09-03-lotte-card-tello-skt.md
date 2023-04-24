@@ -2,52 +2,52 @@
 title: "롯데카드 텔로 SKT"
 permalink: /unboxing/lotte-card-tello-skt/
 classes: wide
-thumbnail: /images/Unboxing/015/00.jpg
+thumbnail: https://github.com/JoonsuRyu/images/blob/master/Unboxing/015/00.jpg?raw=true
 categories:
   - interests
 tags:
   - unboxing
 ---
 
-![](/images/Unboxing/015/00.jpg){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/Unboxing/015/00.jpg?raw=true){: .align-center}
 
 며칠 전에 롯데 아임 원더풀 카드를 발급받았으나, 실사용 목적이 아니라 체리피킹용으로 발급받았기 때문에 발급이 완료된 후 바로 텔로 SKT 카드를 신청하였습니다. 텔로 SKT 카드는 기본 혜택 외에 발급 시 혜택이 전혀 없기 때문입니다.
 
 사족으로, 카드 이름이 조금 부자연스럽다고 생각합니다. 제휴 카드라도 롯데 OOO 카드 이런 식으로 네이밍을 짓는 것이 좋을 것 같은데 특이하게 롯데카드 OOO 이런 식으로 이름을 지어놔서 문장 중간에 들어가면 굉장히 이질적입니다. 글 제목에는 그래도 공식 이름을 표기하는 것이 맞는 것 같아, 롯데카드 홈페이지와 똑같이 표기하였습니다.
 
-![](/images/Unboxing/015/01.jpg){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/Unboxing/015/01.jpg?raw=true){: .align-center}
 
 포장은 지난번과 동일했습니다. 아임 원더풀 카드를 발급받았을 때는 온라인으로 신청하였지만, 추가 발급은 롯데카드에 전화를 걸어 발급했습니다. 그런데 롯데카드 ARS로 신청했는데도 신청 경로가 제휴사로 되어 있습니다. 추가발급은 별다른 절차가 없기 때문에 8월 30일 점심시간 이후에 신청하고 9월 3일에 도착하였습니다.
 
-![](/images/Unboxing/015/02.jpg){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/Unboxing/015/02.jpg?raw=true){: .align-center}
 
 뒷면은 지난번 때처럼 별다른 것이 없습니다.
 
-![](/images/Unboxing/015/03.jpg){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/Unboxing/015/03.jpg?raw=true){: .align-center}
 
 봉투를 열면 위와 같은 구성물이 들어있습니다. 롯데카드 회원약관과 L.POINT 이용약관은 아임 원더풀 카드에도 똑같이 들어있던 것이고, 카드가 들어있는 종이도 지난번과 다를 것이 없습니다. 추가 발급이라 그런지 웰컴 기프트와 롯데백화점 주차권은 빠져있었는데, 지난번에 없던 롯데카드 신용카드 핵심 설명서가 들어있었습니다. "핵심" 설명서인데 왜 지난 아임 원더풀 카드를 발급받을 때에는 들어있지 않았는지 궁금합니다.
 
-![](/images/Unboxing/015/04.jpg){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/Unboxing/015/04.jpg?raw=true){: .align-center}
 
 카드 전면은 이렇게 생겼습니다. 아임 원더풀 카드와 다르게 카드 디자인이 세로로 되어 있습니다.
 
 카드 종류는 마스터카드와 국내전용 2가지가 있는데, 연회비의 차이가 없기 때문에 이왕이면 해외 결제가 가능한 마스터카드로 발급받는 것이 좋을 것 같습니다.
 
-![](/images/Unboxing/015/05.jpg){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/Unboxing/015/05.jpg?raw=true){: .align-center}
 
 카드 디자인은 상당히 멋집니다. 홈페이지에서는 주황색 플라스틱 모양인 것처럼 소개가 되어있는데, 실제로는 빛을 비추었을때 빛이 반사되는 재질로 만들어져 상당히 이쁩니다. 아임 원더풀 카드와 마찬가지로 꼭 메탈 재질처럼 보입니다. 아임 원더풀 카드 때도 그렇지만, 롯데카드의 디자인은 다른 회사에 비해 고급스러운 것 같습니다.
 
-![](/images/Unboxing/015/06.jpg){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/Unboxing/015/06.jpg?raw=true){: .align-center}
 
 아임 원더풀 카드때와 마찬가지로 카드번호와 사용자 이름이 뒷면에 나와 있습니다. 앞면이 세로로 디자인 되어있기 때문인지 뒷면 또한 세로로 디자인이 되어 있습니다.
 
-![](/images/Unboxing/015/07.png){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/Unboxing/015/07.jpg?raw=true){: .align-center}
 
 연회비는 2만원으로, 프리미엄 카드가 아닌 카드 치고는 상당히 비싼 편입니다. 하지만 그에 걸맞게 혜택은 상당히 괜찮은 편으로, 한 달 실적 30만원만 채우면 SKT 통신비 16,000원 청구할인이 적용됩니다. 물론 통신비 할인을 받기 위해서는 티월드에서 직접 납부방식을 이 카드로 변경해주어야 합니다. 생각보다 이걸 잊으시는 분이 많으신지, 롯데카드 상담사분께서도 이 부분을 3번이나 강조하셨습니다.
 
 저는 아임 원더풀 카드를 먼저 발급받고 이 카드를 발급받았기 때문에 연회비가 합쳐 청구될줄 알았는데 기본 연회비는 한 번만 청구되었습니다. 아임 원더풀 카드의 연회비는 1만원, 롯데 텔로 SKT 카드의 연회비는 2만원이기 때문에 총연회비는 2만 5천원이 청구되었습니다.
 
-![](/images/Unboxing/015/08.png){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/Unboxing/015/08.jpg?raw=true){: .align-center}
 
 혜택은 크게 3단계로, 30만원, 70만원, 120만원 사용에 각각 16,000원, 21,000원, 26,000원 할인이 적용됩니다. 많이 사용해봤자 혜택은 꼴랑 5천원씩만 늘어나고, 롯데카드의 마일리지 시스템인 L.POINT 조차 적립되지 않기 때문에, 딱 30만원 실적만 채우고 다른 카드를 사용하는 것이 낫습니다.
 

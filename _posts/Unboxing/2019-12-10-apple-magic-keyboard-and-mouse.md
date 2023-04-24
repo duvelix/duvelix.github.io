@@ -2,77 +2,77 @@
 title: "애플 매직 키보드 & 매직 마우스2 & 멀티포트 어댑터"
 permalink: /unboxing/apple-magic-keyboard-and-mouse/
 classes: wide
-thumbnail: /images/Unboxing/033/00.jpg
+thumbnail: https://github.com/JoonsuRyu/images/blob/master/Unboxing/033/00.jpg?raw=true
 categories:
   - interests
 tags:
   - unboxing
 ---
 
-![](/images/Unboxing/033/00.jpg){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/Unboxing/033/00.jpg?raw=true){: .align-center}
 
 저는 맥북 프로를 갖고 있지만, 제 소유가 아니라 연구실 기자재이기 때문에 공식적인 업무가 아니라면 연구실 밖으로 가지고 나가기가 조금 꺼려집니다. 그렇기 때문에 연구실 내에서만 주로 사용하는데, 터치 패드와 키보드가 많이 불편했습니다. 터치 패드는 드래그 앤 드롭을 할 때 너무 느려서 불편했고, 키보드는 방향키의 배치가 정말 짜증났습니다. 마침 연구실 비용이 꽤 많이 남았기에, 맥북을 맥처럼 사용하기 위해 키보드와 마우스, 그리고 멀티포트 어댑터를 구매하였습니다.
 
 애플 제품은 하나같이 쓸데 없이 비싼 것은 이전에도 알고 있었지만, 이번에 주변기기를 구입할 때는 정말 많이 놀랐습니다. 마우스가 8만원 정도 하는 것은 그려려니 싶었는데 기계식 키보드도 아닌것이 14만원이나 합니다. 심지어 멀티포트 어댑터는 7만원이나 하는 가격이 도대체 이해가 되지 않았습니다. 연구실 비품으로 처리했기에 다행이지, 제 돈 주고는 절때 못살 가격이라고 생각합니다.
 
-![](/images/Unboxing/033/01.jpg){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/Unboxing/033/01.jpg?raw=true){: .align-center}
 
 구매한 매직 키보드, 매직 마우스2, 멀티포트 어댑터입니다. 컴퓨존에서 구매했는데, 컴퓨존에서는 꼭 이런 보기흉한 스티커를 붙여서 보내줍니다. 다행히 애플 제품은 모두 비닐포장이 되어있기 때문에, 크게 상관없긴 합니다.
 
-![](/images/Unboxing/033/02.jpg){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/Unboxing/033/02.jpg?raw=true){: .align-center}
 
 매직 키보드의 패키지는 생각보다 작습니다. 거의 키보드의 크기와 비슷하다고 생각합니다. 포장이 이렇게 작다는 의미는 그만큼 구성품이 적다는 의미이니 그렇게 좋아할 것은 아니라고 생각합니다.
 
-![](/images/Unboxing/033/03.jpg){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/Unboxing/033/03.jpg?raw=true){: .align-center}
 
 뒷면은 제품 이름 외에 별다른 것은 없습니다. 정확한 제품명은 Magic Keyboard with Numeric Keypad입니다. 매직 키보드는 텐키가 있는 버전과 없는 버전이 있는데, 저는 있는 버전으로 구매하였습니다. 텐키 자체를 꽤 자주 사용하는 이유도 있지만, 텐키가 없는 버전은 맥북의 키보드 배열처럼 방향키의 배치가 혐오스럽기 때문입니다.
 
-![](/images/Unboxing/033/04.jpg){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/Unboxing/033/04.jpg?raw=true){: .align-center}
 
 비닐을 벗기고 패키지를 열어봤는데, 옆으로 열리는 특이한 구조입니다.
 
-![](/images/Unboxing/033/05.jpg){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/Unboxing/033/05.jpg?raw=true){: .align-center}
 
 들어있는 물건은 키보드, 설명서, 그리고 그 귀한 라이트닝 케이블이 들어있습니다. 저 케이블을 따로 사려면 25,000원이나 하기 때문에 애지중지했던 기억이 납니다.
 
 키보드를 한번 타이핑해봤는데, 일반적인 노트북 키보드랑 비슷한 키감입니다. 만약에 애플 제품이 아니라면 절때 14만원에 팔리지 않았을만한 키감이라고 생각하시면 됩니다.
 
-![](/images/Unboxing/033/06.jpg){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/Unboxing/033/06.jpg?raw=true){: .align-center}
 
 키보드 뒷면은 고무 패킹 4개가 붙어있는 것이 전부입니다.
 
-![](/images/Unboxing/033/07.jpg){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/Unboxing/033/07.jpg?raw=true){: .align-center}
 
 다음으로 매직 마우스2 입니다. 매직 마우스2도 거의 마우스만 들어있을 것 같이 크기가 작습니다.
 
-![](/images/Unboxing/033/08.jpg){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/Unboxing/033/08.jpg?raw=true){: .align-center}
 
 뒷면은 별다른 특징이 없습니다.
 
-![](/images/Unboxing/033/09.jpg){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/Unboxing/033/09.jpg?raw=true){: .align-center}
 
 키보드가 옆으로 열리길래 이것도 옆으로 열릴줄 알았는데, 이건 그냥 평범하게 위로 열리는 구조입니다. 다른건 몰라도 생긴건 정말 예쁘게 생긴 마우스입니다.
 
-![](/images/Unboxing/033/10.jpg){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/Unboxing/033/10.jpg?raw=true){: .align-center}
 
 구성품은 마우스, 설명서, 그리고 역시 라이트닝 케이블이 들어있습니다. 그렇게 애지중지하던 라이트닝 케이블이 갑자기 2개나 생겨서 부자가 된 듯한 느낌입니다. 지금은 갤럭시를 쓰고 있기 때문에 의미가 없지만요.
 
-![](/images/Unboxing/033/11.jpg){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/Unboxing/033/11.jpg?raw=true){: .align-center}
 
 마지막으로 멀티포트 어댑터입니다. 애플 제품이 다 비싸다고 하지만, 대체 뭘로 만들었길래 이 케이블 하나에 7만원이나 할까요.
 
-![](/images/Unboxing/033/12.jpg){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/Unboxing/033/12.jpg?raw=true){: .align-center}
 
 뒷면에는 어떻게 사용해야 하는지 나와 있습니다. 맥북에 달려있는 USB Type C 포트 하나로 충전과 HDMI와 USB Type A 포트 사용을 모두 할 수 있기 때문에 비싼 걸까요?
 
-![](/images/Unboxing/033/13.jpg){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/Unboxing/033/13.jpg?raw=true){: .align-center}
 
 열어보니 이번에는 멀티포트 어댑트와 설명서만 달랑 들어있습니다. 지금 글을 쓰며 보니 상단에 쉽게 포장을 열 수 있는 장치가 있는데, 막상 이걸 열때는 보지 못해서 칼로 뜯었습니다.
 
-![](/images/Unboxing/033/14.jpg){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/Unboxing/033/14.jpg?raw=true){: .align-center}
 
 대략적으로 세팅해 보았습니다. 오른쪽 모니터는 데스크탑과 연결되어 있어 일반적인 사무작업을 할 예정이고, 왼쪽의 모니터를 맥북에 연결하여 프로그래밍을 위주로 하려고 합니다. 내년부터는 본격으로 프로그래밍을 연습하여 Github 올릴 생각인데, 맥에서의 환경이 더 편하다고 하여 당분간 맥OS에 익숙해지는 시간을 가질까 합니다.
 
-![](/images/Unboxing/033/15.jpg){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/Unboxing/033/15.jpg?raw=true){: .align-center}
 
 그런데 생각해보니 라이트닝 케이블을 2개나 얻었지만, 모두 한쪽이 USB Type A라서 맥북 프로에는 꽂을 수가 없습니다. 멀티포트 어댑터에 연결하는 방법도 있지만, 그냥 예전에 아이폰에 사용하던 USB Type C - 라이트닝 케이블을 계속 사용할까 합니다.

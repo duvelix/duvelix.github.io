@@ -2,42 +2,42 @@
 title: "닌텐도 스위치 프로 컨트롤러 - 슈퍼 스매시 브라더스 얼티밋 에디션"
 permalink: /unboxing/nintendo-switch-pro-controller/
 classes: wide
-thumbnail: /images/Unboxing/002/00.jpg
+thumbnail: https://github.com/JoonsuRyu/images/blob/master/Unboxing/002/00.jpg?raw=true
 categories:
   - interests
 tags:
   - unboxing
 ---
 
-![](/images/Unboxing/002/00.jpg){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/Unboxing/002/00.jpg?raw=true){: .align-center}
 
 스위치를 구매하고 1년 정도 조이콘을 사용해서 게임을 즐겼었는데, 저는 스위치를 독 모드에서만 사용했기 때문에 게임을 제대로 즐기기에는 조이콘이 너무 작았습니다. 어차피 언젠가는 프로콘이 필요할 것이라고 생각해서 마음먹은 김에 구입하였습니다.
 
-![](/images/Unboxing/002/01.jpg){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/Unboxing/002/01.jpg?raw=true){: .align-center}
 
 슈퍼 스매시브라더스 얼티밋 에디션으로 구매했는데, 사실 이 게임의 팬이라서 구매했다기 보단 색이 마음에 들어서 이걸로 구매했습니다. 일반 프로 컨트롤러는 그냥 완전히 까만색인데, 이것은 흰색이 섞여 있는 점이 마음에 들었습니다.
 
-![](/images/Unboxing/002/02.jpg){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/Unboxing/002/02.jpg?raw=true){: .align-center}
 
 닌텐도답게 새 제품임에도 불구하고 봉인씰이 없습니다. 닌텐도의 제품은 대부분 봉인씰이 없는데 대체 왜 그럴까요. 현 세대 콘솔 중 가장 고가의 컨트롤러임에도 불구하고 이 점은 실망스럽습니다.
 
-![](/images/Unboxing/002/03.jpg){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/Unboxing/002/03.jpg?raw=true){: .align-center}
 
 박스를 열면 이렇게 단순하게 포장되어 있습니다. 솔직히 마음만 먹으면 이미 열어봤더라도 미개봉이라고 속이고 팔 수 있을 정도입니다. 만약에 개인 거래로 프로콘을 구매하신다면, 이점을 주의하시기 바랍니다.
 
-![](/images/Unboxing/002/04.jpg){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/Unboxing/002/04.jpg?raw=true){: .align-center}
 
 구성물은 프로컨트롤러 본체, 충전용 USB-C 케이블, 주의사항이 적혀져있는 작은 종이 1개가 들어 있습니다.
 
-![](/images/Unboxing/002/05.jpg){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/Unboxing/002/05.jpg?raw=true){: .align-center}
 
 윗부분에는 충전할 때 쓰는 USB Type C 포트, 페어링용 버튼, L/R 버튼, ZR/ZL 버튼이 존재합니다. 특이하게, ZR/ZL 버튼이 트리거 버튼이 아니라 일반 버튼으로 이루어져 있습니다. 일반적인 경우에는 크게 신경쓰이지 않겠지만, 스플래툰 같은 슈팅 게임을 즐길 때엔 누르는 맛이 다른 패드에 비해 아쉬울 것으로 생각됩니다.
 
-![](/images/Unboxing/002/06.jpg){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/Unboxing/002/06.jpg?raw=true){: .align-center}
 
 일반 프로콘은 모든 부분이 검정색으로 처리되어 있는데, 대난투 한정판은 손잡이 부분에 흰색으로 포인트를 주고, 패드 정면에 대난투 마크가 각인되어 있습니다. 흰색이라 때가 잘 타게 보이지만, 플라스틱 재질이기 때문에 틈틈히 물티슈로 닦아주면 해결될 것 같습니다.
 
-![](/images/Unboxing/002/07.jpg){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/Unboxing/002/07.jpg?raw=true){: .align-center}
 
 컨트롤러 뒷면은 투명하게 처리되어 있어 배터리가 비쳐 보입니다. 듣기로는 3DS에서 사용했던 배터리와 동일한 배터리를 사용한다고 합니다.
 

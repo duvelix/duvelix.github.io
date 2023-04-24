@@ -2,68 +2,68 @@
 title: "삼성 갤럭시 버즈 (실버)"
 permalink: /unboxing/samsung-galaxy-buds/
 classes: wide
-thumbnail: /images/Unboxing/023/00.jpg
+thumbnail: https://github.com/JoonsuRyu/images/blob/master/Unboxing/023/00.jpg?raw=true
 categories:
   - interests
 tags:
   - unboxing
 ---
 
-![](/images/Unboxing/023/00.jpg){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/Unboxing/023/00.jpg?raw=true){: .align-center}
 
 지난달에 핸드폰을 바꾸고 요즘 유행하는 무선 이어폰을 하나 사려고 했습니다. 이번에 구매한 노트10도 그렇지만, 이전에 쓰던 아이폰7도 3.5mm 이어폰잭이 없어서 유선 이어폰의 선택지는 그다지 많지 않았기 때문입니다. 에어팟을 고려하기도 했지만, 어차피 핸드폰도 갤럭시고 마침 노트10 출시 프로모션으로 갤럭시 버즈 실버를 99,000원에 판매했기 때문에 그냥 구매했습니다. 사실 노트10 아우라 화이트와 깔맞춤을 하기 위해 버즈도 화이트 색상으로 구매하고 싶었지만, 프로모션으로 판매하는 색상은 실버 고정이라 어쩔 수 없었습니다.
 
-![](/images/Unboxing/023/01.jpg){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/Unboxing/023/01.jpg?raw=true){: .align-center}
 
 문제는 물량 수급이 지체되는지, 배송이 엄청나게 느렸습니다. 9월 초에 노트 10을 구매하고 그 다음주에 버즈 프로모션 구매를 신청했는데, 물량이 지체되었다는 안내와 함께 10월 1일부터 순차적으로 배송한다는 문자가 왔습니다. 추석 연휴가 껴 있다고 하지만 얼마나 물량을 적게 준비했길래 이렇게 배송이 오래 걸리나라는 생각이 들었습니다. 심지어, 오픈 마켓에서 판매하고 있던 기존의 버즈 색상들도 일제히 가격이 올라 에어팟 2세대 유선 모델과 큰 차이가 없을 정도였습니다. 지금 확인해보니 저보다 늦게 주문하신 분들은 11월 4일 이후로 순차 배송 될 것 같습니다.
 
 당장 급한 것은 아니어서 취소하지는 않았지만, 삼성에 대해 약간은 실망했습니다. 갤럭시 버즈가 최근 출시된 것도 아니고, 상반기에 출시가 되었는데도 불구하고 재고 부족이 일어날 정도니까요. 실버 색상이 새로 출시한 색상이라고는 해도 이정도의 발송 지연은 납득하기 쉽지는 않습니다. 저는 3주 정도의 기다림 끝에 오늘에서야 받아보게 되었습니다.
 
-![](/images/Unboxing/023/02.jpg){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/Unboxing/023/02.jpg?raw=true){: .align-center}
 
 박스 전면은 언뜻 보면 실버같지 않아 보입니다. 실버 색상 버즈는 겉면이 유광 재질로 반짝반짝 빛나는 은색인데, 박스 이미지는 내부만 보여주기 때문입니다. 내부는 무광 재질의 회색입니다. (조명 때문에 박스 중앙 부분이 유광 처럼 보이지만 실제로는 무광입니다)
 
-![](/images/Unboxing/023/03.jpg){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/Unboxing/023/03.jpg?raw=true){: .align-center}
 
 박스 뒷면은 구성품의 목록이 나와 있습니다. 환경 보호를 위해 박스의 프린팅을 Soy Ink (콩기름 잉크)로 인쇄했다고 나와있네요.
 
-![](/images/Unboxing/023/04.jpg){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/Unboxing/023/04.jpg?raw=true){: .align-center}
 
 박스 왼쪽 옆에는 빛에 비추면 반사되는 재질로 삼성 갤럭시 버즈라고 각인이 되어 있습니다.
 
-![](/images/Unboxing/023/05.jpg){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/Unboxing/023/05.jpg?raw=true){: .align-center}
 
 박스 오른쪽 옆에는 제품의 주요 특징인 선명한 통화 음질, 6시간 연속 재생, 무선 충전 기능을 알려주고 AKG의 기술을 도입했다는 문구가 적혀 있습니다.
 
-![](/images/Unboxing/023/06.jpg){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/Unboxing/023/06.jpg?raw=true){: .align-center}
 
 박스를 열면 이런 모습입니다. 왼쪽은 박스 뚜껑 부분인데, 안쪽에는 설명서가 담겨있는 얇은 종이 포장이 있습니다. 오른쪽에는 갤럭시 버즈 실버와 흰색 박스가 담겨 있습니다.
 
-![](/images/Unboxing/023/07.jpg){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/Unboxing/023/07.jpg?raw=true){: .align-center}
 
 갤럭시 버즈 본체를 꺼내 찍어봤습니다. 얇고 반투명한 종이로 싸여 있습니다.
 
-![](/images/Unboxing/023/08.jpg){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/Unboxing/023/08.jpg?raw=true){: .align-center}
 
 종이를 벗기면 은색의 본체에 삼성 로고와 Sound By AKG 라는 문구가 각인되어 있습니다.
 
-![](/images/Unboxing/023/09.jpg){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/Unboxing/023/09.jpg?raw=true){: .align-center}
 
 뒷면을 보면 모델명 등 제품 상세 스펙, 그리고 시리얼 넘버(S/N)가 나와 있습니다. 베트남에서 제조했고 2019년 9월에 만들었다고 나와있네요.
 
-![](/images/Unboxing/023/10.jpg){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/Unboxing/023/10.jpg?raw=true){: .align-center}
 
 본체를 열어보면 박스 겉표지와 똑같은 모습입니다. 겉면과는 다르게 은색보다는 회색에 가까운 디자인입니다. 생각보다 이쁘네요.
 
-![](/images/Unboxing/023/11.jpg){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/Unboxing/023/11.jpg?raw=true){: .align-center}
 
 이어버드를 꺼내서 찍어봤습니다. 사람마다 호불호가 갈리긴 하던데, 저는 이런 커널형 이어폰이 단단하게 귀에 고정되서 더 좋습니다.
 
-![](/images/Unboxing/023/12.jpg){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/Unboxing/023/12.jpg?raw=true){: .align-center}
 
 본체 아래에 있던 흰색 상자에는 여분의 이어팁과 충전용 케이블이 있습니다. 갤럭시 버즈는 USB Type C 포트가 달려있는데, 기존에 쓰던 노트 10 케이블과 동일하기 때문에 굳이 빼진 않았습니다. 게다가 버즈는 무선 충전도 되기 때문에 굳이 이 케이블을 사용할 필요는 없을 것 같습니다.
 
-![](/images/Unboxing/023/13.jpg){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/Unboxing/023/13.jpg?raw=true){: .align-center}
 
 박스 윗면에 있던 종이 포장을 떼어내면 이렇게 간단 사용 설명서가 들어있습니다. 사용법이 어려운 것도 아니라 굳이 읽어보진 않았습니다.
 

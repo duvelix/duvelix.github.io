@@ -2,66 +2,66 @@
 title: "갤럭시 노트 10+ 아우라 화이트"
 permalink: /unboxing/samsung-galaxy-note-10-plus/
 classes: wide
-thumbnail: /images/Unboxing/016/00.jpg
+thumbnail: https://github.com/JoonsuRyu/images/blob/master/Unboxing/016/00.jpg?raw=true
 categories:
   - interests
 tags:
   - unboxing
 ---
 
-![](/images/Unboxing/016/00.jpg){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/Unboxing/016/00.jpg?raw=true){: .align-center}
 
 저는 고등학생 때부터 아이팟 터치를 사용했기 때문에 자연스레 스마트폰도 아이폰으로 시작했습니다. 근 10년간 아이폰만을 사용했지만, 이번 아이폰 11의 디자인보다는 갤럭시 노트 10의 디자인이 너무 맘이 들었기 때문에 처음으로 갤럭시 스마트폰을 구매했습니다. 저에게는 첫 안드로이드 스마트폰이라 적응이 잘 될지 불안하기는 하지만, 차차 사용하다 보면 적응될 것이라고 믿고 과감하게 교체하였습니다.
 
-![](/images/Unboxing/016/01.jpg){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/Unboxing/016/01.jpg?raw=true){: .align-center}
 
 박스의 윗부분 디자인에는 갤럭시 노트 시리즈의 핵심인 S펜이 그려져 있습니다. 저는 아우라 화이트 색상을 구매했는데, 펜의 색깔도 흰색으로 나와 있습니다.
 
-![](/images/Unboxing/016/02.jpg){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/Unboxing/016/02.jpg?raw=true){: .align-center}
 
 박스 뒷면에는 갤럭시 노트 10 플러스의 상세 스펙이 나와 있습니다. 하단에는 통신사에서 붙인 듯한 스티커가 부착되어 있는데, 크기도 상당히 크고 뗄 수도 없게 단단하게 부착되어 있기 때문에 참 마음에 들지 않는 부분입니다. 봉인씰은 사진상의 왼쪽 하단 한 곳에만 있습니다.
 
-![](/images/Unboxing/016/03.jpg){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/Unboxing/016/03.jpg?raw=true){: .align-center}
 
 박스의 왼쪽에는 SAMSUNG Galaxy Note 10 + 5G 라는 문구가 각인되어 있습니다.
 
-![](/images/Unboxing/016/04.jpg){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/Unboxing/016/04.jpg?raw=true){: .align-center}
 
 박스의 오른쪽면에는 아무것도 없고, 봉인씰만 보입니다.
 
-![](/images/Unboxing/016/05.jpg){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/Unboxing/016/05.jpg?raw=true){: .align-center}
 
 박스 아랫면에는 구매 경로와 상품 번호, 색상, 바코드 등이 나와 있습니다. 저는 통신사를 끼고 구매했기 때문에 자가유통용으로 적혀있는데, 자급제로 구입하신 경우에는 단말자급제용이라고 적혀있다고 합니다.
 
-![](/images/Unboxing/016/06.jpg){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/Unboxing/016/06.jpg?raw=true){: .align-center}
 
 봉인씰을 떼고 박스를 열었습니다. 박스 뚜껑 부분에는 설명서와 기본 케이스, SIM 카드를 빼는 핀이 붙어있습니다.
 
-![](/images/Unboxing/016/07.jpg){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/Unboxing/016/07.jpg?raw=true){: .align-center}
 
 아우라 화이트 모델은 단말기뿐만이 아니라 박스 내부도 흰색으로 깔맞춤이 되어 있습니다. 깔맞춤을 좋아하는지라 이 점은 매우 마음에 듭니다.
 
-![](/images/Unboxing/016/08.jpg){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/Unboxing/016/08.jpg?raw=true){: .align-center}
 
 본체와 기본 케이스를 꺼내서 같이 찍어봤습니다. S10 때는 기본 케이스가 딱딱한 플라스틱 케이스가 들어있다고 하는데, 노트10에는 젤리 케이스가 들어있습니다. 케이스 내부는 겉면과는 달리 매끈한 코팅이 되어있어 기포가 생기는 것을 방지해준다고 합니다.
 
-![](/images/Unboxing/016/09.jpg){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/Unboxing/016/09.jpg?raw=true){: .align-center}
 
 기본 케이스를 끼워봤습니다. 기본 케이스임에도 불구하고 퀄리티는 상당히 좋았으나, 카메라 부분이 통짜로 파여있는 부분이 조금 아쉽습니다. 또한 한번 씌우고 나면 다시 벗기기가 상당히 힘듭니다.
 
-![](/images/Unboxing/016/10.jpg){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/Unboxing/016/10.jpg?raw=true){: .align-center}
 
 상자의 구성품을 마저 보면 25W 충전기, USB-C to USB-C 케이블, AKG 이어폰(USB-C타입), 펜 촉 교환 도구 등이 들어있습니다. 단말기 색상에 맞춰 모두 흰색으로 깔맞춤이 되어 있는 것이 매우 마음에 듭니다.
 
-![](/images/Unboxing/016/11.jpg){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/Unboxing/016/11.jpg?raw=true){: .align-center}
 
 부팅 화면에는 SAMSUNG Galaxy Note 10+ 5G 라고 멋지게 로고가 뜹니다. 저는 통신사를 통해 구매해서 그런지, 이 로고 다음에 SKT 부팅 로고가 또 한번 떴습니다.
 
-![](/images/Unboxing/016/12.jpg){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/Unboxing/016/12.jpg?raw=true){: .align-center}
 
 저는 기존에 아이폰을 사용하고 있었기 때문에 데이터를 옮기지 못하고 일일이 수동으로 작업해야 할 줄 알았는데, 스마트 스위치라는 기능이 있어서 아이폰에서도 데이터를 쉽게 옮길 수 있었습니다. 사진, 메시지, 전화번호부, 심지어는 어플리케이션까지 복사할 수 있습니다. 이런 건 예상하지 못했기 때문에 조금 놀라웠습니다.
 
-![](/images/Unboxing/016/13.jpg){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/Unboxing/016/13.jpg?raw=true){: .align-center}
 
 기존에 사용하던 아이폰 7 과의 크기 비교입니다. 아이폰 7은 좋은 스마트폰이지만 작은 크기로 인해 유튜브 등의 컨텐츠를 볼 때 상당히 불편했었기 때문에 다음 핸드폰은 꼭 큰 걸로 사자! 라는 다짐이 있었습니다. 갤럭시 노트 10+는 6.8인치라는 넓은 크기의 화면을 갖고 있어서 앞으로 유튜브나 트위치를 볼 때 상당히 만족스럽게 시청할 수 있을 것 같습니다. 또한 갤럭시 시리즈의 카메라는 뛰어나기로 정평이 나 있기 때문에 앞으로 개봉기의 사진 품질이 나아질 것 같다는 기대감이 있습니다. 딱 하나 단점이 있다면 금융 어플리케이션을 실행할 때 아이폰과는 다르게 V3를 반드시 실행해야 한다는 제약이 있는 것은 불만스럽습니다.
 

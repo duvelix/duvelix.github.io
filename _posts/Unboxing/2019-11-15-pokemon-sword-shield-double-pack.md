@@ -2,94 +2,94 @@
 title: "포켓몬스터 소드/실드 더블팩"
 permalink: /unboxing/pokemon-sword-shield-double-pack/
 classes: wide
-thumbnail: /images/Unboxing/030/00.jpg
+thumbnail: https://github.com/JoonsuRyu/images/blob/master/Unboxing/030/00.jpg?raw=true
 categories:
   - interests
 tags:
   - unboxing
 ---
 
-![](/images/Unboxing/030/00.jpg){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/Unboxing/030/00.jpg?raw=true){: .align-center}
 
 그렇습니다. 저는 개돼지입니다. 포켓몬이 절반으로 줄어도 기어코 더블팩을 구매하고 말았습니다. 지금까지 4세대 이후부터 포켓몬스터 게임은 쭉 모아왔기 때문에 자연스럽게 그만 구매해버렸습니다. 그렇게 욕을 먹던 레츠고도 어느정도의 재미는 보장했기 때문에, 혹시 이것도 할만한 게임은 아닐까? 하는 궁금증이 있었거든요. 예약구매는 G마켓의 빅스마일데이를 이용하여 조금이나마 저렴하게 구매했습니다.
 
-![](/images/Unboxing/030/01.jpg){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/Unboxing/030/01.jpg?raw=true){: .align-center}
 
 택배 박스를 열었을 때의 구성품입니다. 참 야속하게도 뽁뽁이같은 보호포장 하나 없이 그냥 이대로 박스에 넣어 보내줬습니다. 혹시라도 깨졌으면 어쩌려고 그랬는지 모르겠네요. 왼쪽은 예약구매 특전이고, 오른쪽이 게임 패키지입니다.
 
-![](/images/Unboxing/030/02.jpg){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/Unboxing/030/02.jpg?raw=true){: .align-center}
 
 예약구매 특전부터 확인해보면, 더블팩 구매로 색이 다른 솔가레오/루나아라/네크로즈마를 받을 수 있는 코드입니다. 이 특전을 받기 위해서는 포켓몬스터 썬/문 더블팩이 필요한 게 참 웃기네요. 물론 저는 썬/문/울트라썬/울트라문이 다 있습니다.
 
-![](/images/Unboxing/030/03.jpg){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/Unboxing/030/03.jpg?raw=true){: .align-center}
 
 종이 뒷면에는 특전으로 배포하는 루나아라/솔가레오/네크로즈마의 레벨과 기술 배치가 적혀있습니다. 제가 아직 7세대를 안해봐서 어떤 기술인지는 잘 모르겠네요.
 
-![](/images/Unboxing/030/04.jpg){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/Unboxing/030/04.jpg?raw=true){: .align-center}
 
 종이를 펼쳐보면 어떻게 받는지 설명을 해줍니다. 하단에는 시리얼 코드와 사용 기한이 나와있습니다. 생각보다 기간이 짧기 때문에 까먹기 전에 빠르게 등록해야겠습니다.
 
-![](/images/Unboxing/030/05.jpg){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/Unboxing/030/05.jpg?raw=true){: .align-center}
 
 이것은 닌텐도의 공식 특전은 아닌 것 같고, 판매 업체에서 넣어준 예약구매 특전인 것 같습니다. 스마트톡이라고 하던데 유용할지는 잘 모르겠습니다. 한번 써봐야 알 수 있을 것 같은데, 이런 것보다는 그냥 아트북이나 넣어주지... 하는 아쉬움이 있네요. 아트북은 SSG에서만 특전으로 제공하던데, 여기보다 가격이 비싸서 눈물을 머금고 포기했습니다.
 
-![](/images/Unboxing/030/06.jpg){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/Unboxing/030/06.jpg?raw=true){: .align-center}
 
 스마트톡 뒷부분에는 어떻게 사용해야하는지가 나와있습니다. 아무래도 스마트폰을 거치하는 용도가 주 목적인 것 같습니다.
 
-![](/images/Unboxing/030/07.jpg){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/Unboxing/030/07.jpg?raw=true){: .align-center}
 
 이제 게임 패키지를 보면 뒷면에 게임에 대한 설명이 나와있습니다. 더블 팩 한정 특전으로 애버라스/짜랑꼬와 맥스 레이드배틀을 할 수 있는 시리얼 코드가 동봉되었다고 합니다. 두 포켓몬 모두 600족이라 좋은 포켓몬이지만, 대부분의 600족은 진화 레벨이 너무 높아서 스토리에서는 거의 안쓰게 되던데, 8세대에서는 어떨지 잘 모르겠네요.
 
-![](/images/Unboxing/030/08.jpg){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/Unboxing/030/08.jpg?raw=true){: .align-center}
 
 패키지의 윗부분을 열어보면 양쪽에 포켓몬이 그려져 있습니다. 왼쪽에는 처음에 공개되었던 물 타입 스타팅 포켓몬인 울머기인 것 같고, 오른쪽은 찾아보니 8세대에 추가된 멍파치라고 합니다.
 
-![](/images/Unboxing/030/09.jpg){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/Unboxing/030/09.jpg?raw=true){: .align-center}
 
 바닥은 어떤가 봤더니 저렇게 풀 타입 스타팅 포켓몬 흥나숭이 그려져 있습니다. 왜 하필이면 바닥에 그려놓은 것일까요? 풀 타입 스타팅은 이번에도 밑바닥이라는 복선일까요? 그리고 한국 국내 전용이라면서 MADE IN JAPAN 이라고 써있는게 뭔가 웃깁니다.
 
-![](/images/Unboxing/030/10.jpg){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/Unboxing/030/10.jpg?raw=true){: .align-center}
 
 패키지를 열어보면 이렇게 포켓몬스터 소드/실드 게임과 다이크리스탈 2개가 들어있습니다.
 
-![](/images/Unboxing/030/11.jpg){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/Unboxing/030/11.jpg?raw=true){: .align-center}
 
 먼저 포켓몬스터 소드의 케이스 앞면입니다. 첫 공개때부터 표지로 상당히 논란이 많았는데, 제가 보기에도 자시안의 디자인은 좀 별로인 것 같습니다. 울트라썬/문은 다시보니 선녀였네요. 전설의 포켓몬 디자인도 그렇지만 로고 디자인 또한 참 별로입니다.
 
-![](/images/Unboxing/030/12.jpg){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/Unboxing/030/12.jpg?raw=true){: .align-center}
 
 뒷면에는 포켓몬스터 소드의 게임 설명을 담고 있습니다. 가장 눈에 띄는 부분은 하단 오른쪽에 있는 4명과 통신배틀을 할 수 있다는 부분인데, 왠지 2:2 전투를 통신으로 할 수 있다는 뜻 같습니다. 예전부터 포켓몬을 사람들과 2:2로 배틀하면 재밌겠다는 생각을 했었는데, 이건 정말 기대가 되는 부분입니다.
 
-![](/images/Unboxing/030/13.jpg){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/Unboxing/030/13.jpg?raw=true){: .align-center}
 
 기대한 것도 잠시, 케이스 내부는 실망스럽기 짝이 없네요. 케이스를 열어보고 순간 할 말을 잃었습니다. 레츠고 시리즈의 케이스 내부 디자인은 감탄이 나오던데, 이건.... 성의가 없다고 해야할지 모르겠는데 너무 허전합니다. 느낌상 왼쪽에 나와있는 것은 새로운 포켓몬 도감인 것 같고, 몬스터볼이 그려진 천은 이불인 것 같습니다.
 
-![](/images/Unboxing/030/14.jpg){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/Unboxing/030/14.jpg?raw=true){: .align-center}
 
 게임 칩 디자인은 예상하셨겠지만 포켓몬스터 소드의 로고가 박혀있습니다. 어차피 로고를 한글로 만들어야 하다보니, 한국 칩으로 나와있네요.
 
-![](/images/Unboxing/030/15.jpg){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/Unboxing/030/15.jpg?raw=true){: .align-center}
 
 이번에는 실드 버전입니다. 앞면은 자마젠타가 그려져있고 방패 모양의 로고가 그려져 있습니다. 소드 때와 마찬가지로 2019년 말에 출시된 게임이라고 보기에는 디자인이 좋아보이지 않습니다.
 
-![](/images/Unboxing/030/16.jpg){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/Unboxing/030/16.jpg?raw=true){: .align-center}
 
 뒷면에 나와있는 내용 자체는 소드와 비슷한데, 스크린샷은 전부 바뀌어 나와있네요. 자세히 보시면 소드 버전은 가운데에 조그맣게 "동료와 함께 세계를 개척하라" 라고 나와있는데 실드 버전은 "동료와 함께 세계를 지켜라" 라고 나와있습니다. 혹시 이번에는 두 버전의 스토리가 다른 것일까요? 정말 그랬으면 좋겠습니다.
 
-![](/images/Unboxing/030/17.jpg){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/Unboxing/030/17.jpg?raw=true){: .align-center}
 
 뒷면의 디자인이 다르길래 내부의 디자인도 다를까 싶었는데 내부는 소드와 똑같은 디자인입니다.
 
-![](/images/Unboxing/030/18.jpg){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/Unboxing/030/18.jpg?raw=true){: .align-center}
 
 칩 디자인도 소드 때와 비교하면 로고가 바뀐 것 외에는 차이가 없습니다.
 
-![](/images/Unboxing/030/19.jpg){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/Unboxing/030/19.jpg?raw=true){: .align-center}
 
 더블팩 특전으로 다이크리스탈을 얻을 수 있는 코드 2개를 받을 수 있습니다. 하나는 애버라스용, 하나는 짜랑꼬용입니다. 다이크리스탈이 8세대에서 새로 나온 시스템이라는데, 어떤 시스템일지는 플레이를 해봐야 판단할 수 있을 것 같습니다.
 
-![](/images/Unboxing/030/20.jpg){: .align-center}
+![](https://github.com/JoonsuRyu/images/blob/master/Unboxing/030/20.jpg?raw=true){: .align-center}
 
 뒷면에는 맥스 레이드 배틀을 즐기는 방법과 주의사항이 나와있습니다. 스위치 온라인에 가입되어 있으면 여러명과 플레이할 수 있는 것으로 보이고, 한번 사용하면 다이크리스탈이 사라진다고 나와 있습니다. 배포로 주어진 것이 일회용이란 뜻이군요. 대단합니다.
 
