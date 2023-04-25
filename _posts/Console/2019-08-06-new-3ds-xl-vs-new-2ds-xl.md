@@ -2,18 +2,18 @@
 title: "New 닌텐도 3DS XL vs New 닌텐도 2DS XL"
 permalink: /Console/new-3ds-xl-vs-new-2ds-xl/
 classes: wide
-thumbnail: https://github.com/JoonsuRyu/images/blob/master/Console/001/00.jpg?raw=true
+thumbnail: /assets/images/Console/001/00.jpg
 categories:
   - interests
 tags:
   - console
 ---
 
-![](https://github.com/JoonsuRyu/images/blob/master/Console/001/00.jpg?raw=true){: .align-center}
+![](/assets/images/Console/001/00.jpg){: .align-center}
 
 안녕하세요, 오늘 포스트는 New 닌텐도 3DS XL과 New 닌텐도 2DS XL의 차이점을 소개하려고 합니다. 저는 New 닌텐도 2DS XL로 시작을 했고 최근에 New 닌텐도 3DS XL로 기기를 새로 구입했는데, 3D 영상을 볼 수 있다는 것 외에도 상당한 차이가 존재하길래 이를 정리해보고자 합니다.
 
-![](https://github.com/JoonsuRyu/images/blob/master/Console/001/01.jpg?raw=true){: .align-center}
+![](/assets/images/Console/001/01.jpg){: .align-center}
 
 먼저 위의 사진을 보시면 왼쪽이 New 닌텐도 3DS XL(이하 3DS)이고 오른쪽이 New 닌텐도 2DS XL(이하 2DS)입니다. 케이스를 씌워서 더 그렇게 보이는 점도 있지만, 3DS가 크기가 좀 더 크고 무겁습니다. 구체적인 수치는 다음과 같습니다.
 
@@ -29,7 +29,7 @@ tags:
 
 2DS에는 3DS에 없는 힌지가 있는데, 보다보면 상당히 눈에 거슬립니다. 제가 하일리아의 방패 에디션 한정판이라서 더 그래보이는 것도 있지만, 3DS는 얼핏보면 게임기가 아니라 전자사전처럼 보여서 고급진데, 2DS는 그렇지가 않습니다.
 
-![](https://github.com/JoonsuRyu/images/blob/master/Console/001/02.jpg?raw=true){: .align-center}
+![](/assets/images/Console/001/02.jpg){: .align-center}
 
 두 콘솔을 펼치게 되면 한눈에도 알아볼 수 있을 정도로 많은 차이가 있다는 것이 보입니다. 위의 그림에 차이가 있는 부분을 빨간색 박스로 마킹해 놓았고, 어떤 점이 다른지 다음과 같이 정리했습니다.
 
@@ -55,19 +55,19 @@ tags:
 
 일단 두 콘솔 모두 화면 크기는 동일합니다. 2DS는 염가형이라 그런지 상단 패널과 하단 패널의 크기 모두 작고, 상단 패널에 있던 스피커나 카메라, 볼륨 조절 버튼 등을 모두 치웠기 때문에 미관상으로는 2DS가 나아보입니다. 다만 제 생각에 2DS의 치명적인 단점은 ABXY 버튼의 재질입니다. 클릭감이 안좋은 것은 아니지만, 3DS에 비해 2DS의 버튼 재질이 너무 싸구려 플라스틱의 느낌이 듭니다. 저 같은 경우 게임을 플레이할 때 가장 크게 와닿는 부분이었습니다.
 
-![](https://github.com/JoonsuRyu/images/blob/master/Console/001/03.jpg?raw=true){: .align-center}
+![](/assets/images/Console/001/03.jpg){: .align-center}
 
 다음으로 아래 부분의 디자인입니다. 먼저 2DS의 장점은 카트리지 삽입구에 덮개가 있다는 점입니다. 카트리지 슬롯에 아무것도 장착하지 않았을 경우 먼지가 끼기 쉽고, 플레이 도중 빠질 우려가 있다는 점을 생각해보면 확실한 장점입니다. 그 외에 자잘자잘한 차이가 있지만, 핵심적인 차이는 스피커의 위치입니다. 이전 사진에서 3DS의 스피커는 상단 패널 양 옆에 존재했는데, 2DS의 경우 아래 부분 양 옆에 달려있습니다. 이 위치는 단점이라고 보는게 좋을 것 같은데, 플레이할 때 잘못 잡으면 스피커를 가릴 수 있기 때문입니다. 이어폰을 사용한다면 해결되는 문제이긴 합니다.
 
-![](https://github.com/JoonsuRyu/images/blob/master/Console/001/04.jpg?raw=true){: .align-center}
+![](/assets/images/Console/001/04.jpg){: .align-center}
 
 상단 부분의 디자인은 크게 다르지 않습니다, 3DS의 경우 충전 단자가 정 중앙에 위치해 있는데, 2DS의 경우 오른쪽(사진상에서는 왼쪽)에 치우쳐 있습니다. 다만 이것은 크게 문제되거나 하는 부분은 아니고, 3DS의 충전 단자 양옆을 보시면 금색 부분이 존재하는데, 이 부분은 거치대에서 충전할 때 사용하는 부분이니 일반적으로는 신경쓰지 않으셔도 됩니다.
 
-![](https://github.com/JoonsuRyu/images/blob/master/Console/001/05.jpg?raw=true){: .align-center}
+![](/assets/images/Console/001/05.jpg){: .align-center}
 
 위의 사진에서 왼쪽은 2DS 터치펜이고, 오른쪽이 3DS의 터치펜입니다. 길이는 3DS의 터치펜이 조금 더 긴데, 솔직히 두 개 모두 짧기 때문에 불편한건 매한가지입니다. 그냥 일반적인 펜 사이즈의 터치펜을 하나 구입해서 쓰는 것을 추천드립니다. 공식적인 길이는 2DS가 약 69mm, 3DS가 약 86mm입니다.
 
-![](https://github.com/JoonsuRyu/images/blob/master/Console/001/06.jpg?raw=true){: .align-center}
+![](/assets/images/Console/001/06.jpg){: .align-center}
 
 마지막으로 카메라의 위치입니다. 3DS는 카메라가 상단 패널 뒤쪽에 달려있는데, 2DS는 하단 패널 뒤쪽에 달려있습니다. 3DS 게임을 하면서 카메라 기능을 사용할 일이 얼마나 있나 생각해보시면 의미없는 차이긴 합니다.
 

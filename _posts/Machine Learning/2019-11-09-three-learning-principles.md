@@ -10,19 +10,19 @@ tags:
   - machine learning
 ---
 
-![](https://github.com/JoonsuRyu/images/blob/master/ML/017/01.png?raw=true){: .align-center}
+![](/assets/images/ML/017/01.jpg){: .align-center}
 
 17장은 기계학습에서 중요한 3가지 원칙에 대해 소개합니다.
 
 ## Outline
 
-![](https://github.com/JoonsuRyu/images/blob/master/ML/017/02.png?raw=true){: .align-center}
+![](/assets/images/ML/017/02.jpg){: .align-center}
 
 각각의 주제는 이번 장의 제목과 같이 3가지 원칙을 하나씩 나열하고 있습니다. Occam's Razor는 Learning Model과 관련이 있는 주제이고 Sampling Bias는 데이터 수집(Collecting), Data Snooping은 데이터 처리(Handling)에 관련이 있는 주제입니다.
 
 ## Occam's Razor
 
-![](https://github.com/JoonsuRyu/images/blob/master/ML/017/03.png?raw=true){: .align-center}
+![](/assets/images/ML/017/03.jpg){: .align-center}
 
 Occam's Razor를 설명하기 전에, 먼저 아인슈타인의 말을 인용하면서 시작합니다.
 
@@ -32,7 +32,7 @@ Occam's Razor를 설명하기 전에, 먼저 아인슈타인의 말을 인용하
 
 이렇게 되면 인용구의 뒷 소절인 **더 단순해서는 안됩니다**의 의미가 궁금해집니다. 이것은 만약에 설명을 더 깎을 수 있더라도, 그것이 원래의 의미를 퇴색시킨다면 그렇게는 하면 안 된다는 의미입니다.
 
-![](https://github.com/JoonsuRyu/images/blob/master/ML/017/04.png?raw=true){: .align-center}
+![](/assets/images/ML/017/04.jpg){: .align-center}
 
 이 아이디어를 기계학습으로 가져와봅시다. 기계학습에서 Occam's Razor를 한 문장으로 정리하면 다음과 같습니다.
 
@@ -47,7 +47,7 @@ Occam's Razor를 설명하기 전에, 먼저 아인슈타인의 말을 인용하
 
 ※ Occam's Razor는 기계학습에서만 사용하는 용어가 아니기 때문에, 좀 더 일반적인 뜻을 알고 싶으시다면 [위키백과](https://ko.wikipedia.org/wiki/%EC%98%A4%EC%BB%B4%EC%9D%98_%EB%A9%B4%EB%8F%84%EB%82%A0)를 함께 읽어보시는 것을 추천드립니다.
 
-![](https://github.com/JoonsuRyu/images/blob/master/ML/017/05.png?raw=true){: .align-center}
+![](/assets/images/ML/017/05.jpg){: .align-center}
 
 첫번째 질문부터 생각해봅시다. **단순하다**라는 것은 정확히 무엇을 의미할까요?
 
@@ -61,7 +61,7 @@ Occam's Razor를 설명하기 전에, 먼저 아인슈타인의 말을 인용하
 
 다시 원래의 질문으로 돌아오면, 일반적으로 **단순하다**에 대해 언급할때는 첫 번째인 가설 $h$의 단순함을 일컫는 것입니다. 하지만 Occam's Razor를 수학적으로 증명할 때 언급하는 단순함은 가설 집합 $\mathcal{H}$의 단순함을 말하는 것입니다.
 
-![](https://github.com/JoonsuRyu/images/blob/master/ML/017/06.png?raw=true){: .align-center}
+![](/assets/images/ML/017/06.jpg){: .align-center}
 
 그렇다면 가설 $h$의 Complexity와 가설 집합 $\mathcal{H}$의 Complexity 사이에는 어떤 관련이 있는지 알아봅시다.
 
@@ -71,7 +71,7 @@ Occam's Razor를 설명하기 전에, 먼저 아인슈타인의 말을 인용하
 
 이 규칙에는 예외가 있는데, 복잡해 보이지만 실제로는 그렇지 않은 SVM이 있습니다. 오른쪽의 그림을 보시면 SVM으로 나눈 평면은 굉장히 복잡해 보이지만, 실제로는 극소수의 Support Vector로 정의되기 때문입니다.
 
-![](https://github.com/JoonsuRyu/images/blob/master/ML/017/07.png?raw=true){: .align-center}
+![](/assets/images/ML/017/07.jpg){: .align-center}
 
 이와 관련해서 간단한 퍼즐을 하나 풀어보도록 하겠습니다.
 
@@ -85,7 +85,7 @@ Occam's Razor를 설명하기 전에, 먼저 아인슈타인의 말을 인용하
 
 그렇기 때문에 기계학습에서는 예측 값이 의미가 없습니다.
 
-![](https://github.com/JoonsuRyu/images/blob/master/ML/017/08.png?raw=true){: .align-center}
+![](/assets/images/ML/017/08.jpg){: .align-center}
 
 이제 두 번째 질문을 해결해봅시다. 왜 단순한 것이 더 좋을까요? 여기서 더 좋다는 의미는 우아해 보인다는 것이 아니라 Out of Sample에서의 성능이 더 좋다는 의미입니다.
 
@@ -97,7 +97,7 @@ Occam's Razor를 설명하기 전에, 먼저 아인슈타인의 말을 인용하
 
 방금 전에 다루었던 우편 퍼즐의 Growth Function을 생각해보면, 편지를 받는 당신은 자신만 그러한 편지를 받았다고 생각했었지만 (일어나기 힘든 일), 현실적으로는 가능한 모든 경우를 고려해서 편지를 보낸 것 (무조건 일어나는 일)이기 때문에 의미가 없던 것이었습니다.
 
-![](https://github.com/JoonsuRyu/images/blob/master/ML/017/09.png?raw=true){: .align-center}
+![](/assets/images/ML/017/09.jpg){: .align-center}
 
 적합이 무의미한 과학 실험을 살펴보겠습니다. 실험의 주제는 어떤 특정한 금속의 Conductivity (전도성)이 Temperature (온도)에 선형이라는 가설을 증명하는 것입니다. 이 주제를 가지고 두 명의 과학자가 실험을 하였습니다.
 
@@ -111,17 +111,17 @@ Conductivity (전도성)이 Temperature (온도)에 선형이라는 가설을 �
 
 ## Sampling Bias
 
-![](https://github.com/JoonsuRyu/images/blob/master/ML/017/10.png?raw=true){: .align-center}
+![](/assets/images/ML/017/10.jpg){: .align-center}
 
 다음으로는 데이터 수집에서 발생할 수 있는 문제인 Sampling Bias에 대해 알아보겠습니다.
 
-![](https://github.com/JoonsuRyu/images/blob/master/ML/017/11.png?raw=true){: .align-center}
+![](/assets/images/ML/017/11.jpg){: .align-center}
 
 두 번째 퍼즐은 1948년에 일어났던 미국 대통령 선거입니다. 당시 후보는 Truman과 Dewey 였는데, 한 신문사가 선거가 끝난 직후 당선자를 예측하기 위해 여론조사를 실시하였습니다. 여론조사의 방법은 무작위 사람에게 전화를 걸어 누구에게 투표했는지 물어보는 것이었습니다.
 
 여론조사를 해보니 오차를 감안하더라도 Dewey가 확실하게 Truman을 이긴다는 결론을 내렸고, 사진과 같이 Dewey가 Truman을 이겼다고 신문에 실었습니다.
 
-![](https://github.com/JoonsuRyu/images/blob/master/ML/017/12.png?raw=true){: .align-center}
+![](/assets/images/ML/017/12.jpg){: .align-center}
 
 그런데 문제는 실제로 Truman이 당선되었다는 것입니다.
 
@@ -129,7 +129,7 @@ Conductivity (전도성)이 Temperature (온도)에 선형이라는 가설을 �
 
 단순히 운이 없어서 이런 일이 발생했다고 생각할 수도 있지만, 그렇지 않았습니다. 신문사는 데이터 표본을 10배, 100배 늘린다고 해도 똑같은 결과가 나올 것이라고 판단했기 때문입니다.
 
-![](https://github.com/JoonsuRyu/images/blob/master/ML/017/13.png?raw=true){: .align-center}
+![](/assets/images/ML/017/13.jpg){: .align-center}
 
 그렇다면 이 여론 조사의 문제점은 무엇일까요? 바로 표본에 **Bias (편향)**가 있었습니다. 지금이야 누구나 휴대폰을 갖고 있지만, 1948년에는 전화기 자체가 비싼 물건이었기 때문에 전화를 갖고 있다는 것 자체가 부유한 계층이라는 뜻이었기 때문입니다. 부유한 사람들에게만 여론 조사를 했기 때문에, 부유한 사람이 많이 지지했던 Dewey에게 투표한 사람이 많았고, 그 결과 표본 자체가 부유한 사람들의 의견만을 반영한 결과가 나온 것입니다.
 
@@ -139,7 +139,7 @@ Conductivity (전도성)이 Temperature (온도)에 선형이라는 가설을 �
 
 이와 비슷한 또 하나의 예제를 보겠습니다. 재무 예측에서 기계학습은 많이 사용되는 방법입니다. 당신은 시장의 정상적인 기간을 구하려고 합니다. 실제로 사람들이 사고팔 때 특정한 패턴이 존재합니다. 만약에 실제 시장에서 일어나는 Live Trading를 데이터로 사용한다면, 이것은 데이터 편향이 존재한다고 말할 수 있습니다. 왜냐하면 Live Trading 이외의 부분은 어떠할지 전혀 알 수 없기 때문입니다.
 
-![](https://github.com/JoonsuRyu/images/blob/master/ML/017/14.png?raw=true){: .align-center}
+![](/assets/images/ML/017/14.jpg){: .align-center}
 
 Sampling Bias를 처리하는 한 가지 방법은 분포를 일치시키는 것입니다. 실제로 많이 사용하는 방법인데, Input Space에 분포가 있다고 가정하는 것입니다. Hoeffding's Inequality와 VC Analysis에서는 Training과 Testing이 같은 분포를 갖고 있다고 가정하였습니다. 그렇기에 이 경우 Sampling Bias가 존재하면 가정에 위배되므로 문제가 발생합니다.
 
@@ -147,7 +147,7 @@ Sampling Bias를 처리하는 한 가지 방법은 분포를 일치시키는 것
 
 하지만 만약 Training에서의 확률은 0인데, Testing에서의 확률이 0보다 큰 경우에는 사용할 수 없다고 합니다. 방금 보았던 미국의 대선이 바로 이것을 설명하는 예시인데, 전화기가 없는 사람이 실제(Testing)에서는 확률이 0보다 크지만 표본(Training)에서는 확률이 0이었기 때문입니다. 이 때는 확률이 0인 부분에서 어떤 일이 일어날 지 알 수 없기 때문에 데이터에 가중치를 부여하는 등의 작업이 불가능함을 알 수 있습니다.
 
-![](https://github.com/JoonsuRyu/images/blob/master/ML/017/15.png?raw=true){: .align-center}
+![](/assets/images/ML/017/15.jpg){: .align-center}
 
 3번째 퍼즐은, 이 상황에서의 Sampling Bias를 찾아내는 것입니다.
 
@@ -159,11 +159,11 @@ Sampling Bias를 처리하는 한 가지 방법은 분포를 일치시키는 것
 
 ## Data Snooping
 
-![](https://github.com/JoonsuRyu/images/blob/master/ML/017/16.png?raw=true){: .align-center}
+![](/assets/images/ML/017/16.jpg){: .align-center}
 
 마지막 주제로 Data Snooping에 대해 이야기해봅시다.
 
-![](https://github.com/JoonsuRyu/images/blob/master/ML/017/17.png?raw=true){: .align-center}
+![](/assets/images/ML/017/17.jpg){: .align-center}
 
 이번에는 원칙을 먼저 설명한 후에 이야기가 진행됩니다.
 
@@ -173,7 +173,7 @@ Sampling Bias를 처리하는 한 가지 방법은 분포를 일치시키는 것
 
 이제 Data Snooping이 일어날 수 있는 몇 가지의 예를 확인할 것입니다. 전에 보았던 예도 있지만, 그렇지 않은 것들도 있습니다. 이 예들을 통해 무엇을 피해야 하며 어떤 종류의 Data Snooping이 있는지 보겠습니다.
 
-![](https://github.com/JoonsuRyu/images/blob/master/ML/017/18.png?raw=true){: .align-center}
+![](/assets/images/ML/017/18.jpg){: .align-center}
 
 이전에 배웠던 Nonlinear Transform으로 시작해봅시다. 오른쪽 그림은 9장에서 Data Snooping을 처음 언급할 때 나왔던 예제입니다. 이때 2차식을 사용하여 Transform 하는 방법으로 문제를 풀었고, 그 결과 $\mathbf{z}$는 6차원의 벡터가 되었습니다.
 
@@ -181,7 +181,7 @@ Sampling Bias를 처리하는 한 가지 방법은 분포를 일치시키는 것
 
 Data Snooping은 데이터 집합 $\mathcal{D}$와 관련이 있습니다. 그렇기 때문이 주어진 데이터 집합에서는 잘 수행될지 모르지만, 독립적으로 생성된 다른 데이터 집합에서도 잘 수행될지의 여부는 알 수 없습니다.
 
-![](https://github.com/JoonsuRyu/images/blob/master/ML/017/19.png?raw=true){: .align-center}
+![](/assets/images/ML/017/19.jpg){: .align-center}
 
 또 퍼즐이 나왔습니다. 4번째 퍼즐은 재무 예측 문제에서 Data Snooping이 일어나는 곳을 찾는 것입니다.
 
@@ -195,7 +195,7 @@ Data Snooping은 데이터 집합 $\mathcal{D}$와 관련이 있습니다. 그�
 
 정답을 말씀드리면, Data Snooping은 Data를 Normalize 할 때 발생하였습니다. Normalize 자체가 잘못된 것은 아닙니다. Normalize를 하는 과정에서 Test Set이 포함되었기 때문에, 다시 말해 Training Set이 Test Set에 영향을 주었기 때문에 Data Snooping이 일어난 것입니다. 올바르게 Normalize를 하기 위해서는, 데이터를 먼저 Training Set과 Test Set으로 나눈 다음 Normalize를 해야 합니다.
 
-![](https://github.com/JoonsuRyu/images/blob/master/ML/017/20.png?raw=true){: .align-center}
+![](/assets/images/ML/017/20.jpg){: .align-center}
 
 Data Snooping의 또 다른 이름은 Reuse of a Data set (데이터 집합의 재사용) 입니다. 만약 사용자가 어떤 데이터 집합을 가지고 이것저것 학습모델을 사용하다 보면 언젠가는 학습에 성공할 것입니다. 이 말은 다시 말하게 되면,
 
@@ -207,13 +207,13 @@ Data Snooping의 또 다른 이름은 Reuse of a Data set (데이터 집합의 �
 
 이것에 대한 핵심적인 문제는 바로 특정한 데이터 집합을 너무 잘 일치시킨다는 사실입니다.
 
-![](https://github.com/JoonsuRyu/images/blob/master/ML/017/21.png?raw=true){: .align-center}
+![](/assets/images/ML/017/21.jpg){: .align-center}
 
 Data Snooping에는 두 가지 해결책이 있습니다. 하나는 Data Snooping을 피하는 것[...]이고 다른 하나는 Data Snooping을 설명하는 것입니다.
 
 Data Snooping을 피하기 위해서는 엄격한 훈련이 필요하다고 합니다. 말은 정말 간단합니다. 만약 이것이 쉽지 않다면 두 번째 방법으로, 데이터가 얼마나 오염되었는지를 알아야 한다고 합니다. 물론 그냥 알기만 하면 안되고, 이전에 데이터 분포를 일치시켰던 것처럼 그에 맞는 대처를 해 주어야 합니다.
 
-![](https://github.com/JoonsuRyu/images/blob/master/ML/017/22.png?raw=true){: .align-center}
+![](/assets/images/ML/017/22.jpg){: .align-center}
 
 드디어 마지막 퍼즐입니다. 주식에서 장기간 **Buy and Hold (=장기 투자)** 했을 때의 성능을 테스트하려고 합니다. 이를 위해 여기서는 50년간의 데이터를 사용합니다. 이를 확인하기 위해 다음과 같은 방법을 사용합니다.
 

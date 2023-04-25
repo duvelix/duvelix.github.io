@@ -91,7 +91,7 @@
     <!-- start custom head snippets -->
 
 <!-- insert favicons. use https://realfavicongenerator.net/ -->
-<link rel="icon" type="image/png" sizes="16x16" href="/images/favicon.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon.png">
 
 <!-- end custom head snippets -->
 
@@ -113,7 +113,7 @@
     <div class="masthead__menu">
       <nav id="site-nav" class="greedy-nav">
         
-		<a class="site-title" href="http://localhost:4000/"><img src="/images/logo.png">
+		<a class="site-title" href="http://localhost:4000/"><img src="/assets/logo.png">
         <!-- <a class="site-title" href="/">
           KEEPMIND
            -->
@@ -164,7 +164,7 @@
   
     <div class="author__avatar">
       <!-- <a href="http://localhost:4000/"> -->
-        <img src="/images/profile.jpg" alt="Joonsu Ryu" itemprop="image" class="u-photo">
+        <img src="/assets/profile.jpg" alt="Joonsu Ryu" itemprop="image" class="u-photo">
       <!-- </a> -->
     </div>
   
@@ -303,19 +303,19 @@
             </nav>
           </aside>
         
-        <p><img src="https://github.com/JoonsuRyu/images/blob/master/ML/014/01.png?raw=true" alt="" class="align-center" /></p>
+        <p><img src="/assets/images/ML/014/01.jpg" alt="" class="align-center" /></p>
 
 <p>14장은 새로운 기계학습의 방법인 Support Vector Machine을 배우게 됩니다. 지금처럼 Neural Network가 유명해지기 전까지는 가장 널리 쓰이던 방법이었습니다.</p>
 
 <h2 id="outline">Outline</h2>
 
-<p><img src="https://github.com/JoonsuRyu/images/blob/master/ML/014/02.png?raw=true" alt="" class="align-center" /></p>
+<p><img src="/assets/images/ML/014/02.jpg" alt="" class="align-center" /></p>
 
 <p>이번 장은 Classification 문제에서 Margin을 최대화하는 것부터 시작해서, 그것을 찾는 해법, 그리고 Nonlinear Transform에 응용하는 방법까지를 다루게 됩니다.</p>
 
 <h2 id="maximizing-the-margin">Maximizing the margin</h2>
 
-<p><img src="https://github.com/JoonsuRyu/images/blob/master/ML/014/03.png?raw=true" alt="" class="align-center" /></p>
+<p><img src="/assets/images/ML/014/03.jpg" alt="" class="align-center" /></p>
 
 <p>먼저, 선형 분리가 가능한 데이터 집합이 있다고 가정해봅시다. 간단하게 표현하기 위해, 상단의 그림처럼 4개의 데이터만 존재하고, 빨간색과 파란색으로 분류하는 문제를 예로 들어보겠습니다. 이 문제를 해결하기 위해 두 데이터 종류를 분리하는 선을 그어야 하는데, 빨간색과 파란색을 분리하기만 하면 되므로 해답은 무수히 많습니다. 슬라이드에는 그 중 3가지의 해답을 보여주고 있습니다.</p>
 
@@ -330,15 +330,15 @@
 
 <p>첫 번째 의문에 대한 답은 Margin이 크다면 데이터에 Noise가 있는 경우 Error를 일으킬 확률이 줄어들기 때문입니다. 첫 번째와 같이 나누게 되면, 빨간 점의 노이즈로 인해 분리선을 넘는 데이터가 발생할 확률이 상당히 높게 발생할 수 있습니다. 그에 반해 세 번째 그림의 분리선은, 데이터와 멀리 떨어져 있기 때문에 그럴 위험이 상대적으로 적음을 쉽게 알 수 있습니다.</p>
 
-<p><img src="https://github.com/JoonsuRyu/images/blob/master/ML/014/04.png?raw=true" alt="" class="align-center" /></p>
+<p><img src="/assets/images/ML/014/04.jpg" alt="" class="align-center" /></p>
 
 <p>잠시 5장에서 배운 Growth Function을 떠올려봅시다. 만약에 데이터가 3개이고, 선으로 데이터를 나누는 예제가 있다고 가정합니다. 이 예제에서는 3개의 점으로 가능한 모든 경우인 $2^3=8$개의 경우의 수가 나왔습니다. 이 말은 Growth Function이 크다는 것이고, Growth Function이 크다는 것은 일반화가 쉽지 않다는 말과 같습니다.</p>
 
-<p><img src="https://github.com/JoonsuRyu/images/blob/master/ML/014/05.png?raw=true" alt="" class="align-center" /></p>
+<p><img src="/assets/images/ML/014/05.jpg" alt="" class="align-center" /></p>
 
 <p>일반화 문제를 해결하기 위해서, 먼저 똑같은 예제에서 8개의 경우를 각각 Margin이 가장 큰 방법으로 나누어보겠습니다. 데이터가 무작위로 분포해있기 때문에, 그림을 보시면 아시겠지만 나누었을 때 Margin이 큰 경우도 있고, 작은 경우도 있습니다. 만약에 우리가 Margin이 <strong>Fat</strong>한 경우만 허용한다면, 위의 3번째 그림과 같은 경우는 사용할 수 없으므로, 경우의 수가 줄어들게 됩니다. 즉, <strong>Fat Margin은 Dichotomy의 수를 줄인다</strong>라는 것을 의미합니다.</p>
 
-<p><img src="https://github.com/JoonsuRyu/images/blob/master/ML/014/06.png?raw=true" alt="" class="align-center" /></p>
+<p><img src="/assets/images/ML/014/06.jpg" alt="" class="align-center" /></p>
 
 <p>그렇다면 이제는 선형 분류에서, 두 종류의 데이터를 나누는 작업에 Margin이 커야 한다는 조건이 추가된 것입니다. 그렇게 만들기 위해 $\mathbf{w}$를 어떻게 찾아야하는지를 알아보겠습니다.</p>
 
@@ -348,19 +348,19 @@
 
 <p>둘째로 $w_0$를 식에서 따로 분리하는 것입니다. 기존의 선형 분류에서 $w_0$는 Threshold를 위해 만든 가중치였습니다. 그렇기 때문에 $w_0$의 역할은 $w_1 ~ w_d$까지의 역할과 완전히 다른 역할을 하므로 $\mathbf{w}$에서 따로 분리하는 것이 추후 계산에서 좀 더 편합니다. 이제 $\mathbf{w}$는 $w_1 ~ w_d$으로만 이루어진 벡터라고 가정하고, $w_0$는 $b$로 바꾸어서 더해줄 것입니다. 즉, 이제 평면의 방정식은 $\mathbf{w}^{\sf T} \mathbf{w} + b = 0$으로 바뀐 것입니다.</p>
 
-<p><img src="https://github.com/JoonsuRyu/images/blob/master/ML/014/07.png?raw=true" alt="" class="align-center" /></p>
+<p><img src="/assets/images/ML/014/07.jpg" alt="" class="align-center" /></p>
 
 <p>이제 점 $\mathbf{x}_n$과 평면 $\mathbf{w}^{\sf T} \mathbf{x} + b = 0$ 사이의 거리를 구하는 문제를 해결해야 합니다. $w_0$이 $b$로 바뀌고 $\mathbf{w}$ 밖으로 나왔기 때문에, 1로 정규화시킨 식 또한 약간 바뀐 것을 알 수 있습니다.</p>
 
 <p>이해를 돕기 위해 위 슬라이드의 오른쪽 그림을 참고하면서 계산해봅시다. 고등학교 때 배운 평면의 방정식을 떠올려보면, $\mathbf{w}$는 평면의 법선벡터이기 때문에 평면과 직교하게 됩니다. 이를 보이려면 평면의 임의의 점 $\mathbf{x}^{\prime}$과 $\mathbf{x}^{\prime\prime}$을 잡습니다. 두 점은 평면 위의 점이기 때문에, 평면의 방정식에 대입해도 식이 변하지 않습니다. 식 $\mathbf{w}^{\sf T} \mathbf{x}^{\prime} + b = 0$에서 식 $\mathbf{w}^{\sf T} \mathbf{x}^{\prime} + b = 0$를 뺀다면 $\mathbf{w}^{\sf T} (\mathbf{x}^{\prime} - \mathbf{x}^{\prime\prime})$ 이 됩니다. $\mathbf{w}$와 $(\mathbf{x}^{\prime} - \mathbf{x}^{\prime\prime})$ 두 벡터의 내적이 0이 나오므로, 두 벡터는 직교하는 것이고 $\mathbf{x}^{\prime}$과 $\mathbf{x}^{\prime\prime}$는 평면 위의 임의의 점이므로, 평면과 $\mathbf{w}$는 직교한다고 볼 수 있습니다.</p>
 
-<p><img src="https://github.com/JoonsuRyu/images/blob/master/ML/014/08.png?raw=true" alt="" class="align-center" /></p>
+<p><img src="/assets/images/ML/014/08.jpg" alt="" class="align-center" /></p>
 
 <p>이제 평면 밖의 점 $\mathbf{x}_n$과 평면 사이의 거리를 계산해봅시다. 평면위에 임의의 점 $\mathbf{x}$를 잡고, 벡터 $\mathbf{x}_n - \mathbf{x}$를 $\mathbf{w}$에 사영(Projection)합니다. 이 길이를 구하기 위해, 먼저 $\mathbf{w}$의 단위벡터를 $\hat{\mathbf{w}}$로 정의합니다. 그렇다면 구하려는 거리는 $\hat{\mathbf{w}}^{\sf T} (\mathbf{x}_n - \mathbf{x})$ 벡터의 크기가 됩니다.</p>
 
 <p>이 식에서 단위벡터를 풀고 정리하면, $b$를 한번 더해주고 빼주는 테크닉을 통해 평면의 방정식과 비슷한 형태로 정리할 수 있습니다. 여기서 $\mathbf{w}^{\sf T} \mathbf{x} + b$는 평면의 방정식 정의로 인해 0이고, $\mathbf{w}^{\sf T} \mathbf{x}_n + b$는 1로 정규화를 시켰었기 때문에, 결국 구하려는 거리를 표현한 식은 $\frac{1}{\lVert \mathbf{w} \rVert}$만 남게 됩니다.</p>
 
-<p><img src="https://github.com/JoonsuRyu/images/blob/master/ML/014/09.png?raw=true" alt="" class="align-center" /></p>
+<p><img src="/assets/images/ML/014/09.jpg" alt="" class="align-center" /></p>
 
 <p>결국 최적화해야하는 문제는 $\frac{1}{\lVert \mathbf{w} \rVert}$를 최대화하는 것입니다. Margin을 최대화하기 위해서는 분리 평면과 데이터 점 사이의 거리를 멀게 만들어야 하기 때문입니다. 여기에 조건으로, 분리 평면과 가장 가까운 점에서 $\mathbf{w}$를 $1$로 정규화하는 것을 추가해야 합니다.</p>
 
@@ -372,19 +372,19 @@
 
 <h2 id="the-solution">The solution</h2>
 
-<p><img src="https://github.com/JoonsuRyu/images/blob/master/ML/014/10.png?raw=true" alt="" class="align-center" /></p>
+<p><img src="/assets/images/ML/014/10.jpg" alt="" class="align-center" /></p>
 
 <p>이제 이전 슬라이드에서 유도한 최적화 식을 해결하는 방법을 알아보겠습니다.</p>
 
-<p><img src="https://github.com/JoonsuRyu/images/blob/master/ML/014/11.png?raw=true" alt="" class="align-center" /></p>
+<p><img src="/assets/images/ML/014/11.jpg" alt="" class="align-center" /></p>
 
 <p>최적화 문제에서 많이 사용되는 라그랑주를 사용하고자 합니다. 그런데 조건에 부등식이 들어가 있습니다. 이렇게 조건에 부등식이 들어간 라그랑지안을 <span style="color:red">KKT (Karush Kuhn Tucker)</span> 라고 합니다. KKT는 대학원 수업에서 다루는 Convex Optimization에 나오는 내용인데, 이 강의에서 구체적으로 KKT를 풀지는 않으니 일단 이런 것이 있다고만 생각하고 넘어가도록 합시다.</p>
 
-<p><img src="https://github.com/JoonsuRyu/images/blob/master/ML/014/12.png?raw=true" alt="" class="align-center" /></p>
+<p><img src="/assets/images/ML/014/12.jpg" alt="" class="align-center" /></p>
 
 <p>이 문제를 쉽게 풀기 위해 이전에 정규화에서 배웠던 방법을 생각해봅시다. 왜냐하면 이 때도 조건에 부등식이 들어간 목적 함수를 최소화하는 문제를 풀었기 때문입니다. 단지 차이는 목적 함수가 $E_{in}$이 $\mathbf{w}^{\sf T} \mathbf{w}$으로 바뀌고, 조건이 $\mathbf{w}^{\sf T} \mathbf{w}$에서 $E_{in}$으로 바뀌었을 뿐입니다. 갑자기 SVM의 조건에 $E_{in}$을 언급하는 이유는, 모든 데이터가 올바르게 분류된다고 가정했기 때문에 $E_{in}$이 0이여만 하기 때문입니다.</p>
 
-<p><img src="https://github.com/JoonsuRyu/images/blob/master/ML/014/13.png?raw=true" alt="" class="align-center" /></p>
+<p><img src="/assets/images/ML/014/13.jpg" alt="" class="align-center" /></p>
 
 <p>라그랑주 승수법(Lagrange Multiplier)에 의해, 조건으로 붙은 $y_n(\mathbf{w}^{\sf T} + b) - 1$은 목적 함수로 들어갑니다. 이 라그랑지안을 $\mathbf{w}$와 $b$에 대해 풀어야 합니다.</p>
 
@@ -392,13 +392,13 @@
 
 <p>마찬가지로 라그랑지안을 $b$로 편미분을 하게 되면 첫번째 항은 $b$가 포함되지 않았으므로 0, 두번째 항은 $b$에 대한 1차식이므로 역시 간단하게 구할 수 있습니다. 이 편미분 식 역시 0이 되는 지점을 찾아야 합니다.</p>
 
-<p><img src="https://github.com/JoonsuRyu/images/blob/master/ML/014/14.png?raw=true" alt="" class="align-center" /></p>
+<p><img src="/assets/images/ML/014/14.jpg" alt="" class="align-center" /></p>
 
 <p>이전에 구한 식들을 정리해보겠습니다. 정리 자체는 매우 간단합니다. 기존의 라그랑지안 식에서, 이전에 구한 $\mathbf{w}$와 $\sum_{n=1}^{N} \alpha_n y_n$만 대입하면 라그랑지안 식에서 $\mathbf{w}$와 $b$는 모두 사라지게 되고, 라그랑지안 식은 $\alpha$에 관한 식으로 변하게 됩니다.</p>
 
 <p>(추후에 자세한 정리 과정을 여기에 적겠습니다)</p>
 
-<p><img src="https://github.com/JoonsuRyu/images/blob/master/ML/014/15.png?raw=true" alt="" class="align-center" /></p>
+<p><img src="/assets/images/ML/014/15.jpg" alt="" class="align-center" /></p>
 
 <p>결국 최종적으로 풀어야 하는 식은 Quadratic Programming 문제가 됩니다. 여기서 직접 QP 문제를 풀 필요는 없습니다. 왜냐하면 MATLAB, Python 등의 라이브러리에서 QP를 풀어주는 기능이 이미 존재하기 때문입니다. 지금까지 유도한 QP 문제만 넣어주면 알아서 답이 나오기 때문에, 여기에서는 QP 문제 해결 방법은 생략하도록 하겠습니다.</p>
 
@@ -414,7 +414,7 @@
 
 <p>QP 문제를 제시하는 것까지는 성공적이었으나, QP 문제를 컴퓨터가 풀어준다고 해도 여전히 문제점이 있습니다. 특히, Quadratic Coefficients로 표현된 Matrix는 $N \times N$ 크기이기 때문에 데이터가 많이 주어질수록 푸는데 시간이 오래 걸린다는 문제가 있습니다. 그렇기에 현재 이런 문제를 쉽게 풀기 위한 경험적인 방법이 연구되고 있습니다.</p>
 
-<p><img src="https://github.com/JoonsuRyu/images/blob/master/ML/014/16.png?raw=true" alt="" class="align-center" /></p>
+<p><img src="/assets/images/ML/014/16.jpg" alt="" class="align-center" /></p>
 
 <p>계산상의 문제는 별개의 문제이기 때문에 여기서는 일단 성공적으로 $\alpha$를 구했다고 가정해봅시다. 그 다음에는 당연히 $\mathbf{w}$를 구해야하는데, 이것은 굉장히 쉽습니다. $\mathbf{x}$와 $y$는 주어진 데이터이기 때문에 당연히 알고있는 것이고, 여기에 방금 구한 $\alpha$만 대입한다면 자연스레 $\mathbf{w}$가 계산되기 때문입니다.</p>
 
@@ -422,7 +422,7 @@
 
 <p>중요한 점은 $(y_n ( \mathbf{w}^{\sf T} \mathbf{x}_n + b) - 1 )$이 0이 되는 지점입니다. 이 말은 데이터 점이 정확하게 Margin의 경계선에 있다는 것을 의미하기 때문입니다. 이 때의 점 $\mathbf{x}_n$은 Margin의 범위를 <strong>도와</strong>주기 때문에 Support Vector라고 부릅니다.</p>
 
-<p><img src="https://github.com/JoonsuRyu/images/blob/master/ML/014/17.png?raw=true" alt="" class="align-center" /></p>
+<p><img src="/assets/images/ML/014/17.jpg" alt="" class="align-center" /></p>
 
 <p>Support Vector를 직관적으로 이해하려면, 위 슬라이드의 오른쪽 그림을 참고하시면 됩니다. 보라색 선은 데이터 집합을 구분하는 분리 평면이 되고, 노란색 영역은 Margin이 됩니다. 노란색 영역의 경계선을 보시면 경계에 걸쳐있는 점이 표시되어 있는데, 이 점들이 바로 Support Vector입니다. 이전 슬라이드에서 $(y_n ( \mathbf{w}^{\sf T} \mathbf{x}_n + b) - 1 )$이 0이 되는 점이었습니다. 그리고 바로 이전 슬라이드에서 $\alpha$가 0이 되는 점들이 Margin 밖에 있는 데이터입니다.</p>
 
@@ -430,17 +430,17 @@
 
 <h2 id="nonlinear-transforms">Nonlinear transforms</h2>
 
-<p><img src="https://github.com/JoonsuRyu/images/blob/master/ML/014/18.png?raw=true" alt="" class="align-center" /></p>
+<p><img src="/assets/images/ML/014/18.jpg" alt="" class="align-center" /></p>
 
 <p>지금까지는 선형 분리가 가능한 경우를 가정했지만, 이제 Support Vector를 Nonlinear Transform에 응용해보도록 하겠습니다.</p>
 
-<p><img src="https://github.com/JoonsuRyu/images/blob/master/ML/014/19.png?raw=true" alt="" class="align-center" /></p>
+<p><img src="/assets/images/ML/014/19.jpg" alt="" class="align-center" /></p>
 
 <p>일반적이 Nonlinear Transform은 기존의 데이터 $\mathbf{x}$를 Transform Function을 통해 $\mathbf{z}$으로 바꾸어줬습니다. $\mathbf{x}$는 선형 분리가 불가능한 데이터이지만, Transform을 통해 선형 분리가 가능한 $\mathbf{z}$로 바꾼 것입니다.</p>
 
 <p>데이터를 Transform 해도 라그랑지안은 그렇게 크게 바뀌지 않다는 걸 눈치채셨을 겁니다. $\alpha$를 푸는 QP 문제는 어차피 데이터의 “수”에만 영향을 받기 때문입니다. 즉, 데이터를 Transform 하는 것은 Support Vector를 구하는 것을 어렵게 만들지 않습니다.</p>
 
-<p><img src="https://github.com/JoonsuRyu/images/blob/master/ML/014/20.png?raw=true" alt="" class="align-center" /></p>
+<p><img src="/assets/images/ML/014/20.jpg" alt="" class="align-center" /></p>
 
 <p>$\mathcal{Z}$ 공간에서 $\alpha$와 Support Vector를 구한 다음 데이터 집합을 다시 $\mathcal{X}$ 공간으로 Transform하게 되면 위 그림과 같은 분리 평면이 나오게 됩니다. $\mathcal{Z}$ 공간에서는 분리 평면이 직선과 같은 형태지만, $\mathcal{X}$ 공간에서는 이렇게 곡선 형태로 나오게 됩니다. Support Vector는 그림상에 특별하게 표시가 되어있습니다.</p>
 

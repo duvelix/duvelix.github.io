@@ -91,7 +91,7 @@
     <!-- start custom head snippets -->
 
 <!-- insert favicons. use https://realfavicongenerator.net/ -->
-<link rel="icon" type="image/png" sizes="16x16" href="/images/favicon.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon.png">
 
 <!-- end custom head snippets -->
 
@@ -113,7 +113,7 @@
     <div class="masthead__menu">
       <nav id="site-nav" class="greedy-nav">
         
-		<a class="site-title" href="http://localhost:4000/"><img src="/images/logo.png">
+		<a class="site-title" href="http://localhost:4000/"><img src="/assets/logo.png">
         <!-- <a class="site-title" href="/">
           KEEPMIND
            -->
@@ -164,7 +164,7 @@
   
     <div class="author__avatar">
       <!-- <a href="http://localhost:4000/"> -->
-        <img src="/images/profile.jpg" alt="Joonsu Ryu" itemprop="image" class="u-photo">
+        <img src="/assets/profile.jpg" alt="Joonsu Ryu" itemprop="image" class="u-photo">
       <!-- </a> -->
     </div>
   
@@ -303,7 +303,7 @@
             </nav>
           </aside>
         
-        <p><img src="https://github.com/JoonsuRyu/images/blob/master/ML/003/01.png?raw=true" alt="" class="align-center" /></p>
+        <p><img src="/assets/images/ML/003/01.jpg" alt="" class="align-center" /></p>
 
 <p>3장에서는 새로운 이슈인 Linear Model (선형 모델)에 대해서 알아보는 시간입니다.</p>
 
@@ -313,17 +313,17 @@
 
 <h2 id="outline">Outline</h2>
 
-<p><img src="https://github.com/JoonsuRyu/images/blob/master/ML/003/02.png?raw=true" alt="" class="align-center" /></p>
+<p><img src="/assets/images/ML/003/02.jpg" alt="" class="align-center" /></p>
 
 <p>이번 장의 순서는 크게 입력값의 표현을 어떻게 할 것인지부터 시작해서 Linear Classification (선형 분류), Linear Regression (선형 회귀)를 다루고 Nonlinear Problem (비선형 문제)을 해결하기 위한 접근 방법을 소개하며 끝나게 됩니다.</p>
 
 <h2 id="input-representation">Input Representation</h2>
 
-<p><img src="https://github.com/JoonsuRyu/images/blob/master/ML/003/03.png?raw=true" alt="" class="align-center" /></p>
+<p><img src="/assets/images/ML/003/03.jpg" alt="" class="align-center" /></p>
 
 <p>간단한 예제로 사람이 손으로 쓴 숫자를 분류하는 문제를 들어봅시다. (우체국에서 손으로 쓴 주소를 기계가 분류하는 시스템을 구축한다고 생각하시면 이해가 쉬울 것 같습니다) 입력값은 위의 슬라이드에 나온 대로 사람들이 직접 손으로 쓴 숫자들을 따와서 사용하게 됩니다. 첫 번째 문제로, 입력 데이터는 그림인데, 기계학습으로 처리하기 위해서는 이를 수치화 시켜서 표현할 필요가 있습니다.</p>
 
-<p><img src="https://github.com/JoonsuRyu/images/blob/master/ML/003/04.png?raw=true" alt="" class="align-center" /></p>
+<p><img src="/assets/images/ML/003/04.jpg" alt="" class="align-center" /></p>
 
 <p>그림 데이터를 수치화시키는 방법은 여러가지가 있지만, 일반적으로 컴퓨터는 그림을 픽셀의 묶음으로 처리하기 때문에 그림의 각 픽셀값을 입력으로 변환하는 방법을 생각해볼 수 있습니다. 이 예제의 경우, 한 숫자 그림이 차지하는 픽셀이 256개라고 가정했습니다. ($x_0$는 Threshold를 위해 만든 Input입니다 - 1장 참고)</p>
 
@@ -333,13 +333,13 @@
 
 <h2 id="linear-classification">Linear Classification</h2>
 
-<p><img src="https://github.com/JoonsuRyu/images/blob/master/ML/003/05.png?raw=true" alt="" class="align-center" /></p>
+<p><img src="/assets/images/ML/003/05.jpg" alt="" class="align-center" /></p>
 
 <p>Input Vector가 $x_0$, $x_1$, $x_2$ 단 3개로 줄어든 걸 볼 수 있습니다. $x_0$의 역할은 이전과 마찬가지로 Threshold 역할이고, $x_1$은 검은색 픽셀의 밀집도, $x_2$는 대칭 여부를 의미합니다. 간단하게 바꾼 Input Vector로 숫자 1과 5를 분류해 보았습니다. 아무래도 1보다 5가 차지하는 검은색 픽셀이 더 많고, 숫자 1은 대칭적인데 비해 5는 대칭적이지 않으니 이 둘을 구분하는건 크게 어렵지 않아 보입니다.</p>
 
 <p>다만 슬라이드의 그림을 자세히 보시면 대략적으로는 구분이 가능하지만, 몇몇 지점에서 약간의 Noise가 있음을 알 수 있습니다. 이 Noise 때문에 이 데이터는 <strong>Linearly Seperable 데이터가 아님</strong>을 알 수 있습니다. 1장에서 PLA는 Linearly Seperable 데이터가 아니라면 수렴하지 않는다고 했기 때문에 이 문제 또한 학습 결과가 수렴하지 않습니다.</p>
 
-<p><img src="https://github.com/JoonsuRyu/images/blob/master/ML/003/06.png?raw=true" alt="" class="align-center" /></p>
+<p><img src="/assets/images/ML/003/06.jpg" alt="" class="align-center" /></p>
 
 <p>실제로 이전 슬라이드의 데이터를 사용하여 PLA를 수행한 결과입니다. 왼쪽 그림은 데이터의 갯수가 증가할수록 In Sample Error와 Out of Sample Error가 어떻게 변하는지를 나타내고 있습니다. 정상적인 학습이라면 데이터의 갯수가 증가할수록 두 Error 모두 0으로 수렴해야하지만, 이 문제에서는 Linearly Seperable 데이터가 아니므로 수렴하지 않고 진동하는 모양의 그래프가 나옴을 알 수 있습니다. ($E_{in}$와 $E_{out}$의 변화를 참고하세요)</p>
 
@@ -349,30 +349,30 @@
 
 <p>그런데 왼쪽 그림을 보니 수행 횟수가 1000번일 때의 Error가 250번 정도일 때보다 크게 나타납니다. 하지만 이 알고리즘은 1000번 수행 후의 결과를 출력하다 보니 이전에 더 좋은 성능을 보이는 Weight Vector를 찾았음에도 그보다 못한 값이 최종 값으로 확정되어버렸네요. 이걸 개선한다면 이전보다 좋은(=Error가 낮은) Weight Vector를 찾을 수 있어 보입니다.</p>
 
-<p><img src="https://github.com/JoonsuRyu/images/blob/master/ML/003/07.png?raw=true" alt="" class="align-center" /></p>
+<p><img src="/assets/images/ML/003/07.jpg" alt="" class="align-center" /></p>
 
 <p>여기서는 이 문제를 <span style="color:red">Pocket Algorithm</span>으로 해결합니다. Pocket Algorithm은 수행 중에 최고 성능을 보이는 Weight Vector 값을 저장해 두고, Weight Vector가 변경되었을 시 성능이 기존보다 떨어진다면 이를 반영하지 않는 알고리즘입니다. (좋은 것을 찾았을 때 주머니에 넣어두는 것을 떠올리시면 이해가 편할 것 같습니다.) 즉, Pocket Algorithm을 사용한다면 Weight Vector를 학습시킬수록 Error가 높은 (낮은 성능을 보이는) Vector가 나온다고 해도 항상 최선의 결과만 출력해 줄 수 있다는 장점이 있습니다. 왼쪽 그림을 보시면 데이터의 수가 100~400개 근처일 때 가장 성능이 좋고, 이후에는 계속 이보다 나쁜 성능을 가지는 Vector만 나오다 보니 Pocket Algorithm의 경우 100 즈음부터 변화가 없는 것을 알 수 있습니다.</p>
 
-<p><img src="https://github.com/JoonsuRyu/images/blob/master/ML/003/08.png?raw=true" alt="" class="align-center" /></p>
+<p><img src="/assets/images/ML/003/08.jpg" alt="" class="align-center" /></p>
 
 <p>위 슬라이드는 PLA를 사용한 결과와 Pocket Algorithm을 사용한 결과를 비교한 그림입니다. 검은색 줄이 1로 판단할 것인가 5로 판단할 것인가를 나누는 기준선입니다. Linearly Seperable 데이터가 아니기 때문에 두 그림 모두 완벽하게 판별하지는 못하지만, 확실히 Pocket Algorithm으로 나눈 결과가 더 바람직해 보인다는 것을 알 수 있습니다.</p>
 
 <h2 id="linear-regression">Linear Regression</h2>
 
-<p><img src="https://github.com/JoonsuRyu/images/blob/master/ML/003/09.png?raw=true" alt="" class="align-center" /></p>
+<p><img src="/assets/images/ML/003/09.jpg" alt="" class="align-center" /></p>
 
 <p>지금까지 Linear Classification를 하는 방법을 알아보았습니다. 문제 난이도를 조금 올려, 이제 Linear Regression를 하는 방법을 알아보겠습니다. <span style="color:red">Regression (회귀)</span>은 출력 결과가 +1/-1이 나오는 Classification와는 다르게, 출력 결과로 실수값으로 나오는 것을 말합니다.</p>
 
-<p><img src="https://github.com/JoonsuRyu/images/blob/master/ML/003/10.png?raw=true" alt="" class="align-center" /></p>
+<p><img src="/assets/images/ML/003/10.jpg" alt="" class="align-center" /></p>
 
 <p>1장에서 다루었던 카드를 발급하는 문제로 돌아와봅시다. 그때는 신청자의 정보를 바탕으로 카드를 발급해 줄 것인가/거부할 것인가의 여부를 다뤘다면, 이제는 카드 발급 여부에 더해 카드의 한도를 어떻게 정할 것인가를 구해야 합니다. 카드의 한도는 사람마다 다를 뿐더러 결과값이 실수(Real Number)로 나오기 때문에 이전보다 문제가 복잡해졌습니다. 지원자의 정보의 형태(Input Vector)는 분류를 할 때와 크게 다르지 않습니다만, 분류를 할 때와 달리 실수값의 출력이 나와야 하므로 Hypothesis $h$의 형태가 $sign()$ 함수를 떼버린 $\mathbf{w}^{\sf T} \mathbf{x}$ 꼴로 나오게 됩니다.</p>
 
-<p><img src="https://github.com/JoonsuRyu/images/blob/master/ML/003/11.png?raw=true" alt="" class="align-center" /></p>
+<p><img src="/assets/images/ML/003/11.jpg" alt="" class="align-center" /></p>
 
 <p>이전 슬라이드에서 언급했다시피 입력 값은 분류때와 큰 차이점은 없습니다.
 다만 분류에서는 $y_n$의 값이 +1/-1이었지만 회귀에서는 실수 값이 들어간다는 것만 주의하시면 됩니다.</p>
 
-<p><img src="https://github.com/JoonsuRyu/images/blob/master/ML/003/12.png?raw=true" alt="" class="align-center" /></p>
+<p><img src="/assets/images/ML/003/12.jpg" alt="" class="align-center" /></p>
 
 <p>문제가 다르니 Error를 어떻게 측정할 것인가도 생각해 보아야합니다. 분류에서는 출력이 +1/-1 뿐이다 보니 그냥 정답과 다른 것의 갯수만 세면 충분했습니다. 그래서 전체 중에 몇개나 틀렸는지를 비율로 표시하였습니다.</p>
 
@@ -380,11 +380,11 @@
 
 <p>이걸 보시면 “단순한 차이를 원한다면 제곱할 필요 없이 그냥 차이의 절대값을 쓰면 되는게 아닌가?” 라는 의문이 드실 수도 있습니다. 제곱을 쓰는 데는 여러가지 이유가 있으나 대표적인 이유로는 절대값을 쓰게 되면 미분이 힘들어지기 때문입니다. 차이가 크면 클수록 패널티를 많이 주기 위함도 있습니다.</p>
 
-<p><img src="https://github.com/JoonsuRyu/images/blob/master/ML/003/13.png?raw=true" alt="" class="align-center" /></p>
+<p><img src="/assets/images/ML/003/13.jpg" alt="" class="align-center" /></p>
 
 <p>이 Error Measure를 그림으로 표현한 슬라이드 입니다. 왼쪽 그림은 Input Vector가 1차원일 때의 예시이며, 오른쪽 그림은 Input Vector가 2차원일 때의 예시입니다. 파란색 선(오른쪽 그림에서는 파란색 평면)이 의미하는 것은 Hypothesis Function $h$이고, 빨간색 선이 실제 분류값(Target Fucntion $f$의 값)과 예측한 결과 값의 차이입니다. 헷갈리실수도 있지만, 빨간색 선을 그릴 때 $h$에 대해서 직교하는 선을 그리는 것이 아님을 유의하셔야 합니다.</p>
 
-<p><img src="https://github.com/JoonsuRyu/images/blob/master/ML/003/14.png?raw=true" alt="" class="align-center" /></p>
+<p><img src="/assets/images/ML/003/14.jpg" alt="" class="align-center" /></p>
 
 <p>그럼 이 Error Measure를 통해서 $E_{in}$을 계산해봅시다. 입력값의 개수가 $N$이므로 모든 입력값에 대해 평균적인 차이를 계산한다면 아래와 같습니다.</p>
 
@@ -394,7 +394,7 @@
 
 \[E_{in}(\mathbf{w}) = \frac{1}{N} \lVert \mathbf{X}\mathbf{w} - \mathbf{y} \rVert^2\]
 
-<p><img src="https://github.com/JoonsuRyu/images/blob/master/ML/003/15.png?raw=true" alt="" class="align-center" /></p>
+<p><img src="/assets/images/ML/003/15.jpg" alt="" class="align-center" /></p>
 
 <p>최종적으로 구하고자 하는 것은 $E_{in}$의 최소값입니다. 어떤 함수의 어디에서 최소값을 갖는지 구하는 방법은 그 함수의 도함수(Derivative)를 구해서 그 값이 0인 점을 찾으면 됩니다. (물론 모든 함수의 최소값이 도함수가 0인 점이라는 것은 아닙니다만, $E_{in}$ 함수는 볼록 함수(Convex Function)이므로 최소값입니다) $E_{in}$을 미분하려면 Vector Calculus를 알아야 하는데, 모르시는 분을 위해서 중간 과정을 조금 적어드리겠습니다. (저도 Vector Calculus를 제대로 배워본적이 없어서 틀린 부분이 있다면 댓글로 지적 부탁드립니다)</p>
 
@@ -444,47 +444,47 @@
 
 <p>여기서 $\mathbf{X}^{\dagger}$를 $\mathbf{X}$의 <span style="color:red">Pseudo-Inverse</span> (의사역행렬)라고 합니다. 이런 이름이 붙은 이유는, 이 행렬은 $\mathbf{X}$의 역행렬이 아님에도 불구하고 역행렬처럼 $\mathbf{X}^{\dagger}\mathbf{X} = I$가 나오는 성질을 가지기 때문입니다.</p>
 
-<p><img src="https://github.com/JoonsuRyu/images/blob/master/ML/003/16.png?raw=true" alt="" class="align-center" /></p>
+<p><img src="/assets/images/ML/003/16.jpg" alt="" class="align-center" /></p>
 
 <p>이전 슬라이드에 수식이 너무 많아 당황하셨을 수도 있지만, 걱정하지 않으셔도 됩니다. Pseudo-Inverse의 전개 과정을 안다면 더욱 좋겠지만 모르셔도 전체적인 이론을 이해하는데는 큰 무리가 없습니다. “회귀 문제를 풀기 위해서는 Pseudo-Inverse를 계산해야 하는구나” 정도만 아시면 됩니다. 어차피 요즘엔 MATLAB 등과 같은 수학 관련 프로그램이 모두 계산해주기 때문입니다.</p>
 
 <p>이번에는 Pseudo-Inverse 행렬이 어떤 크기를 갖는지 알아봅시다. $\mathbf{X}$는 $d$차원의 입력이 $N$개 만큼 있으니 $N \times (d+1)$ 크기의 행렬이 될 것입니다. ($d$ 가 아니라 $d+1$ 인 이유는 Threshold를 나타내는 $x_0$가 포함되기 때문입니다) 그럼 $\mathbf{X}^{\sf T}$는 반대로 $(d+1) \times N$ 크기의 행렬이니 $\mathbf{X}^{\sf T} \mathbf{X}$ 를 계산한다면 $(d+1) \times (d+1)$ 크기의 행렬이 됨을 알 수 있습니다. 역행렬을 구한다고 해도 행렬의 크기는 변하지 않으니 $(\mathbf{X}^{\sf T} \mathbf{X})^{-1}$ 또한 $(d+1) \times (d+1)$ 크기의 행렬이 됩니다. $\mathbf{X}^{\sf T}$행렬은 $(d+1) \times N$ 크기라고 했으니 $(\mathbf{X}^{\sf T} \mathbf{X})^{-1} \mathbf{X}^{\sf T}$를 계산하면 최종적으로 Pseudo-Inverse $\mathbf{X}^{\dagger}$는 $(d+1) \times N$ 크기의 행렬이 된다는 것을 알 수 있습니다.</p>
 
-<p><img src="https://github.com/JoonsuRyu/images/blob/master/ML/003/17.png?raw=true" alt="" class="align-center" /></p>
+<p><img src="/assets/images/ML/003/17.jpg" alt="" class="align-center" /></p>
 
 <p>최종적으로 Linear Regression를 하는 알고리즘을 정리해보면, 첫째로 입력값과 그 정답을 나타내는 값을 각각 $\mathbf{X}$와 $\mathbf{y}$ 행렬로 묶어주고, 둘째로 Pseudo-Inverse $\mathbf{X}^{\dagger}$를 계산한다음, 마지막으로 Pseudo-Inverse $\mathbf{X}^{\dagger}$와 $\mathbf{y}$를 곱해주면 $\mathbf{w}$를 알 수 있게 됩니다.</p>
 
 <p>이 과정을 보시면 한번만 계산하면 끝나기 때문에 Learning이 아니라고 생각하실 수도 있습니다. 다만 책의 저자이신 Abu-Mostafa 교수님께서는 꼭 PLA처럼 모든 데이터에 대해 하나하나 Weight Vector를 수정하는 것만이 Learning이 아니라고 합니다. 다시 말해서 어떻게 구하는지 그 과정은 별로 중요한 것이 아니라고 합니다.</p>
 
-<p><img src="https://github.com/JoonsuRyu/images/blob/master/ML/003/18.png?raw=true" alt="" class="align-center" /></p>
+<p><img src="/assets/images/ML/003/18.jpg" alt="" class="align-center" /></p>
 
 <p>Linear Regression은 결과 값이 실수로 나온다는 것을 알고 있습니다. 그런데 Linear Classification에서 나오는 결과는 +1/-1인데, 이것도 실수니까 회귀와 연관을 지을 수 있지 않을까 하는 생각을 해봅니다. Linear Regression을 조금 응용한다면 Weight Vector $\mathbf{w}$를 가지고 Linear Classification를 할 수 있지 않을까라는 겁니다.</p>
 
 <p>안타깝게도 회귀와 분류는 그 목적이 다르기 때문에 그대로 사용할 수는 없습니다. 하지만 회귀에 사용한 데이터를 이용해 분류에 도움을 줄 수는 있습니다. 기존에 분류를 할 때 $\mathbf{w}$의 초기값을 무작위 값(혹은 Zero Vector)으로 정의하였지만, 회귀에서 사용했던 $\mathbf{w}$를 초기값으로 정하게 된다면 분류에 수렴하기까지 시간이 매우 단축되는 결과를 얻을 수 있다고 합니다.</p>
 
-<p><img src="https://github.com/JoonsuRyu/images/blob/master/ML/003/19.png?raw=true" alt="" class="align-center" /></p>
+<p><img src="/assets/images/ML/003/19.jpg" alt="" class="align-center" /></p>
 
 <p>Linear Regression에서 구한 Weight Vector $\mathbf{w}$를 초기값으로 설정해 Linear Classification 문제의 그림으로 표현한 결과입니다. 완벽하지는 않지만, 정답과 매우 유사한 분류가 이루어졌음을 알 수 있습니다. 이 상태에서 시작해 PLA 등의 Linear Classification 알고리즘을 수행한다면, 많은 단계를 거치지 않아도 최적의 $\mathbf{w}$을 쉽게 구할 수 있겠구나라는 것을 예상할 수 있습니다.</p>
 
 <h2 id="nonlinear-transformation">Nonlinear Transformation</h2>
 
-<p><img src="https://github.com/JoonsuRyu/images/blob/master/ML/003/20.png?raw=true" alt="" class="align-center" /></p>
+<p><img src="/assets/images/ML/003/20.jpg" alt="" class="align-center" /></p>
 
 <p>이제 마지막으로 Nonlinear Problem (비선형 문제)은 어떻게 접근하는지 알아봅시다.</p>
 
-<p><img src="https://github.com/JoonsuRyu/images/blob/master/ML/003/21.png?raw=true" alt="" class="align-center" /></p>
+<p><img src="/assets/images/ML/003/21.jpg" alt="" class="align-center" /></p>
 
 <p>Linear Classification/Regression은 굉장히 편리하고 효과가 좋은 방법이지만, 안타깝게도 모든 문제가 Linear Model로 해결되지는 않습니다. 간단한 예제로 위 슬라이드의 왼쪽 그림과 같은 데이터의 경우, 어떻게 나누어도 직선으로는 분류할 수 없습니다. 오른쪽 그림처럼 원 모양으로 표현해야 제대로 나누어질텐데, Linear Model로는 저렇게 원 형태를 표현할 수 없는 것이 문제입니다.</p>
 
-<p><img src="https://github.com/JoonsuRyu/images/blob/master/ML/003/22.png?raw=true" alt="" class="align-center" /></p>
+<p><img src="/assets/images/ML/003/22.jpg" alt="" class="align-center" /></p>
 
 <p>잠시 카드 발급 문제로 돌아가서 “years in residence” 라는 요소를 생각해봅시다. 왜 그런지는 모르겠지만, 한 집에서 너무 적게 거주했거나(1년 미만) 너무 오래 거주한 경우(5년 초과) 부정적으로 평가한다고 합니다. 이런 경우 Linear Model을 통해 표현할 수 있을까요?</p>
 
-<p><img src="https://github.com/JoonsuRyu/images/blob/master/ML/003/23.png?raw=true" alt="" class="align-center" /></p>
+<p><img src="/assets/images/ML/003/23.jpg" alt="" class="align-center" /></p>
 
 <p>이 문제에 답을 하기 위해서는 <strong>“무엇”</strong>에 대해 Linear하냐 라는 것부터 생각해보아야 합니다. Input이 Linear이기 때문에 Linear Model이라고 생각하시는 분들이 있는데, Linear Model이라고 이름이 붙은 이유는 <strong>Weight</strong>에 대해 Linear이기 때문에 Linear Model이라고 부르는 겁니다. 그러니까, 다시 말해서 입력값 $\mathbf{x}$은 Linear이든 아니든 크게 상관이 없다는 겁니다.</p>
 
-<p><img src="https://github.com/JoonsuRyu/images/blob/master/ML/003/24.png?raw=true" alt="" class="align-center" /></p>
+<p><img src="/assets/images/ML/003/24.jpg" alt="" class="align-center" /></p>
 
 <p>그럼 입력값이 Linear일 필요는 없다고 했으니, 입력 값을 한번 바꾸어봅시다. 임의의 함수 $\Phi$를 정의해서 입력값 $\mathbf{x}$ 제곱하는 연산을 수행하게 만들어 봅시다. 위 슬라이드의 왼쪽 그림은 20번 슬라이드에 나왔던 그 예제입니다. 그런데 모든 데이터에 대해 $\Phi$ 함수를 거친 결과값을 표현하니 오른쪽 그림처럼 변했습니다. 이 바뀐 데이터의 분포는 Linearly Seperable 데이터라는 것을 쉽게 알 수 있습니다.</p>
 

@@ -10,7 +10,7 @@ tags:
   - machine learning
 ---
 
-![](https://github.com/JoonsuRyu/images/blob/master/ML/006/01.png?raw=true){: .align-center}
+![](/assets/images/ML/006/01.jpg){: .align-center}
 
 6장에서는 지난 장에서 다루었던 $m_{\mathcal{H}}$에 대한 증명들을 배우게 됩니다.
 
@@ -18,7 +18,7 @@ tags:
 
 ## Outline
 
-![](https://github.com/JoonsuRyu/images/blob/master/ML/006/02.png?raw=true){: .align-center}
+![](/assets/images/ML/006/02.jpg){: .align-center}
 
 이번 장의 증명은 크게 두 가지로 나뉘어 있습니다.
 
@@ -26,13 +26,13 @@ tags:
 
 ## Proof that $m_{\mathcal{H}}$ is polynomial
 
-![](https://github.com/JoonsuRyu/images/blob/master/ML/006/03.png?raw=true){: .align-center}
+![](/assets/images/ML/006/03.jpg){: .align-center}
 
 $m_{\mathcal{H}}(N)$이 $N$에 대해서 다항함수임을 증명하려면, 부등식을 통해 $m_{\mathcal{H}}(N)$이 $N$으로 이루어진 다항식보다 작거나 같다는 것을 증명하면 됩니다. 다항식의 차수를 걱정하실 수도 있지만, 다항식의 차수가 어떻든 $N$이 충분히 커지게 되면 지수함수 보다 작아지기 때문에 차수 자체는 큰 문제가 아닙니다.
 
 본 증명을 하기 앞서 새로운 함수인 $B(N, k)$를 정의합니다. 이것은 $N$개의 점이 있고 Break Point가 $k$일 때 가능한 Dichotomy의 **최대 개수**를 의미합니다.
 
-![](https://github.com/JoonsuRyu/images/blob/master/ML/006/04.png?raw=true){: .align-center}
+![](/assets/images/ML/006/04.jpg){: .align-center}
 
 방금 정의한 $B(N, k)$ 함수를 구체적인 변수들로 표현하기 위해 위 슬라이드의 오른쪽 표를 참고하여 따라가보겠습니다. 오른쪽 표에서 $\mathbf{x}_1, \mathbf{x}_2, ..., \mathbf{x}_N$은 각각 $N$개의 점을 의미합니다. 이 값은 분류된 결과를 의미하므로 +1이나 -1의 값을 가질 수 있습니다.
 
@@ -42,13 +42,13 @@ $m_{\mathcal{H}}(N)$이 $N$에 대해서 다항함수임을 증명하려면, 부
 
 $S_{1}$의 원소의 개수를 $\alpha$라고 하고, $S^+_2$, $S^-_2$의 원소의 개수를 각각 $\beta$라고 하면 $B(N, k)$의 값은 $\alpha + 2\beta$로 표현이 가능합니다.
 
-![](https://github.com/JoonsuRyu/images/blob/master/ML/006/05.png?raw=true){: .align-center}
+![](/assets/images/ML/006/05.jpg){: .align-center}
 
 이제 점 $\mathbf{x}_{N}$을 삭제해보겠습니다. 다시 말해 $N-1$개의 점에서 Break Point가 $k$일 때 $B(N-1, k)$를 구하자는 것입니다. 직관적인 생각으로는 $\alpha + \beta = B(N-1, k)$가 되는 것일텐데, 왜 $\alpha + \beta \leq B(N-1, k)$인지 의문이 들 수도 있습니다.
 
 그 이유는 $B(N-1, k)$는 가능한 Dichotomy의 **최대 개수**라고 정의되었기 때문입니다. 방금처럼 점이 $N$개였던 표에서 $\mathbf{x}_{N}$만 지운 표가 점이 $N-1$일 때의 Dichotomy의 최대 개수인지 아니면 일부분인지 모르기 때문에 등호가 아닌 부등호가 들어간 것입니다.
 
-![](https://github.com/JoonsuRyu/images/blob/master/ML/006/06.png?raw=true){: .align-center}
+![](/assets/images/ML/006/06.jpg){: .align-center}
 
 마찬가지로 이번에는 $B(N-1, k-1)$을 구해볼 것인데, 역시 점이 $N-1$개이므로 표에서 점 $\mathbf{x}_{N}$을 삭제해보겠습니다. 이전 슬라이드와 마찬가지로 $B(N-1, k-1)$가 $\beta$ 이상이라고 부등호가 되어있는데, 왜 이것이 $k-1$의 Break Point를 가지는지 직관적으로 이해하기 쉽지 않습니다.
 
@@ -56,7 +56,7 @@ $S_{1}$의 원소의 개수를 $\alpha$라고 하고, $S^+_2$, $S^-_2$의 원소
 
 반대로 $\beta$가 $k-1$개의 Break Point를 가진다는 것을 보이는 것은 쉽습니다. $S^+_2, S^-_2$는 $\mathbf{x}_N$의 값을 제외하면 나머지 $\mathbf{x}_1, \mathbf{x}_2, ... \mathbf{x}_N$ 요소가 같은 값이기 때문입니다.
 
-![](https://github.com/JoonsuRyu/images/blob/master/ML/006/07.png?raw=true){: .align-center}
+![](/assets/images/ML/006/07.jpg){: .align-center}
 
 이전의 두 슬라이드의 내용을 정리해보면 다음과 같습니다.
 
@@ -72,7 +72,7 @@ $$B(N, k) \leq B(N-1, k) + B(N-1, k-1)$$
 
 이를 토대로 임의의 $N$, $k$에 대해서 $B(N, k)$의 값을 Recursive하게 계산할 수 있다는 것을 알 수 있습니다.
 
-![](https://github.com/JoonsuRyu/images/blob/master/ML/006/08.png?raw=true){: .align-center}
+![](/assets/images/ML/006/08.jpg){: .align-center}
 
 방금 유도한 식을 토대로 $N$과 $k$에 따라 $B(N, k)$값이 어떻게 변하는지 위 슬라이드의 오른쪽 표에 나와있습니다. 표를 채우려면 먼저 $B(N, 1)$과 $B(1, k)$를 구해야 하는데, $B(N, 1)$은 점이 몇 개가 주어지든 Break Point가 1이란 얘기니까 무조건 딱 한 가지로만 분류가 가능하다는 뜻입니다. 따라서 $B(N, 1)=1$이 됩니다.
 
@@ -84,25 +84,25 @@ $$B(N, k) \leq B(N-1, k) + B(N-1, k-1)$$
 
 그럼 실제로 $B(3, 2)$의 값이 뭔지 궁금합니다. 운이 좋게 이것은 저희가 이미 계산해본 적 있습니다. 5장의 맨 마지막 슬라이드에서 간단한 Puzzle을 풀었었는데, 이때가 $N=3, k=2$의 예제였습니다. 계산했을 때 값이 4가 나왔었는데, 우연히도 $B(3, 2)$의 Upper Bound와 같은 값임을 알 수 있습니다. 하지만 이것은 우연일 뿐, 항상 이렇게 같은 값이 나오지는 않음에 유의하셔야 합니다.
 
-![](https://github.com/JoonsuRyu/images/blob/master/ML/006/09.png?raw=true){: .align-center}
+![](/assets/images/ML/006/09.jpg){: .align-center}
 
 하지만 이렇게 Recursive하게 계산하는 것은 계산 속도도 오래 걸리고 귀찮기 때문에, 이를 한 번에 표현할 수 있는 일반항을 찾아야 합니다. 위 슬라이드에 나온 것처럼, $B(n, k)$에 대한 일반항을 조합(Combination)들의 합으로 제시하고 이를 증명합니다.
 
 증명 방법은 흔히 사용하는 <span style="color:red">Induction (귀납법)</span>으로 증명합니다. 먼저 맨 처음 항이 True임을 보여야 하는데, 이건 그냥 $N=1$과 $k=1$을 각각 넣게 되면 참임을 알 수 있습니다.
 
-![](https://github.com/JoonsuRyu/images/blob/master/ML/006/10.png?raw=true){: .align-center}
+![](/assets/images/ML/006/10.jpg){: .align-center}
 
 그다음의 과정이 조금 흥미로운데, 여기서는 $B(N-1, k)$의 합과 $B(N-1, k-1)$의 합이 $B(n, k)$가 되는지를 보였습니다. 첫 번째 줄에서 두 번째 줄로 넘어갈 때는 두 항을 합치기 위해 시그마를 똑같이 $i=1$부터 $i=k-1$까지 맞춰눈 것이고, 세 번째 줄에서 네 번째 줄로 넘어간 것은 조합에서 사용하는 파스칼의 삼각형을 사용해서 두 개의 조합을 하나로 합친 것입니다.
 
 이 외에는 단순한 계산이기 때문에 생략하겠습니다.
 
-![](https://github.com/JoonsuRyu/images/blob/master/ML/006/11.png?raw=true){: .align-center}
+![](/assets/images/ML/006/11.jpg){: .align-center}
 
 최종적인 결론입니다. 이전 슬라이드까지의 과정을 통해서 결국 $m_{\mathcal{H}}$가 조합들로 이루어진 합보다 작다는 것이 증명되었고, 이 조합은 아무리 커봤자 $N^{k-1}$의 항을 가진 다항함수이므로 결과적으로 그토록 원하던 <span style="color:red">Growth Function이 다항함수(Polynomial)이다</span> 라는 결론이 나온 것입니다.
 
 지금까지 Hoeffding's Inequality가 무한대에 가까운 $M$으로 고통받았던 것을 생각해보면 Growth Function을 통해 다항함수 꼴로 줄인 것은 매우 큰 의미가 있습니다.
 
-![](https://github.com/JoonsuRyu/images/blob/master/ML/006/12.png?raw=true){: .align-center}
+![](/assets/images/ML/006/12.jpg){: .align-center}
 
 왜 그것이 큰 의미가 있는지 이 슬라이드를 통해 설명할 수 있습니다. 이전 장에서 Growth Function을 설명할 때 사용한 3가지 예제가 기억나실 겁니다. (Positive Ray, Positive Interval, Convex Set)
 
@@ -114,21 +114,21 @@ $$B(N, k) \leq B(N-1, k) + B(N-1, k-1)$$
 
 ## Proof that $m_{\mathcal{H}}$ can replace $M$
 
-![](https://github.com/JoonsuRyu/images/blob/master/ML/006/13.png?raw=true){: .align-center}
+![](/assets/images/ML/006/13.jpg){: .align-center}
 
 그럼 지금까지 $m_{\mathcal{H}}$가 다항함수로 이루어진 식의 Upper Bound로 이루어진 것이 증명되었으니, 이제 정말 중요한 Hoeffding's Inequality에 있던 $M$ 대신에 $m_{\mathcal{H}}$를 대입하기 위한 증명이 필요합니다.
 
-![](https://github.com/JoonsuRyu/images/blob/master/ML/006/14.png?raw=true){: .align-center}
+![](/assets/images/ML/006/14.jpg){: .align-center}
 
 사실 우리가 원하는 결과는 Hoeffding's Inequality에서 $M$ 자리에 그대로 $m_{\mathcal{H}}$가 들어가는 것이지만, 안타깝게도 $M = m_{\mathcal{H}}$는 말이 안 돼니 직접적으로 교체할 수는 없습니다.
 
-![](https://github.com/JoonsuRyu/images/blob/master/ML/006/15.png?raw=true){: .align-center}
+![](/assets/images/ML/006/15.jpg){: .align-center}
 
 어쨌든 이 $M$ 대신에 $m_{\mathcal{H}}$를 넣어 변형된 식을 증명해야겠지만, 강의에서는 이 증명이 너무 복잡하기 때문에 부록에 따로 빼놓았다고 합니다. 제가 확인해보니 6페이지 정도 분량이라 저도 안 읽었습니다. 굳이 그것까지 읽지 않아도 될 거 같았거든요.
 
 강의에서는 간단하게 증명의 핵심 정도만 언급하고 넘어갑니다. 증명의 핵심은 크게 3가지인데, (1) $m_{\mathcal{H}}$를 어떻게 대입할 것인가, (2) $E_{out}$은 어떻게 되는가, (3) 그리고 이를 합치는 과정입니다.
 
-![](https://github.com/JoonsuRyu/images/blob/master/ML/006/16.png?raw=true){: .align-center}
+![](/assets/images/ML/006/16.jpg){: .align-center}
 
 먼저 Hoeffding's Inequality에서 $M$이 어떻게 나왔는지와 이를 어떻게 바꾸는지에 대한 대략적인 그림입니다.
 
@@ -136,11 +136,11 @@ $$B(N, k) \leq B(N-1, k) + B(N-1, k-1)$$
 
 지금은 그냥 저런 식으로 해결되겠구나~라고만 생각하시면 되겠습니다.
 
-![](https://github.com/JoonsuRyu/images/blob/master/ML/006/17.png?raw=true){: .align-center}
+![](/assets/images/ML/006/17.jpg){: .align-center}
 
 두 번째로는 $E_{out}$에 대해 수행할 작업입니다. 이 그림은 2장에서 다룬 적이 있습니다. 그 때와 마찬가지로 통(Bin)안의 구슬들을 잘못 분류한 것은 Out of Sample Error이고 이 중 몇 개의 구슬을 뽑은 것 중 잘못 분류한 것은 In Sample Error입니다. 증명에서는 기존에 하나만 뽑던 Sample을 독립적으로 한 개 더 뽑는 방법을 사용합니다. (물론 두 Sample은 같은 확률 분포를 사용하여 뽑습니다) 다만 독립적으로 Sample을 뽑았다고 할 지라도 두 Sample은 같은 통 안에서 같은 확률 분포를 사용하여 뽑았기 때문에 서로 관련이 생기게 됩니다. (이 말은 빨간색 구슬의 비율이 비슷하다는 뜻입니다) 강의에서는 통이 1개일 때는 Sample을 한 개 뽑든 두 개 뽑든 차이가 없지만, 여러 개의 통을 가정한 상황에서는 $E_{out}$과 $E_{in}$의 관계가 좀 더 가까워지기 때문에 이런 방법을 사용했다고 합니다.
 
-![](https://github.com/JoonsuRyu/images/blob/master/ML/006/18.png?raw=true){: .align-center}
+![](/assets/images/ML/006/18.jpg){: .align-center}
 
 마지막에서는 이를 모두 합쳐서 최종적으로 변한 식입니다. 이 식을 <span style="color:red">The Vapnic-Chervonenkis (VC) Inequality</span>라고 합니다.
 
