@@ -26,7 +26,7 @@ Monte Carlo 방법에는 <span style="color:red">First-visit MC Method</span>와
 
 First-visit MC Method의 Pseudocode는 다음과 같습니다. 이 알고리즘을 Every-visit MC Method로 수정하려면 Unless ~ 로 시작하는 조건문을 삭제하면 됩니다.
 
-![](https://github.com/JoonsuRyu/images/blob/master/RL/005/01.png?raw=true){: .align-center}
+![](/assets/images/RL/005/01.jpg){: .align-center}
 
 **Example 5.1) Blackjack**
 
@@ -112,7 +112,7 @@ print(df.head(10))
 
 프로그램을 실행하게 되면 많이 방문한 State 순으로 10개를 보여주고, 얻은 총 Return과 방문 횟수, 그리고 추정한 State의 Value를 출력합니다. 이 프로그램은 단순히 State의 Value만 추정하는 것이기 때문에 Policy를 변경하지는 않습니다. 이러한 방법으로 1만개와 50만개의 Episode를 경험한 후, State의 Value를 도식화하면 아래와 같습니다.
 
-![](https://github.com/JoonsuRyu/images/blob/master/RL/005/02.png?raw=true){: .align-center}
+![](/assets/images/RL/005/02.jpg){: .align-center}
 
 결과를 보면 State의 Value가 높은 경우는 카드의 합이 20과 21일 경우밖에 없습니다. 어떻게 보면 당연한게, 저희가 설정한 Policy는 20과 21에서만 Stand를 하기 때문입니다. Blackjack 게임에 대해서 잘 아는 것은 아니지만 18이나 19에서 Hit을 한다면 Bust할 확률이 높기 때문에 승률이 낮을 수밖에 없습니다.
 
@@ -148,7 +148,7 @@ Monte Carlo Method로 수렴한다는 보장을 얻기 위해서 저희는 2가�
 
 Monte Carlo Method에서의 Policy Iteration은 각 Episode별로 Evaluation과 Improvement를 번갈아 수행합니다. 각 Episode에서 발생한 Reward는 Policy Evaluation에 사용되며, Episode에서 방문한 모든 State에서 Policy가 Improve 됩니다. 이것을 <span style="color:red">Monte Carlo with Exploring Starts</span>라고 하며 Pseudocode는 다음과 같습니다.
 
-![](https://github.com/JoonsuRyu/images/blob/master/RL/005/03.png?raw=true){: .align-center}
+![](/assets/images/RL/005/03.jpg){: .align-center}
 
 Monte Carlo with Exploring Starts는 초기 Policy에 상관없이 모든 State-Action 쌍에 대한 평균적인 Reward를 얻을 수 있습니다. 이전에 Monte Carlo Prediction에서는 Policy에 대한 평가만 했다면, Monte Carlo with Exploring Starts는 Policy를 업데이트하는 기능이 추가되며, Optimal Policy로 수렴할 것이라고 생각됩니다. **생각됩니다** 라고 쓰는 이유는 아직 공식적으로 증명되지 않았기 때문입니다.
 
@@ -156,7 +156,7 @@ Monte Carlo with Exploring Starts는 초기 Policy에 상관없이 모든 State-
 
 Example 5.1에서 다루었던 Blackjack 게임을 다시 언급해보겠습니다. Example 5.1에서는 Policy에 대한 Value만을 계산했지만, Monte Carlo with Exploring Starts을 적용하게 되면 Optimal Policy를 구할 수 있습니다. 이를 도식화하면 아래 그림과 같습니다.
 
-![](https://github.com/JoonsuRyu/images/blob/master/RL/005/04.png?raw=true){: .align-center}
+![](/assets/images/RL/005/04.jpg){: .align-center}
 
 <p style="text-align:right">□</p>
 
@@ -170,7 +170,7 @@ $\epsilon$-Greedy Policy에서 $\epsilon$의 값은 고정된 값이 아닙니�
 
 On-policy Monte Carlo Control에서도  현재 Policy에 대한 Action-Value Function을 추정하기 위해 First-visit MC Method를 사용합니다. Monte Carlo with Exploring Starts와 달리 Assumption of Exploring Starts를 하지 않고, 대신 $\epsilon$-Greedy Policy를 사용합니다. $\epsilon$-Greedy와 같은 Policy를 <span style="color:red">$\epsilon$-soft</span>라고도 부릅니다. <span style="color:red">On-policy Monte Carlo Control</span>의 Pseudocode는 다음과 같습니다.
 
-![](https://github.com/JoonsuRyu/images/blob/master/RL/005/05.png?raw=true){: .align-center}
+![](/assets/images/RL/005/05.jpg){: .align-center}
 
 $\epsilon$-Greedy Policy로부터 $q_{\pi}$를 개선하는 것은 Policy Improvement Theorem에 의해 보장됩니다. 이에 대한 유도는 다음과 같습니다.
 
@@ -216,7 +216,7 @@ Off-policy 방법에서 또 한가지 중요한 것은 바로 <span style="color
 
 어느 섬에 키다리족과 난장이족이 있습니다. 문제를 쉽게 하기 위해 이 섬의 사람은 키가 160cm 아니면 180cm 둘 중 하나라고 가정하도록 하겠습니다. 오랜 시간에 걸쳐 키다리족과 난장이족의 인구 분포를 조사한 결과, 다음과 같은 키의 분포가 나왔습니다. 이 때, 확률 변수 X를 키다리족, 확률 변수 Y를 난장이족이라고 정의하도록 하겠습니다.
 
-![](https://github.com/JoonsuRyu/images/blob/master/RL/005/06.png?raw=true){: .align-center}
+![](/assets/images/RL/005/06.jpg){: .align-center}
 
 그리고 이번에는 두 부족의 평균 키를 구하려고 합니다. 먼저 키다리족의 사람 중 무작위로 10명의 표본을 뽑았더니, 다음과 같은 키의 분포가 나왔습니다.
 
@@ -272,7 +272,7 @@ $$V(s) \doteq \frac{\sum_{t \in \mathcal{T}(s)} \rho_{t:T(t)-1} G_t}{\sum_{t \in
 
 Every-visit MC Method에서는 Ordinary Importance Sampling과 Weighted Importance Sampling 모두 Bias되지만 Sample의 수가 증가할수록 Bias가 0에 가까워집니다. 그렇기 때문에 Off-policy에서는 Every-visit MC Method가 선호됩니다. Weighted Importance Sampling을 사용한 Off-policy Every-visit MC 알고리즘은 다음과 같습니다.
 
-![](https://github.com/JoonsuRyu/images/blob/master/RL/005/07.png?raw=true){: .align-center}
+![](/assets/images/RL/005/07.jpg){: .align-center}
 
 ## Incremental Implementation
 
@@ -292,7 +292,7 @@ $$C_{n+1} \doteq C_n + W_{n+1}$$
 
 이 때, $C_0 \doteq 0$으로 정의합니다. 이것을 반영한 Off-policy Monte Carlo Prediction 알고리즘은 다음과 같습니다. 아래 알고리즘은 Weighted Importance Sampling으로 구현되었습니다. 만약 On-policy로 바꾸고 싶다면, Target Policy와 Behavior Policy가 같다는 뜻이므로 ($\pi = b$), $W = 1$로 설정하면 됩니다.
 
-![](https://github.com/JoonsuRyu/images/blob/master/RL/005/08.png?raw=true){: .align-center}
+![](/assets/images/RL/005/08.jpg){: .align-center}
 
 ## Off-policy Monte Carlo Control
 
@@ -300,7 +300,7 @@ $$C_{n+1} \doteq C_n + W_{n+1}$$
 
 Off-policy Monte Carlo Control 방법은 앞에 두 Section에서 제안한 기법 중 하나를 사용합니다. 이 때, Behavior Policy는 모든 State의 모든 Action에 대해서 선택할 확률이 0보다 커야합니다. (=Soft)
 
-![](https://github.com/JoonsuRyu/images/blob/master/RL/005/09.png?raw=true){: .align-center}
+![](/assets/images/RL/005/09.jpg){: .align-center}
 
 위의 의사 코드는 $\pi\_{\*}$와 $q\_{\*}$를 추정하기 위해 GPI와 Weighted Importance Sampling을 기반으로 하는 Off-policy Monte Carlo Control 알고리즘입니다. Target Policy $\pi \approx \pi\_{\*}$는 $q\_{\pi}$의 추정치인 Q에 대해 Greedy한 Policy이고, Behavior Policy $b$는 $\epsilon$-soft로 선택함으로써 $\pi$의 수렴을 Optimal Policy로 보장하였습니다. 따라서 Policy $\pi$는 Policy $b$에 따라 Action을 선택하더라도 최적으로 수렴하는 것이 보장됩니다.
 

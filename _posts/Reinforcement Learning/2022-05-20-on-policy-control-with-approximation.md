@@ -30,13 +30,13 @@ $$\mathbf{w}_{t+1} \doteq \mathbf{w}_t + \alpha \left[ R_{t+1} + \gamma \hat{q}(
 
 Control 방법을 제대로 구축하기 위해서는 이러한 Action-Value Approximation을 Policy Improvement 및 Action 선택을 위한 방법들과 융합해야 합니다. 하지만 Continuous Action이나 수가 매우 많은 Discrete Action이 주어졌을 때 사용할 수 있는 적절한 기술은 현재도 연구가 이루어질 정도로 아직 명확한 방법이 없습니다. 다행히 Action 집합이 이산적이고 그 수가 적절하다면 이전 장에서 소개한 방법을 도입할 수 있습니다. 즉, 다음 State $S\_{t+1}$에서 사용 가능한 Action에 대해 $\hat{q}(S\_{t+1}, a, \mathbf{w}\_t)$를 계산하면 Greedy Action인 $A\_{t+1}^* = \underset{a}{\operatorname{argmax}} \hat{q} (S\_{t+1}, a, \mathbf{w}\_t)$를 구할 수 있습니다. 그 후 $\epsilon$-greedy와 같은 Softmax 방법을 통해 Policy Improvement를 수행할 수 있습니다. 이 알고리즘의 전체 Pseudocode는 다음과 같습니다.
 
-![](https://github.com/JoonsuRyu/images/blob/master/RL/010/01.png?raw=true){: .align-center}
+![](/assets/images/RL/010/01.jpg){: .align-center}
 
 **Example 10.1) Mountain Car Task**
 
 아래 그림의 왼쪽 위를 보시면 자동차가 가파른 산길을 통과하려고 합니다. 그런데 이 자동차는 동력이 부족하기 때문에 단순히 엔진의 힘으로는 Goal 지점에 도달할 수 없고, 유일한 해결책은 반대방향으로 먼저 자동차를 후진한 다음 가속도와 관성을 이용해 Goal 지점에 도달하는 것입니다. 이 예제는 목표에 도달하기 위해 오히려 목표에서 멀어져야 하는 Control 문제입니다. 많은 기존의 Control 방법들은 명시적으로 이러한 문제의 해결 방법을 지원하지 않는 한 해결하기 쉽지 않습니다.
 
-![](https://github.com/JoonsuRyu/images/blob/master/RL/010/02.png?raw=true){: .align-center}
+![](/assets/images/RL/010/02.jpg){: .align-center}
 
 Mountain Car 문제에서 Reward는 자동차가 Goal 위치를 지나갈 때까지(=Episode가 종료될 때까지) 모든 시간 단계에서 -1로 정의되어 있습니다. 자동차가 선택할 수 있는 Action은 3개로, 전진(+1), 후진(-1) 및 정지(0)입니다. 자동차는 단순한 물리 법칙에 따라 움직이며, 자동차의 위치 $x_t$ 및 속도 $\dot{x}_t$는 다음과 같이 Update됩니다.
 
@@ -51,7 +51,7 @@ $$\hat{q} (s, a, \mathbf{w}) \doteq \mathbf{w}^{\sf T} \mathbf{x} (s, a) = \sum_
 
 위의 그림은 이 함수 근사로 Mountain Car 문제를 해결하는 방법을 학습하는 동안 발생하는 일을 나타내고 있습니다. 그래프는 단일 실행에서 학습된 Value Function의 부호를 뒤집은 결과입니다. 초기의 Action Value는 모두 0이었습니다. 모든 Action에 대한 Reward가 음수이기 때문에 Action Value를 낙관적으로 본 것이며, 이것을 통해 $\epsilon = 0$일지라도 탐색이 일어나도록 유도한 것입니다. 그림 중간에 428단계에서는 한 Episode도 완료되지 않았지만 자동차는 State 공간에서 궤도를 따라 앞뒤로 움직였습니다. 자주 방문하는 모든 State는 그렇지 않은 State보다 더 나쁘게 평가되고, 실제 Reward 또한 예상했던 것보다 나빴기 때문입니다. 이는 해법을 찾을 때까지 자동차가 있던 곳에서 계속 멀어져 새로운 State를 탐색하도록 유도합니다.
 
-![](https://github.com/JoonsuRyu/images/blob/master/RL/010/03.png?raw=true){: .align-center}
+![](/assets/images/RL/010/03.jpg){: .align-center}
 
 위 그래프는 다양한 Step-size에 대해 Mountain Car 문제에서 Semi-gradient Sarsa의 학습 곡선을 보여줍니다. 
 
@@ -69,13 +69,13 @@ $$\mathbf{w}_{t+1} \doteq \mathbf{w}_t + \alpha \left[ G_{t:t+n} - \hat{q} (S_t,
 
 Semi-gradient $n$-step Sarsa의 전체 알고리즘은 다음과 같습니다.
 
-![](https://github.com/JoonsuRyu/images/blob/master/RL/010/04.png?raw=true){: .align-center}
+![](/assets/images/RL/010/04.jpg){: .align-center}
 
 7장에서 언급한 것과 마찬가지로 $n$이 1보다 크면서 중간 단계만큼 Bootstrapping 하는 경우 성능이 가장 좋습니다. 아래 그림은 $n=8$이 $n=1$보다 더 빨리 학습하는 것을 보여줍니다. 또한 그 아래 그림은 이 문제에서 매개변수 $\alpha$와 $n$이 학습에 어떠한 영향을 끼치는지 나타냅니다.
 
-![](https://github.com/JoonsuRyu/images/blob/master/RL/010/05.png?raw=true){: .align-center}
+![](/assets/images/RL/010/05.jpg){: .align-center}
 
-![](https://github.com/JoonsuRyu/images/blob/master/RL/010/06.png?raw=true){: .align-center}
+![](/assets/images/RL/010/06.jpg){: .align-center}
 
 ## Average Reward: A New Problem Setting for Continuing Tasks
 
@@ -121,7 +121,7 @@ $$\mathbf{w}_{t+1} \doteq \mathbf{w} + \alpha \delta_t \nabla \hat{q} (S_t, A_t,
 
 식 (10.12)에서 $\delta_t$는 식 (10.11)과 같습니다. Differential Semi-gradient Sarsa 알고리즘의 완전한 Pseudocode는 아래와 같습니다.
 
-![](https://github.com/JoonsuRyu/images/blob/master/RL/010/07.png?raw=true){: .align-center}
+![](/assets/images/RL/010/07.jpg){: .align-center}
 
 이 알고리즘의 한 가지 문제점은 Differential Value로 수렴하지 않고 Differential Value에 임의의 Offset을 더한 값으로 수렴된다는 것입니다. 위에서 언급한 Bellman Equation과 TD Error는 모든 값이 같은 양만큼 변화해도 영향을 받지 않습니다. 따라서 Offset은 실제로 중요하지 않을 수 있지만, 이 Offset을 제거하기 위한 연구는 지금도 이루어지고 있습니다.
 
@@ -129,7 +129,7 @@ $$\mathbf{w}_{t+1} \doteq \mathbf{w} + \alpha \delta_t \nabla \hat{q} (S_t, A_t,
 
 이 예제는 10개의 서버 집합에 대해 접근 제어와 관련된 결정 문제입니다. 이용자는 4가지 종류의 우선순위로 분류된 작업을 단일 Queue에 보냅니다. 서버에 대한 접근 권한이 부여되면 이용자는 우선 순위에 따라 서버에 1, 2, 4 또는 8의 비용을 지불하는데, 우선 순위가 높은 이용자는 더 많은 비용을 지불합니다. 각 시간 단계에서 Queue 맨 앞에 있는 이용자는 Accept (서버 중 하나에 할당)되거나 Reject (대기열에서 0의 Reward를 받고 제거) 됩니다. 어떤 결과가 나오든 다음 이용자의 순서로 넘어갑니다. Queue는 절때 비지 않고, Queue에 있는 이용자의 우선 순위는 무작위로 분포되어 있다고 가정합니다. 물론 여유있는 서버가 없다면 이용자의 요청은 모두 거부됩니다. 사용 중인 서버는 각각의 시간 단계에서 확률 $p = 0.06$에 따라 다시 여유 State로 돌아옵니다. 이용자의 도착 및 출발 통계는 알 수 없다고 가정하겠습니다. 이 문제의 목적은 이용자의 우선 순위와 여유 State의 서버 수에 따라 요청을 Accept할지, Reject 할지를 결정하는 것입니다. 즉, 장기적인 Reward를 극대화하는 것입니다.
 
-![](https://github.com/JoonsuRyu/images/blob/master/RL/010/08.png?raw=true){: .align-center}
+![](/assets/images/RL/010/08.jpg){: .align-center}
 
 교재에서는 이 문제를 Tabular 방식으로 해결하였습니다. State 간의 일반화는 없지만, 일반적인 함수 근사를 사용할 수는 있습니다. 따라서 각 State의 쌍(여유 State의 서버 수와 맨 앞에 있는 이용자의 우선 순위)과 Action(Accept 또는 Reject)에 대해 Differential Action-Value Function을 추정합니다. 위의 그림은 $\alpha = 0.01$, $\beta = 0.01$, $\epsilon = 0.1$로 설정한 Differential Semi-gradient Sarsa 해법을 보여줍니다. 초기의 Action-Value와 $\bar{R}$은 0으로 설정하였습니다.
 
@@ -183,7 +183,7 @@ $$\delta_t \doteq G_{t:t+n} - \hat{q}(S_t, A_t, \mathbf{w}) \tag{10.15}$$
 
 Update는 Semi-gradient Sarsa의 식 (10.12)를 그대로 사용합니다. <span style="color:red">Differential Semi-Gradient $n$-step Sarsa</span>의 완전한 Pseudocode는 다음과 같습니다.
 
-![](https://github.com/JoonsuRyu/images/blob/master/RL/010/09.png?raw=true){: .align-center}
+![](/assets/images/RL/010/09.jpg){: .align-center}
 
 ## Summary
 

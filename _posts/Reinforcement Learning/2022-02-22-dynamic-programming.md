@@ -38,7 +38,7 @@ v_{k+1} (s) & \doteq \mathbb{E}_{\pi} \left[ R_{t+1} + \gamma v_k (S_{t+1}) | S_
 
 Sequence $\\{ v_k \\}$는 $k \to \infty$일 때 $v_{\pi}$에 수렴합니다. 식 (4.5)와 같은 방법을 <span style="color:red">Iterative Policy Evaluation</span>이라고 합니다. 구체적인 Iterative Policy Evaluation의 알고리즘은 아래의 Pseudocode를 읽어주시기 바랍니다. 유의하실 점으로 실제 Iterative Policy Evaluation 알고리즘은 이론과 달리 무한히 반복하지 않습니다. 대신 $v_{k+1} (s) - v_{k} (s)$가 임의의 작은 실수 $\theta > 0$보다 작으면 끝나게 됩니다.
 
-![](https://github.com/JoonsuRyu/images/blob/master/RL/004/01.png?raw=true){: .align-center}
+![](/assets/images/RL/004/01.jpg){: .align-center}
 
 ## Policy Improvement
 
@@ -99,7 +99,7 @@ v_{\pi '}(s) &= \max_a \mathbb{E} \left[ R_{t+1} + \gamma v_{\pi '} (S_{t+1}) | 
 
 위 식은 Bellman Optimality Theorem과 동일하므로 $v_{\pi'}$는 $v_{*}$와 동일함을 알 수 있습니다. 즉, Policy $v_{\pi}$와 $v_{\pi'}$는 모두 Optimal Policy입니다. 따라서 Policy Improvement은 원래 Policy가 Optimal인 경우를 제외하고는 반드시 더 나은 Policy를 제공해야 합니다.
 
-![](https://github.com/JoonsuRyu/images/blob/master/RL/004/02.png?raw=true){: .align-center}
+![](/assets/images/RL/004/02.jpg){: .align-center}
 
 지금까지는 모두 Deterministic Policy만을 고려했으나, Stochastic Policy에서도 Policy Improvement Theorem은 동일하게 적용됩니다. 위의 그림은 GridWorld Environment에서 반복적으로 Policy Evaluation를 시행함으로써 Stochastic Policy에서 Optimal Policy을 찾는 과정을 보여주고 있습니다.
 
@@ -113,17 +113,17 @@ Policy Improvement를 위해서는 왼쪽의 State-Value Function을 토대로 G
 
 <span style="color:red">Policy Iteration</span>은 지금까지 배운 Policy Evaluation과 Policy Improvement를 반복하여 Optimal Policy를 찾는 방법입니다. 이 과정을 표현하면 아래와 같습니다.
 
-![](https://github.com/JoonsuRyu/images/blob/master/RL/004/03.png?raw=true){: .align-center}
+![](/assets/images/RL/004/03.jpg){: .align-center}
 
 그림에서 E는 Policy Evaluation, I는 Policy Improvement를 의미합니다. Optimal Policy가 아닌 이상 새로 만들어지는 Policy는 이전의 Policy보다 확실히 우수함을 보장하며 Finite MDP에는 유한한 수의 Deterministic Policy만 있기 때문에 이 과정은 유한한 반복 횟수로 Optimal Policy와 최적의 Value Function으로 수렴되어야 합니다. Policy Iteration 알고리즘은 다음과 같습니다.
 
-![](https://github.com/JoonsuRyu/images/blob/master/RL/004/04.png?raw=true){: .align-center}
+![](/assets/images/RL/004/04.jpg){: .align-center}
 
 Policy Iteration에 대한 예제가 교재에 몇 개 나와있긴 하지만, 여기서는 그보다 더 간단한 예제를 통해 Policy Iteration이 Optimal Policy에 수렴하는 것을 보여드리도록 하겠습니다.
 
 Example) State와 Action이 각각 $\mathcal{S} = \\{ s_1, s_2 \\}$, $\mathcal{A} (s_1) = \\{ a, b \\}$, $\mathcal{A} (s_2) = \\{ c \\}$로 주어져 있다. Action $a$는 0.5의 확률로 5의 Reward를 받고 다음 State가 $s_1$으로 되며, 0.5의 확률로 5의 Reward를 받고 다음 State가 $s_2$가 된다. Action $b$는 1의 확률로 10의 Reward를 받고 다음 State가 $s_2$가 된다. 또한 Action $c$는 1의 확률로 -1의 Reward를 받고 다음 State가 $s_2$가 된다. 이를 그림으로 표현하면 다음과 같다.
 
-![](https://github.com/JoonsuRyu/images/blob/master/RL/004/05.png?raw=true){: .align-center}
+![](/assets/images/RL/004/05.jpg){: .align-center}
 
 Policy Iteration에서 Discount factor $\gamma$는 0.95로 설정되어 있으며, 초기 Policy $\pi_0$는 $\pi_0 (s_1) = b$, $\pi_0 (s_2) = c$로 주어져 있다. 이를 사용하여 Optimal Policy를 찾야아 한다.
 
@@ -186,7 +186,7 @@ v_{k+1} (s) &\doteq \max_a \mathbb{E} \left[ R_{t+1} + \gamma v_k (S_{t+1}) | S_
 
 Value Iteration을 쉽게 설명하면 단순히 Bellman Optimality Equation을 업데이트 규칙으로 바꾼 것입니다. 매 시간 단계마다 Value Iteration의 업데이트가 항상 최대값을 취해야 한다는 점을 제외하면 식 (4.5)와 매우 유사함을 알 수 있습니다. Value Iteration은 Policy Iteration과 마찬가지로 $v_{*}$에 정확히 수렴하기 위해서는 무한히 반복해야 합니다. 다만 실제 Value Iteration 알고리즘에서는 무한히 반복할 수 없기 때문에 Policy Iteration 알고리즘과 마찬가지로 종료 조건이 있습니다. Value Iteration 알고리즘에서는 Value Function의 변동이 매우 작을 때(임의의 작은 값 $\triangle$) 종료됩니다. 전체 Value Iteration 알고리즘은 다음과 같습니다.
 
-![](https://github.com/JoonsuRyu/images/blob/master/RL/004/06.png?raw=true){: .align-center}
+![](/assets/images/RL/004/06.jpg){: .align-center}
 
 Value Iteration은 Policy Iteration과 다르게 Evaluation과 Improvement 과정이 한번에 일어납니다. 따라서 구현 방법은 Value Iteration이 더 간단합니다. 이렇게 보면 Value Iteration이 Policy Iteration보다 우수해보이지만, 실제로는 그렇지 않습니다. Value Iteration은 각각의 단계가 짧은 대신, 그만큼 계산량이 더 많습니다. 또한 Policy 자체를 업데이트하는 Value Iteration은 Value Function을 먼저 구한 다음 Policy를 구하기 때문에 두 알고리즘을 비교했을 때 평균적으로 Policy Iteration이 더 빠르게 수렴합니다.
 
@@ -242,7 +242,7 @@ $v_3 (s_1) - v_2 (s_1) = 0.795 > 0.1 = \triangle$이므로 종료하지 않음
 
 지금까지 다루었던 DP 방법의 가장 큰 단점은 MDP의 전체 State 집합을 한번에 다룬다는 것입니다. 따라서 State 집합이 크다면 한 단계에서의 계산량이 매우 크다는 문제가 있습니다. 예를 들면 Backgammon이라는 보드게임이 있는데 (아래 그림 참고), 이 게임에는 $10^{20}$개의 State가 존재합니다. 이것을 Value Iteration으로 풀 때, 1초에 100만개의 State를 업데이트할 수 있다고 쳐도 단 한번에 Step을 완료하는데 천 년 이상이 걸립니다.
 
-![](https://github.com/JoonsuRyu/images/blob/master/RL/004/07.png?raw=true){: .align-center}
+![](/assets/images/RL/004/07.jpg){: .align-center}
 
 <span style="color:red">Asynchronous DP Algorithm</span>은 State의 Value를 업데이트할 때, 이미 알고 있는 State의 Value를 사용하여 업데이트하는 방법입니다. 물론 수렴성이 보장되려면 모든 State의 Value를 업데이트해야하는 것은 같습니다.
 
@@ -258,11 +258,11 @@ Policy Iteration은 매 단계마다 Policy Evaluation과 Policy Improvement가 
 
 <span style="color:red">Generalized Policy Iteration (GPI)</span>는 Policy Evaluation과 Policy Improvement가 상호 작용하도록 하는 일반적인 개념을 말합니다. 즉, Policy는 항상 Value Function에 의해 개선되고, Policy로부터 항상 Value Function이 계산됩니다. Evalution과 Improvement가 모두 안정화된다면 Value Function과 Policy가 최적이라는 뜻입니다. 이 때 Bellman Optimality Equation이 성립하기 때문입니다. 대부분의 강화학습은 GPI 관점에서 잘 설명할 수 있습니다.
 
-![](https://github.com/JoonsuRyu/images/blob/master/RL/004/08.png?raw=true){: .align-center}
+![](/assets/images/RL/004/08.jpg){: .align-center}
 
 GPI의 Evaluation과 Improvement 과정은 여러 가지 관점에서 볼 수 있습니다. 예를 들어, Value Function으로 Policy를 greedy하게 만드는 것은 변경된 Policy로 인해 Value Function을 틀리게 만들고, Value Function과 Policy을 일관되게 만들면 Policy가 greedy하지 않는 문제가 생깁니다. 하지만 장기적으로 두 과정은 최적의 Value Function과 최적의 Policy를 찾기 위해 상호 작용하기 때문에, 경쟁과 협력 관계로 볼 수 있습니다.
 
-![](https://github.com/JoonsuRyu/images/blob/master/RL/004/09.png?raw=true){: .align-center}
+![](/assets/images/RL/004/09.jpg){: .align-center}
 
 또 다른 관점으로는 두 가지 제약 조건, 또는 목표라고 볼 수도 있습니다. 위의 그림은 이 관계를 대략적으로 도식화한 모습인데, Evaluation과 Improvement의 각 과정은 서로의 목표에 도달할 수 있는 하나의 솔루션을 도출합니다. (Value Function을 통해 조금 더 최적의 Policy를 유도하며, 그 반대도 성립) 그림의 화살표를 따라가다보면 하나의 목표를 향하게 될 때 다른 하나의 목표는 멀어지게 됩니다. 하지만 두 과정의 목표는 결국 하나로 이어지기 때문에 결국에는 두 과정의 목표가 함께 달성됩니다.
 

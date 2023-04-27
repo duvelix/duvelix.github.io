@@ -25,7 +25,7 @@ Tabular Method의 첫 번째는 단일 State만 갖고 있는 Bandit 문제를 �
 
 $k$-armed Bandit는 $k$ 개의 레버가 달린 슬롯머신을 말합니다. 도박은 결국 돈을 잃을 가능성이 높기 때문에 슬롯머신을 **Bandit**라고 부르는 것 같습니다. 원래라면 슬롯머신 따위는 거들떠보지도 않겠지만, 여기서는 꼭 이 슬롯머신을 플레이해야하는 상황이라고 가정해보겠습니다.
 
-![](https://github.com/JoonsuRyu/images/blob/master/RL/002/01.png?raw=true){: .align-center}
+![](/assets/images/RL/002/01.jpg){: .align-center}
 
 우리는 한 번의 게임에서 슬롯머신의 레버 중 하나를 선택하여 당길 수 있습니다. 그런데 이 슬롯머신은 특이하게 각 레버마다 Reward가 다르게 설정되어 있습니다. 물론 어떤 레버가 가장 높은 보수를 받는지는 모르는 상황입니다. 또한 각 레버의 Reward는 고정된 값이 아니라 확률 분포로 이루어져 있습니다. 따라서 레버를 당겼을 때 낮은 Reward가 나왔다고 해도 레버의 Reward가 낮게 설정되어 있는 것인지, 아니면 운이 나빠서 낮은 Reward가 나온 것인지 알 수 없습니다. 물론 같은 레버를 여러번 플레이한다면 대략적인 확률 분포를 예측할 수는 있습니다.
 
@@ -62,11 +62,11 @@ $\underset{a}{\operatorname{argmax}} \ Q\_t (a)$는 $Q\_t(a)$을 최대값으로
 
 greedy 방법과 및 $\epsilon$-greedy 방법을 비교하기 위해 구체적인 예제를 하나 살펴보도록 하겠습니다. 예제는 $k$를 10으로 설정하고 무작위로 2000개의 $k$-armed bandit 문제를 생성하였습니다. 각 Action $a$에 대해 $q\_{\*}(a)$는 평균이 0이고 분산이 1인 정규분포에 따라 만들어졌습니다. 또한 Agent가 Action을 선택하였을 때 받는 Reward 또한 평균이 $q\_{\*}(A_t)$이고 분산이 1인 정규분포를 따르도록 설정하였습니다. 이러한 분포를 그림으로 표현하면 아래와 같습니다.
 
-![](https://github.com/JoonsuRyu/images/blob/master/RL/002/02.png?raw=true){: .align-center}
+![](/assets/images/RL/002/02.jpg){: .align-center}
 
 이렇게 테스트한 작업 모음을 10-armed testbed라고 부릅니다. 어떤 학습 방법이든 한 번에 1000개 이상의 시간 단계 정도면 학습 성능과 동작이 얼마나 향상되었는지 대략적으로 측정할 수 있습니다. 이것을 하나의 <span style="color:red">Run</span>이라고 합니다. 본 예제에는 총 2000개의 독립적인 Run에 대해 학습 알고리즘의 평균적인 측정값을 구했습니다.
 
-![](https://github.com/JoonsuRyu/images/blob/master/RL/002/03.png?raw=true){: .align-center}
+![](/assets/images/RL/002/03.jpg){: .align-center}
 
 위의 그래프는 $\epsilon$의 값에 따른 성능을 비교한 결과입니다. 성능 비교는 크게 2가지 관점에서 측정하였는데, 위의 그래프는 평균 Reward를 나타내고 아래의 그래프는 Optimal Action을 선택하는 비율을 나타냅니다. $\epsilon$은 각각 0.1과 0.01, 그리고 0(=Greedy)의 3가지로 나누었습니다. Greedy 방법은 초기에는 다른 두 비교군에 비해 좋은 성능을 보이지만, Exploration을 전혀 하지 않기 때문에 적당히 좋은 Action에만 고집하게 됩니다. 시간이 흐를수록 다른 비교군에 비해 성능이 월등히 떨어짐을 알 수 있습니다. $\epsilon$이 0.1일 때와 0.01일 때를 비교해보면 0.1인 경우가 비교적 빠른 시간 안에 높은 결과를 보임을 알 수 있습니다. 하지만 이것은 시간 단계가 1000에서 멈추었기 때문이고, 더 많은 시간이 주어진다면 개선 시간은 느릴지언정 결국 0.01일 때 0.1보다 높은 성능을 보일 가능성이 높습니다. 이 두 가지 방법의 장점을 모두 활용하기 위해 초기에는 $\epsilon$의 값을 높게 잡다가 시간이 지남에 따라 줄이는 것도 하나의 방법이 될 수 있습니다.
 
@@ -93,7 +93,7 @@ Q_{n+1} &= \frac{1}{n} \sum_{i=1}^n R_i \\
 
 이전에 배운 $\epsilon$-greedy 방법과 Recurrence Relation을 사용하여 완전한 Bandit 알고리즘을 Pseudocode (의사코드)로 작성하면 다음과 같습니다. 함수 $bandit(a)$는 Action $a$를 선택하고 Reward를 반환한다고 가정합니다.
 
-![](https://github.com/JoonsuRyu/images/blob/master/RL/002/04.png?raw=true){: .align-center}
+![](/assets/images/RL/002/04.jpg){: .align-center}
 
 ## Tracking a Nonstationary Problem
 
@@ -131,7 +131,7 @@ $$\sum_{n=1}^{\infty} \alpha^2_n (a) < \infty \tag{2.7.2}$$
 
 Action에 대한 초기 값은 Exploration을 유도하는 방법으로 간단하게 사용할 수 있습니다. 10-armed testbed에서 초기 Action에 대한 Value을 0 대신 5로 설정했다고 가정해봅시다. $q\_{\*}(a)$는 평균이 0이고 분산이 1인 정규분포에서 선택되었기 때문에 초기 추정치를 5로 설정하는 것은 매우 **Optimistic**합니다. 쉽게 설명하면, 처음에 어떤 Action을 선택하든 얻게 되는 Reward는 초기 추정치인 5보다 작습니다. 그렇기 때문에 다음 단계에서는 다른 Action을 선택할 가능성이 높고, 추정치가 수렴하기 전까지 모든 Action을 여러 번 선택하게 됩니다. 따라서 초기 추정치를 Optimistic하게 설정한다면 Agent가 Exploration을 많이 하도록 유도할 수 있습니다.
 
-![](https://github.com/JoonsuRyu/images/blob/master/RL/002/05.png?raw=true){: .align-center}
+![](/assets/images/RL/002/05.jpg){: .align-center}
 
 위의 그래프는 10-armed testbed에서 $Q_1 (a) = 5$로 설정한 Greedy 방법과 $Q_1 (a) = 0$으로 설정한 $\epsilon$-greedy 방법의 성능을 비교한 결과입니다. 초기에는 낙관적으로 설정한 Greedy 방법이 Exploration을 더 많이 하기 때문에 성능이 좋지 않지만, 시간이 지남에 따라 Exploration이 감소하기 때문에 결국에는 더 좋은 성능을 보여주고 있습니다.
 
@@ -147,7 +147,7 @@ $N_t (a)$는 시간 $t$까지 Action $a$를 선택한 횟수이고 $c > 0$는 Ex
 
 이러한 방법을 <span style="color:red">Upper Confidence Bound (UCB)</span>라고 부르며 제곱근 항은 Action $a$에 대한 추정값의 불확실성, 또는 분산의 척도를 의미합니다. 즉, 이것의 최대값은 Action의 가치에 대한 상한선으로 볼 수 있으며 $c$는 신뢰 수준을 결정합니다. $a$가 선택될 때마다 $N_t (a)$가 증가하므로 (=분모가 증가하므로) 불확실성이 감소된다고 볼 수 있습니다. 반면에 다른 Action이 선택된다면 $t$가 증가하므로 (=분자가 증가하므로) 불확실성이 증가됩니다. 즉, 이것은 자주 선택된 Action을 또 다시 선택하는 빈도를 줄이면서 모든 Action을 선택할 수 있는 방법이라고 볼 수 있습니다.
 
-![](https://github.com/JoonsuRyu/images/blob/master/RL/002/06.png?raw=true){: .align-center}
+![](/assets/images/RL/002/06.jpg){: .align-center}
 
 위의 그래프는 10-armed testbed에서 UCB를 사용한 결과입니다. 그래프에서는 UCB가 잘 수행되는 것으로 보이지만, 이 책에서 다룰 일반적인 강화학습에 확장하기에는 어렵습니다. 대표적으로 계속 언급하고 있는 Nonstationary 문제나, State가 매우 많은 경우에는 적용할 수 없으므로 이런 방법도 있다 정도만 이해하고 넘어가시면 되겠습니다.
 
@@ -167,7 +167,7 @@ $$H_{t+1} (a) \doteq H_t (a) - \alpha (R_t - \bar{R}_t) \pi_t (a) \qquad \text{f
 
 여기서 $\alpha > 0$은 이전에 언급했던 Step-size parameter이고, $\bar{R}\_t \in \mathbb{R}$는 시간 $t$를 제외된 평균 보수입니다. (단, $\bar{R}\_1 \doteq R\_1$) $\bar{R}\_t$의 계산법은 Incremental Implementation이나 Tracking a Nonstationary Problem에서 설명한 것과 동일합니다. $\bar{R}\_t$의 역할은 Reward가 상대적으로 얼마나 높은지를 측정하는 <span style="color:red">Baseline</span> 역할을 합니다. Reward가 Baseline보다 높으면 미래에 $A_t$를 선택할 확률이 증가하고, Baseline보다 낮으면 확률이 감소하는 방식입니다. 선택한 Action은 식 (2.12.1)로, 선택하지 않은 Action은 식 (2.12.2)로 계산됩니다.
 
-![](https://github.com/JoonsuRyu/images/blob/master/RL/002/07.png?raw=true){: .align-center}
+![](/assets/images/RL/002/07.jpg){: .align-center}
 
 위의 그래프는 10-armed testbed에서 Gradient bandit 알고리즘의 결과를 나타냅니다. 여기서 $q_*(a)$는 평균이 4, 분산이 1인 정규분포에 따라 선택되었습니다. Reward의 평균을 올려도 새로운 Reward가 바로 반영되는 Baseline으로 인해 Gradient bandit 알고리즘에 전혀 영향을 끼치지 않습니다. 하지만 만약 Baseline을 제외한다면(즉, $\bar{R}_t = 0$) 그래프에서 보여주는 것처럼 성능이 크게 저하됩니다.
 
@@ -190,7 +190,7 @@ $$H_{t+1} (a) \doteq H_t (a) - \alpha (R_t - \bar{R}_t) \pi_t (a) \qquad \text{f
 
 이 방법들 중 어느 것이 가장 좋은지 판단하기는 어렵습니다. $k$-armed testbed 문제에서 같은 방법을 사용했더라도 Step-size parameter가 달라지면 성능의 차이가 확연히 드러났습니다. 따라서 여기서는 보기 쉽도록 각 방법마다 적절한 매개변수 구간에서 1000 단계가 지났을 때의 결과만 비교해보도록 하겠습니다.
 
-![](https://github.com/JoonsuRyu/images/blob/master/RL/002/08.png?raw=true){: .align-center}
+![](/assets/images/RL/002/08.jpg){: .align-center}
 
 이 성능 비교에서 재밌는 점은 모든 방법이 **Convex**하다는 것입니다. 또한 각 방법마다 Step-size parameter를 중간 정도로 설정하는 것이 가장 뛰어난 성능을 보인다는 것도 알 수 있습니다.
 

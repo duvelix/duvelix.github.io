@@ -92,13 +92,13 @@ $$\mathbf{w}_{t+1} \doteq \mathbf{w}_t + \alpha \left[ U_t - \hat{v}(S_t, \mathb
 
 만약 $U\_t$가 Bias되지 않은 추정값인 경우(즉, $\mathbb{E} \left[ U\_t \mid S\_t = s \right] = v\_{\pi} (s)$인 경우) 각각의 $t$에 대해 $\mathbf{w}\_t$는 식 (2.7)과 같은 조건을 만족한다면 Local Optimum에 수렴하는 것이 보장됩니다. 예를 들어, Policy $\pi$에 따라 Environment(또는 Simulated Environment)와 상호작용에 의해 생성된 State를 가정하면, State의 Real Value $v\_{\pi}$는 그 State 이후의 Reward에 대한 기대값이기 때문에 Monte Carlo의 Target인 $U\_t \doteq G\_t$는 그 정의에 의해 $v\_{\pi}(S\_t)$의 Bias되지 않은 추정값입니다. 이것을 사용한 식 (9.7)의 일반적인 SGD는 Local Optimum에 수렴하는 것이 보장됩니다. 따라서 Monte Carlo의 State Value 추정은 Gradient Descent을 통해 Local Optimum에 수렴하는 해법을 보장할 수 있습니다. Monte Carlo 버전에 대한 전체 Pseudocode는 다음과 같습니다.
 
-![](https://github.com/JoonsuRyu/images/blob/master/RL/009/01.png?raw=true){: .align-center}
+![](/assets/images/RL/009/01.jpg){: .align-center}
 
 하나 유의해야할 것은 $v\_{\pi}(S\_t)$의 Bootstrapping 추정이 식 (9.7)에서 Target $U\_t$로 사용되는 경우, 동일한 수렴 보장을 얻을 수 없습니다. Bootstrapping의 Target은 $n$-step의 Return $G_{t:t+n}$ 또는 DP의 Target인 $\sum\_{a, s', r} \pi (a \mid S_t) p(s',r, \mid S\_t, a)\left[ r + \gamma \hat{v}(s', \mathbf{w}\_t \right]$처럼 Weight Vector $\mathbf{w}\_t$의 현재 값에 의존하며, 이로 인해 Bias가 발생하고 Gradient Descent을 제대로 사용할 수 없습니다. 다행히 식 (9.4)와 (9.5)까지의 핵심 단계는 Target이 $\mathbf{w}\_t$에 독립적입니다. 실제로 Bootstrapping 방법은 진정한 Gradient Descent의 인스턴스가 아니라고 밝혀졌으며(Barnard, 1993), Bootstrapping은 Estimated Value가 Weight Vector $\mathbf{w}\_t$에는 영향을 끼치지만 Target에 대한 영향은 무시합니다. 즉, Gradient의 일부만 포함하기 때문에 Bootstrapping을 <span style="color:red">Semi-Gradient Method</span>라고 부릅니다.
 
 Semi-Gradient(=Bootstrapping) 방법은 Gradient 방법만큼 강력하게 수렴하지 않지만, 다음 Section에서 다룰 Linear 방법과 같은 특정한 경우에는 안정적으로 수렴합니다. 또한 어떤 경우에는 Semi-Gradient 방법의 장점이 유용한 경우도 있습니다. 대표적인 Semi-Gradient의 장점은 일반적으로 다른 방법보다 학습 속도가 빠르다는 것과 Episode가 끝날 때까지 기다릴 필요 없이 온라인으로 학습이 가능하다는 것입니다. 따라서 Continuing Task 같은 문제에 사용할 수 있는 이점이 있습니다. 기본적인 Semi-Gradient 방법은 $U_t \doteq R_{t+1} + \gamma \hat{v} (S_{t+1}, \mathbf{w})$를 Target으로 하는 Semi-Gradient TD(0)입니다. 이것의 완전한 Pseudocode는 다음과 같습니다.
 
-![](https://github.com/JoonsuRyu/images/blob/master/RL/009/02.png?raw=true){: .align-center}
+![](/assets/images/RL/009/02.jpg){: .align-center}
 
 State Aggregation은 각 그룹에 대해 하나의 Estimated Value(Weight Vector $\mathbf{w}$의 한 구성 요소)를 사용하여 State를 그룹화함으로써 Function Approximation을 일반화하는 간단한 형태입니다. State의 Value는 해당 그룹의 구성 요소로 추정되며, State가 Update되면 해당 구성 요소만 Update됩니다. State Aggregation은 Gradient $\nabla \hat{v} (S_t, \mathbf{w}_t)$가 State $S_t$ 그룹의 구성 요소에 대해 1이고 다른 구성 요소에 대해 0인 SGD (식 9.7)의 특별한 경우입니다.
 
@@ -191,7 +191,7 @@ $$\overline{\text{VE}}(\mathbf{w}_{\text{TD}}) \le \frac{1}{1 - \gamma} \min_{\m
 
 물론 지금까지 배운 내용을 1-step TD(0)에서만 사용할 수 있는 것은 아닙니다. 7장에서 배운 Tabular $n$-step TD 알고리즘을 Semi-Gradient Function Approximation로 확장한 Semi-Gradient $n$-step TD 알고리즘의 전체 Pseudocode는 다음과 같습니다.
 
-![](https://github.com/JoonsuRyu/images/blob/master/RL/009/03.png?raw=true){: .align-center}
+![](/assets/images/RL/009/03.jpg){: .align-center}
 
 위의 알고리즘에서의 가장 중요한 식은 다음과 같이 식 (7.2)와 유사합니다. ($0 \le t < T$)
 
@@ -239,7 +239,7 @@ $$x_i (s) = \cos (i \pi s), \quad s \in \left[ 0, 1 \right], \quad i = 0, \ldots
 
 아래의 그림은 $i = 1, 2, 3, 4$인 경우 1차원 Fourier Cosine Feature $x_i$를 나타냅니다. (단, $x_0$은 상수 함수입니다.)
 
-![](https://github.com/JoonsuRyu/images/blob/master/RL/009/04.png?raw=true){: .align-center}
+![](/assets/images/RL/009/04.jpg){: .align-center}
 
 이를 확장하여 Fourier Cosine Series를 다차원으로 일반화한 근사는 다음과 같습니다.
 
@@ -255,7 +255,7 @@ $$x_i (s) = \cos (\pi \mathbf{s}^{\sf T} \mathbf{c}^i) \tag{9.18}$$
 
 예를 들어 $\mathbf{s} = (s_1, s_2)^{\sf T}$인 경우를 고려해보겠습니다. (즉, $k = 2$) 여기서 $\mathbf{c}^i = (c_1^i, c_2^i)^{\sf T}$입니다. 아래의 그림은 6개의 Fourier Cosine Feature를 선택하여 보여줍니다. 각각의 그림은 이를 정의하는 Vector $\mathbf{c}^i$에 따라 어떻게 표현되는지 나타나 있습니다. $\mathbf{c}$에서 0이 의미하는 것은 해당 State가 차원에 따라 Feature가 일정함을 의미합니다. 따라서 만약 $\mathbf{c} = (0, 0)^{\sf T}$라면 Feature는 두 차원 모두 일정하다는 뜻입니다. 만약 $\mathbf{c} = (c_1, 0)^{\sf T}$이라면 Feature는 첫 번째 차원에서는 $c_1$에 따라 Frequency가 변하지만 두 번째 차원에서 일정합니다. 당연히 $\mathbf{c} = (0, c_2)^{\sf T}$라면 그 반대가 됩니다. 만약 $\mathbf{c} = (c_1, c_2)^{\sf T}$라면 Feature가 두 차원에 따라 달라지며 두 State 변수 간의 상호작용을 나타냅니다. $c_1$과 $c_2$의 값은 각 차원에 따른 Frequency를 결정하고 이들의 비율은 상호작용의 방향을 나타냅니다.
 
-![](https://github.com/JoonsuRyu/images/blob/master/RL/009/05.png?raw=true){: .align-center}
+![](/assets/images/RL/009/05.jpg){: .align-center}
 
 Fourier Cosine Feature를 사용할 때 식 (9.7)과 같은 학습 알고리즘을 사용한다면 각 Feature에 대해 다른 Step-size Parameter를 사용하는 것이 좋을 수도 있습니다. 만약 $\alpha$가 기본 Step-size Parameter라면 Feature $x_i$에 대해 Step-size Parameter $\alpha_i$를 $\alpha / \sqrt{(c_1^i)^2 + \cdots + (c_k^i)^2}$로 설정할 수도 있습니다. (Konidaris, Osentoski and Thomas, 2011) 단, $c_j^i = 0$인 경우는 $\alpha_i = \alpha$로 설정합니다.
 
@@ -265,17 +265,17 @@ $n$차 Fourier Basis의 Feature 수는 State Space의 차원에 따라 기하급
 
 아래의 그림은 1000개의 State를 가진 Random Walk 예제에서 Fourier와 Polynomial의 Basis를 비교하는 학습 곡선을 나타냅니다. 보시다시피 Fourier Basis의 성능이 월등히 좋기 때문에 일반적인 온라인 학습에는 Polynomial을 사용하지 않는 것이 좋습니다.
 
-![](https://github.com/JoonsuRyu/images/blob/master/RL/009/06.png?raw=true){: .align-center}
+![](/assets/images/RL/009/06.jpg){: .align-center}
 
 ### Coarse Coding
 
 State 집합을 연속적인 2차원 공간에 표현하는 상황을 고려해보겠습니다. 이 경우 표현할 수 있는 방법 중 하나는 아래 그림처럼 State Space에 원과 같은 모양의 Feature를 생각해볼 수 있습니다. State가 원 안에 있으면 해당 Feature의 값은 1이고, 이 때 <span style="color:red">Present</span>한다고 합니다. 반대로 그렇지 않다면 Feature의 값은 0이고, 이 때는 <span style="color:red">Absent</span>라고 합니다. 이렇게 1-0으로 표현하는 Feature를 Binary Feature라고 합니다. 주어진 State에서 어떤 Binary Feature가 있는지는 해당 State가 속한 원을 나타냅니다. 이러한 방식으로 겹치는 Feature가 있는 State를 나타내는 것을 <span style="color:red">Coarse Coding</span>이라고 합니다. 다만 꼭 아래 그림처럼 원 모양일 필요는 없습니다.
 
-![](https://github.com/JoonsuRyu/images/blob/master/RL/009/07.png?raw=true){: .align-center}
+![](/assets/images/RL/009/07.jpg){: .align-center}
 
 Linear Gradient Descent을 사용한 근사라고 가정하면, 원의 크기와 밀도가 어떤 영향을 끼치는지 고려해봐야 합니다. 각각의 원은 학습에 의해 영향을 받는 단일 Weight(즉, $\mathbf{w}$의 구성 요소)입니다. State Space의 한 State에서 훈련을 하면, 해당 State를 포함하는 모든 원의 Weight가 영향을 받습니다. 따라서 식 (9.8)에 의해 근사 Value Function는 원의 합집합 내의 모든 State에 영향을 미치며, 한 점이 많은 State에 속해 있을수록 더 큰 영향을 미칩니다.
 
-![](https://github.com/JoonsuRyu/images/blob/master/RL/009/08.png?raw=true){: .align-center}
+![](/assets/images/RL/009/08.jpg){: .align-center}
 
 위의 그림은 Coarse Coding의 여러 일반화 형태를 나타내고 있습니다. 왼쪽의 그림처럼 원의 작다면 일반화가 보다 좁은 영역에서 이루어지며, 중간의 그림처럼 원이 크다면 일반화가 보다 넓은 영역에서 이루어집니다. 게다가 Feature의 형태는 일반화의 특성에도 영향을 미칩니다. 오른쪽의 그림처럼 좁은 타원 형태라면 일반화도 그에 맞춰 영향을 받게 됩니다.
 
@@ -285,7 +285,7 @@ Linear Gradient Descent을 사용한 근사라고 가정하면, 원의 크기와
 
 이 예제는 Coarse Coding에서 Receptive Field의 크기에 따른 학습 효과를 보여줍니다. Coarse Coding 및 식 (9.7)에 기반한 Linear Function Approximation는 1차원 Square-wave 함수를 학습하는 데 사용되었습니다. 이 함수의 Target은 $U_t$로 설정되었고, 단 하나의 차원에서 Receptive Field는 원 대신 Interval이었습니다. 학습은 아래 그림과 같이 세 가지 다른 길이의 너비(Narrow, Medium, Broad)로 반복되었습니다. 또한 세 가지 모두 학습되는 Feature의 범위에 대해 약 50개의 동일한 Density를 가졌습니다. Training Data(Sample)는 이 범위에서 무작위로 균일하게 생성되었습니다. Step-size Parameter는 한 번에 존재했던 Feature의 수를 $n$이라 할 때 $\alpha = \frac{0.2}{n}$으로 설정되었습니다. 아래의 그림은 세 가지 경우에서 각각 학습했을 때의 Feature를 나타냅니다. 보시다시피 Feature의 너비는 학습 초기에 큰 영향을 끼칩니다. 하지만 최종 결과를 보시면 Feature의 너비에 그다지 큰 영향을 끼치지 않는 것을 알 수 있습니다.
 
-![](https://github.com/JoonsuRyu/images/blob/master/RL/009/09.png?raw=true){: .align-center}
+![](/assets/images/RL/009/09.jpg){: .align-center}
 
 <p style="text-align:right">□</p>
 
@@ -295,7 +295,7 @@ Linear Gradient Descent을 사용한 근사라고 가정하면, 원의 크기와
 
 Tile Coding에서 Feature의 Receptive Field는 State Space의 Partition으로 그룹화됩니다. 이러한 각 Partition을 <span style="color:red">Tiling</span>이라고 하며, Partition의 각 요소를 <span style="color:red">Tile</span>이라고 합니다. 예를 들어, 2차원 State Space의 가장 단순한 Tiling은 아래 그림의 왼쪽에 나타난 것과 같이 균일한 격자입니다. 여기에서 Tile(=Receptive Field)은 사각형입니다. 이 단일 Tiling만 사용할 경우, 흰색 점으로 표시된 State는 Tile이 속하는 단일 Feature로 표현됩니다. 일반화는 동일한 Tile 내의 모든 State에 대해 완전하고, Tile 외부 State에는 존재하지 않습니다. 하나의 Tiling인 경우 Coarse Coding 보다는 **State Aggregation**에 가깝습니다.
 
-![](https://github.com/JoonsuRyu/images/blob/master/RL/009/10.png?raw=true){: .align-center}
+![](/assets/images/RL/009/10.jpg){: .align-center}
 
 Coarse Coding의 장점을 얻으려면 겹치는 Receptive Field가 필요한데, Tile Coding의 정의상 Partition의 Tile은 겹치지 않습니다. 이를 해결하기 위해서는 여러 Tiling을 사용하며, 각 Tiling은 Tile 너비의 일부로 설정합니다. 위 그림의 오른쪽은 4개의 Tiling을 사용한 경우입니다. 흰색 점으로 표시된 것과 같이 모든 State는 4개의 Tiling 각각에서 정확히 하나의 Tile에 속합니다. 이 4개의 Tile은 State에 도달할 때 활성화되는 4개의 Feature에 해당합니다. 특히, Feature Vector $\mathbf{x}(s)$는 각 Tiling에서 각각의 Tile에 대해 하나의 구성 요소를 갖습니다. 예를 들어, 위의 그림에서는 $4 \times 4 \times 4 = 64$개의 구성 요소가 있습니다. 이 중 State $s$가 속하는 Tile 4개를 제외하고는 모두 0의 값이 됩니다.
 
@@ -305,17 +305,17 @@ Tile Coding은 또한 Binary Feature Vector를 사용하여 계산상의 이점�
 
 일반화는 학습이 끝난 State가 아닌 다른 State가 공통된 Tile 수에 비례하여 동일한 Tile에 속하는 경우에 발생합니다. Tiling을 서로 Offset하는 방법의 선택조차도 일반화에 영향을 줍니다. 만약 Tiling의 Offset이 각 차원마다 균일하게 설정되어 있으면, 아래 그림의 위쪽과 같이 다른 State는 다른 방식으로 일반화됩니다. 위쪽의 8개의 그림은 각각 학습된 State에서 가까운 지점으로 일반화한 패턴을 보여줍니다. 이 예시에서는 8개의 Tiling이 있으므로 Tile 내 64개의 하위 영역이 명확하게 일반화되고, 모두 이 8개의 패턴 중 하나에 따릅니다. 문제는 Tiling이 균일할 때 대각선 요소의 영향력이 매우 강하다는 것입니다. (ex. 6번째와 8번째 그림의 비교) 만약 아래쪽 그림처럼 Tiling의 Offset이 비대칭적으로 설정되면 이러한 효과를 피할 수 있습니다. 이것이 바로 비대징 Offset이 Tile Coding에서 선호되는 이유입니다.
 
-![](https://github.com/JoonsuRyu/images/blob/master/RL/009/11.png?raw=true){: .align-center}
+![](/assets/images/RL/009/11.jpg){: .align-center}
 
 모든 경우에서 Tiling은 각 차원의 Tile 너비 일부만큼 서로 Offset이 설정됩니다. Tile의 너비를 $w$라 하고 Tile의 수를 $n$으로 한다면 $\frac{w}{n}$이 기본 단위입니다. 작은 사각형 $\frac{w}{n}$ 안의 모든 State들은 같은 Tile이 활성화되고, 같은 Feature와 같은 근사값을 같습니다. State가 아무 방향으로 $\frac{w}{n}$ 만큼 이동하면 Feature가 하나의 구성 요소/Tile 만큼 변경됩니다. 균일하게 Offset이 설정된 Tiling은 정확히 이 단위 거리만큼 Offset이 설정됩니다. 2차원 공간에서 각 Tiling은 Displacement Vector에 의해 Offset이 설정되며, 이는 Tiling의 Offset이 이 Vector에서 $\frac{w}{n}$ 를 곱한 만큼 설정된다는 의미입니다. 예를 들어, 위의 그림 중 아래쪽(Tiling이 비대칭인 경우)은 Displacement Vector (1, 3)에 의해 Offset 됩니다. Tile Coding의 일반화에서 다양한 Displacement Vector의 영향은 많은 연구가 이루어졌고, 교재에도 이에 대한 설명이 나와있으나, 여기에서는 생략하도록 하겠습니다.
 
 Tiling을 설계한다는 것은 Tiling의 수와 Tile의 모양을 선택하는 것과 같습니다. Tiling의 수는 Tile의 크기와 함께 Asymptotic Approximation의 Resolution과 Fineness를 결정합니다. 또한 Tile의 모양은 일반화에 대한 특징을 결정합니다. (Coarse Coding 부분 참고) 예를 들어, 위에서 다룬 정사각형 모양의 Tile은 각각의 차원에서 거의 동일하게 일반화됩니다. 아래 그림은 Tile의 다양한 모양을 나타내고 있습니다. 가운데의 수직 줄무늬 모양 Tile은 왼쪽에서 더 촘촘하고 얇게 디자인되어 있기 때문에 수평 차원을 기준으로 낮은 값일 수록 촘촘한 분류가 가능합니다. 오른쪽 그림의 대각선 줄무늬 Tiling은 보는 바와 같이 대각선을 따라 일반화를 합니다. 왼쪽과 같은 불규칙한 Tiling도 가능하지만, 실제로 많이 쓰는 방법은 아닙니다.
 
-![](https://github.com/JoonsuRyu/images/blob/master/RL/009/12.png?raw=true){: .align-center}
+![](/assets/images/RL/009/12.jpg){: .align-center}
 
 실제로 Tiling을 설계할 때는 다른 Tiling에 다른 모양의 Tile을 사용하는 것이 좋습니다. 예를 들어, 한 Tiling은 수직 줄무늬, 다른 Tiling은 수평 줄무늬를 사용하는 방법이 있습니다. 이것은 어느 차원에서든 일반화를 가능케 하지만, 줄무늬 모양의 Tiling 만으로는 수평 및 수직 좌표의 특정 조합이 고유한 값을 갖는다는 것을 학습할 수 없습니다. 이를 위해서는 직사각형 모양의 Tile이 필요합니다. 여러 Tiling을 조합하여 사용하면 이런 문제를 해결할 수 있습니다. 보통은 각 차원을 따라 일반화하는 것을 선호하지만, 조합에 따른 특정한 값을 학습하기 위해서는 별도의 방법이 필요합니다. (Sutton, 1996) Tiling의 선택은 일반화를 결정하며, 이 선택이 효과적으로 자동화될 수 있을 때까지 유연하고 사람들이 이해할 수 있는 방식으로 선택할 수 있는 것이 중요합니다.
 
-![](https://github.com/JoonsuRyu/images/blob/master/RL/009/13.png?raw=true){: .align-center}
+![](/assets/images/RL/009/13.jpg){: .align-center}
 
 Tile Coding에서 메모리 요구 사항을 줄이는 유용한 트릭 중 하나는 Hashing입니다. 이것은 큰 Tile을 훨씬 더 작은 Tile의 집합으로 규칙있게 축소하는 것입니다. Hashing은 State Space 전체에 무작위로 퍼진 비연속적이고 분리된 영역으로 구성된 Tile을 생성하지만, 완전한 Partition을 형성합니다. 예를 들어, 위의 그림과 같이 하나의 Tile은 4개의 하위 Tile로 구성될 수 있습니다. Hashing은 성능 손실이 거의 없이 메모리 요구 사항을 크게 낮출 수 있는 경우가 많습니다. 이것은 State Space의 작은 부분만 높은 Resolution이 필요하기 때문입니다. 이는 어느정도 **Curse of Dimensionality**를 극복할 수 있다는 점에서 큰 의미가 있습니다. 보통 Tile Coding을 구현한 오픈 소스 프로그램들은 효율적인 Hashing을 적용하는 경우가 많습니다.
 
@@ -327,7 +327,7 @@ $$x_i (s) \doteq \exp \left( - \frac{|| s - c_i ||^2}{2 \sigma_i^2} \right)$$
 
 물론 Norm이나 거리를 측정하는 Metric은 주어진 State나 Action에 따라 적절하게 선택할 수 있습니다. 아래 그림은 1차원 공간에서 Euclidean Distance Metric의 예를 나타냅니다.
 
-![](https://github.com/JoonsuRyu/images/blob/master/RL/009/14.png?raw=true){: .align-center}
+![](/assets/images/RL/009/14.jpg){: .align-center}
 
 0과 1로만 값을 설정하던 Binary Featrue가 가지고 있지 않은 RBF의 주요 장점은 미분 가능한 근사 함수를 만든다는 것입니다. 사실 이것이 대부분 큰 의미는 없습니다. 다만 이것이 꽤 매력적인지 생각보다 많은 연구가 이루어졌으나 (An, 1991; Miller et al., 1991; An et al., 1991; Lane, Handelman and Gelfand, 1992) 대부분 Tile Coding에 비해 상당히 많은 추가적인 계산이 필요한데다 State 차원이 2개 이상인 경우 성능이 저하되는 경우가 많습니다. 특히 Tile의 가장자리는 높은 차원일수록 더 중요한데, RBF는 Tile의 가장자리가 잘 제어되지 않는 것이 증명되었습니다.
 
@@ -360,7 +360,7 @@ $\mathbf{x}$는 SGD에서의 Input Vector와 동일한 분포로 선택된 임�
 
 다음 그림은 기본적인 Feedforward ANN의 구조를 보여줍니다. 루프가 존재하지 않고, 출력이 입력에 영향을 주지도 않습니다. 그림에서는 4개의 입력이 있는 Input Layer, 2개의 출력이 있는 Output Layer, 그리고 2개의 Hidden Layer로 구성되어 있습니다.
 
-![](https://github.com/JoonsuRyu/images/blob/master/RL/009/15.png?raw=true){: .align-center}
+![](/assets/images/RL/009/15.jpg){: .align-center}
 
 위의 그림과 같은 ANN은 원 모양의 Unit에 들어오는 입력을 **Activation Function**에 넣고, 그 결과를 출력하는 구조로 되어있습니다. Activation Function은 다양한 종류가 사용되는데, $f(x) = 1 / (1 + e^{-x})$와 같은 Logistic Function을 사용하는 Sigmoid Function을 사용할 수도 있고, $f(x) = \max (0, x)$와 같은 Rectifier Function이 사용될 수도 있습니다. 이 때 입력으로 들어오는 값은 그대로 들어오는 것이 아니라 해당 입력이 얼마나 중요한지에 따라 Weight가 붙습니다.
 
@@ -403,7 +403,7 @@ $$ \begin{align}
 
 위 식에서 초기값은 $\widehat{\mathbf{A}}_0 \doteq \varepsilon \mathbf{I}$로 정의됩니다. 식 (9.22)은 **Sherman-Morrison Formula**를 사용한 것이며, 복잡해보이지만 시간 복잡도는 $O(d^2)$에 불과합니다. 이것을 사용해서 LSTD를 시간 복잡도 $O(d^2)$로 구현한 완전한 Pseudocode는 다음과 같습니다.
 
-![](https://github.com/JoonsuRyu/images/blob/master/RL/009/16.png?raw=true){: .align-center}
+![](/assets/images/RL/009/16.jpg){: .align-center}
 
 물론 이렇게 시간 복잡도를 $O(d^2)$로 줄인다고 해도 여전히 Semi-gradient TD보다 훨씬 느립니다. 이러한 시간 복잡도를 감수하더라도 LSTD를 사용하는 것이 그만큼의 가치가 있는지는 $d$가 얼마나 큰지, 학습 속도가 주어진 문제에서 얼마나 중요한지, 시스템의 나머지 부분에서 드는 비용이 어느정도인지에 따라 다릅니다. LSTD는 Step-size Parameter가 필요하지 않다는 장점이 분명 존재하지만, 대신 $\varepsilon$이 필요하며, 이것을 어떤 값으로 정해야하는지에 대한 문제가 존재합니다. $\varepsilon$가 너무 크면 학습 속도가 느려지고, 그렇다고 너무 작으면 역행렬을 계산할 때 문제가 생깁니다. 또한 Step-size Parameter가 없다는 것은 이전에 학습한 내용을 절때 잊지 않는다는 의미가 되는데, 일반적으로 이것이 좋을 수 있지만 강화학습이나 GPI에서 Policy $\pi$가 변하면 문제가 됩니다. 따라서 Policy가 계속 변할 수밖에 없는 Control 문제에서 LSTD를 사용하기 위해서는 이전에 학습한 내용을 잊을 수 있게 다른 메커니즘과 결합되어야만 합니다.
 
@@ -463,7 +463,7 @@ $$M_t = I_t + \gamma^n M_{t-n} \tag{9.26}$$
 
 이번 예제는 Interest와 Emphasis가 얼마나 정확한 Value를 추정할 수 있는지 보여주는 예시입니다. 먼저, 다음과 같이 4개의 State를 가지고 있는 Markov Reward Process가 있습니다.
 
-![](https://github.com/JoonsuRyu/images/blob/master/RL/009/17.png?raw=true){: .align-center}
+![](/assets/images/RL/009/17.jpg){: .align-center}
 
 이 예제에서 Episode는 맨 왼쪽 State에서 시작한 다음 최종 State에 도달할 때까지 각 단계마다 +1의 보상을 받은 후, 오른쪽 State로 넘어갑니다. 따라서 첫 번째 State의 Real Value는 4이고, 두 번째 State의 Real Value는 3이 되는 식입니다. (각 State의 Real Value는 State 바로 아래에 표시되어 있습니다.)
 
