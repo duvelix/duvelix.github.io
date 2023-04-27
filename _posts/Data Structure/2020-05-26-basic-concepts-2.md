@@ -282,19 +282,19 @@ void add(int a[][MAX_COLS], int b[][MAX_COLS], int c[][MAX_COLS], int rows, int 
 
 **Example 1.12 [Iterative Summing of a List of Numbers]**
 
-![](https://github.com/JoonsuRyu/images/blob/master/Data%20Structure/002/01.png?raw=true){: .align-center}
+![](/assets/images/DS/002/01.png){: .align-center}
 
 위의 표는 테이블 방법으로 Example 1.9에서 `sum()` 함수의 프로그램 단계 수를 계산하는 과정을 보여주고 있습니다. 이렇게 테이블 방법을 사용할 때는 s/e를 먼저 다 계산하고, Frequency를 그 다음에 계산하는 것이 좋습니다. for문에서 n번 반복하는 것이 아니라 n+1번 반복한다는 점에 주의하시기 바랍니다. i가 0부터 시작해 n과 같아질 때 빠져나오기 때문입니다. Total Steps은 단순히 s/e와 Frequency를 곱하기만 하면 되고, 총 프로그램 단계 수는 Total Steps를 더하기만 하면 됩니다.
 
 **Example 1.13 [Recursive Summing of a list of Numbers]**
 
-![](https://github.com/JoonsuRyu/images/blob/master/Data%20Structure/002/02.png?raw=true){: .align-center}
+![](/assets/images/DS/002/02.png){: .align-center}
 
 위의 표는 테이블 방법으로 Example 1.10에서 `rsum()` 함수의 프로그램 단계 수를 계산하는 과정을 보여주고 있습니다. 재귀 호출 함수의 경우 Frequency를 직관적으로 구하기가 힘든 점이 특징입니다.
 
 **Example 1.14 [Matrix Addition]**
 
-![](https://github.com/JoonsuRyu/images/blob/master/Data%20Structure/002/03.png?raw=true){: .align-center}
+![](/assets/images/DS/002/03.png){: .align-center}
 
 위의 표는 테이블 방법으로 Example 1.11에서 `add()` 함수의 프로그램 단계 수를 계산하는 과정을 보여주고 있습니다. 무난한 이중 for문이다보니 계산하는데 큰 어려움은 없습니다.
 

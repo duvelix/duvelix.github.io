@@ -32,10 +32,10 @@ tags:
 
 Git 원격 저장소를 제공하는 곳은 여러 사이트가 있습니다. 처음 워드프레스 블로그를 올려두었던 웹 호스팅인 SiteGround에서도 Git 저장소를 제공하고 있습니다.
 
-![](https://github.com/JoonsuRyu/images/blob/master/Git/000/01.png?raw=true){: .align-center}
+![](/assets/images/Git/000/01.png){: .align-center}
 
 SiteGround 호스팅 기간이 만료되고 이전했던 Bluehost에서도 마찬가지로 Git 저장소를 제공하고 있습니다.
 
-![](https://github.com/JoonsuRyu/images/blob/master/Git/000/02.png?raw=true){: .align-center}
+![](/assets/images/Git/000/02.png){: .align-center}
 
 하지만 현재 대부분의 개발자들은 Git 저장소로 Github를 사용하고 있기 때문에 저도 Github를 위주로 Git 카테고리를 운영할 계획이며 Git에 대한 기초적인 설치방법부터 Github 블로그를 만드는 방법까지 다룰 예정입니다.
