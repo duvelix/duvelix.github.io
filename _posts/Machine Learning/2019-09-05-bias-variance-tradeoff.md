@@ -1,9 +1,9 @@
 ---
 title: "Bias-Variance Tradeoff"
 permalink: /ml/bias-variance-tradeoff/
+classes: wide
 toc: true
 toc_label: "Table of Contents"
-toc_sticky: true
 categories:
   - studies
 tags:

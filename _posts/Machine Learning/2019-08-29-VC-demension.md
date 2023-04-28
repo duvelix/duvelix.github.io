@@ -1,9 +1,9 @@
 ---
 title: "VC Dimension"
 permalink: /ml/VC-demension/
+classes: wide
 toc: true
 toc_label: "Table of Contents"
-toc_sticky: true
 categories:
   - studies
 tags:

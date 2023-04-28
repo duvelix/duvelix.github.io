@@ -1,9 +1,9 @@
 ---
 title: "전문연구요원 훈련소 후기 - 식사 및 부식"
 permalink: /katc/boot-camp-meal/
+classes: wide
 toc: true
 toc_label: "Table of Contents"
-toc_sticky: true
 categories:
   - interests
 tags:
@@ -14,7 +14,7 @@ tags:
 
 ## 훈련소의 식사 메뉴
 
-![](https://github.com/JoonsuRyu/images/blob/master/KATC/005/01.png?raw=true){: .align-center}
+![](/assets/images/KATC/005/01.jpg){: .align-center}
 *(출처 : 서울신문)*
 {: style="text-align: center;"}
 
@@ -61,7 +61,7 @@ tags:
 
 ## 훈련소 부식
 
-![](https://github.com/JoonsuRyu/images/blob/master/KATC/005/02.png?raw=true){: .align-center}
+![](/assets/images/KATC/005/02.jpg){: .align-center}
 *(출처 : https://ghostbrian.com/396)*
 {: style="text-align: center;"}
 
@@ -73,7 +73,7 @@ tags:
 
 ## 훈련소의 식사 모습 - 정말로 쓸데없는 짓을 하는가?
 
-![](https://github.com/JoonsuRyu/images/blob/master/KATC/005/03.png?raw=true){: .align-center}
+![](/assets/images/KATC/005/03.jpg){: .align-center}
 *(출처 : https://rokmarineboy.tistory.com/)*
 {: style="text-align: center;"}
 
@@ -85,7 +85,7 @@ tags:
 
 ## 배식조
 
-![](https://github.com/JoonsuRyu/images/blob/master/KATC/005/04.png?raw=true){: .align-center}
+![](/assets/images/KATC/005/04.jpg){: .align-center}
 *(출처 : 아시아경제)*
 {: style="text-align: center;"}
 

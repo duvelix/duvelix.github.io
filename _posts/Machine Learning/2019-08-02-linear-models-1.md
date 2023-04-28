@@ -1,9 +1,9 @@
 ---
 title: "Linear Models I"
 permalink: /ml/linear-models-1/
+classes: wide
 toc: true
 toc_label: "Table of Contents"
-toc_sticky: true
 categories:
   - studies
 tags:

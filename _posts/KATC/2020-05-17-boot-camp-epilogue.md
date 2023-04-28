@@ -1,9 +1,9 @@
 ---
 title: "전문연구요원 훈련소 후기 - 에필로그"
 permalink: /katc/boot-camp-epilogue/
+classes: wide
 toc: true
 toc_label: "Table of Contents"
-toc_sticky: true
 categories:
   - interests
 tags:
@@ -14,7 +14,7 @@ tags:
 
 ## 빨래
 
-![](https://github.com/JoonsuRyu/images/blob/master/KATC/007/01.png?raw=true){: .align-center}
+![](/assets/images/KATC/007/01.jpg){: .align-center}
 *(출처 : 국방TV)*
 {: style="text-align: center;"}
 
@@ -28,7 +28,7 @@ tags:
 
 ## 전화
 
-![](https://github.com/JoonsuRyu/images/blob/master/KATC/007/02.png?raw=true){: .align-center}
+![](/assets/images/KATC/007/02.jpg){: .align-center}
 *(출처 : 고양TV)*
 {: style="text-align: center;"}
 
@@ -42,7 +42,7 @@ tags:
 
 ## PX
 
-![](https://github.com/JoonsuRyu/images/blob/master/KATC/007/03.png?raw=true){: .align-center}
+![](/assets/images/KATC/007/03.png){: .align-center}
 *(출처 : tvN 푸른거탑 제로)*
 {: style="text-align: center;"}
 
@@ -58,7 +58,7 @@ PX에서 또 많이 구매하는 것들은 생필품들입니다. 특히 이전�
 
 ## 자치근무제도
 
-![](https://github.com/JoonsuRyu/images/blob/master/KATC/007/04.png?raw=true){: .align-center}
+![](/assets/images/KATC/007/04.png){: .align-center}
 *(출처 : https://www.youtube.com/watch?v=ruNdcfNl7tk)*
 {: style="text-align: center;"}
 
@@ -76,7 +76,7 @@ PX에서 또 많이 구매하는 것들은 생필품들입니다. 특히 이전�
 
 ## 마치며...
 
-![](https://github.com/JoonsuRyu/images/blob/master/KATC/007/05.png?raw=true){: .align-center}
+![](/assets/images/KATC/007/05.jpg){: .align-center}
 
 전문연구요원 훈련소 후기 시리즈를 쓰게 된 이유는 입소 전, 인터넷을 뒤지며 정보를 최대한 많이 알아가려고 했는데 생각보다 사소한 것까지 속 시원하게 다 말해주는 블로그가 없었습니다. 까짓꺼 없으면 "내가 한번 써보자!"라고 마음으로 훈련소에 있는 동안 틈틈히 있었던 일을 기록해놨다가 사회에서 하나씩 쓰게 되었는데, 쓰다보니 그 때의 생각이 종종 나서 미소가 지어지기도 했습니다.
 

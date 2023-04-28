@@ -1,9 +1,9 @@
 ---
 title: "Support Vector Machines"
 permalink: /ml/support-vector-machines/
+classes: wide
 toc: true
 toc_label: "Table of Contents"
-toc_sticky: true
 categories:
   - studies
 tags:

@@ -1,9 +1,9 @@
 ---
 title: "Validation"
 permalink: /ml/validation/
+classes: wide
 toc: true
 toc_label: "Table of Contents"
-toc_sticky: true
 categories:
   - studies
 tags:

@@ -1,9 +1,9 @@
 ---
 title: "Linear Model II"
 permalink: /ml/linear-model-2/
+classes: wide
 toc: true
 toc_label: "Table of Contents"
-toc_sticky: true
 categories:
   - studies
 tags:

@@ -1,9 +1,9 @@
 ---
 title: "Three Learning Principles"
 permalink: /ml/three-learning-principles/
+classes: wide
 toc: true
 toc_label: "Table of Contents"
-toc_sticky: true
 categories:
   - studies
 tags:

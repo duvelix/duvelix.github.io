@@ -1,9 +1,9 @@
 ---
 title: "Kernel Methods"
 permalink: /ml/kernel-methods/
+classes: wide
 toc: true
 toc_label: "Table of Contents"
-toc_sticky: true
 categories:
   - studies
 tags:

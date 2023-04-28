@@ -1,9 +1,9 @@
 ---
 title: "전문연구요원 훈련소 후기 - 불침번 및 전우조"
 permalink: /katc/boot-camp-vigil/
+classes: wide
 toc: true
 toc_label: "Table of Contents"
-toc_sticky: true
 categories:
   - interests
 tags:
@@ -14,7 +14,7 @@ tags:
 
 ## 불침번
 
-![](https://github.com/JoonsuRyu/images/blob/master/KATC/006/01.png?raw=true){: .align-center}
+![](/assets/images/KATC/006/01.jpg){: .align-center}
 *(출처 : https://armynuri.tistory.com)*
 {: style="text-align: center;"}
 
@@ -36,7 +36,7 @@ tags:
 
 ## 전우조
 
-![](https://github.com/JoonsuRyu/images/blob/master/KATC/006/02.png?raw=true){: .align-center}
+![](/assets/images/KATC/006/02.png){: .align-center}
 *(출처 : tvN 푸른거탑 제로)*
 {: style="text-align: center;"}
 

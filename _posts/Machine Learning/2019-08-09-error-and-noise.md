@@ -1,9 +1,9 @@
 ---
 title: "Error and Noise"
 permalink: /ml/error-and-noise/
+classes: wide
 toc: true
 toc_label: "Table of Contents"
-toc_sticky: true
 categories:
   - studies
 tags:

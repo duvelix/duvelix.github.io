@@ -1,9 +1,9 @@
 ---
 title: "Theory of Generalization"
 permalink: /ml/theory-of-generalization/
+classes: wide
 toc: true
 toc_label: "Table of Contents"
-toc_sticky: true
 categories:
   - studies
 tags:

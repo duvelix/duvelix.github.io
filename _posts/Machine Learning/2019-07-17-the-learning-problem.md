@@ -1,9 +1,9 @@
 ---
 title: "The Learning Problem"
 permalink: /ml/the-learning-problem/
+classes: wide
 toc: true
 toc_label: "Table of Contents"
-toc_sticky: true
 categories:
   - studies
 tags:

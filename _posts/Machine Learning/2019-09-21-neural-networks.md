@@ -1,9 +1,9 @@
 ---
 title: "Neural Networks"
 permalink: /ml/neural-networks/
+classes: wide
 toc: true
 toc_label: "Table of Contents"
-toc_sticky: true
 categories:
   - studies
 tags:

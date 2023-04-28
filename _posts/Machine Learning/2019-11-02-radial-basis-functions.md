@@ -1,9 +1,9 @@
 ---
 title: "Radial Basis Functions"
 permalink: /ml/radial-basis-functions/
+classes: wide
 toc: true
 toc_label: "Table of Contents"
-toc_sticky: true
 categories:
   - studies
 tags:
