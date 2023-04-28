@@ -309,7 +309,7 @@
 
 <p><span style="color:red">HashMap</span>은 이름에서부터 유추할 수 있듯이 Map Interface에서 구현된 클래스입니다. HashSet과 마찬가지로 HashMap 또한 Hash에 쓰이며, 탐색(Search)에 좋은 성능을 보인다는 장점이 있습니다. 이와 비슷한 클래스로 <span style="color:red">Hashtable</span>이 있는데, HashMap은 비동기식(asynchronous), Hashtable은 동기식(synchronized)이라는 차이점이 있습니다.</p>
 
-<p><img src="https://github.com/JoonsuRyu/images/blob/master/Java/014/01.png?raw=true" alt="" class="align-center" /></p>
+<p><img src="/assets/images/Java/014/01.png" alt="" class="align-center" /></p>
 
 <p>HashMap은 꽤 복잡하게 정의되어 있습니다. Map&lt;K,V&gt;, Cloneable, Serializable 인터페이스를 기반으로 구현되었으며 AbstractMap&lt;K, V&gt;로부터의 파생 클래스입니다. HashMap은 아래와 같이 정의되어 있습니다.</p>
 
@@ -573,7 +573,7 @@
 
 <p>HashMap은 이름처럼 Hashing을 하는데도 사용됩니다. 첫 번째나 두 번째의 경우처럼 기본적인 1-1 Hashing으로 사용할 수도 있으나, 아래처럼 Linked List를 활용한 구조 또한 가능합니다.</p>
 
-<p><img src="https://github.com/JoonsuRyu/images/blob/master/Java/014/02.png?raw=true" alt="" class="align-center" /></p>
+<p><img src="/assets/images/Java/014/02.png" alt="" class="align-center" /></p>
 
 <p>Hashing에서의 성능상의 이점은 Hash 함수를 사용하여 Hash 값을 계산하는 것이 매우 빠르다는 것입니다. 하지만 위처럼 Linked List를 사용하여 한 Hash 값에 여러 데이터를 저장하는 경우 데이터 검색이 느려지는 단점이 있습니다. 따라서 검색 성능이 중요한 프로그램이라면 1개의 슬롯에 1개의 데이터(Value)만 있는 것이 좋습니다.</p>
 

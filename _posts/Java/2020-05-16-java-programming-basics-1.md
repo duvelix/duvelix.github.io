@@ -275,7 +275,7 @@ opConditional 클래스는 조건 연산자의 사용 예시를 보여주고 있
 
 이 부분은 교재에 잘 정리되어 있어서 교재 그대로 Java 교재에 나와있는 연산자 우선순위 그림을 삽입하였습니다. 마침 [교재 사이트](https://introcs.cs.princeton.edu/java/11precedence/)에도 나와있어 쉽게 가져올 수 있었습니다.
 
-![](https://github.com/JoonsuRyu/images/blob/master/Java/003/01.png?raw=true){: .align-center}
+![](/assets/images/Java/003/01.png){: .align-center}
 
 시험에서 연산자의 우선순위를 물어볼 때는 보통 다음과 같이 출제합니다. 아래 opPriority 클래스의 결과가 무엇이 나올지 한번 생각해보시기 바랍니다.
 

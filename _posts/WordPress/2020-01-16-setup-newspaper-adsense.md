@@ -19,25 +19,25 @@ tags:
 
 ## 광고 단위 생성하기
 
-![](https://github.com/JoonsuRyu/images/blob/master/WordPress/017/01.png?raw=true){: .align-center}
+![](/assets/images/WP/017/01.png){: .align-center}
 
 먼저 구글 애드센스 관리자 페이지로 갑니다. 새 광고를 만들어야 하기 때문에 왼쪽에 있는 <span style="color:red">광고</span> 메뉴를 클릭합니다.
 
-![](https://github.com/JoonsuRyu/images/blob/master/WordPress/017/02.png?raw=true){: .align-center}
+![](/assets/images/WP/017/02.png){: .align-center}
 
 광고 게제 방법에는 크게 두 가지가 있습니다. 사이트 기준은 태그만 입력하면 알아서 적절한 위치에 광고를 달아주는 방법이고, 광고 단위 기준은 광고 하나하나를 직접 발급받아 원하는 위치에 삽입하는 방법입니다. 사이트 기준이 간단하지만, 원하는 장소에 광고가 배치되지 않고 엉뚱한 위치에 광고가 삽입될 위험이 있으므로 저는 <span style="color:red">광고 단위 기준</span>을 선택하겠습니다.
 
-![](https://github.com/JoonsuRyu/images/blob/master/WordPress/017/03.png?raw=true){: .align-center}
+![](/assets/images/WP/017/03.png){: .align-center}
 
 광고 단위 기준에도 여러 종류가 있습니다. 가장 기본적인 광고는 디스플레이 광고이고, 인피드 광고는 게시물 목록 중간에 광고를 삽입하는 방법입니다. 콘텐츠 내 자동 삽입 광고는 포스트 중간에 광고를 삽입하는 방법입니다. 개인적으로 인피드 광고나 콘텐츠 내 자동 삽입 광고는 부정적으로 생각하기 때문에 저는 <span style="color:red">디스플레이 광고</span>를 사용하도록 하겠습니다.
 
-![](https://github.com/JoonsuRyu/images/blob/master/WordPress/017/04.png?raw=true){: .align-center}
+![](/assets/images/WP/017/04.png){: .align-center}
 
 디스플레이 광고는 크게 사각형, 수평형, 수직형을 선택할 수 있고, 상황에 맞춰 자동으로 형태를 변화시켜주는 반응형 옵션이 있습니다. 요즘에는 대부분의 사이트가 반응형으로 만들어지고 있기 때문에 반응형이 무난하긴 하지만, 가끔 의도된 모양으로 광고가 나타나지 않는 문제가 발생하기도 합니다. 애드센스에서는 반응형이 아닐 시 광고 수입에 악영향을 끼친다고 말하고 있기 때문에 일단 먼저 반응형으로 광고를 삽입해 보시고, 원하는 모양이 나오지 않을 때만 고정형으로 만들어주시는 것이 좋습니다.
 
 광고 단위 이름에는 자신이 알아볼 수 있는 아무 이름이나 입력하면 됩니다. 저는 광고를 게제하는 위치를 이름으로 넣었습니다. 예를 들어, 예전 제 블로그의 오른쪽 사이드바에 위치한 광고의 이름은 사이드바로 지정하였습니다. 이름은 뭘로 정하든 큰 상관은 없으니 원하는 이름을 입력하시면 됩니다. 그 후 오른쪽 아래에 있는 <span style="color:red">만들기</span> 버튼을 클릭합니다.
 
-![](https://github.com/JoonsuRyu/images/blob/master/WordPress/017/05.png?raw=true){: width="800"}{: .align-center}
+![](/assets/images/WP/017/05.png){: width="800"}{: .align-center}
 
 광고를 만들면 바로 광고 코드가 발급됩니다. 먼저 <span style="color:red">코드 복사</span>를 클릭하여 광고 코드를 복사한 다음, <span style="color:red">완료</span> 버튼을 클릭합니다.
 
@@ -45,23 +45,23 @@ tags:
 
 뉴스페이퍼 테마에서는 자체 편집기를 사용하여 광고를 손쉽게 추가해주는 기능을 갖고 있습니다. 뉴스페이퍼 테마로 만든 사이트는 tagDiv Composer라는 플러그인을 사용하여 편집할 수 있는데, 복잡하게 소스 코드로 페이지를 편집하는 것이 아니라 GUI 환경으로 페이지를 편집할 수 있게 만들어주기 때문에 초보자도 사용하기 편리합니다.
 
-![](https://github.com/JoonsuRyu/images/blob/master/WordPress/017/06.png?raw=true){: .align-center}
+![](/assets/images/WP/017/06.png){: .align-center}
 
 tagDiv Composer를 사용하여 사이드바에 광고를 삽입해 보겠습니다. 먼저 왼쪽에 있는 Add Element 버튼을 클릭합니다.
 
-![](https://github.com/JoonsuRyu/images/blob/master/WordPress/017/07.png?raw=true){: .align-center}
+![](/assets/images/WP/017/07.png){: .align-center}
 
 Add Element 버튼을 클릭하게 되면 사용할 수 있는 요소들의 목록이 나옵니다. 스크롤을 내리시다 보면 **Ad box** 라는 요소가 있는데, 이를 원하는 위치에 <span style="color:red">드래그</span>하면 됩니다.
 
-![](https://github.com/JoonsuRyu/images/blob/master/WordPress/017/08.png?raw=true){: .align-center}
+![](/assets/images/WP/017/08.png){: .align-center}
 
 드래그하면 그 위치에 바로 Ad box Element가 생성된 것을 볼 수 있습니다. Ad box의 옵션을 보시면 <span style="color:red">Custom ad</span> 라는 항목이 보이는데, 이것을 클릭합니다.
 
-![](https://github.com/JoonsuRyu/images/blob/master/WordPress/017/09.png?raw=true){: .align-center}
+![](/assets/images/WP/017/09.png){: .align-center}
 
 Custom ad에는 광고 코드를 입력할 수 있는 곳이 나옵니다. 이곳에 아까 복사한 **광고 코드**를 붙여넣은 후, 상단의 <span style="color:red">Save</span> 버튼을 클릭하여 저장합니다.
 
-![](https://github.com/JoonsuRyu/images/blob/master/WordPress/017/10.png?raw=true){: .align-center}
+![](/assets/images/WP/017/10.png){: .align-center}
 
 저장을 마친 후, 홈 화면으로 돌아오면 구글 애드센스 광고가 올바르게 삽입된 것을 확인할 수 있습니다.
 
@@ -69,18 +69,18 @@ Custom ad에는 광고 코드를 입력할 수 있는 곳이 나옵니다. 이�
 
 다음으로는 본문에 광고를 삽입해 보겠습니다. 사이드바의 광고와는 다르게 본문의 광고는 미관상 반드시 수평형으로만 삽입되어야 합니다. 한번 반응형으로 삽입해 보았는데, 의도와는 다르게 사각형 모양으로 삽입되는 바람에 광고를 지우고 다시 만들어야 했습니다. 
 
-![](https://github.com/JoonsuRyu/images/blob/master/WordPress/017/11.png?raw=true){: .align-center}
+![](/assets/images/WP/017/11.png){: .align-center}
 
 하지만 위의 스크린샷에서도 알 수 있듯이 고정형을 선택하게 되면 광고 수익에 악영향이 갈 수 있다는 경고 메시지가 출력됩니다. 달리 선택의 여지가 없으니 저는 무시했습니다.
 
-![](https://github.com/JoonsuRyu/images/blob/master/WordPress/017/12.png?raw=true){: .align-center}
+![](/assets/images/WP/017/12.png){: .align-center}
 
 광고 삽입 방법은 사이드바에서 삽입했을 때와 동일합니다. tagDiv Composer를 사용하여 Ad box를 적당한 위치에 만들고, 광고 코드를 붙여넣으면 끝입니다. 어느 부분에 광고를 삽입할지 고민했는데, 본문 상단에 삽입하는 것이 가장 수익이 높을 것 같아 최상단에 삽입하였습니다. 본문 중간이나 마지막에도 광고를 삽입할 까 고민했었는데, 광고가 너무 많을 경우 페이지 로딩이 느려지며 방문자에게 부정적인 인식을 줄 수 있기 때문에 최상단 한 개만 삽입하기로 결정했습니다.
 
-![](https://github.com/JoonsuRyu/images/blob/master/WordPress/017/13.png?raw=true){: .align-center}
+![](/assets/images/WP/017/13.png){: .align-center}
 
 본문 광고는 위와 같은 모양으로 삽입됩니다. 광고를 두 개나 달기는 했지만, 제 블로그는 방문자가 많지 않아 광고 수익은 없는 거나 다름 없습니다. 앞으로 유익한 포스트를 많이 올리면 방문자 수가 늘어날테니, 장기적인 관점에서 바라봐야겠습니다.
 
-![](https://github.com/JoonsuRyu/images/blob/master/WordPress/017/14.png?raw=true){: .align-center}
+![](/assets/images/WP/017/14.png){: .align-center}
 
 **2023.03.30 추가** : 현재는 워드프레스를 더 이상 사용하지 않고, 깃허브 블로그로 이전하면서 광고를 모두 제거하였습니다. 워드프레스 블로그를 3년 정도 운영한 것 같은데, 그 동안 모인 금액을 다 합쳐도 40달러도 안되네요. 유명한 블로거가 아닌 이상 광고 수익에 큰 기대는 하면 안될 것 같습니다.

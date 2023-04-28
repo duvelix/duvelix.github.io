@@ -15,15 +15,15 @@ Java 언어는 많은 대학교에서 저학년에 가르치는 언어입니다.
 
 [Tiobe Index](https://www.tiobe.com/tiobe-index/)에 따르면 JAVA는 2019년 11월 기준으로 가장 많이 사용하는 언어입니다.
 
-![](https://github.com/JoonsuRyu/images/blob/master/Java/000/01.png?raw=true){: .align-center}
+![](/assets/images/Java/000/01.png){: .align-center}
 
 [PopularitY of Programming Language](http://pypl.github.io/PYPL.html) (PYPL)에 따르면 2019년 11월 기준으로 Java가 2위를 차지하고 있습니다.
 
-![](https://github.com/JoonsuRyu/images/blob/master/Java/000/02.png?raw=true){: .align-center}
+![](/assets/images/Java/000/02.png){: .align-center}
 
 아무래도 저희 학교의 커리큘럼을 기준으로 설명드릴 예정이니, 수업에서 사용하는 교재를 기준으로 설명드릴 예정입니다. 교재의 이름은 Core Java Volume I - Fundamentals 입니다. 저희 학교 뿐만이 아니라 많은 학교에서 교재로 사용하고 있다보니 구하기는 어렵지 않습니다. 여러 도서 사이트를 검색해보니, 약 5~6만원에 판매하고 있었습니다.
 
-![](https://github.com/JoonsuRyu/images/blob/master/Java/000/03.png?raw=true){: .align-center}
+![](/assets/images/Java/000/03.png){: .align-center}
 
 물론 수업에서도 모든 챕터를 다 다루지는 않고, 순서를 바꾸거나 간략하게 설명하고 넘어가는 부분이 있기 때문에, 가급적이면 그에 맞춰서 진행할까합니다. 제가 복습하면서 이건 추가해야겠다 라는 부분이 있으면 그 부분도 추가할 예정입니다.
 

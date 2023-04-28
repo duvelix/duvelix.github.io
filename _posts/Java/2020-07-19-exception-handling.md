@@ -36,7 +36,7 @@ Java에서는 이 문제를 해결하기 위해, 애초에 프로그램에서 �
 
 Java에서는 <span style="color:red">오류(Error)</span>와 <span style="color:red">예외(Exception)</span>를 클래스로써 정의합니다. 사전 정의된 **Object**라는 클래스의 서브 클래스인 **Throwable** 이란 클래스가 있는데, 예외에 사용되는 클래스는 모두 Throwable 클래스의 서브 클래스입니다. 예외에 대한 클래스는 크게 두 가지로 나뉘는데, **RuntimeExcpetion** 클래스의 서브 클래스와 그렇지 않은 것들로 나뉩니다. 이 관계를 그림으로 표현하면 아래와 같습니다.
 
-![](https://github.com/JoonsuRyu/images/blob/master/Java/009/01.png?raw=true){: .align-center}
+![](/assets/images/Java/009/01.png){: .align-center}
 
 RuntimeExcpetion으로 분류되는 예외는 주로 프로그래머의 실수로 인해 발생하는 문제를 의미합니다. 몇 가지만 소개하면 아래와 같습니다.
 
