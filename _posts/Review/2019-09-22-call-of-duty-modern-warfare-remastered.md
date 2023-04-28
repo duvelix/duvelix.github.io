@@ -2,52 +2,52 @@
 title: "콜 오브 듀티 : 모던 워페어 리마스터드"
 permalink: /review/call-of-duty-modern-warfare-remastered/
 classes: wide
-thumbnail: https://github.com/JoonsuRyu/images/blob/master/Review/014/00.jpg?raw=true
+thumbnail: /assets/images/Review/014/00.jpg
 categories:
   - interests
 tags:
   - review
 ---
 
-![](https://github.com/JoonsuRyu/images/blob/master/Review/014/00.jpg?raw=true){: .align-center}
+![](/assets/images/Review/014/00.jpg){: .align-center}
 
 콜 오브 듀티 : 모던 워페어는 콜 오브 듀티 시리즈를 지금과 같은 압도적인 판매량과 인지도를 가질 수 있게끔 만든 명작 게임입니다. 원작은 2007년에 발매하였는데, 콜 오브 듀티 시리즈 중 최고의 메타크리틱 평점인 94점(엑스박스, PS3 기준)과 22개의 올해의 게임(GoTY) 상을 받았습니다. 저는 콜 오브 듀티 시리즈의 입문을 어드밴스드 워페어로 했는데, 그 게임을 재밌게 한 만큼 모던 워페어에도 상당한 기대를 갖고 2016년에 발매한 리마스터 버전을 구매하였습니다.
 
 하지만 기대가 너무 컸을까요. 플레이하면 할수록 단점만이 계속 부각되어 실망스러웠습니다. 일반적인 상황이라면 그냥 때려치고 다른 게임을 했겠지만, 상당히 비싼 가격을 주고 구매했기 때문에 돈이 아까워서라도 엔딩을 봐야겠다는 생각으로 꾹 참고 끝까지 플레이했습니다.
 
-![](https://github.com/JoonsuRyu/images/blob/master/Review/014/01.jpg?raw=true){: .align-center}
+![](/assets/images/Review/014/01.jpg){: .align-center}
 
-![](https://github.com/JoonsuRyu/images/blob/master/Review/014/02.jpg?raw=true){: .align-center}
+![](/assets/images/Review/014/02.jpg){: .align-center}
 
 일단 장점부터 언급하자면, 2016년에 리마스터한 게임 답게 그래픽이 상당히 뛰어나다는 점입니다. 물론 AAA 게임에서 그래픽이라는 것은 어떻게보면 당연히 좋아야 하는 것이기 때문에 이 게임만의 특출난 장점이라고는 하기 어렵습니다만, 현실과 비슷한 주제를 다룬 게임은 그래픽이 몰입감을 더욱 증가시켜주는 요소이기 때문에 언급했습니다.
 
-![](https://github.com/JoonsuRyu/images/blob/master/Review/014/03.jpg?raw=true){: .align-center}
+![](/assets/images/Review/014/03.jpg){: .align-center}
 
 이 게임에서 가장 큰 장점을 꼽으라고 한다면 플레이하는 "내"가 지금 전쟁터에 있다는 것을 보여주는 연출이 매우 뛰어나다는 것입니다. 싱글 캠페인에서는 플레이어가 동료들과 같이 전쟁터에서 싸우는데, 동료들이 적을 쓰러트리거나 적의 총을 맞고 사망함으로써 플레이어가 전쟁터 한복판에 있다라는 느낌이 들도록 만들어 주었습니다. 게다가 스토리 진행에 중요하지 않은 일회성 NPC 조차 이름이 모두 나옴으로써 그들도 또한 한 명의 사람이라는 것을 표현하는 방식은 큰 충격이었습니다.
 
-![](https://github.com/JoonsuRyu/images/blob/master/Review/014/04.jpg?raw=true){: .align-center}
+![](/assets/images/Review/014/04.jpg){: .align-center}
 
-![](https://github.com/JoonsuRyu/images/blob/master/Review/014/05.jpg?raw=true){: .align-center}
+![](/assets/images/Review/014/05.jpg){: .align-center}
 
 잠입 미션에서의 연출도 뛰어났습니다. 특히 과거 회상 미션은 맥밀란 대위와 함께 잠입 임무를 진행하는 프라이스의 시점으로 진행하게 되는데, 이 때의 잠입 연출이 정말 대단했습니다. 위의 스크린샷을 보시면 대사를 하고 있는 맥밀란 대위가 길리슈트를 입고 엎드려 있는데 위장이 너무 뛰어나 게임을 하는 플레이어 조차도 눈치채지 못하는 경우가 많습니다. 저도 맥밀란 대위가 일어난 상황에서야 눈치를 챘기 때문에 이 부분에서 상당히 충격을 받았습니다.
 
-![](https://github.com/JoonsuRyu/images/blob/master/Review/014/06.jpg?raw=true){: .align-center}
+![](/assets/images/Review/014/06.jpg){: .align-center}
 
 난이도가 높은 게임을 좋아하시는 분들도 분명히 있습니다. 하지만 이 게임은 난이도를 조절할 수 있는 기능이 있는 만큼, 낮은 난이도를 선택했을 때는 그만큼 쉬워야 합니다. 하지만 원작이 오래된 게임이라서 그런지, 난이도를 낮춰도 어려운 것은 매한가지였습니다. 개인적인 느낌으로는 이 게임의 보통 난이도가 어드밴스드 워페어의 베테랑 모드보다도 체감난이도는 훨씬 어려웠습니다.
 
 저는 보통 난이도로 플레이하였는데, 플레이어는 조금만 잘못 움직여도 나와도 총알세례를 맞고 죽어버리는데 반해 적은 좀비처럼 이곳저곳에서 계속 튀어나옵니다. 게임에서는 주로 시가지에서 전투하게 되는데, 총에 맞은 다음 어디서 쏘는거지 하고 둘러보다가 못찾고 죽는 상황이 굉장히 많이 발생하였습니다. 적이 건물 옥상이나 발코니에서도 튀어나오고, 골목 사이사이에서도 갑자기 튀어나오는 경우가 많아 죽어보지 않은 미션이 없을 정도입니다.
 
-![](https://github.com/JoonsuRyu/images/blob/master/Review/014/07.jpg?raw=true){: .align-center}
+![](/assets/images/Review/014/07.jpg){: .align-center}
 
 특히 어려웠던 미션은 방송국 내부 전투와 과거 회상의 마지막 전투였습니다. 방송국 내부는 구조가 복잡한데다 복층 구조였기 때문에 고개만 들면 바로 총맞고 죽어버리기 일수라 구석에 숨어서 조금씩 조금씩 전진해야만 했습니다. 여기는 그런 방법이라도 통했지만, 과거 회상의 마지막 전투는 구석에 엎드려 개미처럼 몰려오는 적을 막아내야하는 디펜스라 정말 미친듯이 어려웠습니다. 이 캠페인만 10번 넘게 트라이했던 것으로 기억합니다. 보통 난이도임에도 이정도면 너무 어렵지 않나라는 생각이 듭니다.
 
-![](https://github.com/JoonsuRyu/images/blob/master/Review/014/08.jpg?raw=true){: .align-center}
+![](/assets/images/Review/014/08.jpg){: .align-center}
 
 여담으로 플레이 중 사망하면 위의 스크린샷처럼 전쟁에 관한 명언이 뜨면서 최근 저장했던 시점으로 돌아갑니다. 저는 자주 죽어서 많이 봤습니다.
 
 ## 총평
 
-![](https://github.com/JoonsuRyu/images/blob/master/Review/014/09.png?raw=true){: .align-center}
+![](/assets/images/Review/014/09.png){: .align-center}
 
 플레이 타임은 싱글 플레이 기준 7시간 남짓입니다. 아무리 요즘 AAA게임의 플레이타임이 길지 않고, 멀티 플레이가 주력인 게임이라고 하지만 7시간은 정말 너무하다 싶습니다. 심지어 제가 많이 죽으면서 플레이한 것이기 때문에 미션을 한번에 클리어한다고 치면 5시간이 채 안될지도 모릅니다.
 
