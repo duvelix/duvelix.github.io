@@ -2,14 +2,14 @@
 title: "레드 데드 리뎀션 GOTY Edition"
 permalink: /unboxing/red-dead-redemption-goty/
 classes: wide
-thumbnail: https://github.com/JoonsuRyu/images/blob/master/Unboxing/005/00.jpg?raw=true
+thumbnail: /assets/images/Unboxing/005/00.jpg
 categories:
   - interests
 tags:
   - unboxing
 ---
 
-![](https://github.com/JoonsuRyu/images/blob/master/Unboxing/005/00.jpg?raw=true){: .align-center}
+![](/assets/images/Unboxing/005/00.jpg){: .align-center}
 
 이번 휴가 때 어떤 게임을 마스터할지 고민하다가 락스타 게임즈의 레드 데드 리뎀션을 플레이해보기로 결정했습니다. 레드 데드 리뎀션은 2010년 최다 GOTY상을 수상한 명작으로, 한국에서도 정발이 되었습니다. 다만 한글화가 되지 않아 영어로 플레이해야 하는 불편함과 PC판 미출시로 인해 한국에서의 인지도는 높지 않은 편입니다.
 
@@ -17,23 +17,23 @@ tags:
 
 가격은 14.99달러에 아마존에서 구입했습니다. 제가 구입할 당시에는 할인 이벤트가 있었는데, 지금 찾아보니 그때보단 약간 비싼 18달러 정도에 판매하고 있습니다. 할인하지 않아도 가격이 그다지 비싼편은 아니기 때문에 XBOX ONE을 갖고 계시다면 구입할 가치가 충분해 보입니다.
 
-![](https://github.com/JoonsuRyu/images/blob/master/Unboxing/005/01.jpg?raw=true){: .align-center}
+![](/assets/images/Unboxing/005/01.jpg){: .align-center}
 
 사진에서는 비닐 포장이 되어 있지 않은데, 까먹고 사진을 찍기 전에 실수로 비닐을 먼저 벗겨버리는 바람에 그렇습니다. 원래는 비닐 포장은 물론 밀봉씰까지 붙어있습니다.
 
-![](https://github.com/JoonsuRyu/images/blob/master/Unboxing/005/02.jpg?raw=true){: .align-center}
+![](/assets/images/Unboxing/005/02.jpg){: .align-center}
 
 뒷면에는 XBOX 360과 XBOX ONE에서 플레이 가능하다고 설명이 나와있습니다. 특히 XBOX ONE X에서는 4K로 플레이가 가능하기 때문에 레드 데드 리뎀션을 제대로 즐기기 위해서는 XBOX ONE X가 필요합니다.
 
-![](https://github.com/JoonsuRyu/images/blob/master/Unboxing/005/03.jpg?raw=true){: .align-center}
+![](/assets/images/Unboxing/005/03.jpg){: .align-center}
 
 케이스를 열면 디스크와 문서가 들어있습니다. 특이하게 디스크가 왼쪽에 붙어있습니다. 오른쪽에는 락스타 계정 안내와 지도가 첨부되어 있습니다. 지도까지 펼쳐서 사진을 찍고 싶었는데, 지도를 펼치니 너무 커서 사진을 찍기가 어려웠습니다.
 
-![](https://github.com/JoonsuRyu/images/blob/master/Unboxing/005/04.jpg?raw=true){: .align-center}
+![](/assets/images/Unboxing/005/04.jpg){: .align-center}
 
 게임 디스크는 두 장이나 들어있습니다. 첫번째 디스크는 싱글 플레이를 위한 디스크고, 두번째 디스크는 DLC와 멀티 플레이를 위한 디스크라고 적혀있습니다. 2010년 출시 게임이니 용량이 엄청나게 크지는 않을텐데, DVD로 저장되었기 때문에 나뉘어 있는 것 같습니다. 최근 게임들은 모두 블루레이 디스크로 출시되는데, 아마도 예전 게임이라 DVD로 제공되지 않나 생각이 듭니다.
 
-![](https://github.com/JoonsuRyu/images/blob/master/Unboxing/005/05.jpg?raw=true){: .align-center}
+![](/assets/images/Unboxing/005/05.jpg){: .align-center}
 
 레드 데드 리뎀션은 비한글화로 정발되었기 때문에, 유통사에서 게임 공략본 PDF를 제공합니다. 싱글 플레이의 스토리가 중요한 게임이기 때문에 영어에 자신이 있는 편이 아니라면 가급적 PDF 파일을 제본해서 플레이 시 참고하는 것을 권장합니다.
 

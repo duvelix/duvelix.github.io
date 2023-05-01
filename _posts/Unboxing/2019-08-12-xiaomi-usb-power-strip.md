@@ -2,50 +2,50 @@
 title: "샤오미 USB 멀티탭 블랙"
 permalink: /unboxing/xiaomi-usb-power-strip/
 classes: wide
-thumbnail: https://github.com/JoonsuRyu/images/blob/master/Unboxing/009/00.jpg?raw=true
+thumbnail: /assets/images/Unboxing/009/00.jpg
 categories:
   - interests
 tags:
   - unboxing
 ---
 
-![](https://github.com/JoonsuRyu/images/blob/master/Unboxing/009/00.jpg?raw=true){: .align-center}
+![](/assets/images/Unboxing/009/00.jpg){: .align-center}
 
 최근에 Wii U를 구매해서 배송을 기다리는 중인데, 북미판을 구매했기 때문에 한국에서 사용하려면 돼지코라 불리는 변환 어댑터가 필요합니다. Wii U에는 게임기 본체와 게임 패드용 전원이 따로 있기 때문에 2개의 돼지코를 구매해야 했는데, 돼지코를 2개나 구매할 바에는 멀티 플러그 멀티탭을 구매하는게 나을 것 같아 샤오미 멀티탭을 구매하였습니다. 개인적으로 중국 브랜드 물건은 여러가지 이유로 선호하지 않는데, 국내에서 멀티 플러그 멀티탭을 아무리 찾아봐도 나오지 않아서 어쩔 수 없이 구매했습니다. 저는 G마켓에서 쿠폰과 스마일 캐시를 동원해 16,000원 정도에 구매하였고 배송은 약 일주일이 걸렸습니다.
 
-![](https://github.com/JoonsuRyu/images/blob/master/Unboxing/009/01.jpg?raw=true){: .align-center}
+![](/assets/images/Unboxing/009/01.jpg){: .align-center}
 
 중국의 플러그는 한국과 다르기 때문에 샤오미 멀티탭을 국내에서 사용하기 위해서는 별도로 돼지코가 필요합니다. 다행히 저는 판매자분이 돼지코를 같이 넣어주셔서 별도로 구매할 필요가 없을 것 같습니다.
 
-![](https://github.com/JoonsuRyu/images/blob/master/Unboxing/009/02.jpg?raw=true){: .align-center}
+![](/assets/images/Unboxing/009/02.jpg){: .align-center}
 
 판매자분이 택배를 보낼 때 소포에 담아서 보내주시지 않고 비닐로 담아 보내주셨습니다. 그 때문에 사진처럼 박스가 많이 상했지만, 멀티탭은 박스까지 보관할 필요가 없기 때문에 크게 문제가 되진 않았습니다.
 
-![](https://github.com/JoonsuRyu/images/blob/master/Unboxing/009/03.jpg?raw=true){: .align-center}
+![](/assets/images/Unboxing/009/03.jpg){: .align-center}
 
 테이프를 제거하고 제품을 찍어봤습니다.
 
-![](https://github.com/JoonsuRyu/images/blob/master/Unboxing/009/04.jpg?raw=true){: .align-center}
+![](/assets/images/Unboxing/009/04.jpg){: .align-center}
 
 박스를 열고 구성품을 확인하니 멀티탭이 비닐에 포장되어 있습니다. 지난번에 개봉했던 LISA 셀카봉과 비슷한 재질의 비닐로 보입니다.
 
-![](https://github.com/JoonsuRyu/images/blob/master/Unboxing/009/05.jpg?raw=true){: .align-center}
+![](/assets/images/Unboxing/009/05.jpg){: .align-center}
 
 비닐을 제거하니 멀티탭이 깔끔하게 묶여 있습니다. 또한 사용 설명서도 첨부되어 있습니다.
 
-![](https://github.com/JoonsuRyu/images/blob/master/Unboxing/009/06.jpg?raw=true){: .align-center}
+![](/assets/images/Unboxing/009/06.jpg){: .align-center}
 
 중국 내수용 제품인지, 사용 설명서는 중국어로만 적혀있어 읽을 수는 없었습니다.
 
-![](https://github.com/JoonsuRyu/images/blob/master/Unboxing/009/07.jpg?raw=true){: .align-center}
+![](/assets/images/Unboxing/009/07.jpg){: .align-center}
 
 중국산 물건이라 걱정하긴 했는데, 나름 괜찮은 마감으로 되어있습니다. 꽂을 수 있는 전원 단자가 3개, USB 단자가 3개 있습니다. 판매하는 색상은 블랙/화이트 2종류인데, 저는 Wii U를 검은색으로 구매했기 때문에 깔맞춤을 위해 검은색으로 구매했습니다.
 
-![](https://github.com/JoonsuRyu/images/blob/master/Unboxing/009/08.jpg?raw=true){: .align-center}
+![](/assets/images/Unboxing/009/08.jpg){: .align-center}
 
 중국은 여러 전원 단자를 혼합해서 사용하고 있는데, 이 제품에 붙어있는 단자는 Type I 단자입니다. 한국에서는 Type C/F, 미국/일본은 Type A를 사용하는데 실제로 Type I를 보는 것은 처음입니다.
 
-![](https://github.com/JoonsuRyu/images/blob/master/Unboxing/009/09.jpg?raw=true){: .align-center}
+![](/assets/images/Unboxing/009/09.jpg){: .align-center}
 
 판매자분이 보내주신 돼지코를 끼우니 이런 모양이 됩니다. 돼지코가 흰색이라 흰색을 구매할껄 그랬나 하는 후회도 약간 듭니다.
 

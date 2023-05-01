@@ -2,35 +2,35 @@
 title: "슈퍼 마리오 3D 랜드"
 permalink: /unboxing/super-mario-3d-land/
 classes: wide
-thumbnail: https://github.com/JoonsuRyu/images/blob/master/Unboxing/008/00.jpg?raw=true
+thumbnail: /assets/images/Unboxing/008/00.jpg
 categories:
   - interests
 tags:
   - unboxing
 ---
 
-![](https://github.com/JoonsuRyu/images/blob/master/Unboxing/008/00.jpg?raw=true){: .align-center}
+![](/assets/images/Unboxing/008/00.jpg){: .align-center}
 
 최근 젤다의 전설 : 신들의 트라이포스 2 게임을 클리어하고 이제 어떤 게임을 할까 고민하다 3DS 명작 중 하나인 슈퍼 마리오 3D 랜드를 해보기로 결정했습니다. 아직 못해본 게임들도 많지만 이왕이면 다른 장르의 게임을 하는게 더 색다른 느낌을 줄 것 같았습니다. 슈퍼 마리오 3D 랜드는 닌텐도 3DS의 런칭 타이틀이라 나온지는 꽤 되어 최근에는 굉장히 저렴한 값에 구입이 가능합니다. 저는 8000원 정도에 구매했습니다.
 
-![](https://github.com/JoonsuRyu/images/blob/master/Unboxing/008/01.jpg?raw=true){: .align-center}
+![](/assets/images/Unboxing/008/01.jpg){: .align-center}
 
 게임 팩 앞면에는 3D 마리오 답게 마리오와 배경이 모두 입체적으로 디자인 되었습니다. 닌텐도 퍼스트 타이틀인데다 3DS의 런칭 타이틀이기 때문에 3D 효과에 신경을 꽤 많이 썼다고 합니다. 아직 플레이 해보진 않았지만, 3D 효과를 좋아하는 저로써는 상당히 기대됩니다. 마리오 변신의 핵심이라고 할 수 있는 꽃이 오른쪽 아래에 나와 있고, 왼쪽 가운데에는 너구리 꼬리가 달린 굼바가 있습니다. 바로 위에 나뭇잎까지 있는 것으로 보아 너구리마리오가 이 게임의 핵심 변신으로 보입니다.
 
-![](https://github.com/JoonsuRyu/images/blob/master/Unboxing/008/02.jpg?raw=true){: .align-center}
+![](/assets/images/Unboxing/008/02.jpg){: .align-center}
 
 뒷면에는 이번 게임에서 가능한 변신이 정리되어 있습니다. 파이어마리오는 너무 당연한 변신이라 나와있지 않은 것 같습니다. 너구리마리오는 슈퍼 마리오 브라더스3에서 나왔었는데도 불구하고 새로운 변신이라고 표기되어 있습니다. 프로펠러박스 또한 비슷한 변신으로 프로펠러마리오가 있는데 어떤 차이가 있을지는 모르겠습니다. 완전히 새로운 변신은 부메랑마리오 하나로 보입니다. 또한 오른쪽 위에 골 깃대가 나오는 것으로 보아 코스 클리어형 마리오 게임임을 알 수 있습니다.
 
-![](https://github.com/JoonsuRyu/images/blob/master/Unboxing/008/03.jpg?raw=true){: .align-center}
+![](/assets/images/Unboxing/008/03.jpg){: .align-center}
 
 닌텐도 3DS의 게임 박스에는 대부분 매뉴얼이 포함되어 있지 않고 광고지만 들어있는 경우가 많았는데, 런칭 타이틀이라 그런지 매뉴얼이 동봉되어 있습니다. 매뉴얼 자체는 홈페이지에서도 PDF 파일로도 제공하지만([1], [2]) 이렇게 게임 팩에 동봉해 주는 것이 더 좋다고 생각합니다. 게임 팩을 열었을 때 칩 하나만 달랑 있으면 뭔가 허전해 보이기 때문입니다.
 
-![](https://github.com/JoonsuRyu/images/blob/master/Unboxing/008/04.jpg?raw=true){: .align-center}
+![](/assets/images/Unboxing/008/04.jpg){: .align-center}
 
-![](https://github.com/JoonsuRyu/images/blob/master/Unboxing/008/05.jpg?raw=true){: .align-center}
+![](/assets/images/Unboxing/008/05.jpg){: .align-center}
 
 매뉴얼에는 마리오가 할 수 있는 동작들을 정리해놨습니다. 기본 조작과 엉덩이 찍기, 벽차기는 뉴 슈퍼마리오 브라더스에서 있던 동작과 같습니다. 여기에 앞 구르기, 멀리뛰기, 공중 옆돌기 등의 동작이 새로 추가된 것으로 보입니다.
 
-![](https://github.com/JoonsuRyu/images/blob/master/Unboxing/008/06.jpg?raw=true){: .align-center}
+![](/assets/images/Unboxing/008/06.jpg){: .align-center}
 
 게임 칩의 모양입니다. 닌텐도 3DS 게임은 게임 칩 디자인도 개성있고 게임의 특징을 잘 표현해서 개봉을 할 때마다 기대를 하게 만드는데, 이번에도 역시 꽤나 괜찮은 칩 디자인입니다. 어디선가 본 것 같은 디자인 같은데, 생각해보니 슈퍼 마리오 오디세이 메뉴 화면의 마리오와 비슷한 구도인 것 같습니다.
