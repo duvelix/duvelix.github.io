@@ -2,14 +2,14 @@
 title: "데이즈 곤 초회판"
 permalink: /unboxing/days-gone-first-edition/
 classes: wide
-thumbnail: https://github.com/JoonsuRyu/images/blob/master/Unboxing/047/00.jpg?raw=true
+thumbnail: /assets/images/Unboxing/047/00.jpg
 categories:
   - interests
 tags:
   - unboxing
 ---
 
-![](https://github.com/JoonsuRyu/images/blob/master/Unboxing/047/00.jpg?raw=true){: .align-center}
+![](/assets/images/Unboxing/047/00.jpg){: .align-center}
 
 생각해보니 그동안 개봉기를 작성하면서, 의외로 플레이스테이션 게임을 개봉한 적이 없다는 사실을 최근 깨달았습니다. 그래서 오늘은 가지고 있던 데이즈 곤 초회판을 개봉해볼까 합니다.
 
@@ -19,24 +19,24 @@ tags:
 
 최근에는 각종 버그들을 해결하고 여러 업데이트를 통해 게임성을 크게 개선했다고 하니 기대해봐도 좋을 것 같습니다.
 
-![](https://github.com/JoonsuRyu/images/blob/master/Unboxing/047/01.jpg?raw=true){: .align-center}
+![](/assets/images/Unboxing/047/01.jpg){: .align-center}
 
 케이스 앞면에는 초회판임을 알리는 스티커가 오른쪽 하단에 붙어있습니다. 손톱으로 잘 긁으면 뗄 수 있는 재질이긴 하지만, 굳이 떼고 싶을 정도로 흉측하게 생기진 않았기 때문에 저는 그냥 놔두기로 했습니다.
 
 패키지 중심부에 나온 캐릭터가 주인공인 것 같은데, 주인공의 직업이 폭주족인 것 처럼 보입니다. 게임에서 나오는 직업들 중에서는 꽤 특이한 직업이네요.
 
-![](https://github.com/JoonsuRyu/images/blob/master/Unboxing/047/02.jpg?raw=true){: .align-center}
+![](/assets/images/Unboxing/047/02.jpg){: .align-center}
 
 뒷면에는 여타 게임 케이스처럼 게임의 대략적인 주제와 플레이 모습을 나타내고 있습니다. 더 라스트 오브 어스처럼 좀비 같은 괴물을 상대로 하는 게임인 것 같습니다. 앞면에서 나왔던 바이크는 그냥 이동수단인 줄 알았는데, 바이크를 업그레이드할 수 있다는 표현으로 보아 게임 플레이에서도 핵심적인 역할을 갖고 있는 것 같습니다.
 
-![](https://github.com/JoonsuRyu/images/blob/master/Unboxing/047/03.jpg?raw=true){: .align-center}
+![](/assets/images/Unboxing/047/03.jpg){: .align-center}
 
 케이스를 열어보니 오른쪽에는 디스크, 왼쪽에는 초회판 전용 코드가 나와 있습니다. 초회판이라서 구성물이 좀 푸짐할 줄 알았는데, 종이 달랑 한장만 추가되어 있어 조금은 실망스러웠습니다. 코드의 유효기간은 넉넉한 편이네요. 그래도 혹시 모르니 열자마자 등록은 해 두었습니다.
 
-![](https://github.com/JoonsuRyu/images/blob/master/Unboxing/047/04.jpg?raw=true){: .align-center}
+![](/assets/images/Unboxing/047/04.jpg){: .align-center}
 
 코드가 적혀져 있는 종이 앞면에는 추가된 콘텐츠가 어떤 것들이 있는지 나와 있습니다. 구성품 자체는 실망스러웠지만 이 종이 앞면 디자인은 멋있어서 마음에 듭니다.
 
-![](https://github.com/JoonsuRyu/images/blob/master/Unboxing/047/05.jpg?raw=true){: .align-center}
+![](/assets/images/Unboxing/047/05.jpg){: .align-center}
 
 디스크도 테마 색상인 검은색으로 멋지게 디자인되어 있습니다. 로고의 모습이 케이스 앞면과는 다르게 녹슨 철 같은 재질로 보입니다. 게임 분위기가 (아마도) 포스트 아포칼립스인 것을 나타내는 것 같습니다.

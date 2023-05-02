@@ -2,14 +2,14 @@
 title: "헤일로 워즈 2 얼티밋 에디션"
 permalink: /unboxing/halo-wars-2-ultimate-edition/
 classes: wide
-thumbnail: https://github.com/JoonsuRyu/images/blob/master/Unboxing/051/00.jpg?raw=true
+thumbnail: /assets/images/Unboxing/051/00.jpg
 categories:
   - interests
 tags:
   - unboxing
 ---
 
-![](https://github.com/JoonsuRyu/images/blob/master/Unboxing/051/00.jpg?raw=true){: .align-center}
+![](/assets/images/Unboxing/051/00.jpg){: .align-center}
 
 안녕하세요, 오늘은 오랜만에 XBOX 게임을 하나 개봉하려고 합니다. 요즘 시간이 없어서 게임도 거의 못하고 있는데, 언박싱하는 게임만 많아진 것 같네요...
 
@@ -19,21 +19,21 @@ tags:
 
 그런데 지금 글을 쓰면서 확인하니 헤일로 워즈 2는 XBOX Game Pass에 속해있지 않더군요. 구매하길 잘 한 것 같습니다.
 
-![](https://github.com/JoonsuRyu/images/blob/master/Unboxing/051/01.jpg?raw=true){: .align-center}
+![](/assets/images/Unboxing/051/01.jpg){: .align-center}
 
 원래 XBOX 플랫폼으로 나오는 퍼스트 파티 게임의 얼티밋 에디션은 스틸북으로 판매됩니다. 기어스 오브 워 4도 그랬고 포르자 호라이즌 4도 그랬죠. 그런데 이 게임은 얼티밋 에디션인데도 불구하고 플라스틱 케이스로 출시되었습니다. 개인적으로 스틸북을 좋아하는 편이 아니라 상관없기는 한데, 스틸북 매니아 분들이 많기 때문에 이 점을 싫어하시는 분도 계실 것 같습니다.
 
-![](https://github.com/JoonsuRyu/images/blob/master/Unboxing/051/02.jpg?raw=true){: .align-center}
+![](/assets/images/Unboxing/051/02.jpg){: .align-center}
 
 뒷면에는 헤일로 유니버스를 활용한 실시간 전략 게임이라는 소개문이 나와 있습니다. RTS 특성상 싱글 플레이는 한계가 있기 때문에 소개문에서도 멀티 플레이를 강조한 것 같습니다. XBOX를 포함한 대부분의 콘솔 기기는 멀티 플레이가 유료이기 때문에, 이 게임도 제대로 즐기기 위해서는 최소한 XBOX Gold는 별도로 구매를 하셔야 할 것 같네요.
 
-![](https://github.com/JoonsuRyu/images/blob/master/Unboxing/051/03.jpg?raw=true){: .align-center}
+![](/assets/images/Unboxing/051/03.jpg){: .align-center}
 
 케이스를 열어보면 디스크와 추가 컨텐츠 코드가 담긴 종이가 보입니다. 역시 XBOX 게임 답게 디스크가 왼쪽에 있네요. 디스크 뒷면에는 뭔가 빼곡하게 글이 적혀있는데, 주의사항이 적혀있기 때문에 크게 신경쓰실 필요는 없습니다. 이왕이면 메뉴얼도 같이 넣어줬으면 좋았을텐데, 얼티밋 에디션인데도 불구하고 그런건 없네요.
 
-![](https://github.com/JoonsuRyu/images/blob/master/Unboxing/051/04.jpg?raw=true){: .align-center}
+![](/assets/images/Unboxing/051/04.jpg){: .align-center}
 
-![](https://github.com/JoonsuRyu/images/blob/master/Unboxing/051/05.jpg?raw=true){: .align-center}
+![](/assets/images/Unboxing/051/05.jpg){: .align-center}
 
 추가 컨텐츠 코드가 담긴 종이에는 포함되어 있는 내용이 나와 있습니다. 보통 추가 컨텐츠 코드로는 DLC나 아이템, 스킨 등이 주어지는데, 이 게임은 특이하게 전작의 완전판이 들어있습니다. 저처럼 이 게임으로 헤일로 워즈를 입문하는 사람한테는 매우 좋은 구성이긴 한데, 전작을 구매했던 사람이라면 조금 허탈해하지 않을까 생각이 드네요.
 
@@ -41,6 +41,6 @@ tags:
 
 여담으로 XBOX는 웹 사이트에서 리딤 코드를 입력하는 페이지를 찾는게 어렵습니다. 나름 XBOX 게임을 꽤 많이 구매했는데, 아직도 리딤 코드를 입력하는 페이지를 한번에 찾을 수가 없네요.
 
-![](https://github.com/JoonsuRyu/images/blob/master/Unboxing/051/06.jpg?raw=true){: .align-center}
+![](/assets/images/Unboxing/051/06.jpg){: .align-center}
 
 디스크 디자인은 일단 표지 디자인 우려먹기 같은 것이 아니라 일단 마음에 듭니다. 디스크 디자인에는 보통 게임의 특징이 나타나있는데, 사람과 다른 괴물 종족이 둘이 대립하는 구도로 그려져 있는 것으로 보아 두 종족으로 구성된 RTS 게임으로 보입니다. 종족이 둘 뿐이면 아무래도 전략이 고착화되고 상대 종족이 단조로울 것으로 생각되긴 하는데, 평점이 좋다보니 제가 모르는 뭔가 색다른 점이 있지 않을까 기대중입니다. 곧 있으면 여름 휴가가 다가오는데, 그 때 한번 플레이해볼까 생각하고 있습니다.

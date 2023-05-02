@@ -2,18 +2,18 @@
 title: "톰과 제리 3종 블루레이 콤보팩"
 permalink: /unboxing/tom-and-jerry-bluray-combo/
 classes: wide
-thumbnail: https://github.com/JoonsuRyu/images/blob/master/Unboxing/050/00.jpg?raw=true
+thumbnail: /assets/images/Unboxing/050/00.jpg
 categories:
   - interests
 tags:
   - unboxing
 ---
 
-![](https://github.com/JoonsuRyu/images/blob/master/Unboxing/050/00.jpg?raw=true){: .align-center}
+![](/assets/images/Unboxing/050/00.jpg){: .align-center}
 
 안녕하세요, 오늘은 톰과 제리 3종 블루레이 콤보팩을 개봉하려고 합니다. 톰과 제리는 어렸을 때 케이블 방송에서 종종 재밌게 봤는데, 최근 유튜브에 올라와있는 몇몇 에피소드를 보고 추억에 젖어 바로 구매했습니다. 가격도 배송비 포함해서 3만원이 채 안되었고, 유튜브에는 전체 에피소드가 올라와 있는 것도 아닌데다 화질이 너무 안좋았거든요.
 
-![](https://github.com/JoonsuRyu/images/blob/master/Unboxing/050/01.jpg?raw=true){: .align-center}
+![](/assets/images/Unboxing/050/01.jpg){: .align-center}
 
 낱개로도 구매가 가능했지만 3개의 시리즈를 합본으로 사는 편이 훨씬 저렴했기 때문에 저는 합본으로 구매했습니다. 어차피 모든 에피소드를 다 보고 싶기도 했구요. 합본으로 사면 위와 같이 오링 케이스에 담겨 포장이 되어 있습니다.
 
@@ -21,31 +21,31 @@ tags:
 
 왼쪽 하단에는 6개의 디스크가 들어있다고 하는데, 3개는 블루레이 디스크이고 나머지 3개는 DVD 디스크입니다. 오른쪽 하단에 블루레이와 DVD 로고가 조그맣게 나와있는 것을 볼 수 있습니다.
 
-![](https://github.com/JoonsuRyu/images/blob/master/Unboxing/050/02.jpg?raw=true){: .align-center}
+![](/assets/images/Unboxing/050/02.jpg){: .align-center}
 
 뒷면에는 수록되어 있는 모든 에피소드 목록이 나와 있습니다. 그런데 에피소드 목록이 영어, 일본어, 한국어, 중국어로 모두 표기가 되어 있습니다. 영상 자체도 4가지 언어로 더빙이 되어 있다보니 에피소드 목록도 4가지 언어로 모두 표기한 것 같은데... 영어까지는 이해가 되지만 굳이 정발판에 일본어와 중국어 에피소드 이름까지 넣을 필요가 있었을까 싶네요.
 
-![](https://github.com/JoonsuRyu/images/blob/master/Unboxing/050/03.gif?raw=true){: .align-center}
+![](/assets/images/Unboxing/050/03.gif){: .align-center}
 
 여담으로, 요즘 인터넷에서 흔히 보이는 제리 짤방은 마지막 에피소드인 피아노 콘서트(영문명 The Cat Concert)에서 나옵니다.
 
-![](https://github.com/JoonsuRyu/images/blob/master/Unboxing/050/04.jpg?raw=true){: .align-center}
+![](/assets/images/Unboxing/050/04.jpg){: .align-center}
 
 옆면에는 각 시리즈의 삽화가 그려져 있습니다.
 
-![](https://github.com/JoonsuRyu/images/blob/master/Unboxing/050/05.jpg?raw=true){: .align-center}
+![](/assets/images/Unboxing/050/05.jpg){: .align-center}
 
 오링 케이스를 벗겨보면 시리즈 별로 각각 별도의 케이스에 담겨있는 것을 볼 수 있습니다. 총 3개의 시리즈로, 한 시리즈에 DVD 디스크 1장, 블루레이 디스크 1장이 들어있습니다. 케이스의 디자인은 이전 사진에 보여드린 삽화 이미지와 동일합니다.
 
-![](https://github.com/JoonsuRyu/images/blob/master/Unboxing/050/06.jpg?raw=true){: .align-center}
+![](/assets/images/Unboxing/050/06.jpg){: .align-center}
 
 첫 번째 시리즈의 케이스는 초록색 테마로 디자인 되어 있습니다. 기억상에 이렇게 꿀벌이 나오는 에피소드는 없었던 것 같은데, 제가 기억을 못하는 건지 아니면 관계없는 삽화가 그려져 있는지는 잘 모르겠습니다.
 
-![](https://github.com/JoonsuRyu/images/blob/master/Unboxing/050/07.jpg?raw=true){: .align-center}
+![](/assets/images/Unboxing/050/07.jpg){: .align-center}
 
 뒷면에는 오링 케이스와 마찬가지로 수록되어 있는 에피소드 목록이 나와 있습니다. 4가지 언어로 더빙된 영상이 모두 수록되어 있다보니, 들어있는 에피소드는 많지 않은 편입니다.
 
-![](https://github.com/JoonsuRyu/images/blob/master/Unboxing/050/08.jpg?raw=true){: .align-center}
+![](/assets/images/Unboxing/050/08.jpg){: .align-center}
 
 케이스를 열어보면 왼쪽에는 DVD, 오른쪽에는 블루레이 디스크가 들어있습니다. DVD 디스크는 화질이 블루레이보다 떨어진다는 것을 표현하고 싶었는지, 디스크 이미지가 약간 흐릿하게 나와있습니다. 이 색감이 실제 재생했을 때의 색감과 비슷하다면, 화질 차이를 확실히 비교할 수 있게 보여준다는 점에서 호평하고 싶습니다.
 
@@ -53,29 +53,29 @@ DVD 디스크에서는 DVD 로고 왼쪽에 HD 리마스터링이 되어있다�
 
 전체적으로는 마음에 들지만, 배경 부분이 흰색으로 밋밋한 점이 아쉽습니다. 가격을 생각해봤을 때는 충분히 넘어갈 수 있는 점이긴 합니다.
 
-![](https://github.com/JoonsuRyu/images/blob/master/Unboxing/050/09.jpg?raw=true){: .align-center}
+![](/assets/images/Unboxing/050/09.jpg){: .align-center}
 
 두 번째 시리즈의 케이스 디자인은 오링 케이스의 디자인과 동일합니다. 아니, 오링 케이스의 디자인이 이걸 그대로 갖다 썼다고 해야 할까요? 어느 쪽이든 우려먹는 것을 좋아하지 않는 저로써는 약간 불만이 있네요.
 
 두 번째 시리즈의 삽화에는 이전이나 이후와 다르게 스파이크 불독이 같이 나와 있습니다.
 
-![](https://github.com/JoonsuRyu/images/blob/master/Unboxing/050/10.jpg?raw=true){: .align-center}
+![](/assets/images/Unboxing/050/10.jpg){: .align-center}
 
 뒷면에는 첫 번째 시리즈와 동일하게 수록되어 있는 에피소드 목록이 나와 있습니다.
 
-![](https://github.com/JoonsuRyu/images/blob/master/Unboxing/050/11.jpg?raw=true){: .align-center}
+![](/assets/images/Unboxing/050/11.jpg){: .align-center}
 
 케이스를 열어보면 역시 왼쪽에 DVD, 오른쪽에 블루레이가 나와 있습니다. DVD 디스크의 물빠진 색감을 표현한 것도 동일합니다.
 
-![](https://github.com/JoonsuRyu/images/blob/master/Unboxing/050/12.jpg?raw=true){: .align-center}
+![](/assets/images/Unboxing/050/12.jpg){: .align-center}
 
 마지막 세 번째 시리즈입니다. 세 번째 테마 색상은 빨강색이네요.
 
-![](https://github.com/JoonsuRyu/images/blob/master/Unboxing/050/13.jpg?raw=true){: .align-center}
+![](/assets/images/Unboxing/050/13.jpg){: .align-center}
 
 뒷면에는 역시 마찬가지로 에피소드 리스트가 나와 있습니다.
 
-![](https://github.com/JoonsuRyu/images/blob/master/Unboxing/050/14.jpg?raw=true){: .align-center}
+![](/assets/images/Unboxing/050/14.jpg){: .align-center}
 
 케이스를 열어봐도 이전과 큰 차이점이 없습니다. 최근 여러 블루레이를 개봉하면서 깔맞춤이 되지 않아 불편한적이 많았는데, 이번에는 다행히 세 시리즈 모두 디자인과 구성이 깔맞춤 되어있어 좋았습니다. 케이스 겉표지 뒷면이 너무 하얀색인게 좀 그렇긴 한데, 어차피 케이스 안쪽까지 보는건 아니니까요.
 

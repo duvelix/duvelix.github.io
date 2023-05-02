@@ -2,104 +2,104 @@
 title: "셜록 시리즈 블루레이"
 permalink: /unboxing/sherlock-series-bluray/
 classes: wide
-thumbnail: https://github.com/JoonsuRyu/images/blob/master/Unboxing/046/00.jpg?raw=true
+thumbnail: /assets/images/Unboxing/046/00.jpg
 categories:
   - interests
 tags:
   - unboxing
 ---
 
-![](https://github.com/JoonsuRyu/images/blob/master/Unboxing/046/00.jpg?raw=true){: .align-center}
+![](/assets/images/Unboxing/046/00.jpg){: .align-center}
 
 예전에 대학원 모 강의에서, 가르치시던 교수님이 "셜록 드라마 만큼은 공부할 시간을 쪼개서라도 봐야한다" 라고 극찬을 하신 적이 있습니다. 해외 드라마와 영화를 즐겨보시던 분이셨는데, 그렇게 조예(?)가 깊으신 분이 추천할 정도면 어떻길래 하는 궁금증이 있었습니다. 그러면서도 "대신 시즌 4의 에피소드 1까지만 보는게 Optimal한 시청이다" 라고 추가로 말씀하셨지만요.
 
-![](https://github.com/JoonsuRyu/images/blob/master/Unboxing/046/01.jpg?raw=true){: .align-center}
+![](/assets/images/Unboxing/046/01.jpg){: .align-center}
 
 여튼 이 드라마의 내용이 궁금했던 저는 블루레이를 구매하기로 결정했습니다. 넷플릭스에서도 시청할 수 있긴 하지만, 한국어 더빙이 지원되지 않는 것으로 알고 있습니다. 거기에 제가 실물 패키지를 선호하는 이유도 있긴 하지만요.
 
-![](https://github.com/JoonsuRyu/images/blob/master/Unboxing/046/02.jpg?raw=true){: .align-center}
+![](/assets/images/Unboxing/046/02.jpg){: .align-center}
 
 시즌 1부터 하나하나 보겠습니다. 케이스에는 주인공인 홈즈와 왓슨이 멋지게 찍은 사진이 나와있습니다. 한국어 더빙 때문인지 오른쪽 하단에 KBS Media 로고가 있네요.
 
-![](https://github.com/JoonsuRyu/images/blob/master/Unboxing/046/03.jpg?raw=true){: .align-center}
+![](/assets/images/Unboxing/046/03.jpg){: .align-center}
 
 뒷면에는 수록된 에피스도의 제목과 음성/자막 정보가 나와 있습니다. 물론 한국어 더빙도 포함되어 있습니다. 더빙에 대한 호불호는 사람마다 다르지만, 같은 영화나 드라마라도 더빙과 자막판의 느낌이 다르기 때문에 저는 더빙이 포함되어 있는 블루레이를 좋아합니다. 
 
-![](https://github.com/JoonsuRyu/images/blob/master/Unboxing/046/04.jpg?raw=true){: .align-center}
+![](/assets/images/Unboxing/046/04.jpg){: .align-center}
 
 케이스를 열어보면 2개의 디스크가 양쪽에 하나씩 있습니다. 3개의 에피소드만 수록되어 있지만, 각각의 에피소드 길이가 길다보니 한 디스크에 2개의 에피소드만 수록한 것으로 보입니다.
 
 디스크 디자인은 굉장히 마음에 듭니다. 두 명의 주인공인 홈즈와 왓슨이 각각 디스크 하나씩을 장식하고 있습니다. 달랑 디스크만 있는 점을 빼면 완벽한 구성이라고 생각합니다.
 
-![](https://github.com/JoonsuRyu/images/blob/master/Unboxing/046/05.jpg?raw=true){: .align-center}
+![](/assets/images/Unboxing/046/05.jpg){: .align-center}
 
 디스크를 꺼내보니 놀랍게도 속표지에도 뭔가 글이 있었습니다. 보통 속표지에는 일러스트 같은 것만 있는 경우가 대부분이었는데, 여기에는 각 에피소드 별 스토리 요약본이 나와 있습니다. 읽기에는 좀 불편하지만, 넣어준 게 어딘가요.
 
-![](https://github.com/JoonsuRyu/images/blob/master/Unboxing/046/06.jpg?raw=true){: .align-center}
+![](/assets/images/Unboxing/046/06.jpg){: .align-center}
 
 시즌 2의 케이스 디자인도 시즌 1과 유사합니다. 중심부에 홈즈와 왓슨이 자리잡고 있고, 배경에 각 에피소드별 빌런이 흐릿하게 비친 모습입니다. 역시 KBS Media 로고가 오른쪽 하단에 자리잡고 있습니다.
 
-![](https://github.com/JoonsuRyu/images/blob/master/Unboxing/046/07.jpg?raw=true){: .align-center}
+![](/assets/images/Unboxing/046/07.jpg){: .align-center}
 
 뒷면에는 시즌 1 케이스와 비슷하게 수록된 에피스도 목록과 음성 및 자막 설명이 나와있습니다. 한국어 더빙 음성은 역시 포함되어 있습니다.
 
-![](https://github.com/JoonsuRyu/images/blob/master/Unboxing/046/08.jpg?raw=true){: .align-center}
+![](/assets/images/Unboxing/046/08.jpg){: .align-center}
 
 시즌 1처럼 홈즈와 왓슨이 디스크 하나씩을 장식하고 있습니다. 왓슨은 표정조차 비슷하네요.
 
-![](https://github.com/JoonsuRyu/images/blob/master/Unboxing/046/09.jpg?raw=true){: .align-center}
+![](/assets/images/Unboxing/046/09.jpg){: .align-center}
 
 디스크를 분리해보면 역시 속표지에 에피소드별 스토리가 간략하게 요약되어 있습니다. 시즌 1보다 가독성은 더 좋아진 것 같습니다. 자세히 보니 블루레이 케이스의 투명도가 조금 높아진 것 같기도 하네요.
 
-![](https://github.com/JoonsuRyu/images/blob/master/Unboxing/046/10.jpg?raw=true){: .align-center}
+![](/assets/images/Unboxing/046/10.jpg){: .align-center}
 
-![](https://github.com/JoonsuRyu/images/blob/master/Unboxing/046/11.jpg?raw=true){: .align-center}
+![](/assets/images/Unboxing/046/11.jpg){: .align-center}
 
 시즌 3에서도 홈즈와 왓슨이 케이스 앞면을 차지하고 있습니다. 전체적으로 시즌 2와 유사하네요. 빌런이나 주변 인물로 보이는 사람들이 흐릿하게 배경을 장식하고 있습니다. KBS Media 로고가 있으므로, 한국어 더빙도 물론 포함되어 있습니다.
 
-![](https://github.com/JoonsuRyu/images/blob/master/Unboxing/046/12.jpg?raw=true){: .align-center}
+![](/assets/images/Unboxing/046/12.jpg){: .align-center}
 
-![](https://github.com/JoonsuRyu/images/blob/master/Unboxing/046/13.jpg?raw=true){: .align-center}
+![](/assets/images/Unboxing/046/13.jpg){: .align-center}
 
 디스크 디자인의 구도는 시즌 1, 2와 비슷합니다. 다만 디스크를 꺼내고 보니 속표지는 이전과 다르게 에피소드별 스토리 요약이 사라졌고, 두 주인공의 일러스트만 양 면에 나와있네요.
 
 시즌 1, 2에서는 달랑 디스크만 들어있었지만, 시즌 3을 열어보니 엽서가 포함되어 있었습니다. 별 거 아닌 것처럼 보이지만, 저는 이런 보너스(?)를 좋아하는 편입니다.
 
-![](https://github.com/JoonsuRyu/images/blob/master/Unboxing/046/14.jpg?raw=true){: .align-center}
+![](/assets/images/Unboxing/046/14.jpg){: .align-center}
 
 시즌 4는 한참 후에 나온 블루레이임에도 불구하고 새 상품을 구하는 것이 어려웠습니다. 다행히 저는 중고나라에서 DVD인줄 알고 잘못 구매하신 분께 좋은 가격에 구매했는데, 왜인지는 몰라도 현재는 미개봉 제품인 경우 웃돈을 주고 구매하셔야 합니다.
 
 나중에 나온 상품이다 보니 이전 시즌과의 차이점이 조금 있습니다. 가장 큰 차이점으로는 오링 케이스가 동봉되어있다는 점입니다. 다만 슬립 케이스의 디자인은 케이스의 디자인과 완전히 동일합니다. 앞면의 디자인을 보시면 지금까지의 구도와 조금 다르기도 합니다. 특이하게 앞면에 KBS Media 로고가 없어졌습니다.
 
-![](https://github.com/JoonsuRyu/images/blob/master/Unboxing/046/15.jpg?raw=true){: .align-center}
+![](/assets/images/Unboxing/046/15.jpg){: .align-center}
 
 앞면에 KBS Media 로고가 빠져있었지만, 뒷면에는 그대로 남아있습니다. 덕분에 한국어 더빙 또한 이전 시즌과 마찬가지로 지원됩니다. 뒷면의 디자인은 홈즈와 왓슨이 팔짱을 끼고 있는데, 오히려 앞면 디자인에 더 어울려 보입니다.
 
-![](https://github.com/JoonsuRyu/images/blob/master/Unboxing/046/16.jpg?raw=true){: .align-center}
+![](/assets/images/Unboxing/046/16.jpg){: .align-center}
 
 케이스를 열자마자 희비가 교차했습니다. 희는 시즌 3처럼 케이스 뿐만 아니라 폴라로이드 사진같은 추가 구성품이 있었다는 것이고, 비는 디스크 디자인이 이전 시즌과 완전히 이질적인 디자인이라는 것입니다. 굳이 비중을 두자면, 비가 조금 더 큰 것 같네요.
 
 정말 같은 시리즈임에도 불구하고 디스크 디자인을 이렇게 다르게 하는 이유를 도저히 모르겠습니다. 이렇게 할꺼면 처음부터 이렇게 하던가, 아니면 기존처럼 홈즈와 왓슨을 디스크 한장씩에 때려넣는 것도 나쁘진 않았는데 말이죠.
 
-![](https://github.com/JoonsuRyu/images/blob/master/Unboxing/046/17.jpg?raw=true){: .align-center}
+![](/assets/images/Unboxing/046/17.jpg){: .align-center}
 
 그나마 속표지 디자인은 시즌 3과 유사합니다만, 다시보니 케이스 색깔이 파란색에서 흰색으로 바뀌었습니다. 책장에 일렬로 꽂아넣으면 눈엣가시가 따로 없습니다.
 
-![](https://github.com/JoonsuRyu/images/blob/master/Unboxing/046/18.jpg?raw=true){: .align-center}
+![](/assets/images/Unboxing/046/18.jpg){: .align-center}
 
 유령신부는 정규 시즌이 아닌 스페셜 방영분으로, 한국에서는 영화로 개봉한 적이 있습니다. 시기상으로는 시즌 3과 시즌 4 사이에 방영되었습니다. 시즌 4는 오링 케이스였는데, 이건 슬립 케이스가 씌여 있습니다. 개인적으로 슬립 케이스를 더 좋아하는 편이라 크게 불만은 없습니다.
 
 케이스 앞면 디자인은 오히려 시즌 3과 더 유사한 구도로 보입니다. 작품 배경이 정규 시즌과는 다르게 19세기라고 들었는데, 그걸 반영하듯 예전 영국 신사 복장을 입고 있는 것이 특이하네요.
 
-![](https://github.com/JoonsuRyu/images/blob/master/Unboxing/046/19.jpg?raw=true){: .align-center}
+![](/assets/images/Unboxing/046/19.jpg){: .align-center}
 
 앞면과 뒷면에 모두 KBS Media의 로고가 없습니다. 이건 KBS에서 방영하지 않았기 때문인데, 그래서 그런지 아쉽게도 한국어 더빙은 빠져있습니다.
 
-![](https://github.com/JoonsuRyu/images/blob/master/Unboxing/046/20.jpg?raw=true){: .align-center}
+![](/assets/images/Unboxing/046/20.jpg){: .align-center}
 
 케이스를 열어보니 만감이 교차하네요. 어느 시즌의 디스크와도 유사점을 찾기가 힘듭니다. 그나마 시즌 1~3과 비슷하게 보이긴 하지만, 한쪽에 한 명의 주인공만 배치했던 이전과는 다르게 아예 두 주인공을 두 디스크에 각각 때려넣는 만행을 저질렀습니다. 그렇다고 디스크의 일러스트가 특이한 것도 아니고, 각각 케이스 앞/뒷면의 일러스트를 그대로 넣은거라 성의마저 없어보입니다. 대체 어느 업체에서 발매한건지 궁금할 정도입니다. 이게 과연 최선입니까?
 
-![](https://github.com/JoonsuRyu/images/blob/master/Unboxing/046/21.jpg?raw=true){: .align-center}
+![](/assets/images/Unboxing/046/21.jpg){: .align-center}
 
 디스크를 치워놓고보니 시즌 3~4처럼 일러스트가 있습니다. 뭔가 영화의 중요한 장면인 것처럼 보입니다. 케이스 색은 시즌 4처럼 흰색으로 되어있네요.
 

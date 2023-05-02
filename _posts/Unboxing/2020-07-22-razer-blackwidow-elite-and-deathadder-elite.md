@@ -2,62 +2,62 @@
 title: "Razer Blackwidow Elite & Deathadder Elite"
 permalink: /unboxing/razer-blackwidow-elite-and-deathadder-elite/
 classes: wide
-thumbnail: https://github.com/JoonsuRyu/images/blob/master/Unboxing/052/00.jpg?raw=true
+thumbnail: /assets/images/Unboxing/052/00.jpg
 categories:
   - interests
 tags:
   - unboxing
 ---
 
-![](https://github.com/JoonsuRyu/images/blob/master/Unboxing/052/00.jpg?raw=true){: .align-center}
+![](/assets/images/Unboxing/052/00.jpg){: .align-center}
 
 안녕하세요, 오늘은 RAZER의 주력 제품인 데스에더 엘리트 마우스와 블랙위도우 엘리트 키보드를 개봉하려고 합니다. 사실 이 제품은 1년 2개월 전에 같이 구매하고 지금까지 사용해왔습니다. 키보드가 구매 6개월 시점부터 살짝 맛이 가더니 최근에는 마우스까지 왼쪽 클릭이 안되는 문제로 인해 결국 AS 센터에 방문해 이상 증상을 확인받고 새 제품으로 교환받았습니다.
 
 두 제품 모두 저렴한 가격이 아닌데도 불구하고 1년 남짓한 사용만에 고장이 났기 때문에 Razer 제품을 더 이상 신뢰하지 못하겠습니다. 사실 원래는 새 제품으로 교환받고 그냥 중고나라에 팔려고 했으나... 나름 비싼 제품이라 쉽게 팔리지도 않았고, 팔았다고 해도 당장 집에서 쓸 키보드 마우스가 없었기 때문에 그냥 임시방편으로 계속 사용하기로 했습니다. 그렇기에 어찌됬든 새 상품을 개봉하는 것과 마찬가지라 구매를 고려하시는 분들을 위해 개봉 과정을 남겨보게 되었습니다.
 
-![](https://github.com/JoonsuRyu/images/blob/master/Unboxing/052/01.jpg?raw=true){: .align-center}
+![](/assets/images/Unboxing/052/01.jpg){: .align-center}
 
 먼저 데스에더 엘리트 마우스부터 보도록 하겠습니다. 패키지 앞면에는 마우스의 정면 사진과 Razer 로고, 그리고 Razer Chroma가 지원된다는 표시가 있습니다. Razer Chroma는 그냥 원하는 색상으로 조명을 설정할 수 있다는 뜻입니다. 제품에서 빛이 나는 곳은 로고 부분과 휠의 테두리 부분입니다.
 
-![](https://github.com/JoonsuRyu/images/blob/master/Unboxing/052/02.jpg?raw=true){: .align-center}
+![](/assets/images/Unboxing/052/02.jpg){: .align-center}
 
 뒷면에는 제품의 특징과 설계, 장점이 나와 있습니다. 뭔가 대단한 기술처럼 보이긴 하지만 사용하면서 크게 체감이 되는 부분은 없었습니다. 특이한 점은 한국 정발판인데도 불구하고 설명이 한국어 외에 중국어, 일본어로도 표시되어 있습니다.
 
-![](https://github.com/JoonsuRyu/images/blob/master/Unboxing/052/03.jpg?raw=true){: .align-center}
+![](/assets/images/Unboxing/052/03.jpg){: .align-center}
 
 패키지 옆면에는 Razer의 대표 색상인 초록색 배경에 로고가 나와 있습니다.
 
-![](https://github.com/JoonsuRyu/images/blob/master/Unboxing/052/04.jpg?raw=true){: .align-center}
+![](/assets/images/Unboxing/052/04.jpg){: .align-center}
 
 바닥면에는 제품의 사양이 적혀 있는데, 사실 이걸 제품 뒷면에 적는게 맞지 않나는 생각이 드네요. 어떻게 보면 마우스를 선택하는 데 가장 중요한 점인 크기와 무게가 이쪽에 나와 있으니까요.
 
 캘리포니아에서 디자인했지만 메이드 인 차이나입니다. 이와 비슷한 표현을 모 사과 업체에서 봤었는데 말이죠.
 
-![](https://github.com/JoonsuRyu/images/blob/master/Unboxing/052/05.jpg?raw=true){: .align-center}
+![](/assets/images/Unboxing/052/05.jpg){: .align-center}
 
 제품을 열어보면 마우스가 플라스틱 케이스에 싸여 있고 설명서 등의 종이는 띠지에 묶여 따로 포장이 되어 있습니다. 제품은 마음에 안들지만 포장 방식은 마음에 듭니다.
 
-![](https://github.com/JoonsuRyu/images/blob/master/Unboxing/052/06.jpg?raw=true){: .align-center}
+![](/assets/images/Unboxing/052/06.jpg){: .align-center}
 
 플라스틱 케이스에서 마우스를 분리한 모습입니다. 최근에는 무선 마우스가 대세이긴 한데 이 제품은 아직도 유선 마우스입니다. 게임에서 반응 속도를 중시하는 분들은 확실히 유선 마우스가 더 좋다고 하는데 제 체감상으로는 크게 의미는 없던 것 같습니다. 오히려 유선 마우스는 걸리적거림 때문에 마우스 번지 없이는 불편함이 꽤 컸습니다.
 
-![](https://github.com/JoonsuRyu/images/blob/master/Unboxing/052/07.jpg?raw=true){: .align-center}
+![](/assets/images/Unboxing/052/07.jpg){: .align-center}
 
 크기 비교를 위해 현재 사용하고 있는 마우스를 양 옆에 놓아봤습니다. 왼쪽에는 애플의 매직 마우스2이고, 오른쪽은 커세어의 다크코어 마우스입니다. 개인적으로 그립감은 다크코어가 제일 뛰어났습니다.
 
-![](https://github.com/JoonsuRyu/images/blob/master/Unboxing/052/08.jpg?raw=true){: .align-center}
+![](/assets/images/Unboxing/052/08.jpg){: .align-center}
 
 마우스 본체 외의 구성품을 살펴보면 먼저 설명서와 스티커가 있습니다. Razer의 제품을 구매하면 저렇게 로고 모양의 스티커를 항상 제공하던데, 저는 아직까지 한번도 써본 적은 없습니다. 모니터나 컴퓨터에 붙이고 장식하라는 의미인 것 같은데... 필요가 있을까요?
 
-![](https://github.com/JoonsuRyu/images/blob/master/Unboxing/052/09.jpg?raw=true){: .align-center}
+![](/assets/images/Unboxing/052/09.jpg){: .align-center}
 
 설명서 외에 특이한 구성품으로는 Razer CEO의 편지가 있습니다. 첫 줄을 보면 "there is no tuning back"이라는 문장이 보이네요. 아무래도 이 제품을 한번 맛보면 다른 제품을 사용할 수 없을 거라는 의미인 것 같은데... 자신감에 가득 찬건지 건방진 건지는 여러분의 판단에 맡기겠습니다.
 
-![](https://github.com/JoonsuRyu/images/blob/master/Unboxing/052/10.jpg?raw=true){: .align-center}
+![](/assets/images/Unboxing/052/10.jpg){: .align-center}
 
 다음으로는 블랙위도우 엘리트 키보드입니다. 패키지 앞면을 보시면 구입하기 전에 눌러볼 수 있도록 방향키 부분이 공개되어 있는 것을 볼 수 있습니다. 의도는 좋지만 박스를 쌓아두고 판매한다면 지나가는 사람들이 한번씩 눌러볼 수 있기 때문에 좋은 디자인은 아니라고 생각합니다. 요즘 키보드를 전문적으로 판매하는 곳이라면 아예 타건용으로 하나씩 개봉해서 배치하게 때문에 굳이 저게 필요한 것인지도 모르겠습니다.
 
-![](https://github.com/JoonsuRyu/images/blob/master/Unboxing/052/11.jpg?raw=true){: .align-center}
+![](/assets/images/Unboxing/052/11.jpg){: .align-center}
 
 뒷면에는 이 키보드의 축에 대한 설명이 나와있고, 왼쪽 아래에는 다른 축과의 차이점을 비교해놓은 표가 있습니다.
 
@@ -65,49 +65,49 @@ Razer의 기계식 키보드는 체리나 카일 축을 쓰지 않고 자체적�
 
 저는 연구실에서는 소음으로 인해 적축을 사용하고 있는데, 개인적으로는 클릭감이 뛰어난 청축 계열을 선호하기 때문에 녹축으로 구입했었습니다. 집에서야 키보드 소음이 크게 문제되지 않으니까요.
 
-![](https://github.com/JoonsuRyu/images/blob/master/Unboxing/052/12.jpg?raw=true){: .align-center}
+![](/assets/images/Unboxing/052/12.jpg){: .align-center}
 
 옆면에는 제품의 구성품, 제품을 사용하기 위한 하드웨어 요구사항, 그리고 제품의 크기 및 무게가 나와있습니다. 역시나 그 옆에는 캘리포니아에 있는 Razer에서 디자인했다고 나와있는데, 어차피 메이드 인 차이나겠죠?
 
-![](https://github.com/JoonsuRyu/images/blob/master/Unboxing/052/13.jpg?raw=true){: .align-center}
+![](/assets/images/Unboxing/052/13.jpg){: .align-center}
 
 한쪽에는 한글 각인이 되어있다는 표시가 있습니다. 제품 박스는 다른 국가에서 판매하는 버전과 같은 것을 쓰는지, 이 부분은 스티커로 붙어 있습니다.
 
-![](https://github.com/JoonsuRyu/images/blob/master/Unboxing/052/14.jpg?raw=true){: .align-center}
+![](/assets/images/Unboxing/052/14.jpg){: .align-center}
 
 제품을 열어보면 역시 Razer답게 깔끔하게 포장되어 있습니다. 마음에 드는 점 중 하나는 저렇게 키보드 덮개가 포함되어 있다는 것입니다. 사용하지 않을 때 먼지가 쌓이는 것을 방지해주기 때문에 개인적으로는 꼭 필요한 구성품이라고 생각합니다. 커세어의 키보드는 이게 포함되어 있지 않았기 때문에 별도로 구매해야 했습니다.
 
-![](https://github.com/JoonsuRyu/images/blob/master/Unboxing/052/15.jpg?raw=true){: .align-center}
+![](/assets/images/Unboxing/052/15.jpg){: .align-center}
 
 구성품을 모두 꺼내보면 키보드 본체, 팜 레스트, 그리고 설명서 같은 종이가 묶인 뭉치가 있습니다.
 
-![](https://github.com/JoonsuRyu/images/blob/master/Unboxing/052/16.jpg?raw=true){: .align-center}
+![](/assets/images/Unboxing/052/16.jpg){: .align-center}
 
 먼저 종이 뭉치부터 살펴보면 설명서와 스티커가 있습니다. 마우스에 들어있던 스티커는 로고만 두개 있었는데, 여기에는 1개의 로고와 Razer Chroma 스티커, For Gamers by Gamers라는 사명(?)이 적힌 스티커가 있습니다.
 
-![](https://github.com/JoonsuRyu/images/blob/master/Unboxing/052/17.jpg?raw=true){: .align-center}
+![](/assets/images/Unboxing/052/17.jpg){: .align-center}
 
 역시 키보드에도 Razer CEO의 편지가 들어 있습니다. 이번에는 there is no tuning back 같은 건방진(?) 소리는 보이지 않고 환영한다는 축하의 메시지가 들어있네요.
 
-![](https://github.com/JoonsuRyu/images/blob/master/Unboxing/052/18.jpg?raw=true){: .align-center}
+![](/assets/images/Unboxing/052/18.jpg){: .align-center}
 
 키보드는 풀배열로 구성되어 있습니다. 특이한 점은 오른쪽 alt키가 한/영 변환 버튼과 동일합니다. 그리고 원래 alt키가 있어야 할 자리는 fn키가 있습니다. fn키는 다른 키와 조합해서 특수한 명령을 내릴 수 있는 것 같은데, 사실 이 기능까지 사용해본적은 없어서 존재 이유는 잘 모르겠습니다.
 
 오른쪽의 숫자키 위에는 미디어 재생을 조정할 수 있는 버튼이 있습니다. 맨 오른쪽에는 볼륨 조절을 할 수 있는 휠이 있습니다. 버튼을 클릭하면 음소거를 할 수 있는 기능도 있구요. 다만 저는 이 기능을 한번도 써본적이 없는데도 불구하고 볼륨이 지멋대로 조절되는 문제가 초기부터 발생했습니다. AS 센터에서도 한번 살펴보고 바로 이상이 있다고 확인해준 것으로 보아 초기 불량이었을 수도 있을 것 같습니다.
 
-![](https://github.com/JoonsuRyu/images/blob/master/Unboxing/052/19.jpg?raw=true){: .align-center}
+![](/assets/images/Unboxing/052/19.jpg){: .align-center}
 
-![](https://github.com/JoonsuRyu/images/blob/master/Unboxing/052/20.jpg?raw=true){: .align-center}
+![](/assets/images/Unboxing/052/20.jpg){: .align-center}
 
 키보드를 연결하는 단자는 3개나 존재합니다. USB 2개와 3.5파이 오디오 단자가 있는데, USB중 1개는 키보드에 있는 USB 허브를 연결하기 위한 용도로 보입니다. 다만 이 단자가 USB 3.0 포트가 아닌지 전송 속도가 굉장히 느리기 때문에 USB 허브보다는 무선 헤드셋이나 게임 패드 동글을 연결하는 용도로만 사용하는 것을 권장합니다.
 
 마찬가지로 키보드에 헤드셋을 연결 할 수 있는 3.5파이 단자도 있습니다. 만약 본체를 책상 아래에 놓고 쓰시는 분이라면 유용하게 사용할 수 있을 것 같습니다.
 
-![](https://github.com/JoonsuRyu/images/blob/master/Unboxing/052/21.jpg?raw=true){: .align-center}
+![](/assets/images/Unboxing/052/21.jpg){: .align-center}
 
 Razer 키보드에서 마음에 드는 또 하나의 점은 바로 팜 레스트입니다. 타 사의 고급 키보드 라인에서도 팜 레스트가 동봉되긴 하지만, 이것보다 좋은 퀄리티의 팜 레스트를 제공하는 키보드는 지금까지 보지 못했기 때문입니다.
 
-![](https://github.com/JoonsuRyu/images/blob/master/Unboxing/052/22.jpg?raw=true){: .align-center}
+![](/assets/images/Unboxing/052/22.jpg){: .align-center}
 
 커세어의 키보드에도 팜 레스트가 들어있긴 한데, 딱딱한 플라스틱 재질로 되어 있고 표면 처리도 매끄럽지 않아 사용에 불편함이 있었습니다. 하지만 Razer 키보드의 팜 레스트는 인조 가죽 재질에 푹신푹신하게 만들어졌기 때문에 손바닥이나 손목을 올려놓아도 편안하다는 장점이 있습니다. 키보드 자체는 마음에 들지 않지만 이건 정말 마음에 듭니다.
 
