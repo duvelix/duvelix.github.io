@@ -2,52 +2,52 @@
 title: "레드 데드 리뎀션 2 얼티밋 에디션"
 permalink: /unboxing/red-dead-redemption-2-ultimate-edition/
 classes: wide
-thumbnail: https://github.com/JoonsuRyu/images/blob/master/Unboxing/032/00.jpg?raw=true
+thumbnail: /assets/images/Unboxing/032/00.jpg
 categories:
   - interests
 tags:
   - unboxing
 ---
 
-![](https://github.com/JoonsuRyu/images/blob/master/Unboxing/032/00.jpg?raw=true){: .align-center}
+![](/assets/images/Unboxing/032/00.jpg){: .align-center}
 
 레드 데드 리뎀션 2는 GTA 시리즈로 유명한 락스타 게임즈에서 만든 대작입니다. 전작이었던 레드 데드 리볼버와 레드 데드 리뎀션은 모두 콘솔로만 출시되었기 때문에 한국에서의 인지도는 GTA에 훨씬 못미쳤지만, 최근작인 GTA 5의 흥행으로 인해 이 게임의 인지도 또한 덩달아 올라갔습니다. 아쉽게도 전작들은 모두 한글화가 이루어지지 않았지만, 이번 작은 한글화로 인해 (출시 당시) 콘솔 독점임에도 불구하고 예약 구매가 빠르게 마감되었습니다.
 
 글을 작성하는 시점에서는 PC 플랫폼으로도 출시되었긴 하지만, PC에서의 문제점이 꽤 많이 이슈가 되고 있기 때문에, 아무래도 레드 데드 리뎀션 2를 가장 즐기기 좋은 환경은 XBOX ONE X가 아닐까 합니다. 한국에서는 XBOX의 보급이 Playstation보다 확연히 뒤떨어져인지, XBOX 버전 한정판은 구하기 어렵지 않았습니다. 저는 중고나라에서 미개봉 얼티밋 에디션을 6만원에 구입했습니다.
 
-![](https://github.com/JoonsuRyu/images/blob/master/Unboxing/032/01.jpg?raw=true){: .align-center}
+![](/assets/images/Unboxing/032/01.jpg){: .align-center}
 
 PS4 버전 한정판은 패키지와 케이스 모두 한글화가 되어 있지만, XBOX는 수요가 적어서인지 아쉽게도 스티커 정발입니다. 왼쪽 하단에 스티커가 붙어있습니다. 구성품은 해외판과 동일하므로 스티커가 마음에 들지 않다면 북미판을 구입하시는 것도 한 방법입니다. 문제는 얼티밋 에디션을 현재 신품으로 구하기는 하늘에 별따기라는 것입니다.
 
-![](https://github.com/JoonsuRyu/images/blob/master/Unboxing/032/02.jpg?raw=true){: .align-center}
+![](/assets/images/Unboxing/032/02.jpg){: .align-center}
 
 스티커 정발이기 때문에 뒷면의 게임 설명도 영어로만 나와있습니다. 플레이스테이션4 버전과 비교해보시면 확연히 차이가 나는 부분입니다. 뭐가 포함되어 있는지만 알면 사실 큰 상관은 없기 때문에 영어 패키지도 크게 불만은 없습니다.
 
-![](https://github.com/JoonsuRyu/images/blob/master/Unboxing/032/03.jpg?raw=true){: .align-center}
+![](/assets/images/Unboxing/032/03.jpg){: .align-center}
 
 구성품은 생각보다 조촐합니다. 얼티밋 에디션 코드가 적힌 종이, 특전 지도, 스틸북이 들어있습니다. 이 중 특전 지도와 싱글 플레이의 추가 컨텐츠는 스페셜 에디션에도 주기 때문에 실질적인 얼티밋 에디션만의 특전은 스틸북과 온라인 컨텐츠입니다. 저는 온라인 컨텐츠를 그렇게 즐기지 않기 때문에 사실상 스틸북밖에 없네요. 웃돈을 주고 샀으면 엄청 아까웠을 것 같지만, 다행히 정가보다도 저렴하게 구매했기 때문에 괜찮은 구매라고 생각합니다.
 
-![](https://github.com/JoonsuRyu/images/blob/master/Unboxing/032/04.jpg?raw=true){: .align-center}
+![](/assets/images/Unboxing/032/04.jpg){: .align-center}
 
 특전 지도는 게임의 배경이 되는 지역을 그린 지도입니다. 전작의 GOTY 에디션에도 비슷한 것을 줬던 것 같은데, 품질은 비슷해 보입니다. 그런데 특전 안내에서는 마치 천으로 만든 지도처럼 홍보하고 이렇게 평범한 종이 재질로 만든 것은 화가 납니다. 이정도면 그냥 일반판에서도 줄만한 퀄리티라고 생각합니다.
 
-![](https://github.com/JoonsuRyu/images/blob/master/Unboxing/032/05.jpg?raw=true){: .align-center}
+![](/assets/images/Unboxing/032/05.jpg){: .align-center}
 
 뒷면에는 게임 내의 주요 도시로 보이는 지역의 세부 지도가 나와 있습니다. 가장 눈에 띄는 것은 블랙워터인데요, 전작의 주인공 존이 이곳에서 왔다는 언급이 있었기 때문입니다. 이번 작품이 전작의 프리퀄 격임을 감안해보면, 존이 이곳에서 어떤 일을 했는지에 대한 언급이 있을 것 같습니다.
 
-![](https://github.com/JoonsuRyu/images/blob/master/Unboxing/032/06.jpg?raw=true){: .align-center}
+![](/assets/images/Unboxing/032/06.jpg){: .align-center}
 
 왜인지는 모르겠지만 스틸북은 상당히 인기가 많은 특전입니다. 블루레이도 그렇고 게임도 그렇고 스틸북 특전이라는 말이 나오면 예약 구매가 더 어려워집니다. 저는 가급적이면 한정판을 구매하기 때문에 반 강제적으로 스틸북을 몇 개 갖고 있긴 한데, 솔직히 왜 인기가 많은지를 모르겠습니다. 진열장에 넣었을 때 다른 게임들과 다른 모양이라 미관상 좋지도 않을 뿐더러, 플라스틱 케이스보다 더 조심히 다루어야만 하기 때문입니다.
 
-![](https://github.com/JoonsuRyu/images/blob/master/Unboxing/032/07.jpg?raw=true){: .align-center}
+![](/assets/images/Unboxing/032/07.jpg){: .align-center}
 
 스틸북의 뒷면 디자인도 앞면과 크게 다르진 않습니다. 락스타 로고만 하나 달랑 박혀있습니다. 지금보니 디자인이 꼭 트럼프 카드같다는 느낌이 듭니다.
 
-![](https://github.com/JoonsuRyu/images/blob/master/Unboxing/032/08.jpg?raw=true){: .align-center}
+![](/assets/images/Unboxing/032/08.jpg){: .align-center}
 
 스틸북 내부 디자인은 플라스틱 케이스와 별반 다르지 않습니다. 왼쪽에는 싱글 플레이 추가 컨텐츠를 받을 수 있는 코드가 동봉되어 있습니다. 뒤에 자세히 보시면 지도 같은 것이 보이는데, 재질은 특전 지도와 동일합니다. 대충 모양을 보아하니 어차피 특전 지도와 크게 다를 것 같진 않아 펼쳐보진 않았습니다.
 
-![](https://github.com/JoonsuRyu/images/blob/master/Unboxing/032/09.jpg?raw=true){: .align-center}
+![](/assets/images/Unboxing/032/09.jpg){: .align-center}
 
 의외로 디스크는 2장이 들어있습니다. 지난번 전작을 개봉할 때는 XBOX 360이 DVD 포멧이었기 때문에 2장이라는 사실이 크게 놀랍지 않았는데, 이번에는 블루레이 포멧임에도 불구하고 2장이 들어있습니다. 블루레이가 DVD보다 몇 배나 많은 데이터를 저장할 수 있다는 것을 생각해보면, 이번 작의 볼륨은 전작보다 훨씬 많은 컨텐츠를 담고 있을 것 같습니다.
 

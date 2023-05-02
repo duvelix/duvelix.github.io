@@ -2,87 +2,87 @@
 title: "토이 스토리 블루레이 컬렉션"
 permalink: /unboxing/toy-story-bluray-collection/
 classes: wide
-thumbnail: https://github.com/JoonsuRyu/images/blob/master/Unboxing/036/00.jpg?raw=true
+thumbnail: /assets/images/Unboxing/036/00.jpg
 categories:
   - interests
 tags:
   - unboxing
 ---
 
-![](https://github.com/JoonsuRyu/images/blob/master/Unboxing/036/00.jpg?raw=true){: .align-center}
+![](/assets/images/Unboxing/036/00.jpg){: .align-center}
 
 어렸을적 토이 스토리라는 영화를 봤었습니다. 학교에서 틀어줬었는지 비디오를 빌려서 봤었는지는 기억이 안나는데, 사람이 없을 때 장난감이 살아 움직인다는 설정은 신선해서 기억에 남았습니다. 2편까지 봤었던 것 같은데, 하도 오래전이라 그런지 스토리가 지금은 기억이 잘 나지 않습니다. 게다가 한편 한편 나오는 주기도 길어서, 3편부터는 아예 잊고 살았습니다.
 
 그러다가 작년에 토이 스토리 4편이 나왔는데, 영화 개봉 당시에는 1, 2편도 기억이 안나고 3편도 보지 않았기 때문에 굳이 보진 않았습니다. 하지만 개봉한지 시간이 좀 지나고, 작년 말 쯤 토이 스토리를 1편부터 4편까지 모아놓은 블루레이 컬렉션이 출시된다는 소식을 듣고 명작 애니메이션을 1편부터 제대로 감상하고 싶어 구매하게 되었습니다.
 
-![](https://github.com/JoonsuRyu/images/blob/master/Unboxing/036/01.jpg?raw=true){: .align-center}
+![](/assets/images/Unboxing/036/01.jpg){: .align-center}
 
 아웃케이스의 앞면은 토이 스토리 영화 별 중요 캐릭터가 해당 작품과 함께 프린트 되어 있는 것 같습니다. 사실 우디와 버즈 외에는 어떤 캐릭터인지도 기억이 나지 않네요.
 
-![](https://github.com/JoonsuRyu/images/blob/master/Unboxing/036/02.jpg?raw=true){: .align-center}
+![](/assets/images/Unboxing/036/02.jpg){: .align-center}
 
 아웃케이스 뒷면에는 각 작품의 조연 캐릭터들이 나와 있는 것 같습니다.
 
-![](https://github.com/JoonsuRyu/images/blob/master/Unboxing/036/03.jpg?raw=true){: .align-center}
+![](/assets/images/Unboxing/036/03.jpg){: .align-center}
 
 아웃케이스 윗면에는 각 작품의 로고가 순서대로 나와 있습니다.
 
-![](https://github.com/JoonsuRyu/images/blob/master/Unboxing/036/04.jpg?raw=true){: .align-center}
+![](/assets/images/Unboxing/036/04.jpg){: .align-center}
 
 옆면도 윗면과 같이 각 작품의 로고가 순서대로 나와 있습니다.
 
-![](https://github.com/JoonsuRyu/images/blob/master/Unboxing/036/05.jpg?raw=true){: .align-center}
+![](/assets/images/Unboxing/036/05.jpg){: .align-center}
 
 반대쪽에는 각 작품별 블루레이가 개별 패키지로 하나씩 들어있습니다.
 
-![](https://github.com/JoonsuRyu/images/blob/master/Unboxing/036/06.jpg?raw=true){: .align-center}
+![](/assets/images/Unboxing/036/06.jpg){: .align-center}
 
 비닐 포장을 뜯고 살펴보면 각 작품별 블루레이 케이스와 아웃케이스 말고는 다른 구성품은 없습니다. 보통 이런 컬렉션은 소장용으로 구매하는 경우가 많아 엽서나 포토북같은 부가 구성품이 있는 경우도 많은데, 유명 타이틀임에도 불구하고 그런 구성품이 없다는 것이 조금 아쉽습니다.
 
-![](https://github.com/JoonsuRyu/images/blob/master/Unboxing/036/07.jpg?raw=true){: .align-center}
+![](/assets/images/Unboxing/036/07.jpg){: .align-center}
 
 1편부터 블루레이 케이스 디자인을 살펴보겠습니다. 1편의 주인공인 우디와 버즈가 같이 나와있습니다. 스페셜 에디션이라고 나와있는데, 일반적으로 말하는 감독판과 동일한 의미로 보입니다.
 
-![](https://github.com/JoonsuRyu/images/blob/master/Unboxing/036/08.jpg?raw=true){: .align-center}
+![](/assets/images/Unboxing/036/08.jpg){: .align-center}
 
 케이스 뒷면에는 사운드 트랙 수록곡과 스토리 줄거리, 그리고 음성 및 자막 언어의 종류가 나와있습니다. 한국어 더빙 음성이 가능한 것이 눈에 띕니다. 애니메이션 같은 경우는 더빙판과 자막판의 느낌이 달라 비교를 하며 보는 재미가 있는데, 시간이 된다면 각각 한번씩 감상해야겠습니다.
 
-![](https://github.com/JoonsuRyu/images/blob/master/Unboxing/036/09.jpg?raw=true){: .align-center}
+![](/assets/images/Unboxing/036/09.jpg){: .align-center}
 
 케이스를 열어보면 디스크 하나만 달랑 들어있습니다. 왼쪽에 뭔가 엽서나 책자가 들어갈 공간은 만들어 놓았는데, 아무 것도 없네요. 대신 우디와 버즈가 달리는 자세가 그려져 있습니다. 디스크의 디자인은 평범하네요.
 
-![](https://github.com/JoonsuRyu/images/blob/master/Unboxing/036/10.jpg?raw=true){: .align-center}
+![](/assets/images/Unboxing/036/10.jpg){: .align-center}
 
 2편 케이스에서는 우디와 버즈 외에도 새로운 등장인물로 보이는 캐릭터가 같이 나와있습니다. 역시 스페셜 에디션이라고 나와있는 것으로 보아 극장판에서 삭제된 부분이 추가되어 발매된 것 같습니다. 케이스의 디자인은 1편과 유사해 보입니다.
 
-![](https://github.com/JoonsuRyu/images/blob/master/Unboxing/036/11.jpg?raw=true){: .align-center}
+![](/assets/images/Unboxing/036/11.jpg){: .align-center}
 
 케이스의 뒷면은 1편과 크게 다르지 않습니다. 수록되어 있는 사운드 트랙 리스트, 스토리 줄거리와 음성 및 자막 언어가 나와 있습니다. 역시 한국어 더빙이 수록되어 있습니다.
 
-![](https://github.com/JoonsuRyu/images/blob/master/Unboxing/036/12.jpg?raw=true){: .align-center}
+![](/assets/images/Unboxing/036/12.jpg){: .align-center}
 
 케이스의 내부 디자인은 왼쪽의 일러스트만 제외하면 1편과 크게 다르지 않습니다. 디스크의 디자인은 1편과 다르게 영화의 한 장면같은 부분이 그려져 있는데, 개인적으로 이런 디자인이 더 괜찮아 보입니다.
 
-![](https://github.com/JoonsuRyu/images/blob/master/Unboxing/036/13.jpg?raw=true){: .align-center}
+![](/assets/images/Unboxing/036/13.jpg){: .align-center}
 
 3편은 1, 2편과 출시 간격이 길어서인지 케이스 디자인이 다소 이질적입니다.
 
-![](https://github.com/JoonsuRyu/images/blob/master/Unboxing/036/14.jpg?raw=true){: .align-center}
+![](/assets/images/Unboxing/036/14.jpg){: .align-center}
 
 뒷면 디자인도 1, 2편과는 약간 다른데, 사운드 트랙 수록곡이 빠지고 스토리의 줄거리와 음성 및 자막 언어만 나와있습니다. 역시 한국어 더빙 또한 수록되어 있습니다.
 
-![](https://github.com/JoonsuRyu/images/blob/master/Unboxing/036/15.jpg?raw=true){: .align-center}
+![](/assets/images/Unboxing/036/15.jpg){: .align-center}
 
 케이스 내부 디자인 또한 1, 2편과는 다릅니다. 1, 2편에서는 간단한 캐릭터 일러스트만 그려져 있었는데, 3편 케이스에서는 내부의 왼쪽과 오른쪽을 모두 사용하여 영화의 한 장면을 표현하고 있습니다. 다만 디스크 디자인은 1편과 비슷하네요.
 
-![](https://github.com/JoonsuRyu/images/blob/master/Unboxing/036/16.jpg?raw=true){: .align-center}
+![](/assets/images/Unboxing/036/16.jpg){: .align-center}
 
 마지막으로 4편의 케이스입니다. 4편의 케이스는 3편의 케이스와 비슷한 형식의 디자인입니다.
 
-![](https://github.com/JoonsuRyu/images/blob/master/Unboxing/036/17.jpg?raw=true){: .align-center}
+![](/assets/images/Unboxing/036/17.jpg){: .align-center}
 
 뒷면의 디자인은 3편보다 더 간소화되었네요. 스토리의 설명이 조금 짧아졌습니다. 저 포크같이 생긴 장난감을 부각하는 것으로 보아 핵심 캐릭터로 보입니다.
 
-![](https://github.com/JoonsuRyu/images/blob/master/Unboxing/036/18.jpg?raw=true){: .align-center}
+![](/assets/images/Unboxing/036/18.jpg){: .align-center}
 
 4편은 이전과 다르게 디스크가 두 장이 들어있습니다. 왼쪽에 있는 디스크가 아마 영화가 들어있는 디스크로 보이고, 오른쪽 디스크가 스페셜 피쳐가 들어있는 보너스 디스크로 보입니다. 1~3편은 케이스에 디스크 한장만 달랑 들어있어 휑해보였는데, 이렇게 양쪽에 디스크가 들어있으니 꽉 찬 느낌이 들어서 더 만족스럽네요. 물론 실제로 감상할 때는 디스크를 바꿔 넣어야하기 때문에 조금 불편할 것 같긴 합니다.
