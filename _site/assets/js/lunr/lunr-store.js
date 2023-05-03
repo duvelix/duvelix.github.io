@@ -1198,4 +1198,10 @@ var store = [{
         "tags": ["unboxing"],
         "url": "/Unboxing/hyouka-bluray/",
         "teaser": null
+      },{
+        "title": "RAZER Huntsman V2 Linear & Basilisk V3 Pro",
+        "excerpt":"예전에 RAZER 제품을 구매했을 때 너무 실망한 기억이 있어서 앞으로 내 인생에 RAZER는 없다! 라고 생각했었는데 어쩌다보니 또 RAZER 제품을 구매하게 되었습니다. 사실 원래는 Corsair 제품을 구매하려고 생각했었는데, RAZER의 광축 키보드에 대한 평이 굉장히 좋길래 마지막으로 한번 믿어보자고 생각하게 구매했습니다. Basilisk V3 Pro 먼저 RAZER Basilisk V3 Pro 마우스입니다. 원래...","categories": ["interests"],
+        "tags": ["unboxing"],
+        "url": "/Unboxing/razer-huntsman-v2-basilisk-v3-pro/",
+        "teaser": null
       }]
