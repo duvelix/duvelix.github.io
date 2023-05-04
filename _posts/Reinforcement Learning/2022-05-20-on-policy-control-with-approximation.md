@@ -1,9 +1,9 @@
 ---
 title: "On-policy Control with Approximation"
 permalink: /rl/on-policy-control-with-approximation/
+classes: wide
 toc: true
 toc_label: "Table of Contents"
-toc_sticky: true
 categories:
   - studies
 tags:

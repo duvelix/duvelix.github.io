@@ -1,9 +1,9 @@
 ---
 title: "Temporal-Difference Learning"
 permalink: /rl/temporal-difference-learning/
+classes: wide
 toc: true
 toc_label: "Table of Contents"
-toc_sticky: true
 categories:
   - studies
 tags:

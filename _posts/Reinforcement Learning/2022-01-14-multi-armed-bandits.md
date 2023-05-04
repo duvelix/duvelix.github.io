@@ -1,9 +1,9 @@
 ---
 title: "Multi-armed Bandits"
 permalink: /rl/multi-armed-bandits/
+classes: wide
 toc: true
 toc_label: "Table of Contents"
-toc_sticky: true
 categories:
   - studies
 tags:

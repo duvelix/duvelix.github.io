@@ -1,9 +1,9 @@
 ---
 title: "On-policy Prediction with Approximation"
 permalink: /rl/on-policy-prediction-with-approximation/
+classes: wide
 toc: true
 toc_label: "Table of Contents"
-toc_sticky: true
 categories:
   - studies
 tags:

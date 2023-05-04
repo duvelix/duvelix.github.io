@@ -4,7 +4,6 @@ permalink: /wordpress/install-envato-market-plugin/
 classes: wide
 toc: true
 toc_label: "Table of Contents"
-toc_sticky: true
 categories:
   - studies
 tags:
