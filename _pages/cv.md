@@ -19,7 +19,7 @@ classes: wide
 
 ## Publications
 ### Journal Papers
-1. Joonsu Ryu and Sungwook Kim, "Reputation-Based Opportunistic Routing Protocol Using Q-Learning for MANET Attacked by Malicious Nodes." *IEEE Access*, Early access, 2023, pp. 1-1. [[link]](https://ieeexplore.ieee.org/document/10038554)
+1. Joonsu Ryu and Sungwook Kim, "Reputation-Based Opportunistic Routing Protocol Using Q-Learning for MANET Attacked by Malicious Nodes." *IEEE Access*, Vol. 11, 2023, pp. 47701-47711. [[link]](https://ieeexplore.ieee.org/document/10038554)
 
 2. Joonsu Ryu and Sungwook Kim, "...", *to be submitted to* ...
 
