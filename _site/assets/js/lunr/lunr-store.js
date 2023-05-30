@@ -1204,4 +1204,10 @@ var store = [{
         "tags": ["unboxing"],
         "url": "/Unboxing/razer-huntsman-v2-basilisk-v3-pro/",
         "teaser": null
+      },{
+        "title": "나고야 여행기 - 1일차",
+        "excerpt":"안녕하세요, 처음으로 작성하는 여행기는 일본 나고야를 다녀와서 작성하게 되었습니다. 원래 이 기간에 여행할 생각은 없었는데, 석가탄신일로 인해 5월 29일이 임시공휴일로 지정이 되어 여행을 다녀오기로 결정했습니다. 주말을 낀 2박 3일 일정이라 먼 곳은 가기 힘들고, 볼 거리가 매우 많지는 않은 곳으로 다녀와야 했는데, 이 조건에 부합하는 곳이 나고야였습니다. 일본 여행 관련...","categories": ["travel"],
+        "tags": ["nagoya"],
+        "url": "/travel/nagoya-1/",
+        "teaser": null
       }]
