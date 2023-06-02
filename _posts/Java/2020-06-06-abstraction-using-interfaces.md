@@ -1,9 +1,9 @@
 ---
 title: "Abstraction using Interfaces"
 permalink: /java/abstraction-using-interfaces/
+classes: wide
 toc: true
 toc_label: "Table of Contents"
-toc_sticky: true
 categories:
   - studies
 tags:

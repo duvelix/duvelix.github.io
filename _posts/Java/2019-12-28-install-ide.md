@@ -1,9 +1,9 @@
 ---
 title: "IDE 설치하기"
 permalink: /java/install-ide/
+classes: wide
 toc: true
 toc_label: "Table of Contents"
-toc_sticky: true
 categories:
   - studies
 tags:

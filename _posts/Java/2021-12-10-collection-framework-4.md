@@ -1,9 +1,9 @@
 ---
 title: "Collection Framework (4)"
 permalink: /java/collection-framework-4/
+classes: wide
 toc: true
 toc_label: "Table of Contents"
-toc_sticky: true
 categories:
   - studies
 tags:

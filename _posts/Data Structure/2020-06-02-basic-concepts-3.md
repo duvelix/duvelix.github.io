@@ -4,7 +4,6 @@ permalink: /ds/basic-concepts-3/
 classes: wide
 toc: true
 toc_label: "Table of Contents"
-toc_sticky: true
 categories:
   - studies
 tags:

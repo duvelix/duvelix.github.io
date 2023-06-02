@@ -1,7 +1,7 @@
 ---
 title: "Introduction"
 permalink: /git/introduction/
-classes: single
+classes: wide
 categories:
   - studies
 tags:

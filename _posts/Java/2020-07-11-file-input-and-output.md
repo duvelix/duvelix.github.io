@@ -1,9 +1,9 @@
 ---
 title: "File Input & Output"
 permalink: /java/file-input-and-output/
+classes: wide
 toc: true
 toc_label: "Table of Contents"
-toc_sticky: true
 categories:
   - studies
 tags:

@@ -1,9 +1,9 @@
 ---
 title: "Commit과 Push 하기"
 permalink: /git/commit-and-push/
+classes: wide
 toc: true
 toc_label: "Table of Contents"
-toc_sticky: true
 categories:
   - studies
 tags:
