@@ -1222,4 +1222,10 @@ var store = [{
         "tags": ["nagoya"],
         "url": "/travel/nagoya-3/",
         "teaser": null
+      },{
+        "title": "Arrays and Structures (1)",
+        "excerpt":"Arrays 처음 배우게 되는 자료구조는 배열(Array)입니다. 배열은 대부분의 언어에서 중요하게 다루는 자료구조이기 때문에 이미 알고 있으실 수도 있습니다. 배열의 가장 큰 특징은 메모리의 일부분을 연속적으로 할당한다는 것입니다. 배열의 구조는 굉장히 단순하기 때문에, 대부분의 언어에서 배열에 대해서는 복잡한 연산 기능을 제공하고 있지 않습니다. 일반적으로 배열을 생성한 후에는, 배열에 새로운 값을 할당하거나...","categories": ["studies"],
+        "tags": ["data structure"],
+        "url": "/ds/arrays-and-structures-1/",
+        "teaser": null
       }]
