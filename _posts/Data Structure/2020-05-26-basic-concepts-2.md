@@ -36,8 +36,8 @@ C언어의 기본 <span style="color:red">데이터 타입(Data Type)</span>은 
 
 ```
 ADT Natural_Number is
-    object : an ordered subrange of the integers starting at zero and ending at the maximum integer (INT_MAX) on the computer
-    functions :
+    Object : an ordered subrange of the integers starting at zero and ending at the maximum integer (INT_MAX) on the computer
+    Functions :
         for all x, y IN Natural_Number ; TRUE, FALSE IN Boolean and where +, -, <, and == are usual integer operations
 
         Natural_Number Zero()          ::= 0

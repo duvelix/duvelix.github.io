@@ -1228,4 +1228,10 @@ var store = [{
         "tags": ["data structure"],
         "url": "/ds/arrays-and-structures-1/",
         "teaser": null
+      },{
+        "title": "Arrays and Structures (2)",
+        "excerpt":"Polynomials The Abstract Data Type 이번 포스트에서는 지난 포스트에서 배운 자료구조를 토대로 응용하는 방법을 알아보겠습니다. 가장 먼저 다뤄볼 문제는 다항식(Polynomial)입니다. 다항식은 고등학교 때 지겹게 다뤄보셨을테니 간단하게만 설명하고 넘어가겠습니다. 다항식은 $ax^b$와 같은 형태를 가지고 있는 항들의 합으로 나타나는 식입니다. 여기서 $a$는 계수(Coefficient)라고 부르고, $x$는 변수(Variable), $b$는 차수(Exponent)라고 부릅니다. 다항식의 예로는 $5x^2+2x+3$...","categories": ["studies"],
+        "tags": ["data structure"],
+        "url": "/ds/arrays-and-structures-2/",
+        "teaser": null
       }]

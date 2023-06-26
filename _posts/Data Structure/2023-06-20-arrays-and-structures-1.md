@@ -18,8 +18,8 @@ tags:
 
 ```
 ADT Array is
-    object : A set of pairs <index, value> where for each value of index there is a value from the set item. Index is a finite set of one or more dimensions, for example, {0, ..., n-1} for one dimension, {(0,0), (0,1), (0,2), (1,0), (1,1), (1,2), (2,0), (2,1), (2,2)} for two dimensions, etc.
-    functions :
+    Object : A set of pairs <index, value> where for each value of index there is a value from the set item. Index is a finite set of one or more dimensions, for example, {0, ..., n-1} for one dimension, {(0,0), (0,1), (0,2), (1,0), (1,1), (1,2), (2,0), (2,1), (2,2)} for two dimensions, etc.
+    Functions :
         for all A ∈ Array, i ∈ index, x ∈ item, j, size ∈ integer
 
         Array Create(j, list)     ::= return an array of j dimensions where list is a j-tuple whose ith element is the size of the ith dimension. Items are undefined.
