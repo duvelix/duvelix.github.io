@@ -322,7 +322,7 @@
 end Array
 </code></pre></div></div>
 
-<p>C언어에서 배열은 <code class="language-plaintext highlighter-rouge">int list[5]</code>와 같은 방법으로 정의합니다. 이것은 배열의 이름이 list이고, index는 0부터 4까지 5개가 있으며, 값은 int 자료형으로 정의하겠다는 뜻입니다. 이렇게 정의할 때는 실제로 다음과 같이 메모리 주소가 할당됩니다.</p>
+<p>C 언어에서 배열은 <code class="language-plaintext highlighter-rouge">int list[5]</code>와 같은 방법으로 정의합니다. 이것은 배열의 이름이 list이고, index는 0부터 4까지 5개가 있으며, 값은 int 자료형으로 정의하겠다는 뜻입니다. 이렇게 정의할 때는 실제로 다음과 같이 메모리 주소가 할당됩니다.</p>
 
 <ul>
   <li>list[0]의 주소 : a (base address)</li>
@@ -332,9 +332,11 @@ end Array
   <li>list[4]의 주소 : a + 4 * sizeof(int)</li>
 </ul>
 
-<p>이 때, C언어에서 배열은 int에 대한 포인터로 취급됩니다. 이것을 이용해 배열을 <code class="language-plaintext highlighter-rouge">int *list</code>와 같이 포인터로 정의할 수도 있습니다. 따라서 <code class="language-plaintext highlighter-rouge">list[i]</code>는 <code class="language-plaintext highlighter-rouge">*(list+i)</code>로 표현할 수도 있고, <code class="language-plaintext highlighter-rouge">&amp;list[i]</code>는 <code class="language-plaintext highlighter-rouge">(list+i)</code>로 표현할 수 있습니다.</p>
+<p>이 때, C 언어에서 배열은 int에 대한 포인터로 취급됩니다. 이것을 이용해 배열을 <code class="language-plaintext highlighter-rouge">int *list</code>와 같이 포인터로 정의할 수도 있습니다. 따라서 <code class="language-plaintext highlighter-rouge">list[i]</code>는 <code class="language-plaintext highlighter-rouge">*(list+i)</code>로 표현할 수도 있고, <code class="language-plaintext highlighter-rouge">&amp;list[i]</code>는 <code class="language-plaintext highlighter-rouge">(list+i)</code>로 표현할 수 있습니다.</p>
 
 <p>다음은 배열을 이용한 간단한 C 프로그램입니다.</p>
+
+<p><strong>Program 2.1</strong> Example array program</p>
 
 <figure class="highlight"><pre><code class="language-c" data-lang="c"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
@@ -390,7 +392,7 @@ end Array
 
 <p>이 프로그램에서 sum 함수가 호출될 때, 매개변수로 들어가는 input은 &amp;input[0]으로 번역되어 sum 함수의 배열 list에 대입됩니다. 배열이 대입연산자에서 호출이 될 때는 오른쪽에서 호출이 되었냐, 왼쪽에서 호출이 되었냐에 따라 처리되는 방식이 달라집니다. 만약 list[i]가 연산자 =의 오른쪽에서 호출될 때는 (list+i)가 가리키는 값으로 처리되는데, 연산자 =의 왼쪽에서 호출될 때는 (list+i)로 처리됩니다.</p>
 
-<p><strong>Example 2.1</strong> [One-dimensional array addressing]</p>
+<p><strong>Program 2.2</strong> One-dimensional array accessed by address</p>
 
 <div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">void</span> <span class="nf">print1</span><span class="p">(</span><span class="kt">int</span><span class="o">*</span> <span class="n">ptr</span><span class="p">,</span> <span class="kt">int</span> <span class="n">rows</span><span class="p">)</span> <span class="p">{</span>
 	<span class="cm">/* print out a one-dimensional array using a pointer */</span>
@@ -402,11 +404,11 @@ end Array
 <span class="p">}</span>
 </code></pre></div></div>
 
-<p>Example 2.1은 1차원 배열에서 주소가 어떻게 할당되는지 확인하는 함수인 print1이 구현되어 있습니다. 실제로 이 함수를 호출해서 int형 배열인 list의 주소를 출력해보면 컴퓨터마다 다르겠지만 index가 하나 증가할 때마다 4씩 차이가 나는 것을 확인할 수 있습니다. 일반적으로 int 자료형의 크기가 4바이트로 정의되어 있기 때문입니다.</p>
+<p>print1은 1차원 배열에서 주소가 어떻게 할당되는지 확인하는 함수입니다. 실제로 이 함수를 호출해서 int형 배열인 list의 주소를 출력해보면 컴퓨터마다 다르겠지만 index가 하나 증가할 때마다 4씩 차이가 나는 것을 확인할 수 있습니다. 일반적으로 int 자료형의 크기가 4바이트로 정의되어 있기 때문입니다.</p>
 
 <h2 id="dynamically-allocated-arrays">Dynamically Allocated Arrays</h2>
 
-<p>C언어에서 배열을 선언할 때는 크기까지 한번에 같이 선언하는 경우가 많습니다. 하지만 그렇게 선언할 경우 배열의 크기를 변경할 수 없다는 치명적인 문제가 있습니다. 필요한 배열의 크기를 미리 알 수 있는 상황에서는 그에 맞게 정의하면 되지만, 만약 필요한 배열의 크기를 알 수 없거나 프로그램이 실행되는 상황에 따라 크기가 변동되는 경우에는 어떻게 선언해야할지 난감한 상황이 발생합니다.</p>
+<p>C 언어에서 배열을 선언할 때는 크기까지 한번에 같이 선언하는 경우가 많습니다. 하지만 그렇게 선언할 경우 배열의 크기를 변경할 수 없다는 치명적인 문제가 있습니다. 필요한 배열의 크기를 미리 알 수 있는 상황에서는 그에 맞게 정의하면 되지만, 만약 필요한 배열의 크기를 알 수 없거나 프로그램이 실행되는 상황에 따라 크기가 변동되는 경우에는 어떻게 선언해야할지 난감한 상황이 발생합니다.</p>
 
 <p>이 경우 가장 좋은 방법은 <span style="color:red">동적 메모리 할당(Dynamic Memory Allocation)</span>입니다. 다음과 같이 동적 메모리 할당을 이용하면 프로그램을 실행할 때마다 원하는 크기로 배열을 할당할 수 있습니다.</p>
 
@@ -448,55 +450,23 @@ end Array
 
 <p><img src="/assets/images/DS/004/01.png" alt="" width="600" class="align-center" /></p>
 
-<p>따라서 2차원 배열을 동적으로 할당할 때는, 먼저 1차원 배열을 할당한 다음에 1차원 배열의 각 index를 방문해서 하나하나 동적 할당을 해주셔야 합니다. C언어로 예를 들면 다음과 같습니다.</p>
+<p>따라서 2차원 배열을 동적으로 할당할 때는, 먼저 1차원 배열을 할당한 다음에 1차원 배열의 각 index를 방문해서 하나하나 동적 할당을 해주셔야 합니다. C 언어로 예를 들면 다음과 같습니다.</p>
 
-<figure class="highlight"><pre><code class="language-c" data-lang="c"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20
-21
-22
-</pre></td><td class="code"><pre><span class="cp">#include &lt;stdio.h&gt;
-#include &lt;stdlib.h&gt;
-</span>
-<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+<p><strong>Program 2.3</strong> Dynamically create a two-dimensional array</p>
 
-	<span class="kt">int</span> <span class="n">i</span><span class="p">,</span> <span class="n">rows</span><span class="p">,</span> <span class="n">cols</span><span class="p">,</span> <span class="o">**</span><span class="n">list</span><span class="p">;</span>
-	<span class="n">printf</span><span class="p">(</span><span class="s">"Enter the number of rows and columns : "</span><span class="p">);</span>
-	<span class="n">scanf_s</span><span class="p">(</span><span class="s">"%d %d"</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">rows</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">cols</span><span class="p">);</span>
-	<span class="k">if</span> <span class="p">(</span><span class="n">rows</span> <span class="o">&lt;</span> <span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
-		<span class="n">fprintf</span><span class="p">(</span><span class="n">stderr</span><span class="p">,</span> <span class="s">"Improper value of rows </span><span class="se">\n</span><span class="s">"</span><span class="p">);</span>
-		<span class="n">exit</span><span class="p">(</span><span class="n">EXIT_FAILURE</span><span class="p">);</span>
-	<span class="p">}</span>
-	<span class="k">if</span> <span class="p">(</span><span class="n">cols</span> <span class="o">&lt;</span> <span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
-		<span class="n">fprintf</span><span class="p">(</span><span class="n">stderr</span><span class="p">,</span> <span class="s">"Improper value of columns </span><span class="se">\n</span><span class="s">"</span><span class="p">);</span>
-		<span class="n">exit</span><span class="p">(</span><span class="n">EXIT_FAILURE</span><span class="p">);</span>
-	<span class="p">}</span>
-	<span class="n">list</span> <span class="o">=</span> <span class="p">(</span><span class="kt">int</span><span class="o">**</span><span class="p">)</span><span class="n">malloc</span><span class="p">(</span><span class="n">rows</span> <span class="o">*</span> <span class="k">sizeof</span><span class="p">(</span><span class="kt">int</span><span class="o">*</span><span class="p">));</span>
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">int</span><span class="o">**</span> <span class="nf">make2dArray</span><span class="p">(</span><span class="kt">int</span> <span class="n">rows</span><span class="p">,</span> <span class="kt">int</span> <span class="n">cols</span><span class="p">)</span>
+<span class="p">{</span> <span class="cm">/* create a two dimensional rows * cols array */</span>
+	<span class="kt">int</span><span class="o">**</span> <span class="n">x</span><span class="p">,</span> <span class="n">i</span><span class="p">;</span>
+	<span class="cm">/* get memory for row pointers */</span>
+	<span class="n">x</span> <span class="o">=</span> <span class="p">(</span><span class="kt">int</span><span class="o">**</span><span class="p">)</span><span class="n">malloc</span><span class="p">(</span><span class="n">rows</span> <span class="o">*</span> <span class="k">sizeof</span><span class="p">(</span><span class="kt">int</span><span class="o">*</span><span class="p">));</span>
+	<span class="cm">/* get memory for each row */</span>
 	<span class="k">for</span> <span class="p">(</span><span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">rows</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
-		<span class="n">list</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="kt">int</span><span class="o">*</span><span class="p">)</span><span class="n">malloc</span><span class="p">(</span><span class="n">cols</span> <span class="o">*</span> <span class="k">sizeof</span><span class="p">(</span><span class="kt">int</span><span class="p">));</span>
-
-	<span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+		<span class="n">x</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="kt">int</span><span class="o">*</span><span class="p">)</span><span class="n">malloc</span><span class="p">(</span><span class="n">cols</span> <span class="o">*</span> <span class="k">sizeof</span><span class="p">(</span><span class="kt">int</span><span class="p">));</span>
+	<span class="k">return</span> <span class="n">x</span><span class="p">;</span>
 <span class="p">}</span>
-</pre></td></tr></tbody></table></code></pre></figure>
+</code></pre></div></div>
 
-<p>지금까지 동적 메모리 할당을 수행할 때는 malloc 함수를 사용했습니다. C언어에서는 malloc 외에도 다른 동적 할당 방식이 존재하는데, 여기서는 간단하게만 짚고 넘어가도록 하겠습니다.</p>
+<p>지금까지 동적 메모리 할당을 수행할 때는 malloc 함수를 사용했습니다. C 언어에서는 malloc 외에도 다른 동적 할당 방식이 존재하는데, 여기서는 간단하게만 짚고 넘어가도록 하겠습니다.</p>
 
 <ul>
   <li><code class="language-plaintext highlighter-rouge">void* calloc(elt_count, elt_size)</code> : calloc은 malloc과 비슷하게 동적할당을 하는 함수입니다. 매개변수 elt_size 크기의 변수를 elt_count개 만큼 저장할 수 있는 메모리 공간을 할당합니다.</li>
@@ -505,7 +475,7 @@ end Array
 
 <h2 id="structures-and-unions">Structures and Unions</h2>
 
-<p><span style="color:red">구조체(Structure)</span>는 각각의 항목이 타입과 이름으로 식별되는 데이터의 모음입니다. 프로그래밍 언어에 따라 <span style="color:red">레코드(Record)</span>라고 부르는 경우도 있습니다. C언어에서 구조체는 다음과 같이 선언할 수 있습니다.</p>
+<p><span style="color:red">구조체(Structure)</span>는 각각의 항목이 타입과 이름으로 식별되는 데이터의 모음입니다. 프로그래밍 언어에 따라 <span style="color:red">레코드(Record)</span>라고 부르는 경우도 있습니다. C 언어에서 구조체는 다음과 같이 선언할 수 있습니다.</p>
 
 <div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">struct</span> <span class="p">{</span>
 	<span class="kt">char</span> <span class="n">name</span><span class="p">[</span><span class="mi">10</span><span class="p">];</span>
@@ -592,6 +562,22 @@ end Array
 
 <p>서로 다른 구조체 변수가 같은지 다른지 비교하기 위해서는 다음과 같이 별도의 함수를 만들어서 모든 요소가 같은지 하나하나 비교하셔야 합니다.</p>
 
+<p><strong>Program 2.4</strong> Function to check equality of structures</p>
+
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">int</span> <span class="nf">humans_equal</span><span class="p">(</span><span class="n">Person</span> <span class="n">p1</span><span class="p">,</span> <span class="n">Person</span> <span class="n">p2</span><span class="p">)</span>
+<span class="p">{</span>
+	<span class="k">if</span> <span class="p">(</span><span class="n">strcmp</span><span class="p">(</span><span class="n">p1</span><span class="p">.</span><span class="n">name</span><span class="p">,</span> <span class="n">p2</span><span class="p">.</span><span class="n">name</span><span class="p">))</span>
+		<span class="k">return</span> <span class="mi">1</span><span class="p">;</span>
+	<span class="k">if</span> <span class="p">(</span><span class="n">p1</span><span class="p">.</span><span class="n">age</span> <span class="o">!=</span> <span class="n">p2</span><span class="p">.</span><span class="n">age</span><span class="p">)</span>
+		<span class="k">return</span> <span class="mi">1</span><span class="p">;</span>
+	<span class="k">if</span> <span class="p">(</span><span class="n">p1</span><span class="p">.</span><span class="n">salary</span> <span class="o">!=</span> <span class="n">p2</span><span class="p">.</span><span class="n">salary</span><span class="p">)</span>
+		<span class="k">return</span> <span class="mi">1</span><span class="p">;</span>
+	<span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>humans_equal 함수에 main 함수를 포함하여 전체 프로그램을 구현하면 다음과 같습니다.</p>
+
 <figure class="highlight"><pre><code class="language-c" data-lang="c"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
@@ -648,7 +634,7 @@ end Array
 	<span class="n">p2</span><span class="p">.</span><span class="n">age</span> <span class="o">=</span> <span class="mi">33</span><span class="p">;</span>
 	<span class="n">p2</span><span class="p">.</span><span class="n">salary</span> <span class="o">=</span> <span class="mi">100</span><span class="p">.</span><span class="mi">0</span><span class="p">;</span>
 
-	<span class="k">if</span> <span class="p">(</span><span class="n">equal</span><span class="p">(</span><span class="n">p1</span><span class="p">,</span> <span class="n">p2</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span>
+	<span class="k">if</span> <span class="p">(</span><span class="n">humans_equal</span><span class="p">(</span><span class="n">p1</span><span class="p">,</span> <span class="n">p2</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span>
 		<span class="n">printf</span><span class="p">(</span><span class="s">"Same"</span><span class="p">);</span>
 	<span class="k">else</span>
 		<span class="n">printf</span><span class="p">(</span><span class="s">"Different"</span><span class="p">);</span>
@@ -656,7 +642,7 @@ end Array
 	<span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
 <span class="p">}</span>
 
-<span class="kt">int</span> <span class="nf">equal</span><span class="p">(</span><span class="n">Person</span> <span class="n">p1</span><span class="p">,</span> <span class="n">Person</span> <span class="n">p2</span><span class="p">)</span>
+<span class="kt">int</span> <span class="nf">humans_equal</span><span class="p">(</span><span class="n">Person</span> <span class="n">p1</span><span class="p">,</span> <span class="n">Person</span> <span class="n">p2</span><span class="p">)</span>
 <span class="p">{</span>
 	<span class="k">if</span> <span class="p">(</span><span class="n">strcmp</span><span class="p">(</span><span class="n">p1</span><span class="p">.</span><span class="n">name</span><span class="p">,</span> <span class="n">p2</span><span class="p">.</span><span class="n">name</span><span class="p">))</span>
 		<span class="k">return</span> <span class="mi">1</span><span class="p">;</span>
@@ -722,7 +708,7 @@ end Array
 
 <h2 id="unions">Unions</h2>
 
-<p><span style="color:red">공용체(Union)</span>는 구조체와 비슷한 구조를 갖고 있으나, 공용체로 선언된 항목들은 같은 메모리 공간을 공유한다는 특징을 가지고 있습니다. 즉, 공용체로 선언된 항목들은 한번에 한 가지만 사용할 수 있으며, 메모리 공간은 그들 중 가장 큰 공간을 가지고 있는 항목을 기준으로 할당됩니다. 먼저 C언어에서 공용체의 예시를 보여드리겠습니다.</p>
+<p><span style="color:red">공용체(Union)</span>는 구조체와 비슷한 구조를 갖고 있으나, 공용체로 선언된 항목들은 같은 메모리 공간을 공유한다는 특징을 가지고 있습니다. 즉, 공용체로 선언된 항목들은 한번에 한 가지만 사용할 수 있으며, 메모리 공간은 그들 중 가장 큰 공간을 가지고 있는 항목을 기준으로 할당됩니다. 먼저 C 언어에서 공용체의 예시를 보여드리겠습니다.</p>
 
 <figure class="highlight"><pre><code class="language-c" data-lang="c"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2

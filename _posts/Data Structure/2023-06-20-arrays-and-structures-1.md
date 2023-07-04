@@ -30,7 +30,7 @@ ADT Array is
 end Array
 ```
 
-C언어에서 배열은 `int list[5]`와 같은 방법으로 정의합니다. 이것은 배열의 이름이 list이고, index는 0부터 4까지 5개가 있으며, 값은 int 자료형으로 정의하겠다는 뜻입니다. 이렇게 정의할 때는 실제로 다음과 같이 메모리 주소가 할당됩니다.
+C 언어에서 배열은 `int list[5]`와 같은 방법으로 정의합니다. 이것은 배열의 이름이 list이고, index는 0부터 4까지 5개가 있으며, 값은 int 자료형으로 정의하겠다는 뜻입니다. 이렇게 정의할 때는 실제로 다음과 같이 메모리 주소가 할당됩니다.
 
 - list[0]의 주소 : a (base address)
 - list[1]의 주소 : a + sizeof(int)
@@ -38,9 +38,11 @@ C언어에서 배열은 `int list[5]`와 같은 방법으로 정의합니다. �
 - list[3]의 주소 : a + 3 * sizeof(int)
 - list[4]의 주소 : a + 4 * sizeof(int)
 
-이 때, C언어에서 배열은 int에 대한 포인터로 취급됩니다. 이것을 이용해 배열을 `int *list`와 같이 포인터로 정의할 수도 있습니다. 따라서 `list[i]`는 `*(list+i)`로 표현할 수도 있고, `&list[i]`는 `(list+i)`로 표현할 수 있습니다.
+이 때, C 언어에서 배열은 int에 대한 포인터로 취급됩니다. 이것을 이용해 배열을 `int *list`와 같이 포인터로 정의할 수도 있습니다. 따라서 `list[i]`는 `*(list+i)`로 표현할 수도 있고, `&list[i]`는 `(list+i)`로 표현할 수 있습니다.
 
 다음은 배열을 이용한 간단한 C 프로그램입니다.
+
+**Program 2.1** Example array program
 
 {% highlight c linenos %}
 #include <stdio.h>
@@ -72,7 +74,7 @@ float sum(float list[], int n) {
 
 이 프로그램에서 sum 함수가 호출될 때, 매개변수로 들어가는 input은 &input[0]으로 번역되어 sum 함수의 배열 list에 대입됩니다. 배열이 대입연산자에서 호출이 될 때는 오른쪽에서 호출이 되었냐, 왼쪽에서 호출이 되었냐에 따라 처리되는 방식이 달라집니다. 만약 list[i]가 연산자 =의 오른쪽에서 호출될 때는 (list+i)가 가리키는 값으로 처리되는데, 연산자 =의 왼쪽에서 호출될 때는 (list+i)로 처리됩니다.
 
-**Example 2.1** [One-dimensional array addressing]
+**Program 2.2** One-dimensional array accessed by address
 
 ```c
 void print1(int* ptr, int rows) {
@@ -85,11 +87,11 @@ void print1(int* ptr, int rows) {
 }
 ```
 
-Example 2.1은 1차원 배열에서 주소가 어떻게 할당되는지 확인하는 함수인 print1이 구현되어 있습니다. 실제로 이 함수를 호출해서 int형 배열인 list의 주소를 출력해보면 컴퓨터마다 다르겠지만 index가 하나 증가할 때마다 4씩 차이가 나는 것을 확인할 수 있습니다. 일반적으로 int 자료형의 크기가 4바이트로 정의되어 있기 때문입니다.
+print1은 1차원 배열에서 주소가 어떻게 할당되는지 확인하는 함수입니다. 실제로 이 함수를 호출해서 int형 배열인 list의 주소를 출력해보면 컴퓨터마다 다르겠지만 index가 하나 증가할 때마다 4씩 차이가 나는 것을 확인할 수 있습니다. 일반적으로 int 자료형의 크기가 4바이트로 정의되어 있기 때문입니다.
 
 ## Dynamically Allocated Arrays
 
-C언어에서 배열을 선언할 때는 크기까지 한번에 같이 선언하는 경우가 많습니다. 하지만 그렇게 선언할 경우 배열의 크기를 변경할 수 없다는 치명적인 문제가 있습니다. 필요한 배열의 크기를 미리 알 수 있는 상황에서는 그에 맞게 정의하면 되지만, 만약 필요한 배열의 크기를 알 수 없거나 프로그램이 실행되는 상황에 따라 크기가 변동되는 경우에는 어떻게 선언해야할지 난감한 상황이 발생합니다.
+C 언어에서 배열을 선언할 때는 크기까지 한번에 같이 선언하는 경우가 많습니다. 하지만 그렇게 선언할 경우 배열의 크기를 변경할 수 없다는 치명적인 문제가 있습니다. 필요한 배열의 크기를 미리 알 수 있는 상황에서는 그에 맞게 정의하면 되지만, 만약 필요한 배열의 크기를 알 수 없거나 프로그램이 실행되는 상황에 따라 크기가 변동되는 경우에는 어떻게 선언해야할지 난감한 상황이 발생합니다.
 
 이 경우 가장 좋은 방법은 <span style="color:red">동적 메모리 할당(Dynamic Memory Allocation)</span>입니다. 다음과 같이 동적 메모리 할당을 이용하면 프로그램을 실행할 때마다 원하는 크기로 배열을 할당할 수 있습니다.
 
@@ -116,41 +118,31 @@ int main() {
 
 ![](/assets/images/DS/004/01.png){: width="600"}{: .align-center}
 
-따라서 2차원 배열을 동적으로 할당할 때는, 먼저 1차원 배열을 할당한 다음에 1차원 배열의 각 index를 방문해서 하나하나 동적 할당을 해주셔야 합니다. C언어로 예를 들면 다음과 같습니다.
+따라서 2차원 배열을 동적으로 할당할 때는, 먼저 1차원 배열을 할당한 다음에 1차원 배열의 각 index를 방문해서 하나하나 동적 할당을 해주셔야 합니다. C 언어로 예를 들면 다음과 같습니다.
 
-{% highlight c linenos %}
-#include <stdio.h>
-#include <stdlib.h>
+**Program 2.3** Dynamically create a two-dimensional array
 
-int main() {
-
-	int i, rows, cols, **list;
-	printf("Enter the number of rows and columns : ");
-	scanf_s("%d %d", &rows, &cols);
-	if (rows < 1) {
-		fprintf(stderr, "Improper value of rows \n");
-		exit(EXIT_FAILURE);
-	}
-	if (cols < 1) {
-		fprintf(stderr, "Improper value of columns \n");
-		exit(EXIT_FAILURE);
-	}
-	list = (int**)malloc(rows * sizeof(int*));
+```c
+int** make2dArray(int rows, int cols)
+{ /* create a two dimensional rows * cols array */
+	int** x, i;
+	/* get memory for row pointers */
+	x = (int**)malloc(rows * sizeof(int*));
+	/* get memory for each row */
 	for (i = 0; i < rows; i++)
-		list[i] = (int*)malloc(cols * sizeof(int));
-
-	return 0;
+		x[i] = (int*)malloc(cols * sizeof(int));
+	return x;
 }
-{% endhighlight %}
+```
 
-지금까지 동적 메모리 할당을 수행할 때는 malloc 함수를 사용했습니다. C언어에서는 malloc 외에도 다른 동적 할당 방식이 존재하는데, 여기서는 간단하게만 짚고 넘어가도록 하겠습니다.
+지금까지 동적 메모리 할당을 수행할 때는 malloc 함수를 사용했습니다. C 언어에서는 malloc 외에도 다른 동적 할당 방식이 존재하는데, 여기서는 간단하게만 짚고 넘어가도록 하겠습니다.
 
 - `void* calloc(elt_count, elt_size)` : calloc은 malloc과 비슷하게 동적할당을 하는 함수입니다. 매개변수 elt_size 크기의 변수를 elt_count개 만큼 저장할 수 있는 메모리 공간을 할당합니다.
 - `void* realloc(p, s)` : realloc은 이미 할당한 공간의 크기를 변경하고 싶을 때 사용하는 함수입니다. 포인터 변수 p의 크기를 s 만큼 변경합니다.
 
 ## Structures and Unions
 
-<span style="color:red">구조체(Structure)</span>는 각각의 항목이 타입과 이름으로 식별되는 데이터의 모음입니다. 프로그래밍 언어에 따라 <span style="color:red">레코드(Record)</span>라고 부르는 경우도 있습니다. C언어에서 구조체는 다음과 같이 선언할 수 있습니다.
+<span style="color:red">구조체(Structure)</span>는 각각의 항목이 타입과 이름으로 식별되는 데이터의 모음입니다. 프로그래밍 언어에 따라 <span style="color:red">레코드(Record)</span>라고 부르는 경우도 있습니다. C 언어에서 구조체는 다음과 같이 선언할 수 있습니다.
 
 ```c
 struct {
@@ -215,6 +207,23 @@ int main() {
 
 서로 다른 구조체 변수가 같은지 다른지 비교하기 위해서는 다음과 같이 별도의 함수를 만들어서 모든 요소가 같은지 하나하나 비교하셔야 합니다.
 
+**Program 2.4** Function to check equality of structures
+
+```c
+int humans_equal(Person p1, Person p2)
+{
+	if (strcmp(p1.name, p2.name))
+		return 1;
+	if (p1.age != p2.age)
+		return 1;
+	if (p1.salary != p2.salary)
+		return 1;
+	return 0;
+}
+```
+
+humans_equal 함수에 main 함수를 포함하여 전체 프로그램을 구현하면 다음과 같습니다.
+
 {% highlight c linenos %}
 #include <stdio.h>
 
@@ -235,7 +244,7 @@ int main() {
 	p2.age = 33;
 	p2.salary = 100.0;
 
-	if (equal(p1, p2) == 0)
+	if (humans_equal(p1, p2) == 0)
 		printf("Same");
 	else
 		printf("Different");
@@ -243,7 +252,7 @@ int main() {
 	return 0;
 }
 
-int equal(Person p1, Person p2)
+int humans_equal(Person p1, Person p2)
 {
 	if (strcmp(p1.name, p2.name))
 		return 1;
@@ -286,7 +295,7 @@ int main() {
 
 ## Unions
 
-<span style="color:red">공용체(Union)</span>는 구조체와 비슷한 구조를 갖고 있으나, 공용체로 선언된 항목들은 같은 메모리 공간을 공유한다는 특징을 가지고 있습니다. 즉, 공용체로 선언된 항목들은 한번에 한 가지만 사용할 수 있으며, 메모리 공간은 그들 중 가장 큰 공간을 가지고 있는 항목을 기준으로 할당됩니다. 먼저 C언어에서 공용체의 예시를 보여드리겠습니다.
+<span style="color:red">공용체(Union)</span>는 구조체와 비슷한 구조를 갖고 있으나, 공용체로 선언된 항목들은 같은 메모리 공간을 공유한다는 특징을 가지고 있습니다. 즉, 공용체로 선언된 항목들은 한번에 한 가지만 사용할 수 있으며, 메모리 공간은 그들 중 가장 큰 공간을 가지고 있는 항목을 기준으로 할당됩니다. 먼저 C 언어에서 공용체의 예시를 보여드리겠습니다.
 
 {% highlight c linenos %}
 #include <stdio.h>

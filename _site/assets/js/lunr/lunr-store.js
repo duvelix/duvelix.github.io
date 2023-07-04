@@ -1234,4 +1234,10 @@ var store = [{
         "tags": ["data structure"],
         "url": "/ds/arrays-and-structures-2/",
         "teaser": null
+      },{
+        "title": "Arrays and Structures (3)",
+        "excerpt":"Strings The Abstract Data Type 이번 포스트에서는 문자열(String)에 대해 자세히 다뤄보겠습니다, 먼저 문자열에 대한 명확한 정의는 다음과 같습니다. Definition A string is a finite sequence of zero or more characters, $S = s_0, \\ldots, s_{n-1}$ where $s_i$ are characters. 간단하게 설명하자면, 문자를 여러 개 나열한 것이 문자열이라는 것입니다. 문자열에 대한...","categories": ["studies"],
+        "tags": ["data structure"],
+        "url": "/ds/arrays-and-structures-3/",
+        "teaser": null
       }]
