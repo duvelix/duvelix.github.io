@@ -336,7 +336,7 @@ end Array
 
 <p>다음은 배열을 이용한 간단한 C 프로그램입니다.</p>
 
-<p><strong>Program 2.1</strong> Example array program</p>
+<p><strong>Program 2.1:</strong> Example array program</p>
 
 <figure class="highlight"><pre><code class="language-c" data-lang="c"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
@@ -392,7 +392,7 @@ end Array
 
 <p>이 프로그램에서 sum 함수가 호출될 때, 매개변수로 들어가는 input은 &amp;input[0]으로 번역되어 sum 함수의 배열 list에 대입됩니다. 배열이 대입연산자에서 호출이 될 때는 오른쪽에서 호출이 되었냐, 왼쪽에서 호출이 되었냐에 따라 처리되는 방식이 달라집니다. 만약 list[i]가 연산자 =의 오른쪽에서 호출될 때는 (list+i)가 가리키는 값으로 처리되는데, 연산자 =의 왼쪽에서 호출될 때는 (list+i)로 처리됩니다.</p>
 
-<p><strong>Program 2.2</strong> One-dimensional array accessed by address</p>
+<p><strong>Program 2.2:</strong> One-dimensional array accessed by address</p>
 
 <div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">void</span> <span class="nf">print1</span><span class="p">(</span><span class="kt">int</span><span class="o">*</span> <span class="n">ptr</span><span class="p">,</span> <span class="kt">int</span> <span class="n">rows</span><span class="p">)</span> <span class="p">{</span>
 	<span class="cm">/* print out a one-dimensional array using a pointer */</span>
@@ -452,7 +452,7 @@ end Array
 
 <p>따라서 2차원 배열을 동적으로 할당할 때는, 먼저 1차원 배열을 할당한 다음에 1차원 배열의 각 index를 방문해서 하나하나 동적 할당을 해주셔야 합니다. C 언어로 예를 들면 다음과 같습니다.</p>
 
-<p><strong>Program 2.3</strong> Dynamically create a two-dimensional array</p>
+<p><strong>Program 2.3:</strong> Dynamically create a two-dimensional array</p>
 
 <div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">int</span><span class="o">**</span> <span class="nf">make2dArray</span><span class="p">(</span><span class="kt">int</span> <span class="n">rows</span><span class="p">,</span> <span class="kt">int</span> <span class="n">cols</span><span class="p">)</span>
 <span class="p">{</span> <span class="cm">/* create a two dimensional rows * cols array */</span>
@@ -562,7 +562,7 @@ end Array
 
 <p>서로 다른 구조체 변수가 같은지 다른지 비교하기 위해서는 다음과 같이 별도의 함수를 만들어서 모든 요소가 같은지 하나하나 비교하셔야 합니다.</p>
 
-<p><strong>Program 2.4</strong> Function to check equality of structures</p>
+<p><strong>Program 2.4:</strong> Function to check equality of structures</p>
 
 <div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">int</span> <span class="nf">humans_equal</span><span class="p">(</span><span class="n">Person</span> <span class="n">p1</span><span class="p">,</span> <span class="n">Person</span> <span class="n">p2</span><span class="p">)</span>
 <span class="p">{</span>
@@ -886,7 +886,7 @@ end Array
 
   <nav class="pagination">
     
-      <a href="/travel/nagoya-3/" class="pagination--pager" title="나고야 여행기 - 3일차
+      <a href="/travel/nagoya-3/" class="pagination--pager" title="나고야 여행기 (3)
 ">Previous</a>
     
     

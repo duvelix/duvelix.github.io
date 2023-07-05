@@ -42,7 +42,7 @@ C 언어에서 배열은 `int list[5]`와 같은 방법으로 정의합니다. �
 
 다음은 배열을 이용한 간단한 C 프로그램입니다.
 
-**Program 2.1** Example array program
+**Program 2.1:** Example array program
 
 {% highlight c linenos %}
 #include <stdio.h>
@@ -74,7 +74,7 @@ float sum(float list[], int n) {
 
 이 프로그램에서 sum 함수가 호출될 때, 매개변수로 들어가는 input은 &input[0]으로 번역되어 sum 함수의 배열 list에 대입됩니다. 배열이 대입연산자에서 호출이 될 때는 오른쪽에서 호출이 되었냐, 왼쪽에서 호출이 되었냐에 따라 처리되는 방식이 달라집니다. 만약 list[i]가 연산자 =의 오른쪽에서 호출될 때는 (list+i)가 가리키는 값으로 처리되는데, 연산자 =의 왼쪽에서 호출될 때는 (list+i)로 처리됩니다.
 
-**Program 2.2** One-dimensional array accessed by address
+**Program 2.2:** One-dimensional array accessed by address
 
 ```c
 void print1(int* ptr, int rows) {
@@ -120,7 +120,7 @@ int main() {
 
 따라서 2차원 배열을 동적으로 할당할 때는, 먼저 1차원 배열을 할당한 다음에 1차원 배열의 각 index를 방문해서 하나하나 동적 할당을 해주셔야 합니다. C 언어로 예를 들면 다음과 같습니다.
 
-**Program 2.3** Dynamically create a two-dimensional array
+**Program 2.3:** Dynamically create a two-dimensional array
 
 ```c
 int** make2dArray(int rows, int cols)
@@ -207,7 +207,7 @@ int main() {
 
 서로 다른 구조체 변수가 같은지 다른지 비교하기 위해서는 다음과 같이 별도의 함수를 만들어서 모든 요소가 같은지 하나하나 비교하셔야 합니다.
 
-**Program 2.4** Function to check equality of structures
+**Program 2.4:** Function to check equality of structures
 
 ```c
 int humans_equal(Person p1, Person p2)

@@ -1205,19 +1205,19 @@ var store = [{
         "url": "/Unboxing/razer-huntsman-v2-basilisk-v3-pro/",
         "teaser": null
       },{
-        "title": "나고야 여행기 - 1일차",
+        "title": "나고야 여행기 (1)",
         "excerpt":"안녕하세요, 처음으로 작성하는 여행기는 일본 나고야를 다녀와서 작성하게 되었습니다. 원래 이 기간에 여행할 생각은 없었는데, 석가탄신일로 인해 5월 29일이 임시공휴일로 지정이 되어 여행을 다녀오기로 결정했습니다. 주말을 낀 2박 3일 일정이라 먼 곳은 가기 힘들고, 볼 거리가 매우 많지는 않은 곳으로 다녀와야 했는데, 이 조건에 부합하는 곳이 나고야였습니다. 일본 여행 관련...","categories": ["travel"],
         "tags": ["nagoya"],
         "url": "/travel/nagoya-1/",
         "teaser": null
       },{
-        "title": "나고야 여행기 - 2일차",
+        "title": "나고야 여행기 (2)",
         "excerpt":"저는 여행지에 가면 평소와 다르게 일찍 일어나는 편입니다. 특히 한국보다 더운 나라로 가는 경우에는 낮에 너무 더워서 외출하기 힘들기 때문에, 야외 관광은 오전에 끝나고 낮에는 실내 관광을 하거나 호텔로 돌아와 낮잠을 자곤 합니다. 그래서 보통 9시쯤 호텔에서 나가는 일정을 짜는데, 나고야만큼은 그보다 일찍 예정을 짜는 것을 추천드립니다. 나고야에서는 특별한 아침...","categories": ["travel"],
         "tags": ["nagoya"],
         "url": "/travel/nagoya-2/",
         "teaser": null
       },{
-        "title": "나고야 여행기 - 3일차",
+        "title": "나고야 여행기 (3)",
         "excerpt":"오늘은 한국으로 돌어가는 날입니다. 오전 11시 귀국 비행기였기 때문에 원래라면 별 내용이 없어야겠지만… 이 날 큰 실수로 귀국을 못할 수도 있었기 때문에 그 내용을 작성해보도록 하겠습니다. 아침 식사 떠나는 날의 아침식사도 역시 나고야 모닝 세트로 결정했습니다. 숙소 가까운 위치에 Komeda’s Coffee가 있었기 때문에 이곳에 방문했습니다. 가게는 어제보다 작은 곳이었습니다만, 메뉴는...","categories": ["travel"],
         "tags": ["nagoya"],
         "url": "/travel/nagoya-3/",
@@ -1239,5 +1239,11 @@ var store = [{
         "excerpt":"Strings The Abstract Data Type 이번 포스트에서는 문자열(String)에 대해 자세히 다뤄보겠습니다, 먼저 문자열에 대한 명확한 정의는 다음과 같습니다. Definition A string is a finite sequence of zero or more characters, $S = s_0, \\ldots, s_{n-1}$ where $s_i$ are characters. 간단하게 설명하자면, 문자를 여러 개 나열한 것이 문자열이라는 것입니다. 문자열에 대한...","categories": ["studies"],
         "tags": ["data structure"],
         "url": "/ds/arrays-and-structures-3/",
+        "teaser": null
+      },{
+        "title": "제주도 여행기 (1)",
+        "excerpt":"저는 지난 6월 28일 ~ 30일에 대한전자공학회에서 주최하는 하계학술대회에 참가했습니다. 논문 발표를 위해 참가했기 때문에 정확하게는 출장이지만, 사실 정식 일정은 그리 많지 않았기 때문에 3일간 틈틈히 할 수 있는대로 관광도 즐겼습니다. 국내에서 개최되는 여름 학회는 보통 제주도에서 열리는데, 대학원생이라면 보통 학교에서 참가비를 지원해주기 때문에 교수님의 허락이 있다면 한번쯤 다녀올만한 합니다....","categories": ["travel"],
+        "tags": ["jeju"],
+        "url": "/travel/jeju-1/",
         "teaser": null
       }]

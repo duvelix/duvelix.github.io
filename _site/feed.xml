@@ -1,4 +1,138 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.3">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-07-04T17:24:45+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">KEEPMIND</title><subtitle>A place I record so that I don&apos;t forget.</subtitle><author><name>Joonsu Ryu</name></author><entry><title type="html">Arrays and Structures (3)</title><link href="http://localhost:4000/ds/arrays-and-structures-3/" rel="alternate" type="text/html" title="Arrays and Structures (3)" /><published>2023-07-04T00:00:00+09:00</published><updated>2023-07-04T00:00:00+09:00</updated><id>http://localhost:4000/ds/arrays-and-structures-3</id><content type="html" xml:base="http://localhost:4000/ds/arrays-and-structures-3/">&lt;h2 id=&quot;strings&quot;&gt;Strings&lt;/h2&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.3">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-07-05T14:09:53+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">KEEPMIND</title><subtitle>A place I record so that I don&apos;t forget.</subtitle><author><name>Joonsu Ryu</name></author><entry><title type="html">제주도 여행기 (1)</title><link href="http://localhost:4000/travel/jeju-1/" rel="alternate" type="text/html" title="제주도 여행기 (1)" /><published>2023-07-05T00:00:00+09:00</published><updated>2023-07-05T00:00:00+09:00</updated><id>http://localhost:4000/travel/jeju-1</id><content type="html" xml:base="http://localhost:4000/travel/jeju-1/">&lt;p&gt;저는 지난 6월 28일 ~ 30일에 대한전자공학회에서 주최하는 하계학술대회에 참가했습니다. 논문 발표를 위해 참가했기 때문에 정확하게는 출장이지만, 사실 정식 일정은 그리 많지 않았기 때문에 3일간 틈틈히 할 수 있는대로 관광도 즐겼습니다. 국내에서 개최되는 여름 학회는 보통 제주도에서 열리는데, 대학원생이라면 보통 학교에서 참가비를 지원해주기 때문에 교수님의 허락이 있다면 한번쯤 다녀올만한 합니다. 저는 수료생이라 이번에 자비로 참석하긴 했지만, 졸업 전 마지막 제주도 여행이라고 생각해서 그냥 참가했습니다.&lt;/p&gt;
+
+&lt;h2 id=&quot;제주도까지-이동&quot;&gt;제주도까지 이동&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/Travel/004/01.png&quot; alt=&quot;&quot; width=&quot;600&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;비행기가 오전 9:50 출발이었지만, 비교적 가까운 김포공항이었기 때문에 조금 여유롭게 집에서 출발했습니다. 국내선이라 출국수속 같은 것이 없기 때문에 탑승까지 오래 걸리지 않을 거라고 생각하기도 했구요. 그런데 제가 간과했던 것은 하필 지하철을 출근 시간대에 탑승한 것이었습니다. 4호선을 오랜만에 타다보니 평일 8시 즈음의 4호선이 얼마나 지옥철이었는가를 까먹고 말았습니다. 그래서 지도에서는 40분 남짓 걸리는 경로가, 실제로는 1시간이 넘게 걸리고 말았습니다. 공항에 9시 15분쯤 도착해서 하마터면 탑승을 못할뻔 했습니다. 다행히 발권하는 곳에서 직원분께 말씀드리니 가장 먼저 수하물을 맡길 수 있게 도와주셨습니다. 다음부터는 시간을 더 여유롭게 잡고 와야겠습니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/Travel/004/02.jpg&quot; alt=&quot;&quot; width=&quot;600&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;어찌어찌 탑승에 성공해 비행기에 탔습니다. 원래 사진을 더 찍고 싶었는데 저 당시에는 30분 안에 수하물을 맡기고 탑승까지 끝내야 했기 때문에 정신이 없었습니다. 국내선이라 국제선처럼 소지품 검사 같은 것이 없을 줄 알았는데, 국제선과 동일하게 하더라구요. 국내선을 오랜만에 타봐서 원래 했던 건지 아니면 최근 공항에서 여러 사건이 있어서 그런건지는 잘 모르겠습니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/Travel/004/03.jpg&quot; alt=&quot;&quot; width=&quot;600&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;막상 비행기에는 탔지만 무슨 문제인지 몰라도 이륙이 지연되다가 20분 정도 지나고야 출발했습니다. 다행히 기상 상황이 나쁘지 않아 비행기가 많이 흔들리지는 않았는데, 그래도 이륙할 때는 무서웠습니다. 여행은 좋아하는데 비행기 타는 것은 아직도 익숙하지가 않네요.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/Travel/004/04.jpg&quot; alt=&quot;&quot; width=&quot;600&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/Travel/004/05.jpg&quot; alt=&quot;&quot; width=&quot;600&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;한 시간 정도 지나고 나니 제주도가 슬슬 보이기 시작했습니다. 국내선이다보니 당연히 기내식 같은 것은 나오지 않고, 간단한 음료수 정도만 제공해줍니다. 물론 제가 아시아나를 타서 음료수라도 주는거지, LCC라면 그런 것도 없습니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/Travel/004/06.jpg&quot; alt=&quot;&quot; width=&quot;600&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;멀리 제주 공항 간판이 보이네요.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/Travel/004/07.jpg&quot; alt=&quot;&quot; width=&quot;600&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;제주 공항을 나가자마자 가장 먼저 보인 것을 찍어봤습니다. 한국 답지 않게 공항 주위에 야자수가 잔뜩 우거져있어서 이국적인 느낌을 주더라구요.&lt;/p&gt;
+
+&lt;h2 id=&quot;롯데호텔-제주&quot;&gt;롯데호텔 제주&lt;/h2&gt;
+
+&lt;center&gt;&lt;iframe src=&quot;https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3336.6889563486916!2d126.4080308763673!3d33.24845125974337!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x350c5ac668e0117f%3A0x1d431448fd0dc5c1!2z66Gv642w7Zi47YWUIOygnOyjvA!5e0!3m2!1sko!2skr!4v1688522654898!5m2!1sko!2skr&quot; width=&quot;600&quot; height=&quot;450&quot; style=&quot;border:0;&quot; allowfullscreen=&quot;&quot; loading=&quot;lazy&quot; referrerpolicy=&quot;no-referrer-when-downgrade&quot;&gt;&lt;/iframe&gt;&lt;/center&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/Travel/004/08.jpg&quot; alt=&quot;&quot; width=&quot;600&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;우선 학회 등록을 위해 학회 개최 장소인 롯데호텔 제주로 이동했습니다. 숙소는 다른 곳이었는데, 아직 체크인 시간이 많이 남았었기 때문에 캐리어를 그대로 들고 이동했습니다. 학회에서 점심을 제공해주기 때문에 원래 계획대로라면 이 때 롯데호텔에서 점심을 먹을 계획이었는데, 비행기 지연 + 공항버스 지연으로 인해 점심시간을 10분 넘기고 도착해버려서 아쉽게도 점심을 먹지 못했습니다. 저보다 일찍 도착했던 연구실 후배들 말로는 식사가 딱히 맛있지 않았다고 해서 그나마 위안이 되었습니다.&lt;/p&gt;
+
+&lt;h2 id=&quot;소담하다&quot;&gt;소담하다&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/Travel/004/09.jpg&quot; alt=&quot;&quot; width=&quot;600&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;학회 등록이 끝나고 한번 둘러본 뒤, 숙소로 이동했습니다. 숙소는 난드르라는 지역에 있었는데, 롯데호텔 제주에서 차로 15분 정도 걸리는 곳입니다. 호텔 체크인이 3시부터였는데, 1시간 정도 남았었기 때문에 짐만 맡기고 점심식사를 하러 주변에 있는 식당에 갔습니다. 가게 이름은 “소담하다”라는 곳인데 구글 지도에는 나오지 않는 곳이네요. 제주도 9첩 반상을 판매하고 있다고 해서 한번 찾아가봤습니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/Travel/004/10.jpg&quot; alt=&quot;&quot; width=&quot;600&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;가게 입구에는 비틀즈가 그려져있네요.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/Travel/004/11.jpg&quot; alt=&quot;&quot; width=&quot;600&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/Travel/004/12.jpg&quot; alt=&quot;&quot; width=&quot;600&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;가게 분위기는 굉장히 힙한 느낌이 나길래 젊은 사람들이 운영하고 있는 곳인가 싶었는데, 실제로는 노부부가 운영하고 있었습니다. 평일이라 그런지, 아니면 성수기가 아니라서 그런지 손님은 저밖에 없었습니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/Travel/004/13.jpg&quot; alt=&quot;&quot; width=&quot;600&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/Travel/004/14.jpg&quot; alt=&quot;&quot; width=&quot;600&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;물 색이 꼭 포도주스 같았는데 마셔보니 그냥 평범한 보리차였습니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/Travel/004/15.jpg&quot; alt=&quot;&quot; width=&quot;600&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;식사는 이렇게 한상 차림으로 나옵니다. 맛은… 솔직히 별로였습니다. 음식이 나오기 전에 주방에서 준비하는 소리를 들어보니 직접 조리하는게 아니라 전자레인지로 데우는 것 같았습니다. 함박 스테이크는 그나마 좀 먹을만 했는데, 나머지는 푸석푸석해서 식감이 별로였습니다. 밥도 국도 약간 오래된 것 같은 느낌이 들었구요. 저는 밥이 맛있으면 보통 공기밥 한 그릇을 추가해서 먹는데 여긴 그러고 싶은 생각이 별로 들지 않았습니다. 가격은 15,000원이었는데, 솔직히 이 돈이면 서울에서 훨씬 맛있게 식사할 수 있습니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/Travel/004/16.jpg&quot; alt=&quot;&quot; width=&quot;600&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;점심먹고 시간이 좀 남아 소화시킬겸 주변을 산책해봤습니다. 예래생태마을이라는 간판이 있네요.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/Travel/004/17.jpg&quot; alt=&quot;&quot; width=&quot;600&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/Travel/004/18.jpg&quot; alt=&quot;&quot; width=&quot;600&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;난드르는 바로 앞이 바다인 곳입니다. 바다라고 해도 해수욕장 같은 곳이 아니라 갯벌에 좀 더 가까웠습니다. 근처 한바퀴를 쭉 돌아봤는데, 카페와 민박이 많이 보였지만 사람은 거의 보이지 않았습니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/Travel/004/19.jpg&quot; alt=&quot;&quot; width=&quot;600&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;산책하다보니 슬슬 체크인 시간이 되었습니다. 멀리 호텔 건물이 보이네요.&lt;/p&gt;
+
+&lt;h2 id=&quot;호텔-스카브로&quot;&gt;호텔 스카브로&lt;/h2&gt;
+
+&lt;center&gt;&lt;iframe src=&quot;https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3337.2384147645967!2d126.36512858890916!3d33.234056892110786!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x350c44bf9ffa5d45%3A0xc58649768114dc7b!2z7Zi47YWU7Iqk7Lm067iM66Gc!5e0!3m2!1sko!2skr!4v1688525559784!5m2!1sko!2skr&quot; width=&quot;600&quot; height=&quot;450&quot; style=&quot;border:0;&quot; allowfullscreen=&quot;&quot; loading=&quot;lazy&quot; referrerpolicy=&quot;no-referrer-when-downgrade&quot;&gt;&lt;/iframe&gt;&lt;/center&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/Travel/004/20.jpg&quot; alt=&quot;&quot; width=&quot;600&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;호텔 스카브로는 난드르에 위치한 호텔입니다. 호텔이라고 해도 호텔보다는 풀 빌라에 가깝습니다. 입구부터 수영장이 보이네요. 호텔측 안내에 따르면 수영장은 7~8월에만 운영한다고 되어있었는데, 날씨가 매우 더웠기 때문에 예정보다 일찍 오픈한 것 같습니다. 혹시 몰라서 수영복을 챙겨왔는데 다행이네요.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/Travel/004/21.jpg&quot; alt=&quot;&quot; width=&quot;600&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;호텔 건물은 신축 느낌이 드는 깔끔한 건물입니다. 찾아보니 호텔이 2013년에 지어졌는데, 2018년에 리모델링까지 했다고 하네요.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/Travel/004/22.jpg&quot; alt=&quot;&quot; width=&quot;600&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;건물은 신축 느낌이 나는데 이상하게 객실 문은 고풍스럽게 디자인되어 있네요.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/Travel/004/23.jpg&quot; alt=&quot;&quot; width=&quot;600&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;객실에 들어왔을때 찍은 사진입니다. 왼쪽에는 싱크대와 냉장고, 전자레인지가 있는데 옷장에 가려져서 잘 안보이네요. 정면에는 의자와 식탁이 있습니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/Travel/004/24.jpg&quot; alt=&quot;&quot; width=&quot;600&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;안쪽에는 침대가 있습니다. 침대는 킹 사이즈라 매우 큽니다. 오른쪽이 화장실 겸 욕실인데, 훤히 보이는 유리로 되어있습니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/Travel/004/25.jpg&quot; alt=&quot;&quot; width=&quot;600&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;화장실로 들어가보면 정면에 세면대가 있고, 왼쪽에 자쿠지가 있습니다. 화장실에 있는 창문이 통창이라, 자쿠지에 들어가 있으면서 야외를 감상할 수 있습니다. 다만 낮에는 바깥에서도 안이 보이기 때문에 조심하셔야할 것 같네요.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/Travel/004/26.jpg&quot; alt=&quot;&quot; width=&quot;600&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;가자마자 덥기도 하고 딱히 할 것도 없었기 때문에 수영장으로 갔습니다. 저 말고 숙박하는 사람이 없는지 수영장도 텅텅 비어있더라구요. 혹시 몰라 수영복을 챙겨왔는데, 덕분에 재밌게 즐겼습니다. 리셉션에서 타월도 무료로 빌려주기 때문에 수영하실거면 미리 빌리시면 좋습니다.&lt;/p&gt;
+
+&lt;h2 id=&quot;저녁식사&quot;&gt;저녁식사&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/Travel/004/27.jpg&quot; alt=&quot;&quot; width=&quot;600&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;한 시간 정도 수영을 즐기다가 지쳐 숙소에서 쉬었습니다. 수영을 하고 나니 점심먹은게 금방 소화가 되서 저녁을 먹으려고 나갔습니다. 호텔 주변에 있는 식당 중에 찰리스라는 곳이 괜찮아보여서 찾아갔는데, 하필 가는 날이 장날이라고 내부 수리로 인해 문을 닫았습니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/Travel/004/28.jpg&quot; alt=&quot;&quot; width=&quot;600&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;뭘 먹을까 하다가 멀리 가게가 몇 개 보이길래 그쪽으로 걸어갔습니다.&lt;/p&gt;
+
+&lt;center&gt;&lt;iframe src=&quot;https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d834.3044439226679!2d126.36774073752788!3d33.23459768140522!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x350c45abd425bad1%3A0xc66652747c72815e!2z7KCc7KO864uk7Jio!5e0!3m2!1sko!2skr!4v1688532968820!5m2!1sko!2skr&quot; width=&quot;600&quot; height=&quot;450&quot; style=&quot;border:0;&quot; allowfullscreen=&quot;&quot; loading=&quot;lazy&quot; referrerpolicy=&quot;no-referrer-when-downgrade&quot;&gt;&lt;/iframe&gt;&lt;/center&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/Travel/004/29.jpg&quot; alt=&quot;&quot; width=&quot;600&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;가다가 제주다온이라는 식당을 봤는데, 혼밥하기 괜찮아보여서 들어갔습니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/Travel/004/30.jpg&quot; alt=&quot;&quot; width=&quot;600&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;메뉴 중에 흑돼지 제육볶음이 있길래 주문했습니다. 제육은 진짜 어지간하면 실패하지 않는 음식인데… 그것도 딱히 아니더라구요. 고기 자체가 나쁘진 않았는데 너무 매워서 먹는데 고생했습니다. 밥을 한 그릇 더 주문했는데, 맛있어서가 아니라 너무 매워서요. 그래도 다 못먹고 나왔습니다. 가격은 15,000원이었는데, 공기밥 한 그릇 가격도 다 받으셔서 16,000원을 냈습니다. 서울에서도 어지간한 가게에서는 공기밥 정도는 무료로 추가해주던데 제주도는 그런 것도 없네요.&lt;/p&gt;
+
+&lt;h2 id=&quot;자쿠지&quot;&gt;자쿠지&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/Travel/004/31.jpg&quot; alt=&quot;&quot; width=&quot;600&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;숙소에 돌아와서는 하루를 마무리할겸 자쿠지를 즐겼습니다. 자쿠지를 처음 써봐서 잘 몰랐는데, 저만한 크기의 욕조를 채우는데 2시간 가까이 걸리더라구요. 자쿠지는 저 거품을 낼때 기계가 진동하는 소음 때문에 10시 이후로는 사용을 못하기 때문에 자쿠지를 사용하실 분은 미리미리 물을 받아놓으시는 것이 좋을 것 같습니다. 7시쯤 물을 받기 시작해서, 9시부터 1시간 정도 즐기면 딱 괜찮을 것 같습니다.&lt;/p&gt;</content><author><name>Joonsu Ryu</name></author><category term="travel" /><category term="jeju" /><summary type="html">저는 지난 6월 28일 ~ 30일에 대한전자공학회에서 주최하는 하계학술대회에 참가했습니다. 논문 발표를 위해 참가했기 때문에 정확하게는 출장이지만, 사실 정식 일정은 그리 많지 않았기 때문에 3일간 틈틈히 할 수 있는대로 관광도 즐겼습니다. 국내에서 개최되는 여름 학회는 보통 제주도에서 열리는데, 대학원생이라면 보통 학교에서 참가비를 지원해주기 때문에 교수님의 허락이 있다면 한번쯤 다녀올만한 합니다. 저는 수료생이라 이번에 자비로 참석하긴 했지만, 졸업 전 마지막 제주도 여행이라고 생각해서 그냥 참가했습니다.</summary></entry><entry><title type="html">Arrays and Structures (3)</title><link href="http://localhost:4000/ds/arrays-and-structures-3/" rel="alternate" type="text/html" title="Arrays and Structures (3)" /><published>2023-07-04T00:00:00+09:00</published><updated>2023-07-04T00:00:00+09:00</updated><id>http://localhost:4000/ds/arrays-and-structures-3</id><content type="html" xml:base="http://localhost:4000/ds/arrays-and-structures-3/">&lt;h2 id=&quot;strings&quot;&gt;Strings&lt;/h2&gt;
 
 &lt;h3 id=&quot;the-abstract-data-type&quot;&gt;The Abstract Data Type&lt;/h3&gt;
 
@@ -1683,7 +1817,7 @@ end Array
 
 &lt;p&gt;다음은 배열을 이용한 간단한 C 프로그램입니다.&lt;/p&gt;
 
-&lt;p&gt;&lt;strong&gt;Program 2.1&lt;/strong&gt; Example array program&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Program 2.1:&lt;/strong&gt; Example array program&lt;/p&gt;
 
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-c&quot; data-lang=&quot;c&quot;&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
 2
@@ -1739,7 +1873,7 @@ end Array
 
 &lt;p&gt;이 프로그램에서 sum 함수가 호출될 때, 매개변수로 들어가는 input은 &amp;amp;input[0]으로 번역되어 sum 함수의 배열 list에 대입됩니다. 배열이 대입연산자에서 호출이 될 때는 오른쪽에서 호출이 되었냐, 왼쪽에서 호출이 되었냐에 따라 처리되는 방식이 달라집니다. 만약 list[i]가 연산자 =의 오른쪽에서 호출될 때는 (list+i)가 가리키는 값으로 처리되는데, 연산자 =의 왼쪽에서 호출될 때는 (list+i)로 처리됩니다.&lt;/p&gt;
 
-&lt;p&gt;&lt;strong&gt;Program 2.2&lt;/strong&gt; One-dimensional array accessed by address&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Program 2.2:&lt;/strong&gt; One-dimensional array accessed by address&lt;/p&gt;
 
 &lt;div class=&quot;language-c highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;print1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ptr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;rows&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
 	&lt;span class=&quot;cm&quot;&gt;/* print out a one-dimensional array using a pointer */&lt;/span&gt;
@@ -1799,7 +1933,7 @@ end Array
 
 &lt;p&gt;따라서 2차원 배열을 동적으로 할당할 때는, 먼저 1차원 배열을 할당한 다음에 1차원 배열의 각 index를 방문해서 하나하나 동적 할당을 해주셔야 합니다. C 언어로 예를 들면 다음과 같습니다.&lt;/p&gt;
 
-&lt;p&gt;&lt;strong&gt;Program 2.3&lt;/strong&gt; Dynamically create a two-dimensional array&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Program 2.3:&lt;/strong&gt; Dynamically create a two-dimensional array&lt;/p&gt;
 
 &lt;div class=&quot;language-c highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;**&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;make2dArray&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;rows&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;cols&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
 &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;cm&quot;&gt;/* create a two dimensional rows * cols array */&lt;/span&gt;
@@ -1909,7 +2043,7 @@ end Array
 
 &lt;p&gt;서로 다른 구조체 변수가 같은지 다른지 비교하기 위해서는 다음과 같이 별도의 함수를 만들어서 모든 요소가 같은지 하나하나 비교하셔야 합니다.&lt;/p&gt;
 
-&lt;p&gt;&lt;strong&gt;Program 2.4&lt;/strong&gt; Function to check equality of structures&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Program 2.4:&lt;/strong&gt; Function to check equality of structures&lt;/p&gt;
 
 &lt;div class=&quot;language-c highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;humans_equal&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Person&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;p1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Person&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;p2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
 &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
@@ -2169,7 +2303,7 @@ end Array
 
 &lt;p&gt;이 프로그램에서 구조체 list는 자기 자신의 포인터형 변수인 *link를 가지고 있습니다. main 함수를 보시면 list형 구조체 변수인 item1, item2, item3이 정의되어 있는데, item1의 link가 item2를 가리키고, item2의 link가 item3을 가리키게 만들었습니다. 이렇게 데이터가 순차적으로 연결된 구조를 연결 리스트라고 합니다. 연결 리스트에 대해서는 나중에 자세히 다룰 예정입니다만, 연결 리스트가 자료구조의 핵심 파트라고 생각하기 때문에 미리 간단하게 설명을 드렸습니다.&lt;/p&gt;
 
-&lt;p&gt;이렇게 자료구조에서 사용되는 C 언어의 문법을 간단하게 정리해봤습니다. 다음 포스트에서는 이것들을 활용하여 구체적으로 어떤 자료들을 다루는지 자세히 알아보도록 하겠습니다.&lt;/p&gt;</content><author><name>Joonsu Ryu</name></author><category term="studies" /><category term="data structure" /><summary type="html">Arrays</summary></entry><entry><title type="html">나고야 여행기 - 3일차</title><link href="http://localhost:4000/travel/nagoya-3/" rel="alternate" type="text/html" title="나고야 여행기 - 3일차" /><published>2023-06-02T00:00:00+09:00</published><updated>2023-06-02T00:00:00+09:00</updated><id>http://localhost:4000/travel/nagoya-3</id><content type="html" xml:base="http://localhost:4000/travel/nagoya-3/">&lt;p&gt;오늘은 한국으로 돌어가는 날입니다. 오전 11시 귀국 비행기였기 때문에 원래라면 별 내용이 없어야겠지만… 이 날 큰 실수로 귀국을 못할 수도 있었기 때문에 그 내용을 작성해보도록 하겠습니다.&lt;/p&gt;
+&lt;p&gt;이렇게 자료구조에서 사용되는 C 언어의 문법을 간단하게 정리해봤습니다. 다음 포스트에서는 이것들을 활용하여 구체적으로 어떤 자료들을 다루는지 자세히 알아보도록 하겠습니다.&lt;/p&gt;</content><author><name>Joonsu Ryu</name></author><category term="studies" /><category term="data structure" /><summary type="html">Arrays</summary></entry><entry><title type="html">나고야 여행기 (3)</title><link href="http://localhost:4000/travel/nagoya-3/" rel="alternate" type="text/html" title="나고야 여행기 (3)" /><published>2023-06-02T00:00:00+09:00</published><updated>2023-06-02T00:00:00+09:00</updated><id>http://localhost:4000/travel/nagoya-3</id><content type="html" xml:base="http://localhost:4000/travel/nagoya-3/">&lt;p&gt;오늘은 한국으로 돌어가는 날입니다. 오전 11시 귀국 비행기였기 때문에 원래라면 별 내용이 없어야겠지만… 이 날 큰 실수로 귀국을 못할 수도 있었기 때문에 그 내용을 작성해보도록 하겠습니다.&lt;/p&gt;
 
 &lt;h2 id=&quot;아침-식사&quot;&gt;아침 식사&lt;/h2&gt;
 
@@ -2312,7 +2446,7 @@ end Array
 
 &lt;p&gt;나고야 여행은 재밌긴 했는데 2박 3일 여행은 정말 눈 깜짝할 새에 끝나버리더라구요. 기회가 된다면 다음에는 좀 더 긴 기간동안 여행하고 싶습니다.&lt;/p&gt;
 
-&lt;p&gt;지금까지 읽어주셔서 감사합니다!&lt;/p&gt;</content><author><name>Joonsu Ryu</name></author><category term="travel" /><category term="nagoya" /><summary type="html">오늘은 한국으로 돌어가는 날입니다. 오전 11시 귀국 비행기였기 때문에 원래라면 별 내용이 없어야겠지만… 이 날 큰 실수로 귀국을 못할 수도 있었기 때문에 그 내용을 작성해보도록 하겠습니다.</summary></entry><entry><title type="html">나고야 여행기 - 2일차</title><link href="http://localhost:4000/travel/nagoya-2/" rel="alternate" type="text/html" title="나고야 여행기 - 2일차" /><published>2023-06-01T00:00:00+09:00</published><updated>2023-06-01T00:00:00+09:00</updated><id>http://localhost:4000/travel/nagoya-2</id><content type="html" xml:base="http://localhost:4000/travel/nagoya-2/">&lt;p&gt;저는 여행지에 가면 평소와 다르게 일찍 일어나는 편입니다. 특히 한국보다 더운 나라로 가는 경우에는 낮에 너무 더워서 외출하기 힘들기 때문에, 야외 관광은 오전에 끝나고 낮에는 실내 관광을 하거나 호텔로 돌아와 낮잠을 자곤 합니다. 그래서 보통 9시쯤 호텔에서 나가는 일정을 짜는데, 나고야만큼은 그보다 일찍 예정을 짜는 것을 추천드립니다. 나고야에서는 특별한 아침 식사가 있기 때문입니다.&lt;/p&gt;
+&lt;p&gt;지금까지 읽어주셔서 감사합니다!&lt;/p&gt;</content><author><name>Joonsu Ryu</name></author><category term="travel" /><category term="nagoya" /><summary type="html">오늘은 한국으로 돌어가는 날입니다. 오전 11시 귀국 비행기였기 때문에 원래라면 별 내용이 없어야겠지만… 이 날 큰 실수로 귀국을 못할 수도 있었기 때문에 그 내용을 작성해보도록 하겠습니다.</summary></entry><entry><title type="html">나고야 여행기 (2)</title><link href="http://localhost:4000/travel/nagoya-2/" rel="alternate" type="text/html" title="나고야 여행기 (2)" /><published>2023-06-01T00:00:00+09:00</published><updated>2023-06-01T00:00:00+09:00</updated><id>http://localhost:4000/travel/nagoya-2</id><content type="html" xml:base="http://localhost:4000/travel/nagoya-2/">&lt;p&gt;저는 여행지에 가면 평소와 다르게 일찍 일어나는 편입니다. 특히 한국보다 더운 나라로 가는 경우에는 낮에 너무 더워서 외출하기 힘들기 때문에, 야외 관광은 오전에 끝나고 낮에는 실내 관광을 하거나 호텔로 돌아와 낮잠을 자곤 합니다. 그래서 보통 9시쯤 호텔에서 나가는 일정을 짜는데, 나고야만큼은 그보다 일찍 예정을 짜는 것을 추천드립니다. 나고야에서는 특별한 아침 식사가 있기 때문입니다.&lt;/p&gt;
 
 &lt;h2 id=&quot;아침-식사&quot;&gt;아침 식사&lt;/h2&gt;
 
@@ -2592,7 +2726,7 @@ end Array
 
 &lt;h2 id=&quot;마무리&quot;&gt;마무리&lt;/h2&gt;
 
-&lt;p&gt;마무리로는 호텔에서 어제 샀던 캔맥주와 푸딩을 먹었습니다. 다음 날에도 일찍 일어나야했기 때문에 일찍 잤는데요, 그럼에도 불구하고 전 귀국 비행기를 못탈 뻔한 사건이 일어났습니다. 그 이야기는 다음 포스트에서 말씀드리겠습니다…&lt;/p&gt;</content><author><name>Joonsu Ryu</name></author><category term="travel" /><category term="nagoya" /><summary type="html">저는 여행지에 가면 평소와 다르게 일찍 일어나는 편입니다. 특히 한국보다 더운 나라로 가는 경우에는 낮에 너무 더워서 외출하기 힘들기 때문에, 야외 관광은 오전에 끝나고 낮에는 실내 관광을 하거나 호텔로 돌아와 낮잠을 자곤 합니다. 그래서 보통 9시쯤 호텔에서 나가는 일정을 짜는데, 나고야만큼은 그보다 일찍 예정을 짜는 것을 추천드립니다. 나고야에서는 특별한 아침 식사가 있기 때문입니다.</summary></entry><entry><title type="html">나고야 여행기 - 1일차</title><link href="http://localhost:4000/travel/nagoya-1/" rel="alternate" type="text/html" title="나고야 여행기 - 1일차" /><published>2023-05-30T00:00:00+09:00</published><updated>2023-05-30T00:00:00+09:00</updated><id>http://localhost:4000/travel/nagoya-1</id><content type="html" xml:base="http://localhost:4000/travel/nagoya-1/">&lt;p&gt;안녕하세요, 처음으로 작성하는 여행기는 일본 나고야를 다녀와서 작성하게 되었습니다. 원래 이 기간에 여행할 생각은 없었는데, 석가탄신일로 인해 5월 29일이 임시공휴일로 지정이 되어 여행을 다녀오기로 결정했습니다. 주말을 낀 2박 3일 일정이라 먼 곳은 가기 힘들고, 볼 거리가 매우 많지는 않은 곳으로 다녀와야 했는데, 이 조건에 부합하는 곳이 나고야였습니다. 일본 여행 관련 커뮤니티에서는 나고야가 참 볼게 없다고, 하루 이틀이면 볼거 다 본다는 의견이 많았거든요. 마침 일본 무비자 입국도 풀렸고, 백신/PCR 증명서도 4월 29일부터 해제되어 준비하기 편했습니다. 오랜만에 여행이라 기대가 많이 되었습니다. 대학원 입학하기 전에 다녀온게 마지막 여행이었거든요.&lt;/p&gt;
+&lt;p&gt;마무리로는 호텔에서 어제 샀던 캔맥주와 푸딩을 먹었습니다. 다음 날에도 일찍 일어나야했기 때문에 일찍 잤는데요, 그럼에도 불구하고 전 귀국 비행기를 못탈 뻔한 사건이 일어났습니다. 그 이야기는 다음 포스트에서 말씀드리겠습니다…&lt;/p&gt;</content><author><name>Joonsu Ryu</name></author><category term="travel" /><category term="nagoya" /><summary type="html">저는 여행지에 가면 평소와 다르게 일찍 일어나는 편입니다. 특히 한국보다 더운 나라로 가는 경우에는 낮에 너무 더워서 외출하기 힘들기 때문에, 야외 관광은 오전에 끝나고 낮에는 실내 관광을 하거나 호텔로 돌아와 낮잠을 자곤 합니다. 그래서 보통 9시쯤 호텔에서 나가는 일정을 짜는데, 나고야만큼은 그보다 일찍 예정을 짜는 것을 추천드립니다. 나고야에서는 특별한 아침 식사가 있기 때문입니다.</summary></entry><entry><title type="html">나고야 여행기 (1)</title><link href="http://localhost:4000/travel/nagoya-1/" rel="alternate" type="text/html" title="나고야 여행기 (1)" /><published>2023-05-30T00:00:00+09:00</published><updated>2023-05-30T00:00:00+09:00</updated><id>http://localhost:4000/travel/nagoya-1</id><content type="html" xml:base="http://localhost:4000/travel/nagoya-1/">&lt;p&gt;안녕하세요, 처음으로 작성하는 여행기는 일본 나고야를 다녀와서 작성하게 되었습니다. 원래 이 기간에 여행할 생각은 없었는데, 석가탄신일로 인해 5월 29일이 임시공휴일로 지정이 되어 여행을 다녀오기로 결정했습니다. 주말을 낀 2박 3일 일정이라 먼 곳은 가기 힘들고, 볼 거리가 매우 많지는 않은 곳으로 다녀와야 했는데, 이 조건에 부합하는 곳이 나고야였습니다. 일본 여행 관련 커뮤니티에서는 나고야가 참 볼게 없다고, 하루 이틀이면 볼거 다 본다는 의견이 많았거든요. 마침 일본 무비자 입국도 풀렸고, 백신/PCR 증명서도 4월 29일부터 해제되어 준비하기 편했습니다. 오랜만에 여행이라 기대가 많이 되었습니다. 대학원 입학하기 전에 다녀온게 마지막 여행이었거든요.&lt;/p&gt;
 
 &lt;h2 id=&quot;여행-준비&quot;&gt;여행 준비&lt;/h2&gt;
 
@@ -3526,156 +3660,4 @@ end Array
 
 &lt;p&gt;물론 고가의 피규어보다는 퀄리티가 떨어지겠지만, 멀리서 보면 그다지 세세한 부분이 눈에 들어오지는 않습니다.&lt;/p&gt;
 
-&lt;p&gt;POPUP PARADE 시리즈는 저처럼 피규어에 처음 입문하시는 분들에게 나쁘지 않은 선택인 것 같습니다.&lt;/p&gt;</content><author><name>Joonsu Ryu</name></author><category term="interests" /><category term="unboxing" /><summary type="html"></summary></entry><entry><title type="html">Amazon에서 구매한 PSP</title><link href="http://localhost:4000/Unboxing/psp-from-amazon/" rel="alternate" type="text/html" title="Amazon에서 구매한 PSP" /><published>2022-12-17T00:00:00+09:00</published><updated>2022-12-17T00:00:00+09:00</updated><id>http://localhost:4000/Unboxing/psp-from-amazon</id><content type="html" xml:base="http://localhost:4000/Unboxing/psp-from-amazon/">&lt;p&gt;&lt;img src=&quot;/assets/images/Unboxing/070/00.jpg&quot; alt=&quot;&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;저는 어지간하면 중고 제품을 구매하지 않습니다. 특히 전자기기는 무조건 신품으로 사는 편인데, 겉보기만으로는 기기의 상태를 제대로 알기 힘들기 때문입니다.&lt;/p&gt;
-
-&lt;p&gt;하지만 신품을 구하는 것이 불가능하거나, 가능하더라도 가격이 너무 비싼 경우에는 어쩔 수 없이 중고를 구매합니다. 저는 보통 소장용으로 구매하기 때문에, 중고를 구매할 때도 상태를 굉장히 꼼꼼히 확인하는 편입니다.&lt;/p&gt;
-
-&lt;p&gt;중고를 구매할 때 제가 제일 먼저 알아보는 곳은 일본 아마존입니다. 미국 아마존과는 달리 일본 아마존은 제품의 상태를 신뢰할 수 있기 때문입니다.&lt;/p&gt;
-
-&lt;p&gt;미국 아마존에서 Very Good은 실제로 Very Good인 상태와 거리가 멀지만, 일본 아마존에서는 진짜 그 상태로 배달이 됩니다. (Like New는 실제로 신품 같은 경우가 많았습니다.)&lt;/p&gt;
-
-&lt;p&gt;지난번 포스트에서 마마마 PSP 게임을 샀는데, 저는 PSP를 갖고 있지 않았습니다. 그래서 이 참에 기기를 하나 마련하기 위해 일본 아마존을 찾아보았습니다. 마침 괜찮은 가격에 Like New 제품이 있었기 때문에 악세서리와 같이 구매하였습니다.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/Unboxing/070/01.png&quot; alt=&quot;&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;PSP 본체는 약 11만원, 파우치는 약 2만 5천원, 보호필름은 7천원 정도에 구매했습니다.&lt;/p&gt;
-
-&lt;p&gt;파우치의 가격이 좀 비싼 감이 있긴 하지만, 일본 제품이라 믿고 구매했습니다.&lt;/p&gt;
-
-&lt;p&gt;보호필름은 예비용을 포함해 2개 구매했습니다.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/Unboxing/070/02.jpg&quot; alt=&quot;&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;제품을 배송 받고, 택배 상자에서 제품을 꺼낸 모습입니다.&lt;/p&gt;
-
-&lt;p&gt;파우치와 보호 필름은 제품 사진 그대로 왔는데 PSP 본체는 랩 같은 재질로 둘둘 말아져 도착했습니다.&lt;/p&gt;
-
-&lt;p&gt;그래도 Like New라 꼼꼼히 포장해줄 것으로 기대했는데, 제가 너무 많이 기대했나 봅니다.&lt;/p&gt;
-
-&lt;p&gt;솔직히 이 상태로 온 것은 조금 실망스러웠습니다.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/Unboxing/070/03.jpg&quot; alt=&quot;&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;보시다시피 구성품이 전부 랩을 돌돌 감아져 있습니다.&lt;/p&gt;
-
-&lt;p&gt;맨 아래에 있는 것이 본체고, 그 위에 충전기와 배터리가 있네요.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/Unboxing/070/04.jpg&quot; alt=&quot;&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;랩을 벗겨보니 구성품의 상태는 나름 괜찮습니다.&lt;/p&gt;
-
-&lt;p&gt;충전기와 배터리, 본체 모두 개별 포장이 되어 있네요.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/Unboxing/070/05.jpg&quot; alt=&quot;&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/Unboxing/070/06.jpg&quot; alt=&quot;&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;본체의 상태는 놀랄 만큼 괜찮았습니다.&lt;/p&gt;
-
-&lt;p&gt;역시 Like New라고 부를 수 있을 정도네요.&lt;/p&gt;
-
-&lt;p&gt;사진에서도 볼 수 있듯이 액정에 흠집 하나 없이 깨끗했습니다.&lt;/p&gt;
-
-&lt;p&gt;그 외에 부분도 눈에 띄는 흠집은 없었습니다.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/Unboxing/070/07.jpg&quot; alt=&quot;&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;뒷 부분에 디스크를 넣는 부분을 열어봤습니다.&lt;/p&gt;
-
-&lt;p&gt;PSP는 다른 휴대용 게임기와 다르게 칩이 아니라 UMD를 사용하는데요, 이 시스템이 참 재밌습니다.&lt;/p&gt;
-
-&lt;p&gt;조그만 디스크가 들어있는 플라스틱 케이스를 넣는 구조거든요.&lt;/p&gt;
-
-&lt;p&gt;이번에 어떤 느낌인지 제대로 볼 수 있을 것 같습니다.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/Unboxing/070/08.jpg&quot; alt=&quot;&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;윗 부분에는 기기로 데이터를 넣기 위한 USB Type-B 포트와, 정체 모를 WLAN 스위치가 있네요.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/Unboxing/070/09.jpg&quot; alt=&quot;&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;아랫 부분에는 이어폰 잭과 충전 포트가 있습니다.&lt;/p&gt;
-
-&lt;p&gt;상단의 USB Type-B로도 충전이 가능하다고는 하는데, USB Type-B 케이블 자체를 구하기 어렵기 때문에 쓸 일은 거의 없을 것 같습니다.&lt;/p&gt;
-
-&lt;p&gt;이어폰 잭 옆에 있는 사각형 구멍은 뭘 의미하는지 잘 모르겠네요.&lt;/p&gt;
-
-&lt;h2 id=&quot;파우치&quot;&gt;파우치&lt;/h2&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/Unboxing/070/10.jpg&quot; alt=&quot;&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;다음은 기기를 담아둘 파우치입니다.&lt;/p&gt;
-
-&lt;p&gt;가격이 조금 비싼 편이었지만 기기의 색과 깔맞춤을 하기 위해 구매했습니다.&lt;/p&gt;
-
-&lt;p&gt;PSP 전 세대와 Vita 까지 사용할 수 있는 크기라고 나와있네요.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/Unboxing/070/11.jpg&quot; alt=&quot;&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/Unboxing/070/12.jpg&quot; alt=&quot;&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;제품 사진으로 볼 때는 잘 몰랐는데, 받아보고 나니 뭔가 싼마이한 느낌이 드네요.&lt;/p&gt;
-
-&lt;p&gt;솔직히 이것도 조금 후회됩니다.&lt;/p&gt;
-
-&lt;p&gt;그냥 네이버 쇼핑에서 파는 싸구려 파우치를 살껄 하는 생각이 드네요.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/Unboxing/070/13.jpg&quot; alt=&quot;&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;파우치를 열어보고 제품을 넣어보니 그럭저럭 비싼 값을 하는 것 같습니다.&lt;/p&gt;
-
-&lt;p&gt;파우치의 두께가 매우 두꺼워서, 어지간히 세게 떨어트리지 않는 이상 제품에 문제는 없을 것 같습니다.&lt;/p&gt;
-
-&lt;h2 id=&quot;메모리카드--보호필름&quot;&gt;메모리카드 &amp;amp; 보호필름&lt;/h2&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/Unboxing/070/14.jpg&quot; alt=&quot;&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;그런데 제가 간과한 점이 있습니다.&lt;/p&gt;
-
-&lt;p&gt;Vita와 마찬가지로 게임을 세이브하기 위해서는 별도의 저장 장치가 필요했습니다.&lt;/p&gt;
-
-&lt;p&gt;하필 메모리스틱이라고 하는 독자 규격 저장장치라 구매를 안 할 수가 없네요.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/Unboxing/070/15.jpg&quot; alt=&quot;&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;결국 메모리스틱을 새로 구매했습니다.&lt;/p&gt;
-
-&lt;p&gt;다행히 메모리스틱이 더 이상 잘 쓰이지 않는 저장 장치라 가격은 엄청 비싸지는 않았습니다.&lt;/p&gt;
-
-&lt;p&gt;16기가 기준으로 6만원-8만원 정도에 팔고 있습니다.&lt;/p&gt;
-
-&lt;p&gt;다만 일반적인 SD 카드와 비교하면 매우 비싸긴 하네요.&lt;/p&gt;
-
-&lt;h2 id=&quot;기기-세팅&quot;&gt;기기 세팅&lt;/h2&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/Unboxing/070/16.jpg&quot; alt=&quot;&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;일본에서 구매한 기기이기 때문에 당연히 기기도 일본어만 가능할 줄 알았는데, 놀랍게도 한국어 설정이 있었습니다.&lt;/p&gt;
-
-&lt;p&gt;다만 저는 일본판 게임을 플레이할 예정이기 때문에 큰 상관은 없습니다.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/Unboxing/070/17.jpg&quot; alt=&quot;&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;메모리스틱은 16기가지만, 실제로 사용할 수 있는 용량은 약 14기가로 보입니다.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/Unboxing/070/18.jpg&quot; alt=&quot;&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;지난 포스트에서 구매한 마법소녀 마도카☆마기카 포터블 디스크를 넣었습니다.&lt;/p&gt;
-
-&lt;p&gt;다만 생각지도 못했던 단점을 하나 발견했는데요, UMD가 디스크를 읽는 방식이다보니 생각보다 이로 인한 소음이 큽니다.&lt;/p&gt;
-
-&lt;p&gt;아직 본격적으로 플레이하지 않아서 잘 모르겠지만, 만약 게임을 플레이하는 내내 이런 소음이 들린다면 무시할 수 없을 정도일 것 같습니다.&lt;/p&gt;
-
-&lt;p&gt;이어폰을 끼면 좀 낫겠지만, 저는 집에서까지 이어폰을 끼면서 플레이하고 싶지는 않네요.&lt;/p&gt;
-
-&lt;p&gt;이 부분은 좀 더 사용해보고 난 뒤에야 판단할 수 있을 것 같습니다.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/Unboxing/070/19.jpg&quot; alt=&quot;&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;이상하게 생각보다 UMD의 플라스틱 부분이 빠르게 흠집이 납니다.&lt;/p&gt;
-
-&lt;p&gt;분명 새 디스크였는데 눈에 선명할 정도로 플라스틱에 흠집이 나있네요.&lt;/p&gt;
-
-&lt;p&gt;다행히 디스크 자체에 흠집이 생긴건 아닙니다만, 원인을 도통 모르겠습니다.&lt;/p&gt;</content><author><name>Joonsu Ryu</name></author><category term="interests" /><category term="unboxing" /><summary type="html"></summary></entry></feed>
+&lt;p&gt;POPUP PARADE 시리즈는 저처럼 피규어에 처음 입문하시는 분들에게 나쁘지 않은 선택인 것 같습니다.&lt;/p&gt;</content><author><name>Joonsu Ryu</name></author><category term="interests" /><category term="unboxing" /><summary type="html"></summary></entry></feed>
