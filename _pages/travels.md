@@ -46,7 +46,7 @@ author_profile: true
 
 <div style="display: flex;">
   <div>
-    <img src="/assets/images/Travel/006/00.jpg" alt="" style="width: 300px;">
+    <img src="/assets/images/Travel/007/00.jpg" alt="" style="width: 300px;">
   </div>
   <ul>
   {% assign posts = site.posts | where_exp:"post", "post.tags contains tag" | reverse %}
