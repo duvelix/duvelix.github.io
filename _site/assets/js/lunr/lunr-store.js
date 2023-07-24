@@ -1258,4 +1258,10 @@ var store = [{
         "tags": ["jeju"],
         "url": "/travel/jeju-3/",
         "teaser": null
+      },{
+        "title": "교현 예비군 훈련장 후기",
+        "excerpt":"길고 길었던 3년간의 전문연구요원 복무도 어느새 끝났고, 벌써 예비군 훈련을 해야하는 시기가 다가왔습니다. 보통 예비군 훈련은 20대 중반 쯤에 받게 되는 훈련이지만, 전문연구요원 특성상 전역이 굉장히 늦기 때문에 저는 30대 중반이 되고나서야 시작하게 되었습니다. 현역이 아닌 만큼 저는 무조건 동미참 훈련으로 배정이 되는데, 올해에는 교현 예비군 훈련장으로 배정이 되었습니다. 동미참...","categories": ["interests"],
+        "tags": ["katc"],
+        "url": "/katc/gyohyeon-reservist-training/",
+        "teaser": null
       }]

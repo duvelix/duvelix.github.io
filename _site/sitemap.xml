@@ -841,6 +841,10 @@
 <lastmod>2023-07-07T00:00:00+09:00</lastmod>
 </url>
 <url>
+<loc>http://localhost:4000/katc/gyohyeon-reservist-training/</loc>
+<lastmod>2023-07-14T00:00:00+09:00</lastmod>
+</url>
+<url>
 <loc>http://localhost:4000/categories/</loc>
 </url>
 <url>
@@ -983,6 +987,9 @@
 </url>
 <url>
 <loc>http://localhost:4000/page42/</loc>
+</url>
+<url>
+<loc>http://localhost:4000/page43/</loc>
 </url>
 <url>
 <loc>http://localhost:4000/naver02c94837a9fc98fe4bf29d543f57a6f9.html</loc>
