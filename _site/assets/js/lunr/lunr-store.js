@@ -1264,4 +1264,10 @@ var store = [{
         "tags": ["katc"],
         "url": "/katc/gyohyeon-reservist-training/",
         "teaser": null
+      },{
+        "title": "도쿄 여행기 (1)",
+        "excerpt":"우한 폐렴 이후로 갔었던 여행은 지금까지 전부 2박 3일의 짧은 일정이었습니다. 대학원생이라는 신분 때문에 비교적 긴 기간의 여행은 불가능하다고 생각했는데, 저희 연구실은 여름 방학에 1주일 정도의 휴가가 있습니다. 그걸 이용해서 휴가 계획을 세우니 잘 끌어모으면 1주일 이상의 긴 여행이 가능하다는 것을 깨닫고 계획을 세우기 시작했습니다. 마침 저희 학교에는 집중 휴가...","categories": ["travel"],
+        "tags": ["tokyo"],
+        "url": "/travel/tokyo-1/",
+        "teaser": null
       }]
