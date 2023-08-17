@@ -1324,4 +1324,10 @@ var store = [{
         "tags": ["tokyo"],
         "url": "/travel/tokyo-10/",
         "teaser": null
+      },{
+        "title": "Introduction",
+        "excerpt":"안녕하세요, 이번에는 새로운 공부 카테고리인 프로그래밍 언어론을 시작하게 되었습니다. 사실 올해는 지난번에 작성하던 자료구조 관련 포스트를 마무리할 계획이었습니다. 게다가 프로그래밍 언어론은 제 전공과도 거리가 멀기 때문에 블로그에 정리할 생각이 없었는데, 제가 2023-2학기에 성신여대에서 이 과목을 담당하게 되어 복습도 할 겸 포스트를 남겨보고자 합니다. 저도 학부 시절 이 과목을 수강했었고 나름...","categories": ["studies"],
+        "tags": ["programming languages"],
+        "url": "/pl/introduction/",
+        "teaser": null
       }]

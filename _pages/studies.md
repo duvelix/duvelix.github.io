@@ -56,6 +56,18 @@ author_profile: true
 </ul>
 
 
+## 프로그래밍 언어론
+
+{% assign tag = "programming languages" %}
+
+<ul>
+{% assign posts = site.posts | where_exp:"post", "post.tags contains tag" | reverse %}
+{% for post in posts %}
+  <li><span>#{{ forloop.index0 }}</span> - <a href="{{ post.url }}">{{ post.title }}</a> - {{ post.date | date: "%Y-%m-%d" }}{% if post.comments.size > 0 %} - {{ post.comments.size }} comment{% if post.comments.size > 1 %}s{% endif %}{% endif %}</li>
+{% endfor %}
+</ul>
+
+
 ## 기계학습
 
 {% assign tag = "machine learning" %}

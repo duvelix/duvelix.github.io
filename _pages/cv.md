@@ -8,12 +8,12 @@ classes: wide
 
 ## Education
 ### PhD in Computer Science and Engineering
-#### <img src="\assets\sogang.png" width = 50 height=50> **Sogang University** | 2015 - 2024 (Expected)
+#### <img src="\assets\sogang.png" width=50 height=50> **Sogang University** | 2015 - 2024 (Expected)
 - Dissertation: Working in Progress
 - Advisor: Prof. Sungwook Kim
 
 ### Bachelor of Science in Mathematics
-#### <img src="\assets\sogang.png" width = 50 height=50> **Sogang University** | 2010 - 2015
+#### <img src="\assets\sogang.png" width=50 height=50> **Sogang University** | 2010 - 2015
 - Double major: Computer Science and Engineering
 - Advisor: Prof. Sungho Park
 
@@ -24,26 +24,40 @@ classes: wide
 2. Joonsu Ryu and Sungwook Kim, "...", *to be submitted to* ...
 
 ### Conference Papers
-1. Joonsu Ryu and Sungwook Kim, "A Study on the Influential Maximization Problem on Real-Time Dynamic Social Networks." *Conference of the Korean Institute of Information Scientists and Engineers*, December 2017, pp. 1200-1202. (Korean) [[link]](https://www.dbpia.co.kr/journal/articleDetail?nodeId=NODE07322440)
+1. Joonsu Ryu and Sungwook Kim, "Energy Level based D2D Routing Algorithm By using the Reinforcement Learning Approach." *Conference of the Institute of Electronics and Information Engineers*, June 2022, pp. 744-746. (Korean) [[link]](https://www.dbpia.co.kr/journal/articleDetail?nodeId=NODE11132455)
 
-2. Joonsu Ryu and Sungwook Kim, "Finding the Influential Node set Using Reinforcement Learning in Social Networks." *Conference of the Institute of Electronics and Information Engineers*, June 2018, pp. 1064-1065. (Korean) [[link]](https://www.dbpia.co.kr/journal/articleDetail?nodeId=NODE07515957)
 
-3. Joonsu Ryu and Sungwook Kim, "Multi-hop Routing Method based on Reinforcement Learning for Efficient Data Offloading." *Conference of the Institute of Electronics and Information Engineers*, August 2020. pp. 687-689. (Korean) [[link]](https://www.dbpia.co.kr/journal/articleDetail?nodeId=NODE10447955)
+2. Joonsu Ryu and Sungwook Kim, "Multi-hop Routing Method based on Reinforcement Learning for Efficient Data Offloading." *Conference of the Institute of Electronics and Information Engineers*, August 2020. pp. 687-689. (Korean) [[link]](https://www.dbpia.co.kr/journal/articleDetail?nodeId=NODE10447955)
 
-4. Joonsu Ryu and Sungwook Kim, "Energy Level based D2D Routing Algorithm By using the Reinforcement Learning Approach." *Conference of the Institute of Electronics and Information Engineers*, June 2022, pp. 744-746. (Korean) [[link]](https://www.dbpia.co.kr/journal/articleDetail?nodeId=NODE11132455)
+3. Joonsu Ryu and Sungwook Kim, "Finding the Influential Node set Using Reinforcement Learning in Social Networks." *Conference of the Institute of Electronics and Information Engineers*, June 2018, pp. 1064-1065. (Korean) [[link]](https://www.dbpia.co.kr/journal/articleDetail?nodeId=NODE07515957)
+
+4. Joonsu Ryu and Sungwook Kim, "A Study on the Influential Maximization Problem on Real-Time Dynamic Social Networks." *Conference of the Korean Institute of Information Scientists and Engineers*, December 2017, pp. 1200-1202. (Korean) [[link]](https://www.dbpia.co.kr/journal/articleDetail?nodeId=NODE07322440)
 
 ## Teaching Experience
+### Instructor
+#### <img src="\assets\sungshin.png" width=50 height=50> **Sungshin Women's University** | 2023.09 - 2024.08 (Expected)
+- Designed and delivered lectures for the courses.
+- Courses: Programming Languages and Compilers
+
+### AI Program Mentor
+#### <img src="\assets\soongmoon.png" width=50 height=50> **Soongmoon High School** | 2022.10 - 2022.11
+- Mentored high school students participating in an AI program.
+- Guided students in developing research plans based on their submitted project proposals.
+
+### Head Teaching Assistant
+#### <img src="\assets\sogang.png" width=50 height=50> **Sogang University** | 2022.03 - 2023.08
+- Led and managed a team of teaching assistants, coordinated grading, and oversaw student support.
+
 ### Teaching Assistant
-#### <img src="\assets\sogang.png" width = 50 height=50> **Sogang University** | 2015 - 2018
+#### <img src="\assets\sogang.png" width=50 height=50> **Sogang University** | 2015.03 - 2019.02
 - Assisted in grading assignments and exams, held office hours to help students with questions
 - Courses: C programming, Data Structures, Design and Analysis of Algorithms, Computer Networks, etc.
 
 ## Awards and Honors
-- **Outstanding Paper Award**, Conference of the Institute of Electronics and Information Engineers (IEIE), June 2018.
 - **LG Electronics Paper Award for Outstanding Research**, Conference of the Institute of Electronics and Information Engineers (IEIE), June 2022.
+- **Outstanding Paper Award**, Conference of the Institute of Electronics and Information Engineers (IEIE), June 2018.
 
 ## Languages
 - Korean (native)
 - English (intermediate)
 - Japanese (intermediate)
-
