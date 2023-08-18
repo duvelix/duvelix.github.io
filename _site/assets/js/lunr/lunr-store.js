@@ -1330,4 +1330,10 @@ var store = [{
         "tags": ["programming languages"],
         "url": "/pl/introduction/",
         "teaser": null
+      },{
+        "title": "Preliminaries",
+        "excerpt":"안녕하세요, 오늘은 프로그래밍 언어론의 첫 장인 Preliminaries를 다뤄보겠습니다. 모든 과목이 마찬가지이지만, 첫 장은 보통 이 과목에서 어떤 것을 배우는지에 대한 간략한 소개가 나와 있습니다. 먼저 프로그래밍 언어라는 것은 무엇일까요? 사람이 다른 사람들과 소통하기 위해 자연어(한국어, 영어, 일본어, 등등)를 사용해서 대화를 하는 것처럼, 사람이 컴퓨터와 소통하기 위해 사용하는 것이 프로그래밍 언어입니다....","categories": ["studies"],
+        "tags": ["programming languages"],
+        "url": "/pl/preliminaries/",
+        "teaser": null
       }]

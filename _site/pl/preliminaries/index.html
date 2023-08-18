@@ -1,0 +1,663 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.24.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>Preliminaries - KEEPMIND</title>
+<meta name="description" content="안녕하세요, 오늘은 프로그래밍 언어론의 첫 장인 Preliminaries를 다뤄보겠습니다. 모든 과목이 마찬가지이지만, 첫 장은 보통 이 과목에서 어떤 것을 배우는지에 대한 간략한 소개가 나와 있습니다.">
+
+
+  <meta name="author" content="Joonsu Ryu">
+  
+  <meta property="article:author" content="Joonsu Ryu">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="KEEPMIND">
+<meta property="og:title" content="Preliminaries">
+<meta property="og:url" content="http://localhost:4000/pl/preliminaries/">
+
+
+  <meta property="og:description" content="안녕하세요, 오늘은 프로그래밍 언어론의 첫 장인 Preliminaries를 다뤄보겠습니다. 모든 과목이 마찬가지이지만, 첫 장은 보통 이 과목에서 어떤 것을 배우는지에 대한 간략한 소개가 나와 있습니다.">
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2023-08-18T00:00:00+09:00">
+
+
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="http://localhost:4000/pl/preliminaries/">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "KEEPMIND",
+      "url": "http://localhost:4000/"
+    
+  }
+</script>
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="KEEPMIND Feed">
+
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css"></noscript>
+
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon.png">
+
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body class="layout--single wide">
+    <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+		<a class="site-title" href="http://localhost:4000/"><img src="/assets/logo.png">
+        <!-- <a class="site-title" href="/">
+          KEEPMIND
+           -->
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="/">Home</a>
+            </li><li class="masthead__menu-item">
+              <a href="/cv/">CV</a>
+            </li><li class="masthead__menu-item">
+              <a href="/studies/">Studies</a>
+            </li><li class="masthead__menu-item">
+              <a href="/interests/">Interests</a>
+            </li><li class="masthead__menu-item">
+              <a href="/travels/">Travels</a>
+            </li></ul>
+        
+        <button class="search__toggle" type="button">
+          <span class="visually-hidden">Toggle search</span>
+          <i class="fas fa-search"></i>
+        </button>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person" class="h-card">
+
+  
+    <div class="author__avatar">
+      <!-- <a href="http://localhost:4000/"> -->
+        <img src="/assets/profile.jpg" alt="Joonsu Ryu" itemprop="image" class="u-photo">
+      <!-- </a> -->
+    </div>
+  
+
+  <div class="author__content">
+    <h3 class="author__name p-name" itemprop="name">
+      <a class="u-url" rel="me" href="http://localhost:4000/" itemprop="url">Joonsu Ryu</a>
+    </h3>
+    
+      <div class="author__bio p-note" itemprop="description">
+        <p>Researcher</p>
+
+      </div>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">Follow</button>
+    <ul class="author__urls social-icons">
+      
+        <li itemprop="homeLocation" itemscope itemtype="https://schema.org/Place">
+          <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> <span itemprop="name" class="p-locality">Seoul, Korea</span>
+        </li>
+      
+
+      
+        
+          
+            <li><a href="mailto:jsryu@sogang.ac.kr" rel="nofollow noopener noreferrer me"><i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i><span class="label">E-mail</span></a></li>
+          
+        
+          
+            <li><a href="https://github.com/duvelix" rel="nofollow noopener noreferrer me" itemprop="sameAs"><i class="fab fa-fw fa-github" aria-hidden="true"></i><span class="label">GitHub</span></a></li>
+          
+        
+          
+            <li><a href="https://scholar.google.co.kr/citations?user=UmRh9NQAAAAJ" rel="nofollow noopener noreferrer me" itemprop="sameAs"><i class="fas fa-fw fa-graduation-cap" aria-hidden="true"></i><span class="label">Google Scholar</span></a></li>
+          
+        
+          
+            <li><a href="https://orcid.org/0000-0002-8848-1456" rel="nofollow noopener noreferrer me" itemprop="sameAs"><i class="fab fa-fw fa-orcid" aria-hidden="true"></i><span class="label">ORCID</span></a></li>
+          
+        
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer me">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+
+  
+  </div>
+
+
+
+  <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="Preliminaries">
+    <meta itemprop="description" content="안녕하세요, 오늘은 프로그래밍 언어론의 첫 장인 Preliminaries를 다뤄보겠습니다. 모든 과목이 마찬가지이지만, 첫 장은 보통 이 과목에서 어떤 것을 배우는지에 대한 간략한 소개가 나와 있습니다.">
+    <meta itemprop="datePublished" content="2023-08-18T00:00:00+09:00">
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title p-name" itemprop="headline">
+            <a href="http://localhost:4000/pl/preliminaries/" class="u-url" itemprop="url">Preliminaries
+</a>
+          </h1>
+          
+
+
+        </header>
+      
+
+      <section class="page__content e-content" itemprop="text">
+        
+        <p>안녕하세요, 오늘은 프로그래밍 언어론의 첫 장인 Preliminaries를 다뤄보겠습니다. 모든 과목이 마찬가지이지만, 첫 장은 보통 이 과목에서 어떤 것을 배우는지에 대한 간략한 소개가 나와 있습니다.</p>
+
+<p><img src="/assets/images/PL/001/01.jpg" alt="" class="align-center" /></p>
+
+<p>먼저 프로그래밍 언어라는 것은 무엇일까요? 사람이 다른 사람들과 소통하기 위해 자연어(한국어, 영어, 일본어, 등등)를 사용해서 대화를 하는 것처럼, 사람이 컴퓨터와 소통하기 위해 사용하는 것이 프로그래밍 언어입니다. 프로그래밍 언어라고 하면 C, C++, Java, Python 등을 생각하겠지만, 이런 언어들은 비교적 최근에 개발된 고급 언어(High Level Language)입니다. 이러한 고급 언어들은 사람들이 사용하기 매우 편한 장점이 있지만, 처음부터 프로그래밍 언어가 이렇게 사용이 편한 것은 아니었습니다. 현대 프로그래밍 언어에는 이미 당연하다시피 적용되어 있는 개념이나 규칙은 과거에는 당연하지 않았기 때문입니다. 다양한 프로그래밍 언어들이 개발되어 옴에 따라 프로그래밍 언어를 편리하게 사용하기 위한 개념과 규칙이 정립되기 시작했는데, 본 과목은 이러한 것들을 학습하는 것을 목표로 합니다.</p>
+
+<p>그렇다면 이런 것들을 왜 배우는 것일까요? 프로그래밍 언어가 동작하는 과정을 이해하게 된다면, 프로그래밍을 할 때 좀 더 효율적으로 동작하게끔 설계할 수 있기 때문입니다. 예를 들어, 함수를 호출할 때는 스택(Stack)을 이용합니다. 어셈블리 언어 관련 수업을 들어보신 분이라면 스택을 쌓고 다시 불러오는 과정이 생각보다 많은 시간을 필요로 하게 되는데, 그렇기 때문에 재귀문(Recursion)은 보기에는 간단해보여도 동적 프로그래밍(Dynamic Programming) 같은 방법에 비해 실제 수행 시간이 높게 나오게 됩니다. 이렇게 스택이 가지는 특징을 이해하고 있다면, 프로그램을 구현할 때 재귀문을 최대한 배제하고 다른 방법으로 구현하게 되겠지요.</p>
+
+<p>또한 프로그래밍 언어들이 가지고 있는 특징이나 규칙을 배우고 나면 새로운 프로그래밍 언어를 배우게 쉬워집니다. <a href="https://www.tiobe.com/tiobe-index/">TIOBE INDEX</a>에 따르면 현재 주로 사용되고 있는 언어는 Python, C, C++ 순입니다. 그러나 10년 전만 하더라도 Python은 5순위에도 못들던 언어였습니다. 10년 후에는 어떤 프로그래밍 언어가 대세가 될지 모릅니다. 그렇기 때문에 새로운 프로그래밍 언어를 배우는 능력은 컴퓨터공학자에게 있어서 매우 중요한 능력입니다. 프로그래밍 언어는 절차 언어(Procedural Language)와 적용 언어(Applicative Language) 두 가지 종류로 나뉘는데, 본 과목에서는 절차 언어를 주로 다루고, 필요한 경우에만 적용 언어를 언급하도록 하겠습니다.</p>
+
+<p>본 과목에서는 프로그래밍 언어의 필수 요소인 데이터(Date), 제어(Control), 부프로그램(Subprogram), 그리고 객체 지향 프로그래밍(Objective Oriented Programming)에 대한 개념을 정립하도록 하겠습니다.</p>
+
+<p><img src="/assets/images/PL/001/02.jpg" alt="" class="align-center" /></p>
+
+<p>프로그래밍 언어론을 배우는 순서는 위 그림과 같습니다. Preliminaries 다음에 History 부분이 빠져있는데, 이 부분은 전체 내용에 크게 영향을 주지 않는 부분이라 그런 것 같습니다. 저는 이 부분도 배울 점이 있다고 생각해서 잠깐이지만 짚고 넘어가고자 합니다.</p>
+
+<p>그 다음에는 프로그래밍 언어에 대한 기본적인 특징을 배우게 됩니다. 타입 체킹, 데이터 타입, 표현식, 제어문 같은 것들을 다룹니다. 일반적으로 여기까지 배운 후 중간고사를 치르게 됩니다.</p>
+
+<p>다음은 후반부의 메인 파트인 부프로그램에 대해 배우고, 남은 시간에는 객체 지향 프로그래밍에 관련된 내용을 배우게 됩니다. 일반적으로 대학교 학부의 교육 시간 상 12장까지 배우게 되고, 조금 욕심을 부리면 13장까지 배울 수도 있긴 합니다.</p>
+
+<p><img src="/assets/images/PL/001/03.jpg" alt="" class="align-center" /></p>
+
+<p>이것은 프로그래밍 언어들의 족보라고 보시면 됩니다. 연도별, 프로그래밍 언어가 어느 언어를 근간으로 발전했는지 나와있습니다. 이 그림은 2장에서 조금 더 자세하게 살펴보도록 하겠습니다.</p>
+
+<p><img src="/assets/images/PL/001/04.jpg" alt="" class="align-center" /></p>
+
+<p>이제 1장의 본격적인 내용을 시작해보도록 하겠습니다.</p>
+
+<p><img src="/assets/images/PL/001/05.jpg" alt="" class="align-center" /></p>
+
+<p>먼저 프로그래밍 언어론을 배우는 이유에 대해 하나씩 자세하게 알아봅시다.</p>
+
+<ul>
+  <li><strong>생각을 표현할 수 있는 능력이 향상됨</strong> : 프로그래밍 언어의 특징에 대해서 더 많이 알고 있다면, 사용할 수 있는 데이터의 구조나 제어 구조를 이해하여 더 효율적인 소프트웨어의 개발을 가능합니다. 만약 주로 사용하는 언어에서 지원하지 않는 기능에 대해 배운다고 할지라도, 그것을 시뮬레이션 할 수 있는 방법이 종종 있기 때문에 도움이 되는 것은 마찬가지입니다.</li>
+  <li><strong>적합한 언어를 선택할 수 있는 능력이 향상됨</strong> : 만약 프로그래머가 여러 프로그래밍 언어를 알고 있고, 각 프로그래밍 언어의 특징에 대해 자세히 알고 있다면 언어를 선택할 때 어떤 언어가 주어진 문제를 해결하는데 가장 적합할지 판단할 수 있습니다.</li>
+  <li><strong>새로운 언어를 배울 수 있는 능력이 향상됨</strong> : 프로그래밍 언어가 가지고 있는 기본 개념을 이해한다면, 다른 언어를 배울 때도 훨씬 쉽게 이해할 수 있습니다.</li>
+  <li><strong>구현의 중요성에 대해 더 많이 이해할 수 있음</strong> : 이것은 프로그래밍 언어를 보다 효율적으로 사용할 수 있는 능력과 같습니다. 예를 들어, 부프로그램을 호출하는데 생각보다 많은 시간이 필요하다는 것을 이해하고 있다면, 자잘한 연산을 위한 부프로그램을 만들지 않도록 설계할 수 있습니다.</li>
+  <li><strong>이미 알고 있는 언어를 더 효율적으로 사용할 수 있음</strong> : 최근에 사용되고 있는 프로그래밍 언어는 지원하는 기능이 굉장히 많기 때문에 프로그래머가 모든 것을 잘 알고 사용하는 경우는 거의 없습니다. 하지만 프로그래밍 언어론을 학습한다면 이전에 몰라서 사용하지 못했던 기능을 배워서 사용할 수 있습니다.</li>
+  <li><strong>컴퓨터에 대해 더 많이 이해할 수 있음</strong> : 초기에는 컴퓨터공학에 대한 지식이 부족한 사람이 많았기 때문에 효율적인 프로그래밍 언어가 개발되더라도 프로그래머들이 메뉴얼을 이해하지 못하여 사용하지 못했던 경우가 있습니다. 프로그래밍 언어의 구조와 특징을 학습한다면, 이것이 수행되는 과정을 더욱 잘 이해할 수 있게 되므로 이러한 문제를 방지할 수 있습니다.</li>
+</ul>
+
+<p><img src="/assets/images/PL/001/06.jpg" alt="" class="align-center" /></p>
+
+<p>프로그래밍 언어는 다양한 분야에 사용되고 있습니다. 간단하게 몇 개만 짚어보자면,</p>
+
+<ul>
+  <li><strong>과학 분야</strong> : 최초의 컴퓨터도 복잡한 계산을 용이하게 하기 위한 계산기였습니다. 따라서 초기 프로그래밍 언어도 행렬과 같은 복잡한 계산을 수행할 수 있도록 설계되었습니다. 과학 분야에 사용하도록 개발된 첫 언어는 바로 Fortran(Formula Translator)으로, 수식을 컴퓨터로 계산할 수 있게 만드는 프로그래밍 언어입니다. 현재 컴퓨터의 용도는 다양하지만, MATLAB과 같이 여전히 과학 분야에서 인간이 하기 힘든 계산을 도와주고 있습니다.</li>
+  <li><strong>비즈니스 분야</strong> : 비즈니스에 필요한 기능은 정교한 입출력과 십진수의 처리 능력입니다. 이러한 용도에 적합하게 만들어진 최초의 프로그래밍 언어는 1960년대 COBOL이라는 언어로 구현되었습니다. 그러나 이 외의 사무용 언어는 별도로 개발되지 않았으며, 필요한 경우에는 여전히 COBOL을 사용합니다.</li>
+  <li><strong>인공지능 분야</strong> : 인공지능 분야에서는 주로 기호 계산이 필요합니다. 기호 계산은 숫자가 아니라 문자와 같은 특정한 기호를 조작하는 연산입니다. (자연어 처리를 생각해보시면 됩니다) 이 분야에서 처음으로 사용된 프로그래밍 언어는 1959년에 개발된 LISP이며, 1970년에 그 대항마로 Prolog가 개발되었습니다. 현재는 인공지능 분야에 사용하기 위한 별도의 언어를 개발하기 보단, Python과 같은 시스템 프로그래밍 언어에서 추가적인 라이브러리를 적용하여 사용하고 있습니다.</li>
+  <li><strong>시스템 프로그래밍</strong> : 시스템 소프트웨어는 컴퓨터를 사용할 수 있게 만드는 운영체제와 같은 프로그램을 일컫는 말입니다. 컴퓨터를 사용하기 위해서는 반드시 필요하기 때문에 그 중요성이 다른 분야와 비교해서 매우 높고, 현재도 시스템 소프트웨어 개발자는 수요가 매우 많습니다. 최초의 시스템 소프트웨어는 어셈블리 언어나 그보다 조금 나은 수준의 언어로 개발되었으나, 현재는 C/C++ 등의 고급 언어로 개발되고 있습니다.</li>
+  <li><strong>웹 소프트웨어</strong> : WWW(World Wide Web)은 프로그래밍 언어가 아닌 HTML과 같은 마크업 언어가 주로 사용되고 있습니다. 그러나 이러한 웹 콘텐츠도 동적인 컨텐츠가 필요하기 때문에, 프로그래밍 언어의 일부 기능이 지원됩니다. 이런 언어는 스크립트 언어라고 불리며 대표적인 예로 JavaScript나 PHP가 존재합니다.</li>
+</ul>
+
+<p><img src="/assets/images/PL/001/07.jpg" alt="" class="align-center" /></p>
+
+<p>여러 프로그래밍 언어의 구조와 특징을 배우다보면 특정 프로그래밍 언어가 기존 프로그래밍 언어들에 비해 얼마나 우수한지를 평가해야할 수도 있습니다. 평가를 하기 위해서는 평가에 대한 기준이 있어야 보다 객관적인 평가가 가능합니다. 그러나 교재에서 소개하는 프로그래밍 언어의 평가 기준에는 주관적인 평가도 있기 때문에 완벽한 기준과는 거리가 있음을 기억하셔야 합니다.</p>
+
+<p>교재에서는 프로그래밍 언어의 평가 기준을 <strong>가독성(Readability)</strong>, <strong>작성력(Writability)</strong>, <strong>안정성(Reliability)</strong>, <strong>비용(Cost)</strong>으로 나누었습니다. 각각의 평가 기준에 어떤 요소가 포함되는지는 다음 슬라이드부터 하나씩 자세하게 소개하도록 하겠습니다.</p>
+
+<p><img src="/assets/images/PL/001/08.jpg" alt="" class="align-center" /></p>
+
+<p>먼저 가독성은 해당 프로그래밍 언어로 작성한 프로그램을 얼마나 쉽게 이해할 수 있는지를 나타내는 척도입니다. 1970 ~ 80년대에 소프트웨어 생명 주기(Software Life Cycle)이란 개념이 도입되고 나서 프로그램을 제작하는 것 자체보다 유지 및 관리의 중요성이 부각되었습니다. 가독성이 좋은 프로그램일수록 유지 및 보수가 그만큼 간단하기 때문에 프로그래밍 언어의 우수성을 측정하는 중요한 척도가 될 수 있습니다.</p>
+
+<p>가독성에 영향을 주는 요소 중 하나는 <strong>단순성(Simplicity)</strong>입니다. 프로그래밍 언어에서 지원하는 기본적인 구조가 많을수록 배우기 어렵다는 것은 자명한 사실입니다. 또한 같은 연산을 수행하는데 여러 가지의 수행 방법을 갖는 특징 다중성(Feature Multiplicity)도 영향을 끼칩니다. 그리고 연산자 오버로딩(Operator Overloading)이 빈번하게 일어나는 언어라면 가독성에 악영향을 미칠 수 있습니다. 그렇다고 너무 단순해도 가독성에 나쁜 영향을 미칠 수 있는데, 대표적으로 어셈블리 언어는 매우 단순한 특징을 가지고 있지만, 그로 인해 동일한 기능을 수행하기 위해서 고급 언어보다 더 많은 코드가 필요하다는 단점이 있습니다.</p>
+
+<p>또 다른 요소 중 하나는 <strong>직교성(Orthogonality)</strong>입니다. 이 단어는 일상생활에서 잘 사용하지 않아서 단어만 보고 의미를 유추하기 힘든데, 쉽게 말하면 프로그래밍 언어의 제어 및 데이터 구조를 구축하기 위해 결합할 수 있는 구성 집합이 얼마나 적은지를 나타냅니다. 더 간단하게 말하자면 프로그래밍 언어에서 사용되는 규칙에 예외가 적을수록 직교성이 높습니다. 예를 들어, C언어에서 a + b라는 문구는 일반적으로 변수 a와 b의 값을 더하는 것을 의미합니다. 그런데 만약 a가 정수형 포인터라면, b의 값에 4가 곱해져서 a + b = 50이 됩니다. 이것은 + 연산의 예외로써, 직교성을 나쁘게 만드는 것으로 볼 수 있습니다.</p>
+
+<p>세 번째 요소는 <strong>제어문(Control Statements)의 적절한 사용</strong>입니다. 특히, 프로그램은 위에서 아래로 읽을 수 있도록 만드는 것이 가독성을 높이는 방법입니다. 초기 프로그래밍 언어에서는 Go To라는 문법이 있어서, 원하는 곳으로 라인을 점프할 수 있었습니다. 이것은 프로그램을 작성할 때 도움이 될 수도 있지만, 읽는 사람의 입장에서는 이곳 저곳으로 점프하면서 읽어야 하기 때문에 가독성을 해치게 됩니다. 따라서 최근 개발되는 프로그래밍 언어들은 Go To 문을 사용하지 않는 GOTO-less 형식으로 디자인됩니다.</p>
+
+<p>다음 고려할 수 있는 요소는 <strong>데이터 타입과 구조체(Data Types and Structures)</strong>입니다. 이것은 프로그래밍 언어에서 데이터 타입이나 데이터 구조를 정의할 수 있는 충분한 기능이 존재하는지에 대한 여부입니다. 예를 들어, Boolean 형의 데이터 타입이 제공되지 않는다면, 총합(sum)이 너무 큰 경우를 나타내는 변수를 sum_is_too_big = 1와 같이 표현해야 할 것입니다. 이 경우 의미가 분명하지 않아서 가독성이 떨어질 수 있는데, 만약 Boolean 형의 데이터 타입이 제공된다면 sum_is_too_big = true와 같이 보다 명확하게 나타낼 수 있습니다.</p>
+
+<p><img src="/assets/images/PL/001/09.jpg" alt="" class="align-center" /></p>
+
+<p>마지막으로 말씀드릴 요소는 <strong>구문 설계(Syntax Considerations)</strong>입니다. 프로그래밍 언어에 따라 변수를 선언할 때 밑줄이 허용되는 경우도 있고, 허용되지 않는 경우도 있습니다. 만약 밑줄이 허용된다면 SUM_OF_SQUARE와 같이 변수가 어떤 것을 의미하는지 보다 명확하게 이름을 작성할 수 있습니다. 또한 프로그램 내에서 사용되는 특수어를 만들어서, 프로그램 내의 제어문의 범위를 명확화게 표현해줄 수 있습니다. 예를 들어, if 문을 시작하고 나서는 마지막에 end if로 마무리해서 if 문의 범위를 명확하게 표시하는 방법이 있습니다. C-like 언어들은 특수어를 사용하지 않고 중괄호를 사용하기 때문에 이 부분에서 다소 가독성이 떨어진다고 볼 수 있습니다. 또한 같은 문법을 사용할 때 매개변수의 위치에 따라 의미가 달라지는 경우도 구문 설계를 잘못한 예시 중 하나입니다.</p>
+
+<p>다음은 작성력이란 척도입니다. 작성력은 풀고자 하는 문제를 해결하기 위한 프로그램을 작성하는 데 해당 프로그래밍 언어가 얼마나 쉽게 사용할 수 있는지를 나타냅니다. 작성력에는 가독성에서와 같이 단순성과 직교성이 영향을 미칩니다. 이것은 가독성을 설명할 때 설명한 요소이므로 생략하도록 하겠습니다.</p>
+
+<p>가독성과 다르게 작성력에 영향을 미치는 요소 중 하나는 <strong>추상화를 지원(Support for Abstraction)</strong>하는가의 여부입니다. 추상화는 세부적인 구현 내용을 무시하고 데이터 구조나 연산을 정의하여 사용하는 방법입니다. 추상화는 프로세스 추상화와 데이터 추상화 2가지 종류로 나눌 수 있는데, 프로세스 추상화의 예시는 부프로그램 이용, 데이터 추상화는 레코드 타입을 이용하는 것이 그 예가 될 수 있습니다. C 언어에서 부프로그램은 함수, 레코드 타입은 구조체로 구현되어 있습니다.</p>
+
+<p>작성력에 영향을 미치는 또 다른 요소는 <strong>표현력(Expressivity)</strong>입니다. 표현력은 같은 양의 계산을 보다 적은 코드로 수행이 가능하게 만드는 것입니다. 예를 들어, C 언어에서 count라는 변수를 1 증가시키는 방법은 count = count + 1도 있지만, count++로 간단하게 대체할 수 있습니다. count++이 count = count + 1보다 훨씬 간단한 표기이기 때문에 작성력을 향상시킨다고 볼 수 있습니다.</p>
+
+<p><img src="/assets/images/PL/001/10.jpg" alt="" class="align-center" /></p>
+
+<p>다음 척도는 신뢰성입니다. 만약 프로그램이 모든 조건 하에서 주어진 명세에 따라 수행된다면 신뢰적이라고 말할 수 있습니다. 이번에는 신뢰성이 영향을 미치는 요소를 하나하나 살펴보도록 하겠습니다.</p>
+
+<p>가장 먼저 신뢰성에 영향을 미치는 요소는 <strong>타입 검사(Type Checking)</strong>입니다. 여러 개의 변수를 포함한 연산을 수행할 때, 그 변수간의 연산이 가능한지 타입을 체크해야 합니다. 일반적으로 런타임 시간 검사는 비효율적이기 때문에 컴파일 시간 검사를 구현하는 것이 바람직합니다. 고전적인 C 언어가 대표적으로 타입 검사를 하지 않는 언어이며(현재는 매개변수 타입 검사를 컴파일 시간에 수행합니다), Pascal 언어는 대부분 컴파일 시간에 타입 검사를 수행하지만, 범위 검사와 같은 일부분의 검사는 런타임에 수행합니다.</p>
+
+<p>신뢰성에 영향을 미치는 두 번째 요소는 <strong>예외 처리(Exception Handling)</strong>입니다. 예외 처리는 컴파일 시간에서는 알 수 없고 런타임 시간에 발생할 수 있는 오류를 대처하는 방법입니다. C 언어는 대표적으로 예외 처리가 지원되지 않는 언어이고, Java는 강력한 예외 처리를 지원하고 있습니다.</p>
+
+<p>신뢰성에 영향을 미치는 또 다른 요소로는 <strong>별칭(Aliasing)</strong>이 있습니다. 별칭은 동일한 메모리 공간에 대해 서로 다른 두 가지 이상의 접근 방법이 존재하는 것입니다. 이것은 의도치 않게 저장된 데이터를 변경시킬 수 있는 위험이 있기 때문에, 대부분 프로그래밍 언어에서 지양하는 특징입니다. 최근에 사용되는 프로그래밍 언어에서는 아예 지원하지 않거나, 제한된 방법으로만 별칭을 사용할 수 있게 제한하고 있습니다. 별칭을 구현한 대표적인 방법은 포인터가 있습니다.</p>
+
+<p>마지막으로 고려할 수 있는 요소는 가독성과 작성력입니다. 만약 가독성이 낮다면 프로그램의 유지 보수에 큰 영향을 미치기 때문에 신뢰성을 낮출 위험이 있고, 작성력이 낮다면 프로그램을 구현할 때 보다 부자연스러운 방법으로 구현하기 때문에 신뢰성에 악영향을 미칠 가능성이 높아지기 때문입니다.</p>
+
+<p><img src="/assets/images/PL/001/11.jpg" alt="" class="align-center" /></p>
+
+<p>마지막으로 프로그래밍 언어에서 고려하는 기준은 비용입니다. 프로그래밍 언어에서 비용은 다양한 측면에서 고려될 수 있습니다.</p>
+
+<ul>
+  <li>프로그래머를 교육하는 비용 : 배우기 어려운 언어일수록 프로그래머를 교육시키는데 많은 비용이 들어감 (ex. C++)</li>
+  <li>프로그램을 작성하는 비용 : 작성력이 낮은 언어일수록 작성하는 데 오랜 시간이 소모됨</li>
+  <li>프로그램을 컴파일 하는 비용 : 컴파일 시간이 오래 걸릴수록 오랜 시간이 소모됨 (ex. 초기 Ada)</li>
+  <li>프로그램을 실행시키는 비용 : 런타임 시간에 타입 검사를 많이 할수록 오랜 시간이 소모됨.</li>
+  <li>프로그램을 유지, 보수하는 비용 : 가독성이 낮은 언어일수록 코드를 수정하는데 오랜 시간이 소모됨.</li>
+</ul>
+
+<p>제시한 기준 외에도 프로그래밍 언어를 평가하는데 다른 기준을 세울 수도 있습니다. 예를 들어, 언어가 얼마나 표준화가 잘 되었는지 판단하는 <strong>이식성(Portability)</strong>, 얼마나 광범위한 분야에 응용할 수 있는지 나타내는 <strong>일반성(Generality)</strong>, 프로그래밍 언어가 얼마나 명세화가 잘 되었는지 나타내는 <strong>분명성(Well-definedness)</strong> 등이 있습니다.</p>
+
+<p><img src="/assets/images/PL/001/12.jpg" alt="" class="align-center" /></p>
+
+<p>다음으로는 프로그래밍 언어 설계에 영향을 미친 요소들을 알아보겠습니다.</p>
+
+<p>가장 먼저 살펴볼 것은 컴퓨터 구조(Computer Architecture)입니다. 특히 지금까지 프로그래밍 언어에 가장 큰 영향을 미친 구조는 폰 노이만 구조(von-Neumann Architecture)입니다. 폰 노이만 구조에 영향을 받은 프로그래밍 언어를 <strong>명령형 언어(Imperative Languages)</strong>라고 합니다. 명령형 언어는 데이터와 프로그램이 동일한 기억 장소에 저장되며, 변수, 배정문, 반복문 등의 특징을 가지고 있습니다. 그렇기에 명령형 언어는 문제를 어떻게 풀 것인가에 초점을 맞추게 됩니다.</p>
+
+<p>명령형 언어의 단점 중 하나는 <strong>폰 노이만 병목(von-Neumann Bottleneck)</strong> 현상이 발생할 수 있다는 것입니다. 컴퓨터 하드웨어에서 CPU의 처리 속도는 매우 빠르지만, 저장 장치에서 CPU까지 전달 속도가 느리기 때문에 CPU가 대기하는 상태를 말합니다. 이 문제를 해결하기 위한 방법 중 하나가 바로 캐시(Cache)이지만, 이것으로도 폰 노이만 병목 현상은 완전히 해결할 수 없습니다.</p>
+
+<p><img src="/assets/images/PL/001/13.jpg" alt="" class="align-center" /></p>
+
+<p>명령형 언어와는 다르게, 폰 노이만 구조에 영향을 받지 않은 프로그래밍 언어를 선언형 언어(Declarative Languages)입니다. 이러한 언어들은 배정문이나 반복문 없이 함수형 언어로 프로그래밍이 가능합니다. 그러나 아직 선언형 언어를 완벽하게 수행할 수 있는 하드웨어가 개발되지 않았기 때문에, 이러한 컴퓨터가 개발되기 전까지는 명령형 언어를 대체할 수 없다고 보여집니다.</p>
+
+<p>폰 노이만 구조가 아닌 컴퓨터는 순차 제어나 변수의 개념이 없을 수 있고, 높은 수준의 병렬 처리와 변수의 사용 대신 이름과 상수 값 간의 강한 구속력이 존재할 것으로 예상하고 있습니다.</p>
+
+<p><img src="/assets/images/PL/001/14.jpg" alt="" class="align-center" /></p>
+
+<p>프로그래밍 언어의 설계에 영향을 미친 또 다른 하나는 해당 시기에 중요하게 생각했던 소프트웨어 개발 방법론입니다. 시간이 지날수록 하드웨어의 비용은 감소하고, 소프트웨어의 비용이 증가함에 따라 소프트웨어를 쉽게 만들 수 있는 방법을 연구하기 시작했습니다.</p>
+
+<ul>
+  <li>70년대 초에는 Go to 문의 비효율성을 인식하고, 위에서 아래로 읽어나갈 수 있는 구조적 프로그래밍이란 개념이 정립되었습니다.</li>
+  <li>70년대 말부터는 데이터 설계를 중요하게 생각하였기 추상 데이터 타입과 같이 데이터 추상화를 지원하기 시작하였습니다.</li>
+  <li>80년대 초에는 객체지향 프로그래밍의 개념이 도입되어 상속과 같이 기존 프로그램을 재사용성을 늘리게 되었습니다.</li>
+  <li>비주류적인 방법론 중 대표적으로 프로세스 지향 프로그래밍이 있습니다. 프로세스 지향 프로그래밍은 데이터 지향 방법과 달리 동시성(Concurrrency)을 도입하여 동일한 시간 내에 여러 프로세스를 실행할 수 있는 방법을 고안하였습니다. Java는 프로세스 지향 프로그래밍에 영향을 받은 언어 중 하나입니다.</li>
+</ul>
+
+<p>프로그래밍 언어를 설계할 때, 지금까지 제시한 모든 기준을 만족시키고 싶지만 아쉽게도 여러 기준을 서로 상충하는 단점이 있습니다. 대표적으로 몇 가지를 소개하자면,</p>
+
+<ul>
+  <li>신뢰성과 실행 비용은 서로 상충됩니다. 예를 들면, Java는 모든 Index의 범위를 검사함으로써 신뢰성을 향상시켰지만, 이로 인해 실행 비용이 늘어나는 단점이 있습니다. 반대로 C 언어는 Index의 범위를 전혀 검사하지 않아 신뢰성이 떨어지지만, 그만큼 실행 비용이 낮아지는 장점도 있습니다.</li>
+  <li>표현적이 높아지면 코드는 그만큼 깔끔해지지만, 반대로 가독성이 떨어진다는 단점이 있습니다. 예를 들면, APL은 복잡하고 많은 연산을 간단한 연산자로 표현이 가능하지만, 가독성이 심각하게 떨어진다는 단점이 있습니다.</li>
+  <li>유연성과 안정성, 유연성과 효율성도 서로 상충됩니다. 예를 들면, C++ 언어는 포인터를 다양한 방법으로 조작할 수 있어서 유연성이 높지만, 그만큼 안정성이 떨어진다는 단점이 있습니다. 또한 프로그래밍 언어에서 유연성이 늘어날수록 예외 사항이 늘어나기 때문에, 코드를 읽을 때나 작성할 때 효율성이 낮아진다는 단점이 있습니다.</li>
+</ul>
+
+<p><img src="/assets/images/PL/001/15.jpg" alt="" class="align-center" /></p>
+
+<p>일반적으로 컴퓨터 하드웨어는 기계어만 이해합니다. 그렇기 때문에 컴퓨터에 고급 언어를 이해시키기 위해서는 별도의 소프트웨어가 필요합니다. 이러한 예로써는 컴파일러, 인터프리터, 또는 하이브리드 구현 시스템이 있습니다.</p>
+
+<p>고급 언어 구현에는 운영체제에서 지원하는 많은 기능들이 필요하기 때문에, 대부분의 고급 언어는 컴퓨터 하드웨어에 직접 연결되지 않고 운영체제에 기능들에 연결되어 있습니다.</p>
+
+<p><img src="/assets/images/PL/001/16.jpg" alt="" class="align-center" /></p>
+
+<p><strong>컴파일러(Compiler)</strong>는 고급 언어로 작성된 프로그램을 기계어로 번역하는 방법입니다. 기계어로 번역을 완료한 후에는 또 번역할 필요가 없으므로, 실행 시간이 매우 빠르다는 장점이 있습니다. 그러나 프로그램을 조금만 수정해도 다시 처음부터 번역을 수행해야 하므로, 잦은 수정이 필요한 프로그램에는 적합하지 않습니다. 컴파일러를 사용하는 대표적인 언어로 C 언어가 있습니다.</p>
+
+<p><strong>하이브리드 구현 시스템(Hybrid Implementation System)</strong>은 고급 언어로 작성된 프로그램을 중간 언어로 번역한 뒤, 중간 언어를 인터프리터처럼 한줄 한줄 번역하는 방법입니다. 이것은 컴파일러와 인터프리터를 적절히 조율한 방법입니다. 하이브리드 구현 시스템을 사용하는 대표적인 예시로 Java 언어가 있습니다. Java 언어는 먼저 작성한 프로그램을 바이트코드(Bytecode)로 번역한 다음, 자바 가상 머신을 통해 기계어로 번역합니다.</p>
+
+<p><img src="/assets/images/PL/001/17.jpg" alt="" class="align-center" /></p>
+
+<p><strong>인터프리터(Interpreter)</strong>는 컴파일러와 달리 고급 언어를 번역하지 않고, 코드를 한줄 한줄 읽으며 실행하는 방법입니다. 인터프리터는 실행하다가 오류가 발생한 라인에서 멈추기 때문에 디버깅이 용이하다는 장점이 있으나, 실행 시간이 컴파일러에 비해 매우 느리다는 단점이 있습니다. 게다가 실행하는 과정에서 컴파일러보다 더 많은 메모리 공간을 요구하기도 합니다. 최근 가장 많이 사용하는 Python이 인터프리터 방식으로 실행되며, JavaScript와 같은 웹 프로그래밍 언어도 인터프리터를 사용합니다.</p>
+
+<p><strong>사전처리기(Preprocessor)</strong>는 프로그램이 컴파일되기 전에 프로그램을 처리하는 프로그램으로, 다른 파일에 있는 코드를 현재 프로그램에 포함시키는 역할을 합니다. 예를 들면, C 언어에서는 #include 를 통해 외부 파일의 코드를 불러옵니다.</p>
+
+<p>마지막으로 <strong>프로그래밍 환경(Program Environment)</strong>은 프로그램을 작성하기 위한 도구를 일컫는 말입니다. 이러한 도구들은 파일 시스템, 편집기, 링커, 컴파일러, 디버거, 사용자 인터페이스와 같은 기능을 내장하고 있습니다. 대표적으로 Microsoft의 Visual Studio, Apple의 Xcode, JetBrains의 IntelliJ IDEA 등이 있습니다.</p>
+
+<p>1장의 내용은 여기까지입니다. 2장에서는 프로그래밍 언어의 발전사를 간략하게 살펴보도록 하겠습니다. 읽어주셔서 감사합니다!</p>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> Tags: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/tags/#programming-languages" class="page__taxonomy-item p-category" rel="tag">programming languages</a>
+    
+    </span>
+  </p>
+
+
+
+
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> Categories: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/categories/#studies" class="page__taxonomy-item p-category" rel="tag">studies</a>
+    
+    </span>
+  </p>
+
+
+        
+
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time class="dt-published" datetime="2023-08-18T00:00:00+09:00">August 18, 2023</time></p>
+
+      </footer>
+
+      <section class="page__share">
+  
+    <h4 class="page__share-title">Share on</h4>
+  
+
+  <a href="https://twitter.com/intent/tweet?text=Preliminaries%20http%3A%2F%2Flocalhost%3A4000%2Fpl%2Fpreliminaries%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Fpl%2Fpreliminaries%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2Fpl%2Fpreliminaries%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+
+      <!--
+
+
+  <nav class="pagination">
+    
+      <a href="/pl/introduction/" class="pagination--pager" title="Introduction
+">Previous</a>
+    
+    
+      <a href="#" class="pagination--pager disabled">Next</a>
+    
+  </nav>
+
+
+-->
+    </div>
+
+    
+  </article>
+
+  
+  
+</div>
+
+    </div>
+
+    
+      <div class="search-content">
+        <div class="search-content__inner-wrap"><form class="search-content__form" onkeydown="return event.key != 'Enter';" role="search">
+    <label class="sr-only" for="search">
+      Enter your search term...
+    </label>
+    <input type="search" id="search" class="search-input" tabindex="-1" placeholder="Enter your search term..." />
+  </form>
+  <div id="results" class="results"></div></div>
+
+      </div>
+    
+	
+	<!-- Back to Top Button -->
+	<aside class="sidebar__top">
+	<a href="#site-nav"> <i class="fas fa-angle-double-up fa-2x"></i></a>
+	</aside>
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>Follow:</strong></li>
+    
+
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+
+    
+      <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2023 KEEPMIND All rights reserved. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    <script type="text/javascript" async
+   src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      extensions: ["tex2jax.js"],
+      jax: ["input/TeX", "output/HTML-CSS"],
+      tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+        displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+        processEscapes: true
+      },
+      "HTML-CSS": { availableFonts: ["TeX"] }
+    });
+</script>
+
+
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+<script src="/assets/js/lunr/lunr.min.js"></script>
+<script src="/assets/js/lunr/lunr-store.js"></script>
+<script src="/assets/js/lunr/lunr-en.js"></script>
+
+
+
+
+    <script>
+  'use strict';
+
+  (function() {
+    var commentContainer = document.querySelector('#utterances-comments');
+
+    if (!commentContainer) {
+      return;
+    }
+
+    var script = document.createElement('script');
+    script.setAttribute('src', 'https://utteranc.es/client.js');
+    script.setAttribute('repo', 'duvelix/duvelix.github.io');
+    script.setAttribute('issue-term', 'pathname');
+    
+    script.setAttribute('theme', 'github-light');
+    script.setAttribute('crossorigin', 'anonymous');
+
+    commentContainer.appendChild(script);
+  })();
+</script>
+
+
+
+
+
+
+  
+
+
+
+
+
+  </body>
+</html>
