@@ -8,7 +8,7 @@ classes: wide
 
 ## Education
 ### PhD in Computer Science and Engineering
-#### <img src="\assets\sogang.png" width=50 height=50> **Sogang University** | 2015 - 2024 (Expected)
+#### <img src="\assets\sogang.png" width=50 height=50> **Sogang University** | 2015 - 2025 (Expected)
 - Dissertation: Working in Progress
 - Advisor: Prof. Sungwook Kim
 
