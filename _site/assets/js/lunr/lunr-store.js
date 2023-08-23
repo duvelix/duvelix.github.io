@@ -1336,4 +1336,10 @@ var store = [{
         "tags": ["programming languages"],
         "url": "/pl/preliminaries/",
         "teaser": null
+      },{
+        "title": "Evolution of the Major Programming Languages",
+        "excerpt":"프로그래밍 언어론의 2장은 지금까지 개발되었던 프로그래밍 언어에 대한 간단한 정리입니다. 과거부터 지금까지 개발된 프로그래밍 언어의 종류는 매우 많지만, 이러한 프로그래밍 언어의 특징에 대해 하나하나 전부 외울 필요는 없습니다. 그 대신, 주요한 몇몇 언어에서 도입된 새로운 개념에 대해서만 간단하게 요약하겠습니다. 이 그림은 이번 장에서 다룰 프로그래밍 언어의 계보입니다. 다루는 순서는 연도별로...","categories": ["studies"],
+        "tags": ["programming languages"],
+        "url": "/pl/evolution-of-the-major-programming-languages/",
+        "teaser": null
       }]
