@@ -1,0 +1,634 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.24.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>Names, Bindings, Type Checking, and Scopes - KEEPMIND</title>
+<meta name="description" content="">
+
+
+  <meta name="author" content="Joonsu Ryu">
+  
+  <meta property="article:author" content="Joonsu Ryu">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="KEEPMIND">
+<meta property="og:title" content="Names, Bindings, Type Checking, and Scopes">
+<meta property="og:url" content="http://localhost:4000/pl/names-bindings-type-checking-and-scope/">
+
+
+  <meta property="og:description" content="">
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2023-08-25T00:00:00+09:00">
+
+
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="http://localhost:4000/pl/names-bindings-type-checking-and-scope/">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "KEEPMIND",
+      "url": "http://localhost:4000/"
+    
+  }
+</script>
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="KEEPMIND Feed">
+
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css"></noscript>
+
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon.png">
+
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body class="layout--single wide">
+    <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+		<a class="site-title" href="http://localhost:4000/"><img src="/assets/logo.png">
+        <!-- <a class="site-title" href="/">
+          KEEPMIND
+           -->
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="/">Home</a>
+            </li><li class="masthead__menu-item">
+              <a href="/cv/">CV</a>
+            </li><li class="masthead__menu-item">
+              <a href="/studies/">Studies</a>
+            </li><li class="masthead__menu-item">
+              <a href="/interests/">Interests</a>
+            </li><li class="masthead__menu-item">
+              <a href="/travels/">Travels</a>
+            </li></ul>
+        
+        <button class="search__toggle" type="button">
+          <span class="visually-hidden">Toggle search</span>
+          <i class="fas fa-search"></i>
+        </button>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person" class="h-card">
+
+  
+    <div class="author__avatar">
+      <!-- <a href="http://localhost:4000/"> -->
+        <img src="/assets/profile.jpg" alt="Joonsu Ryu" itemprop="image" class="u-photo">
+      <!-- </a> -->
+    </div>
+  
+
+  <div class="author__content">
+    <h3 class="author__name p-name" itemprop="name">
+      <a class="u-url" rel="me" href="http://localhost:4000/" itemprop="url">Joonsu Ryu</a>
+    </h3>
+    
+      <div class="author__bio p-note" itemprop="description">
+        <p>Researcher</p>
+
+      </div>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">Follow</button>
+    <ul class="author__urls social-icons">
+      
+        <li itemprop="homeLocation" itemscope itemtype="https://schema.org/Place">
+          <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> <span itemprop="name" class="p-locality">Seoul, Korea</span>
+        </li>
+      
+
+      
+        
+          
+            <li><a href="mailto:jsryu@sogang.ac.kr" rel="nofollow noopener noreferrer me"><i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i><span class="label">E-mail</span></a></li>
+          
+        
+          
+            <li><a href="https://github.com/duvelix" rel="nofollow noopener noreferrer me" itemprop="sameAs"><i class="fab fa-fw fa-github" aria-hidden="true"></i><span class="label">GitHub</span></a></li>
+          
+        
+          
+            <li><a href="https://scholar.google.co.kr/citations?user=UmRh9NQAAAAJ" rel="nofollow noopener noreferrer me" itemprop="sameAs"><i class="fas fa-fw fa-graduation-cap" aria-hidden="true"></i><span class="label">Google Scholar</span></a></li>
+          
+        
+          
+            <li><a href="https://orcid.org/0000-0002-8848-1456" rel="nofollow noopener noreferrer me" itemprop="sameAs"><i class="fab fa-fw fa-orcid" aria-hidden="true"></i><span class="label">ORCID</span></a></li>
+          
+        
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer me">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+
+  
+  </div>
+
+
+
+  <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="Names, Bindings, Type Checking, and Scopes">
+    <meta itemprop="description" content="">
+    <meta itemprop="datePublished" content="2023-08-25T00:00:00+09:00">
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title p-name" itemprop="headline">
+            <a href="http://localhost:4000/pl/names-bindings-type-checking-and-scope/" class="u-url" itemprop="url">Names, Bindings, Type Checking, and Scopes
+</a>
+          </h1>
+          
+
+
+        </header>
+      
+
+      <section class="page__content e-content" itemprop="text">
+        
+        <p><img src="/assets/images/PL/005/01.jpg" alt="" class="align-center" /></p>
+
+<p>처음 소개드린대로 3장과 4장은 컴파일러 과목과 중복된 내용이기 때문에 생략하고, 바로 5장으로 넘어갑니다. 5장은 변수와 관련된 개념들을 하나씩 소개합니다. 특히 제목대로 변수의 이름, 바인딩, 타입 검사, 유효 영역 등을 중점으로 짚도록 하겠습니다.</p>
+
+<p><img src="/assets/images/PL/005/02.jpg" alt="" class="align-center" /></p>
+
+<p>명령형 언어는 폰 노이만 구조를 기반으로 한 추상화입니다. 이 컴퓨터 구조의 가장 큰 특징은 명령어와 데이터를 저장하는 메모리와, 그 메모리의 내용을 수정하기 위한 연산을 제공하는 CPU로 구성되어 있다는 것입니다. 명령형 언어의 변수라는 것은 결국 메모리 셀에 대한 추상화입니다. 변수는 데이터 타입, 유효 영역, 수명, 타입 검사 등과 같은 속성(Attribute)들의 모음으로 특징지어질 수 있습니다.</p>
+
+<p><img src="/assets/images/PL/005/03.jpg" alt="" class="align-center" /></p>
+
+<p>먼저 <span style="color:red">이름(Name)</span>은 프로그램에서 변수, 레이블, 부프로그램 및 매개변수와 같은 요소들을 식별하는데 사용되는 문자열입니다. 이름을 설계할 때는 다음과 같은 것들을 고려해야 합니다.</p>
+
+<ul>
+  <li>이름의 최대 길이는 무엇인가?</li>
+  <li>이름에 밑줄과 같은 연결 문자를 사용할 수 있는가?</li>
+  <li>이름이 대소문자를 구분하는가?</li>
+  <li>이름이 특수어, 예약어, 키워드인가?</li>
+</ul>
+
+<p>이것들에 대해 하나씩 고려해보도록 하겠습니다. 먼저 이름의 길이는 언어가 발전되면서 점점 늘어났습니다. 초기 프로그래밍 언어에서는 오로지 단 한 문자만 허용되었으나, FORTRAN I은 6글자, COBOL은 30문자, C와 C++, Java와 같은 경우는 제한 없는 길이가 가능해졌습니다.</p>
+
+<p>또한 대부분 프로그래밍 언어에서 밑줄 문자를 띄어쓰기와 비슷한 용도로 사용합니다. 이러한 문화는 1970년 ~ 1980년대에 널리 사용되었지만, 최근에는 점점 배제하는 경향을 보입니다. C 언어 이후 등장한 언어들에서는 Camel Notation이라는 표기법이 정립되어, 대소문자를 통해 단어를 구분했습니다. 예를 들어서 myStack과 같이 말입니다. 그러나 이러한 밑줄 문자나 대소문자 혼용 사용은 언어 설계의 고려 사항이 아니라 프로그래밍에서의 고려 사항입니다.</p>
+
+<p>그렇다면 언어에서 대소문자를 구별하는 것이 옳은 선택일까요? 예를 들어 C++에서는 대소문자가 완벽하게 다른 글자로 구분됩니다. ROSE, rose, Rose 이 3개의 이름은 모두 다른 이름으로 취급됩니다. 이것은 가독성 측면에서 굉장히 좋지 않다고 볼 수 있습니다. 왜냐하면 이 3개의 이름은 서로 유사하게 보이지만, 실제로는 아무런 관련이 없기 때문입니다. 물론 이것은 프로그래밍에서의 문제이기 때문에 대부분의 사람들은 대소문자가 구별되는 것을 싫어하지 않지만, 사전 정의된 이름들에서 대소문자가 구별되는 경우 문제가 생길 수 있습니다. 예를 들어, Java에서 문자열을 정수 값으로 변환하는 메소드는 parseInt인데, ParseInt나 parseint로 입력하면 인식하지 못합니다. 이것은 작성력 측면에서 좋지 않은 경우라고 볼 수 있습니다.</p>
+
+<p><img src="/assets/images/PL/005/04.jpg" alt="" class="align-center" /></p>
+
+<p><span style="color:red">특수어(Special Words)</span>는 수행될 행동들을 명칭화하여 프로그램의 가독성을 높이는데 사용됩니다. 대부분의 프로그래밍 언어에서 특수어는 <span style="color:red">키워드(Keyword)</span>, 또는 <span style="color:red">예약어(Reserved word)</span>로 분류되어 있습니다.</p>
+
+<ul>
+  <li>
+    <p><strong>키워드</strong> : 프로그래밍 언어 내의 특수어를 재정의할 수 있는 경우 키워드라고 부릅니다. 현재 사용되고 있는 언어 중에서 특수어가 키워드인 언어는 Fortran 뿐입니다. Fortran의 특수어 중 하나인 REAL은 REAL APPLE로 선언하는 경우에는 APPLE이 실수형 변수로 정의가 되지만, REAL = 3.4로 선언할 경우 REAL 이란 변수에 3.4를 대입하는 식이 됩니다.</p>
+  </li>
+  <li>
+    <p><strong>예약어</strong> : 프로그래밍 언어 내의 특수어를 재정의할 수 없는 경우 예약어라고 부릅니다. 프로그래밍 언어 설계 관점에서 보면, 예약어가 키워드보다 낫다는 것이 일반적인 의견입니다. 그러나 예약어에서도 문제가 하나 있는데, 언어가 갖고있는 예약어가 너무 많을 경우 프로그래머가 불편함을 느낄 수 있다는 것입니다. 특히 COBOL 언어는 300여개의 예약어를 가지고 있는데, 그 중에는 일반적으로 많이 사용하는 이름인 COUNT, LENGTH와 같은 것들도 포함하고 있습니다. 이 경우 프로그래머가 변수 이름을 짓는데 상당한 애로사항이 생길 수 있습니다.</p>
+  </li>
+</ul>
+
+<p><img src="/assets/images/PL/005/05.jpg" alt="" class="align-center" /></p>
+
+<p><span style="color:red">변수(Variable)</span>는 1페이지에서도 설명드렸듯이 메모리 셀에 대한 추상화입니다. 변수는 이름(Name), 주소(Address), 타입(Type), 값(Value), 수명(Lifetime), 유효 범위(Scope) 6개의 튜플로 구성되어 있습니다.</p>
+
+<ul>
+  <li>
+    <p><strong>이름</strong> : 변수의 이름은 프로그램에서 가장 일반적으로 볼 수 있는 이름입니다. 변수의 이름은 <strong>식별자(Identifiers)</strong>라고도 불립니다.</p>
+  </li>
+  <li>
+    <p><strong>주소</strong> : 변수의 주소는 그 변수와 연관된 실제 메모리의 주소입니다. 많은 언어들에서는 동일한 변수가 프로그램의 위치에 따라 다른 주소와 연관되는 것이 가능합니다. C 언어와 비슷한 언어에서는 지역 변수(Local Variable)라는 개념을 생각하시면 됩니다. 또한 같은 주소를 가리키는 여러 개의 변수를 가질 수도 있습니다. 이것을 <span style="color:red">별칭(Alias)</span>이라고 하는데, 이것은 가독성을 떨어트리므로 권장되지 않습니다. 예를 들어, total이 sum의 별칭이라면, total 값을 변경시켰을 때 sum 값도 변경되고, 그 반대도 가능해집니다. 따라서 프로그램을 읽는 프로그래머는 total과 sum이 같은 공간을 가리키는 것을 반드시 기억해둬야 하는 불편함이 있습니다. 결국 프로그램 내의 별칭이 많을 수록 검증이 더욱 어려워집니다. C 언어의 포인터가 대표적인 별칭의 예시입니다. 또한 부프로그램의 매개변수를 통해서 생성될 수도 있는데, 이것은 9장에서 부프로그램에 대해서 다룰 때 더 자세하게 논의하겠습니다.</p>
+  </li>
+</ul>
+
+<p><img src="/assets/images/PL/005/06.jpg" alt="" class="align-center" /></p>
+
+<ul>
+  <li>
+    <p><strong>타입</strong> : 변수의 타입은 그 변수가 저장할 수 있는 값들의 범위와 정의될 수 있는 연산들의 집합을 결정합니다. 예를 들어, Fortran에서의 Integer 타입은 -32,768 ~ 32,767 사이의 값을 가질 수 있으며, 사칙연산이 가능합니다.</p>
+  </li>
+  <li>
+    <p><strong>값</strong> : 변수의 값은 그 변수에 저장된 메모리 셀의 내용입니다. 변수는 등호(=)를 기준으로 왼쪽에 있을 때는 <span style="color:red">l-value</span>, 오른쪽에 있을 때는 <span style="color:red">r-value</span>로 부릅니다. l-value는 변수의 주소, r-value는 변수의 값을 나타냅니다.</p>
+  </li>
+</ul>
+
+<p><img src="/assets/images/PL/005/07.jpg" alt="" class="align-center" /></p>
+
+<p><span style="color:red">바인딩(Binding)</span>은 연산과 기호 같은 하나의 속성과 하나의 개체 간의 연관성입니다. 바인딩이 일어나는 시기를 <span style="color:red">바인딩 시간(Binding Time)</span>이라고 부릅니다. 바인딩 시간은 다음과 같이 다양한 경우로 분류할 수 있습니다.</p>
+
+<ul>
+  <li>언어 설계 시간 : ‘*’ 기호는 일반적으로 언어 설계 시 곱셈 연산으로 바인딩됩니다.</li>
+  <li>언어 구현 시간 : Integer와 같은 데이터 타입이 어떤 범위의 값을 가질지는 언어 구현 시간에 바인딩됩니다.</li>
+  <li>컴파일 시간 : Pascal로 구현된 프로그램에서 변수가 어떤 데이터 타입을 가질지는 컴파일 시간에 바인딩됩니다.</li>
+  <li>링크 시간 : 라이브러리 부프로그램에 대한 호출은 링크 시간에 부프로그램 코드에 바인딩됩니다.</li>
+  <li>로드 시간 : 프로그램이 메모리에 로드될 때 변수가 메모리 셀에 바인딩됩니다.</li>
+  <li>실행 시간 : 프로시저의 변수는 프로시저가 실제로 호출될 때 메모리 셀에 바인딩됩니다.</li>
+</ul>
+
+<p>예를 들어 오른쪽 구석에 있는 간단한 프로그램을 확인해봅시다. 가장 첫 줄에서는 <code class="language-plaintext highlighter-rouge">int count;</code>를 통해 count 변수를 int형 변수로 선언하였습니다. 이것은 컴파일 시간에 바인딩됩니다. <code class="language-plaintext highlighter-rouge">count = count * 5;</code>에서 count가 가질 수 있는 값은 언어 구현 시간에 바인딩됩니다. 또한 ‘*’ 연산이 어떤 의미를 가질지는 피연산자의 타입이 결정되었을 때 바인딩되므로 컴파일 시간에 바인딩됩니다. 5라는 숫자 표현은 컴파일 설계 시간에 바인딩되며, count의 최종 값은 이 배정문의 실행 시간에 바인딩됩니다. <code class="language-plaintext highlighter-rouge">sub1(count);</code>에서 count 변수는 이 부프로그램의 매개변수로 들어있습니다. 그러나 count의 값은 이전 구문에서 실행 시간에 바인딩되었으므로 이 때는 실행 시간에 바인딩됩니다. 그러다 <code class="language-plaintext highlighter-rouge">sub1(int aa)</code>에서 변수 aa는 매개변수로 처음 선언되는 변수입니다. 따라서 변수 aa는 count와는 다르게 로드 시간에 바인딩됩니다.</p>
+
+<p><img src="/assets/images/PL/005/08.jpg" alt="" class="align-center" /></p>
+
+<p>만약 바인딩이 실행 시간 이전에 일어나고 프로그램 실행 전체에 걸쳐서 변하지 않는다면 <span style="color:red">정적 바인딩(Static Binding)</span>이라고 부릅니다. 반대로 프로그램 실행 과정에서 변경될 수 있다면 <span style="color:red">동적 바인딩(Dynamic Binding)</span>이라고 부릅니다. 하드웨어에서 발생하는 동적 바인딩의 대표적인 예시는 가상 메모리입니다. 가상 메모리는 상황에 따라 실제 물리적 메모리에 다르게 바인딩될 수 있지만, 여기서 이러한 종류의 동적 바인딩까지는 고려하지 않도록 하겠습니다.</p>
+
+<p>먼저 타입 바인딩의 경우를 살펴보겠습니다. 변수는 프로그램 내에서 참조되기 전까지 어떤 데이터 타입인지 바인딩되어야만 합니다. 변수에서 타입은 두 가지 선언 방법이 있습니다. 변수 이름과 특정 타입을 직접 명세함으로써 타입을 바인딩하는 <span style="color:red">명시적 선언(Explicit Declaration)</span>이 있습니다. 1960년 이후 설계된 대부분의 프로그래밍 언어들은 명시적 선언 방법을 채택하고 있습니다. 반대로 직접 선언하지 않고 규칙에 의해 변수에 타입을 바인딩하는 것을 <span style="color:red">묵시적 선언(Implicit Declaration)</span>이라고 합니다. 대표적으로 Fortran, Basic, PL/I가 이 방법을 사용합니다. 공통점은 이 두 방법 모두 정적 바인딩으로 분류된다는 것입니다.</p>
+
+<p><img src="/assets/images/PL/005/09.jpg" alt="" class="align-center" /></p>
+
+<p>동적 타입 바인딩에서는 변수의 타입이 선언문이나 이름 그 자체로 정해지지 않습니다. 대신 변수에 어떤 값이 할당되는 순간 그 변수에 타입이 바인딩됩니다. 오른쪽 그림과 같이 변수 count는 1을 넣었을 때는 정수형, 3.0을 넣었을 때는 실수형, [1, 2, 3]을 넣었을 때는 배열로 바인딩됩니다. 대표적으로 Python이 이러한 동적 타입 바인딩 방식을 사용하고 있습니다.</p>
+
+<p>동적 타입 바인딩의 장점은 프로그래밍 시의 유연성을 제공한다는 것입니다. 특히 Generic Program을 작성할 때 빛을 발휘할 수 있습니다. 그러나 프로그램의 신뢰성을 낮추는 단점이 있습니다. 동적 타입 바인딩을 가진 언어는 컴파일 시간에 오류를 탐지하기 더 어렵기 때문입니다. 따라서 타입 검사를 실행 시간에 수행해야만 하는데, 그로 인해 추가적인 비용이 드는 것이 문제입니다. 그렇기 때문에 동적 타입 바인딩을 갖는 언어는 컴파일러보다는 인터프리터를 사용해서 구현하는 경우가 많습니다. 왜냐면 어차피 인터프리터는 컴파일러에 비해 10배 이상 느리기 때문에 동적 타입 바인딩에서 발생하는 검사 시간이 인터프리터의 번역 시간에 묻히기 때문입니다.</p>
+
+<p>묵시적 선언에서 타입 선언을 하는 것을 <span style="color:red">타입 추론(Type Inference)</span>라고 부르기도 합니다. ML이라는 언어에서 부프로그램은 <code class="language-plaintext highlighter-rouge">fun circum(r) = 3.14 * r * r;</code>과 같이 선언할 수 있습니다. ML 언어는 함수의 내부 구조를 통해 함수의 결과값이 어떤 타입인지 확인하는데, 이 경우 3.14라는 실수 값이 함수의 결과값에 영향을 주기 때문에 결과 값은 실수 타입으로 자동으로 추론됩니다.</p>
+
+<p>Generic Programming은 데이터 타입에 의존하지 않고, 하나의 변수가 여러 다른 데이터 타입을 가질 수 있게 만드는 프로그래밍 스타일입니다. 이것은 코드의 재사용성을 크게 높일 수 있으며, 이러한 접근 방식은 1973년 ML이라는 언어에서 처음 제안되었습니다.</p>
+
+<p><img src="/assets/images/PL/005/10.jpg" alt="" class="align-center" /></p>
+
+<p>변수의 <span style="color:red">수명(Lifetime)</span>은 변수가 특정 메모리에 바인딩되어 있는 기간으로 정의됩니다. 즉, 변수가 특정 메모리 공간에 바인딩 될 때 시작되며 그 공간에서 해제될 때 종료됩니다.</p>
+
+<p><strong>정적 변수(Static Variable)</strong>는 프로그램이 실행되기 전에 메모리 공간에 바인딩되고, 프로그램 실행이 종료되면 해제됩니다. 대표적인 정적 변수는 전역 변수(Global Variable)가 있고, 부프로그램에서 기록에 민감한 변수의 경우에도 정적 변수로 선언됩니다. 정적 변수는 할당이나 해제를 위한 시간이 필요하지 않기 때문에 효율성을 높일 수 있다는 장점이 있지만, 유연성을 감소시킨다는 문제점이 있습니다. 특히 정적 변수만을 갖는 언어로는 재귀적 부프로그램을 만들 수 없습니다.</p>
+
+<p><strong>스택 동적 변수(Stack Dynamic Variable)</strong>는 선언문에 의해 지시될 때 기억공간 바인딩이 생성되지만, 타입은 정적으로 바인딩되는 변수를 말합니다. 따라서 바인딩 자체는 실행 시간에 일어나게 됩니다. 대표적인 스택 동적 변수의 예시는 프로시저에서의 지역 변수가 있습니다. 예를 들어, C나 Java와 같은 언어에서 함수에 선언된 변수는 그 함수가 호출될 때 기억공간에 바인딩됩니다.</p>
+
+<p>스택 동적 변수의 장점은 재귀적 부프로그램을 가능하게 만들고, 서로 다른 프로시저에서 동일한 메모리 공간을 차지하게 만들 수 있습니다. 단점으로는 실행 시간에서 지역 변수의 메모리 할당 및 할당 해제를 위한 추가적인 비용이 필요하다는 것입니다. 또한 스택 동적 변수는 간접적인 주소지정을 필요로 하기 때문에 접근 속도가 더 느리다는 단점도 있습니다.</p>
+
+<p><img src="/assets/images/PL/005/11.jpg" alt="" class="align-center" /></p>
+
+<p>스택 동적 변수의 예로 위와 같은 하나의 프로그램을 보겠습니다. 먼저 변수 a2와 변수 p는 sub()라는 부프로그램 안에서 선언되었기 때문에 스택 동적 변수입니다. 따라서 이 변수들은 sub() 종료시 메모리에서 자동으로 회수됩니다. 변수 a3은 부프로그램 안에서 선언되었지만, static으로 선언되었기 때문에 정적 변수이므로 sub()가 종료되더라도 자동으로 회수되지 않습니다. 변수 a3은 프로그램이 종료될 때 회수됩니다. 또한 변수 p는 a2와 다르게 포인터로 선언되어 있습니다. 그렇기 때문에 이것도 일단 실행 시간에서 기억공간에 할당되고 회수되지만, a2와는 다르게 힙(Heap)에 저장된다는 차이점이 있습니다.</p>
+
+<p><strong>묵시적 힙 동적 변수(Implicit Heap Dynamic Variable)</strong>은 값이 배정될 때 힙 기억장소에 바인딩 되는 변수입니다. 다음과 같은 APL 언어의 LIST 변수는 이전에 어떤 용도로 사용되었는지에 상관 없이 list 형으로 값이 배정된다면 list 형으로 기억장소에 바인딩되고, 마찬가지로 정수형으로 배정된다면 기억장소에 정수형으로 바인딩됩니다. 장점으로는 높은 유연성을 갖는다는 것이지만, 타입 바인딩 때와 마찬가지로 실행 시간에서의 부담이 늘어나고 컴파일 시간에 오류를 탐지하는 것이 어려워진다는 것입니다.</p>
+
+<p><img src="/assets/images/PL/005/12.jpg" alt="" class="align-center" /></p>
+
+<p><strong>명시적 힙 동적 변수(Explicit Heap Dynamic Variable)</strong>은 프로그래머가 명시적으로 공간을 할당하고 회수되는 변수입니다. 명시적 힙 동적 변수는 포인터나 참조 변수에 의해서만 참조될 수 있으며 실행 시간에서 메모리 공간 바인딩과 해제가 모두 일어납니다. 명시적 힙 동적 변수의 타입은 컴파일 시간에 바운딩되지만, 기억장소에 바인딩 되는 것은 실행 시간입니다.</p>
+
+<p>명시적 힙 동적 변수를 이해하기 위해, 가운데에 있는 C++ 코드 예제를 보겠습니다. 이 예제에서 명시적 힙 동적 변수는 <code class="language-plaintext highlighter-rouge">new int</code>를 통해서 생성됩니다. 그리고 이 변수는 포인터인 intnode를 통해 참조될 수 있습니다. 그리고 delete 명령어를 통해 기억공간에서 해제됩니다. C++는 쓰레기 수집(Garbage collection)과 같은 묵시적 기억공간 회수 방법을 사용하지 않기 때문에 명시적 연산자인 delete가 반드시 필요합니다. 반대로 Java는 명시적 힙-동적 변수를 사용하지만 쓰레기 수집을 지원하기 때문에 명시적으로 회수할 필요가 없습니다.</p>
+
+<p>명시적 힙 동적 변수의 장점은 실행 시간 도중 크기가 커지거나 줄어들 수 있는 연결 리스트나 트리와 같은 동적인 구조체를 구현하는데 유용합니다. 그러나 참조 변수를 올바르게 사용하기가 어렵고, 참조 비용, 기억공간 관리를 구현하는게 어렵다는 단점이 있습니다.</p>
+
+<p><img src="/assets/images/PL/005/13.jpg" alt="" class="align-center" /></p>
+
+<p><img src="/assets/images/PL/005/14.jpg" alt="" class="align-center" /></p>
+
+<p><img src="/assets/images/PL/005/15.jpg" alt="" class="align-center" /></p>
+
+<p><img src="/assets/images/PL/005/16.jpg" alt="" class="align-center" /></p>
+
+<p><img src="/assets/images/PL/005/17.jpg" alt="" class="align-center" /></p>
+
+<p><img src="/assets/images/PL/005/18.jpg" alt="" class="align-center" /></p>
+
+<p><img src="/assets/images/PL/005/19.jpg" alt="" class="align-center" /></p>
+
+<p><img src="/assets/images/PL/005/20.jpg" alt="" class="align-center" /></p>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> Tags: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/tags/#programming-languages" class="page__taxonomy-item p-category" rel="tag">programming languages</a>
+    
+    </span>
+  </p>
+
+
+
+
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> Categories: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/categories/#studies" class="page__taxonomy-item p-category" rel="tag">studies</a>
+    
+    </span>
+  </p>
+
+
+        
+
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time class="dt-published" datetime="2023-08-25T00:00:00+09:00">August 25, 2023</time></p>
+
+      </footer>
+
+      <section class="page__share">
+  
+    <h4 class="page__share-title">Share on</h4>
+  
+
+  <a href="https://twitter.com/intent/tweet?text=Names%2C+Bindings%2C+Type+Checking%2C+and+Scopes%20http%3A%2F%2Flocalhost%3A4000%2Fpl%2Fnames-bindings-type-checking-and-scope%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Fpl%2Fnames-bindings-type-checking-and-scope%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2Fpl%2Fnames-bindings-type-checking-and-scope%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+
+      <!--
+
+
+  <nav class="pagination">
+    
+      <a href="/pl/evolution-of-the-major-programming-languages/" class="pagination--pager" title="Evolution of the Major Programming Languages
+">Previous</a>
+    
+    
+      <a href="#" class="pagination--pager disabled">Next</a>
+    
+  </nav>
+
+
+-->
+    </div>
+
+    
+  </article>
+
+  
+  
+</div>
+
+    </div>
+
+    
+      <div class="search-content">
+        <div class="search-content__inner-wrap"><form class="search-content__form" onkeydown="return event.key != 'Enter';" role="search">
+    <label class="sr-only" for="search">
+      Enter your search term...
+    </label>
+    <input type="search" id="search" class="search-input" tabindex="-1" placeholder="Enter your search term..." />
+  </form>
+  <div id="results" class="results"></div></div>
+
+      </div>
+    
+	
+	<!-- Back to Top Button -->
+	<aside class="sidebar__top">
+	<a href="#site-nav"> <i class="fas fa-angle-double-up fa-2x"></i></a>
+	</aside>
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>Follow:</strong></li>
+    
+
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+
+    
+      <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2023 KEEPMIND All rights reserved. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    <script type="text/javascript" async
+   src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      extensions: ["tex2jax.js"],
+      jax: ["input/TeX", "output/HTML-CSS"],
+      tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+        displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+        processEscapes: true
+      },
+      "HTML-CSS": { availableFonts: ["TeX"] }
+    });
+</script>
+
+
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+<script src="/assets/js/lunr/lunr.min.js"></script>
+<script src="/assets/js/lunr/lunr-store.js"></script>
+<script src="/assets/js/lunr/lunr-en.js"></script>
+
+
+
+
+    <script>
+  'use strict';
+
+  (function() {
+    var commentContainer = document.querySelector('#utterances-comments');
+
+    if (!commentContainer) {
+      return;
+    }
+
+    var script = document.createElement('script');
+    script.setAttribute('src', 'https://utteranc.es/client.js');
+    script.setAttribute('repo', 'duvelix/duvelix.github.io');
+    script.setAttribute('issue-term', 'pathname');
+    
+    script.setAttribute('theme', 'github-light');
+    script.setAttribute('crossorigin', 'anonymous');
+
+    commentContainer.appendChild(script);
+  })();
+</script>
+
+
+
+
+
+
+  
+
+
+
+
+
+  </body>
+</html>

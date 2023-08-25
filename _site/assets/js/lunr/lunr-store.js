@@ -1342,4 +1342,10 @@ var store = [{
         "tags": ["programming languages"],
         "url": "/pl/evolution-of-the-major-programming-languages/",
         "teaser": null
+      },{
+        "title": "Names, Bindings, Type Checking, and Scopes",
+        "excerpt":"처음 소개드린대로 3장과 4장은 컴파일러 과목과 중복된 내용이기 때문에 생략하고, 바로 5장으로 넘어갑니다. 5장은 변수와 관련된 개념들을 하나씩 소개합니다. 특히 제목대로 변수의 이름, 바인딩, 타입 검사, 유효 영역 등을 중점으로 짚도록 하겠습니다. 명령형 언어는 폰 노이만 구조를 기반으로 한 추상화입니다. 이 컴퓨터 구조의 가장 큰 특징은 명령어와 데이터를 저장하는 메모리와,...","categories": ["studies"],
+        "tags": ["programming languages"],
+        "url": "/pl/names-bindings-type-checking-and-scope/",
+        "teaser": null
       }]
