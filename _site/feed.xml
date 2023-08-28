@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.3">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-08-25T18:00:41+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">KEEPMIND</title><subtitle>A place I record so that I don&apos;t forget.</subtitle><author><name>Joonsu Ryu</name></author><entry><title type="html">Names, Bindings, Type Checking, and Scopes</title><link href="http://localhost:4000/pl/names-bindings-type-checking-and-scope/" rel="alternate" type="text/html" title="Names, Bindings, Type Checking, and Scopes" /><published>2023-08-25T00:00:00+09:00</published><updated>2023-08-25T00:00:00+09:00</updated><id>http://localhost:4000/pl/names-bindings-type-checking-and-scope</id><content type="html" xml:base="http://localhost:4000/pl/names-bindings-type-checking-and-scope/">&lt;p&gt;&lt;img src=&quot;/assets/images/PL/005/01.jpg&quot; alt=&quot;&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.3">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-08-28T17:57:15+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">KEEPMIND</title><subtitle>A place I record so that I don&apos;t forget.</subtitle><author><name>Joonsu Ryu</name></author><entry><title type="html">Names, Bindings, Type Checking, and Scopes</title><link href="http://localhost:4000/pl/names-bindings-type-checking-and-scope/" rel="alternate" type="text/html" title="Names, Bindings, Type Checking, and Scopes" /><published>2023-08-28T00:00:00+09:00</published><updated>2023-08-28T00:00:00+09:00</updated><id>http://localhost:4000/pl/names-bindings-type-checking-and-scope</id><content type="html" xml:base="http://localhost:4000/pl/names-bindings-type-checking-and-scope/">&lt;p&gt;&lt;img src=&quot;/assets/images/PL/005/01.jpg&quot; alt=&quot;&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;처음 소개드린대로 3장과 4장은 컴파일러 과목과 중복된 내용이기 때문에 생략하고, 바로 5장으로 넘어갑니다. 5장은 변수와 관련된 개념들을 하나씩 소개합니다. 특히 제목대로 변수의 이름, 바인딩, 타입 검사, 유효 영역 등을 중점으로 짚도록 하겠습니다.&lt;/p&gt;
 
@@ -117,19 +117,77 @@
 
 &lt;p&gt;&lt;img src=&quot;/assets/images/PL/005/13.jpg&quot; alt=&quot;&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
 
+&lt;p&gt;다음으로 확인해볼 사항은 &lt;span style=&quot;color:red&quot;&gt;타입 검사(Type Checking)&lt;/span&gt;입니다. 사실 10판 이후로 이 부분은 6장으로 넘어갔지만, 강의자료에서는 그것이 반영되지 않아 여전히 5장의 내용으로 나와있네요. 어쨌든 강의자료를 기반으로 설명드리는 것이기 때문에 타입 검사는 여기에서 짚고 넘어가겠습니다.&lt;/p&gt;
+
+&lt;p&gt;타입 검사는 연산자와 피연산자가 &lt;span style=&quot;color:red&quot;&gt;호환 가능한 타입(Compatible Type)&lt;/span&gt;인지 확인하는 검사입니다. 호환 가능한 타입이란 연산자에 대해 적합하거나, 컴파일러에 의해 적합한 타입으로 변환되는 것이 허용되는 타입입니다. 이렇게 컴파일러에 의해 자동으로 변환되는 것을 &lt;span style=&quot;color:red&quot;&gt;타입 강제 변환(Coercion)&lt;/span&gt;이라고 합니다.&lt;/p&gt;
+
+&lt;p&gt;타입 검사에는 &lt;strong&gt;정적 타입 검사(Static Type Checking)&lt;/strong&gt;와 &lt;strong&gt;동적 타입 검사(Dynamic Type Checking)&lt;/strong&gt; 2가지 종류가 있습니다. 정적 타입 검사는 모든 변수의 타입 바인딩이 정적인 경우 수행되는 타입 검사이며, 동적 타입 검사는 실행 시간에 검사하는 타입 검사입니다. 예를 들어, JavaScript나 PHP 같은 언어는 동적 타입 바인딩으로 인해 동적 타입 검사만을 지원합니다.&lt;/p&gt;
+
+&lt;p&gt;타입 검사도 컴파일 시간에 수행하는 것이 실행 시간에 수행하는 것보다 효율적입니다. 정적 검사는 컴파일 시간에 타입 검사를 실행함으로써 효율적인 검사가 가능하지만, 프로그래밍의 유연성이 낮다는 단점이 있습니다. 그러나 최근에는 이러한 유연성이 오히려 가독성에 악영향을 끼친다고 인식되고 있기 때문에 큰 문제는 아닙니다. 동적 타입 검사는 반대로 프로그래밍의 유연성이 증가하지만, 그만큼 타입 검사가 어려워진다는 문제가 있습니다. 특히, 실행 중에 서로 다른 유형의 값을 서로 다른 시점에 저장할 수 있도록 허용되는 경우 타입 검사가 매우 복잡해집니다. 오른쪽의 Pascal 언어의 예시와 마찬가지로, C언어의 공용체(Union)가 바로 이러한 경우입니다.&lt;/p&gt;
+
 &lt;p&gt;&lt;img src=&quot;/assets/images/PL/005/14.jpg&quot; alt=&quot;&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;1970년대 중요하게 여겨졌던 언어 설계의 아이디어 중 하나는 강 타입(Strong Typing)입니다. 프로그램 내에 모든 타입이 정적으로 바인딩되어 타입 오류가 항상 탐지되는 언어를 &lt;span style=&quot;color:red&quot;&gt;강 타입 언어(Strongly Typed Language)&lt;/span&gt;라고 부릅니다. 이것은 꼭 하나의 변수가 하나의 타입만 가져야할 것처럼 보이지만, 실제로 그렇지는 않습니다. 두 개 이상의 타입이 저장되는 변수의 경우에는 실행 시간에 탐지하는 것도 허용됩니다.&lt;/p&gt;
+
+&lt;p&gt;대표적으로 Ada 언어가 강 타입 언어에 가장 가까운 언어이고, C 언어와 C++ 언어는 강 타입 언어가 아닌 대표적인 언어입니다. Java는 C++의 파생 언어이지만 강 타입 언어에 매우 가깝습니다. Fortran 77 언어는 실제 매개변수와 형식 매개변수 간의 관계가 타입 검사되지 않기 때문에 강 타입 언어가 아니며, Pascal 언어는 강 타입 언어에 가깝지만 레코드 설계 측면에서는 강 타입 언어가 아닙니다.&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;/assets/images/PL/005/15.jpg&quot; alt=&quot;&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
 
+&lt;p&gt;다음으로는 타입 동등(Type Equivalence)에 대해 살펴보겠습니다. 먼저 서로 다른 두 변수가 서로 가지고 있는 값을 다른 변수에게 할당할 수 있는 경우에는 &lt;span style=&quot;color:red&quot;&gt;타입 호환(Type Compatible)&lt;/span&gt;이 가능하다고 정의됩니다. 스칼라 타입 변수의 경우에는 대부분 단순하고 엄격한 조건을 가지고 있지만, 배열이나 레코드와 같은 구조화된 타입에서는 규칙이 더 복잡해집니다.&lt;/p&gt;
+
+&lt;p&gt;이러한 강제 변환(Coercion) 없이, 어떤 타입의 피연산자가 다른 타입의 피연산자로 대체될 수 있을 때 타입 동등이라고 부릅니다. 타입 동등은 타입 호환성보다 엄격한 조건임을 알 수 있습니다. 타입 동등은 다음과 같은 2개의 종류로 구분됩니다.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;이름 타입 동등(Name Type Equivalence)&lt;/strong&gt; : 두 변수가 동일한 선언, 또는 동일한 타입 이름을 사용하는 선언으로 정의된 경우 타입 동등으로 정의됩니다. 구현하기는 쉽지만, 매우 제한적이라는 특징이 있습니다. 예를 들어, 정수의 부분 범위를 갖는 변수는 정수 타입 변수와 동등하지 않게 정의됩니다.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;구조 타입 동등(Structure Type Equivalence)&lt;/strong&gt; : 두 변수의 타입이 동일한 구조를 갖는 경우 타입 동등으로 정의됩니다. 구조 타입 동등은 이름 타입 동등보다 유연하지만 구현하기가 더 어렵습니다.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
 &lt;p&gt;&lt;img src=&quot;/assets/images/PL/005/16.jpg&quot; alt=&quot;&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;변수의 &lt;span style=&quot;color:red&quot;&gt;영역(Scope)&lt;/span&gt;은 변수를 볼 수 있는 범위를 일컫습니다. 만약 변수를 해당 문장에서 참조할 수 있는 경우, &lt;strong&gt;볼 수 있다(Visible)&lt;/strong&gt;고 표현합니다. 변수가 프로그램이나 블록 내에 정의되면 &lt;span style=&quot;color:red&quot;&gt;지역 변수(Local Variable)&lt;/span&gt;이라고 합니다. 반대로 &lt;span style=&quot;color:red&quot;&gt;비지역 변수(Nonlocal Variable)&lt;/span&gt;은 해당 프로그램이나 블록 내에서 볼 수 있지만, 그곳에서 선언되지 않은 경우를 말합니다. &lt;strong&gt;전역 변수(Global Variable)&lt;/strong&gt;은 비지역 변수 중 하나라고 볼 수 있습니다. 비지역 변수는 그 규칙에 따라 정적 영역과 동적 영역으로 구분할 수 있습니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;정적 영역(Static Scoping)&lt;/strong&gt;은 ALGOL 60에서 처음 도입되었으며, 실행 전에 변수의 영역이 정적으로 정해지는 것을 말합니다. 정적 영역은 주로 중첩된 부프로그램에서 생성됩니다. 예를 들어 아래와 같은 경우, 변수 x는 big이라는 프로시저에서 선언되었습니다. 그런데 sub1이라는 프로시저에서 변수 x에 대한 참조가 발생합니다. sub1 내에서 변수 x를 선언하지 않았다고 하면, sub1의 상위 프로시저를 탐색하여 변수 x에 대한 선언을 찾습니다. 프로시저의 호출 순서가 big -&amp;gt; sub2 -&amp;gt; sub1이라서 sub1의 상위 프로시저가 sub2라고 착각할 수도 있지만, sub1의 프로시저는 big 프로시저 안에서 정의되어있기 때문에 (정적 영역 하에서는) 무조건 big의 변수 x를 참조함에 유의하시기 바랍니다.&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;/assets/images/PL/005/17.jpg&quot; alt=&quot;&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
 
+&lt;p&gt;몇몇 언어는 &lt;span style=&quot;color:red&quot;&gt;블록(Block)&lt;/span&gt;이라는 개념을 도입하여 새로운 정적 영역이 코드 중간에 정의되는 것을 허용하고 있습니다. 블록이라는 코드의 일부분에서만 사용할 수 있는 지역 변수를 선언할 수 있으며, 스택 동적으로 선언되기 때문에 블록 내에 진입할 때 기억공간에 할당되고 블록을 빠져나올 때 기억공간에서 해제됩니다. 이것은 C 언어에서 다음과 같이 temp라는 변수처럼 사용됩니다.&lt;/p&gt;
+
+&lt;p&gt;정적 영역은 많은 상황에서 잘 작동하지만, 여러가지 문제점을 내포하고 있습니다. 첫째로, 호출할 수 없어야 하는 프로시저에 대한 오류는 컴파일러에서 오류로 감지되지 않는다는 문제가 있습니다. (영역 구멍) 둘째로, 변수와 부프로그램에 대한 접근을 너무 많이 허용한다는 것입니다. 또한 프로그램을 업데이트할 때 문제가 발생할 소지가 많은데, 이러한 접근 방식을 제대로 이해하지 못하고 코드를 추가할 경우 필요 이상으로 전역 변수를 사용하거나 접근 방식이 꼬일 가능성이 높습니다.&lt;/p&gt;
+
 &lt;p&gt;&lt;img src=&quot;/assets/images/PL/005/18.jpg&quot; alt=&quot;&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;동적 영역(Dynamic Scope)&lt;/strong&gt;은 부프로그램들의 상호간의 공간 배치가 아닌, 부 프로그램의 호출 시퀀스에 기반한 영역 방식입니다. 따라서 동적 영역은 실행 시간에 결정됩니다. APL, SNOBOL4, LISP의 몇몇 분파 언어들에서 사용되는 방식이며, 프로그램 단위 간 편리하게 매개변수를 전달할 수 있다는 장점이 있습니다. 정적 영역에서 보았던 big, sub1, sub2 프로시저를 다시 보시면 호출 순서가 big -&amp;gt; sub2 -&amp;gt; sub1 이었습니다. 따라서 동적 영역이라고 가정하면 sub1에서 참조하는 x는 sub2에서 선언한 x가 됩니다.&lt;/p&gt;
+
+&lt;p&gt;동적 영역 또한 문제가 발생할 수 있습니다. 첫째로, 부프로그램의 지역 변수는 실행 중인 다른 부프로그램에서 모두 볼 수 있습니다. 그들간의 코드상 거리와는 상관이 없기 때문에, 지역 변수를 보호할 수 있는 방법이 없고 결과적으로 정적 영역보다 덜 신뢰적인 프로그램이 만들어지게 됩니다. 둘째로, 비지역 변수를 참조할 때 정적으로 타입 검사할 수 없습니다. 마지막으로, 변수에 대한 참조가 항상 동일한 변수에 대해 일어나는 것이 아니기 때문에 가독성이 떨어지는 문제도 있습니다.&lt;/p&gt;
+
+&lt;p&gt;따라서 동적 영역은 정적 영역에 비해 널리 사용되지 않고 있습니다. 일반적으로 정적 영역 언어가 가독성이 좋고, 더 신뢰적이고, 더 빠르게 실행되는 것이 정설입니다.&lt;/p&gt;
+
+&lt;p&gt;다음으로는 변수의 영역과 수명에 대해 알아보겠습니다. 변수의 영역과 수명은 얼핏 보면 동일하거나, 거의 관련이 있는 것처럼 보입니다. 그러나 상황에 따라 완전히 달라질 수 있습니다. 먼저 변수의 영역과 수명에 대한 정의부터 다시 해보겠습니다.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;영역(Scope)&lt;/strong&gt; : 변수의 선언부터 프로시저의 마지막 예약어까지의 범위&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;수명(Lifetime)&lt;/strong&gt; : 프로시저에 진입한 시점부터 프로시저의 실행이 종료된 시점까지의 기간&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;예를 들어 오른쪽 코드에서 변수 sum의 영역과 수명을 각각 계산해보겠습니다. 먼저 변수 sum의 영역은 compute 프로시저에 완전히 포함됩니다. printheader 프로시저가 compute 프로시저 안에서 실행되지만, sum의 영역은 printheader 함수의 내부까지 포함하지는 않습니다. 그러나 sum의 수명은 printheader가 실행되는 시간도 포함되며, printheader 호출 전에 기억공간에 바인딩 된 sum은 printheader의 실행 동안과 그 이후에도 지속됩니다.&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;/assets/images/PL/005/19.jpg&quot; alt=&quot;&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/assets/images/PL/005/20.jpg&quot; alt=&quot;&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;</content><author><name>Joonsu Ryu</name></author><category term="studies" /><category term="programming languages" /><summary type="html"></summary></entry><entry><title type="html">Evolution of the Major Programming Languages</title><link href="http://localhost:4000/pl/evolution-of-the-major-programming-languages/" rel="alternate" type="text/html" title="Evolution of the Major Programming Languages" /><published>2023-08-23T00:00:00+09:00</published><updated>2023-08-23T00:00:00+09:00</updated><id>http://localhost:4000/pl/evolution-of-the-major-programming-languages</id><content type="html" xml:base="http://localhost:4000/pl/evolution-of-the-major-programming-languages/">&lt;p&gt;&lt;img src=&quot;/assets/images/PL/002/01.jpg&quot; alt=&quot;&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;코드에 있는 어떤 문장의 &lt;span style=&quot;color:red&quot;&gt;참조 환경(Referencing Environment)&lt;/span&gt;은 그 문장에서 볼 수 있는 모든 이름의 모음입니다. 정적 영역 언어라면 어떤 문장의 참조 환경은 그 지역에서 선언된 변수와 그 조상 영역에서 선언된 변수의 모음이 됩니다. 동적 영역 언어라면 지역 변수와 함께 현재 활성화 되어있는 다른 모든 부프로그램(Active Procedure)에서 선언된 변수로 구성됩니다.&lt;/p&gt;
+
+&lt;p&gt;참조 환경을 더 쉽게 이해하기 위해서 오른쪽의 코드를 보겠습니다. 1번 위치에서 참조 환경은 sub1 프로시저에서 선언된 x, y와 그 상위 프로시저인 example에서 선언된 a, b입니다. 2번 위치에서 참조 환경은 sub3에서 선언된 x와 example에서 선언된 a, b가 됩니다. sub2에서 선언된 x는 당연히 무시되는데, 이것을  숨겨진 변수(Hidden Variable)라고 합니다. 3번 위치에서 참조 환경은 sub2에서 선언된 x와 example에서 선언된 a, b입니다. 4번 위치에서 참조 환경은 example에서 선언된 a, b가 되는 것입니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/PL/005/20.jpg&quot; alt=&quot;&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;span style=&quot;color:red&quot;&gt;이름 상수(Name Constant)&lt;/span&gt;는 단지 한 번만 값에 바인딩되는 변수입니다. 예를 들어 원주율 3.14159265… 의 값을 PI로 할당해놓으면 가독성이 상승하는 효과가 있습니다. Java의 final 키워드가 대표적인 예시입니다.&lt;/p&gt;
+
+&lt;p&gt;마지막으로 변수가 기억 공간에 바인딩되는 시점에 값을 바인딩 하는 것을 &lt;span style=&quot;color:red&quot;&gt;초기화(Initialization)&lt;/span&gt;라고 부릅니다. 만약 변수가 기억공간에 정적으로 바인딩되면 바인딩과 초기화는 실행 시간 이전에 일어납니다. 만약 기억공간 바인딩이 동적이라면 초기화도 동적입니다. 대표적으로 C 언어에서 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;int sum = 0;&lt;/code&gt; 과 같은 문장이 초기화입니다.&lt;/p&gt;
+
+&lt;p&gt;5장의 내용은 여기까지입니다. 읽어주셔서 감사합니다!&lt;/p&gt;</content><author><name>Joonsu Ryu</name></author><category term="studies" /><category term="programming languages" /><summary type="html"></summary></entry><entry><title type="html">Evolution of the Major Programming Languages</title><link href="http://localhost:4000/pl/evolution-of-the-major-programming-languages/" rel="alternate" type="text/html" title="Evolution of the Major Programming Languages" /><published>2023-08-23T00:00:00+09:00</published><updated>2023-08-23T00:00:00+09:00</updated><id>http://localhost:4000/pl/evolution-of-the-major-programming-languages</id><content type="html" xml:base="http://localhost:4000/pl/evolution-of-the-major-programming-languages/">&lt;p&gt;&lt;img src=&quot;/assets/images/PL/002/01.jpg&quot; alt=&quot;&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;프로그래밍 언어론의 2장은 지금까지 개발되었던 프로그래밍 언어에 대한 간단한 정리입니다. 과거부터 지금까지 개발된 프로그래밍 언어의 종류는 매우 많지만, 이러한 프로그래밍 언어의 특징에 대해 하나하나 전부 외울 필요는 없습니다. 그 대신, 주요한 몇몇 언어에서 도입된 새로운 개념에 대해서만 간단하게 요약하겠습니다.&lt;/p&gt;
 
