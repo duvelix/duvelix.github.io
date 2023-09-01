@@ -1348,4 +1348,10 @@ var store = [{
         "tags": ["programming languages"],
         "url": "/pl/names-bindings-type-checking-and-scope/",
         "teaser": null
+      },{
+        "title": "Data Types",
+        "excerpt":"6장에서는 데이터 타입의 개념과 각 데이터 타입의 특성을 소개합니다. 데이터 타입(Data Type)은 데이터 값들의 모임과 그 값들에 대해 미리 정의된 연산들의 집합으로 정의됩니다. 프로그램은 데이터를 토대로 여러 연산을 통해 결과를 도출하기 때문에, 사용하는 언어에서 제공하는 데이터 타입이 현실의 문제와 얼마나 잘 매칭되는가가 중요합니다. 몇 가지 사례를 소개하자면, Fortran 90 이전에는...","categories": ["studies"],
+        "tags": ["programming languages"],
+        "url": "/pl/data-types/",
+        "teaser": null
       }]

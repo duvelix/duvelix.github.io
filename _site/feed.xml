@@ -1,4 +1,404 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.3">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-08-28T17:57:15+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">KEEPMIND</title><subtitle>A place I record so that I don&apos;t forget.</subtitle><author><name>Joonsu Ryu</name></author><entry><title type="html">Names, Bindings, Type Checking, and Scopes</title><link href="http://localhost:4000/pl/names-bindings-type-checking-and-scope/" rel="alternate" type="text/html" title="Names, Bindings, Type Checking, and Scopes" /><published>2023-08-28T00:00:00+09:00</published><updated>2023-08-28T00:00:00+09:00</updated><id>http://localhost:4000/pl/names-bindings-type-checking-and-scope</id><content type="html" xml:base="http://localhost:4000/pl/names-bindings-type-checking-and-scope/">&lt;p&gt;&lt;img src=&quot;/assets/images/PL/005/01.jpg&quot; alt=&quot;&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.3">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-09-01T17:48:13+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">KEEPMIND</title><subtitle>A place I record so that I don&apos;t forget.</subtitle><author><name>Joonsu Ryu</name></author><entry><title type="html">Data Types</title><link href="http://localhost:4000/pl/data-types/" rel="alternate" type="text/html" title="Data Types" /><published>2023-09-01T00:00:00+09:00</published><updated>2023-09-01T00:00:00+09:00</updated><id>http://localhost:4000/pl/data-types</id><content type="html" xml:base="http://localhost:4000/pl/data-types/">&lt;p&gt;&lt;img src=&quot;/assets/images/PL/006/01.jpg&quot; alt=&quot;&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;6장에서는 데이터 타입의 개념과 각 데이터 타입의 특성을 소개합니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/PL/006/02.jpg&quot; alt=&quot;&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;span style=&quot;color:red&quot;&gt;데이터 타입(Data Type)&lt;/span&gt;은 데이터 값들의 모임과 그 값들에 대해 미리 정의된 연산들의 집합으로 정의됩니다. 프로그램은 데이터를 토대로 여러 연산을 통해 결과를 도출하기 때문에, 사용하는 언어에서 제공하는 데이터 타입이 현실의 문제와 얼마나 잘 매칭되는가가 중요합니다.&lt;/p&gt;
+
+&lt;p&gt;몇 가지 사례를 소개하자면, Fortran 90 이전에는 기본적인 데이터 구조만을 지원했기 때문에, 연결 리스트나 트리가 모두 배열로 구현되었습니다. COBOL은 십진수의 데이터 값과 레코드를 위한 데이터 타입을 지원했습니다. PL/I는 다양한 분야에 사용하는 것을 목적으로 만들어졌기 때문에 많은 데이터 타입을 지원하였습니다. ALGOL 68은 기본적인 데이터 타입을 지원하되, 필요한 경우 사용자가 직접 만들 수 있는 데이터 타입을 지원하였습니다. Ada 언어에 이르러서는 추상 데이터 타입을 지원하기 시작했습니다. 추상 데이터 타입은 직접적으로 구현 방법을 명시하지는 않고 데이터와 데이터에 대한 연산을 나타내는 것입니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/PL/006/03.jpg&quot; alt=&quot;&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;span style=&quot;color:red&quot;&gt;원시 데이터 타입(Primitive Data Type)&lt;/span&gt;은 다른 타입의 관점에서 정의되지 않은 데이터 타입을 말합니다. 즉, 언어에서 기본적으로 제공하는 데이터 타입이라고 생각하시면 됩니다. 이러한 데이터 타입은 표현과 연산이 하드웨어에서 지원하는데, 구조화된 타입을 제공하기 위해서는 원시 데이터 타입과 함께 한 개 이상의 타입 생성자가 함께 사용됩니다.&lt;/p&gt;
+
+&lt;p&gt;원시 데이터 타입 중 &lt;strong&gt;수치 타입(Numeric Type)&lt;/strong&gt;에 대해 알아보겠습니다. 수치 타입 중 가장 대표적인 타입이 바로 &lt;span style=&quot;color:red&quot;&gt;정수(Integer)&lt;/span&gt;입니다. 정수형 타입은 컴퓨터에 따라 다른 크기가 지원되는데, 예를 들어 byte, word, long word, quadword 등이 있습니다. C, C++, C# 등과 같은 언어에서는 부호가 없는 정수(Unsigned Int) 타입을 지원하는데, 이것은 주로 이진 데이터에 대해 사용합니다.&lt;/p&gt;
+
+&lt;p&gt;Word가 실제로 메모리에 차지하는 비트의 수는 컴퓨터의 CPU에 따라 달라집니다. (16비트 컴퓨터, 32비트 컴퓨터 등)&lt;/p&gt;
+
+&lt;p&gt;정수 자료형을 구현할 때는 비트 문자열로 표기하며, 일반적으로 가장 왼쪽에 있는 비트는 부호를 나타냈습니다. 그러나 최근에는 덧셈과 뺄셈 연산이 편리한 2의 보수(2’s Compliment) 표기법을 많이 사용합니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/PL/006/04.jpg&quot; alt=&quot;&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;실수를 모델링하기 위해서는 일반적으로 &lt;span style=&quot;color:red&quot;&gt;부동 소수점(Floating Point)&lt;/span&gt;을 사용합니다. 그러나 부동 소수점은 대부분 실수 값을 근사할 뿐입니다. 많이 사용되는 실수인 $\pi$나 $e$ 조차 정확하게 표기가 불가능합니다. 예를 들어 십진수 0.1을 부동 소수점으로 표기한다면, 이진수 0.0001100110011…로 정확하게 표현되지 않습니다.&lt;/p&gt;
+
+&lt;p&gt;부동 소수점 데이터 타입은 대부분의 언어에 포함되어 있지만, 많은 소형 컴퓨터에서는 하드웨어에서 지원하지 않는 경우가 많습니다. 이런 경우 고정 소수점 방식을 사용하거나, 아니면 근사치를 나타낸 표를 저장하여 처리하기도 합니다. 그러나 이런 경우까지 고려하실 필요는 없고, 과학적인 프로그래밍을 지원하는 언어에서는 일반적으로 float와 double이라는 두 가지 타입을 제공합니다.&lt;/p&gt;
+
+&lt;p&gt;부동 소수점은 IEEE 754 규격을 이용하여 구현하는데, 이것은 부호 비트, 지수부, 소수부로 구성되어 있습니다. double 타입은 일반적으로 더 정밀한 소수를 표현하기 위해서 사용하므로, float 타입에 비해 두 배 이상의 소수부를 갖고 있는 것을 볼 수 있습니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/PL/006/05.jpg&quot; alt=&quot;&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;비즈니스 업무에 사용하는 것이 상정된 컴퓨터들은 하드웨어에서 &lt;span style=&quot;color:red&quot;&gt;십진수(Decimal)&lt;/span&gt; 데이터 타입을 지원합니다. 십진수 타입은 부동 소수점과 다르게 제한된 범위 내에서 소수 값을 정확하게 저장할 수 있는 장점이 있습니다. 대표적인 십진수 데이터 타입은 &lt;strong&gt;BCD(Binary Coded Decimal)&lt;/strong&gt;로, 이진수 코드를 사용하여 문자열과 비슷하게 저장하는 방식입니다. BCD에는 packed 방식과 unpacked 방식이 있습니다. unpacked 방식은 자리수 하나당 1개의 바이트를 이용해서 표현하는 방식이고 (4개는 의미 없음), packed 방식은 2개의 자리를 1개의 바이트로 압축하여 표현하는 방식입니다. unpacked 방식의 경우 남는 4개의 비트를 1로 채우지만, 마지막 글자의 경우 숫자가 양수인지 음수인지에 따라 다릅니다. 양수의 경우 1100, 음수의 경우에는 1101로 표현합니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/PL/006/06.jpg&quot; alt=&quot;&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;span style=&quot;color:red&quot;&gt;불리안 타입(Boolean Type)&lt;/span&gt;은 참과 거짓만 나타낼 수 있는 가장 간단한 데이터 타입입니다. ALGOL 60에서 처음 도입되었으며, 스위치나 플래그를 표현하기 위해서 사용합니다. 불리안 타입은 한 개의 비트로 표현이 가능하지만, 컴퓨터에서 한 개의 비트를 효율적으로 접근할 수 없기 때문에 읿나적으로 1개의 바이트로 구현됩니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;span style=&quot;color:red&quot;&gt;문자 타입(Character Type)&lt;/span&gt;은 일반적으로 수치 값으로 컴퓨터에 저장됩니다. 가장 많이 사용하는 기법은 ASCII(American Standard Code for Information Interchange)로써 0부터 127까지의 값을 사용합니다. 그러나 세계화가 이루어짐에 따라 128개의 글자가 부족해졌고, 결국 1991년 Unicode라는 새로운 규격이 만들어졌습니다. C 언어와 C++ 언어는 계속 ASCII 코드를 사용하지만, Java, Python과 같이 그 뒤에 나온 언어들은 Unicode를 사용하여 문자를 저장합니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/PL/006/07.jpg&quot; alt=&quot;&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;span style=&quot;color:red&quot;&gt;문자열 타입(Character String Type)&lt;/span&gt;은 문자들로 구성되는 타입입니다. 문자열은 문자 조작을 하는 모든 프로그램에서 필수적인 데이터 타입입니다. 문자열 타입을 설계할 때 중요한 두 가지 고려사항이 있습니다.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;스트링이 원시 타입인가, 아니면 단순히 문자 배열의 특수한 종류인가?&lt;/li&gt;
+  &lt;li&gt;스트링이 정적의 길이를 갖는가, 아니면 동적인 길이를 갖는가?&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;먼저 첫 번째 고려사항부터 살펴보겠습니다. 문자열을 단순히 문자의 배열로 취급하는 대표적인 언어가 바로 C 언어입니다. 이러한 언어들에서는 표준 라이브러리를 통해 문자열 연산 기능을 제공하며(string.h), 널 문자(\0)를 이용하여 문자의 끝을 나타냅니다.&lt;/p&gt;
+
+&lt;p&gt;반대로 문자열을 원시 타입으로 제공하는 언어들도 있습니다. Java나 Python이 채택한 방법인데, 이러한 방법은 언어의 작성력이 증가하며 그에 따른 비용도 크지 않다는 장점이 있습니다. 원시 타입으로 문자열 타입을 제공할 경우, 할당, 관계 연산자, 연결 및 하위 문자열 참조와 같은 기능을 기본 연산으로 제공합니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/PL/006/08.jpg&quot; alt=&quot;&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;다음으로는 문자열 길이에 관한 고려사항입니다. 생성될 때 길이가 같이 정해지는 문자열을 &lt;span style=&quot;color:red&quot;&gt;정적 길이 스트링(Static Length String)&lt;/span&gt;이라고 합니다. Fortran 77과 90, COBOL, Ada 언어에서 기본적으로 제공하는 문자열이 바로 이런 방식입니다.&lt;/p&gt;
+
+&lt;p&gt;다른 방법으로는 문자열 변수를 선언할 때 길이가 같이 선언되지만, 고정된 최대 길이까지 가변적인 길이를 갖는 것을 허용하는 &lt;span style=&quot;color:red&quot;&gt;제한된 동적 길이 스트링(Limited Dynamic Length String)&lt;/span&gt;이 있습니다. C 언어에서의 문자열이 바로 이런 구조입니다. 왜냐하면 문자열의 길이를 나타낼 때, 배열의 길이 자체가 변하는 것이 아니라 널 문자가 어디에 있는지에 따라 문자열의 끝이 달라지기 때문입니다.&lt;/p&gt;
+
+&lt;p&gt;마지막 방법은 문자열이 최대 길이의 제한 없이 가변 길이를 갖는 것을 허용하는 &lt;span style=&quot;color:red&quot;&gt;동적 길이 스트링(Dynamic Length String)&lt;/span&gt; 방식입니다. JavaScript나 C++ 언어가 이러한 방식을 채택하고 있는데, 동적 기억공간 할당과 회수에 따른 부담이 늘어나지만 유연성을 갖는다는 장점이 있습니다.&lt;/p&gt;
+
+&lt;p&gt;특이하게 Ada95+는 이 세 가지 방법을 모두 지원합니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/PL/006/09.jpg&quot; alt=&quot;&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;문자열 타입은 언어의 작성력에 중요한 요소입니다. 문자열을 배열로 다루는 것은 원시 타입으로 다루는 것보다 더 복잡해질 수 있습니다. 예를 들어, C 언어에서 strcpy를 사용하지 않고 구현한다고 하면 반복문이 반드시 필요합니다. 프로그래밍 언어에서 문자열을 원시 타입으로 추가하는 것은 비용도 거의 들지 않는 일이기 때문에 굉장히 비효율적인 일입니다. 따라서 현대 프로그래밍 언어에서는 대부분 문자열을 원시 타입으로써 제공합니다. 패턴 매칭이나 접합과 같은 연산은 대부분의 프로그램에서 필수적이기 때문입니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/PL/006/10.jpg&quot; alt=&quot;&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;문자열 타입은 하드웨어에서 직접 지원될 수도 있지만, 대부분의 경우에는 소프트웨어로써 구현됩니다. 만약 문자열 타입이 문자 배열로 표현되는 경우에는 언어 자체에서 문자열 관련 연산을 거의 제공하지 않습니다.&lt;/p&gt;
+
+&lt;p&gt;정적 길이 스트링에서 변수의 속성 모음(Descriptor)은 컴파일 과정에서만 요구되며, 변수 이름, 길이, 첫 번째 문자가 저장된 주소입니다. 제한된 동적 길이 스트링에서는 변수 이름, 첫 번째 문자가 저장된 주소, 최대 길이, 현재 길이가 저장되며 실행 시간 속성 모음이 필요합니다. 이 두 방법에서는 동적 기억공간 할당이 필요하지 않습니다. 제한된 동적 길이 스트링도 변수가 기억공간에 바인딩될 때 최대 길이까지 저장할 수 있는 크기만큼 할당되기 때문입니다.&lt;/p&gt;
+
+&lt;p&gt;그러나 동적 길이 스트링의 구현은 다소 복잡합니다. 첫 번째 방법은 연결 리스트에 문자열을 저장하는 것입니다. 만약 문자열의 길이가 늘어난다면 새로 필요한 기억공간은 힙의 무작위 위치에서 생성됩니다. 이 방법은 보다 많은 공간이 필요하고 접근도 느리다는 단점이 있습니다. 두 번째 방법은 문자열 전체를 인접한 기억공간에 저장하는 것입니다. 문제는 동적 길이 스트링은 문자열이 얼마나 늘어날지 예측할 수 없다는 것입니다. 따라서 이 방법에서 문자열의 길이가 늘어난다면, 문자열 전체를 저장할 수 있는 새로운 영역으로 이동합니다. 이 방법은 첫 번째 방법에 비해 접근이 빠르고 저장공간을 비교적 적게 차지하지만, 할당 시간이 느리다는 단점이 있습니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/PL/006/11.jpg&quot; alt=&quot;&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;span style=&quot;color:red&quot;&gt;순서 타입(Ordinal Type)&lt;/span&gt;은 가능한 값의 범위가 양의 정수의 집합과 관련이 있는 타입입니다. Pascal이나 Java에서 제공하는 기본 순서 타입은 Integer, char, boolean 등이 있습니다. 일반적으로 프로그래밍 언어에서 지원하는 사용자 정의 순서 타입은 &lt;strong&gt;열거(Enumeration)&lt;/strong&gt; 타입과 &lt;strong&gt;부분범위(Subrange)&lt;/strong&gt; 타입입니다.&lt;/p&gt;
+
+&lt;p&gt;열거 타입은 기호 상수(Symbolic Constant)인 모든 가능한 값들이 열거되는 타입입니다. 대표적으로 슬라이드에 나온 Ada 언어에서 요일을 저장한 타입이 있습니다. 이러한 열거 타입은 전형적으로 0, 1, … 등의 정수가 할당되지만, 정의에 따라 임의의 정수가 할당될 수도 있습니다. 열거 타입을 설계할 때 고려할 것들은 다음과 같습니다.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;열거 상수가 한 개 이상의 타입 정의에 나타나는 것이 허용되는가?&lt;/li&gt;
+  &lt;li&gt;그렇다면, 프로그램에서 이러한 상수 참조시 그 타입이 어떻게 검사되는가?&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;이러한 고려 사항들은 타입 검사와 관련이 있습니다. 만약 열거 변수가 수치 타입으로 강제 변환되면, 연산들의 범위나 값들에 대한 제어가 없습니다. 따라서 이제부터 각각 언어에서 열거 타입을 어떻게 구현하였는지 자세히 살펴보겠습니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/PL/006/12.jpg&quot; alt=&quot;&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Pascal, C, C++ 언어 같은 경우에 열거 상수는 주어진 참조 환경에서 둘 이상의 열거 타입에 사용될 수 없습니다. 또한 열거형 변수는 배열 첨자, 반복문의 변수, Case 문의 선택기로도 사용할 수 있습니다. 또한 관계 연산자와도 비교할 수 있습니다. 이러한 것들이 가능한 이유는, 열거 변수가 정수 문맥에서 사용될 때 정수형 변수로 강제 변환되기 때문입니다. 그러나 반대로 다른 타입의 값이 열거 타입으로 강제 변환되지는 않습니다.&lt;/p&gt;
+
+&lt;p&gt;Ada 언어 같은 경우에는 동일 환경에서 열거 상수가 두 개 이상의 선언에서 정의될 수 있습니다. 이것을 &lt;span style=&quot;color:red&quot;&gt;중복 리터럴(Overloaded Literal)&lt;/span&gt;이라고 부릅니다. Ada에서는 타입 검사를 위해 열거 변수가 정수형 변수로 강제 변환되지 않습니다. 이는 컴파일 시간에서 문맥 오류를 탐지하는 것을 가능하게 합니다.&lt;/p&gt;
+
+&lt;p&gt;열거 타입을 사용하는 이유는 매우 직접적인 방식으로 가독성을 증가시키기 때문입니다. 이름을 통해 정의된 값은 쉽게 인식되지만, 숫자로 코드화할 경우 쉽게 인식하기 어렵기 때문입니다. 숫자형 데이터 타입과 비교했을 때, 산술 연선이 불가능하고 범위 오류를 쉽게 감지할 수 있다는 장점이 있습니다. 열거형 변수에는 정의된 범위 밖의 값을 할당할 수 없기 때문입니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/PL/006/13.jpg&quot; alt=&quot;&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;부분 범위 타입은 순서 타입의 연속된 부분 순서열입니다. 예를 들면, Pascal 언어에서 index를 1부터 100까지의 범위를 갖는 변수로 설정했습니다. 이것은 정수의 연속된 부분 순서열이라고 볼 수 있습니다. 부분 범위 타입을 사용하는 이유는 가독성과 안정성이 증가하기 때문입니다. 간단한 타입이기 때문에, 설계할 때 고려사항은 딱히 없습니다. 다만 왜인지 Ada 95 이후로는 대부분의 언어에서 부분 범위 타입을 지원하지 않습니다. (왜 그런지 교재 제작자도 이상하게 생각하더라구요)&lt;/p&gt;
+
+&lt;p&gt;앞서 소개한 대로, 이러한 사용자 정의 순서 타입의 구현은 보통 (음이 아닌) 정수로 구현됩니다. 부분 범위 타입은 범위 검사가 포함되어야 한다는 점만 제외하면 상위 유형(정수형 타입)과 동일한 방식으로 구현됩니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/PL/006/14.jpg&quot; alt=&quot;&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;span style=&quot;color:red&quot;&gt;배열(Array)&lt;/span&gt;은 동질적인 데이터 원소들의 묶음으로, 개개의 원소는 배열의 첫 번째 원소와 상대적인 위치에서 식별됩니다. 배열의 원소들은 모두 동일한 데이터 타입을 갖고, 배열 원소에 대한 참조는 대괄호와 같은 첨자 식을 이용하여 나타냅니다. 이 때, 참조되고 있는 메모리 위치의 주소를 결정하기 위해 실행 시간 계산이 추가로 필요합니다.&lt;/p&gt;
+
+&lt;p&gt;배열 타입을 설계할 때 고려해야할 사항은 다음과 같습니다.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;아래 첨자에는 어떤 유형이 적합한가? (정수형, 순서형 등)&lt;/li&gt;
+  &lt;li&gt;아래 첨자의 범위는 언제 바인딩되는가? (실행 시간 vs 컴파일 시간)&lt;/li&gt;
+  &lt;li&gt;배열 할당은 언제 발생하는가? (실행 시간 vs 컴파일 시간)&lt;/li&gt;
+  &lt;li&gt;아래 첨자는 몇 개나 허용되는가? (가능한 차원의 수)&lt;/li&gt;
+  &lt;li&gt;공간이 할당될 때 배열이 초기화되는가?&lt;/li&gt;
+  &lt;li&gt;어떤 종류의 슬라이스가 존재하는가?&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;다음 페이지부터 이러한 고려 사항을 하나씩 따져보겠습니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/PL/006/15.jpg&quot; alt=&quot;&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;배열의 원소들은 두 단계의 구문 메커니즘에 의해 참조됩니다. 첫 번째는 배열의 이름이고, 두 번째는 첨자나 색인입니다. 예를 들어, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;a[100]&lt;/code&gt;과 같이 참조할 때, a가 배열의 이름이고, 100이 첨자입니다. 선택 연산은 배열 이름과 첨자로부터 하나의 원소로 매핑하는 것으로 볼 수 있습니다.&lt;/p&gt;
+
+&lt;p&gt;배열에서 첨자를 표시할 때 소괄호를 이용하는 경우도 있고 대괄호를 이용하는 경우도 있습니다. Fortran과 PL/I이 개발되었을 당시에는 첨자를 나타낼 적절한 문자가 없었기 때문에 소괄호를 선택하였습니다. 그러나 소괄호를 사용하는 경우에는 함수에서 인자를 호출하는 것과 혼동될 여지가 있었기 때문에, 90년대 이후로는 대괄호를 이용하여 첨자를 표시하게 됩니다.&lt;/p&gt;
+
+&lt;p&gt;배열의 첨자 타입은 일반적으로 정적으로 바인딩됩니다. 먼저 첨자 범위의 하한은 C 계열 언어에서 0으로 정의되며, Fortran 1, 2, 4에서는 1로 고정됩니다. Fortran 77과 90에서도 기본적으로 1로 설정되어 있지만, 임의의 정수로 설정할 수 있습니다. 이 범위가 프로그래머로부터 명시적으로 선언되어야 하는 언어도 있습니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/PL/006/16.jpg&quot; alt=&quot;&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;배열 첨자의 범위에 대한 바인딩과 저장공간에 대한 바인딩을 토대로 다음과 같이 네 가지 종류로 나눌 수 있습니다.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;정적 배열(Static Array)&lt;/strong&gt; : 첨자의 범위와 기억공간 할당이 모두 정적으로 바인딩되는 배열입니다. 따라서 실행 시간 전에 바인딩이 끝나며, 동적 할당이나 회수가 이루어지지 않기 때문에 매우 효율적이라는 장점이 있습니다. Fortran 77의 배열이 이 방법을 채택하고 있습니다.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;고정 스택 동적 배열(Fixed Stack Dynamic Array)&lt;/strong&gt; : 첨자의 범위는 정적으로 바인딩되지만, 기억공간 할당이 실행 시간 중에 발생하는 배열입니다. 두 개의 부프로그램이 있고, 각각 고정 스택 동적 배열을 갖고 있다면 동시에 실행되지 않는 한 그 배열들은 기억공간을 공유하기 때문에 기억공간을 효율적으로 사용할 수 있다는 장점이 있습니다. 대신 할당과 회수 시간이 별도로 소모되는 단점도 있습니다. Pascal의 지역 배열이 이 방법을 사용합니다.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;스택 동적 배열(Stack Dynamic Array)&lt;/strong&gt; : 첨자의 범위와 기억공간의 바인딩이 모두 실행 시간 중에 동적으로 바인딩되는 배열입니다. 그러나 일단 첨자 범위가 바인딩되고 기억공간이 할당되면 변수의 수명 동안 고정됩니다. 이 방법은 배열이 사용되기 전까지 미리 선언할 필요가 없기 때문에 유연성이 높다는 장점이 있습니다. C언어가 대표적으로 이 방법을 사용하고 있습니다.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/PL/006/17.jpg&quot; alt=&quot;&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;힙 동적 배열(Heap Dynamic Array)&lt;/strong&gt; : 첨자의 범위와 기억공간의 바인딩이 모두 동적이며, 배열의 수명 동안 변경이 가능한 배열입니다. 스택 동적 배열보다 더 유연하다는 장점이 있습니다만, 힙으로부터 할당과 해제가 일어나기 때문에 더 느리다는 단점이 있습니다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;여담으로 다양한 데이터 타입을 저장할 수 있는 배열도 있습니다. 이러한 배열을 &lt;span style=&quot;color:red&quot;&gt;이기종 배열(Heterogeneous Array)&lt;/span&gt;이라고 부르는데, 배열의 원소가 동일한 데이터 타입일 필요가 없는 배열입니다. Perl, Python, JavaScript, Ruby 등에서 지원되며, 이 배열은 그 특성상 힙 동적 배열로 정의됩니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/PL/006/18.jpg&quot; alt=&quot;&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;다음으로 다룰 내용은 배열의 첨자 수에 관한 설계입니다. 프로그래밍 언어의 역사에서 다루었듯이, Fortran I의 경우에는 첨자를 3개까지만 허용했습니다. 즉, 3차원 배열까지만 생성이 가능했다는 것입니다. 이후 Fortran 77과 90에서는 최대 7개를 지원했고, 그 이후 등장한 언어들에서는 무제한 차원의 배열이 가능했습니다.&lt;/p&gt;
+
+&lt;p&gt;의외로 C 언어는 1개의 첨자만 사용할 수 있습니다. 그러나 배열 자체가 배열의 원소가 될 수 있으므로, 다차원 배열의 생성이 가능한 것입니다. 이와 같은 방식을 &lt;span style=&quot;color:red&quot;&gt;직교 설계(Orthogonal design)&lt;/span&gt;이라고 부릅니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/PL/006/19.jpg&quot; alt=&quot;&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;몇몇 언어는 배열이 기억공간에 할당되는 시점에 배열을 초기화하는 방법을 제공합니다. 예를 들어, Fortran 77에서는 모든 데이터가 정적으로 할당되므로 DATA문을 사용한 로드 시간 초기화가 허용됩니다.&lt;/p&gt;
+
+&lt;p&gt;C 언어 또한 정적 배열을 이용한 초기화가 가능합니다. 그러나 동적 배열은 이런식으로 초기화가 불가능합니다.&lt;/p&gt;
+
+&lt;p&gt;Pascal이나 Modular-2와 같은 언어에서는 프로그램 선언에서 배열 초기화를 허용하지 않습니다.&lt;/p&gt;
+
+&lt;p&gt;Ada 언어는 두 가지 방법으로 배열 초기화가 가능합니다. 값을 저장하는 순서대로 나열하는 방법과 =&amp;gt; 연산자를 사용하여 값들을 색인 위치에 직접 할당하는 방법입니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/PL/006/20.jpg&quot; alt=&quot;&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;span style=&quot;color:red&quot;&gt;배열 연산(Array Operations)&lt;/span&gt;은 배열 단위로 연산을 수행하는 것을 말합니다. 예를 들어, 배정, 접합, 비교, 슬라이스 등이 있습니다. 이 중 슬라이스는 다음 장에서 따로 논의하도록 하고, 여기에서는 나머지 케이스만을 다루겠습니다.&lt;/p&gt;
+
+&lt;p&gt;Fortran 90에서는 elemental 이라고 부르는 배열 연산을 제공합니다. 제공하는 연산들이 배열 원소들의 쌍(Pair) 연산이기 때문에 그렇게 이름이 붙었다고 합니다. 대표적으로 + 연산은 두 배열의 원소 쌍들의 합을 계산한 배열입니다. 이 외에도 할당, 산술, 관계 및 논리 연산자는 모든 크기의 배열에 대해 오버로딩되어 있습니다.&lt;/p&gt;
+
+&lt;p&gt;APL은 가장 강력한 배열 연산을 지원하는 언어입니다. +, -, *, / 4가지 기본 산술 연산은 물론, 벡터, 행렬, 스칼라 피연산자에 대해서도 정의되어 있습니다. 내적, 외적 연산까지 지원합니다.&lt;/p&gt;
+
+&lt;p&gt;C 언어는 기본적으로 배열 연산을 지원하지 않습니다. Java나 C++ 언어는 메소드를 통해 일부만 지원하며, Python은 배열 접합이나 비교, 원소 추가와 관련된 일부 연산을 지원합니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/PL/006/21.jpg&quot; alt=&quot;&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;배열의 &lt;span style=&quot;color:red&quot;&gt;슬라이스(Slice)&lt;/span&gt;는 배열의 부분 구조입니다. 예를 들어, Fortran 90 언어에서 MAT(1:3, 2)는 1행부터 3행까지 2번째 열을 잘라서 만든 부분 배열이고, MAT(2:3, 1:3)은 2행부터 3행까지에서 1열부터 3열까지 자른 부분 배열입니다.&lt;/p&gt;
+
+&lt;p&gt;Python 언어는 더 복잡한 슬라이스를 지원합니다. 예를 들어, vector[0:7:2]는 배열의 0부터 7까지 슬라이스하는데, 2 단위로 원소들을 슬라이스하는 명령어입니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/PL/006/22.jpg&quot; alt=&quot;&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;배열을 구현하는 것은 원시 타입을 구현하는 것보다 훨씬 더 많은 노력이 필요합니다. 왜냐하면 효율적인 실행 시간 접근을 위해서는 배열에 대한 접근 방법이 컴파일 시간에 만들어져야 하기 때문입니다.&lt;/p&gt;
+
+&lt;p&gt;예를 들어, list[k]의 주소를 계산한다고 가정해봅시다. 1차원 배열은 각각의 원소가 인접한 메모리로 바인딩되기 때문에 (배열 list의 시작 첨자가 1이라면) list[k]의 주소 = list[1]의 주소 + (k - 1) * 원소의 크기 로 계산할 수 있을 것입니다. 원소의 타입이 정적으로 바인딩되고, 배열이 기억공간에 정적으로 바인딩되면 이 식은 실행 시간 전에 계산할 수 있습니다.&lt;/p&gt;
+
+&lt;p&gt;이 식을 컴파일 시간 내에 계산하기 위해서는 1차원 배열에 대한 속성이 그림과 같은 구조로 설정되어야 합니다. 만약 이러한 항목들이 동적으로 바인딩된다면, 배열의 주소는 실행 시간에 계산할 수밖에 없습니다.&lt;/p&gt;
+
+&lt;p&gt;다차원 배열은 1차원 배열보다 구현하기 복잡합니다. 하드웨어 메모리는 일반적으로 선형으로 구성되어 있기 때문에, 다차원 배열을 1차원 배열로 매핑해야만 합니다. 이 때, 1차원 배열로 매핑하는 방법은 &lt;span style=&quot;color:red&quot;&gt;행 우선 순서(Row Major Order)&lt;/span&gt;와 &lt;span style=&quot;color:red&quot;&gt;열 우선 순서(Column Major Order)&lt;/span&gt;로 나눌 수 있습니다. 행 우선 순서는 1행의 내용을 저장 - 2행의 내용을 저장 - 3행의 내용을 저장 - … 순서대로 저장하는 방식이고, 열 우선 순서는 1열의 내용을 저장 - 2열의 내용을 저장 - 3열의 내용을 저장 - … 순서대로 저장하는 방식입니다. 대부분의 명령형 언어에서는 행 우선 순서대로 저장을 하며, Fortran과 같은 일부 언어에서만 열 우선 저장을 사용합니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/PL/006/23.jpg&quot; alt=&quot;&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;다차원 배열에서 &lt;span style=&quot;color:red&quot;&gt;접근 함수(Access Function)&lt;/span&gt;는 기반 주소와 참조 값들의 집합을 메모리 주소로 매핑하는 함수입니다. 예를 들어, 행 우선 순서로 2차원 배열에 대한 접근 함수를 구해보겠습니다. 시작 주소가 a[1,1]로 주어진 상황에서, 임의의 배열 원소인 a[i,j]의 주소를 계산한다면 a[1,1]의 주소 + ((i-1)*n +(j-1)) * 원소의 크기로 계산할 수 있습니다. 이 식에서 i와 j 부분은 그 값에 따라 달리지기 때문에, 상수와 변수 부분을 구분해서 정리하면 a[1,1]의 주소 - (n+1) * 원소의 크기 + (i * n + j) * 원소의 크기로 바꿔쓸 수 있습니다. 이를 반영하여, 다차원 배열에서 컴파일 시간에 계산할 수 있는 속성은 위 슬라이드의 마지막 그림과 같습니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/PL/006/24.jpg&quot; alt=&quot;&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;이 슬라이드는 3차원 배열에서 특정 배열 원소의 주소를 행 우선 순서/열 우선 순서로 계산하는 것을 나타낸 슬라이드입니다. 계산 방법은 쉽게 설명되어 있으니 한번 읽고 넘어가시면 될 것 같습니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/PL/006/25.jpg&quot; alt=&quot;&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;span style=&quot;color:red&quot;&gt;연상 배열(Associative Array)&lt;/span&gt;은 &lt;strong&gt;키(Key)&lt;/strong&gt;라고 불리는 원소의 개수와 동일한 개수의 값들로 참조되는 정렬되지 않은 배열을 말합니다. 일반적인 배열에서 색인 값은 전혀 정의할 필요가 없지만, 연상 배열에서는 색인 값도 키와 함께 정의되어야 합니다. 따라서 연상 배열의 실제 원소는 키와 값의 쌍으로 이루어져 있습니다. Perl, Python, Ruby 등의 언어에서는 연상 배열을 기본적으로 지원하며, Java나 C++ 언어에서는 표준 클래스 라이브러리로써 지원합니다. (ex. HashMap)&lt;/p&gt;
+
+&lt;p&gt;Perl 언어에서 연상 배열은 &lt;strong&gt;해쉬(Hash)&lt;/strong&gt;라는 이름으로 지원됩니다. 모든 해쉬 변수는 % 기호로 시작해야 하며, =&amp;gt; 연산자 를 이용해 키와 값을 배정합니다. Python 언어에서는 &lt;strong&gt;사전(Dictionary)&lt;/strong&gt; 자료형을 통해 연상 배열을 지원합니다.&lt;/p&gt;
+
+&lt;p&gt;해쉬의 장점은 원소에 접근할 때 일반적인 배열보다 매우 효율적이라는 것입니다. 왜냐하면 원소에 접근할 때 사용하는 해쉬 연산이 배열보다 효율적이기 때문입니다. 따라서 만약 취급할 데이터가 이름과 급료와 같이 쌍으로 구성되어 있다면 해쉬를 사용하는 것이 좋습니다. 그러나 리스트의 모든 원소를 처리해야하는 경우네는 배열을 사용하는것이 더 낫습니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/PL/006/26.jpg&quot; alt=&quot;&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;span style=&quot;color:red&quot;&gt;레코드(Record)&lt;/span&gt;는 각각의 원소들이 이름으로 식별되고 다양한 데이터 타입을 가질 수 있는 자료형입니다. 이러한 자료형은 1960년대 초 COBOL에서 처음 도입된 이후 가장 인기있었던 프로그래밍 언어의 요소였습니다. 배열과 비교해보자면, 배열은 색인을 통해 원소에 접근하고 모든 원소가 동일한 데이터 타입을 갖지만, 레코드는 식별자로 원소에 접근하고 원소가 다양한 데이터 타입을 가질 수 있다는 차이점이 있습니다. 예를 들면, 학생의 정보를 저장할 때 이름은 문자열, 학번은 정수, 학점은 실수로 저장해 만드는 자료형이라고 보시면 됩니다.&lt;/p&gt;
+
+&lt;p&gt;레코드의 구조는 언어마다 조금씩 다르게 지원합니다. 최초로 레코드를 지원했던 COBOL을 예로 들면, EMPLOYEE-RECORD 레코드는 EMPLOYEE-NAME과 HOURLY-RATE로 구성되어 있습니다. 앞의 01, 02, 05는 수준 번호로써 레코드의 계층 구조를 나타내며, PICTURE는 기억공간 형식을 나타냅니다. X(20)은 최대 20개의 글자로 이루어진 자료형을 나타내며, 99V99는 중간에 소수점을 갖는 4개의 십진수 숫자라는 의미입니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/PL/006/27.jpg&quot; alt=&quot;&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Ada 언어는 COBOL과는 다르게 계층 번호를 사용하지 않고 레코드 내부에 레코드를 또 선언함으로써 나타냅니다. 그리고 모든 Ada의 레코드 타입은 이름을 갖는 타입이어야만 합니다.&lt;/p&gt;
+
+&lt;p&gt;Fortran과 C 언어에서 중첩 레코드를 사용할 경우, 중첩된 레코드를 먼저 선언하고 상위 레코드에서 하위 레코드를 참조하는 형식으로 정의합니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/PL/006/28.jpg&quot; alt=&quot;&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;레코드 필드를 참조하는 방법도 여러 가지가 있습니다. 먼저 COBOL 언어는 OF 라는 명령어를 사용하여 참조합니다. 예를 들어, 이전 슬라이드에 나와있던 COBOL 레코드에서 MIDDLE 이라는 필드를 참조하려면, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;MIDDLE OF EMPLOYEE-NAME OF EMPLOYEE-RECORD&lt;/code&gt; 와 같이 작성하면 됩니다. 이 외의 다른 언어들에서는 대부분 EMPLOYEE_RECORD.EMPLOYEE_NAME.MIDDLE과 같이 .(마침표)를 이용해서 표현합니다. 이렇게 마침표를 이용해 표시하는 방법을 &lt;strong&gt;도트 표기법(Dot Notation)&lt;/strong&gt;이라고 부릅니다.&lt;/p&gt;
+
+&lt;p&gt;레코드 필드를 참조할 때 두 가지 형식이 있는데, 레코드 필드까지 모든 중간 레코드의 이름이 포함되어야 하는 &lt;span style=&quot;color:red&quot;&gt;완전 자격 참조(Fully Qualified Reference)&lt;/span&gt;와, 참조 환경이 명확하다면 레코드 이름의 일부나 전체를 생략할 수 있는 &lt;span style=&quot;color:red&quot;&gt;생략 참조(Elliptical Reference)&lt;/span&gt; 형식이 있습니다. COBOL의 레코드는 생략 참조를 허용함으로써 프로그래머의 편리성을 고려하였지만, 생략 참조는 가독성에 문제가 생길 수 있기 때문에 일반적으로 완전 자격 참조 방식을 사용합니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/PL/006/29.jpg&quot; alt=&quot;&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Pascal이나 Modular-2 언어 같은 경우에는 레코드를 할당하는 것이 가능합니다. Ada 언어 또한 레코드의 할당과 동일성의 비교를 지원합니다. COBOL 언어 같은 경우에는 MOVE CORRESPONDING 명령어를 통해 대상 레코드에 동일한 이름이 필드가 있을 경우 원본 레코드의 필드를 복사하는 기능을 제공합니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/PL/006/30.jpg&quot; alt=&quot;&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;레코드 필드도 배열과 마찬가지로 인접한 메모리에 저장됩니다. 그러나 배열과는 다르게 필드의 크기가 반드시 같지는 않기 때문에 배열과는 다른 접근 방식을 사용합니다. 이러한 문제는 레코드의 시작 주소에 상대적인 오프셋 주소를 필드에 포함시킴으로써 해결합니다. 아래 그림은 컴파일 시간 속성의 형식을 나타내고 있습니다.&lt;/p&gt;
+
+&lt;p&gt;또한 레코드의 경우 필드별 크기가 상이하기 때문에 컴퓨터 메모리의 효율적인 접근을 위한 &lt;strong&gt;워드 정렬(Word Alignment)&lt;/strong&gt;이라는 기법을 사용합니다. 예를 들어 오른쪽과 같은 구조체 코드가 있습니다. 이 경우 문자형 변수 c는 1바이트, 정수형 변수 i는 4바이트를 차지합니다. 원래라면 구조체 aa는 이 둘을 합친 5바이트를 차지해야하지만, 32비트 컴퓨터의 경우 4바이트(=32비트) 단위로 명령어를 처리하기 때문에 5바이트씩 처리하게 되면 비효율적인 접근이 발생합니다. 따라서 이 경우에는 컴퓨터가 한번에 가져올 수 있는 데이터의 크기에 맞추기 위해, 일부러 쓰지않는 3바이트를 더 배정해서 8바이트로 만드는 것이 접근에 유리합니다. 이런 용도로 추가하는 비트를 &lt;strong&gt;패딩(Padding)&lt;/strong&gt;이라고 부릅니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/PL/006/31.jpg&quot; alt=&quot;&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;span style=&quot;color:red&quot;&gt;공용체(Union)&lt;/span&gt;는 변수가 프로그램 실행 중에 다른 시간이라면 다른 타입의 값을 저장할 수 있는 타입을 말합니다. 예를 들면, 컴파일러를 위한 상수들의 테이블이 있습니다. 이 테이블은 컴파일 중인 프로그램에서 발견된 상수들을 저장하는데 사용되는데, 프로그램에 사용되는 상수들은 데이터 타입이 다양합니다. 그런데 이 테이블에 저장된 값은 동일한 테이블 필드에 저장되므로, 발견되는 데이터 타입 중 가장 큰 타입을 기준으로 기억공간이 할당됩니다. 즉, 데이터 타입의 합집합(Union)이라고 볼 수 있으므로 이러한 이름이 붙었습니다.&lt;/p&gt;
+
+&lt;p&gt;공용체의 주요한 설계 고려 사항은 다음과 같습니다.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;타입 검사가 요구되어야 하는가? (만약 타입 검사가 요구된다면 반드시 동적으로 구현되어야 한다)&lt;/li&gt;
+  &lt;li&gt;공용체가 레코드에 포함되어야 하는가?&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;이러한 설계 고려 사항을 참고하여 공용체가 구현된 언어를 간략하게 살펴보겠습니다.&lt;/p&gt;
+
+&lt;p&gt;먼저 Fortran 언어는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;EQUIVALENCE&lt;/code&gt;라는 구문으로 공용체를 선언합니다. Fortran에서는 공용체의 타입 검사를 실시하지 않습니다. ALGOL 68 언어는 Fortran과 다르게 타입 검사를 요구합니다. 이 때, 공용체가 현재 갖고 있는 타입을 나타내기 위해 &lt;strong&gt;태그(Tag)&lt;/strong&gt; 나 &lt;strong&gt;판별자(Discriminant)&lt;/strong&gt;를 표기하는데, 이러한 것을 포함하는 공용체를 &lt;span style=&quot;color:red&quot;&gt;판별 공용체(Discriminated Union)&lt;/span&gt;라고 부릅니다. 판별 공용체는 실행 시간에서 타입을 검사합니다.&lt;/p&gt;
+
+&lt;p&gt;ALGOL 68은 판별 공용체를 &lt;span style=&quot;color:red&quot;&gt;적합성 문장(Conformity Clause)&lt;/span&gt;으로 구현하였습니다. 이것은 실행 시간에 변수가 어떤 타입을 갖고 있는지 테스트하여 각 경우의 수 별로 다르게 처리하는 방법입니다. 오른쪽의 코드를 보시면 ir1은 정수형, 실수형 변수가 저장될 수 있는 공용체로 정의되어 있습니다. 아래의 case 문에서는 ir1이 정수일 때와 실수일 때로 나누어서 문구를 처리합니다. 이러한 방식으로 공용체의 타입을 관리하는 것이 적합성 문장입니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/PL/006/32.jpg&quot; alt=&quot;&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Pascal 언어는 판별 공용체와 레코드 구조를 결합하여 &lt;span style=&quot;color:red&quot;&gt;변종 레코드(Variant Record)&lt;/span&gt;로 구현하였습니다. 이것은 판별 공용체를 갖고 있는 레코드 구조 타입입니다. Pascal 언어의 판별자는 현재 타입의 값이 저장된 레코드에서 사용자가 접근할 수 있는 변수입니다. 코드 예시를 보면 case 문에 form이라는 이름이 있는데, 이것이 바로 판별자입니다. 레코드에 circle, triangle, rectangle 이 저장될 수 있는데, 이 중 하나를 선택하는 의미입니다.&lt;/p&gt;
+
+&lt;p&gt;공용체는 결국 프로그램의 신뢰성을 떨어트리기 때문에 최근에는 지향하지 않는 타입입니다. 기본적으로 메모리를 공유하기 때문에, 공용체 내의 변수의 값을 변경하면 다른 변수의 값도 변형됩니다. 또한 C, C++ 언어와 같이 타입 검사를 하지 않는 자유 공용체를 사용하는 경우 강 타입 언어로부터 멀어지게 됩니다. 타입 검사를 하더라도 그것이 매우 어렵기 때문에 Java나 C#과 같은 최근 언어에서는 공용체를 지원하지 않습니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/PL/006/33.jpg&quot; alt=&quot;&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;공용체는 포함된 모든 가능한 변수를 같은 주소에 배정하는 것으로 간단하게 구현할 수 있습니다. 당연히 공용체에서 가장 큰 크기를 차지하는 변수만큼 기억공간이 할당됩니다. 예제로 나온 Ada 코드와 같이 공용체가 주어진 경우, 컴파일 시간 내에 이것을 저장하기 위한 배치는 다음과 같을 것입니다.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;공용체의 시작 주소&lt;/li&gt;
+  &lt;li&gt;판별체(=TAG)&lt;/li&gt;
+  &lt;li&gt;필드 접근을 위한 오프셋(=상대 주소)&lt;/li&gt;
+  &lt;li&gt;TRUE - COUNT (INTEGER), FALSE - SUM (CHARACTER)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/PL/006/34.jpg&quot; alt=&quot;&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;span style=&quot;color:red&quot;&gt;집합(Set)&lt;/span&gt; 타입은 기본 타입의 고유한 값을 정렬되지 않은 모음으로 저장할 수 있는 타입입니다. 집합 타입의 설계 고려 사항은 최대 원소의 개수를 몇 개로 정할 것이냐입니다.&lt;/p&gt;
+
+&lt;p&gt;Pascal 언어를 예로 들면, 집합의 최대 원소 수는 구현에 따라 다르지만, 일반적으로 100개 이하입니다. 집합과 그 원소에 대한 연산은 단일 Word 크기에 맞는 비트 문자열로 표현함으로써 가장 효율적으로 구현할 수 있습니다. 예를 들어, {red, blue, green} 집합의 부분 집합인 {red, green}을 2진수 101로 표현하는 것입니다.&lt;/p&gt;
+
+&lt;p&gt;Pascal 언어에서 집합 연산은 다음과 같습니다.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;’:=’&lt;/strong&gt; : 집합 타입의 적절한 배정&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;’+’&lt;/strong&gt; : 합집합&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;‘*‘&lt;/strong&gt; : 교집합&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;’-‘&lt;/strong&gt; : 차집합&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;’=’&lt;/strong&gt; : 동일한 집합인가 판단&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;집합을 배열과 비교해보면, 집합의 연산은 배열의 연산보다 효율적이라는 장점이 있습니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/PL/006/35.jpg&quot; alt=&quot;&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;이전 슬라이드에서 말씀드렸듯이 집합은 일반적으로 비트 스트링 형태로 메모리에 저장합니다. 따라서 집합의 연산의 대부분은 간단한 논리 연산으로 해결이 가능하므로 효율적입니다. 예를 들어, 합집합 연산은 논리 OR, 원소의 포함 여부는 논리 AND 연산으로 간단하게 계산할 수 있습니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/PL/006/36.jpg&quot; alt=&quot;&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;span style=&quot;color:red&quot;&gt;포인터(Pointer)&lt;/span&gt; 타입은 변수가 메모리 주소와 특수 값 nil로 구성되는 값들의 범위를 갖습니다. nil은 유효한 주소가 아니며, 포인터가 메모리 셀을 현재 참조할 수 없음을 나타냅니다. 포인터는 간접 주소 지정과 동적 할당 관리 용도로 주로 사용됩니다. 포인터는 일반적으로 타입 연산자(C언어에서의 *)를 사용하여 정의됩니다. 그러나 배열이나 레코드와는 다르게 실제 데이터를 저장하기 위해서 사용하기보다는, 다른 변수를 참조하기 위해서 사용합니다. 이렇게 다른 변수를 참조하기 위해서 사용하는 변수를 &lt;strong&gt;참조 타입(Reference Type)&lt;/strong&gt;이라고도 부릅니다. 반대로 실제 데이터를 저장하는 변수는 &lt;strong&gt;값 타입(Value Type)&lt;/strong&gt;이라고도 부릅니다.&lt;/p&gt;
+
+&lt;p&gt;포인터의 설계 고려 사항은 다음과 같습니다.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;포인터 변수의 영역(Scope)과 수명(Lifetime)은 어떻게 되는가?&lt;/li&gt;
+  &lt;li&gt;포인터가 참조하는 동적 변수의 수명은 어떻게 되는가?&lt;/li&gt;
+  &lt;li&gt;포인터가 가리킬 수 있는 값의 타입이 제한되는가?&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;포인터는 기본적으로 &lt;strong&gt;배정&lt;/strong&gt;과 &lt;strong&gt;역참조&lt;/strong&gt; 두 가지 연산을 제공합니다. 배정은 포인터 변수의 값을 다른 주소로 설정하는 것이고, 역참조는 포인터 변수에 바인딩된 메모리 셀이 가리키는 값에 대한 참조를 말합니다. 예를 들어, 예제 코드에서 aa는 포인터 타입으로 정의되어 있습니다. 다음 줄에 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;aa = &amp;amp;bb&lt;/code&gt;는 aa에 bb의 주소를 배정함으로써 포인터 변수 aa가 bb의 메모리 셀을 가리키게 만드는 연산입니다. 그리고 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;cc = *aa&lt;/code&gt;를 통해 변수 cc에 aa가 가리키는 메모리 셀의 값, 즉 55를 저장하게 만드는 역참조 연산입니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/PL/006/37.jpg&quot; alt=&quot;&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;포인터라는 개념을 처음 도입한 언어는 PL/I이었습니다. 포인터의 개념이 도입되고 나서 프로그램의 유연성이 매우 높아졌지만, 덩달아 여러 가지 유형의 프로그래밍 오류가 초래되었습니다. 따라서 Java와 같은 최근의 언어에서는 포인터를 사용하지 않고 참조 타입으로 대체하였습니다. 여기서는 포인터로 발생할 수 있는 여러 가지 문제를 짚고 넘어가보겠습니다.&lt;/p&gt;
+
+&lt;p&gt;먼저 포인터 변수에 대한 &lt;strong&gt;타입 검사(Type Checking)&lt;/strong&gt; 문제입니다. 포인터가 가리킬 수 있는 개체 유형을 도메인 타입이라고 합니다. PL/I의 포인터는 단일 도메인 타입으로 제한되지 않았기 때문에 포인터에 대한 타입 검사가 어려웠습니다. C/C++ 언어에서는 정수 변수를 가리키는 포인터 변수는 정수 포인터, 실수 변수를 가리키는 포인터 변수는 실수 포인터와 같이 가리키는 데이터 타입에 따라 포인터 변수의 타입이 고정되어 있기 때문에 이 문제를 약간이나마 해결했습니다.&lt;/p&gt;
+
+&lt;p&gt;다음으로는 &lt;strong&gt;허상 포인터(Dangling Pointer)&lt;/strong&gt; 문제입니다. 이 문제는 C 언어를 배울 때도 다루는 문제입니다. 허상 포인터는 이미 회수된 변수의 주소를 가리키는 포인터를 말합니다. 허상 포인터의 문제는 가리키고 있는 기억장소의 위치에 다른 변수가 할당될 수도 있기 때문에 위험합니다.&lt;/p&gt;
+
+&lt;p&gt;마지막으로 &lt;strong&gt;분실된 객체(Lost Object)&lt;/strong&gt; 문제입니다. 이것은 허상 포인터와 반대로, 기억공간에는 여전히 데이터가 저장되어 있지만, 사용자 프로그램에서 더이상 접근할 수 없게된 객체입니다. 이러한 변수를 흔히 쓰레기(Garbage)라고도 부릅니다. 왜냐면 더 이상 원래의 목적대로 사용할 수도 없고, 그렇다고 다른 용도로 재사용할 수도 없기 때문입니다.&lt;/p&gt;
+
+&lt;p&gt;위 슬라이드의 마지막 부분에서는 허상 포인터와 분실된 객체가 발생할 수 있는 코드 예시를 나타내고 있습니다. 왼쪽의 예제에서는 포인터 전역 변수인 i가 정의되어 있습니다. 그런데 부프로그램 sub1()에서 지역변수인 j가 새로 선언되어있습니다. sub1()에서 포인터 변수 i가 j를 가리키게 배정되었습니다. 그런데 변수 j는 부프로그램 sub1()의 지역변수이기 때문에, sub1()이 종료되면 수명이 끝납니다. 따라서 sub1()이 호출된 이후 *i는 이미 회수된 변수의 주소를 가리키게 됩니다.&lt;/p&gt;
+
+&lt;p&gt;오른쪽 코드에서는 포인터 문자 변수 c가 정의되어 있습니다. 두 번째 줄에서 동적 할당을 통해 c에 새로운 기억공간이 할당됩니다. 그런데 이를 해제하지 않고, 나중에 또 c에 새로운 기억공간을 할당합니다. 이렇게 되면 첫 번째 할당한 기억공간은 프로그램 내에서 더이상 접근할 수 없습니다. 따라서 이 때 분실된 객체 문제가 발생하게 됩니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/PL/006/38.jpg&quot; alt=&quot;&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Pascal 언어에서 포인터는 동적으로 할당된 변수에 접근하는데만 사용됩니다. 동적 할당에는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;new&lt;/code&gt; 명령어를 사용하고, 해제할때는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;dispoose&lt;/code&gt; 명령어를 사용합니다. dispose 명령어는 허상 포인터 문제가 거의 항상 발생했기 때문에, dispose 명령어가 나오면 이걸 무시하는 경우도 많았습니다. 이것은 허상 포인터 문제를 발생하지 않게 하지만, 프로그램이 더 이상 필요로 하지 않는 힙의 재사용을 불가능하게 만드는 단점이 있습니다. 이것은 초기 Pascal 언어가 산업용 보다는 교육용 언어로 설계되었기 때문에 발생하는 문제입니다.&lt;/p&gt;
+
+&lt;p&gt;포인터는 어쩌면 goto문과 비슷한데, goto문이 문장의 제어 범위를 확대시키는 것처럼 포인터는 변수가 참조할 수 있는 메모리 셀의 범위를 확대시킵니다. goto문이 프로그래밍 언어 설계자들에게 비난을 받는 것처럼 포인터도 이와 같은 비난을 받는데요, 오른쪽에 포인터에 대한 악담이 실려있는데, 이 내용이 재미있습니다.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;“고급 언어에서 포인터의 도입은 우리가 결코 회복할 수 없는 후퇴였습니다”&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;마치 우한 폐렴 때 질병관리청에서 그 전으로는 절 때 돌아갈 수 없다고 말한 것과 비슷한 느낌이네요.&lt;/p&gt;
+
+&lt;p&gt;C 언어에서 포인터는 어셈블리 언어에서 주소를 사용하는 것처럼 사용할 수 있는데요, 이러한 설계는 허상 포인터나 분실된 객체 문제에 대해 어떤 해결책도 없다는 단점이 있습니다. 그러나 그 대신 C 언어에서는 포인터의 산술 연산이 가능하다는 특징이 있습니다. 기본적으로 ‘*’ 연산은 포인터의 역참조 연산, ‘&amp;amp;’ 연산은 변수의 주소를 생성합니다. 이 외에도 포인터 변수와 일반 변수의 산술 연산이 가능한데, 예를 들어 ptr + index 라는 연산이 있습니다. 이 것은 ptr에 index 값을 단순히 더하는 것이 아니라, 먼저 ptr이 가리키고 있는 메모리 셀의 크기 단위로 index의 값이 조절됩니다. 만약 ptr의 크기가 4인 메모리 셀을 가리키면, index에 먼저 4를 곱한 다음 ptr에 더하는 방식입니다. 이렇게 설정된 목적은 포인터 연산으로 배열을 표현하기 위해서입니다. 예를 들어, 포인터 변수 ptr에 1차원 배열이 할당되었다고 하면, *(ptr + 1)은 ptr[1]과 동일한 의미입니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/PL/006/39.jpg&quot; alt=&quot;&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;span style=&quot;color:red&quot;&gt;참조 타입(Reference Type)&lt;/span&gt;은 포인터와 유사하지만, 포인터가 메모리의 주소를 참조하는 것과 달리 참조 타입은 메모리의 객체나 값을 참조합니다. 따라서 포인터는 주소값을 다루기 때문에 산술 연산이 가능하지만, 참조 타입은 그렇지 않다는 차이가 있습니다.&lt;/p&gt;
+
+&lt;p&gt;대표적인 참조 타입은 C++ 언어에서 구현되어 있습니다. C++ 언어의 참조 타입은 항상 암시적으로 역참조되는 상수 포인터로 구현되어 있는데, 상수이기 때문에 정의할 때 어떤 변수에 주소값으로 초기화되어야 합니다. 물론 초기화된 후에는 다른 변수를 참조하도록 설정할 수 없습니다. 일반적으로 C++ 언어에서 참조 타입은 함수에서 호출 함수와 피호출 함수간의 양방향 통신에 사용됩니다. 이러한 예제는 다음을 참고해주시기 바랍니다.&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;void sub1(int&amp;amp; num){
+  num = 10;
+}
+int n = 0;
+sub1(n);
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;이와 같이 함수 매개변수를 참조 타입으로 설정하면, n을 포인터로 넘기지 않아도 n의 값을 0에서 10으로 변경할 수 있습니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/PL/006/40.jpg&quot; alt=&quot;&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;대부분의 대형 컴퓨터에서 포인터는 2바이트 또는 4바이트 메모리 셀(워드 크기)에 저장된 단일 값으로 저장됩니다. 그런데 포인터를 구현할 때는 포인터를 저장하는 것 자체보다는 포인터로 인해 발생하는 허상 포인터 문제를 고려하는 것이 더 중요합니다.&lt;/p&gt;
+
+&lt;p&gt;첫 번째 방법은 &lt;span style=&quot;color:red&quot;&gt;비석 접근 방법(Tombstone Approach)&lt;/span&gt;입니다. 이것은 모든 동적 변수에 비석이라는 특수한 셀을 포함시키는 것입니다. 실제 사용하는 포인터 변수는 이 비석을 가리키게 하고, 비석이 동적 변수를 가리키게 만드는 구조입니다. 만약 동적 변수가 기억장소에서 해제된다면, 비석은 그대로 남지만 nil을 가리키도록 설정됩니다. 즉, 비석을 통해 포인터가 회수된 기억공간을 계속 가리키는 것을 방지하는 방법입니다.&lt;/p&gt;
+
+&lt;p&gt;아이디어만 들어도 이 방법의 문제점이 자연스럽게 떠오릅니다. 먼저, 동적 변수가 해제될 때도 비석은 해제되지 않기 때문에 그 만큼의 기억공간이 낭비됩니다. 게다가, 포인터 변수가 기억공간을 직접 가리키지 않고 비석을 통해 간접적으로 가리키기 때문에 그만큼의 접근 시간이 추가로 소모됩니다. 일반적으로는 이 정도의 시간적/공간적 비용을 감당하면서까지 신뢰성을 확보할 필요가 없기 때문에, 이 방법을 사용하는 언어는 거의 없습니다. 버전 9 이하의 매킨토시나 C++ 언어의 일부 라이브러리(std::weak_ptr)만 이 방법을 사용했습니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/PL/006/41.jpg&quot; alt=&quot;&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;허상 포인터를 해결하는 두 번째 아이디어는 &lt;span style=&quot;color:red&quot;&gt;잠금과 키 접근 방법(Locks-and-key Approach)&lt;/span&gt;입니다. 이 방법은 동적 변수를 (변수, 잠금값)의 순서쌍으로 나타내고, 동적 변수를 가리키는 포인터는 (키, 주소)의 순서쌍으로 나타냅니다. 동적 변수가 할당되면 잠금값이 생성되어 포인터 변수의 키 값과 동적 변수의 잠금값에 이 값이 저장됩니다. 포인터가 역참조될 때는 포인터의 키 값과 동적 변수의 잠금값과 비교함으로써 그 접금이 일치하는지, 아닌지 확인합니다. 만약 포인터가 복사된다면 잠금값도 같이 복사되어야 하고, 해제될 때는 잠금값도 해제되어야 합니다.&lt;/p&gt;
+
+&lt;p&gt;사실 이러한 방법들 보다는 그냥 프로그래머 직접 매번 동적 변수를 해제해주는 것이 좋습니다. 프로그램 내에서 모든 동적 변수가 명시적으로 해제된다면 허상 포인터 문제는 발생하지 않기 때문입니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/PL/006/42.jpg&quot; alt=&quot;&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;마지막으로 힙 메모리 관리에 대해 알아보도록 하겠습니다. 힙 메모리 관리는 매우 복잡한 실행 시간 프로세스로, 여기서는 모든 힙이 동일한 크기로 할당/회수되는 시나리오와 가변 크기로 할당/회수되는 시나리오, 두 가지 상황으로 나누어 고려해보겠습니다.&lt;/p&gt;
+
+&lt;p&gt;먼저 동일한 크기에 대해 회수에 대해 먼저 논의하자면, 기억공간 회수를 통해 사용가능한 셀을 묶어 가용 공간 리스트를 만들 수 있습니다. 할당은 필요할 때 이 리스트로부터 요구된 셀의 개수를 가져오는 것입니다. 할당보다 회수가 더 어려운 문제인데, 동적 변수는 2개 이상의 포인터로 가리켜질 수 있으므로 그 변수가 언제 프로그램에서 더 이상 사용되지 않는지 판단하는 것이 어렵기 때문입니다. 예를 들어, 동적 변수를 가리키던 포인터가 없어진다고 해서 그 동적 변수가 쓰이지 않는다고 보장할 수 없습니다. 다른 포인터가 그 동적 변수를 가리키고 있을 수도 있기 때문입니다.&lt;/p&gt;
+
+&lt;p&gt;LISP 언어에서는 회수하는 방법에 따라 두 가지 방법으로 나눌 수 있는데, 순차적으로 회수하는 &lt;strong&gt;참조 계수기 접근 방법(Reference Counter)&lt;/strong&gt;과 &lt;strong&gt;쓰레기 수집 접근 방법(Grabage Collection Approach)&lt;/strong&gt;이 있습니다.&lt;/p&gt;
+
+&lt;p&gt;먼저 참조 계수기 접근 방법부터 알아보겠습니다. 참조 계수기 방법은 접근할 수 없는 메모리 셀이 생성될 때마다 회수를 수거하는 방법입니다. 이것을 구현하기 위해, 항상 모든 메모리 셀에 대해 현재 자신을 가리키고 있는 포인터의 갯수를 저장하는 계수기를 사용합니다. 만약 어떤 셀의 계수기 값이 0이 된다면 이 메모리 셀을 가리키는 포인터가 없다는 뜻이므로 더 이상 쓰지 않는 메모리 셀로 판단하여 회수합니다.&lt;/p&gt;
+
+&lt;p&gt;참조 계수기 방법에는 세 가지 문제점이 존재합니다. 첫째는 기억공간의 셀 크기가 작다면, 그만큼 계수기가 차지는 공간이 부담이 될 수 있습니다. 둘째로 계수기의 값을 조절하기 위한 시간적 부담도 존재합니다. 특히나 LISP은 거의 모든 명령문마다 포인터의 값이 변경되므로, 프로그램 실행 시간에서 계수기가 차지하는 실행 시간이 매우 부담스럽습니다. 마지막으로 셀이 순환적으로 참조되어 있는 경우입니다. 이러한 순환 리스트에 속하는 셀은 적어도 1의 계수기 값을 갖게 되므로 영원히 회수되지 않는다는 문제점이 있습니다.&lt;/p&gt;
+
+&lt;p&gt;다만 참조 계수기 방법에 단점만 있는 것은 아닙니다. 참조 계수기 방법은 순차적으로 동작하는 방식이기 때문에 프로그램의 수행과 번갈아가며 발생합니다. 따라서 전체적으로 프로그램 실행에 지연을 초래하지 않는다는 장점이 있습니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/PL/006/43.jpg&quot; alt=&quot;&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;다음으로 쓰레기 수집 접근 방법에 대해 알아보겠습니다. 실행 시간에서 저장공간이 요구될 때 기억공간의 메모리 셀을 할당하고, 필요할 때 포인터와 셀의 연결을 끊습니다. 이 때는 일단 기억공간 회수에 신경쓰지 않고, 사용가능한 모든 셀이 할당될 때까지 이루어집니다. 이 과정에서 발생하는 쓰레기를 수집하기 위해, 쓰레기 수집 프로세스가 시작됩니다. 쓰레기 수집을 위해, 모든 셀은 수집 과정에서 사용되는 여분의 비트나 필드를 갖습니다. 쓰레기 수집을 위한 간단한 알고리즘은 다음과 같이 나타낼 수 있습니다.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;힙의 모든 셀은 쓰레기인지 나타내는 표시가 설정됩니다.&lt;/li&gt;
+  &lt;li&gt;프로그램의 모든 포인터는 힙으로 추적되고, 도달 가능한 셀은 쓰레기가 아닌 것으로 표시합니다.&lt;/li&gt;
+  &lt;li&gt;쓰레기가 아닌 것으로 표시되지 않은 힙의 모든 셀을 회수합니다.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;이러한 쓰레기 수집 접근 방법의 가장 큰 단점은 가장 필요할 때 가장 최악으로 동작한다는 것입니다. 이게 무슨 말이냐 하면, 쓰레기 수집은 힙의 기억공간을 대부분 사용되었을 때만 사용됩니다. 그런데 이 방법은 대부분의 셀을 추적해서 현재 사용중인지 확인해야하기 때문에, 상당한 많은 시간이 소요됩니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/PL/006/44.jpg&quot; alt=&quot;&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;만약 메모리 셀이 가변 크기인 경우에는 문제가 더 복잡해집니다. 우선 가변 크기 셀에서는 동일한 크기의 셀에서 발생하는 모든 어려움을 기본적으로 갖고 있고, 다음과 같은 추가적인 문제가 더 발생합니다.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;힙에 있는 모든 셀이 쓰레기라는 것을 나타내기 위한 표시의 초기 설정이 어렵습니다. 왜냐하면 각각의 셀이 다른 크기이기 때문에, 셀의 영역이 어디서부터 어디까지인지 스캔하는 것이 어렵기 때문입니다. 이에 대한 대책으로는 셀의 첫 번째 필드로 그 셀의 크기를 표시하는 것입니다.&lt;/li&gt;
+  &lt;li&gt;만약 포인터를 전혀 포함하지 않는 셀이라면 어떻게 표시를 할 것인지도 문제가 됩니다. 물론 이것은 내부 포인터를 추가하면 해결되는 문제이지만, 이것으로 인해 추가적인 공간적 부담과 시간적 부담이 발생합니다.&lt;/li&gt;
+  &lt;li&gt;사용가능한 기억공간의 리스트를 관리하는 것도 문제입니다. 회수된 기억공간의 크기는 클 수도 있지만 작을 수도 있습니다. 만약 회수된 기억공간 중 하나가 필요한 기억공간의 크기에 맞지 않다면 충분한 크기를 가진 다른 기억공간을 찾아야합니다. 이에 대한 해결책으로는 기억공간의 크기가 작은 경우 인접한 블록을 합병하는 것이지만, 이 과정에서도 추가적인 시간적 부담이 발생합니다.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;이러한 문제점 중, 1번과 2번의 문제는 참조 계수기 방법을 사용하면 어느 정도 해결이 가능합니다. 그러나 3번 문제는 참조 계수기로도 해결할 수 없습니다. 나쁜 소식은 대부분의 프로그래밍 언어에서는 이러한 가변 크기 셀의 관리가 반드시 필요하다는 것입니다.&lt;/p&gt;
+
+&lt;p&gt;6장의 내용은 여기까지입니다. 읽어주셔서 감사합니다!&lt;/p&gt;</content><author><name>Joonsu Ryu</name></author><category term="studies" /><category term="programming languages" /><summary type="html"></summary></entry><entry><title type="html">Names, Bindings, Type Checking, and Scopes</title><link href="http://localhost:4000/pl/names-bindings-type-checking-and-scope/" rel="alternate" type="text/html" title="Names, Bindings, Type Checking, and Scopes" /><published>2023-08-28T00:00:00+09:00</published><updated>2023-08-28T00:00:00+09:00</updated><id>http://localhost:4000/pl/names-bindings-type-checking-and-scope</id><content type="html" xml:base="http://localhost:4000/pl/names-bindings-type-checking-and-scope/">&lt;p&gt;&lt;img src=&quot;/assets/images/PL/005/01.jpg&quot; alt=&quot;&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;처음 소개드린대로 3장과 4장은 컴파일러 과목과 중복된 내용이기 때문에 생략하고, 바로 5장으로 넘어갑니다. 5장은 변수와 관련된 개념들을 하나씩 소개합니다. 특히 제목대로 변수의 이름, 바인딩, 타입 검사, 유효 영역 등을 중점으로 짚도록 하겠습니다.&lt;/p&gt;
 
@@ -95,9 +495,14 @@
 
 &lt;p&gt;변수의 &lt;span style=&quot;color:red&quot;&gt;수명(Lifetime)&lt;/span&gt;은 변수가 특정 메모리에 바인딩되어 있는 기간으로 정의됩니다. 즉, 변수가 특정 메모리 공간에 바인딩 될 때 시작되며 그 공간에서 해제될 때 종료됩니다.&lt;/p&gt;
 
-&lt;p&gt;&lt;strong&gt;정적 변수(Static Variable)&lt;/strong&gt;는 프로그램이 실행되기 전에 메모리 공간에 바인딩되고, 프로그램 실행이 종료되면 해제됩니다. 대표적인 정적 변수는 전역 변수(Global Variable)가 있고, 부프로그램에서 기록에 민감한 변수의 경우에도 정적 변수로 선언됩니다. 정적 변수는 할당이나 해제를 위한 시간이 필요하지 않기 때문에 효율성을 높일 수 있다는 장점이 있지만, 유연성을 감소시킨다는 문제점이 있습니다. 특히 정적 변수만을 갖는 언어로는 재귀적 부프로그램을 만들 수 없습니다.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;스택 동적 변수(Stack Dynamic Variable)&lt;/strong&gt;는 선언문에 의해 지시될 때 기억공간 바인딩이 생성되지만, 타입은 정적으로 바인딩되는 변수를 말합니다. 따라서 바인딩 자체는 실행 시간에 일어나게 됩니다. 대표적인 스택 동적 변수의 예시는 프로시저에서의 지역 변수가 있습니다. 예를 들어, C나 Java와 같은 언어에서 함수에 선언된 변수는 그 함수가 호출될 때 기억공간에 바인딩됩니다.&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;정적 변수(Static Variable)&lt;/strong&gt;는 프로그램이 실행되기 전에 메모리 공간에 바인딩되고, 프로그램 실행이 종료되면 해제됩니다. 대표적인 정적 변수는 전역 변수(Global Variable)가 있고, 부프로그램에서 기록에 민감한 변수의 경우에도 정적 변수로 선언됩니다. 정적 변수는 할당이나 해제를 위한 시간이 필요하지 않기 때문에 효율성을 높일 수 있다는 장점이 있지만, 유연성을 감소시킨다는 문제점이 있습니다. 특히 정적 변수만을 갖는 언어로는 재귀적 부프로그램을 만들 수 없습니다.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;스택 동적 변수(Stack Dynamic Variable)&lt;/strong&gt;는 선언문에 의해 지시될 때 기억공간 바인딩이 생성되지만, 타입은 정적으로 바인딩되는 변수를 말합니다. 따라서 바인딩 자체는 실행 시간에 일어나게 됩니다. 대표적인 스택 동적 변수의 예시는 프로시저에서의 지역 변수가 있습니다. 예를 들어, C나 Java와 같은 언어에서 함수에 선언된 변수는 그 함수가 호출될 때 기억공간에 바인딩됩니다.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
 
 &lt;p&gt;스택 동적 변수의 장점은 재귀적 부프로그램을 가능하게 만들고, 서로 다른 프로시저에서 동일한 메모리 공간을 차지하게 만들 수 있습니다. 단점으로는 실행 시간에서 지역 변수의 메모리 할당 및 할당 해제를 위한 추가적인 비용이 필요하다는 것입니다. 또한 스택 동적 변수는 간접적인 주소지정을 필요로 하기 때문에 접근 속도가 더 느리다는 단점도 있습니다.&lt;/p&gt;
 
@@ -491,13 +896,13 @@
 
 &lt;ul&gt;
   &lt;li&gt;
-    &lt;p&gt;Perl : Perl은 1987년 Larry Wall에 의해 개발되었습니다. Perl의 특징은 변수들이 정적 타입을 갖지만 묵시적으로 선언된다는 것입니다. Perl의 변수 타입은 변수명의 첫 글자로부터 정해지는데, 스칼라 변수는 $로 시작하고, 배열은 @, 해시는 %로 선언됩니다. Perl의 성능은 강력하지만, 안정성이 낮다는 단점이 있습니다. 주로 웹 프로그래밍 분야에서 많이 사용하며, 유닉스 시스템에서도 종종 사용됩니다.&lt;/p&gt;
+    &lt;p&gt;&lt;strong&gt;Perl&lt;/strong&gt; : Perl은 1987년 Larry Wall에 의해 개발되었습니다. Perl의 특징은 변수들이 정적 타입을 갖지만 묵시적으로 선언된다는 것입니다. Perl의 변수 타입은 변수명의 첫 글자로부터 정해지는데, 스칼라 변수는 $로 시작하고, 배열은 @, 해시는 %로 선언됩니다. Perl의 성능은 강력하지만, 안정성이 낮다는 단점이 있습니다. 주로 웹 프로그래밍 분야에서 많이 사용하며, 유닉스 시스템에서도 종종 사용됩니다.&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
-    &lt;p&gt;JavaScript : JavaScript는 1995년 넷스케이프에 근무하던 Brendan Eich에 의해 개발되었습니다. 원래 이름은 LiveScript였으나, 당시 유행하던 Java 언어의 인기에 편승하기 위해 JavaScript로 변경하였습니다. JavaScript는 주로 동적인 HTML 문서를 만들기 위해 웹 프로그래밍 분야에 사용되며, 클라이언트에서 인터프리팅 된다는 특징이 있습니다. Java와는 사실 그다지 큰 관련이 없습니다. 프로그래머 사이의 농담 중에, Java와 JavaScript의 관계는 인도와 인도네시아의 관계와 동일하다라는 말이 있습니다.&lt;/p&gt;
+    &lt;p&gt;&lt;strong&gt;JavaScript&lt;/strong&gt; : JavaScript는 1995년 넷스케이프에 근무하던 Brendan Eich에 의해 개발되었습니다. 원래 이름은 LiveScript였으나, 당시 유행하던 Java 언어의 인기에 편승하기 위해 JavaScript로 변경하였습니다. JavaScript는 주로 동적인 HTML 문서를 만들기 위해 웹 프로그래밍 분야에 사용되며, 클라이언트에서 인터프리팅 된다는 특징이 있습니다. Java와는 사실 그다지 큰 관련이 없습니다. 프로그래머 사이의 농담 중에, Java와 JavaScript의 관계는 인도와 인도네시아의 관계와 동일하다라는 말이 있습니다.&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
-    &lt;p&gt;PHP : PHP는 1994년 아파치 그룹의 회원인 Rasmus Lerdorf에 의해 개발되었습니다. JavaScript와는 다르게 PHP는 서버에서 인터프리팅하는 특징이 있습니다. 주로 웹에서 데이터베이스 관리 시스템을 운영할 때 사용됩니다.&lt;/p&gt;
+    &lt;p&gt;&lt;strong&gt;PHP&lt;/strong&gt; : PHP는 1994년 아파치 그룹의 회원인 Rasmus Lerdorf에 의해 개발되었습니다. JavaScript와는 다르게 PHP는 서버에서 인터프리팅하는 특징이 있습니다. 주로 웹에서 데이터베이스 관리 시스템을 운영할 때 사용됩니다.&lt;/p&gt;
   &lt;/li&gt;
 &lt;/ul&gt;
 
@@ -505,10 +910,10 @@
 
 &lt;ul&gt;
   &lt;li&gt;
-    &lt;p&gt;Python : Python은 1991년 네덜란드의 프로그래머 귀도 반 로썸에 의해 개발되었습니다. 1989년 크리스마스 주에 할게 없어서 연구실에 나와서 만든 에피소드로 유명합니다. Python은 객체 지향 스크립트 언어로써 타입 검사는 하지만 동적인 타입을 갖고 있다는 특징을 가지고 있습니다. Python은 CGI 프로그래밍과 폼 처리에 사용되며 리스트, 튜플, 해쉬 등의 자료구조를 지원합니다. 사실 요즘은 거의 만능으로 사용되는 언어입니다.&lt;/p&gt;
+    &lt;p&gt;&lt;strong&gt;Python&lt;/strong&gt; : Python은 1991년 네덜란드의 프로그래머 귀도 반 로썸에 의해 개발되었습니다. 1989년 크리스마스 주에 할게 없어서 연구실에 나와서 만든 에피소드로 유명합니다. Python은 객체 지향 스크립트 언어로써 타입 검사는 하지만 동적인 타입을 갖고 있다는 특징을 가지고 있습니다. Python은 CGI 프로그래밍과 폼 처리에 사용되며 리스트, 튜플, 해쉬 등의 자료구조를 지원합니다. 사실 요즘은 거의 만능으로 사용되는 언어입니다.&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
-    &lt;p&gt;Lua : Lua는 1993년 리우 데 자네이루 교황청대학교의 Roberto Ierusalimschy, Waldemar Celes, Luis Herique de Figueiredo에 의해 개발되었습니다. Lua는 확장성을 갖는 절차적 함수형 언어를 지원하는 스크립트 언어를 목적으로 하였으며, 객체 지향 프로그래밍도 가능하도록 확장이 가능하다는 특징을 가지고 있습니다. Lua는 주로 게임 프로그래밍에서 많이 쓰이는 언어입니다. Lua의 테이블이라는 1개의 자료구조만 존재합니다.&lt;/p&gt;
+    &lt;p&gt;&lt;strong&gt;Lua&lt;/strong&gt; : Lua는 1993년 리우 데 자네이루 교황청대학교의 Roberto Ierusalimschy, Waldemar Celes, Luis Herique de Figueiredo에 의해 개발되었습니다. Lua는 확장성을 갖는 절차적 함수형 언어를 지원하는 스크립트 언어를 목적으로 하였으며, 객체 지향 프로그래밍도 가능하도록 확장이 가능하다는 특징을 가지고 있습니다. Lua는 주로 게임 프로그래밍에서 많이 쓰이는 언어입니다. Lua의 테이블이라는 1개의 자료구조만 존재합니다.&lt;/p&gt;
   &lt;/li&gt;
 &lt;/ul&gt;
 
@@ -526,10 +931,10 @@
 
 &lt;ul&gt;
   &lt;li&gt;
-    &lt;p&gt;XSLT(eXtensible Stylesheet Language Transformation) : XSLT가 나타난 배경은 기존에 사용하던 XML(eXtensible Markup Language)라는 마크업 언어로 생성된 XML 문서를 HTML 문서로 변환하기 위해서입니다. XML과 HTML 둘 다 마크업 언어이지만, XSLT는 마크업 언어를 기반으로 하면서도 반복문과 같은 프로그래밍 언어의 특징을 조금 갖고 있습니다.&lt;/p&gt;
+    &lt;p&gt;&lt;strong&gt;XSLT(eXtensible Stylesheet Language Transformation)&lt;/strong&gt; : XSLT가 나타난 배경은 기존에 사용하던 XML(eXtensible Markup Language)라는 마크업 언어로 생성된 XML 문서를 HTML 문서로 변환하기 위해서입니다. XML과 HTML 둘 다 마크업 언어이지만, XSLT는 마크업 언어를 기반으로 하면서도 반복문과 같은 프로그래밍 언어의 특징을 조금 갖고 있습니다.&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
-    &lt;p&gt;JSP(Java Server Pages) : JavaScript와는 다르게 JSP는 진짜 자바와 관련이 있는 언어입니다. 서블릿(Servlet)은 웹 서버 시스템에서 실행되는 Java 클래스이고, 웹 브라우저에 있는 HTML 문서에 의해 실행이 요청됩니다. JSP는 Java와 마찬가지로 자바 가상 머신 위에서 실행되므로, JSP 소스를 수정 없이 다른 Java 프로그램에 넣어도 실행이 가능합니다. JSP 문서의 처리를 제어하기 위해서는 JSTL(Java Server Pages Standard Tag Library)을 이용합니다.&lt;/p&gt;
+    &lt;p&gt;&lt;strong&gt;JSP(Java Server Pages)&lt;/strong&gt; : JavaScript와는 다르게 JSP는 진짜 자바와 관련이 있는 언어입니다. 서블릿(Servlet)은 웹 서버 시스템에서 실행되는 Java 클래스이고, 웹 브라우저에 있는 HTML 문서에 의해 실행이 요청됩니다. JSP는 Java와 마찬가지로 자바 가상 머신 위에서 실행되므로, JSP 소스를 수정 없이 다른 Java 프로그램에 넣어도 실행이 가능합니다. JSP 문서의 처리를 제어하기 위해서는 JSTL(Java Server Pages Standard Tag Library)을 이용합니다.&lt;/p&gt;
   &lt;/li&gt;
 &lt;/ul&gt;
 
@@ -570,12 +975,24 @@
 &lt;p&gt;먼저 프로그래밍 언어론을 배우는 이유에 대해 하나씩 자세하게 알아봅시다.&lt;/p&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;&lt;strong&gt;생각을 표현할 수 있는 능력이 향상됨&lt;/strong&gt; : 프로그래밍 언어의 특징에 대해서 더 많이 알고 있다면, 사용할 수 있는 데이터의 구조나 제어 구조를 이해하여 더 효율적인 소프트웨어의 개발을 가능합니다. 만약 주로 사용하는 언어에서 지원하지 않는 기능에 대해 배운다고 할지라도, 그것을 시뮬레이션 할 수 있는 방법이 종종 있기 때문에 도움이 되는 것은 마찬가지입니다.&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;적합한 언어를 선택할 수 있는 능력이 향상됨&lt;/strong&gt; : 만약 프로그래머가 여러 프로그래밍 언어를 알고 있고, 각 프로그래밍 언어의 특징에 대해 자세히 알고 있다면 언어를 선택할 때 어떤 언어가 주어진 문제를 해결하는데 가장 적합할지 판단할 수 있습니다.&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;새로운 언어를 배울 수 있는 능력이 향상됨&lt;/strong&gt; : 프로그래밍 언어가 가지고 있는 기본 개념을 이해한다면, 다른 언어를 배울 때도 훨씬 쉽게 이해할 수 있습니다.&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;구현의 중요성에 대해 더 많이 이해할 수 있음&lt;/strong&gt; : 이것은 프로그래밍 언어를 보다 효율적으로 사용할 수 있는 능력과 같습니다. 예를 들어, 부프로그램을 호출하는데 생각보다 많은 시간이 필요하다는 것을 이해하고 있다면, 자잘한 연산을 위한 부프로그램을 만들지 않도록 설계할 수 있습니다.&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;이미 알고 있는 언어를 더 효율적으로 사용할 수 있음&lt;/strong&gt; : 최근에 사용되고 있는 프로그래밍 언어는 지원하는 기능이 굉장히 많기 때문에 프로그래머가 모든 것을 잘 알고 사용하는 경우는 거의 없습니다. 하지만 프로그래밍 언어론을 학습한다면 이전에 몰라서 사용하지 못했던 기능을 배워서 사용할 수 있습니다.&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;컴퓨터에 대해 더 많이 이해할 수 있음&lt;/strong&gt; : 초기에는 컴퓨터공학에 대한 지식이 부족한 사람이 많았기 때문에 효율적인 프로그래밍 언어가 개발되더라도 프로그래머들이 메뉴얼을 이해하지 못하여 사용하지 못했던 경우가 있습니다. 프로그래밍 언어의 구조와 특징을 학습한다면, 이것이 수행되는 과정을 더욱 잘 이해할 수 있게 되므로 이러한 문제를 방지할 수 있습니다.&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;생각을 표현할 수 있는 능력이 향상됨&lt;/strong&gt; : 프로그래밍 언어의 특징에 대해서 더 많이 알고 있다면, 사용할 수 있는 데이터의 구조나 제어 구조를 이해하여 더 효율적인 소프트웨어의 개발을 가능합니다. 만약 주로 사용하는 언어에서 지원하지 않는 기능에 대해 배운다고 할지라도, 그것을 시뮬레이션 할 수 있는 방법이 종종 있기 때문에 도움이 되는 것은 마찬가지입니다.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;적합한 언어를 선택할 수 있는 능력이 향상됨&lt;/strong&gt; : 만약 프로그래머가 여러 프로그래밍 언어를 알고 있고, 각 프로그래밍 언어의 특징에 대해 자세히 알고 있다면 언어를 선택할 때 어떤 언어가 주어진 문제를 해결하는데 가장 적합할지 판단할 수 있습니다.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;새로운 언어를 배울 수 있는 능력이 향상됨&lt;/strong&gt; : 프로그래밍 언어가 가지고 있는 기본 개념을 이해한다면, 다른 언어를 배울 때도 훨씬 쉽게 이해할 수 있습니다.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;구현의 중요성에 대해 더 많이 이해할 수 있음&lt;/strong&gt; : 이것은 프로그래밍 언어를 보다 효율적으로 사용할 수 있는 능력과 같습니다. 예를 들어, 부프로그램을 호출하는데 생각보다 많은 시간이 필요하다는 것을 이해하고 있다면, 자잘한 연산을 위한 부프로그램을 만들지 않도록 설계할 수 있습니다.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;이미 알고 있는 언어를 더 효율적으로 사용할 수 있음&lt;/strong&gt; : 최근에 사용되고 있는 프로그래밍 언어는 지원하는 기능이 굉장히 많기 때문에 프로그래머가 모든 것을 잘 알고 사용하는 경우는 거의 없습니다. 하지만 프로그래밍 언어론을 학습한다면 이전에 몰라서 사용하지 못했던 기능을 배워서 사용할 수 있습니다.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;컴퓨터에 대해 더 많이 이해할 수 있음&lt;/strong&gt; : 초기에는 컴퓨터공학에 대한 지식이 부족한 사람이 많았기 때문에 효율적인 프로그래밍 언어가 개발되더라도 프로그래머들이 메뉴얼을 이해하지 못하여 사용하지 못했던 경우가 있습니다. 프로그래밍 언어의 구조와 특징을 학습한다면, 이것이 수행되는 과정을 더욱 잘 이해할 수 있게 되므로 이러한 문제를 방지할 수 있습니다.&lt;/p&gt;
+  &lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;&lt;img src=&quot;/assets/images/PL/001/06.jpg&quot; alt=&quot;&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
@@ -583,11 +1000,21 @@
 &lt;p&gt;프로그래밍 언어는 다양한 분야에 사용되고 있습니다. 간단하게 몇 개만 짚어보자면,&lt;/p&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;&lt;strong&gt;과학 분야&lt;/strong&gt; : 최초의 컴퓨터도 복잡한 계산을 용이하게 하기 위한 계산기였습니다. 따라서 초기 프로그래밍 언어도 행렬과 같은 복잡한 계산을 수행할 수 있도록 설계되었습니다. 과학 분야에 사용하도록 개발된 첫 언어는 바로 Fortran(Formula Translator)으로, 수식을 컴퓨터로 계산할 수 있게 만드는 프로그래밍 언어입니다. 현재 컴퓨터의 용도는 다양하지만, MATLAB과 같이 여전히 과학 분야에서 인간이 하기 힘든 계산을 도와주고 있습니다.&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;비즈니스 분야&lt;/strong&gt; : 비즈니스에 필요한 기능은 정교한 입출력과 십진수의 처리 능력입니다. 이러한 용도에 적합하게 만들어진 최초의 프로그래밍 언어는 1960년대 COBOL이라는 언어로 구현되었습니다. 그러나 이 외의 사무용 언어는 별도로 개발되지 않았으며, 필요한 경우에는 여전히 COBOL을 사용합니다.&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;인공지능 분야&lt;/strong&gt; : 인공지능 분야에서는 주로 기호 계산이 필요합니다. 기호 계산은 숫자가 아니라 문자와 같은 특정한 기호를 조작하는 연산입니다. (자연어 처리를 생각해보시면 됩니다) 이 분야에서 처음으로 사용된 프로그래밍 언어는 1959년에 개발된 LISP이며, 1970년에 그 대항마로 Prolog가 개발되었습니다. 현재는 인공지능 분야에 사용하기 위한 별도의 언어를 개발하기 보단, Python과 같은 시스템 프로그래밍 언어에서 추가적인 라이브러리를 적용하여 사용하고 있습니다.&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;시스템 프로그래밍&lt;/strong&gt; : 시스템 소프트웨어는 컴퓨터를 사용할 수 있게 만드는 운영체제와 같은 프로그램을 일컫는 말입니다. 컴퓨터를 사용하기 위해서는 반드시 필요하기 때문에 그 중요성이 다른 분야와 비교해서 매우 높고, 현재도 시스템 소프트웨어 개발자는 수요가 매우 많습니다. 최초의 시스템 소프트웨어는 어셈블리 언어나 그보다 조금 나은 수준의 언어로 개발되었으나, 현재는 C/C++ 등의 고급 언어로 개발되고 있습니다.&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;웹 소프트웨어&lt;/strong&gt; : WWW(World Wide Web)은 프로그래밍 언어가 아닌 HTML과 같은 마크업 언어가 주로 사용되고 있습니다. 그러나 이러한 웹 콘텐츠도 동적인 컨텐츠가 필요하기 때문에, 프로그래밍 언어의 일부 기능이 지원됩니다. 이런 언어는 스크립트 언어라고 불리며 대표적인 예로 JavaScript나 PHP가 존재합니다.&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;과학 분야&lt;/strong&gt; : 최초의 컴퓨터도 복잡한 계산을 용이하게 하기 위한 계산기였습니다. 따라서 초기 프로그래밍 언어도 행렬과 같은 복잡한 계산을 수행할 수 있도록 설계되었습니다. 과학 분야에 사용하도록 개발된 첫 언어는 바로 Fortran(Formula Translator)으로, 수식을 컴퓨터로 계산할 수 있게 만드는 프로그래밍 언어입니다. 현재 컴퓨터의 용도는 다양하지만, MATLAB과 같이 여전히 과학 분야에서 인간이 하기 힘든 계산을 도와주고 있습니다.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;비즈니스 분야&lt;/strong&gt; : 비즈니스에 필요한 기능은 정교한 입출력과 십진수의 처리 능력입니다. 이러한 용도에 적합하게 만들어진 최초의 프로그래밍 언어는 1960년대 COBOL이라는 언어로 구현되었습니다. 그러나 이 외의 사무용 언어는 별도로 개발되지 않았으며, 필요한 경우에는 여전히 COBOL을 사용합니다.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;인공지능 분야&lt;/strong&gt; : 인공지능 분야에서는 주로 기호 계산이 필요합니다. 기호 계산은 숫자가 아니라 문자와 같은 특정한 기호를 조작하는 연산입니다. (자연어 처리를 생각해보시면 됩니다) 이 분야에서 처음으로 사용된 프로그래밍 언어는 1959년에 개발된 LISP이며, 1970년에 그 대항마로 Prolog가 개발되었습니다. 현재는 인공지능 분야에 사용하기 위한 별도의 언어를 개발하기 보단, Python과 같은 시스템 프로그래밍 언어에서 추가적인 라이브러리를 적용하여 사용하고 있습니다.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;시스템 프로그래밍&lt;/strong&gt; : 시스템 소프트웨어는 컴퓨터를 사용할 수 있게 만드는 운영체제와 같은 프로그램을 일컫는 말입니다. 컴퓨터를 사용하기 위해서는 반드시 필요하기 때문에 그 중요성이 다른 분야와 비교해서 매우 높고, 현재도 시스템 소프트웨어 개발자는 수요가 매우 많습니다. 최초의 시스템 소프트웨어는 어셈블리 언어나 그보다 조금 나은 수준의 언어로 개발되었으나, 현재는 C/C++ 등의 고급 언어로 개발되고 있습니다.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;웹 소프트웨어&lt;/strong&gt; : WWW(World Wide Web)은 프로그래밍 언어가 아닌 HTML과 같은 마크업 언어가 주로 사용되고 있습니다. 그러나 이러한 웹 콘텐츠도 동적인 컨텐츠가 필요하기 때문에, 프로그래밍 언어의 일부 기능이 지원됩니다. 이런 언어는 스크립트 언어라고 불리며 대표적인 예로 JavaScript나 PHP가 존재합니다.&lt;/p&gt;
+  &lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;&lt;img src=&quot;/assets/images/PL/001/07.jpg&quot; alt=&quot;&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
@@ -635,11 +1062,11 @@
 &lt;p&gt;마지막으로 프로그래밍 언어에서 고려하는 기준은 비용입니다. 프로그래밍 언어에서 비용은 다양한 측면에서 고려될 수 있습니다.&lt;/p&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;프로그래머를 교육하는 비용 : 배우기 어려운 언어일수록 프로그래머를 교육시키는데 많은 비용이 들어감 (ex. C++)&lt;/li&gt;
-  &lt;li&gt;프로그램을 작성하는 비용 : 작성력이 낮은 언어일수록 작성하는 데 오랜 시간이 소모됨&lt;/li&gt;
-  &lt;li&gt;프로그램을 컴파일 하는 비용 : 컴파일 시간이 오래 걸릴수록 오랜 시간이 소모됨 (ex. 초기 Ada)&lt;/li&gt;
-  &lt;li&gt;프로그램을 실행시키는 비용 : 런타임 시간에 타입 검사를 많이 할수록 오랜 시간이 소모됨.&lt;/li&gt;
-  &lt;li&gt;프로그램을 유지, 보수하는 비용 : 가독성이 낮은 언어일수록 코드를 수정하는데 오랜 시간이 소모됨.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;프로그래머를 교육하는 비용&lt;/strong&gt; : 배우기 어려운 언어일수록 프로그래머를 교육시키는데 많은 비용이 들어감 (ex. C++)&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;프로그램을 작성하는 비용&lt;/strong&gt; : 작성력이 낮은 언어일수록 작성하는 데 오랜 시간이 소모됨&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;프로그램을 컴파일 하는 비용&lt;/strong&gt; : 컴파일 시간이 오래 걸릴수록 오랜 시간이 소모됨 (ex. 초기 Ada)&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;프로그램을 실행시키는 비용&lt;/strong&gt; : 런타임 시간에 타입 검사를 많이 할수록 오랜 시간이 소모됨.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;프로그램을 유지, 보수하는 비용&lt;/strong&gt; : 가독성이 낮은 언어일수록 코드를 수정하는데 오랜 시간이 소모됨.&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;제시한 기준 외에도 프로그래밍 언어를 평가하는데 다른 기준을 세울 수도 있습니다. 예를 들어, 언어가 얼마나 표준화가 잘 되었는지 판단하는 &lt;strong&gt;이식성(Portability)&lt;/strong&gt;, 얼마나 광범위한 분야에 응용할 수 있는지 나타내는 &lt;strong&gt;일반성(Generality)&lt;/strong&gt;, 프로그래밍 언어가 얼마나 명세화가 잘 되었는지 나타내는 &lt;strong&gt;분명성(Well-definedness)&lt;/strong&gt; 등이 있습니다.&lt;/p&gt;
@@ -663,18 +1090,32 @@
 &lt;p&gt;프로그래밍 언어의 설계에 영향을 미친 또 다른 하나는 해당 시기에 중요하게 생각했던 소프트웨어 개발 방법론입니다. 시간이 지날수록 하드웨어의 비용은 감소하고, 소프트웨어의 비용이 증가함에 따라 소프트웨어를 쉽게 만들 수 있는 방법을 연구하기 시작했습니다.&lt;/p&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;70년대 초에는 Go to 문의 비효율성을 인식하고, 위에서 아래로 읽어나갈 수 있는 구조적 프로그래밍이란 개념이 정립되었습니다.&lt;/li&gt;
-  &lt;li&gt;70년대 말부터는 데이터 설계를 중요하게 생각하였기 추상 데이터 타입과 같이 데이터 추상화를 지원하기 시작하였습니다.&lt;/li&gt;
-  &lt;li&gt;80년대 초에는 객체지향 프로그래밍의 개념이 도입되어 상속과 같이 기존 프로그램을 재사용성을 늘리게 되었습니다.&lt;/li&gt;
-  &lt;li&gt;비주류적인 방법론 중 대표적으로 프로세스 지향 프로그래밍이 있습니다. 프로세스 지향 프로그래밍은 데이터 지향 방법과 달리 동시성(Concurrrency)을 도입하여 동일한 시간 내에 여러 프로세스를 실행할 수 있는 방법을 고안하였습니다. Java는 프로세스 지향 프로그래밍에 영향을 받은 언어 중 하나입니다.&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;70년대 초에는 GOTO 문의 비효율성을 인식하고, 위에서 아래로 읽어나갈 수 있는 구조적 프로그래밍이란 개념이 정립되었습니다.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;70년대 말부터는 데이터 설계를 중요하게 생각하였기 추상 데이터 타입과 같이 데이터 추상화를 지원하기 시작하였습니다.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;80년대 초에는 객체지향 프로그래밍의 개념이 도입되어 상속과 같이 기존 프로그램을 재사용성을 늘리게 되었습니다.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;비주류적인 방법론 중 대표적으로 프로세스 지향 프로그래밍이 있습니다. 프로세스 지향 프로그래밍은 데이터 지향 방법과 달리 동시성(Concurrrency)을 도입하여 동일한 시간 내에 여러 프로세스를 실행할 수 있는 방법을 고안하였습니다. Java는 프로세스 지향 프로그래밍에 영향을 받은 언어 중 하나입니다.&lt;/p&gt;
+  &lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;프로그래밍 언어를 설계할 때, 지금까지 제시한 모든 기준을 만족시키고 싶지만 아쉽게도 여러 기준을 서로 상충하는 단점이 있습니다. 대표적으로 몇 가지를 소개하자면,&lt;/p&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;신뢰성과 실행 비용은 서로 상충됩니다. 예를 들면, Java는 모든 Index의 범위를 검사함으로써 신뢰성을 향상시켰지만, 이로 인해 실행 비용이 늘어나는 단점이 있습니다. 반대로 C 언어는 Index의 범위를 전혀 검사하지 않아 신뢰성이 떨어지지만, 그만큼 실행 비용이 낮아지는 장점도 있습니다.&lt;/li&gt;
-  &lt;li&gt;표현적이 높아지면 코드는 그만큼 깔끔해지지만, 반대로 가독성이 떨어진다는 단점이 있습니다. 예를 들면, APL은 복잡하고 많은 연산을 간단한 연산자로 표현이 가능하지만, 가독성이 심각하게 떨어진다는 단점이 있습니다.&lt;/li&gt;
-  &lt;li&gt;유연성과 안정성, 유연성과 효율성도 서로 상충됩니다. 예를 들면, C++ 언어는 포인터를 다양한 방법으로 조작할 수 있어서 유연성이 높지만, 그만큼 안정성이 떨어진다는 단점이 있습니다. 또한 프로그래밍 언어에서 유연성이 늘어날수록 예외 사항이 늘어나기 때문에, 코드를 읽을 때나 작성할 때 효율성이 낮아진다는 단점이 있습니다.&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;신뢰성과 실행 비용은 서로 상충됩니다. 예를 들면, Java는 모든 Index의 범위를 검사함으로써 신뢰성을 향상시켰지만, 이로 인해 실행 비용이 늘어나는 단점이 있습니다. 반대로 C 언어는 Index의 범위를 전혀 검사하지 않아 신뢰성이 떨어지지만, 그만큼 실행 비용이 낮아지는 장점도 있습니다.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;표현적이 높아지면 코드는 그만큼 깔끔해지지만, 반대로 가독성이 떨어진다는 단점이 있습니다. 예를 들면, APL은 복잡하고 많은 연산을 간단한 연산자로 표현이 가능하지만, 가독성이 심각하게 떨어진다는 단점이 있습니다.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;유연성과 안정성, 유연성과 효율성도 서로 상충됩니다. 예를 들면, C++ 언어는 포인터를 다양한 방법으로 조작할 수 있어서 유연성이 높지만, 그만큼 안정성이 떨어진다는 단점이 있습니다. 또한 프로그래밍 언어에서 유연성이 늘어날수록 예외 사항이 늘어나기 때문에, 코드를 읽을 때나 작성할 때 효율성이 낮아진다는 단점이 있습니다.&lt;/p&gt;
+  &lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;&lt;img src=&quot;/assets/images/PL/001/15.jpg&quot; alt=&quot;&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
@@ -1706,344 +2147,4 @@
 
 &lt;p&gt;제가 묵었던 라비스타 도쿄베이에서는 밤 10시부터 야식으로 무료 라멘을 제공했습니다. 저녁도 어중간하게 먹었고, 이 라멘이 맛있다는 소문을 들어서 먹으러 갔는데 듣던대로 꽤 맛있었습니다. 예전에 먹었던 일본 라멘은 너무 짜서 제 입맛에 안맞았는데, 여기는 소금을 개인 취향에 따라 넣어 먹을 수 있도록 따로 제공해서 그런지 짜지 않고 맛있었습니다.&lt;/p&gt;
 
-&lt;p&gt;6일차 일정은 이렇게 마무리가 되었습니다. 읽어주셔서 감사합니다!&lt;/p&gt;</content><author><name>Joonsu Ryu</name></author><category term="travel" /><category term="tokyo" /><summary type="html">도쿄에서의 여섯번 째 날입니다. 이 날은 다른 호텔로 이동하는 날이었는데, 전날 늦게 자서 그런지 아침부터 매우 피곤했습니다.</summary></entry><entry><title type="html">도쿄 여행기 (5)</title><link href="http://localhost:4000/travel/tokyo-5/" rel="alternate" type="text/html" title="도쿄 여행기 (5)" /><published>2023-08-06T00:00:00+09:00</published><updated>2023-08-06T00:00:00+09:00</updated><id>http://localhost:4000/travel/tokyo-5</id><content type="html" xml:base="http://localhost:4000/travel/tokyo-5/">&lt;p&gt;도쿄에서의 다섯 번째 날도 호텔 조식을 먹으며 하루를 시작했습니다.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/Travel/011/01.jpg&quot; alt=&quot;&quot; width=&quot;600&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;오늘 일정은 원래 우에노 동물원으로 시작하려고 했습니다. 우에노 동물원이 매주 월요일에는 운영하지 않는다는 정보는 미리 알아뒀기 때문에 화요일에 방문하기로 결정했습니다. 그런데 예상하지 못한 사실이 있었는데…&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/Travel/011/02.jpg&quot; alt=&quot;&quot; width=&quot;600&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;만약 월요일이 공휴일이라면 대신 화요일에 개장하지 않는다는 겁니다. 하필 전날인 7월 17일이 일본의 공휴일이었기 때문에, 화요일인 오늘이 쉬는 날이었습니다. 조금 아쉽긴 했지만, 이 더운날에 동물원을 돌아다니는 것도 어려워 보였기 때문에 긍정적으로 생각하기로 했습니다.&lt;/p&gt;
-
-&lt;p&gt;결국 생각 끝에 우에노 동물원 대신 아사쿠사를 방문하기로 했습니다. 어차피 가는 경로에 우에노를 거치기 때문에, 우에노 공원 정도는 돌아오는 길에 둘러볼 수 있었기 때문입니다.&lt;/p&gt;
-
-&lt;h2 id=&quot;아사쿠사&quot;&gt;아사쿠사&lt;/h2&gt;
-
-&lt;center&gt;&lt;iframe src=&quot;https://www.google.com/maps/embed?pb=!1m28!1m12!1m3!1d8046.875270644852!2d139.78619926033804!3d35.705214191477836!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m13!3e3!4m5!1s0x60188be9c8ba51c5%3A0x7655519b9b5d879b!2z7J2867O4IOuPhOy_hOuPhCDrr7jrgpjthqDqtawg7Iug67CU7IucIDIg7KGw66mU4oiSMjAsIOyLoOuwlOyLnOyXrQ!3m2!1d35.665877!2d139.759521!4m5!1s0x60188ec690127e2f%3A0xf41f021a3a02cff0!2z7JWE7IKs7L-g7IKsIDEgQ2hvbWUtMS0zIEFzYWt1c2EsIFRhaXRvIENpdHksIFRva3lvIDExMS0wMDMyIOydvOuzuA!3m2!1d35.710792399999995!2d139.7977621!5e0!3m2!1sko!2skr!4v1691224600812!5m2!1sko!2skr&quot; width=&quot;600&quot; height=&quot;450&quot; style=&quot;border:0;&quot; allowfullscreen=&quot;&quot; loading=&quot;lazy&quot; referrerpolicy=&quot;no-referrer-when-downgrade&quot;&gt;&lt;/iframe&gt;&lt;/center&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/Travel/011/03.jpg&quot; alt=&quot;&quot; width=&quot;600&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;도쿄의 대부분 관광지는 JR 야마노테선 위에 있지만, 아사쿠사는 아사쿠사선에 있기 때문에, 숙소가 JR 야마노테선 근처에 있는 분이라면 우에노 역에서 아사쿠사선으로 환승을 해야만 갈 수 있습니다. 저는 다행히 숙소가 신바시였기 때문에, 신바시에서 아사쿠사선을 타고 한번에 갈 수 있었습니다.&lt;/p&gt;
-
-&lt;p&gt;아사쿠사에서 유명한 관광지인 센소지로 가기 위해서는 아사쿠사 역에서 1번 출구로 나오시면 됩니다.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/Travel/011/04.jpg&quot; alt=&quot;&quot; width=&quot;600&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;아사쿠사 역을 나오자마자 인력거꾼들이 보였습니다. 유튜브에서 많이 보던 인력거라 저도 한번 타고싶은 마음에 가격표를 봤는데, 세상에나… 가격이 장난이 아니었습니다. 그래도 제대로 즐기려면 30분은 타야 할 것 같은데, 혼자 탑승하더라도 30분에 9만원에 가까운 돈을 내야합니다. 여기에 이 정도 돈을 쓰고 싶은 마음은 없어서 바로 돌아섰습니다.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/Travel/011/05.jpg&quot; alt=&quot;&quot; width=&quot;600&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/Travel/011/06.jpg&quot; alt=&quot;&quot; width=&quot;600&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;센소지로 가는 길에는 나카미세도리라는 상점가가 있습니다. 일본에 관련된 기념품을 파는 곳인데, 가격이 하나같이 비쌉니다. 종류는 매우 다양하긴 한데, 딱히 사고 싶은 마음도 없고 더운 나머지 눈이 잘 가지 않았습니다.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/Travel/011/07.jpg&quot; alt=&quot;&quot; width=&quot;600&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/Travel/011/08.jpg&quot; alt=&quot;&quot; width=&quot;600&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/Travel/011/09.jpg&quot; alt=&quot;&quot; width=&quot;600&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;도쿄 관광 관련 블로그나 가이드북을 보면 아사쿠사가 빠지지 않는데, 저는 솔직히 너무 기대를 해서 그런가 큰 감흥이 없었습니다. 전날 가마쿠라에서 사찰은 지겹도록 봐서 그런지 뭐가 다른거지? 라는 생각이 들었습니다. 지역이 넓은 것도 아니라 사실상 저 본당을 제외하고는 볼만한 것도 없어서 실망했습니다. 대체 여기에 관광객이 왜 이렇게 많은걸까요?&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/Travel/011/10.jpg&quot; alt=&quot;&quot; width=&quot;600&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/Travel/011/11.jpg&quot; alt=&quot;&quot; width=&quot;600&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/Travel/011/12.jpg&quot; alt=&quot;&quot; width=&quot;600&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/Travel/011/13.jpg&quot; alt=&quot;&quot; width=&quot;600&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/Travel/011/14.jpg&quot; alt=&quot;&quot; width=&quot;600&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;본당 주위에 있는 것들은 이게 전부입니다. 다 보는데 30분이 채 안걸리더라구요.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/Travel/011/15.jpg&quot; alt=&quot;&quot; width=&quot;600&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;돌아오는 길에 다시 나카미세도리를 지나 왔는데, 오면서는 보지 못한 옛날 그림들이 줄지어 있었습니다.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/Travel/011/16.jpg&quot; alt=&quot;&quot; width=&quot;600&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;이게 나카미세도리 입구에 있는 카미나리몬입니다. 원래 여기로 들어왔어야 했는데 제가 오는 길을 헷갈려서 다른 길로 왔었네요.&lt;/p&gt;
-
-&lt;h2 id=&quot;우에노-공원&quot;&gt;우에노 공원&lt;/h2&gt;
-
-&lt;center&gt;&lt;iframe src=&quot;https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3239.4658495689337!2d139.77085627712194!3d35.71476002812927!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188e9b45906ac3%3A0xb1cb3623124e645a!2z7Jqw7JeQ64W4IOqzteybkA!5e0!3m2!1sko!2skr!4v1691234215835!5m2!1sko!2skr&quot; width=&quot;600&quot; height=&quot;450&quot; style=&quot;border:0;&quot; allowfullscreen=&quot;&quot; loading=&quot;lazy&quot; referrerpolicy=&quot;no-referrer-when-downgrade&quot;&gt;&lt;/iframe&gt;&lt;/center&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/Travel/011/17.jpg&quot; alt=&quot;&quot; width=&quot;600&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;점심먹기 전까지 시간이 좀 남아서 오는 길에 우에노에 잠깐 들렀습니다. 우에노 동물원은 못가더라도, 우에노 공원을 잠깐 구경하려구요.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/Travel/011/18.jpg&quot; alt=&quot;&quot; width=&quot;600&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;그런데 우에노 역에서 내려고 출구로 나오는 순간 악취가 풍겨왔습니다. 우에노 공원에 노숙자가 많다는 이야기를 들은 적이 있는데, 아무래도 그 때문인 것 같습니다. 그래도 우에노 공원은 가족 관광객도 많이 오는 곳인데 너무 심하더라구요.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/Travel/011/19.jpg&quot; alt=&quot;&quot; width=&quot;600&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;우에노 공원 안에 있는 우에노 동물원 입구입니다. 물론 휴일이라 닫혀있었기 때문에 입구만 구경하고 왔습니다. 날씨가 너무 더워서 여기까지 오는것도 힘들었는데, 동물원 안에 들어갔으면 더 힘들었을 뻔했습니다.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/Travel/011/20.jpg&quot; alt=&quot;&quot; width=&quot;600&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;우에노 공원 안에는 스타벅스도 있었습니다. 더위를 좀 식히기 위해서 스타벅스에 들어가 아이스 아메리카노를 주문했는데, 여긴 톨 사이즈밖에 없다고 합니다. 이런 곳은 또 처음보네요. 그래도 목이 말랐기 때문에 톨 사이즈로 주문하고 공원을 마저 둘러봤습니다.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/Travel/011/21.jpg&quot; alt=&quot;&quot; width=&quot;600&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;우에노 공원을 다 둘러본 다음 점심을 먹으러 가기 위해 우에노 역으로 돌아왔습니다.&lt;/p&gt;
-
-&lt;h2 id=&quot;야키니쿠-규통-칸다역-앞-점&quot;&gt;야키니쿠 규통 칸다역 앞 점&lt;/h2&gt;
-
-&lt;center&gt;&lt;iframe src=&quot;https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3240.37957267813!2d139.7691039771216!3d35.69227592936495!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188d1758c0f5c5%3A0xea6463176cc67ea1!2z7JW87YKk64uI7L-gIOq3nO2GtSDsubjri6Tsl60g7JWeIOygkA!5e0!3m2!1sko!2skr!4v1691234246426!5m2!1sko!2skr&quot; width=&quot;600&quot; height=&quot;450&quot; style=&quot;border:0;&quot; allowfullscreen=&quot;&quot; loading=&quot;lazy&quot; referrerpolicy=&quot;no-referrer-when-downgrade&quot;&gt;&lt;/iframe&gt;&lt;/center&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/Travel/011/22.jpg&quot; alt=&quot;&quot; width=&quot;600&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;점심으로는 야키니쿠를 먹으러 왔습니다. 저는 일본 여행에 참고하기 위해 종종 유우키의 일본이야기라는 유튜브를 종종 보는데, 그 유튜브에 소개된 곳이었습니다. 야키니쿠는 일본식 고깃집인데, 혼자서도 먹을 수 있도록 1인석이 구비되어 있는 것이 특징입니다. 이 가게도 간판에 “1인 손님 대환영!”이라고 적혀있었습니다.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/Travel/011/23.jpg&quot; alt=&quot;&quot; width=&quot;600&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;이 가게에는 점심 메뉴가 따로 있는데, 굉장히 합리적인 가격에 고기를 먹을 수 있다는 것이 특징입니다. 특히 인기 no.1이라는 1번 세트가 1100엔에 다양한 고기, 밥, 국까지 제공한다고 하기에 그걸로 주문했습니다.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/Travel/011/24.jpg&quot; alt=&quot;&quot; width=&quot;600&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;1번 세트를 주문하니 광고에 있던 사진과 거의 동일하게 나왔습니다. 특이하게 김치도 제공해주는데, 일본식 김치라 맛이 다를줄 알았더니 한국에서 먹던 김치와 맛이 크게 차이나지 않았습니다.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/Travel/011/25.jpg&quot; alt=&quot;&quot; width=&quot;600&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;앞에 있는 화로에 원하는 만큼 고기를 구우면서 먹을 수 있는 것이 매우 좋았습니다. 한국에는 왜 이런 고깃집이 없는 걸까요…&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/Travel/011/26.jpg&quot; alt=&quot;&quot; width=&quot;600&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;식사를 마치고 정확히 1100엔을 지불하고 나왔습니다. 처음 음식을 받았을 때는 고기의 양이 적어보였는데, 막상 먹고 나니까 생각보다 배가 든든했습니다.&lt;/p&gt;
-
-&lt;h2 id=&quot;오차노미즈&quot;&gt;오차노미즈&lt;/h2&gt;
-
-&lt;center&gt;&lt;iframe src=&quot;https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3240.0770367297114!2d139.7618654771218!3d35.69972182895584!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188c19eafeb779%3A0xf69f1e715e53cb1f!2z7Jik7LCo64W466-47KaI!5e0!3m2!1sko!2skr!4v1691234559289!5m2!1sko!2skr&quot; width=&quot;600&quot; height=&quot;450&quot; style=&quot;border:0;&quot; allowfullscreen=&quot;&quot; loading=&quot;lazy&quot; referrerpolicy=&quot;no-referrer-when-downgrade&quot;&gt;&lt;/iframe&gt;&lt;/center&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/Travel/011/27.jpg&quot; alt=&quot;&quot; width=&quot;600&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;오차노미즈는 일본에서 악기점으로 유명한 곳입니다. 물론 제가 음악에 조예가 있는 것도 아니기 때문에 원래라면 올 이유가 없었지만, 봇치 더 락 마지막화에서 히토리가 새 기타를 구매했던 곳이기 때문에 기념삼아 들러봤습니다.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/Travel/011/28.jpg&quot; alt=&quot;&quot; width=&quot;600&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;도쿄에는 한국인 관광객이 많아서인지 경고 문구에 한국어도 적혀있네요.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/Travel/011/29.jpg&quot; alt=&quot;&quot; width=&quot;600&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/Travel/011/30.png&quot; alt=&quot;&quot; width=&quot;600&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;이곳이 바로 히토리가 기타를 구매했던 이시바시 악기입니다. 오차노미즈 역에서 그다지 멀리 떨어지지 않은 곳이 있었습니다.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/Travel/011/31.png&quot; alt=&quot;&quot; width=&quot;600&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;슬슬 오후 1시 무렵이 되니 기온이 37도에 다다랐습니다. 실내로 들어가기 전에 딱 한 곳만 더 보기로 했습니다.&lt;/p&gt;
-
-&lt;h2 id=&quot;신오쿠보&quot;&gt;신오쿠보&lt;/h2&gt;
-
-&lt;center&gt;&lt;iframe src=&quot;https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3240.014929214804!2d139.69765087712176!3d35.701250228871665!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188d2f37e44929%3A0x70e03a4ceb52d545!2z7IugIOyYpOy_oOuztA!5e0!3m2!1sko!2skr!4v1691237078449!5m2!1sko!2skr&quot; width=&quot;600&quot; height=&quot;450&quot; style=&quot;border:0;&quot; allowfullscreen=&quot;&quot; loading=&quot;lazy&quot; referrerpolicy=&quot;no-referrer-when-downgrade&quot;&gt;&lt;/iframe&gt;&lt;/center&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/Travel/011/32.jpg&quot; alt=&quot;&quot; width=&quot;600&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;다음으로 방문한 곳은 신오쿠보 역입니다. 신오쿠보는 도쿄에 있는 한인타운인데, 최근 한류의 영향으로 인해 일본인 관광객이 매우 많이 방문하는 곳이라고 합니다.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/Travel/011/33.jpg&quot; alt=&quot;&quot; width=&quot;600&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;신오쿠보는 과거부터 한국과 인연이 많은 곳입니다. 2000년대 초반에 유학생인 이수현씨가 신오쿠보 역에서 선로에 떨어진 취객을 구하려다 열차에 사고를 당한 사건이 있었습니다. 당시 한일 양국에 큰 반향을 일으켰던 사건이고, 현재까지도 종종 언급이 되고 있습니다. 이수현 씨와 그를 돕던 세키네 시로씨를 기리는 문구가 신오쿠보 역에 있으니, 신오쿠보를 오시게 된다면 꼭 방문해보시기 바랍니다. 위 사진의 장소는 신오쿠보역 승강장에서 개찰구로 내려가는 길에 있습니다.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/Travel/011/34.jpg&quot; alt=&quot;&quot; width=&quot;600&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;한인타운으로 유명한 장소 답게, 역을 나오자 마자 한글 간판이 눈에 띕니다.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/Travel/011/35.jpg&quot; alt=&quot;&quot; width=&quot;600&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;신오쿠보 역의 출입구는 위 사진에서 보이는 한 곳인데, 이곳에서 한인타운으로 가려면 (사진상으로) 왼쪽 다리 밑에 있는 길로 가시면 됩니다.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/Travel/011/36.jpg&quot; alt=&quot;&quot; width=&quot;600&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;일본에도 홍콩반점이 있네요. 백종원 아저씨가 여기까지…?&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/Travel/011/37.jpg&quot; alt=&quot;&quot; width=&quot;600&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/Travel/011/38.jpg&quot; alt=&quot;&quot; width=&quot;600&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;네네치킨과 호식이두마리치킨까지 있을 줄은 몰랐습니다.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/Travel/011/39.jpg&quot; alt=&quot;&quot; width=&quot;600&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/Travel/011/40.jpg&quot; alt=&quot;&quot; width=&quot;600&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;근처에 한국 마트가 있길래 들어가봤습니다. 한국에서 찾을 수 있는 어지간한 음식/음료들은 다 구할 수 있네요. 다만 가격이 한국보다 2~3배 정도 비쌉니다.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/Travel/011/41.jpg&quot; alt=&quot;&quot; width=&quot;600&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;지나가다 본 가게의 음식점 메뉴판을 찍어봤는데 굉장히 메뉴가 다양하네요.&lt;/p&gt;
-
-&lt;h2 id=&quot;이케부쿠로&quot;&gt;이케부쿠로&lt;/h2&gt;
-
-&lt;center&gt;&lt;iframe src=&quot;https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3238.866279535491!2d139.70602919406545!3d35.729507056605605!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188d5d4043e0dd%3A0x213775d25d2b034d!2z7J207LyA67aA7L-g66Gc!5e0!3m2!1sko!2skr!4v1691300686049!5m2!1sko!2skr&quot; width=&quot;600&quot; height=&quot;450&quot; style=&quot;border:0;&quot; allowfullscreen=&quot;&quot; loading=&quot;lazy&quot; referrerpolicy=&quot;no-referrer-when-downgrade&quot;&gt;&lt;/iframe&gt;&lt;/center&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/Travel/011/42.jpg&quot; alt=&quot;&quot; width=&quot;600&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;다음으로 들른 곳은 이케부쿠로입니다. 이케부쿠로도 아키하바라와 비슷하게 오타쿠의 성지로 유명한 곳인데, 아키하바라와의 차이점은 여성향 위주라는 것입니다. 이 때 시간이 2시 정도쯤 되었는데, 밖에 너무 더웠기 때문에 우선 실내에서 좀 쉬었다 가기로 했습니다.&lt;/p&gt;
-
-&lt;h2 id=&quot;customa-cafe&quot;&gt;CUSTOMA CAFE&lt;/h2&gt;
-
-&lt;center&gt;&lt;iframe src=&quot;https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3238.773287072234!2d139.70682337712233!3d35.73179382719259!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188d5dd6a883cb%3A0xf62079dca51d53ba!2sCUSTOMA%20CAFE!5e0!3m2!1sko!2skr!4v1691300776634!5m2!1sko!2skr&quot; width=&quot;600&quot; height=&quot;450&quot; style=&quot;border:0;&quot; allowfullscreen=&quot;&quot; loading=&quot;lazy&quot; referrerpolicy=&quot;no-referrer-when-downgrade&quot;&gt;&lt;/iframe&gt;&lt;/center&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/Travel/011/43.jpg&quot; alt=&quot;&quot; width=&quot;600&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;이케부쿠로 바로 앞에 넷카페가 하나 있었습니다. 전날 인터넷에서 찾아본 바로는 음료수/식사가 무료라고 합니다. 일본 여행 유튜버들은 꼭 한번씩 넷카페를 들러보던데, 저도 어떤 곳인지 궁금해 찾아가봤습니다.&lt;/p&gt;
-
-&lt;p&gt;들어가서 외국인인걸 밝히니 종업원들이 굉장히 당황해했습니다. 제 서투른 일본어 실력으로 컴퓨터를 쓸 수 있는 1인실을 원한다고 했더니 회원가입이 필요하다고 합니다. 신분증이 필요해서 여권을 제시하고 어찌어찌 시간이 걸려 회원가입이 되었습니다. 결제를 하고 318호를 배정받아 열쇠를 받고 갔습니다.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/Travel/011/44.jpg&quot; alt=&quot;&quot; width=&quot;600&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;제가 배정받은 318호 앞입니다. 문만 보면 꼭 호텔처럼 보일 정도로 깔끔했습니다.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/Travel/011/45.jpg&quot; alt=&quot;&quot; width=&quot;600&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;입장해보니 한 명이 간신히 들어갈 정도의 크기에 모니터/키보드/마우스가 보입니다. 왼쪽에는 카운터와 연결되는 전화기가 있네요.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/Travel/011/46.jpg&quot; alt=&quot;&quot; width=&quot;600&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;카운터에서 핸드폰 충전기/애플워치 충전기를 무료로 대여해주더라구요. 덕분에 쉬는 동안 핸드폰과 애플워치를 충전했습니다.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/Travel/011/47.jpg&quot; alt=&quot;&quot; width=&quot;600&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;카운터 옆에는 무료로 음료수를 마실 수 있는 자판기가 있습니다. 모든 메뉴가 무료입니다!&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/Travel/011/48.jpg&quot; alt=&quot;&quot; width=&quot;600&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;뭘 마실까 하다가 일본은 역시 메론소다라는 생각이 들어 메론 소다를 뽑았습니다. 카레와 밥도 먹을 수 있긴 한데, 밥을 여기서 해결하기에는 조금 아까워서 이걸로 뽕을 뽑아보기로 했습니다.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/Travel/011/49.jpg&quot; alt=&quot;&quot; width=&quot;600&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;모니터 위의 선반에는 PC, 블루레이 플레이어, 곽티슈, 휴지통이 있습니다. 다른건 몰라도 왜 곽티슈가 필요한지 궁금하실 수도 있는데, 이건 컴퓨터를 켜보시면 알 수 있습니다.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/Travel/011/50.jpg&quot; alt=&quot;&quot; width=&quot;600&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;컴퓨터를 켜보니 바탕화면에 당당하게 AV 사이트가 있었습니다. 왜 곽티슈가 있었는지는 이걸 보니 알겠네요. 한국의 PC방과는 다른 모습에 조금 놀랐습니다. 오히려 게임 관련 프로그램은 한 개도 없네요.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/Travel/011/51.jpg&quot; alt=&quot;&quot; width=&quot;600&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;PC의 성능이 궁금하여 게임을 한번 설치해봤습니다. 리그 오브 레전드로 간단하게 테스트를 해봤는데, 싱글 플레이도 버벅일정도로 성능은 좋지 않았습니다. 아무래도 게임하라고 갖다 놓은 PC는 아닌 것 같습니다.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/Travel/011/52.jpg&quot; alt=&quot;&quot; width=&quot;600&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;방이 좁긴 하지만, 문 앞에 신발장 부분을 쿠션을 덮고 나면 누울 만큼의 공간이 간신히 만들어지긴 합니다. 제 키가 180cm라 일본 기준에서는 꽤 큰 키이긴 한데, 발을 뻗을 만큼은 아니지만 그래도 누울 수는 있었습니다. 일본에서는 밤이 늦었을 때 여기에서 자고 가는 사람도 있다는데, 음식과 음료도 있으니 충분히 그 정도는 가능해보였습니다.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/Travel/011/53.jpg&quot; alt=&quot;&quot; width=&quot;600&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;눕지 않을 때는 앉은뱅이 의자를 설치해서 앉을 수 있습니다. 한번 앉아서 PC를 해봤는데, 은근히 편하더라구요.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/Travel/011/54.jpg&quot; alt=&quot;&quot; width=&quot;600&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;무료 음료수로 뽕을 뽑기 위해서 딸기 소다와 메론 소다를 추가로 뽑아왔습니다. 계속 마셔서 결국 총 6잔이나 마시고 나왔습니다.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/Travel/011/55.jpg&quot; alt=&quot;&quot; width=&quot;600&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;인터넷에서 이 가게의 요금을 봤을 때는 30분에 200엔이라고 해서 꽤 비쌀 줄 알았는데, 알고보니 초객은 3시간에 500엔이라는 파격적인 할인가가 제공된다고 합니다. 덕분에 여행자 입장에서는 저렴하게 놀다 갈 수 있었습니다. 그나저나 분명이 여권에 Joonsu Ryu라고 적혀있었을 텐데, 왜 jonsu ryu로 회원가입이 된 걸까요…&lt;/p&gt;
-
-&lt;h2 id=&quot;taito-station&quot;&gt;TAITO STATION&lt;/h2&gt;
-
-&lt;center&gt;&lt;iframe src=&quot;https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1195.7861802451127!2d139.70929833522328!3d35.73112704157425!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188d5dbadaaaab%3A0x84c6373c133a9031!2sTAITO%20STATION%20Ikebukuro%20West%20Exit!5e0!3m2!1sko!2skr!4v1691301825365!5m2!1sko!2skr&quot; width=&quot;600&quot; height=&quot;450&quot; style=&quot;border:0;&quot; allowfullscreen=&quot;&quot; loading=&quot;lazy&quot; referrerpolicy=&quot;no-referrer-when-downgrade&quot;&gt;&lt;/iframe&gt;&lt;/center&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/Travel/011/56.jpg&quot; alt=&quot;&quot; width=&quot;600&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;이용 시간이 끝나고 이케부쿠로를 둘러보다, 타이토 게임 스테이션이라는 곳이 보여 한번 들러봤습니다. 일본 오락실 같은 곳인가 보네요.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/Travel/011/57.jpg&quot; alt=&quot;&quot; width=&quot;600&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;한국에서도 종종 볼 수 있는 뽑기가 있네요.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/Travel/011/58.jpg&quot; alt=&quot;&quot; width=&quot;600&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;여긴 오락실이긴 한데, 한국에서 보던 오락실과는 많이 달랐습니다. 한국에서 오락실이라고 하면 조이스틱 2개가 붙어있는 오락기가 다수 늘어져 있는 풍경인데, 여긴 뭔가 전문적으로 보이는 오락기가 많이 보였습니다. 드라이브라던가, 슈팅 게임이라던가, 아니면 로봇 조종과 같은 컨셉의 오락기 같은 것들 말입니다. 해보고는 싶었으나 어떤 게임인지도 모르고 어려워 보여서 다른 사람이 하는 것을 구경만 했습니다. (사실 비싸보이기도 했구요)&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/Travel/011/59.jpg&quot; alt=&quot;&quot; width=&quot;600&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;타이토가 피규어로도 유명한 회사다보니 피규어 뽑기 머신도 많이 있었습니다.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/Travel/011/60.jpg&quot; alt=&quot;&quot; width=&quot;600&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;특이하게 피규어 뿐만 아니라 스타벅스 굿즈 같은 일반적인 물건도 있더라구요. 한국에서는 스타벅스 굿즈 인기가 많은데, 왜 한국에서는 이런게 없을까 궁금합니다.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/Travel/011/61.jpg&quot; alt=&quot;&quot; width=&quot;600&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;수성의 마녀의 주인공인 슬레타 머큐리 피규어를 봐서 반가운 마음에 찍어봤습니다. 작년 말부터 굉장히 재밌게 본 애니메이션이었어요.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/Travel/011/62.jpg&quot; alt=&quot;&quot; width=&quot;600&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;우동-오니얀마-신바시점&quot;&gt;우동 오니얀마 신바시점&lt;/h2&gt;
-
-&lt;center&gt;&lt;iframe src=&quot;https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d20282.770127421205!2d139.74494266159883!3d35.68195264593613!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188bea3144c0c7%3A0x3a038fe3937f34be!2z7Jqw64-ZIOyYpOuLiOyWgOuniCDsi6DrsJTsi5zsoJA!5e0!3m2!1sko!2skr!4v1691303645292!5m2!1sko!2skr&quot; width=&quot;600&quot; height=&quot;450&quot; style=&quot;border:0;&quot; allowfullscreen=&quot;&quot; loading=&quot;lazy&quot; referrerpolicy=&quot;no-referrer-when-downgrade&quot;&gt;&lt;/iframe&gt;&lt;/center&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/Travel/011/63.jpg&quot; alt=&quot;&quot; width=&quot;600&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;넷카페까지 즐기고 호텔로 돌아오던 길에, 슬슬 배고파져서 저녁을 먹고 들어가려고 했습니다. 뭘 먹을까 하다가 그저께 먹은 냉우동이 너무 맛있어서 오늘 또 먹기로 했습니다.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/Travel/011/64.jpg&quot; alt=&quot;&quot; width=&quot;600&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;이번에는 토리붓카게 우동을 시켰는데 이게 진짜 너무 맛있더라구요. 닭튀김도 굉장히 부드럽고 면발이 굉장히 쫄깃했습니다. 그런데도 불구하고 가격은 고작 520엔이었어요. 만약 일본에 오시게 되면 꼭 한번 드셔보시기 바랍니다.&lt;/p&gt;
-
-&lt;h2 id=&quot;네코-노-오카&quot;&gt;네코 노 오카&lt;/h2&gt;
-
-&lt;p&gt;숙소에서 좀 쉬다가 날이 어두워지자 다시 나왔습니다. 작년에 곽튜브가 일본에서 메이드 카페를 방문한 이후로 일본 여행에서 메이드 카페를 관광 코스로 넣으시는 분들이 많아졌는데, 저도 그래서 한번 방문해보려고 했습니다. 다만 그 영상에서 나온 메이드 카페는 너무 민망해서… 덜 민망한 곳이 어디있을까 찾아보다가 메이드 바인 네코 노 오카를 추천받아 방문하게 되었습니다.&lt;/p&gt;
-
-&lt;center&gt;&lt;iframe src=&quot;https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3239.7434235551345!2d139.66296587712188!3d35.70793102850467!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6018f290d2e10001%3A0xf7c8a5253d2ef6fa!2sNeko_no_Oka!5e0!3m2!1sko!2skr!4v1691303931629!5m2!1sko!2skr&quot; width=&quot;600&quot; height=&quot;450&quot; style=&quot;border:0;&quot; allowfullscreen=&quot;&quot; loading=&quot;lazy&quot; referrerpolicy=&quot;no-referrer-when-downgrade&quot;&gt;&lt;/iframe&gt;&lt;/center&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/Travel/011/65.jpg&quot; alt=&quot;&quot; width=&quot;600&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;이곳은 도쿄 중심부에서 좀 먼 나카노 역 주변에 있습니다. 가게가 골목에 있었기 때문에 은근히 찾기가 꽤 어려웠어요. 게다가 지하에 있어서 입구를 찾기도 어려웠습니다. 메뉴판은 지하로 내려가는 계단에 있네요. 술 한잔에 대략 700~1000엔 사이에 판매하고 있었습니다.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/Travel/011/66.jpg&quot; alt=&quot;&quot; width=&quot;600&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;저는 생맥주를 먼저 주문한 다음에 일본주를 추천받아 그걸 한번 주문해봤습니다. 글래스로는 700엔, 위와 같은 호리병(?)에는 1000엔에 판매하는데, 호리병 쪽이 양이 훨씬 많다고 해서 그걸 주문했습니다. 뭔가 옛날 느낌이 나는 병과 잔이네요.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/Travel/011/67.jpg&quot; alt=&quot;&quot; width=&quot;600&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;가게에는 저 말고 다른 손님이 2~3분 정도 계셨는데, 어떤 분이 메이드들 먹으라고 유부초밥을 사왔습니다. 양이 많아서 그런지 저한테도 먹어보라고 권해주시더라구요. 맛은 한국에서 먹던 유부초밥과 크게 다르지 않았습니다.&lt;/p&gt;
-
-&lt;p&gt;보통 메이드 카페는 굉장히 창렬하다는 인식이 있는데, 여기는 그렇게 크게 비싸지 않았습니다. 술 이외에 한 시간 요금이 500엔 정도라서 크게 부담이 없었습니다. 바텐더 대신에 메이드가 있고, 술을 마시면서 그분들과 이야기할 수 있는데 이 정도면 꽤나 저렴한 가격이라고 생각합니다. 일본어가 능숙하신 분은 더 재밌게 즐기실 수 있을 것 같습니다.&lt;/p&gt;
-
-&lt;h2 id=&quot;롯폰기&quot;&gt;롯폰기&lt;/h2&gt;
-
-&lt;center&gt;&lt;iframe src=&quot;https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3241.541113758307!2d139.73178499036564!3d35.66367599917158!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188b826ae3281d%3A0xf2a258ed2d09f4e!2z66Gv7Y-w6riw!5e0!3m2!1sko!2skr!4v1691304567363!5m2!1sko!2skr&quot; width=&quot;600&quot; height=&quot;450&quot; style=&quot;border:0;&quot; allowfullscreen=&quot;&quot; loading=&quot;lazy&quot; referrerpolicy=&quot;no-referrer-when-downgrade&quot;&gt;&lt;/iframe&gt;&lt;/center&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/Travel/011/68.jpg&quot; alt=&quot;&quot; width=&quot;600&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;오늘의 마지막 일정으로는 롯폰기를 방문했습니다. 롯폰기는 우리나라의 이태원과 비슷한 느낌이라고 하는데, 사실 어제 구경한 가부키쵸와 크게 다른걸 못느꼈어요. 여기도 유흥 산업이 발달한 모양인지 호스트와 캬바쿠라에서 일하는 사람으로 보이는 분들이 굉장히 많이 보였습니다. 차이점이 있다면 호객하는 사람이 흑인이라는 것 정도?&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/Travel/011/69.jpg&quot; alt=&quot;&quot; width=&quot;600&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;걷다 보니 도쿄 타워가 눈에 들어왔습니다. 가까웠다면 그 앞까지 가보려고 했는데, 걸어도 걸어도 끝이 없길래 그냥 중간에 돌아왔습니다.&lt;/p&gt;
-
-&lt;h2 id=&quot;버레스크-도쿄&quot;&gt;버레스크 도쿄&lt;/h2&gt;
-
-&lt;center&gt;&lt;iframe src=&quot;https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3241.5550460912905!2d139.73161277712097!3d35.663332830954865!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188b78685d2fcb%3A0x949f91afc7f95845!2sBurlesque%20Tokyo!5e0!3m2!1sko!2skr!4v1691305016596!5m2!1sko!2skr&quot; width=&quot;600&quot; height=&quot;450&quot; style=&quot;border:0;&quot; allowfullscreen=&quot;&quot; loading=&quot;lazy&quot; referrerpolicy=&quot;no-referrer-when-downgrade&quot;&gt;&lt;/iframe&gt;&lt;/center&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/Travel/011/70.jpg&quot; alt=&quot;&quot; width=&quot;600&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;롯폰기에는 버레스크라는 유명한 공연장이 있습니다. 이곳은 하루에 총 3번 공연을 하는데, 마지막 공연인 밤 11시 30분 공연이 가장 재미있다고 합니다. 가격이 다소 높은 편이긴 하지만, 여기까지 온 김에 한 번쯤 보고 싶어서 11시 30분 공연을 예약했습니다.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/Travel/011/71.jpg&quot; alt=&quot;&quot; width=&quot;600&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;이쪽이 배우들이 나오는 공연 무대입니다. 이곳은 지하 2층에 위치하고 있는데, 그래서 그런지 연초 담배는 흡연이 불가능합니다. 대신 광고에서 나오는 전자 담배는 흡연이 가능하다고 합니다.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/Travel/011/72.jpg&quot; alt=&quot;&quot; width=&quot;600&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;제가 예약한 좌석은 전방 박력 좌석이었습니다. 제 눈앞에 이런 조그만 원형 무대가 있는데, 배우들이 공연하다가 이곳을 한바퀴 돌고 가더라구요.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/Travel/011/73.jpg&quot; alt=&quot;&quot; width=&quot;600&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;공연을 보면서 마실 음료수나 술을 주문할 수 있는데, 주문할 때는 QR 코드를 이용해서 주문해야 합니다.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/Travel/011/74.jpg&quot; alt=&quot;&quot; width=&quot;600&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/Travel/011/75.jpg&quot; alt=&quot;&quot; width=&quot;600&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;공연은 그저께 봤던 지하 아이돌 공연의 성인판이라고 보시면 됩니다. 성인판이라고 해서 막 AV에서나 나올 법한 야한 장면이 있는 것은 아니고, 가릴 데는 다 가리고 나오기 때문에 그냥 섹시 공연이라고 보시면 됩니다.&lt;/p&gt;
-
-&lt;p&gt;공연을 시작하기 전에 배우들이 좌석을 돌아다니면서 인사를 합니다. 인사를 하면서 자신의 이름을 알려주고 잘 봐달라고 하더라구요. 공연이 끝나고도 동일하게 인사를 하는데, 이 때 배우들에게 팁을 줄 수 있습니다. 저는 그냥 구경만 하러 왔기 때문에 따로 팁을 주진 않았는데, 돈이 많은 큰 손들은 몇 만엔을 주는 경우도 있더라구요. 팁을 줄 때는 현금을 그대로 주는게 아니라 현금으로 점 내에서 사용하는 화폐를 따로 구매한 뒤 그걸 줘야 합니다. 점 내에서 사용하는 화폐는 공연 중간중간에 스탭들이 판매합니다.&lt;/p&gt;
-
-&lt;p&gt;공연은 약 1시간 정도 되는데, 제가 간과한 사실이 하나 있었습니다. 한국에서야 지하철이 늦은 시간까지 운행하지만, 일본에서는 12시 즈음이면 지하철이 죄다 끊긴다는 점이었습니다. 숙소까지 걸어서 1시간 정도가 걸리기 때문에 도저히 걸어갈 수는 없었고, 하는 수 없이 택시를 타기로 했습니다. 일본 택시가 비싸다는 말은 들어서 어느 정도 각오를 하긴 했지만, 정말 생각보다 많이 비싸더라구요. 지도상으로 그다지 먼 거리가 아니었는데도 불구하고 2300엔이나 나왔습니다.&lt;/p&gt;
-
-&lt;p&gt;이렇게 5일차 일정도 끝이 났습니다. 읽어주셔서 감사합니다!&lt;/p&gt;</content><author><name>Joonsu Ryu</name></author><category term="travel" /><category term="tokyo" /><summary type="html">도쿄에서의 다섯 번째 날도 호텔 조식을 먹으며 하루를 시작했습니다.</summary></entry></feed>
+&lt;p&gt;6일차 일정은 이렇게 마무리가 되었습니다. 읽어주셔서 감사합니다!&lt;/p&gt;</content><author><name>Joonsu Ryu</name></author><category term="travel" /><category term="tokyo" /><summary type="html">도쿄에서의 여섯번 째 날입니다. 이 날은 다른 호텔로 이동하는 날이었는데, 전날 늦게 자서 그런지 아침부터 매우 피곤했습니다.</summary></entry></feed>
