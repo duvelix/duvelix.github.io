@@ -1354,4 +1354,10 @@ var store = [{
         "tags": ["programming languages"],
         "url": "/pl/data-types/",
         "teaser": null
+      },{
+        "title": "Expressions and the Assignment Statement",
+        "excerpt":"7장의 주제는 식과 배정문입니다. 이번 장을 한 문장으로 요약하면 다음과 같습니다. “식의 연산자 수행 순서는 언어의 연관성 및 우선순위 규칙에 따라 결정됩니다. 폰 노이만 구조 환경에서 배정문은 가장 기본적인 문장입니다.” 가장 먼저 산술식(Arithmetic Expression)에 대해 알아보겠습니다. 프로그래밍 언어에서 수학의 산술식과 동일하게 표현하는 것은 고급 언어의 주요 목표 중 하나였습니다. 따라서...","categories": ["studies"],
+        "tags": ["programming languages"],
+        "url": "/pl/expressions-and-the-assignment-statement/",
+        "teaser": null
       }]
