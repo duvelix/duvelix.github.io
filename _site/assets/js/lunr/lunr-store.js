@@ -1344,13 +1344,13 @@ var store = [{
         "teaser": null
       },{
         "title": "Names, Bindings, Type Checking, and Scopes",
-        "excerpt":"처음 소개드린대로 3장과 4장은 컴파일러 과목과 중복된 내용이기 때문에 생략하고, 바로 5장으로 넘어갑니다. 5장은 변수와 관련된 개념들을 하나씩 소개합니다. 특히 제목대로 변수의 이름, 바인딩, 타입 검사, 유효 영역 등을 중점으로 짚도록 하겠습니다. 명령형 언어는 폰 노이만 구조를 기반으로 한 추상화입니다. 이 컴퓨터 구조의 가장 큰 특징은 명령어와 데이터를 저장하는 메모리와,...","categories": ["studies"],
+        "excerpt":"처음 소개드린대로 3장과 4장은 컴파일러 과목과 중복된 내용이기 때문에 생략하고, 바로 5장으로 넘어갑니다. 5장은 변수와 관련된 개념들을 하나씩 소개합니다. 특히 제목대로 변수의 이름, 바인딩, 타입 검사, 유효 영역 등을 중점으로 짚도록 하겠습니다. 이번 장을 한 문장으로 요약하면 다음과 같습니다. “변수는 속성이나 속성의 모음으로 특징지어질 수 있으며, 그 중 가장 중요한...","categories": ["studies"],
         "tags": ["programming languages"],
         "url": "/pl/names-bindings-type-checking-and-scope/",
         "teaser": null
       },{
         "title": "Data Types",
-        "excerpt":"6장에서는 데이터 타입의 개념과 각 데이터 타입의 특성을 소개합니다. 데이터 타입(Data Type)은 데이터 값들의 모임과 그 값들에 대해 미리 정의된 연산들의 집합으로 정의됩니다. 프로그램은 데이터를 토대로 여러 연산을 통해 결과를 도출하기 때문에, 사용하는 언어에서 제공하는 데이터 타입이 현실의 문제와 얼마나 잘 매칭되는가가 중요합니다. 몇 가지 사례를 소개하자면, Fortran 90 이전에는...","categories": ["studies"],
+        "excerpt":"6장에서는 데이터 타입의 개념과 각 데이터 타입의 특성을 소개합니다. 이번 장을 한 문장으로 요약하면 다음과 같습니다. “컴퓨터 프로그램은 데이터를 조작하여 결과를 생성합니다. 이 작업을 쉽게 수행할 수 있는지 판단하는 중요한 요소는 데이터 타입이 실제 문제와 얼마나 유사한가입니다.” 데이터 타입(Data Type)은 데이터 값들의 모임과 그 값들에 대해 미리 정의된 연산들의 집합으로...","categories": ["studies"],
         "tags": ["programming languages"],
         "url": "/pl/data-types/",
         "teaser": null
@@ -1359,5 +1359,11 @@ var store = [{
         "excerpt":"7장의 주제는 식과 배정문입니다. 이번 장을 한 문장으로 요약하면 다음과 같습니다. “식의 연산자 수행 순서는 언어의 연관성 및 우선순위 규칙에 따라 결정됩니다. 폰 노이만 구조 환경에서 배정문은 가장 기본적인 문장입니다.” 가장 먼저 산술식(Arithmetic Expression)에 대해 알아보겠습니다. 프로그래밍 언어에서 수학의 산술식과 동일하게 표현하는 것은 고급 언어의 주요 목표 중 하나였습니다. 따라서...","categories": ["studies"],
         "tags": ["programming languages"],
         "url": "/pl/expressions-and-the-assignment-statement/",
+        "teaser": null
+      },{
+        "title": "Statement-Level Control Structures",
+        "excerpt":"8장의 주제는 문장 단계 제어 구조입니다. 프로그램의 제어 흐름, 또는 실행 순서는 여러 단계에서 검사할 수 있습니다. 프로그램에서 발생할 수 있는 제어 흐름은 다음과 같이 3가지로 나눌 수 있습니다. 식 내 제어 흐름 -&gt; 연산자 우선순위 및 관련성 문장 간 제어 흐름 -&gt; 문장 단계 제어 구조 유닛 간 제어...","categories": ["studies"],
+        "tags": ["programming languages"],
+        "url": "/pl/statement-level-control-structures/",
         "teaser": null
       }]

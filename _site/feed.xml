@@ -1,4 +1,229 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.3">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-09-07T14:23:54+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">KEEPMIND</title><subtitle>A place I record so that I don&apos;t forget.</subtitle><author><name>Joonsu Ryu</name></author><entry><title type="html">Expressions and the Assignment Statement</title><link href="http://localhost:4000/pl/expressions-and-the-assignment-statement/" rel="alternate" type="text/html" title="Expressions and the Assignment Statement" /><published>2023-09-07T00:00:00+09:00</published><updated>2023-09-07T00:00:00+09:00</updated><id>http://localhost:4000/pl/expressions-and-the-assignment-statement</id><content type="html" xml:base="http://localhost:4000/pl/expressions-and-the-assignment-statement/">&lt;p&gt;&lt;img src=&quot;/assets/images/PL/007/01.jpg&quot; alt=&quot;&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.3">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-09-08T18:56:05+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">KEEPMIND</title><subtitle>A place I record so that I don&apos;t forget.</subtitle><author><name>Joonsu Ryu</name></author><entry><title type="html">Statement-Level Control Structures</title><link href="http://localhost:4000/pl/statement-level-control-structures/" rel="alternate" type="text/html" title="Statement-Level Control Structures" /><published>2023-09-08T00:00:00+09:00</published><updated>2023-09-08T00:00:00+09:00</updated><id>http://localhost:4000/pl/statement-level-control-structures</id><content type="html" xml:base="http://localhost:4000/pl/statement-level-control-structures/">&lt;p&gt;&lt;img src=&quot;/assets/images/PL/008/01.jpg&quot; alt=&quot;&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;8장의 주제는 문장 단계 제어 구조입니다. 프로그램의 제어 흐름, 또는 실행 순서는 여러 단계에서 검사할 수 있습니다. 프로그램에서 발생할 수 있는 제어 흐름은 다음과 같이 3가지로 나눌 수 있습니다.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;식 내 제어 흐름 -&amp;gt; 연산자 우선순위 및 관련성&lt;/li&gt;
+  &lt;li&gt;문장 간 제어 흐름 -&amp;gt; 문장 단계 제어 구조&lt;/li&gt;
+  &lt;li&gt;유닛 간 제어 흐름 -&amp;gt; 프로시저 호출&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;식 내에서의 제어 흐름은 7장에서 다루었고, 이번 장에서는 프로그램 내의 문장들 사이에서 발생하는 제어 흐름에 대해 알아보겠습니다.&lt;/p&gt;
+
+&lt;p&gt;연산을 표현하기 위해서는 시퀀스, 선택 및 논리 반복문 절대적으로 필요하다는 이론적 결과가 있습니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/PL/008/02.jpg&quot; alt=&quot;&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;명령형 언어에서 연산은 식을 수행하고 결과 값을 변수에 할당하는 과정입니다. 그러나 결과 값은 배정문 만으로 얻기 힘들며, 일반적으로 제어문이 추가적으로 필요합니다. 명령형 언어에서 제어는 제어 흐름 경로 중에서 선택하는 것(조건문), 특정 문장을 반복적으로 실행하는 것(반복문)으로 구성되어 있습니다.&lt;/p&gt;
+
+&lt;p&gt;초기 프로그래밍 언어인 Fortran의 제어문은 기계의 명령어와 직접적으로 관련되어 있었습니다. 따라서 언어의 설계보다는 명령어 설계의 결과였습니다. 당시에는 프로그래밍의 어려움에 대해서 사람들이 체감하지 못했기 때문에 이것이 문제가 없다고 느꼈지만, 현대에서 이러한 제어문은 부적절하다고 판단하고 있습니다.&lt;/p&gt;
+
+&lt;p&gt;프로그래밍 언어가 발전해오면서, 순서도로 표현할 수 있는 모든 알고리즘은 단 두 개의 제어문만으로 코딩이 가능하다는 것이 증명되었습니다. 하나는 if를 비롯한 조건문이고, 나머지 하나는 for를 비롯한 반복문입니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/PL/008/03.jpg&quot; alt=&quot;&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;많은 제어문은 작성력을 향상시킬 수 있습니다. 그러나 제어문의 수가 많아질수록 언어의 단순성은 낮아집니다. 그렇다면 단순성을 크게 떨어트리지 않고 작성력을 높이기 위해서는 언어를 얼마나 확장해야 할까요? 이 부분은 이렇다! 할 만한 정확한 정답을 찾기 힘듭니다. 제어문이 너무 적으면 단순한 제어문을 반복적으로 사용해야하기 때문에 오히려 가독성을 낮출 수 있습니다. (ex. switch 문의 부재 - if 문의 과도한 사용)&lt;/p&gt;
+
+&lt;p&gt;순서도에서 선택문과 반복문은 슬라이드의 그림과 같이 표현합니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/PL/008/04.jpg&quot; alt=&quot;&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;ALGOL 60 언어에서는 단일 문장으로 추상화할 수 있는 문장의 모음을 복합문으로, 복합문에 변수 선언이 포함된 것을 블록이라고 정의합니다. Pascal 언어는 ALGOL 60의 설계를 따라 복합문을 정의하지만, 블록을 허용하지는 않습니다. C 언어는 중괄호를 사용하여 복합문과 블록을 모두 무제한으로 허용하고 있습니다.&lt;/p&gt;
+
+&lt;p&gt;복합문의 설계에는 단 한 가지 고려 사항이 있습니다. 바로 제어문이 여러 개의 진입점을 가질 수 있는가에 대해서입니다. 대부분의 컴퓨터과학자는 제어문이 여러 개의 진입점을 갖는 것은 복잡하므로 가독성이 떨어지는데 비해, 유연성이 그다지 늘어나지 않는다고 생각하고 있습니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/PL/008/05.jpg&quot; alt=&quot;&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;span style=&quot;color:red&quot;&gt;선택문(Selection Statement)&lt;/span&gt;은 프로그램에서 두 개 이상의 실행 경로 가운데 하나를 선택할 수 있는 문장입니다. 선택문을 일반적으로 2방향 선택문과 다방향 선택문으로 나뉩니다.&lt;/p&gt;
+
+&lt;p&gt;먼저 2방향 선택문부터 다뤄보도록 하겠습니다. 대부분 언어에서 2방향 선택문의 구조는 매우 유사하지만, 다음과 같은 설계 고려 사항에 따른 미묘한 차이가 존재합니다.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;선택을 제어하는 식의 타입은 무엇인가? (대부분의 언어에서는 불리안 식, C 언어에서는 산술 표현식)&lt;/li&gt;
+  &lt;li&gt;단일 명령문만 선택할 수 있습니까, 아니면 명령문의 그룹도 선택할 수 있습니까?&lt;/li&gt;
+  &lt;li&gt;다른 선택자의 ‘then’ 문에 중첩된 선택자의 의미를 어떻게 지정해야 합니까?&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/PL/008/06.jpg&quot; alt=&quot;&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;모든 명령형 언어에는 &lt;strong&gt;단방향 선택기(Single-Way Selector)&lt;/strong&gt;가 포함되어 있는데, 대부분 양방향 선택기의 하위 형태로 구현되어 있습니다. 그러나 BASIC과 Fortran은 예외이므로, 이 부분을 잠시 짚고 넘어가겠습니다.&lt;/p&gt;
+
+&lt;p&gt;Fortran 언어에서 If(불리안 식) 문에서는 단일 선택만 가능하고, 중첩이 허용되지 않습니다. 이것은 GOTO 문의 사용을 촉진합니다. 매우 단순하지만, 유연성이 부족하다는 단점이 있습니다.&lt;/p&gt;
+
+&lt;p&gt;복합문은 문장의 그룹을 조건부로 실행하기 위한 간단한 방법입니다, ALGOL 60 언어에서는 begin과 end를 통해 복합문의 그룹을 명세합니다.&lt;/p&gt;
+
+&lt;p&gt;Fortran 77, 90을 포함하여 ALGOL 60의 영향을 받은 대부분의 언어는 복합문을 선택할 수 있는 단방향 선택기를 제공하고 있습니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/PL/008/07.jpg&quot; alt=&quot;&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;양방향 선택기(Two-Way Selector)&lt;/strong&gt;는 두 가지 제어 경로 중 하나를 선택하는 것을 허용하는 제어문입니다. ALGOL 60에서는 if-then-else를 이용하여 이것을 구현했습니다.&lt;/p&gt;
+
+&lt;p&gt;또한 선택자를 중첩할 수도 있습니다. 그러니 중첩 선택자들 간에 모호함이 발생한다는 문제가 있습니다. 예를 들어, 슬라이드에 있는 코드처럼 if - if - then - else 문을 사용했을 때, else가 어떤 if 문에 대해 수행되는지가 문제입니다. (들여쓰기를 보고 첫 번째 if 문과 매칭되야 할 것으로 착각하실 수 있는데, Python 같은 특수한 언어를 제외하고 들여쓰기는 언어에 아무런 영향을 미치지 않습니다)&lt;/p&gt;
+
+&lt;p&gt;대부분의 명령형 언어에서는 else 문이 가장 가까이 있고 짝이 없는 then 절과 짝을 이루도록 지정합니다.&lt;/p&gt;
+
+&lt;p&gt;ALGOL 60 언어에서 if 문은 else 문이 then에 직접 연결될 수 없고, 반드시 복합문에 넣어야 합니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/PL/008/08.jpg&quot; alt=&quot;&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;if 문의 마지막 절이 then이든 else이든 복합문이 아닌 경우, 전체 선택 구조의 끝을 표시하는 구문 요소가 없습니다. 만약 선택 구조의 끝을 나타내는 특수어를 사용한다면 중첩 선택문의 모호함을 해결하고, 가독성을 향상시킬 수 있습니다. Modula-2 언어에서는 END, Fortran 77에서는 END IF를 사용하여 if 문의 끝을 나타냅니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/PL/008/09.jpg&quot; alt=&quot;&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;다중 선택기(Multiple Selector)&lt;/strong&gt;는 여러 개의 문장이나 문장 그룹 중 하나를 선택하는 제어문입니다. 선택기의 일반화 개념으로 이해하시면 됩니다. 다중 선택기의 설계 고려 사항은 다음과 같습니다.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;선택을 제어하는 문장의 형식과 타입은 무엇인가?&lt;/li&gt;
+  &lt;li&gt;단일 명령문만 선택할 수 있습니까, 아니면 명령문의 그룹도 선택할 수 있습니까?&lt;/li&gt;
+  &lt;li&gt;전체 구성이 구문 구조로 캡슐화되어야 합니까?&lt;/li&gt;
+  &lt;li&gt;선택 가능한 단일 명령문만 포함하도록 구조를 통한 실행 흐름을 제한해야 합니까? (ex. switch - break)&lt;/li&gt;
+  &lt;li&gt;만약 표현되지 않는 선택자 식의 값이 존재할 경우, 어떻게 처리할 것인가? (ex. 1, 2, 3 선택인데 조건식이 4가 나온 경우)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Fortran에서는 슬라이드의 코드와 같이 GOTO 문을 이용하여 다중 선택기를 사용했습니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/PL/008/10.jpg&quot; alt=&quot;&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;현대의 다중 선택기는 Case 문을 이용하고 있습니다. ALGOL-W 에서 다중 선택기의 구조는 캡슐화되어 있으며, 선택 가능한 단일 세그먼트를 제공합니다. 실행하는 문장은 조건식에 값에 의해 선택된 문장들입니다.&lt;/p&gt;
+
+&lt;p&gt;Pascal 언어에서 선택 가능한 세그먼트에는 라벨이 지정되어 있습니다. 조건식은 정수, 불리안, 문자와 같은 순서 타입(Ordinal Type)으로 구성되어 있습니다. 조건식이 수행되고 나서 값이 세그먼트의 상수와 비교됩니다. 상수 목록은 조건식과 동일한 타입이어야 하며, 목록들 간에 상호 베타적이지만 완전할 필요는 없습니다. (ex. 1, 2, 3 과 같이 겹치는 부분이 없어야 하며 상수 목록이 정수 전체를 포함할 필요는 없음)&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/PL/008/11.jpg&quot; alt=&quot;&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;C 언어에서 제어식과 상수식은 모두 정수 타입입니다. 또한 세그먼트 별로 암묵적인 분기를 지원하지 않습니다. (즉, 명시적으로 세그먼트 별로 break를 나타내야 정확하게 분기됩니다)&lt;/p&gt;
+
+&lt;p&gt;만약 순서 타입이 아닌 불리안 식을 기반으로 선택을 하는 경우에는 중첩된 양방향 선택기를 사용하여 다중 선택기처럼 만들 수 있습니다. 예를 들어, Ada 언어나 Fortran 90 에서 불리안 식과 else if를 사용한 코드가 슬라이드에 나와 있습니다. (Python도 이와 비슷하게 구현됩니다)&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/PL/008/12.jpg&quot; alt=&quot;&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;span style=&quot;color:red&quot;&gt;반복문(Iterative Statement)&lt;/span&gt;은 명령어, 또는 명령어 모음이 여러 횟수만큼 실행되도록 하는 문장입니다. 반복문을 흔히 루프(Loop)라고도 부릅니다. 반복문은 반복적 구조보다는 재귀 같은 것을 통해 함수형 언어로 수행되는 경우가 많습니다. 처음 개발된 반복문은 배열에 포함된 데이터를 처리하기 위해 개발되었기 때문에, 배열과 직접적인 관련이 있습니다.&lt;/p&gt;
+
+&lt;p&gt;반복문의 설계 고려 사항은 다음과 같습니다.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;반복이 어떻게 제어되는가? (논리, 계수, 또는 그 두 가지의 혼합형)&lt;/li&gt;
+  &lt;li&gt;제어 메커니즘이 루프 어느 부분에 위치해야 하는가? (앞부분, 뒷부분, 또는 사용자 마음대로)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/PL/008/13.jpg&quot; alt=&quot;&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;먼저 계수로 제어하는 반복문에 대해 알아보겠습니다. 이러한 반복문은 초기 값(Initial), 종료 값(Terminal), 단계 크기(Stepsize)로 구성되어 있습니다. (이것들을 루프 매개변수라고 부릅니다) 계수로 제어하는 반복문은 종종 기계 명령어에 의해 지원됩니다. 이 때 설계 고려 사항은 다음과 같습니다.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;루프 변수의 유형과 범위는 무엇인가? (정수, 문자, 열거형, 부동 소수점 등)&lt;/li&gt;
+  &lt;li&gt;루프 종료 시 루프 변수에는 어떤 값이 들어가는가?&lt;/li&gt;
+  &lt;li&gt;루프 변수, 또는 루프 매개변수가 루프 내에서 변경되는 것이 허용되는가? 그렇다면 그 변경 사항이 루프 제어에 영향을 주는가?&lt;/li&gt;
+  &lt;li&gt;반복의 완료 검사는 루프의 맨 위에서 이루어지는가, 맨 아래에서 이루어지는가?&lt;/li&gt;
+  &lt;li&gt;루프 매개변수는 한 번만 평가되는가? 아니면 각 반복에 대해 매번 평가되는가?&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/PL/008/14.jpg&quot; alt=&quot;&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Fortran IV 언어에서 반복문은 DO를 이용하여 사용합니다. 루프 변수에 대한 검사는 반복문의 수행 후 발생하며(Post-test), 초기 값, 종료 값, 단계 크기 변수는 부호 없는 정수, 또는 양수 값을 갖는 단순 정수 변수로 제한됩니다.&lt;/p&gt;
+
+&lt;p&gt;만약 루프가 정상적으로 종료한다면 루프 변수의 값은 정의되지 않으며, 만약 비정상으로 종료된다면 가장 최근에 할당된 값이 저장됩니다.&lt;/p&gt;
+
+&lt;p&gt;루프 변수와 루프 매개변수는 루프 내부에서 변경할 수 없기 때문에 루프 매개변수를 두 번 이상 평가할 필요가 없습니다. (즉, 반복문이 실행되기 전에 몇 번 반복을 해야하는지 예측할 수 있음)&lt;/p&gt;
+
+&lt;p&gt;또한 Fortran IV 에서 루프 내부는 단일 명령어만 사용이 가능하기 때문에, 명령어 집합을 반복하고 싶다면 GOTO 문을 활용해야 합니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/PL/008/15.jpg&quot; alt=&quot;&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Fortran 77과 90에서 DO 문은 많이 변경되었습니다.&lt;/p&gt;
+
+&lt;p&gt;먼저 루프 변수에 대한 검사는 반복문의 수행 전 발생하며(Pretest), 루프 변수는 정수, 실수, 그리고 확장 실수 타입에 대해서도 가능합니다. 루프 매개변수는 표현식으로 나타내는 것이 허용되며, 양수 값과 음수 값을 모두 가질 수 있습니다.&lt;/p&gt;
+
+&lt;p&gt;루프는 루프 매개변수가 아니라 반복 횟수에 따라 제어됩니다. 따라서 루프 내에서 루프 매개변수가 변경되더라도, 이것은 루프 제어에 영향을 미치지 않습니다. 즉, 반복 횟수는 사용자가 접근할 수 없는 내부 변수입니다.&lt;/p&gt;
+
+&lt;p&gt;DO 반복문에 진입하는 것은 DO 문을 사용해서만 입력할 수 있습니다. (단일 진입 구조)&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/PL/008/16.jpg&quot; alt=&quot;&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;ALGOL 60에서 반복문은 계수기와 불리안 식으로 루프를 제어할 수 있습니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/PL/008/17.jpg&quot; alt=&quot;&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;또한 for의 모든 표현식은 루프 문의 모든 반복이나 실행에 대해 평가됩니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/PL/008/18.jpg&quot; alt=&quot;&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Ada 언어에서 반복문은 비교적 간단한 계수기-제어 사전 검사 루프입니다. &lt;strong&gt;reverse&lt;/strong&gt;는 discrete_range의 범위를 역순으로 루프 변수에 할당한다는 의미이고, discrete_range는 1~10 이나 Monday~Friday와 같이 정수나 열거 타입의 부분 범위를 말합니다.&lt;/p&gt;
+
+&lt;p&gt;Ada 언어의 가장 큰 특징은 루프 변수의 범위입니다. 루프 변수는 루프 안에서만 묵시적으로 선언되고, 루프 종료 후에는 무시됩니다. 예를 들어, 슬라이드에 나와 있는 코드에서 COUNT는 실수형 변수로 1.35가 할당됩니다. 그런데 for 문의 루프 변수의 이름도 동일하게 COUNT입니다. 이 상황에서, 처음 선언한 COUNT 변수는 for 문에 영향을 받지 않습니다. 즉, for 문이 끝나도 COUNT 변수에는 여전히 실수값 1.35가 저장됩니다. 또한 루프 변수에는 루프 내부의 값을 할당할 수 없습니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/PL/008/19.jpg&quot; alt=&quot;&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;다음으로 가장 친근한 언어인 C 언어의 경우를 살펴보겠습니다. C 언어도 Ada 언어와 마찬가지로 사전 검사 계수 루프 구조입니다. C 언어의 for 문이 어떻게 구성되어 있는지는 다들 아실테니 생략하도록 하겠습니다. C 언어의 for 문은 두 번째 표현식의 값이 0이면 종료됩니다. 그리고 그 외에는 루프 내부의 명령어, 또는 명령어 집합이 실행됩니다.&lt;/p&gt;
+
+&lt;p&gt;또한 C 언어 for 문의 루프 매개변수들은 모두 선택적입니다. 예를 들어, 두 번째 식을 생략한다면 무한 루프로써 간주되고, 첫 번째와 세 번째 식이 생략되면 루프 변수를 고려하지 않습니다. 먄악 첫 번째 식만 생략되면 단순히 초기화가 일어나지 않는다는 것을 의미합니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/PL/008/20.jpg&quot; alt=&quot;&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;반복 제어가 불리안 식에 기반하는 반복문을 &lt;span style=&quot;color:red&quot;&gt;논리 제어 루프(Logically Controlled Loop)&lt;/span&gt;라고 합니다. 논리 제어 루프는 계수기 제어 루프보다 일반적입니다. 즉, 모든 계수기 제어 루프는 논리 제어 루프로 표현할 수 있지만, 그 반대는 불가능합니다. 논리 제어 루프에서의 설계 고려 사항은 다음과 같습니다.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;제어가 사전 검사(Pretest)인가 사후 검사(Post-test)인가?&lt;/li&gt;
+  &lt;li&gt;논리 제어 루프가 계수기 제어 루프의 특별한 형식인가, 아니면 전혀 다른 문법을 가지는가?&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;예를 들어, Pascal, Modula-2, C 기반 언어들은 사전 검사와 사후 검사 논리 제어 루프를 모두 가지고 있습니다. 예를 들어, C 언어의 while 문은 사전 검사 논리 제어 루프이고, do-while 문은 사후 검사 논리 제어 루프입니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/PL/008/21.jpg&quot; alt=&quot;&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;상황에 따라서는 프로그래머 루프 제어를 위한 검사를 루프의 처음이나 마지막이 아닌 곳을 선택해야할 수도 있습니다. 몇몇 언어는 이러한 기능을 제공하는데, 이것을 &lt;span style=&quot;color:red&quot;&gt;사용자 지정 루프 제어(User-located Loop Control)&lt;/span&gt;라고 합니다. 구현 자체는 간단하지만, 역시 이전 루프문과 마찬가지로 설계 고려 사항이 존재합니다.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;조건 매커니즘이 탈출에 필수적이어야 하는가?&lt;/li&gt;
+  &lt;li&gt;탈출할 때는 하나의 루프만 탈출해야 하는가, 아니면 포괄하는 루프를 모두 탈출해야 하는가?&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Ada 언어에서는 루프문에 레이블을 붙일 수 있습니다. 따라서 루프문 내에서 특정 레이블 루프를 지정하여 탈출하는 것이 가능합니다.&lt;/p&gt;
+
+&lt;p&gt;C 언어에서는 루프문에 레이블을 붙일 수 없기 때문에 무조건 가장 가까이 있는 루프문만을 지정할 수 있습니다. break를 통해 가장 가까이 있는 루프문을 탈출할 수 있으며, continue를 통해 루프문을 탈출하지 않고 현재 반복에서 나머지 명령어를 생략하는 방식이 가능합니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/PL/008/22.jpg&quot; alt=&quot;&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;자료구조에 기반한 반복문도 있습니다. 이 때 루프는 계수기나 불리안 식이 아니라 자료구조의 원소 수에 의해 제어됩니다.&lt;/p&gt;
+
+&lt;p&gt;Java 언어에서는 배열의 값이나 Iteratable 인터페이스를 통해 구현된 객체를 통해 for 문을 제어할 수 있습니다. 예를 들어, 문자열을 포함하는 myList라는 이름의 ArrayList 컬렉션이 있는 경우, 조건문에 이를 나타내면 각 원소를 myElement로 설정하며 반복문을 수행합니다.&lt;/p&gt;
+
+&lt;p&gt;C# 언어도 마찬가지로 문자열 자료형인 String을 이용하여 foreach 문을 제어하는 것이 가능합니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/PL/008/23.jpg&quot; alt=&quot;&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;span style=&quot;color:red&quot;&gt;무조건 분기문(Unconditional Branch)&lt;/span&gt;는 실행 제어를 프로그램의 지정된 위치로 이동시킵니다.&lt;/p&gt;
+
+&lt;p&gt;무조건 분기문의 대표적인 명령어는 바로 GOTO 문으로, 프로그램의 실행 흐름을 제어하는 가장 강력한 명령문이지만 이 힘으로 인해 사용을 위험하게 만듭니다. (큰 힘에는 큰 책임이 따른다…)&lt;/p&gt;
+
+&lt;p&gt;명령어의 실행 순서가 작성된 순서와 거의 동일할 때 가독성이 가장 좋습니다. (일반적으로 위해서 아래) 따라서 이러한 무조건 분기문은 가독성을 매우 낮출 수 있습니다. 그러한 문제점으로 인해 Modula-2, Bliss, CLU 등과 같은 언어는 GOTO 문이 없이 설계되었습니다. (+ Java, Python, Ruby) 여담으로 GOTO 문의 위험성을 알린 사람이 바로 다익스트라 알고리즘으로 유명한 &lt;strong&gt;에드가 다익스트라(Edger Dijkstra)&lt;/strong&gt;입니다.&lt;/p&gt;
+
+&lt;p&gt;그러나 현재 가장 많이 사용되는 언어들에는 GOTO 문이 포함되어 있습니다. (대표적으로 C 언어)&lt;/p&gt;
+
+&lt;p&gt;반복문에서 다루었던 루프 탈출 명령어는 사실 일종의 GOTO 문입니다. 그러나 이들은 상당히 역할이 제한된 GOTO 문이므로 가독성에 악영향을 미치지 않고, 오히려 가독성을 향상시키기도 합니다. 왜냐하면 이것들을 사용하지 않는다면 이해하기가 더 어렵거나 부자연스러운 코드가 나타날 수 있기 때문입니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/PL/008/24.jpg&quot; alt=&quot;&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;무조건 분기문을 사용하기 위해서는 어느 위치로 이동할지 표시할 수 있어야 합니다. 이 때 많은 언어들이 코드 앞에 레이블을 붙이는 것으로 해결합니다. ALGOL 60 언어나 C 언어는 식별자를 이용하여 레이블을 붙이고, Fortran 언어나 Pascal은 음이 아닌 상수 정수를 이용하여 나타냅니다. PL/I은 특이하게 변수를 이용한 레이블을 허용합니다.&lt;/p&gt;
+
+&lt;p&gt;이러한 레이블을 허용하는 대부분의 언어에서는 레이블의 사용을 어느 정도 제한하고 있습니다. 만약 Pascal 언어에서 레이블은 변수처럼 정의되지만, 그것을 매개변수로 전달하거나, 저장하거나, 수정할 수 없습니다. 또한 Pascal에서의 GOTO 문은 실행이 시작되었고 아직 종료되지 않은 경우를 제외하고, 제어 구조의 복합문의 명령어를 대상으로 지정할 수 없습니다.&lt;/p&gt;
+
+&lt;p&gt;예를 들어, 슬라이드의 왼쪽에서는 GOTO 100을 지정했지만, 레이블 100을 포함하고 있는 while 문은 이미 실행이 종료되었기 때문에 불가능합니다. 오른쪽과 같이 실행은 되었으나 종료되지 않은 경우에만 지정이 가능합니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/PL/008/25.jpg&quot; alt=&quot;&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;마지막으로 &lt;span style=&quot;color:red&quot;&gt;보호 명령(Guarded Command)&lt;/span&gt;에 대해 알아보겠습니다. 보호 명령은 동시성 프로그래밍(Concurrent Programming)을 위해 도입된 개념이며, 다익스트라가 선택문과 비슷한 구조로 만들었습니다. 보호 명령의 각 줄은 한 개의 불리안 식(보호)와 한 개의 명령어, 또는 명령어 묶음으로 구성됩니다.&lt;/p&gt;
+
+&lt;p&gt;형태는 다중 선택문과 유사하지만, 이 표현식에 도달한다면 모든 불리안 식이 평가됩니다. 둘 이상의 식이 참인 경우, 해당 명령어 중 하나가 비결정적으로(=무작위로) 선택됩니다. 만약 참이 하나도 없다면 프로그램을 종료시키는 실행 시간 오류가 발생합니다. 이것은 프로그래머가 모든 가능성을 고려하도록 강요합니다.&lt;/p&gt;
+
+&lt;p&gt;예를 들어, 슬라이드에 나와 있는 것처럼 Ada 언어로 보호 명령을 구현한 코드를 보겠습니다. 만약 i = 0이고 j = 1이라면, 첫 번째와 세 번째 명령어 중 무작위가 선택되어 수행됩니다. 만약 i = j이고 i가 0이 아니면, 어떤 조건도 참이 아니기 때문에 실행 시간 오류가 발생합니다.&lt;/p&gt;
+
+&lt;p&gt;보호 명령을 사용하면 프로그램을 좀 더 깔끔하게 작성할 수 있다는 장점이 있습니다. 예를 들어, 슬라이드 아래에 나와 있는 코드는 4개의 정수 q1, q2, q3, q4가 주어져 있을 때 이를 오름차순으로 정렬하는 코드입니다. 이것은 반복문이기 때문에 모든 불리안 식이 거짓이면 루프가 종료되는 방식입니다. 만약 이것을 보호 명령을 사용하지 않고 구현한다면 정렬 알고리즘을 사용해야 하는데, 이것은 상당히 많은 코드를 요구하는 문제가 있습니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/PL/008/26.jpg&quot; alt=&quot;&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;이 순서도는 보호 명령을 사용한 조건문과 반복문이 어떤 과정을 통해 수행되는지 나타내는 그림입니다. 조건문은 모든 불리안 식이 거짓이면 실행 시간 에러를 내고, 두 개 이상의 조건이 참이면 그 중 무작위로 선택하여 실행합니다. 반복문은 모든 불리안 식이 거짓이면 빠져나오고, 두 개 이상의 조건이 참이면 그 중 무작위로 선택하여 실행합니다. 물론 한 개의 조건만 참이면 그 명령어만 실행합니다.&lt;/p&gt;
+
+&lt;p&gt;8장의 내용은 여기까지입니다. 읽어주셔서 감사합니다!&lt;/p&gt;</content><author><name>Joonsu Ryu</name></author><category term="studies" /><category term="programming languages" /><summary type="html"></summary></entry><entry><title type="html">Expressions and the Assignment Statement</title><link href="http://localhost:4000/pl/expressions-and-the-assignment-statement/" rel="alternate" type="text/html" title="Expressions and the Assignment Statement" /><published>2023-09-07T00:00:00+09:00</published><updated>2023-09-07T00:00:00+09:00</updated><id>http://localhost:4000/pl/expressions-and-the-assignment-statement</id><content type="html" xml:base="http://localhost:4000/pl/expressions-and-the-assignment-statement/">&lt;p&gt;&lt;img src=&quot;/assets/images/PL/007/01.jpg&quot; alt=&quot;&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;7장의 주제는 식과 배정문입니다. 이번 장을 한 문장으로 요약하면 다음과 같습니다.&lt;/p&gt;
 
@@ -150,7 +375,11 @@
 
 &lt;p&gt;7장의 내용은 여기까지입니다. 읽어주셔서 감사합니다!&lt;/p&gt;</content><author><name>Joonsu Ryu</name></author><category term="studies" /><category term="programming languages" /><summary type="html"></summary></entry><entry><title type="html">Data Types</title><link href="http://localhost:4000/pl/data-types/" rel="alternate" type="text/html" title="Data Types" /><published>2023-09-01T00:00:00+09:00</published><updated>2023-09-01T00:00:00+09:00</updated><id>http://localhost:4000/pl/data-types</id><content type="html" xml:base="http://localhost:4000/pl/data-types/">&lt;p&gt;&lt;img src=&quot;/assets/images/PL/006/01.jpg&quot; alt=&quot;&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;6장에서는 데이터 타입의 개념과 각 데이터 타입의 특성을 소개합니다.&lt;/p&gt;
+&lt;p&gt;6장에서는 데이터 타입의 개념과 각 데이터 타입의 특성을 소개합니다. 이번 장을 한 문장으로 요약하면 다음과 같습니다.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;“컴퓨터 프로그램은 데이터를 조작하여 결과를 생성합니다. 이 작업을 쉽게 수행할 수 있는지 판단하는 중요한 요소는 데이터 타입이 실제 문제와 얼마나 유사한가입니다.”&lt;/p&gt;
+&lt;/blockquote&gt;
 
 &lt;p&gt;&lt;img src=&quot;/assets/images/PL/006/02.jpg&quot; alt=&quot;&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
 
@@ -550,7 +779,11 @@ sub1(n);
 
 &lt;p&gt;6장의 내용은 여기까지입니다. 읽어주셔서 감사합니다!&lt;/p&gt;</content><author><name>Joonsu Ryu</name></author><category term="studies" /><category term="programming languages" /><summary type="html"></summary></entry><entry><title type="html">Names, Bindings, Type Checking, and Scopes</title><link href="http://localhost:4000/pl/names-bindings-type-checking-and-scope/" rel="alternate" type="text/html" title="Names, Bindings, Type Checking, and Scopes" /><published>2023-08-28T00:00:00+09:00</published><updated>2023-08-28T00:00:00+09:00</updated><id>http://localhost:4000/pl/names-bindings-type-checking-and-scope</id><content type="html" xml:base="http://localhost:4000/pl/names-bindings-type-checking-and-scope/">&lt;p&gt;&lt;img src=&quot;/assets/images/PL/005/01.jpg&quot; alt=&quot;&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;처음 소개드린대로 3장과 4장은 컴파일러 과목과 중복된 내용이기 때문에 생략하고, 바로 5장으로 넘어갑니다. 5장은 변수와 관련된 개념들을 하나씩 소개합니다. 특히 제목대로 변수의 이름, 바인딩, 타입 검사, 유효 영역 등을 중점으로 짚도록 하겠습니다.&lt;/p&gt;
+&lt;p&gt;처음 소개드린대로 3장과 4장은 컴파일러 과목과 중복된 내용이기 때문에 생략하고, 바로 5장으로 넘어갑니다. 5장은 변수와 관련된 개념들을 하나씩 소개합니다. 특히 제목대로 변수의 이름, 바인딩, 타입 검사, 유효 영역 등을 중점으로 짚도록 하겠습니다. 이번 장을 한 문장으로 요약하면 다음과 같습니다.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;“변수는 속성이나 속성의 모음으로 특징지어질 수 있으며, 그 중 가장 중요한 것은 타입입니다. 프로그래밍 언어의 데이터 타입을 설계하려면 범위, 수명, 타입 검사 및 초기화 등 다양한 문제를 고려해야 합니다.”&lt;/p&gt;
+&lt;/blockquote&gt;
 
 &lt;p&gt;&lt;img src=&quot;/assets/images/PL/005/02.jpg&quot; alt=&quot;&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
 
@@ -1765,344 +1998,4 @@ sub1(n);
 
 &lt;p&gt;두 시간 정도 마시다가 숙소로 돌아와 쉬었습니다. 라멘을 먹으러갈까 하다가 배도 부르고 귀찮아서 그냥 씻고 잤네요.&lt;/p&gt;
 
-&lt;p&gt;8일차 일정은 여기까지입니다. 읽어주셔서 감사합니다!&lt;/p&gt;</content><author><name>Joonsu Ryu</name></author><category term="travel" /><category term="tokyo" /><summary type="html">도쿄에서의 여덟번째 날입니다. 이 날부터는 슬슬 피로가 쌓여 돌아다니기가 귀찮아지기 시작했습니다. 그래서 가고 싶은 곳을 최소로만 방문하고, 그 외에는 호텔에서 시원한 에어콘을 쐬며 쉬었습니다.</summary></entry><entry><title type="html">도쿄 여행기 (7)</title><link href="http://localhost:4000/travel/tokyo-7/" rel="alternate" type="text/html" title="도쿄 여행기 (7)" /><published>2023-08-11T00:00:00+09:00</published><updated>2023-08-11T00:00:00+09:00</updated><id>http://localhost:4000/travel/tokyo-7</id><content type="html" xml:base="http://localhost:4000/travel/tokyo-7/">&lt;p&gt;도쿄에서의 일곱째날 아침입니다. 새로 옮긴 호텔에서의 조식이 정말 맛있다고 소문이 자자한 상태였기 때문에 잔뜩 기대를 하고 식당으로 내려갔습니다.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/Travel/013/01.jpg&quot; alt=&quot;&quot; width=&quot;600&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;엘리베이터 안에서 찍은 풍경인데, 바다가 보여서 경치가 꽤 괜찮네요.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/Travel/013/02.jpg&quot; alt=&quot;&quot; width=&quot;600&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;식당으로 가니 듣던대로 굉장히 훌륭했습니다. 식당의 크기도 매우 컸는데, 다른 호텔에서 볼 수 없는 각종 회가 즐비하게 놓여있는 것이 굉장했습니다. 이 정도 퀄리티면 점심이나 저녁으로 먹어도 훌륭하다는 생각이 드네요. 세 끼를 전부 이걸로 먹어도 좋겠다는 생각이 들 정도였습니다.&lt;/p&gt;
-
-&lt;h2 id=&quot;죠치대학&quot;&gt;죠치대학&lt;/h2&gt;
-
-&lt;p&gt;오늘의 일정은 죠치대학을 기점으로 그 근처의 명소를 탐방하는 것이었습니다. 뜬금없이 죠치대학을 왜 방문하는지 궁금하신 분들도 있으실텐데, 죠치대학은 제 모교인 서강대학교와 같은 예수회 재단의 학교로써 교류가 많았기 때문입니다. 예전에는 연고전 같은 체육대회도 열었는데, 어느 순간부터 없어져버렸더라구요. 여튼, 말로만 듣던 죠치대학이 어떤 곳일까 궁금해서 한번 방문해보기로 했습니다.&lt;/p&gt;
-
-&lt;center&gt;&lt;iframe src=&quot;https://www.google.com/maps/embed?pb=!1m28!1m12!1m3!1d25931.65950401819!2d139.7424076976799!3d35.665736962008026!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m13!3e3!4m5!1s0x601889284cb62b09%3A0x373d48d832ff842!2z7J2867O4IFRva3lvLCBLb3RvIENpdHksIFRveW9zdSwgNi1jaMWNbWXiiJI04oiSNDAg652867mE7Iqk7YOAIOuPhOy_hOuyoOydtA!3m2!1d35.6466503!2d139.78400879999998!4m5!1s0x60188c629eb7437b%3A0xd59d9eba882319b6!2z7KGw7LmYIOuMgO2VmSA3LTEgS2lvaWNobywgQ2hpeW9kYSBDaXR5LCBUb2t5byAxMDItODU1NCDsnbzrs7g!3m2!1d35.6831167!2d139.7319235!5e0!3m2!1sko!2skr!4v1691736917041!5m2!1sko!2skr&quot; width=&quot;600&quot; height=&quot;450&quot; style=&quot;border:0;&quot; allowfullscreen=&quot;&quot; loading=&quot;lazy&quot; referrerpolicy=&quot;no-referrer-when-downgrade&quot;&gt;&lt;/iframe&gt;&lt;/center&gt;
-
-&lt;p&gt;죠치대학은 숙소인 시조마에 역에서 꽤 먼 곳에 있었습니다. 다만 도요스 역까지만 가면 그 곳에서 죠치대학 근처까지 한 번에 가는 노선이 있었기 때문에 그걸 이용하기로 했습니다. 그래도 거리가 꽤 멀어서 40분이 넘게 걸리더라구요.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/Travel/013/03.jpg&quot; alt=&quot;&quot; width=&quot;600&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;조치대학이 있는 고지마치 역입니다. 역 자체는 매우 아담하네요.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/Travel/013/04.jpg&quot; alt=&quot;&quot; width=&quot;600&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;구글 지도를 보며 따라가다보니 금방 죠치대학의 입구가 나왔습니다.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/Travel/013/05.jpg&quot; alt=&quot;&quot; width=&quot;600&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;입구가 조금 작은데, 이게 정문이 아니라 동문이기 때문에 그렇습니다. 그런데 입구 옆의 캠퍼스 지도를 보니 학교 자체도 매우 작아 보였습니다. 제가 다닌 서강대학교도 캠퍼스 크기가 작은 걸로 유명한데, 여기는 그보다도 훨씬 작아보입니다. 어느 정도냐면, 동문에서 육안으로 서문이 보일 정도입니다.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/Travel/013/06.jpg&quot; alt=&quot;&quot; width=&quot;600&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;캠퍼스 분위기가 딱히 축제 같지도 않은데 푸드트럭이 몇 개 보였습니다. 일본에서는 교내에 푸드트럭이 있는게 자연스러운 걸까요?&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/Travel/013/07.jpg&quot; alt=&quot;&quot; width=&quot;600&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/Travel/013/08.jpg&quot; alt=&quot;&quot; width=&quot;600&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;교내에 있던 프란시스코 하비에르의 동상입니다. 제가 이 분은 잘 모르지만, 저희 학교에 하비에르 관(X관)이라는 건물이 있었기 때문에 종종 들어본 이름이라 뭔가 반가운 느낌이 났습니다.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/Travel/013/09.jpg&quot; alt=&quot;&quot; width=&quot;600&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;교내 캠퍼스의 분위기는 나쁘지 않았지만, 건물이 대부분 오래되어 보였습니다.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/Travel/013/10.jpg&quot; alt=&quot;&quot; width=&quot;600&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;이건 캠퍼스 주차장 쪽에 있던 액화질소 보관함인데… 위험한 물질은 아니지만 그래도 화학물질인데 이렇게 길에 대놓고 보관하고 있는게 좀 놀라웠습니다. 보통 이건 연구실에서 따로 보관하지 않나요?&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/Travel/013/11.jpg&quot; alt=&quot;&quot; width=&quot;600&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;기숙사로 보이는 건물 앞에는 이렇게 재학생들이 쉴 수 있는 공간이 만들어져 있었습니다. 외국인들이 이런 쉼터를 좋아하는지, 일본 학생보다는 외국인 학생들이 많이 보이더라구요. 일본 학생들은 주로 도서관이나 카페에서 공부를 하고 있었습니다.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/Travel/013/12.jpg&quot; alt=&quot;&quot; width=&quot;600&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;날씨가 덥다보니 저도 좀 쉬었다 가려고 자판기에서 음료수를 한잔 뽑았습니다.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/Travel/013/13.jpg&quot; alt=&quot;&quot; width=&quot;600&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;벤치에 앉아서 쉬다보니 웬 도마뱀이 하나 지나가더라구요. 뭔지는 모르겠지만 신기해서 찍어봤습니다.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/Travel/013/14.jpg&quot; alt=&quot;&quot; width=&quot;600&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;조금 쉬다가 다른 곳으로 이동하기 위해 정문으로 나가기로 했습니다. 학교 정문 방향을 보면서 한 컷 찍어봤습니다.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/Travel/013/15.jpg&quot; alt=&quot;&quot; width=&quot;600&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;건물이 옹기종기 밀집해 있는걸 보니 저희 학교가 떠오르네요. 그런데 이렇게 작은 학교에 재학생이 저희 학교보다 5천명이나 많다니 놀라울 따름입니다.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/Travel/013/16.jpg&quot; alt=&quot;&quot; width=&quot;600&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;정문 근처로 가니 졸업식 관련 홍보문이 보였습니다. 제가 보기엔 졸업식에 입을 전통 의상을 대여한다는 광고로 보입니다. 한국에서는 보통 졸업식 때 검은색 졸업 가운을 입는데, 일본에서는 이렇게 전통 의상을 입고 하나보네요.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/Travel/013/17.jpg&quot; alt=&quot;&quot; width=&quot;600&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;여담으로 일본에서는 이 학교가 죠치대학이지만, 영문 표기로는 소피아 대학교입니다. 대체 어쩌다가 죠치대학이라고 이름이 붙었나 찾아보니, 천주교에서 사용하는 Sapientiae라는 단어를 한자로 上智라고 번역했기 때문이 이렇게 이름이 붙었다고 합니다.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/Travel/013/18.jpg&quot; alt=&quot;&quot; width=&quot;600&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;제가 다니고 있는 서강대학교는 천주교 재단 학교라 건물 이름이 전부 천주교 성인의 이름을 따서 지어졌는데, 여긴 천주교 학교라도 그런게 딱히 없는 것 같네요. 이 건물은 그냥 7호관이라는 평범한 이름이 붙었습니다.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/Travel/013/19.jpg&quot; alt=&quot;&quot; width=&quot;600&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;정문은 다른 문에 비해 상당히 큰 모습이었습니다. 정문 옆에는 이렇게 SOPHIA UNIVERSITY라고 새겨져 있네요.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/Travel/013/20.jpg&quot; alt=&quot;&quot; width=&quot;600&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;정문 바깥에서 정문을 바라보며 한 컷 찍어봤습니다.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/Travel/013/21.jpg&quot; alt=&quot;&quot; width=&quot;600&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;정문 바깥에서 보이는 건물에는 한자로 죠치대학이라고 적혀있었습니다. 학교 이름이 걸린 것으로 보아 학교를 상징하는 건물인 것 같습니다.&lt;/p&gt;
-
-&lt;h2 id=&quot;스가-신사&quot;&gt;스가 신사&lt;/h2&gt;
-
-&lt;center&gt;&lt;iframe src=&quot;https://www.google.com/maps/embed?pb=!1m28!1m12!1m3!1d3240.6665227004864!2d139.724625976423!3d35.68521237975418!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m13!3e2!4m5!1s0x60188c629eb7437b%3A0xd59d9eba882319b6!2z7KGw7LmYIOuMgO2VmSA3LTEgS2lvaWNobywgQ2hpeW9kYSBDaXR5LCBUb2t5byAxMDItODU1NCDsnbzrs7g!3m2!1d35.6831167!2d139.7319235!4m5!1s0x6018ece406d552f1%3A0x440be600a9c6807c!2z7J2867O4IOuPhOy_hOuPhCDsi6Dso7zsv6Dqtawg7Iqk6rCA7LSIIO-8lSDsiqTqsIAg7Iug7IKs!3m2!1d35.6852851!2d139.7224783!5e0!3m2!1sko!2skr!4v1691740916296!5m2!1sko!2skr&quot; width=&quot;600&quot; height=&quot;450&quot; style=&quot;border:0;&quot; allowfullscreen=&quot;&quot; loading=&quot;lazy&quot; referrerpolicy=&quot;no-referrer-when-downgrade&quot;&gt;&lt;/iframe&gt;&lt;/center&gt;
-
-&lt;p&gt;다음은 너의 이름은 계단으로 유명한 스가 신사를 보러 가기로 했습니다. 죠치대학에서 멀지 않은 곳에 있었기 때문에 도보로 이동했습니다.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/Travel/013/22.jpg&quot; alt=&quot;&quot; width=&quot;600&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;주변 경치를 구경하며 가다보니 저 멀리 스가 신사 계단이 보입니다.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/Travel/013/23.jpg&quot; alt=&quot;&quot; width=&quot;600&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;이곳이 바로 너의 이름은 마지막에 나오는 계단입니다. 워낙 유명한 장소라 그런지, 오전 시간에도 관광객이 꽤 있었습니다. 영화가 개봉한지 오래 지났는데도 여전히 인기가 많네요.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/Travel/013/24.jpg&quot; alt=&quot;&quot; width=&quot;600&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;계단 위로 올라가보니 신사 입구가 보였습니다. 크기는 사진상으로 보이는 건물이 전부일 정도로 그다지 크지 않았습니다.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/Travel/013/25.jpg&quot; alt=&quot;&quot; width=&quot;600&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;너의 이름은 계단 말고도 스가 신사로 통하는 계단이 또 있더라구요. 영화에서는 미츠하가 내려가고 타키가 올라가는 모습으로 나왔었는데, 아마 미츠하가 이 곳으로 올라왔다가 그쪽으로 내려간게 아닐까 하는 생각이 듭니다.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/Travel/013/26.jpg&quot; alt=&quot;&quot; width=&quot;600&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;신사하면 또 오미쿠지가 빠질 수 없지요. 저는 또 사기에는 아까워서 이번에는 그냥 넘겼습니다.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/Travel/013/27.jpg&quot; alt=&quot;&quot; width=&quot;600&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;본당 내부의 모습인데, 겉모습과는 다르게 꽤 화려합니다. 관리가 잘 되어 있다는 느낌을 받았어요.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/Travel/013/28.jpg&quot; alt=&quot;&quot; width=&quot;600&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;본당 옆에는 나무조각이 걸려있었는데, 이 나무조각은 에마(絵馬)라고 불리며 이루고싶은 소원을 적어 놓는 것이라고 합니다.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/Travel/013/29.jpg&quot; alt=&quot;&quot; width=&quot;600&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;에마를 구경하다가 뜬금없이 블리치를 봤습니다. 나중에 알아보니 최근 방영하고 있는 천년혈전 애니메이션 감독인 타구치 토모히사가 남긴 에마였습니다. 저는 블리치를 굉장히 좋아하는데, 천년혈전 편 애니가 감독의 소망대로 잘 나왔으면 좋겠네요.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/Travel/013/30.jpg&quot; alt=&quot;&quot; width=&quot;600&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;스가 신사는 천천히 둘러봐도 20분 정도면 충분했습니다. 조금 쉬다가, 다음 장소로 이동했습니다.&lt;/p&gt;
-
-&lt;h2 id=&quot;한국-문화원&quot;&gt;한국 문화원&lt;/h2&gt;
-
-&lt;iframe src=&quot;https://www.google.com/maps/embed?pb=!1m28!1m12!1m3!1d1620.3163530312747!2d139.7187345889422!3d35.686044871706606!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m13!3e2!4m5!1s0x6018ece406d552f1%3A0x440be600a9c6807c!2z7J2867O4IOuPhOy_hOuPhCDsi6Dso7zsv6Dqtawg7Iqk6rCA7LSIIO-8lSDsiqTqsIAg7Iug7IKs!3m2!1d35.6852851!2d139.7224783!4m5!1s0x60188cec7cdd1a75%3A0xe6721409bb32d460!2z7J2867O4IOuPhOy_hOuPhCDsi6Dso7zsv6Dqtawg7JqU7JOw7JW8IDQg7KGw66mU4oiSNOKIkjEwIOyjvOydvOuMgO2VnOuvvOq1reuMgOyCrOq0gCDtlZzqta3rrLjtmZTsm5A!3m2!1d35.687252!2d139.71722699999998!5e0!3m2!1sko!2skr!4v1691744271215!5m2!1sko!2skr&quot; width=&quot;600&quot; height=&quot;450&quot; style=&quot;border:0;&quot; allowfullscreen=&quot;&quot; loading=&quot;lazy&quot; referrerpolicy=&quot;no-referrer-when-downgrade&quot;&gt;&lt;/iframe&gt;
-
-&lt;p&gt;다음 목적지는 한국 문화원입니다. 주일한국 대사관에서는 일본에서 한국 문화를 알리기 위해 한국 문화원을 운영한다고 하는데, 과연 어떻게 운영되고 있는지 궁금해서 한번 방문해봤습니다. 한국 문화원은 스가 신사에서 도보로 갈 수 있을 만큼 가까운 거리에 위치해 있습니다.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/Travel/013/31.jpg&quot; alt=&quot;&quot; width=&quot;600&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;한국 문화원의 입구입니다. 저는 아기자기한 건물로 생각하고 있었는데, 생각보다 큰 건물이어서 놀랐습니다.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/Travel/013/32.jpg&quot; alt=&quot;&quot; width=&quot;600&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;입구 옆에는 한국 정부의 상징과 함께 한국어로 한국 문화원이라는 글이 적혀있습니다.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/Travel/013/33.jpg&quot; alt=&quot;&quot; width=&quot;600&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;옆에는 한국 문화를 소개하는 영상이 흘러나오는 TV가 진열되어 있었습니다.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/Travel/013/34.jpg&quot; alt=&quot;&quot; width=&quot;600&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;한국 문화원은 8층까지 있었습니다. 각 층이 전부 방문해보고 싶었긴 했는데, 6 ~ 8층은 당시 입장이 불가능했고, 5층과 2층도 행사가 없는 날에는 운영되지 않았습니다.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/Travel/013/35.jpg&quot; alt=&quot;&quot; width=&quot;600&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/Travel/013/36.jpg&quot; alt=&quot;&quot; width=&quot;600&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;1층에 있는 갤러리에는 한국의 문화제 복제품들과 미술 작품들이 전시되어 있었습니다.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/Travel/013/37.jpg&quot; alt=&quot;&quot; width=&quot;600&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;4층에 사랑방에는 조선 시대 느낌의 방이 있었습니다. 나름 잘 묘사해둔 것 같네요.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/Travel/013/38.jpg&quot; alt=&quot;&quot; width=&quot;600&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/Travel/013/39.jpg&quot; alt=&quot;&quot; width=&quot;600&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;사랑방 옆에는 바깥으로 나갈 수 있는 문이 있었는데, 밖으로 나가니 한국식 정원이 나와있었습니다. 생각보다 잘 꾸며놨더라구요. 여기서 장독대를 볼 줄은 몰랐습니다.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/Travel/013/40.jpg&quot; alt=&quot;&quot; width=&quot;600&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;3층의 도서관에서는 한국 도서들이 다수 있었습니다. 옛날 도서 뿐만 아니라 최근에 발매된 도서들도 다수 소장되어 있었고, 한국어 교재들도 있었습니다. 다른 곳에서는 사람들을 못봤는데, 여긴 이용하고 있는 사람들이 꽤 보였습니다.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/Travel/013/41.jpg&quot; alt=&quot;&quot; width=&quot;600&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;도서관에 온 김에 휴식할 겸 보이는 책 중 하나를 잠깐 읽었습니다. 신오쿠보역에서 취객을 구하다 사망하신 이수현 씨에 대한 이야기였는데, 다 읽지는 못했지만 그 분의 행적을 구체적으로 알 수 있어서 흥미롭게 읽었습니다. 한국에 돌아가게 되면 책을 구해서 끝까지 읽어봐야겠습니다.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/Travel/013/42.jpg&quot; alt=&quot;&quot; width=&quot;600&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;한국 문화원에는 (당연하겠지만) 한국인 직원들이 근무하고 있었습니다. 직원들끼리 얘기할 때는 한국어를 사용했는데 제가 엘리베이터에 같이 타니 일본인인줄 알고 일본어로 말을 걸더라구요.&lt;/p&gt;
-
-&lt;h2 id=&quot;cafe-la-boheme&quot;&gt;Cafe La Boheme&lt;/h2&gt;
-
-&lt;center&gt;&lt;iframe src=&quot;https://www.google.com/maps/embed?pb=!1m28!1m12!1m3!1d1620.2930886886522!2d139.71347393860893!3d35.687190279041516!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m13!3e2!4m5!1s0x60188cec7cdd1a75%3A0xe6721409bb32d460!2z7J2867O4IOuPhOy_hOuPhCDsi6Dso7zsv6Dqtawg7JqU7JOw7JW8IDQg7KGw66mU4oiSNOKIkjEwIOyjvOydvOuMgO2VnOuvvOq1reuMgOyCrOq0gCDtlZzqta3rrLjtmZTsm5A!3m2!1d35.687252!2d139.71722699999998!4m5!1s0x60188cea1ff82e8f%3A0xc4f768329b5ee283!2sCafe%20La%20Boheme!3m2!1d35.6875891!2d139.7128716!5e0!3m2!1sko!2skr!4v1691746301023!5m2!1sko!2skr&quot; width=&quot;600&quot; height=&quot;450&quot; style=&quot;border:0;&quot; allowfullscreen=&quot;&quot; loading=&quot;lazy&quot; referrerpolicy=&quot;no-referrer-when-downgrade&quot;&gt;&lt;/iframe&gt;&lt;/center&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/Travel/013/43.jpg&quot; alt=&quot;&quot; width=&quot;600&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;한국 문화원까지 둘러보고 나니 점심시간이 다되서 점심을 먹으러 갔습니다. 이번에 방문한 곳은 “너의 이름은”의 주인공인 타키가 일하고 있던 레스토랑인 Cafe La Boheme입니다. 한국 문화원에서 가까운 위치에 있었기 때문에 걸어갔습니다.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/Travel/013/44.jpg&quot; alt=&quot;&quot; width=&quot;600&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;대기가 조금 있었지만, 금방금방 자리가 빠졌기 때문에 곧 안내를 받았습니다. 저같은 외국인 관광객이 많이 오는지, 직원들의 영어가 아주 능숙하더라구요. 점심용 메뉴판이 따로 있었는데, 저는 Monthly Special 파스타를 포함한 B세트로 주문했습니다.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/Travel/013/45.jpg&quot; alt=&quot;&quot; width=&quot;600&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;먼저 에피타이저로 스프와 빵, 샐러드가 나왔습니다. 평소에 샐러드를 즐겨먹는 편은 아닌데, 레스토랑 분위기 때문인지 맛있게 느껴지더라구요.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/Travel/013/46.jpg&quot; alt=&quot;&quot; width=&quot;600&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;Monthly Special 파스타는 솔직히 좀 실망했습니다. 멸치와 고추가 들어있는 파스타였는데, 맵기만 하고 영… 그냥 차라리 무난한 까르보나라 같은걸 주문할걸 그랬어요.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/Travel/013/47.jpg&quot; alt=&quot;&quot; width=&quot;600&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;가격은 1300엔으로 그렇게 비싸지 않습니다. “너의 이름은”을 재밌게 본 분이면 한 번 쯤 방문해보시는 것도 괜찮을 것 같아요.&lt;/p&gt;
-
-&lt;h2 id=&quot;신주쿠-교엔&quot;&gt;신주쿠 교엔&lt;/h2&gt;
-
-&lt;center&gt;&lt;iframe src=&quot;https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3240.6678124029454!2d139.7074767764229!3d35.685180629755976!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188cc21b93233f%3A0x6a1eb1b5a117f287!2z7Iug7KO87L-gIOq1kOyXlA!5e0!3m2!1sko!2skr!4v1691746742872!5m2!1sko!2skr&quot; width=&quot;600&quot; height=&quot;450&quot; style=&quot;border:0;&quot; allowfullscreen=&quot;&quot; loading=&quot;lazy&quot; referrerpolicy=&quot;no-referrer-when-downgrade&quot;&gt;&lt;/iframe&gt;&lt;/center&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/Travel/013/48.jpg&quot; alt=&quot;&quot; width=&quot;600&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;다음으로 방문한 곳은 신주쿠 교엔입니다. 신주쿠 교엔은 점심식사를 했던 Cafe La Boheme 바로 앞에 있습니다. 도쿄에서 가장 유명한 공원이고, “언어의 정원”의 성지이기 때문에 겸사겸사 들렀습니다.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/Travel/013/49.jpg&quot; alt=&quot;&quot; width=&quot;600&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;신주쿠 교엔은 꽤 이른시간인 오후 5시 ~ 6시에 문을 닫기 때문에 방문하시려면 일찍 가시는 것이 좋습니다. 심지어 10월부터 3월 14일까지는 오후 4시에 닫네요. 입장료도 있는데, 성인 500엔, 학생 250엔입니다.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/Travel/013/50.jpg&quot; alt=&quot;&quot; width=&quot;600&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;제가 입장한 곳은 오키도 문이었습니다. 정문이 아니어서 그런지 입구가 조금 작네요.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/Travel/013/51.jpg&quot; alt=&quot;&quot; width=&quot;600&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;멀리 고층 빌딩이 보이는데 무슨 건물인지는 모르겠습니다.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/Travel/013/52.jpg&quot; alt=&quot;&quot; width=&quot;600&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/Travel/013/53.jpg&quot; alt=&quot;&quot; width=&quot;600&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;신주쿠 교엔의 풍경은 정말 기대 이상이었습니다. 일본에서 입장료를 내고 들어갔던 곳들은 솔직히 돈이 좀 아까운 면이 없잖아 있었는데, 여긴 입장료 내고도 들어올만하다 라는 느낌이 들었습니다. 솔직히 켄조지 같은 곳에 500엔 내고 들어가느니 그 돈으로 신주쿠 교엔에 오는게 훨씬 낫겠다고 생각합니다.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/Travel/013/54.jpg&quot; alt=&quot;&quot; width=&quot;600&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;처음에 이 정자가 언어의 정원에 나오는 정자인줄 알았는데, 알고보니 아니더라구요. 그래도 여기 앉아서 호수를 바라보면 경치가 괜찮았습니다.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/Travel/013/55.jpg&quot; alt=&quot;&quot; width=&quot;600&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;호수 한가운데 조그마한 섬 같은게 있고, 거기에 소나무가 자란 모습이 낭만있습니다.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/Travel/013/56.jpg&quot; alt=&quot;&quot; width=&quot;600&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;호수는 생각보다 넓었습니다. 물고기가 있었던 것 같기도 한데… 기억이 잘 안나네요.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/Travel/013/57.jpg&quot; alt=&quot;&quot; width=&quot;600&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;어떤 나무에는 거미줄이 잔뜩 쳐져있던데 조금 징그러웠습니다.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/Travel/013/58.jpg&quot; alt=&quot;&quot; width=&quot;600&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;여기가 바로 언어의 정원에 나오는 정자입니다. 두 주인공이 비가 오면 항상 이곳에서 만났던 곳이었죠.&lt;/p&gt;
-
-&lt;p&gt;영화 이후로 방문객이 많아지자 출입금지가 되었다고 들었는데, 제가 갔을 때는 앉아볼 수도 있었습니다.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/Travel/013/59.jpg&quot; alt=&quot;&quot; width=&quot;600&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/Travel/013/60.png&quot; alt=&quot;&quot; width=&quot;600&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;언어의 정원으로 유명한 정자이다보니 사진을 찍으려는 관광객이 많았습니다. 느긋하게 앉아서 주변을 감상하고 싶었는데, 민폐가 될까봐 얼른 사진 찍고 다른 곳으로 이동했습니다.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/Travel/013/61.jpg&quot; alt=&quot;&quot; width=&quot;600&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/Travel/013/62.png&quot; alt=&quot;&quot; width=&quot;600&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;후반부에 주인공 두 명이 호수를 바라보던 곳도 찍어봤습니다. 저 왼쪽에 있는 건물도 실제로 있었는데, 사진으로 남기진 못했네요. 사실 내부는 별 거 없었습니다.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/Travel/013/63.jpg&quot; alt=&quot;&quot; width=&quot;600&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/Travel/013/64.jpg&quot; alt=&quot;&quot; width=&quot;600&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;신주쿠 교엔도 어느정도 다 보고, 호텔로 돌아가 쉬기로 했습니다. 언어의 정원 성지에서 가장 가까운 역은 센다가야 역이었는데, JR과 지하철이 모두 다니기 때문에 편한 걸로 타시면 됩니다.&lt;/p&gt;
-
-&lt;h2 id=&quot;호텔-수영장&quot;&gt;호텔 수영장&lt;/h2&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/Travel/013/65.jpg&quot; alt=&quot;&quot; width=&quot;600&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;숙박하던 호텔에서는 원래 수영장이 유료라고 합니다. 다만 이벤트로 7월에는 오후 3시 ~ 6시 사이에 무료로 개장한다고 해서 방문해 봤습니다.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/Travel/013/66.jpg&quot; alt=&quot;&quot; width=&quot;600&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/Travel/013/67.jpg&quot; alt=&quot;&quot; width=&quot;600&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;이럴 줄 알고 수영복을 챙겨왔습니다만, 생각보다 수영장이 크지 않았습니다. 호텔 크기에 비해 많이 작아서 실망스럽네요. 돈 내고 들어왔으면 정말 아까웠을뻔 했습니다.&lt;/p&gt;
-
-&lt;h2 id=&quot;츠루하시-후게츠-오다이바점&quot;&gt;츠루하시 후게츠 오다이바점&lt;/h2&gt;
-
-&lt;center&gt;&lt;iframe src=&quot;https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d9859.460921740781!2d139.77442726612577!3d35.627002916971854!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x601889f63b3df157%3A0x289b14d0a66ecd1c!2z7Lig66Oo7ZWY7IucIO2bhOqyjOy4oCDsmKTri6TsnbTrsJTsoJA!5e0!3m2!1sko!2skr!4v1691761455637!5m2!1sko!2skr&quot; width=&quot;600&quot; height=&quot;450&quot; style=&quot;border:0;&quot; allowfullscreen=&quot;&quot; loading=&quot;lazy&quot; referrerpolicy=&quot;no-referrer-when-downgrade&quot;&gt;&lt;/iframe&gt;&lt;/center&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/Travel/013/68.jpg&quot; alt=&quot;&quot; width=&quot;600&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;수영을 좀 즐기고 방에서 쉬다가, 배가 고파져서 저녁을 먹으러 갔습니다. 뭘 먹을까 하다가 신바시로 가는 길에 오코노미야키 가게가 있길래 거길 방문해봤습니다. 구글 평점이 나쁘지는 않았는데, 가게 입구에서 한국어를 보니 뭔가 외국인용 가게같은 느낌이 들어서 망설여졌습니다.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/Travel/013/69.jpg&quot; alt=&quot;&quot; width=&quot;600&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/Travel/013/70.jpg&quot; alt=&quot;&quot; width=&quot;600&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;그래도 여기까지 왔는데 다른데 가기는 귀찮아서 그냥 들어가기로 했습니다. 메뉴판을 보니 오코노미야키 하나에 1400~1600엔 정도였습니다. 이걸 맥주랑 안먹으면 섭섭하니 맥주까지 하나 시켰는데, 이렇게만 시켜도 2천엔입니다. 생각보다 값이 꽤 나가네요.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/Travel/013/71.jpg&quot; alt=&quot;&quot; width=&quot;600&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;주문한지 얼마 지나지 않아 직원이 오코노미야키 재료가 들은 그릇을 부어서 불판에 올려줬습니다.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/Travel/013/72.jpg&quot; alt=&quot;&quot; width=&quot;600&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;아무래도 이걸 처음 먹어보는 사람은 어떻게 조리해야하는지 모를 수 있기 때문에 직원이 처음부터 끝까지 전부 조리해준다고 합니다. 얼마나 걸리냐고 물어보니 앞판 10분/뒷판 10분씩 익혀야 한다고 하네요.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/Travel/013/73.jpg&quot; alt=&quot;&quot; width=&quot;600&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/Travel/013/74.jpg&quot; alt=&quot;&quot; width=&quot;600&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/Travel/013/75.jpg&quot; alt=&quot;&quot; width=&quot;600&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;20분 정도 지나니 드디어 먹을 수 있는 상태가 되었습니다. 소스까지 직원이 다 뿌려줘서 먹기만 하면 되네요. 맛은 나쁘진 않았으나 양이 살짝 부족했습니다. 2명이서 3판을 시키면 배부르게 먹을 수 있을 것 같네요. 다만 가성비는 별로 좋아보이진 않습니다.&lt;/p&gt;
-
-&lt;h2 id=&quot;大露路&quot;&gt;大露路&lt;/h2&gt;
-
-&lt;center&gt;&lt;iframe src=&quot;https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3241.453886647589!2d139.7532589771209!3d35.66582443081811!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188bebb336bce1%3A0xaaa0a67b49e31e91!2z6YWS5YemIOWRs-WHpiDlpKfpnLLot68!5e0!3m2!1sko!2skr!4v1691761169454!5m2!1sko!2skr&quot; width=&quot;600&quot; height=&quot;450&quot; style=&quot;border:0;&quot; allowfullscreen=&quot;&quot; loading=&quot;lazy&quot; referrerpolicy=&quot;no-referrer-when-downgrade&quot;&gt;&lt;/iframe&gt;&lt;/center&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/Travel/013/76.jpg&quot; alt=&quot;&quot; width=&quot;600&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;밥도 먹었으니 또 이자카야에 가서 한잔 하기로 했습니다. 신바시에 널린게 이자카야기 때문에 어디를 갈까 고민하다가, 시샤모를 먹고 싶어서 구글 지도에 시샤모를 치고 가장 가까운 가게로 갔습니다. 가게 이름은 어떻게 읽어야할지 모르겠습니다. 후기를 보니 가격이 저렴하고 혼자 방문해도 좋다고 하니 제게 딱인 것 같았습니다.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/Travel/013/77.jpg&quot; alt=&quot;&quot; width=&quot;600&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;가게 입구인데, 가게가 상당히 작습니다. 많아봤자 15명 정도 들어갈 수 있는 크기 같습니다. 그러다보니 서로서로 합석해야하는 경우가 많습니다. 사실 이런 가게를 기대해서 일본 사람과 이야기할 기회가 있을까 기대했는데, 각자 자기 술마시고 핸드폰 보느라 바빠서 이야기는 서로 안하더라구요.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/Travel/013/78.jpg&quot; alt=&quot;&quot; width=&quot;600&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;가장 먼저 시샤모를 주문했습니다. 일본식 가정식을 보면 시샤모가 굉장히 자주 보이는데, 막상 한국에는 없는 물고기라서 어떤 맛인지 정말 궁금했습니다. 시샤모는 크기가 작아서 머리부터 꼬리까지 그냥 다 먹는다는데, 그래서 그런지 찍어먹을 수 있게 마요네즈도 같이 나왔습니다. 맛은 정말 맛있었습니다. 한국에도 있었다면 자주 먹었을 것 같은데, 아쉽네요.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/Travel/013/79.jpg&quot; alt=&quot;&quot; width=&quot;600&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;시샤모를 먹고 나서 뭘 주문할까 하다가 고기두부를 주문했습니다. 원래 고기감자(니쿠쟈가)를 먹고 싶었는데, 이 가게에는 없다고 해서 대신 이걸 주문했습니다. 가격이 300엔인가로 기억하는데 생각보다 양이 많았습니다. 저는 맥주랑 같이 먹긴 했는데, 소주랑 같이 먹어도 맛있을 것 같네요.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/Travel/013/80.jpg&quot; alt=&quot;&quot; width=&quot;600&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;호텔로 돌아와서는 또 야식으로 무료 라멘을 먹고 잤습니다. 이건 진짜 돈받고 팔아도 팔릴만한 맛이네요.&lt;/p&gt;
-
-&lt;p&gt;7일차 일정은 이렇게 끝났습니다. 읽어주셔서 감사합니다!&lt;/p&gt;</content><author><name>Joonsu Ryu</name></author><category term="travel" /><category term="tokyo" /><summary type="html">도쿄에서의 일곱째날 아침입니다. 새로 옮긴 호텔에서의 조식이 정말 맛있다고 소문이 자자한 상태였기 때문에 잔뜩 기대를 하고 식당으로 내려갔습니다.</summary></entry></feed>
+&lt;p&gt;8일차 일정은 여기까지입니다. 읽어주셔서 감사합니다!&lt;/p&gt;</content><author><name>Joonsu Ryu</name></author><category term="travel" /><category term="tokyo" /><summary type="html">도쿄에서의 여덟번째 날입니다. 이 날부터는 슬슬 피로가 쌓여 돌아다니기가 귀찮아지기 시작했습니다. 그래서 가고 싶은 곳을 최소로만 방문하고, 그 외에는 호텔에서 시원한 에어콘을 쐬며 쉬었습니다.</summary></entry></feed>
