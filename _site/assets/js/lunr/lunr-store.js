@@ -1366,4 +1366,10 @@ var store = [{
         "tags": ["programming languages"],
         "url": "/pl/statement-level-control-structures/",
         "teaser": null
+      },{
+        "title": "Subprograms",
+        "excerpt":"9장의 주제는 부프로그램입니다. 다룰 내용은 부프로그램의 매개변수 전달 방법, 지역 참조 환경, 중복 부프로그램 등이 있습니다. 여기서는 부프로그램에 대해서만 알아보고, 부프로그램을 구현하는 방법은 다음 장에서 자세히 다룰 예정입니다. 이번 장의 핵심 문구는 다음과 같습니다. “부프로그램은 프로그램의 기본 요소이므로 프로그래밍 언어 설계에서 가장 중요한 개념 중 하나입니다” 프로그래밍 언어에 포함되는 기본적인...","categories": ["studies"],
+        "tags": ["programming languages"],
+        "url": "/pl/subprograms/",
+        "teaser": null
       }]
