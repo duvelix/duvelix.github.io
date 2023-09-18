@@ -1372,4 +1372,10 @@ var store = [{
         "tags": ["programming languages"],
         "url": "/pl/subprograms/",
         "teaser": null
+      },{
+        "title": "Implementing Subprograms",
+        "excerpt":"10장의 주제는 부프로그램의 구현입니다. 이번 장을 한 문단으로 요약하면 다음과 같습니다. “이 장의 목적은 주요 명령형 언어에서 부프로그램을 구현하는 방법을 알아보는 것입니다. 토론은 독자에게 그러한 언어가 어떻게 “작동”하는지에 대한 통찰력을 제공합니다. 부프로그램 구현의 어려움이 증가하는 이유는 재귀에 대한 지원과 비지역 변수 접근에 대한 지원을 포함해야 하기 때문입니다.” 부프로그램의 호출과 반환...","categories": ["studies"],
+        "tags": ["programming languages"],
+        "url": "/pl/implementing-subprograms/",
+        "teaser": null
       }]
