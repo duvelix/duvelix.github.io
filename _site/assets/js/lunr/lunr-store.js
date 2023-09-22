@@ -1378,4 +1378,10 @@ var store = [{
         "tags": ["programming languages"],
         "url": "/pl/implementing-subprograms/",
         "teaser": null
+      },{
+        "title": "Abstract Data Types and Encapsulation Constructs",
+        "excerpt":"11장의 주제는 추상 데이터 타입과 캡슐화 구조입니다. 프로그래밍을 어렵게 만드는 것은 데이터의 컴퓨터 표현이 부자연스럽기 때문입니다. 추상화는 프로그래밍의 복잡성에 맞서는 무기로, 추상화의 목적은 프로그래밍 프로세스를 단순화하는 것입니다. 프로그래머가 필수 속성에 집중하고, 하위 속성을 무시할 수 있도록 하기 때문에 효과적인 무기입니다. 데이터 추상화의 두 가지 주요 기능은 다음과 같습니다. 관련 작업으로...","categories": ["studies"],
+        "tags": ["programming languages"],
+        "url": "/pl/abstract-data-types-and-encapsulation-constructs/",
+        "teaser": null
       }]
