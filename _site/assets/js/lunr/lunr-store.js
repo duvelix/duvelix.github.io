@@ -1384,4 +1384,10 @@ var store = [{
         "tags": ["programming languages"],
         "url": "/pl/abstract-data-types-and-encapsulation-constructs/",
         "teaser": null
+      },{
+        "title": "Support for Object-Oriented Programming",
+        "excerpt":"드디어 프로그래밍 언어론의 마지막 장입니다. 이 장은 객체 지향 프로그래밍에 대해 상세하게 알아보겠습니다. 순서대로, 객체 지향 프로그래밍의 기본 개념, 객체 지향 프로그래밍 언어의 사례 연구로써 몇 가지 예시와 함께 C++의 대한 소개, 그리고 객체 지향 프로그래밍의 장점과 단점에 대해 다루어보겠습니다. 이번 장의 순서는 다음과 같습니다. 서론 객체 지향 프로그래밍에 대한...","categories": ["studies"],
+        "tags": ["programming languages"],
+        "url": "/pl/support-for-object-oriented-programming/",
+        "teaser": null
       }]
