@@ -1390,4 +1390,10 @@ var store = [{
         "tags": ["programming languages"],
         "url": "/pl/support-for-object-oriented-programming/",
         "teaser": null
+      },{
+        "title": "교토 여행기 (1)",
+        "excerpt":"대학원생은 생각보다 여행할 시간이 많지 않습니다. 그래서 가급적이면 연휴를 활용해야 하는데, 이번에 마침 추석 연휴와 개천절이 연결되어 6일이라는 황금 연휴가 만들어졌습니다. 물론 연휴는 모두가 해외여행을 떠나고 싶어하는 기간이기 때문에 표값도 비싸고, 관광지에 사람이 바글바글 댈 것이라는 예상은 들었지만, 이 기회를 놓치기 너무 아까워서 여행계획을 세웠습니다. 이번에는 5박 6일이라는 약간 애매한...","categories": ["travel"],
+        "tags": ["kyoto"],
+        "url": "/travel/kyoto-1/",
+        "teaser": null
       }]

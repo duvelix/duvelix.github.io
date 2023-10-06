@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.3">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-10-06T11:55:32+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">KEEPMIND</title><subtitle>A place I record so that I don&apos;t forget.</subtitle><author><name>Joonsu Ryu</name></author><entry><title type="html">Support for Object-Oriented Programming</title><link href="http://localhost:4000/pl/support-for-object-oriented-programming/" rel="alternate" type="text/html" title="Support for Object-Oriented Programming" /><published>2023-10-06T00:00:00+09:00</published><updated>2023-10-06T00:00:00+09:00</updated><id>http://localhost:4000/pl/support-for-object-oriented-programming</id><content type="html" xml:base="http://localhost:4000/pl/support-for-object-oriented-programming/">&lt;p&gt;&lt;img src=&quot;/assets/images/PL/012/01.jpg&quot; alt=&quot;&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.3">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-10-06T17:57:05+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">KEEPMIND</title><subtitle>A place I record so that I don&apos;t forget.</subtitle><author><name>Joonsu Ryu</name></author><entry><title type="html">Support for Object-Oriented Programming</title><link href="http://localhost:4000/pl/support-for-object-oriented-programming/" rel="alternate" type="text/html" title="Support for Object-Oriented Programming" /><published>2023-10-06T00:00:00+09:00</published><updated>2023-10-06T00:00:00+09:00</updated><id>http://localhost:4000/pl/support-for-object-oriented-programming</id><content type="html" xml:base="http://localhost:4000/pl/support-for-object-oriented-programming/">&lt;p&gt;&lt;img src=&quot;/assets/images/PL/012/01.jpg&quot; alt=&quot;&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;드디어 프로그래밍 언어론의 마지막 장입니다. 이 장은 객체 지향 프로그래밍에 대해 상세하게 알아보겠습니다. 순서대로, 객체 지향 프로그래밍의 기본 개념, 객체 지향 프로그래밍 언어의 사례 연구로써 몇 가지 예시와 함께 C++의 대한 소개, 그리고 객체 지향 프로그래밍의 장점과 단점에 대해 다루어보겠습니다.&lt;/p&gt;
 
@@ -258,7 +258,309 @@
 
 &lt;p&gt;또한 강의자료에 많은 내용들은 An Introduction to Object-Oriented Programming를 많이 참고하였습니다.&lt;/p&gt;
 
-&lt;p&gt;12장의 내용은 여기까지입니다. 지금까지 읽어주셔서 감사합니다!&lt;/p&gt;</content><author><name>Joonsu Ryu</name></author><category term="studies" /><category term="programming languages" /><summary type="html"></summary></entry><entry><title type="html">Abstract Data Types and Encapsulation Constructs</title><link href="http://localhost:4000/pl/abstract-data-types-and-encapsulation-constructs/" rel="alternate" type="text/html" title="Abstract Data Types and Encapsulation Constructs" /><published>2023-09-22T00:00:00+09:00</published><updated>2023-09-22T00:00:00+09:00</updated><id>http://localhost:4000/pl/abstract-data-types-and-encapsulation-constructs</id><content type="html" xml:base="http://localhost:4000/pl/abstract-data-types-and-encapsulation-constructs/">&lt;p&gt;&lt;img src=&quot;/assets/images/PL/011/01.jpg&quot; alt=&quot;&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;12장의 내용은 여기까지입니다. 지금까지 읽어주셔서 감사합니다!&lt;/p&gt;</content><author><name>Joonsu Ryu</name></author><category term="studies" /><category term="programming languages" /><summary type="html"></summary></entry><entry><title type="html">교토 여행기 (1)</title><link href="http://localhost:4000/travel/kyoto-1/" rel="alternate" type="text/html" title="교토 여행기 (1)" /><published>2023-10-06T00:00:00+09:00</published><updated>2023-10-06T00:00:00+09:00</updated><id>http://localhost:4000/travel/kyoto-1</id><content type="html" xml:base="http://localhost:4000/travel/kyoto-1/">&lt;p&gt;대학원생은 생각보다 여행할 시간이 많지 않습니다. 그래서 가급적이면 연휴를 활용해야 하는데, 이번에 마침 추석 연휴와 개천절이 연결되어 6일이라는 황금 연휴가 만들어졌습니다. 물론 연휴는 모두가 해외여행을 떠나고 싶어하는 기간이기 때문에 표값도 비싸고, 관광지에 사람이 바글바글 댈 것이라는 예상은 들었지만, 이 기회를 놓치기 너무 아까워서 여행계획을 세웠습니다. 이번에는 5박 6일이라는 약간 애매한 일정이 만들어졌는데, 교토와 그 근교를 둘러보면 적당한 기간일 것으로 생각되어 교토를 방문하기로 결정했습니다. 이 기간의 비행기값만 70만원 가까이 나왔지만, 눈물을 머금고 예약했습니다.&lt;/p&gt;
+
+&lt;h2 id=&quot;교토까지-이동&quot;&gt;교토까지 이동&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/Travel/017/01.jpg&quot; alt=&quot;&quot; width=&quot;600&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;오전 8시 비행기였기 때문에 새벽부터 집에서 나왔습니다. 이 때 안 사실인데, 의외로 김포공항은 새벽에 리무진 버스가 다니지 않습니다. 그래서 지하철이나 버스 같은 대중교통을 이용해야하는데, 첫 지하철이 5시 45분이었기 때문에 이걸 타고 가면 너무 늦을 것 같았습니다. 그래서 새벽 5시 쯤에 있는 시내버스를 타고 서울역에 간 다음, 서울역에서 공항철도를 타고 김포공항을 가기로 결정했습니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/Travel/017/02.jpg&quot; alt=&quot;&quot; width=&quot;600&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;무사히 시내버스를 탔는데, 버스에 타니 최근 오픈한 트릭컬 광고가 보이더라구요. 예전에 한창 광고하다가 다시 섭종한 것으로 아는데, 찾아보니 이 날부터 다시 서비스를 개시했다고 들었습니다. 이렇게 대대적으로 광고할 정도로 이번에는 꽤 큰 마음을 먹은 것 같습니다. 어떻게 될지 궁금하네요.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/Travel/017/03.jpg&quot; alt=&quot;&quot; width=&quot;600&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;새벽의 서울역은 굉장히 을씨년스러운 분위기였습니다. 서울역 안쪽은 아주 밝아보이는데, 주변에 전부 어두워서 미묘한 분위기가 느껴지네요.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/Travel/017/04.jpg&quot; alt=&quot;&quot; width=&quot;600&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;열차 시간에 딱 맞게 도착해서 다행히 김포공항에 일찍 도착했습니다. 지난 번에 도쿄를 갔을 때도 김포공항으로 갔는데, 그 때는 사람이 굉장히 없어서 널널했습니다. 그런데 역시 명절 연휴라 그런지 사람이 아주 바글바글하더라구요. 김포가 이정도면 인천은 얼마나 심할지 상상이 되질 않네요. 체크인까지 시간도 김포치고 굉장히 오래 걸렸습니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/Travel/017/05.jpg&quot; alt=&quot;&quot; width=&quot;600&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;체크인과 수하물을 맡기고 터미널 안으로 들어왔습니다. 어느덧 시간이 흘러 해가 밝아오네요.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/Travel/017/06.jpg&quot; alt=&quot;&quot; width=&quot;600&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;제가 타고 갈 비행기입니다. 이번에도 역시 아시아나로 예약했어요. 딱히 아시아나를 좋아하는 것은 아닌데, LCC는 특가를 못잡으면 사실상 아시아나랑 크게 차이가 나지 않아서 그냥 아시아나로 예약하는게 마음이 편하더라구요.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/Travel/017/07.jpg&quot; alt=&quot;&quot; width=&quot;600&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;비행기를 타고 이륙한 다음 한 컷을 찍어봤습니다. 제가 탄 자리가 날개 부분이라 그런지 정면에 날개가 눈에 들어오네요.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/Travel/017/08.jpg&quot; alt=&quot;&quot; width=&quot;600&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/Travel/017/09.jpg&quot; alt=&quot;&quot; width=&quot;600&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;이륙하고 잠시 뒤에 기내식을 받았는데, 지난번 나고야를 갔을 때와 비교하면 상당히 초라합니다. 그 때는 메인 메뉴 뿐만 아니라 빵과 과일 같은 것도 같이 줬는데, 이번에는 달랑 메인 메뉴 하나네요. 메인 메뉴도 지난번과 비교하면 맛이 상당히 별로였습니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/Travel/017/10.jpg&quot; alt=&quot;&quot; width=&quot;600&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;그런데 진짜 지옥은 간사이 공항에서 발생했습니다. 공항이 어느 정도 혼잡할 것은 예상하고 있었지만, 생각보다 혼잡도가 정말 엄청났습니다. 간시아 공항에서 입국수속을 하는데만 1시간이 넘게 걸렸습니다. 이 대기시간이 어느 정도냐면, 탑승객들이 직접 수하물을 찾으면 다음 비행기의 수하물과 섞이기 때문에 사진처럼 직원들이 수하물을 전부 따로 빼놓을 정도입니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/Travel/017/11.jpg&quot; alt=&quot;&quot; width=&quot;600&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;어찌어찌 간사이 공항에 입국수속을 마쳤습니다만, 아직 지옥은 끝나지 않았습니다. 왜냐하면 여기서 교토로 가려면 특급열차 하루카를 타야하기 때문입니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/Travel/017/12.jpg&quot; alt=&quot;&quot; width=&quot;600&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;간사이 공항에서 하루카를 타기 위해서는 2층에 있는 간사이 공항역으로 가야합니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/Travel/017/13.jpg&quot; alt=&quot;&quot; width=&quot;600&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;두 번째 지옥은 바로 여기서 발생합니다. 하루카는 현지에서 구매하는 것보다 한국에서 미리 e-티켓을 구매하는 것이 훨씬 저렴한데, e-티켓을 실제 하루카 티켓과 교환하려면 여기서 직접 교환해야하기 때문입니다. 기계는 꼴랑 4대인데, 여기에 간사이 공항으로 온 수많은 사람들이 티켓을 교환하려고 줄을 서 있습니다. 이걸 기다리는데 또 1시간이 걸립니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/Travel/017/14.jpg&quot; alt=&quot;&quot; width=&quot;600&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;어찌어찌 표를 교환했습니다. 하루카는 기본적으로 자유석인데, 그 자리에서 지정석으로 바로 교환할 수도 있습니다. 자유석은 자리가 없을 수도 있기 때문에 시간만 맞으면 지정석으로 교환하는 것이 좋습니다. (추가요금이 없습니다!) 간사이 공항에서 교토까지는 1시간 30분 정도 걸리기 때문에 서서가면 꽤 고통스럽기 때문입니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/Travel/017/15.jpg&quot; alt=&quot;&quot; width=&quot;600&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;하루카는 듣던대로 열차가 헬로키티로 도장되어 있기 때문에 굉장히 눈에 띕니다. 지정석은 보통 열차 1~2번째 칸이고, 나머지는 자유석으로 운영됩니다.&lt;/p&gt;
+
+&lt;h2 id=&quot;교토역&quot;&gt;교토역&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/Travel/017/16.jpg&quot; alt=&quot;&quot; width=&quot;600&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;어찌어찌 간신히 교토 역에 도착했습니다. 간사이 공항에 도착한게 오전 10시쯤이었는데, 교토 역에 도착할 때 시간은 어느덧 2시를 향해 있었습니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/Travel/017/17.jpg&quot; alt=&quot;&quot; width=&quot;600&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/Travel/017/18.jpg&quot; alt=&quot;&quot; width=&quot;600&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;교토 역은 굉장히 많은 열차가 다니기 때문에 매우 혼잡합니다. 제가 탔던 하루카 뿐만이 아니라 대부분의 간사이권 JR선이 교토 역을 지나가기 때문에, 역 안내소에는 항상 사람이 많이 보였습니다. 교토 시에서는 교토 역을 하나의 문화공간으로 만드려고 하는지, 교토 역 안에는 무대를 포함한 여가시설이 상당히 많이 있었습니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/Travel/017/19.jpg&quot; alt=&quot;&quot; width=&quot;600&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;이 시간까지 기내식만 하나 달랑 먹었었기 때문에 상당히 배가 고픈 상태였습니다. 교토역에는 식당이 굉장히 많은데, 층 별로 다른 컨셉의 식당이 운영되고 있습니다. 교토 역 10층은 라멘 가게만 있습니다.&lt;/p&gt;
+
+&lt;h2 id=&quot;中村商店&quot;&gt;中村商店&lt;/h2&gt;
+
+&lt;center&gt;&lt;iframe src=&quot;https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d9245.50718455093!2d135.75855603673068!3d34.98716461669761!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6001096bbe7e9941%3A0x19754a58f5c66a71!2sNakamura%20Sh%C5%8Dten!5e0!3m2!1sko!2skr!4v1696574099537!5m2!1sko!2skr&quot; width=&quot;600&quot; height=&quot;450&quot; style=&quot;border:0;&quot; allowfullscreen=&quot;&quot; loading=&quot;lazy&quot; referrerpolicy=&quot;no-referrer-when-downgrade&quot;&gt;&lt;/iframe&gt;&lt;/center&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/Travel/017/20.jpg&quot; alt=&quot;&quot; width=&quot;600&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;저는 그 중 &lt;strong&gt;中村商店(나카무라 쇼텐)&lt;/strong&gt;이라는 라면집에 방문했습니다. 일본 여행 커뮤니티에서 이 가게의 시오라면 스페셜이 굉장히 맛있다는 게시글을 봤거든요.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/Travel/017/21.jpg&quot; alt=&quot;&quot; width=&quot;600&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;시오라멘 스페셜은 그림처럼 굉장히 많은 차슈가 올라갑니다. 가격은 1480엔으로 싼 편은 아닙니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/Travel/017/22.jpg&quot; alt=&quot;&quot; width=&quot;600&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;음식을 받아보니 역시 사진처럼 차슈가 풍성했습니다. 사진으로는 양이 그렇게 많아보이지 않은데, 먹고 나니 배가 엄청나게 부르더라구요. 예전에 먹어봤던 일본 라멘은 굉장히 짰었는데, 이 가게는 그렇게까지 짜지 않았기 때문에 괜찮았습니다. 다만 국물까지 다 먹기에는 역시 좀 짜더라구요.&lt;/p&gt;
+
+&lt;h2 id=&quot;리가-로얄-호텔-교토&quot;&gt;리가 로얄 호텔 교토&lt;/h2&gt;
+
+&lt;center&gt;&lt;iframe src=&quot;https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d9245.411720626038!2d135.75024130645645!3d34.98800990898098!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6001089572eaf6db%3A0x469c370f6f1f1b0b!2z66as6rCAIOuhnOyWhCDtmLjthZQg6rWQ7Yag!5e0!3m2!1sko!2skr!4v1696575392946!5m2!1sko!2skr&quot; width=&quot;600&quot; height=&quot;450&quot; style=&quot;border:0;&quot; allowfullscreen=&quot;&quot; loading=&quot;lazy&quot; referrerpolicy=&quot;no-referrer-when-downgrade&quot;&gt;&lt;/iframe&gt;&lt;/center&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/Travel/017/23.jpg&quot; alt=&quot;&quot; width=&quot;600&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;이번에 선택한 호텔은 교토 역 근처에 있는 &lt;strong&gt;리가 로얄 호텔 교토&lt;/strong&gt;입니다. 예전 포스트에서도 언급했듯이, 일본의 호텔은 방이 작은 경우가 많습니다. 그래서 일본 호텔을 예약할 때는 방 크기를 가장 먼저 보는데, 마침 이 호텔이 객실의 방 크기도 크고 역에서도 그렇게 멀지 않을 뿐만 아니라 가격도 나름 합리적이었기 때문에 이 곳을 선택했습니다. 나중에 알고보니 이 호텔은 5등분의 신부에서 주인공들이 묵었던 호텔이라고 하더라구요.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/Travel/017/24.jpg&quot; alt=&quot;&quot; width=&quot;600&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;교토 역에서 점심을 먹고 가니 체크인이 가능한 시간이라고 하길래 바로 체크인을 했습니다. 방 번호는 703호를 받았는데, 번호가 낮을수록 안쪽 객실이라 왔다갔다 하는게 불편했습니다. 지난 번 도쿄에서도 안쪽 객실을 줬었는데 운이 좋지 않네요.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/Travel/017/25.jpg&quot; alt=&quot;&quot; width=&quot;600&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;방의 크기는 22제곱미터라고 하는데, 들어가보니 역시 작지 않았습니다. 침대도 킹 사이즈라 혼자 뒹굴뒹굴 거리면서 잘 수 있었고, 캐리어를 놓을 곳도 따로 있었습니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/Travel/017/26.jpg&quot; alt=&quot;&quot; width=&quot;600&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;화장실에는 욕조도 있었습니다. 예전에는 욕조 유무를 크게 신경쓰지 않았는데, 한번 욕조의 맛을 알게되니까 그 다음부터는 꼭 욕조가 있는 곳을 찾게 되더라구요. 밤에 뜨거운 물에 피곤한 몸을 담그고 맥주 한잔 하면 그렇게 기분 좋을 수가 없습니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/Travel/017/27.jpg&quot; alt=&quot;&quot; width=&quot;600&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;원래 대부분의 호텔에서는 식수를 2병 제공해줍니다만, 이 호텔은 특이하기 식수 대신 플라스틱 병을 지급합니다. 뭐 일회용 쓰레기를 줄이기 위한 일이라고 하던데… 별로 마음에 들진 않네요. 층 마다 정수기가 있어서 이 플라스틱 병에 직접 물을 받아와야하는데, 저는 귀찮아서 결국 나중에 편의점에서 생수를 사먹었습니다. 게다가 저 물병은 중간에서 물이 새서 사용하기 불편했습니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/Travel/017/28.jpg&quot; alt=&quot;&quot; width=&quot;600&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;어매니티는 4성급 호텔답게 있을 것은 다 있습니다. 일회용 칫솔/치약, 면도기 같은 것은 다 있고 매일 아침 방 청소 때 다시 보충해줍니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/Travel/017/29.jpg&quot; alt=&quot;&quot; width=&quot;600&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;이 호텔의 특이한 점은 관내복으로 유카타를 제공해준다는 것입니다. 대부분의 호텔은 샤워 가운을 제공해주는데, 샤워 가운은 입고 자기 조금 불편했거든요. 유카타는 일반 옷이랑 비슷한 재질이라 입고 자기 편리해보였습니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/Travel/017/30.jpg&quot; alt=&quot;&quot; width=&quot;600&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;호텔의 경치는 뭐… 크게 기대는 안했습니다. 어차피 도심 한가운데라 일반적인 빌딩뷰입니다.&lt;/p&gt;
+
+&lt;h2 id=&quot;기요미즈데라청수사&quot;&gt;기요미즈데라(청수사)&lt;/h2&gt;
+
+&lt;center&gt;&lt;iframe src=&quot;https://www.google.com/maps/embed?pb=!1m28!1m12!1m3!1d13074.403988183287!2d135.75665747027304!3d34.991657794048834!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m13!3e3!4m5!1s0x6001089572eaf6db%3A0x469c370f6f1f1b0b!2z66as6rCAIOuhnOyWhCDtmLjthZQg6rWQ7YagIDHnlarlnLAgVGFpbWF0c3VjaG8sIFNoaW1vZ3lvIFdhcmQsIEt5b3RvLCA2MDAtODIzNyDsnbzrs7g!3m2!1d34.986385299999995!2d135.75269509999998!4m5!1s0x600108d385dcfb07%3A0x62af658650c434ba!2z7J2867O4IOq1kO2GoOu2gCDqtZDthqDsi5wg7Z6I6rCA7Iuc7JW866eI6rWsIOq4sOyalOuvuOymiCAxIOyhsOuplCDquLDsmpTrr7jspojrjbDrnbw!3m2!1d34.9948561!2d135.7850463!5e0!3m2!1sko!2skr!4v1696576661356!5m2!1sko!2skr&quot; width=&quot;600&quot; height=&quot;450&quot; style=&quot;border:0;&quot; allowfullscreen=&quot;&quot; loading=&quot;lazy&quot; referrerpolicy=&quot;no-referrer-when-downgrade&quot;&gt;&lt;/iframe&gt;&lt;/center&gt;
+
+&lt;p&gt;새벽부터 거의 한 숨도 못자고 긴 거리를 이동하고 나니 굉장히 피곤했습니다. 하지만 짧은 여행 기간 동안 하나라도 더 구경해야하니 호텔에 간단하게 짐을 풀고 바로 나왔습니다. 첫 날에는 간단하게 기요미즈데라(청수사)와 그 주변 관광지를 둘러볼 계획입니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/Travel/017/31.jpg&quot; alt=&quot;&quot; width=&quot;600&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;역시 문화재의 도시 답게 호텔에서 버스 정류장으로 가는 길에도 뭔가 유적같은 것이 눈에 들어오네요.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/Travel/017/32.jpg&quot; alt=&quot;&quot; width=&quot;600&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;이곳이 시내 버스 정류장입니다. 보통 해외 여행할 때 버스보다는 지하철을 선호하는데, 교토는 지하철 노선이 굉장히 부실해서 대부분의 관광지는 버스를 이용해야만 이동할 수 있습니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/Travel/017/33.jpg&quot; alt=&quot;&quot; width=&quot;600&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;제가 탈 버스는 206번 버스입니다. 버스비는 거리에 상관없이 230엔이고, 한 시간에 4대 정도가 다닙니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/Travel/017/34.jpg&quot; alt=&quot;&quot; width=&quot;600&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;206번 버스를 타고 기요미즈데라로 가기 위해서는 고조자카 역에서 내리면 됩니다. 버스 안내판에 한글로도 나오기 때문에 쉽게 알 수 있습니다. 지도상으로는 기요미즈데라까지 거리가 크게 멀어보이지 않았는데, 교통 체증 때문인지 40분 정도나 걸렸습니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/Travel/017/35.jpg&quot; alt=&quot;&quot; width=&quot;600&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;기요미즈데라는 버스 정류장에서도 거리가 꽤 멀기 때문에 15분 정도 추가로 걸어가야 합니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/Travel/017/36.jpg&quot; alt=&quot;&quot; width=&quot;600&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;역시 교토의 대표 관광지 답게 입구에서부터 사람들이 굉장히 많이 보였습니다. 도쿄의 아사쿠사처럼, 여기도 기요미즈데라까지 가는 길에 기념품을 파는 가게가 쭉 늘어져 있었습니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/Travel/017/37.jpg&quot; alt=&quot;&quot; width=&quot;600&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/Travel/017/38.jpg&quot; alt=&quot;&quot; width=&quot;600&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/Travel/017/39.jpg&quot; alt=&quot;&quot; width=&quot;600&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;그런데 그 긴 길을 따라 올라가도 끝이 아니라 계단을 올라가야 하더라구요. 벌써부터 조금 지치기 시작했습니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/Travel/017/40.jpg&quot; alt=&quot;&quot; width=&quot;600&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/Travel/017/41.jpg&quot; alt=&quot;&quot; width=&quot;600&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/Travel/017/42.jpg&quot; alt=&quot;&quot; width=&quot;600&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;기요미즈데라 입구에도 이것저것 많긴 했는데, 핵심 지역으로 이동하려고 하니 역시 입장료를 받네요. 입장료는 400엔입니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/Travel/017/43.jpg&quot; alt=&quot;&quot; width=&quot;600&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;기요미즈데라 안쪽은 지대가 더 높아서, 이렇게 경치를 감상할 수 있게 되어 있습니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/Travel/017/44.jpg&quot; alt=&quot;&quot; width=&quot;600&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;이곳이 본당인 것 같습니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/Travel/017/45.jpg&quot; alt=&quot;&quot; width=&quot;600&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;일본 애니에서 보던 곳입니다. 한국의 약수터처럼 생겼는데, 저 물을 마시는게 아니라 저 물을 받아서 입을 씻는 거라고 하더라구요. 국자가 마치 약수터 국자처럼 생겨서 한국인들은 혼동할 수도 있을 것 같습니다. (그래서인지 마시지 말라는 경고문도 붙어있었습니다)&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/Travel/017/46.jpg&quot; alt=&quot;&quot; width=&quot;600&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/Travel/017/47.jpg&quot; alt=&quot;&quot; width=&quot;600&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;기요미즈데라에서 가장 유명한 무대입니다. 무대 건너편에 이렇게 무대를 향해 사진을 찍을 수 있게 되어있는데, 이 모습이 참 아름답더라구요. 괜히 유명한게 아니다라는 느낌이 들었습니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/Travel/017/48.jpg&quot; alt=&quot;&quot; width=&quot;600&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;지나가다보니 이렇게 불상에 천 조각을 두른 모습이 보였습니다. 이 때는 기요미즈데라의 특이한 모습인줄 알았는데, 나중에 보니 교토 전체에서 이런 문화가 있는 것 같더라구요. 무슨 의미가 있는지는 잘 모르겠습니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/Travel/017/49.jpg&quot; alt=&quot;&quot; width=&quot;600&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;슬슬 다 보고 돌아가려는 찰나 굉장히 재밌는 모습을 봤습니다. 천장에서 떨어지는 물을 받아 마시는 곳 같은데, 생각해보니 내청코 애니메이션에서 봤던 기억이 나네요.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/Travel/017/50.jpg&quot; alt=&quot;&quot; width=&quot;600&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;이름 모를 탑도 눈에 들어왔습니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/Travel/017/51.jpg&quot; alt=&quot;&quot; width=&quot;600&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;안에 조그만 호수도 있었는데, 이 호수 안에 물고기가 살고 있더라구요. 일본에서 봤던 대부분의 호수에서는 다 물고기가 살고 있었는데, 원래 이렇게 물고기가 많이 사는건지 아니면 일부러 관광객을 위해 풀어놓은 건지는 잘 모르겠습니다. 호수라기보다는 물 웅덩이에 가까운 크기라 자연발생하지는 않았을 것 같은데 말이죠.&lt;/p&gt;
+
+&lt;h2 id=&quot;야사카-신사&quot;&gt;야사카 신사&lt;/h2&gt;
+
+&lt;center&gt;&lt;iframe src=&quot;https://www.google.com/maps/embed?pb=!1m28!1m12!1m3!1d6536.593918314576!2d135.7759182469149!3d34.99927077990646!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m13!3e2!4m5!1s0x600108d385dcfb07%3A0x62af658650c434ba!2z7J2867O4IEt5b3RvLCBLeW90bywgSGlnYXNoaXlhbWEgV2FyZCwgS2l5b21penUsIDEtY2jFjW1l4oiSMjk0IOq4sOyalOuvuOymiOuNsOudvA!3m2!1d34.9948561!2d135.7850463!4m5!1s0x60010879a010eca9%3A0xc77ac89d5a241ae9!2z7JW87IKs7Lm0IOyLoOyCrCA2MjUgR2lvbm1hY2hpIEtpdGFnYXdhLCBIaWdhc2hpeWFtYSBXYXJkLCBLeW90bywgNjA1LTAwNzMg7J2867O4!3m2!1d35.0036559!2d135.7785534!5e0!3m2!1sko!2skr!4v1696579261243!5m2!1sko!2skr&quot; width=&quot;600&quot; height=&quot;450&quot; style=&quot;border:0;&quot; allowfullscreen=&quot;&quot; loading=&quot;lazy&quot; referrerpolicy=&quot;no-referrer-when-downgrade&quot;&gt;&lt;/iframe&gt;&lt;/center&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/Travel/017/52.jpg&quot; alt=&quot;&quot; width=&quot;600&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;기요미즈데라 다음에는 근처에 있는 야사카 신사로 갔습니다. 버스를 타고 가기에는 애매한 거리라 산책할 겸 걷기로 했습니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/Travel/017/53.jpg&quot; alt=&quot;&quot; width=&quot;600&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;이 시간대에 살짝 보슬비가 내렸는데, 그래서 그런지 하늘이 어둑어둑하네요. 사진의 분위기가 영 안좋습니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/Travel/017/54.jpg&quot; alt=&quot;&quot; width=&quot;600&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;가는 길에 너무 목이 말라 자판기에서 음료수를 하나 뽑아먹었습니다. 이로하스 모모가 그렇게 맛있다고 소문이 나서 한 번 마셔봤는데, 진짜 맛있더라구요! 뭔가 물인데 복숭아의 달콤한 맛도 은은히 나서 앞으로 이것만 마셔야겠습니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/Travel/017/55.jpg&quot; alt=&quot;&quot; width=&quot;600&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;자판기 근처에서 본 탑입니다. 이 탑의 이름이 분명 있을진데 구글 지도에도 나오지 않아서 못찾겠네요… 혹시 아시는 분이 있다면 댓글로 알려주시면 감사하겠습니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/Travel/017/56.jpg&quot; alt=&quot;&quot; width=&quot;600&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;야사카 신사의 입구입니다. 듣기로는 저녁부터 신사 내의 등이 켜진다는데, 아직 시간이 애매해서 불이 켜지진 않았습니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/Travel/017/57.jpg&quot; alt=&quot;&quot; width=&quot;600&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;이곳이 신사 본당인 것 같습니다. 천장에 3줄로 달린 흰 색이 바로 등입니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/Travel/017/58.jpg&quot; alt=&quot;&quot; width=&quot;600&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;신사 구석에 보니 조그만 물줄기가 흐르는 곳이 보였습니다. 전 이런 미니멀한 감성(?)이 좋더라구요.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/Travel/017/59.jpg&quot; alt=&quot;&quot; width=&quot;600&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;다리가 아파서 의자에 앉아 조금 쉬고 있었는데, 날씨가 흐려서 그런지 생각보다 일찍 불이 켜졌습니다. 불이 켜진 김에 한바퀴 둘러보고 다른 곳으로 이동해야겠습니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/Travel/017/60.jpg&quot; alt=&quot;&quot; width=&quot;600&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;여긴 신당 안에 말 조형이 2개 있더라구요. 무슨 의미일까요?&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/Travel/017/61.jpg&quot; alt=&quot;&quot; width=&quot;600&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;야사카 신사에서 볼 거리는 이게 전부입니다. 생각보다 크지 않아서 금방 둘러볼 수 있더라구요. 신사 뒤쪽에는 공원도 있던데, 거기까지 둘러보기는 다리도 아프고 귀찮아서 그냥 이 정도만 보고 기온 거리로 이동하기로 했습니다.&lt;/p&gt;
+
+&lt;h2 id=&quot;기온-거리&quot;&gt;기온 거리&lt;/h2&gt;
+
+&lt;center&gt;&lt;iframe src=&quot;https://www.google.com/maps/embed?pb=!1m28!1m12!1m3!1d3268.120738331706!2d135.77532427640185!3d35.00368261689486!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m13!3e2!4m5!1s0x60010879a010eca9%3A0xc77ac89d5a241ae9!2z7J2867O4IOq1kO2GoOu2gCDqtZDthqDsi5wg7Z6I6rCA7Iuc7JW866eI6rWsIOq4sOyYqOuniOy5mCDquLDtg4DqsIDsmYAg7JW87IKs7Lm0IOyLoOyCrA!3m2!1d35.0036559!2d135.7785534!4m5!1s0x600108c3c1c67b67%3A0xdcb04aa1398efb4!2z6riw7Jio!3m2!1d35.003781599999996!2d135.777245!5e0!3m2!1sko!2skr!4v1696580207419!5m2!1sko!2skr&quot; width=&quot;600&quot; height=&quot;450&quot; style=&quot;border:0;&quot; allowfullscreen=&quot;&quot; loading=&quot;lazy&quot; referrerpolicy=&quot;no-referrer-when-downgrade&quot;&gt;&lt;/iframe&gt;&lt;/center&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/Travel/017/62.jpg&quot; alt=&quot;&quot; width=&quot;600&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;야사카 신사로 바로 나오면 기온 거리가 보입니다. 기온 거리는 교토의 전통 시장이라고 합니다. 다만 전통시장이라고 보기에는 현대식 가게들이 많이 들어와 있어서 그렇게까지 볼만한 곳은 아닌 것 같았습니다. 저렇게 전등 같은 것을 달아놓은 것만 빼면 그냥 상점가인데요.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/Travel/017/63.jpg&quot; alt=&quot;&quot; width=&quot;600&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;기온 거리 한쪽에는 이렇게 강이 흐르고 있었습니다. 배도 고프고, 이 날 볼만한 것은 다 본 것 같아서 이자카야나 가기로 했습니다.&lt;/p&gt;
+
+&lt;h2 id=&quot;이자카야-안지&quot;&gt;이자카야 안지&lt;/h2&gt;
+
+&lt;center&gt;&lt;iframe src=&quot;https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3268.164431494135!2d135.76307997640163!3d35.002588766953856!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6001089671e1cbeb%3A0x500a8bd33f0887ae!2sAnji!5e0!3m2!1sko!2skr!4v1696581645781!5m2!1sko!2skr&quot; width=&quot;600&quot; height=&quot;450&quot; style=&quot;border:0;&quot; allowfullscreen=&quot;&quot; loading=&quot;lazy&quot; referrerpolicy=&quot;no-referrer-when-downgrade&quot;&gt;&lt;/iframe&gt;&lt;/center&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/Travel/017/64.jpg&quot; alt=&quot;&quot; width=&quot;600&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;뭘 먹을까 하다가 첫날에는 회가 먹고 싶어져서 회를 파는 곳을 찾아봤습니다. 주변에 있는 이자카야 중에 이 곳이 가장 평점이 높길래 찾아가봤어요.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/Travel/017/65.jpg&quot; alt=&quot;&quot; width=&quot;600&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;메뉴판이 밖에 이렇게 나와있긴 한데, 필기체라 알아보기도 힘들고 알아보더라도 생선 이름인 것 같아서 의미를 잘 모르겠더라구요. 뭐 그래도 교토니까 영어 메뉴판 정도는 있지 않을까요?&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/Travel/017/66.jpg&quot; alt=&quot;&quot; width=&quot;600&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;다행히 영어 메뉴판도 있었고, 주문 방식은 QR 코드를 통해 스마트폰으로 주문하는 방식이라 그렇게 어렵지 않았습니다. 먼저 생맥주 大자를 시켜봤습니다. 가격이 만원 좀 넘긴 했는데, 이거 한 잔만 마셔도 될 정도로 엄청 크더라구요.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/Travel/017/67.jpg&quot; alt=&quot;&quot; width=&quot;600&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;가장 먼저 시킨건 사시미 메뉴입니다. 5종의 생선이 2점씩 나오는 메뉴인데, 가격이 만 오천원 정도더라구요. 플레이팅을 감안해도 가격이 상당히 비쌌습니다. 서울에서 회 한접시에 2~3만원 정도 하지 않나요? 맛있긴 했습니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/Travel/017/68.jpg&quot; alt=&quot;&quot; width=&quot;600&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;다음으로 시켜본 메뉴는 고등어 초밥입니다. 예전부터 고등어 초밥을 먹어보고 싶었는데, 한국에서 고등어 초밥을 파는 곳이 흔하지 않다보니 지금까지 못먹어봤거든요. 나중에 알고보니 고등어 초밥이 교토의 특산물 중 하나라고 합니다.&lt;/p&gt;
+
+&lt;p&gt;고등어 초밥은 생고등어를 올려서 먹는게 아니라, 고등어를 올린 다음 불로 살짝 구워서 주더라구요. 맛은 짭짤한 고등어 구이 맛이 났습니다. 가격이 만원 정도였는데, 4피스에 만원이면 조금 비싼 감이 있긴 합니다.&lt;/p&gt;
+
+&lt;h2 id=&quot;호텔로-복귀&quot;&gt;호텔로 복귀&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/Travel/017/69.jpg&quot; alt=&quot;&quot; width=&quot;600&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;이자카야 안지에서 약 4천엔 정도 나왔습니다. 귀가할 때는 지하철 가라스마선을 타고 교토역으로 돌아왔습니다. 교토역에서 호텔로 가는 길에 관광객들이 뭘 찍고 있길래 뭔가 보니 교토 타워가 보이더라구요. 모습이 이쁘길래 저도 한 번 찍어봤습니다. 생각해보니 일본은 도시마다 저런 타워가 하나씩 있는 것 같네요.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/Travel/017/70.jpg&quot; alt=&quot;&quot; width=&quot;600&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;맥주를 많이 마시긴 했는데 술 한잔으로는 부족해서 편의점에서 술과 안주를 사서 들어갔습니다. 사진에는 잘 안보이는데, 편의점에서 파는 푸딩과 조각 케익이 엄청 맛있었습니다.&lt;/p&gt;
+
+&lt;p&gt;이렇게 교토에서 첫 날이 끝났습니다. 읽어주셔서 감사합니다!&lt;/p&gt;</content><author><name>Joonsu Ryu</name></author><category term="travel" /><category term="kyoto" /><summary type="html">대학원생은 생각보다 여행할 시간이 많지 않습니다. 그래서 가급적이면 연휴를 활용해야 하는데, 이번에 마침 추석 연휴와 개천절이 연결되어 6일이라는 황금 연휴가 만들어졌습니다. 물론 연휴는 모두가 해외여행을 떠나고 싶어하는 기간이기 때문에 표값도 비싸고, 관광지에 사람이 바글바글 댈 것이라는 예상은 들었지만, 이 기회를 놓치기 너무 아까워서 여행계획을 세웠습니다. 이번에는 5박 6일이라는 약간 애매한 일정이 만들어졌는데, 교토와 그 근교를 둘러보면 적당한 기간일 것으로 생각되어 교토를 방문하기로 결정했습니다. 이 기간의 비행기값만 70만원 가까이 나왔지만, 눈물을 머금고 예약했습니다.</summary></entry><entry><title type="html">Abstract Data Types and Encapsulation Constructs</title><link href="http://localhost:4000/pl/abstract-data-types-and-encapsulation-constructs/" rel="alternate" type="text/html" title="Abstract Data Types and Encapsulation Constructs" /><published>2023-09-22T00:00:00+09:00</published><updated>2023-09-22T00:00:00+09:00</updated><id>http://localhost:4000/pl/abstract-data-types-and-encapsulation-constructs</id><content type="html" xml:base="http://localhost:4000/pl/abstract-data-types-and-encapsulation-constructs/">&lt;p&gt;&lt;img src=&quot;/assets/images/PL/011/01.jpg&quot; alt=&quot;&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;11장의 주제는 추상 데이터 타입과 캡슐화 구조입니다. 프로그래밍을 어렵게 만드는 것은 데이터의 컴퓨터 표현이 부자연스럽기 때문입니다. 추상화는 프로그래밍의 복잡성에 맞서는 무기로, 추상화의 목적은 프로그래밍 프로세스를 단순화하는 것입니다. 프로그래머가 필수 속성에 집중하고, 하위 속성을 무시할 수 있도록 하기 때문에 효과적인 무기입니다.&lt;/p&gt;
 
@@ -2418,200 +2720,4 @@ sub1(n);
 
 &lt;p&gt;지금까지 많은 프로그래밍 언어를 살펴보았습니다. 특히 소개했던 주요 언어의 특징을 단순히 외우기보다는 해당 언어가 프로그래밍 언어의 역사에 어떤 영향을 끼쳤는지를 중심으로 생각해보시는 것을 권장드립니다. 최상단에 나와있는 프로그래밍 언어의 계보를 보면서 공부하시면 더 좋습니다.&lt;/p&gt;
 
-&lt;p&gt;2장의 내용은 여기까지입니다. 읽어주셔서 감사합니다!&lt;/p&gt;</content><author><name>Joonsu Ryu</name></author><category term="studies" /><category term="programming languages" /><summary type="html"></summary></entry><entry><title type="html">Preliminaries</title><link href="http://localhost:4000/pl/preliminaries/" rel="alternate" type="text/html" title="Preliminaries" /><published>2023-08-18T00:00:00+09:00</published><updated>2023-08-18T00:00:00+09:00</updated><id>http://localhost:4000/pl/preliminaries</id><content type="html" xml:base="http://localhost:4000/pl/preliminaries/">&lt;p&gt;안녕하세요, 오늘은 프로그래밍 언어론의 첫 장인 Preliminaries를 다뤄보겠습니다. 모든 과목이 마찬가지이지만, 첫 장은 보통 이 과목에서 어떤 것을 배우는지에 대한 간략한 소개가 나와 있습니다.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/PL/001/01.jpg&quot; alt=&quot;&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;먼저 프로그래밍 언어라는 것은 무엇일까요? 사람이 다른 사람들과 소통하기 위해 자연어(한국어, 영어, 일본어, 등등)를 사용해서 대화를 하는 것처럼, 사람이 컴퓨터와 소통하기 위해 사용하는 것이 프로그래밍 언어입니다. 프로그래밍 언어라고 하면 C, C++, Java, Python 등을 생각하겠지만, 이런 언어들은 비교적 최근에 개발된 고급 언어(High Level Language)입니다. 이러한 고급 언어들은 사람들이 사용하기 매우 편한 장점이 있지만, 처음부터 프로그래밍 언어가 이렇게 사용이 편한 것은 아니었습니다. 현대 프로그래밍 언어에는 이미 당연하다시피 적용되어 있는 개념이나 규칙은 과거에는 당연하지 않았기 때문입니다. 다양한 프로그래밍 언어들이 개발되어 옴에 따라 프로그래밍 언어를 편리하게 사용하기 위한 개념과 규칙이 정립되기 시작했는데, 본 과목은 이러한 것들을 학습하는 것을 목표로 합니다.&lt;/p&gt;
-
-&lt;p&gt;그렇다면 이런 것들을 왜 배우는 것일까요? 프로그래밍 언어가 동작하는 과정을 이해하게 된다면, 프로그래밍을 할 때 좀 더 효율적으로 동작하게끔 설계할 수 있기 때문입니다. 예를 들어, 함수를 호출할 때는 스택(Stack)을 이용합니다. 어셈블리 언어 관련 수업을 들어보신 분이라면 스택을 쌓고 다시 불러오는 과정이 생각보다 많은 시간을 필요로 하게 되는데, 그렇기 때문에 재귀문(Recursion)은 보기에는 간단해보여도 동적 프로그래밍(Dynamic Programming) 같은 방법에 비해 실제 수행 시간이 높게 나오게 됩니다. 이렇게 스택이 가지는 특징을 이해하고 있다면, 프로그램을 구현할 때 재귀문을 최대한 배제하고 다른 방법으로 구현하게 되겠지요.&lt;/p&gt;
-
-&lt;p&gt;또한 프로그래밍 언어들이 가지고 있는 특징이나 규칙을 배우고 나면 새로운 프로그래밍 언어를 배우게 쉬워집니다. &lt;a href=&quot;https://www.tiobe.com/tiobe-index/&quot;&gt;TIOBE INDEX&lt;/a&gt;에 따르면 현재 주로 사용되고 있는 언어는 Python, C, C++ 순입니다. 그러나 10년 전만 하더라도 Python은 5순위에도 못들던 언어였습니다. 10년 후에는 어떤 프로그래밍 언어가 대세가 될지 모릅니다. 그렇기 때문에 새로운 프로그래밍 언어를 배우는 능력은 컴퓨터공학자에게 있어서 매우 중요한 능력입니다. 프로그래밍 언어는 절차 언어(Procedural Language)와 적용 언어(Applicative Language) 두 가지 종류로 나뉘는데, 본 과목에서는 절차 언어를 주로 다루고, 필요한 경우에만 적용 언어를 언급하도록 하겠습니다.&lt;/p&gt;
-
-&lt;p&gt;본 과목에서는 프로그래밍 언어의 필수 요소인 데이터(Date), 제어(Control), 부프로그램(Subprogram), 그리고 객체 지향 프로그래밍(Objective Oriented Programming)에 대한 개념을 정립하도록 하겠습니다.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/PL/001/02.jpg&quot; alt=&quot;&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;프로그래밍 언어론을 배우는 순서는 위 그림과 같습니다. Preliminaries 다음에 History 부분이 빠져있는데, 이 부분은 전체 내용에 크게 영향을 주지 않는 부분이라 그런 것 같습니다. 저는 이 부분도 배울 점이 있다고 생각해서 잠깐이지만 짚고 넘어가고자 합니다.&lt;/p&gt;
-
-&lt;p&gt;그 다음에는 프로그래밍 언어에 대한 기본적인 특징을 배우게 됩니다. 타입 체킹, 데이터 타입, 표현식, 제어문 같은 것들을 다룹니다. 일반적으로 여기까지 배운 후 중간고사를 치르게 됩니다.&lt;/p&gt;
-
-&lt;p&gt;다음은 후반부의 메인 파트인 부프로그램에 대해 배우고, 남은 시간에는 객체 지향 프로그래밍에 관련된 내용을 배우게 됩니다. 일반적으로 대학교 학부의 교육 시간 상 12장까지 배우게 되고, 조금 욕심을 부리면 13장까지 배울 수도 있긴 합니다.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/PL/001/03.jpg&quot; alt=&quot;&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;이것은 프로그래밍 언어들의 족보라고 보시면 됩니다. 연도별, 프로그래밍 언어가 어느 언어를 근간으로 발전했는지 나와있습니다. 이 그림은 2장에서 조금 더 자세하게 살펴보도록 하겠습니다.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/PL/001/04.jpg&quot; alt=&quot;&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;이제 1장의 본격적인 내용을 시작해보도록 하겠습니다.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/PL/001/05.jpg&quot; alt=&quot;&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;먼저 프로그래밍 언어론을 배우는 이유에 대해 하나씩 자세하게 알아봅시다.&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;생각을 표현할 수 있는 능력이 향상됨&lt;/strong&gt; : 프로그래밍 언어의 특징에 대해서 더 많이 알고 있다면, 사용할 수 있는 데이터의 구조나 제어 구조를 이해하여 더 효율적인 소프트웨어의 개발을 가능합니다. 만약 주로 사용하는 언어에서 지원하지 않는 기능에 대해 배운다고 할지라도, 그것을 시뮬레이션 할 수 있는 방법이 종종 있기 때문에 도움이 되는 것은 마찬가지입니다.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;적합한 언어를 선택할 수 있는 능력이 향상됨&lt;/strong&gt; : 만약 프로그래머가 여러 프로그래밍 언어를 알고 있고, 각 프로그래밍 언어의 특징에 대해 자세히 알고 있다면 언어를 선택할 때 어떤 언어가 주어진 문제를 해결하는데 가장 적합할지 판단할 수 있습니다.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;새로운 언어를 배울 수 있는 능력이 향상됨&lt;/strong&gt; : 프로그래밍 언어가 가지고 있는 기본 개념을 이해한다면, 다른 언어를 배울 때도 훨씬 쉽게 이해할 수 있습니다.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;구현의 중요성에 대해 더 많이 이해할 수 있음&lt;/strong&gt; : 이것은 프로그래밍 언어를 보다 효율적으로 사용할 수 있는 능력과 같습니다. 예를 들어, 부프로그램을 호출하는데 생각보다 많은 시간이 필요하다는 것을 이해하고 있다면, 자잘한 연산을 위한 부프로그램을 만들지 않도록 설계할 수 있습니다.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;이미 알고 있는 언어를 더 효율적으로 사용할 수 있음&lt;/strong&gt; : 최근에 사용되고 있는 프로그래밍 언어는 지원하는 기능이 굉장히 많기 때문에 프로그래머가 모든 것을 잘 알고 사용하는 경우는 거의 없습니다. 하지만 프로그래밍 언어론을 학습한다면 이전에 몰라서 사용하지 못했던 기능을 배워서 사용할 수 있습니다.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;컴퓨터에 대해 더 많이 이해할 수 있음&lt;/strong&gt; : 초기에는 컴퓨터공학에 대한 지식이 부족한 사람이 많았기 때문에 효율적인 프로그래밍 언어가 개발되더라도 프로그래머들이 메뉴얼을 이해하지 못하여 사용하지 못했던 경우가 있습니다. 프로그래밍 언어의 구조와 특징을 학습한다면, 이것이 수행되는 과정을 더욱 잘 이해할 수 있게 되므로 이러한 문제를 방지할 수 있습니다.&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/PL/001/06.jpg&quot; alt=&quot;&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;프로그래밍 언어는 다양한 분야에 사용되고 있습니다. 간단하게 몇 개만 짚어보자면,&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;과학 분야&lt;/strong&gt; : 최초의 컴퓨터도 복잡한 계산을 용이하게 하기 위한 계산기였습니다. 따라서 초기 프로그래밍 언어도 행렬과 같은 복잡한 계산을 수행할 수 있도록 설계되었습니다. 과학 분야에 사용하도록 개발된 첫 언어는 바로 Fortran(Formula Translator)으로, 수식을 컴퓨터로 계산할 수 있게 만드는 프로그래밍 언어입니다. 현재 컴퓨터의 용도는 다양하지만, MATLAB과 같이 여전히 과학 분야에서 인간이 하기 힘든 계산을 도와주고 있습니다.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;비즈니스 분야&lt;/strong&gt; : 비즈니스에 필요한 기능은 정교한 입출력과 십진수의 처리 능력입니다. 이러한 용도에 적합하게 만들어진 최초의 프로그래밍 언어는 1960년대 COBOL이라는 언어로 구현되었습니다. 그러나 이 외의 사무용 언어는 별도로 개발되지 않았으며, 필요한 경우에는 여전히 COBOL을 사용합니다.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;인공지능 분야&lt;/strong&gt; : 인공지능 분야에서는 주로 기호 계산이 필요합니다. 기호 계산은 숫자가 아니라 문자와 같은 특정한 기호를 조작하는 연산입니다. (자연어 처리를 생각해보시면 됩니다) 이 분야에서 처음으로 사용된 프로그래밍 언어는 1959년에 개발된 LISP이며, 1970년에 그 대항마로 Prolog가 개발되었습니다. 현재는 인공지능 분야에 사용하기 위한 별도의 언어를 개발하기 보단, Python과 같은 시스템 프로그래밍 언어에서 추가적인 라이브러리를 적용하여 사용하고 있습니다.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;시스템 프로그래밍&lt;/strong&gt; : 시스템 소프트웨어는 컴퓨터를 사용할 수 있게 만드는 운영체제와 같은 프로그램을 일컫는 말입니다. 컴퓨터를 사용하기 위해서는 반드시 필요하기 때문에 그 중요성이 다른 분야와 비교해서 매우 높고, 현재도 시스템 소프트웨어 개발자는 수요가 매우 많습니다. 최초의 시스템 소프트웨어는 어셈블리 언어나 그보다 조금 나은 수준의 언어로 개발되었으나, 현재는 C/C++ 등의 고급 언어로 개발되고 있습니다.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;웹 소프트웨어&lt;/strong&gt; : WWW(World Wide Web)은 프로그래밍 언어가 아닌 HTML과 같은 마크업 언어가 주로 사용되고 있습니다. 그러나 이러한 웹 콘텐츠도 동적인 컨텐츠가 필요하기 때문에, 프로그래밍 언어의 일부 기능이 지원됩니다. 이런 언어는 스크립트 언어라고 불리며 대표적인 예로 JavaScript나 PHP가 존재합니다.&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/PL/001/07.jpg&quot; alt=&quot;&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;여러 프로그래밍 언어의 구조와 특징을 배우다보면 특정 프로그래밍 언어가 기존 프로그래밍 언어들에 비해 얼마나 우수한지를 평가해야할 수도 있습니다. 평가를 하기 위해서는 평가에 대한 기준이 있어야 보다 객관적인 평가가 가능합니다. 그러나 교재에서 소개하는 프로그래밍 언어의 평가 기준에는 주관적인 평가도 있기 때문에 완벽한 기준과는 거리가 있음을 기억하셔야 합니다.&lt;/p&gt;
-
-&lt;p&gt;교재에서는 프로그래밍 언어의 평가 기준을 &lt;strong&gt;가독성(Readability)&lt;/strong&gt;, &lt;strong&gt;작성력(Writability)&lt;/strong&gt;, &lt;strong&gt;안정성(Reliability)&lt;/strong&gt;, &lt;strong&gt;비용(Cost)&lt;/strong&gt;으로 나누었습니다. 각각의 평가 기준에 어떤 요소가 포함되는지는 다음 슬라이드부터 하나씩 자세하게 소개하도록 하겠습니다.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/PL/001/08.jpg&quot; alt=&quot;&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;먼저 가독성은 해당 프로그래밍 언어로 작성한 프로그램을 얼마나 쉽게 이해할 수 있는지를 나타내는 척도입니다. 1970 ~ 80년대에 소프트웨어 생명 주기(Software Life Cycle)이란 개념이 도입되고 나서 프로그램을 제작하는 것 자체보다 유지 및 관리의 중요성이 부각되었습니다. 가독성이 좋은 프로그램일수록 유지 및 보수가 그만큼 간단하기 때문에 프로그래밍 언어의 우수성을 측정하는 중요한 척도가 될 수 있습니다.&lt;/p&gt;
-
-&lt;p&gt;가독성에 영향을 주는 요소 중 하나는 &lt;strong&gt;단순성(Simplicity)&lt;/strong&gt;입니다. 프로그래밍 언어에서 지원하는 기본적인 구조가 많을수록 배우기 어렵다는 것은 자명한 사실입니다. 또한 같은 연산을 수행하는데 여러 가지의 수행 방법을 갖는 특징 다중성(Feature Multiplicity)도 영향을 끼칩니다. 그리고 연산자 오버로딩(Operator Overloading)이 빈번하게 일어나는 언어라면 가독성에 악영향을 미칠 수 있습니다. 그렇다고 너무 단순해도 가독성에 나쁜 영향을 미칠 수 있는데, 대표적으로 어셈블리 언어는 매우 단순한 특징을 가지고 있지만, 그로 인해 동일한 기능을 수행하기 위해서 고급 언어보다 더 많은 코드가 필요하다는 단점이 있습니다.&lt;/p&gt;
-
-&lt;p&gt;또 다른 요소 중 하나는 &lt;strong&gt;직교성(Orthogonality)&lt;/strong&gt;입니다. 이 단어는 일상생활에서 잘 사용하지 않아서 단어만 보고 의미를 유추하기 힘든데, 쉽게 말하면 프로그래밍 언어의 제어 및 데이터 구조를 구축하기 위해 결합할 수 있는 구성 집합이 얼마나 적은지를 나타냅니다. 더 간단하게 말하자면 프로그래밍 언어에서 사용되는 규칙에 예외가 적을수록 직교성이 높습니다. 예를 들어, C언어에서 a + b라는 문구는 일반적으로 변수 a와 b의 값을 더하는 것을 의미합니다. 그런데 만약 a가 정수형 포인터라면, b의 값에 4가 곱해져서 a + b = 50이 됩니다. 이것은 + 연산의 예외로써, 직교성을 나쁘게 만드는 것으로 볼 수 있습니다.&lt;/p&gt;
-
-&lt;p&gt;세 번째 요소는 &lt;strong&gt;제어문(Control Statements)의 적절한 사용&lt;/strong&gt;입니다. 특히, 프로그램은 위에서 아래로 읽을 수 있도록 만드는 것이 가독성을 높이는 방법입니다. 초기 프로그래밍 언어에서는 Go To라는 문법이 있어서, 원하는 곳으로 라인을 점프할 수 있었습니다. 이것은 프로그램을 작성할 때 도움이 될 수도 있지만, 읽는 사람의 입장에서는 이곳 저곳으로 점프하면서 읽어야 하기 때문에 가독성을 해치게 됩니다. 따라서 최근 개발되는 프로그래밍 언어들은 Go To 문을 사용하지 않는 GOTO-less 형식으로 디자인됩니다.&lt;/p&gt;
-
-&lt;p&gt;다음 고려할 수 있는 요소는 &lt;strong&gt;데이터 타입과 구조체(Data Types and Structures)&lt;/strong&gt;입니다. 이것은 프로그래밍 언어에서 데이터 타입이나 데이터 구조를 정의할 수 있는 충분한 기능이 존재하는지에 대한 여부입니다. 예를 들어, Boolean 형의 데이터 타입이 제공되지 않는다면, 총합(sum)이 너무 큰 경우를 나타내는 변수를 sum_is_too_big = 1와 같이 표현해야 할 것입니다. 이 경우 의미가 분명하지 않아서 가독성이 떨어질 수 있는데, 만약 Boolean 형의 데이터 타입이 제공된다면 sum_is_too_big = true와 같이 보다 명확하게 나타낼 수 있습니다.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/PL/001/09.jpg&quot; alt=&quot;&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;마지막으로 말씀드릴 요소는 &lt;strong&gt;구문 설계(Syntax Considerations)&lt;/strong&gt;입니다. 프로그래밍 언어에 따라 변수를 선언할 때 밑줄이 허용되는 경우도 있고, 허용되지 않는 경우도 있습니다. 만약 밑줄이 허용된다면 SUM_OF_SQUARE와 같이 변수가 어떤 것을 의미하는지 보다 명확하게 이름을 작성할 수 있습니다. 또한 프로그램 내에서 사용되는 특수어를 만들어서, 프로그램 내의 제어문의 범위를 명확화게 표현해줄 수 있습니다. 예를 들어, if 문을 시작하고 나서는 마지막에 end if로 마무리해서 if 문의 범위를 명확하게 표시하는 방법이 있습니다. C-like 언어들은 특수어를 사용하지 않고 중괄호를 사용하기 때문에 이 부분에서 다소 가독성이 떨어진다고 볼 수 있습니다. 또한 같은 문법을 사용할 때 매개변수의 위치에 따라 의미가 달라지는 경우도 구문 설계를 잘못한 예시 중 하나입니다.&lt;/p&gt;
-
-&lt;p&gt;다음은 작성력이란 척도입니다. 작성력은 풀고자 하는 문제를 해결하기 위한 프로그램을 작성하는 데 해당 프로그래밍 언어가 얼마나 쉽게 사용할 수 있는지를 나타냅니다. 작성력에는 가독성에서와 같이 단순성과 직교성이 영향을 미칩니다. 이것은 가독성을 설명할 때 설명한 요소이므로 생략하도록 하겠습니다.&lt;/p&gt;
-
-&lt;p&gt;가독성과 다르게 작성력에 영향을 미치는 요소 중 하나는 &lt;strong&gt;추상화를 지원(Support for Abstraction)&lt;/strong&gt;하는가의 여부입니다. 추상화는 세부적인 구현 내용을 무시하고 데이터 구조나 연산을 정의하여 사용하는 방법입니다. 추상화는 프로세스 추상화와 데이터 추상화 2가지 종류로 나눌 수 있는데, 프로세스 추상화의 예시는 부프로그램 이용, 데이터 추상화는 레코드 타입을 이용하는 것이 그 예가 될 수 있습니다. C 언어에서 부프로그램은 함수, 레코드 타입은 구조체로 구현되어 있습니다.&lt;/p&gt;
-
-&lt;p&gt;작성력에 영향을 미치는 또 다른 요소는 &lt;strong&gt;표현력(Expressivity)&lt;/strong&gt;입니다. 표현력은 같은 양의 계산을 보다 적은 코드로 수행이 가능하게 만드는 것입니다. 예를 들어, C 언어에서 count라는 변수를 1 증가시키는 방법은 count = count + 1도 있지만, count++로 간단하게 대체할 수 있습니다. count++이 count = count + 1보다 훨씬 간단한 표기이기 때문에 작성력을 향상시킨다고 볼 수 있습니다.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/PL/001/10.jpg&quot; alt=&quot;&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;다음 척도는 신뢰성입니다. 만약 프로그램이 모든 조건 하에서 주어진 명세에 따라 수행된다면 신뢰적이라고 말할 수 있습니다. 이번에는 신뢰성이 영향을 미치는 요소를 하나하나 살펴보도록 하겠습니다.&lt;/p&gt;
-
-&lt;p&gt;가장 먼저 신뢰성에 영향을 미치는 요소는 &lt;strong&gt;타입 검사(Type Checking)&lt;/strong&gt;입니다. 여러 개의 변수를 포함한 연산을 수행할 때, 그 변수간의 연산이 가능한지 타입을 체크해야 합니다. 일반적으로 실행 시간 검사는 비효율적이기 때문에 컴파일 시간 검사를 구현하는 것이 바람직합니다. 고전적인 C 언어가 대표적으로 타입 검사를 하지 않는 언어이며(현재는 매개변수 타입 검사를 컴파일 시간에 수행합니다), Pascal 언어는 대부분 컴파일 시간에 타입 검사를 수행하지만, 범위 검사와 같은 일부분의 검사는 실행 시간에 수행합니다.&lt;/p&gt;
-
-&lt;p&gt;신뢰성에 영향을 미치는 두 번째 요소는 &lt;strong&gt;예외 처리(Exception Handling)&lt;/strong&gt;입니다. 예외 처리는 컴파일 시간에서는 알 수 없고 실행 시간에 발생할 수 있는 오류를 대처하는 방법입니다. C 언어는 대표적으로 예외 처리가 지원되지 않는 언어이고, Java는 강력한 예외 처리를 지원하고 있습니다.&lt;/p&gt;
-
-&lt;p&gt;신뢰성에 영향을 미치는 또 다른 요소로는 &lt;strong&gt;별칭(Aliasing)&lt;/strong&gt;이 있습니다. 별칭은 동일한 메모리 공간에 대해 서로 다른 두 가지 이상의 접근 방법이 존재하는 것입니다. 이것은 의도치 않게 저장된 데이터를 변경시킬 수 있는 위험이 있기 때문에, 대부분 프로그래밍 언어에서 지양하는 특징입니다. 최근에 사용되는 프로그래밍 언어에서는 아예 지원하지 않거나, 제한된 방법으로만 별칭을 사용할 수 있게 제한하고 있습니다. 별칭을 구현한 대표적인 방법은 포인터가 있습니다.&lt;/p&gt;
-
-&lt;p&gt;마지막으로 고려할 수 있는 요소는 가독성과 작성력입니다. 만약 가독성이 낮다면 프로그램의 유지 보수에 큰 영향을 미치기 때문에 신뢰성을 낮출 위험이 있고, 작성력이 낮다면 프로그램을 구현할 때 보다 부자연스러운 방법으로 구현하기 때문에 신뢰성에 악영향을 미칠 가능성이 높아지기 때문입니다.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/PL/001/11.jpg&quot; alt=&quot;&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;마지막으로 프로그래밍 언어에서 고려하는 기준은 비용입니다. 프로그래밍 언어에서 비용은 다양한 측면에서 고려될 수 있습니다.&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;strong&gt;프로그래머를 교육하는 비용&lt;/strong&gt; : 배우기 어려운 언어일수록 프로그래머를 교육시키는데 많은 비용이 들어감 (ex. C++)&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;프로그램을 작성하는 비용&lt;/strong&gt; : 작성력이 낮은 언어일수록 작성하는 데 오랜 시간이 소모됨&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;프로그램을 컴파일 하는 비용&lt;/strong&gt; : 컴파일 시간이 오래 걸릴수록 오랜 시간이 소모됨 (ex. 초기 Ada)&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;프로그램을 실행시키는 비용&lt;/strong&gt; : 실행 시간에 타입 검사를 많이 할수록 오랜 시간이 소모됨.&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;프로그램을 유지, 보수하는 비용&lt;/strong&gt; : 가독성이 낮은 언어일수록 코드를 수정하는데 오랜 시간이 소모됨.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;제시한 기준 외에도 프로그래밍 언어를 평가하는데 다른 기준을 세울 수도 있습니다. 예를 들어, 언어가 얼마나 표준화가 잘 되었는지 판단하는 &lt;strong&gt;이식성(Portability)&lt;/strong&gt;, 얼마나 광범위한 분야에 응용할 수 있는지 나타내는 &lt;strong&gt;일반성(Generality)&lt;/strong&gt;, 프로그래밍 언어가 얼마나 명세화가 잘 되었는지 나타내는 &lt;strong&gt;분명성(Well-definedness)&lt;/strong&gt; 등이 있습니다.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/PL/001/12.jpg&quot; alt=&quot;&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;다음으로는 프로그래밍 언어 설계에 영향을 미친 요소들을 알아보겠습니다.&lt;/p&gt;
-
-&lt;p&gt;가장 먼저 살펴볼 것은 컴퓨터 구조(Computer Architecture)입니다. 특히 지금까지 프로그래밍 언어에 가장 큰 영향을 미친 구조는 폰 노이만 구조(von-Neumann Architecture)입니다. 폰 노이만 구조에 영향을 받은 프로그래밍 언어를 &lt;strong&gt;명령형 언어(Imperative Languages)&lt;/strong&gt;라고 합니다. 명령형 언어는 데이터와 프로그램이 동일한 기억 장소에 저장되며, 변수, 배정문, 반복문 등의 특징을 가지고 있습니다. 그렇기에 명령형 언어는 문제를 어떻게 풀 것인가에 초점을 맞추게 됩니다.&lt;/p&gt;
-
-&lt;p&gt;명령형 언어의 단점 중 하나는 &lt;strong&gt;폰 노이만 병목(von-Neumann Bottleneck)&lt;/strong&gt; 현상이 발생할 수 있다는 것입니다. 컴퓨터 하드웨어에서 CPU의 처리 속도는 매우 빠르지만, 저장 장치에서 CPU까지 전달 속도가 느리기 때문에 CPU가 대기하는 상태를 말합니다. 이 문제를 해결하기 위한 방법 중 하나가 바로 캐시(Cache)이지만, 이것으로도 폰 노이만 병목 현상은 완전히 해결할 수 없습니다.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/PL/001/13.jpg&quot; alt=&quot;&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;명령형 언어와는 다르게, 폰 노이만 구조에 영향을 받지 않은 프로그래밍 언어를 선언형 언어(Declarative Languages)입니다. 이러한 언어들은 배정문이나 반복문 없이 함수형 언어로 프로그래밍이 가능합니다. 그러나 아직 선언형 언어를 완벽하게 수행할 수 있는 하드웨어가 개발되지 않았기 때문에, 이러한 컴퓨터가 개발되기 전까지는 명령형 언어를 대체할 수 없다고 보여집니다.&lt;/p&gt;
-
-&lt;p&gt;폰 노이만 구조가 아닌 컴퓨터는 순차 제어나 변수의 개념이 없을 수 있고, 높은 수준의 병렬 처리와 변수의 사용 대신 이름과 상수 값 간의 강한 구속력이 존재할 것으로 예상하고 있습니다.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/PL/001/14.jpg&quot; alt=&quot;&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;프로그래밍 언어의 설계에 영향을 미친 또 다른 하나는 해당 시기에 중요하게 생각했던 소프트웨어 개발 방법론입니다. 시간이 지날수록 하드웨어의 비용은 감소하고, 소프트웨어의 비용이 증가함에 따라 소프트웨어를 쉽게 만들 수 있는 방법을 연구하기 시작했습니다.&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;70년대 초에는 GOTO 문의 비효율성을 인식하고, 위에서 아래로 읽어나갈 수 있는 구조적 프로그래밍이란 개념이 정립되었습니다.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;70년대 말부터는 데이터 설계를 중요하게 생각하였기 추상 데이터 타입과 같이 데이터 추상화를 지원하기 시작하였습니다.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;80년대 초에는 객체지향 프로그래밍의 개념이 도입되어 상속과 같이 기존 프로그램을 재사용성을 늘리게 되었습니다.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;비주류적인 방법론 중 대표적으로 프로세스 지향 프로그래밍이 있습니다. 프로세스 지향 프로그래밍은 데이터 지향 방법과 달리 동시성(Concurrrency)을 도입하여 동일한 시간 내에 여러 프로세스를 실행할 수 있는 방법을 고안하였습니다. Java는 프로세스 지향 프로그래밍에 영향을 받은 언어 중 하나입니다.&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;프로그래밍 언어를 설계할 때, 지금까지 제시한 모든 기준을 만족시키고 싶지만 아쉽게도 여러 기준을 서로 상충하는 단점이 있습니다. 대표적으로 몇 가지를 소개하자면,&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;신뢰성과 실행 비용은 서로 상충됩니다. 예를 들면, Java는 모든 Index의 범위를 검사함으로써 신뢰성을 향상시켰지만, 이로 인해 실행 비용이 늘어나는 단점이 있습니다. 반대로 C 언어는 Index의 범위를 전혀 검사하지 않아 신뢰성이 떨어지지만, 그만큼 실행 비용이 낮아지는 장점도 있습니다.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;표현적이 높아지면 코드는 그만큼 깔끔해지지만, 반대로 가독성이 떨어진다는 단점이 있습니다. 예를 들면, APL은 복잡하고 많은 연산을 간단한 연산자로 표현이 가능하지만, 가독성이 심각하게 떨어진다는 단점이 있습니다.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;유연성과 안정성, 유연성과 효율성도 서로 상충됩니다. 예를 들면, C++ 언어는 포인터를 다양한 방법으로 조작할 수 있어서 유연성이 높지만, 그만큼 안정성이 떨어진다는 단점이 있습니다. 또한 프로그래밍 언어에서 유연성이 늘어날수록 예외 사항이 늘어나기 때문에, 코드를 읽을 때나 작성할 때 효율성이 낮아진다는 단점이 있습니다.&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/PL/001/15.jpg&quot; alt=&quot;&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;일반적으로 컴퓨터 하드웨어는 기계어만 이해합니다. 그렇기 때문에 컴퓨터에 고급 언어를 이해시키기 위해서는 별도의 소프트웨어가 필요합니다. 이러한 예로써는 컴파일러, 인터프리터, 또는 하이브리드 구현 시스템이 있습니다.&lt;/p&gt;
-
-&lt;p&gt;고급 언어 구현에는 운영체제에서 지원하는 많은 기능들이 필요하기 때문에, 대부분의 고급 언어는 컴퓨터 하드웨어에 직접 연결되지 않고 운영체제에 기능들에 연결되어 있습니다.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/PL/001/16.jpg&quot; alt=&quot;&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;컴파일러(Compiler)&lt;/strong&gt;는 고급 언어로 작성된 프로그램을 기계어로 번역하는 방법입니다. 기계어로 번역을 완료한 후에는 또 번역할 필요가 없으므로, 실행 시간이 매우 빠르다는 장점이 있습니다. 그러나 프로그램을 조금만 수정해도 다시 처음부터 번역을 수행해야 하므로, 잦은 수정이 필요한 프로그램에는 적합하지 않습니다. 컴파일러를 사용하는 대표적인 언어로 C 언어가 있습니다.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;하이브리드 구현 시스템(Hybrid Implementation System)&lt;/strong&gt;은 고급 언어로 작성된 프로그램을 중간 언어로 번역한 뒤, 중간 언어를 인터프리터처럼 한줄 한줄 번역하는 방법입니다. 이것은 컴파일러와 인터프리터를 적절히 조율한 방법입니다. 하이브리드 구현 시스템을 사용하는 대표적인 예시로 Java 언어가 있습니다. Java 언어는 먼저 작성한 프로그램을 바이트코드(Bytecode)로 번역한 다음, 자바 가상 머신을 통해 기계어로 번역합니다.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/PL/001/17.jpg&quot; alt=&quot;&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;인터프리터(Interpreter)&lt;/strong&gt;는 컴파일러와 달리 고급 언어를 번역하지 않고, 코드를 한줄 한줄 읽으며 실행하는 방법입니다. 인터프리터는 실행하다가 오류가 발생한 라인에서 멈추기 때문에 디버깅이 용이하다는 장점이 있으나, 실행 시간이 컴파일러에 비해 매우 느리다는 단점이 있습니다. 게다가 실행하는 과정에서 컴파일러보다 더 많은 메모리 공간을 요구하기도 합니다. 최근 가장 많이 사용하는 Python이 인터프리터 방식으로 실행되며, JavaScript와 같은 웹 프로그래밍 언어도 인터프리터를 사용합니다.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;사전처리기(Preprocessor)&lt;/strong&gt;는 프로그램이 컴파일되기 전에 프로그램을 처리하는 프로그램으로, 다른 파일에 있는 코드를 현재 프로그램에 포함시키는 역할을 합니다. 예를 들면, C 언어에서는 #include 를 통해 외부 파일의 코드를 불러옵니다.&lt;/p&gt;
-
-&lt;p&gt;마지막으로 &lt;strong&gt;프로그래밍 환경(Program Environment)&lt;/strong&gt;은 프로그램을 작성하기 위한 도구를 일컫는 말입니다. 이러한 도구들은 파일 시스템, 편집기, 링커, 컴파일러, 디버거, 사용자 인터페이스와 같은 기능을 내장하고 있습니다. 대표적으로 Microsoft의 Visual Studio, Apple의 Xcode, JetBrains의 IntelliJ IDEA 등이 있습니다.&lt;/p&gt;
-
-&lt;p&gt;1장의 내용은 여기까지입니다. 읽어주셔서 감사합니다!&lt;/p&gt;</content><author><name>Joonsu Ryu</name></author><category term="studies" /><category term="programming languages" /><summary type="html">안녕하세요, 오늘은 프로그래밍 언어론의 첫 장인 Preliminaries를 다뤄보겠습니다. 모든 과목이 마찬가지이지만, 첫 장은 보통 이 과목에서 어떤 것을 배우는지에 대한 간략한 소개가 나와 있습니다.</summary></entry></feed>
+&lt;p&gt;2장의 내용은 여기까지입니다. 읽어주셔서 감사합니다!&lt;/p&gt;</content><author><name>Joonsu Ryu</name></author><category term="studies" /><category term="programming languages" /><summary type="html"></summary></entry></feed>
