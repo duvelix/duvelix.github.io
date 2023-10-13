@@ -24,14 +24,17 @@ classes: wide
 2. Joonsu Ryu and Sungwook Kim, "...", *to be submitted to* ...
 
 ### Conference Papers
-1. Joonsu Ryu and Sungwook Kim, "Energy Level based D2D Routing Algorithm By using the Reinforcement Learning Approach." *Conference of the Institute of Electronics and Information Engineers*, June 2022, pp. 744-746. (Korean) [[link]](https://www.dbpia.co.kr/journal/articleDetail?nodeId=NODE11132455)
+1. Joonsu Ryu and Sungwook Kim, "Detection of Wormhole Attacks in Mobile Ad-hoc Network Using Multi-Validation Techniques." *Conference of the Institute of Electronics and Information Engineers*, June 2023, pp. 2038-2041. (Korean) [[link]](https://www.dbpia.co.kr/journal/articleDetail?nodeId=NODE11522580)
 
 
-2. Joonsu Ryu and Sungwook Kim, "Multi-hop Routing Method based on Reinforcement Learning for Efficient Data Offloading." *Conference of the Institute of Electronics and Information Engineers*, August 2020. pp. 687-689. (Korean) [[link]](https://www.dbpia.co.kr/journal/articleDetail?nodeId=NODE10447955)
+2. Joonsu Ryu and Sungwook Kim, "Energy Level based D2D Routing Algorithm By using the Reinforcement Learning Approach." *Conference of the Institute of Electronics and Information Engineers*, June 2022, pp. 744-746. (Korean) [[link]](https://www.dbpia.co.kr/journal/articleDetail?nodeId=NODE11132455)
 
-3. Joonsu Ryu and Sungwook Kim, "Finding the Influential Node set Using Reinforcement Learning in Social Networks." *Conference of the Institute of Electronics and Information Engineers*, June 2018, pp. 1064-1065. (Korean) [[link]](https://www.dbpia.co.kr/journal/articleDetail?nodeId=NODE07515957)
 
-4. Joonsu Ryu and Sungwook Kim, "A Study on the Influential Maximization Problem on Real-Time Dynamic Social Networks." *Conference of the Korean Institute of Information Scientists and Engineers*, December 2017, pp. 1200-1202. (Korean) [[link]](https://www.dbpia.co.kr/journal/articleDetail?nodeId=NODE07322440)
+3. Joonsu Ryu and Sungwook Kim, "Multi-hop Routing Method based on Reinforcement Learning for Efficient Data Offloading." *Conference of the Institute of Electronics and Information Engineers*, August 2020. pp. 687-689. (Korean) [[link]](https://www.dbpia.co.kr/journal/articleDetail?nodeId=NODE10447955)
+
+4. Joonsu Ryu and Sungwook Kim, "Finding the Influential Node set Using Reinforcement Learning in Social Networks." *Conference of the Institute of Electronics and Information Engineers*, June 2018, pp. 1064-1065. (Korean) [[link]](https://www.dbpia.co.kr/journal/articleDetail?nodeId=NODE07515957)
+
+5. Joonsu Ryu and Sungwook Kim, "A Study on the Influential Maximization Problem on Real-Time Dynamic Social Networks." *Conference of the Korean Institute of Information Scientists and Engineers*, December 2017, pp. 1200-1202. (Korean) [[link]](https://www.dbpia.co.kr/journal/articleDetail?nodeId=NODE07322440)
 
 ## Teaching Experience
 ### Instructor
