@@ -34,7 +34,7 @@
 
 
 
-  <meta property="article:published_time" content="2022-10-04T00:00:00+09:00">
+  <meta property="article:published_time" content="2022-10-04T00:00:00+00:00">
 
 
 
@@ -277,7 +277,7 @@
   <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork">
     <meta itemprop="headline" content="Policy Gradient Methods">
     <meta itemprop="description" content="이번 장은 드디어 마지막 장인 Policy Gradient입니다. 이번 장에서는 지금까지 이 교재에서 다룬 방법들과는 다르게, Policy 자체를 매개변수화하는 방법을 알아보겠습니다. 지금까지의 방법들은 Estimated Action-Value를 기반으로 Action을 선택했기 때문에 Action-Value를 추정하는 것이 중요했습니다. 하지만 이번 장에서 배울 새로운 방법인 Policy Gradient는 Action을 선택하는 데 Value Function을 사용하지 않습니다. 이번 장에서 사용할 새로운 표기는 Policy에 대한 매개변수 벡터인 $\boldsymbol{\theta} \in \mathbb{R}^{d’}$입니다. 따라서 Policy는 이제 매개변수 $\boldsymbol{\theta}$를 포함하여 $\pi (a \mid s, \boldsymbol{\theta}) = Pr \{ A_t = a \mid S_t = s, \boldsymbol{\theta}_t = \boldsymbol{\theta} \}$로 표현합니다. 이것은 시간 $t$에서 State가 $s$이고 매개변수가 $\boldsymbol{\theta}$일 때 Action $a$를 선택할 확률로 정의됩니다. 만약 학습 알고리즘 안에서 Value Function에 대한 추정을 포함하는 경우, 이전과 마찬가지로 여전히 Weight Vector $\mathbf{w} \in \mathbb{R}^d$를 포함하여 $\hat{v}(s, \mathbf{w})$로 표현합니다.">
-    <meta itemprop="datePublished" content="2022-10-04T00:00:00+09:00">
+    <meta itemprop="datePublished" content="2022-10-04T00:00:00+00:00">
     
 
     <div class="page__inner-wrap">
@@ -609,7 +609,7 @@ J(\boldsymbol{\theta}) &amp;= \sum_s \mu (s) \Bigg( \sum_a \Big[ \nabla \pi (a|s
 
         
 
-  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time class="dt-published" datetime="2022-10-04T00:00:00+09:00">October 4, 2022</time></p>
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time class="dt-published" datetime="2022-10-04T00:00:00+00:00">October 4, 2022</time></p>
 
       </footer>
 

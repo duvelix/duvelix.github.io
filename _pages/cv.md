@@ -40,7 +40,7 @@ classes: wide
 ### Instructor
 #### <img src="\assets\sungshin.png" width=50 height=50> **Sungshin Women's University** | 2023.09 - 2024.08 (Expected)
 - Designed and delivered lectures for the courses.
-- Courses: Programming Languages and Compilers
+- Courses: Programming Languages and Java Programming
 
 ### AI Program Mentor
 #### <img src="\assets\soongmoon.png" width=50 height=50> **Soongmoon High School** | 2022.10 - 2022.11
