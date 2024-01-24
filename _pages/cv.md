@@ -19,9 +19,11 @@ classes: wide
 
 ## Publications
 ### Journal Papers
-1. Joonsu Ryu and Sungwook Kim, "Reputation-Based Opportunistic Routing Protocol Using Q-Learning for MANET Attacked by Malicious Nodes." *IEEE Access*, Vol. 11, 2023, pp. 47701-47711. [[link]](https://ieeexplore.ieee.org/document/10038554)
+1. Joonsu Ryu and Sungwook Kim, "Trust System- and Multiple Verification Technique-based Method for Detecting Wormhole Attacks in MANETs," *IEEE Access*, Early Access, 2024. [[link]](https://ieeexplore.ieee.org/abstract/document/10403892)
 
-2. Joonsu Ryu and Sungwook Kim, "...", *to be submitted to* ...
+2. Joonsu Ryu and Sungwook Kim, "Reputation-Based Opportunistic Routing Protocol Using Q-Learning for MANET Attacked by Malicious Nodes," *IEEE Access*, Vol. 11, 2023, pp. 47701-47711. [[link]](https://ieeexplore.ieee.org/document/10038554)
+
+3. Joonsu Ryu and Sungwook Kim, "Mitigating Jamming Attacks in Underwater Sensor Networks Using an M-Qubed-Based Opportunistic Routing Protocol", *Under Review*
 
 ### Conference Papers
 1. Joonsu Ryu and Sungwook Kim, "Detection of Wormhole Attacks in Mobile Ad-hoc Network Using Multi-Validation Techniques." *Conference of the Institute of Electronics and Information Engineers*, June 2023, pp. 2038-2041. (Korean) [[link]](https://www.dbpia.co.kr/journal/articleDetail?nodeId=NODE11522580)
