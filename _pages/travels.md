@@ -87,3 +87,20 @@ author_profile: true
   {% endfor %}
   </ul>
 </div>
+
+
+## 240208 Sapporo
+
+{% assign tag = "sapporo" %}
+
+<div style="display: flex;">
+  <div>
+    <img src="/assets/images/Travel/027/00.jpg" alt="" style="width: 300px;">
+  </div>
+  <ul>
+  {% assign posts = site.posts | where_exp:"post", "post.tags contains tag" | reverse %}
+  {% for post in posts %}
+    <li><a href="{{ post.url }}">{{ post.title }}</a>{% if post.comments.size > 0 %} - {{ post.comments.size }} comment{% if post.comments.size > 1 %}s{% endif %}{% endif %}</li>
+  {% endfor %}
+  </ul>
+</div>
