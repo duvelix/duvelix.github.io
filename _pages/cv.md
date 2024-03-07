@@ -56,6 +56,10 @@ classes: wide
 - Designed and delivered lectures for the courses.
 - Courses: Programming Languages and Java Programming
 
+#### <img src="\assets\hansung.png" width=50 height=50> **Hansung University** | 2024.03 - 2025.02 (Expected)
+- Designed and delivered lectures for the courses.
+- Courses: Computer Programming (C Language)
+
 ## Awards and Honors
 - **Outstanding Paper Award**, Conference of the Institute of Electronics and Information Engineers (IEIE), June 2018.
 - **LG Electronics Paper Award for Outstanding Research**, Conference of the Institute of Electronics and Information Engineers (IEIE), June 2022.
