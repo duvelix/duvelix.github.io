@@ -127,7 +127,11 @@ Static variable은 모든 인스턴스에서 공유하고 있는 변수입니다
 
 **3. Generic Array를 만들 수 없다.**
 
+대신 Object 형으로 Array를 만든 다음 타입 변환을 사용해서 비슷하게 동작하게끔 만들 수는 있습니다.
+
 **4. Primitive Type을 Parameterized Type으로 사용할 수 없다.**
+
+Primitive Type은 int, double 같은 것을 의미합니다. 만약 이 자료형을 사용하고 싶다면 Primitive Type의 Wrapper 클래스인 Integer, Double을 사용하셔야 합니다.
 
 ## Example : Generic Class
 
@@ -169,7 +173,7 @@ Box<Fruit> appleBox = new Box<Apple>(); // Error
 Box<Apple> appleBox = new FruitBox<Apple>();  // OK
 ```
 
-**4. Parameterized Type은 반드시 일치해야하기 때문에, 생략이 가능하다다.**
+**4. Parameterized Type은 반드시 일치해야하기 때문에, 생략이 가능하다.**
 
 ```java
 Box<Apple> appleBox = new Box<Apple>();

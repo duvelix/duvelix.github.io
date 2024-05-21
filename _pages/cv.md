@@ -23,7 +23,7 @@ classes: wide
 
 2. Joonsu Ryu and Sungwook Kim, "Trust System- and Multiple Verification Technique-based Method for Detecting Wormhole Attacks in MANETs," *IEEE Access*, Vol. 12, 2024, pp. 16266-16275. [[link]](https://ieeexplore.ieee.org/document/10403892)
 
-3. Joonsu Ryu and Sungwook Kim, "Mitigating Jamming Attacks in Underwater Sensor Networks Using an M-Qubed-Based Opportunistic Routing Protocol", *Under Review*
+3. Joonsu Ryu and Sungwook Kim, "Mitigating Jamming Attacks in Underwater Sensor Networks Using an M-Qubed-Based Opportunistic Routing Protocol", *ETRI Journal*, 2024. (Accepted)
 
 ### Conference Papers
 1. Joonsu Ryu and Sungwook Kim, "A Study on the Influential Maximization Problem on Real-Time Dynamic Social Networks." *Conference of the Korean Institute of Information Scientists and Engineers*, December 2017, pp. 1200-1202. (Korean) [[link]](https://www.dbpia.co.kr/journal/articleDetail?nodeId=NODE07322440)
@@ -36,7 +36,7 @@ classes: wide
 
 5. Joonsu Ryu and Sungwook Kim, "Detection of Wormhole Attacks in Mobile Ad-hoc Network Using Multi-Validation Techniques." *Conference of the Institute of Electronics and Information Engineers*, June 2023, pp. 2038-2041. (Korean) [[link]](https://www.dbpia.co.kr/journal/articleDetail?nodeId=NODE11522580)
 
-## Teaching Experience
+## Teaching Experiences
 ### Teaching Assistant
 #### <img src="\assets\sogang.png" width=50 height=50> **Sogang University** | 2015.03 - 2019.02
 - Assisted in grading assignments and exams, held office hours to help students with questions
