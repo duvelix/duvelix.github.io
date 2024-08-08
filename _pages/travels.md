@@ -19,7 +19,7 @@ author_profile: true
   <ul>
   {% assign posts = site.posts | where_exp:"post", "post.tags contains tag" | reverse %}
   {% for post in posts %}
-    <li><a href="{{ post.url }}">{{ post.title }}</a>{% if post.comments.size > 0 %} - {{ post.comments.size }} comment{% if post.comments.size > 1 %}s{% endif %}{% endif %}</li>
+    <li><a href="{{ post.url }}">{{ post.title }}</a></li>
   {% endfor %}
   </ul>
 </div>
@@ -35,7 +35,7 @@ author_profile: true
   <ul>
   {% assign posts = site.posts | where_exp:"post", "post.tags contains tag" | reverse %}
   {% for post in posts %}
-    <li><a href="{{ post.url }}">{{ post.title }}</a>{% if post.comments.size > 0 %} - {{ post.comments.size }} comment{% if post.comments.size > 1 %}s{% endif %}{% endif %}</li>
+    <li><a href="{{ post.url }}">{{ post.title }}</a></li>
   {% endfor %}
   </ul>
 </div>
@@ -49,9 +49,9 @@ author_profile: true
     <img src="/assets/images/Travel/007/00.jpg" alt="" style="width: 300px;">
   </div>
   <ul>
-  {% assign posts = site.posts | where_exp:"post", "post.tags contains tag" | reverse %}
+  {% assign posts = site.posts | where_exp:"post", "post.tags contains tag" | where_exp:"post", "post.path contains '2023'" | reverse %}
   {% for post in posts %}
-    <li><a href="{{ post.url }}">{{ post.title }}</a>{% if post.comments.size > 0 %} - {{ post.comments.size }} comment{% if post.comments.size > 1 %}s{% endif %}{% endif %}</li>
+    <li><a href="{{ post.url }}">{{ post.title }}</a></li>
   {% endfor %}
   </ul>
 </div>
@@ -67,7 +67,7 @@ author_profile: true
   <ul>
   {% assign posts = site.posts | where_exp:"post", "post.tags contains tag" | reverse %}
   {% for post in posts %}
-    <li><a href="{{ post.url }}">{{ post.title }}</a>{% if post.comments.size > 0 %} - {{ post.comments.size }} comment{% if post.comments.size > 1 %}s{% endif %}{% endif %}</li>
+    <li><a href="{{ post.url }}">{{ post.title }}</a></li>
   {% endfor %}
   </ul>
 </div>
@@ -83,7 +83,7 @@ author_profile: true
   <ul>
   {% assign posts = site.posts | where_exp:"post", "post.tags contains tag" | reverse %}
   {% for post in posts %}
-    <li><a href="{{ post.url }}">{{ post.title }}</a>{% if post.comments.size > 0 %} - {{ post.comments.size }} comment{% if post.comments.size > 1 %}s{% endif %}{% endif %}</li>
+    <li><a href="{{ post.url }}">{{ post.title }}</a></li>
   {% endfor %}
   </ul>
 </div>
@@ -100,7 +100,23 @@ author_profile: true
   <ul>
   {% assign posts = site.posts | where_exp:"post", "post.tags contains tag" | reverse %}
   {% for post in posts %}
-    <li><a href="{{ post.url }}">{{ post.title }}</a>{% if post.comments.size > 0 %} - {{ post.comments.size }} comment{% if post.comments.size > 1 %}s{% endif %}{% endif %}</li>
+    <li><a href="{{ post.url }}">{{ post.title }}</a></li>
+  {% endfor %}
+  </ul>
+</div>
+
+## 240712 Tokyo
+
+{% assign tag = "tokyo" %}
+
+<div style="display: flex;">
+  <div>
+    <img src="/assets/images/Travel/007/00.jpg" alt="" style="width: 300px;">
+  </div>
+  <ul>
+  {% assign posts = site.posts | where_exp:"post", "post.tags contains tag" | where_exp:"post", "post.path contains '2024'" | reverse %}
+  {% for post in posts %}
+    <li><a href="{{ post.url }}">{{ post.title }}</a></li>
   {% endfor %}
   </ul>
 </div>
