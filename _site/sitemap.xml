@@ -1001,6 +1001,10 @@
 <lastmod>2024-08-12T00:00:00+00:00</lastmod>
 </url>
 <url>
+<loc>http://localhost:4000/travel/tokyo-14/</loc>
+<lastmod>2024-08-13T00:00:00+00:00</lastmod>
+</url>
+<url>
 <loc>http://localhost:4000/categories/</loc>
 </url>
 <url>
@@ -1167,6 +1171,9 @@
 </url>
 <url>
 <loc>http://localhost:4000/page50/</loc>
+</url>
+<url>
+<loc>http://localhost:4000/page51/</loc>
 </url>
 <url>
 <loc>http://localhost:4000/naver02c94837a9fc98fe4bf29d543f57a6f9.html</loc>
