@@ -11,6 +11,7 @@ classes: wide
 #### <img src="\assets\sogang.png" width=50 height=50> **Sogang University** | 2015 - 2025 (Expected)
 - Dissertation: Working in Progress
 - Advisor: Prof. Sungwook Kim
+- Served as a Special Research Personnel (전문연구요원) from Mar 2019 to Feb 2022 as part of mandatory alternative military service.
 
 ### Bachelor of Science in Mathematics
 #### <img src="\assets\sogang.png" width=50 height=50> **Sogang University** | 2010 - 2015
