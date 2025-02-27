@@ -52,25 +52,29 @@ classes: wide
 - Mentored high school students participating in an AI program.
 - Guided students in developing research plans based on their submitted project proposals.
 
-### Instructor
+### Lecturer
 #### <img src="\assets\sungshin.png" width=50 height=50> **Sungshin Women's University** | 2023.09 - 2025.08 (Expected)
 - Designed and delivered lectures for the courses.
 - 2023 Fall : Programming Languages
 - 2024 Spring : Java Programming
 - 2024 Fall : Python Programming for Scientists
+- 2025 Spring : Computer System Administration
 
-#### <img src="\assets\hansung.png" width=50 height=50> **Hansung University** | 2024.03 - 2025.02 (Expected)
+#### <img src="\assets\hansung.png" width=50 height=50> **Hansung University** | 2024.03 - 2026.02 (Expected)
 - Designed and delivered lectures for the courses.
 - 2024 Spring : Computer Programming (C Language)
 - 2024 Fall : Computer Programming (C Language)
+- 2025 Spring : Computer Programming (C Language)
 
 #### <img src="\assets\chungang.png" width=50 height=50> **Chung-ang University** | 2024.09 - 2025.08 (Expected)
 - Designed and delivered lectures for the courses.
 - 2024 Fall : Programming Languages, Programming (C Language)
+- 2025 Spring : Basic Computer Programming (C Language)
 
 #### <img src="\assets\dongguk.png" width=50 height=50> **Dongguk University** | 2024.09 - 2025.08 (Expected)
 - Designed and delivered lectures for the courses.
 - 2024 Fall : Programming Languages
+- 2025 Spring : Object Oriented Programming (Java Language)
 
 ## Awards and Honors
 - **Outstanding Paper Award**, Conference of the Institute of Electronics and Information Engineers (IEIE), June 2018.
