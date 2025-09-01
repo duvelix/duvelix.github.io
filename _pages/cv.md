@@ -20,22 +20,22 @@ classes: wide
 
 ## Publications
 ### Journal Papers
-1. Joonsu Ryu and Sungwook Kim, "Mitigating Jamming Attacks in Underwater Sensor Networks Using an M-Qubed-Based Opportunistic Routing Protocol", *ETRI Journal*, Vol. 47, no. 3, 2025. [[link]](https://onlinelibrary.wiley.com/doi/full/10.4218/etrij.2023-0526)
+1. **__Joonsu Ryu__** and Sungwook Kim, "Mitigating Jamming Attacks in Underwater Sensor Networks Using an M-Qubed-Based Opportunistic Routing Protocol", *ETRI Journal*, Vol. 47, no. 3, pp. 559-571, 2025. [[link]](https://onlinelibrary.wiley.com/doi/full/10.4218/etrij.2023-0526)
 
-2. Joonsu Ryu and Sungwook Kim, "Trust System- and Multiple Verification Technique-based Method for Detecting Wormhole Attacks in MANETs," *IEEE Access*, Vol. 12, 2024, pp. 16266-16275. [[link]](https://ieeexplore.ieee.org/document/10403892)
+2. **__Joonsu Ryu__** and Sungwook Kim, "Trust System- and Multiple Verification Technique-based Method for Detecting Wormhole Attacks in MANETs," *IEEE Access*, Vol. 12, pp. 16266-16275, 2024. [[link]](https://ieeexplore.ieee.org/document/10403892)
 
-3. Joonsu Ryu and Sungwook Kim, "Reputation-Based Opportunistic Routing Protocol Using Q-Learning for MANET Attacked by Malicious Nodes," *IEEE Access*, Vol. 11, 2023, pp. 47701-47711. [[link]](https://ieeexplore.ieee.org/document/10038554)
+3. **__Joonsu Ryu__** and Sungwook Kim, "Reputation-Based Opportunistic Routing Protocol Using Q-Learning for MANET Attacked by Malicious Nodes," *IEEE Access*, Vol. 11, pp. 47701-47711, 2023. [[link]](https://ieeexplore.ieee.org/document/10038554)
 
 ### Conference Papers
-1. Joonsu Ryu and Sungwook Kim, "Detection of Wormhole Attacks in Mobile Ad-hoc Network Using Multi-Validation Techniques." *Conference of the Institute of Electronics and Information Engineers*, June 2023, pp. 2038-2041. (Korean) [[link]](https://www.dbpia.co.kr/journal/articleDetail?nodeId=NODE11522580)
+1. **__Joonsu Ryu__** and Sungwook Kim, "Detection of Wormhole Attacks in Mobile Ad-hoc Network Using Multi-Validation Techniques." *Conference of the Institute of Electronics and Information Engineers*, June 2023, pp. 2038-2041. (Korean) [[link]](https://www.dbpia.co.kr/journal/articleDetail?nodeId=NODE11522580)
 
-2. Joonsu Ryu and Sungwook Kim, "Energy Level based D2D Routing Algorithm By using the Reinforcement Learning Approach." *Conference of the Institute of Electronics and Information Engineers*, June 2022, pp. 744-746. (Korean) [[link]](https://www.dbpia.co.kr/journal/articleDetail?nodeId=NODE11132455)
+2. **__Joonsu Ryu__** and Sungwook Kim, "Energy Level based D2D Routing Algorithm By using the Reinforcement Learning Approach." *Conference of the Institute of Electronics and Information Engineers*, June 2022, pp. 744-746. (Korean) [[link]](https://www.dbpia.co.kr/journal/articleDetail?nodeId=NODE11132455)
 
-3. Joonsu Ryu and Sungwook Kim, "Multi-hop Routing Method based on Reinforcement Learning for Efficient Data Offloading." *Conference of the Institute of Electronics and Information Engineers*, August 2020. pp. 687-689. (Korean) [[link]](https://www.dbpia.co.kr/journal/articleDetail?nodeId=NODE10447955)
+3. **__Joonsu Ryu__** and Sungwook Kim, "Multi-hop Routing Method based on Reinforcement Learning for Efficient Data Offloading." *Conference of the Institute of Electronics and Information Engineers*, August 2020. pp. 687-689. (Korean) [[link]](https://www.dbpia.co.kr/journal/articleDetail?nodeId=NODE10447955)
 
-4. Joonsu Ryu and Sungwook Kim, "Finding the Influential Node set Using Reinforcement Learning in Social Networks." *Conference of the Institute of Electronics and Information Engineers*, June 2018, pp. 1064-1065. (Korean) [[link]](https://www.dbpia.co.kr/journal/articleDetail?nodeId=NODE07515957)
+4. **__Joonsu Ryu__** and Sungwook Kim, "Finding the Influential Node set Using Reinforcement Learning in Social Networks." *Conference of the Institute of Electronics and Information Engineers*, June 2018, pp. 1064-1065. (Korean) [[link]](https://www.dbpia.co.kr/journal/articleDetail?nodeId=NODE07515957)
 
-5. Joonsu Ryu and Sungwook Kim, "A Study on the Influential Maximization Problem on Real-Time Dynamic Social Networks." *Conference of the Korean Institute of Information Scientists and Engineers*, December 2017, pp. 1200-1202. (Korean) [[link]](https://www.dbpia.co.kr/journal/articleDetail?nodeId=NODE07322440)
+5. **__Joonsu Ryu__** and Sungwook Kim, "A Study on the Influential Maximization Problem on Real-Time Dynamic Social Networks." *Conference of the Korean Institute of Information Scientists and Engineers*, December 2017, pp. 1200-1202. (Korean) [[link]](https://www.dbpia.co.kr/journal/articleDetail?nodeId=NODE07322440)
 
 ## Teaching Experiences
 ### Teaching Assistant
