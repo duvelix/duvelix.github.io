@@ -20,7 +20,7 @@ classes: wide
 
 ## Publications
 ### Journal Papers
-1. Joonsu Ryu and Sungwook Kim, "Mitigating Jamming Attacks in Underwater Sensor Networks Using an M-Qubed-Based Opportunistic Routing Protocol", *ETRI Journal*, vol. 47, no. 3, 2025. [[link]](https://onlinelibrary.wiley.com/doi/full/10.4218/etrij.2023-0526)
+1. Joonsu Ryu and Sungwook Kim, "Mitigating Jamming Attacks in Underwater Sensor Networks Using an M-Qubed-Based Opportunistic Routing Protocol", *ETRI Journal*, Vol. 47, no. 3, 2025. [[link]](https://onlinelibrary.wiley.com/doi/full/10.4218/etrij.2023-0526)
 
 2. Joonsu Ryu and Sungwook Kim, "Trust System- and Multiple Verification Technique-based Method for Detecting Wormhole Attacks in MANETs," *IEEE Access*, Vol. 12, 2024, pp. 16266-16275. [[link]](https://ieeexplore.ieee.org/document/10403892)
 
