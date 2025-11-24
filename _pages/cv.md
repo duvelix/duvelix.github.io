@@ -8,8 +8,8 @@ classes: wide
 
 ## Education
 ### Ph.D. in Computer Science and Engineering
-#### <img src="\assets\sogang.png" width=50 height=50> **Sogang University** | 2015.03 - 2026.02 (Expected)
-- Dissertation: Research on Countermeasures against Attacks in Wireless Network Routing using Reinforcement Learning and Game Theory (Passed 1st Dissertation Defense)
+#### <img src="\assets\sogang.png" width=50 height=50> **Sogang University** | 2015.03 - 2026.02
+- Dissertation: Defense Mechanisms against Routing Attacks in Wireless Networks using Reinforcement Learning and Game Theory (Passed Final Dissertation Defense)
 - Advisor: Prof. Sungwook Kim
 - Served as a Special Research Personnel (전문연구요원) from Mar 2019 to Feb 2022 as part of mandatory alternative military service.
 
