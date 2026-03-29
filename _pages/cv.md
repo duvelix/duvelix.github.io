@@ -26,6 +26,8 @@ classes: wide
 
 3. **<u>Joonsu Ryu</u>** and Sungwook Kim, "Reputation-Based Opportunistic Routing Protocol Using Q-Learning for MANET Attacked by Malicious Nodes," *IEEE Access*, Vol. 11, pp. 47701-47711, 2023. [[link]](https://ieeexplore.ieee.org/document/10038554)
 
+4. **<u>Joonsu Ryu</u>**, "Voting-Game-Based Byzantine Attack Detection in MANETs with One-Step Tie-Breaking and Participation Optimization", Under Review
+
 ### Conference Papers
 1. **<u>Joonsu Ryu</u>** and Sungwook Kim, "Detection of Wormhole Attacks in Mobile Ad-hoc Network Using Multi-Validation Techniques." *Conference of the Institute of Electronics and Information Engineers*, June 2023, pp. 2038-2041. (Korean) [[link]](https://www.dbpia.co.kr/journal/articleDetail?nodeId=NODE11522580)
 
@@ -56,32 +58,37 @@ classes: wide
 #### <img src="\assets\ewha.png" width=50 height=50> **Ewha Women's University** | 2025.09 - 2026.08 (Expected)
 - Designed and delivered lectures for the courses.
 - 2025 Fall : Computer Programming and Labs (C Language)
+- 2026 Spring : Computer Programming and Labs (C Language), Java Programming and Labs
 
 #### <img src="\assets\dongguk.png" width=50 height=50> **Dongguk University** | 2024.09 - 2026.08 (Expected)
 - Designed and delivered lectures for the courses.
 - 2024 Fall : Programming Languages
 - 2025 Spring : Object Oriented Programming (Java Language)
 - 2025 Fall : Object Oriented Programming (Java Language)
+- 2026 Spring : Discrete Mathematics
 
 #### <img src="\assets\chungang.png" width=50 height=50> **Chung-ang University** | 2024.09 - 2026.08 (Expected)
 - Designed and delivered lectures for the courses.
 - 2024 Fall : Programming Languages, Programming (C Language)
 - 2025 Spring : Basic Computer Programming (C Language)
 - 2025 Fall : Programming Languages
+- 2026 Spring : Basic Computer Programming (C Language), Algorithm
 
-#### <img src="\assets\hansung.png" width=50 height=50> **Hansung University** | 2024.03 - 2026.02 (Expected)
+#### <img src="\assets\hansung.png" width=50 height=50> **Hansung University** | 2024.03 - 2027.02 (Expected)
 - Designed and delivered lectures for the courses.
 - 2024 Spring : Computer Programming (C Language)
 - 2024 Fall : Computer Programming (C Language)
 - 2025 Spring : Computer Programming (C Language)
 - 2025 Fall : Computer Programming (C Language)
+- 2026 Spring : Computer Programming (C Language)
 
-#### <img src="\assets\sungshin.png" width=50 height=50> **Sungshin Women's University** | 2023.09 - 2025.08
+#### <img src="\assets\sungshin.png" width=50 height=50> **Sungshin Women's University** | 2023.09 - 2026.08 (Expected)
 - Designed and delivered lectures for the courses.
 - 2023 Fall : Programming Languages
 - 2024 Spring : Java Programming
 - 2024 Fall : Python Programming for Scientists
 - 2025 Spring : Computer System Administration
+- 2026 Spring : Computer System Administration, Java Programming
 
 ## Awards and Honors
 - **LG Electronics Paper Award for Outstanding Research**, Conference of the Institute of Electronics and Information Engineers (IEIE), June 2022.
